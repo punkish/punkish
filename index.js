@@ -1,5 +1,21 @@
 'use strict';
 
+/*
+
+Compile templates
+    ~/Projects/punkish$ node_modules/hogan.js/bin/hulk -o public/js/templates/ views/partials/*.hjs
+
+Start this program from the command line with `pm2`
+
+    ~/Nodes/punkish$ NODE_ENV=production pm2 start app.js --name punkish
+    ~/Nodes/punkish$ NODE_ENV=production pm2 restart app.js
+
+To sync images and other binary files, run `rsync` from within 'punkish'
+
+    ~Projects/punkish$ rsync -azPv --exclude-from exclude.txt ../punkish lko:/home/punkish/Nodes/
+
+*/
+
 const Hapi = require('hapi');
 
 // blipp is a simple hapi plugin to display the routes table at startup
