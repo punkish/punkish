@@ -1,0 +1,160 @@
+/* /where/ styles */
+/* reverse trip timeline */
+/* #experiences li {
+    padding-left: 0px;
+    list-style: none;
+} */
+.where {
+    font-size: 1em;
+    margin-top: -20px;
+}
+.what {
+    font-size: 0.6em;
+    margin-top: -10px;
+}
+.when {
+    color: #444;
+    font-size: 0.6em;
+    margin-top: -10px;
+}
+
+.half-week {
+    padding-bottom: 6px;
+}
+.one-week {
+    padding-bottom: 14px;
+}
+.ten-days {
+    padding-bottom: 20px;
+}
+.two-weeks {
+    padding-bottom: 28px;
+}
+.three-weeks {
+    padding-bottom: 42px;
+}
+.one-month {
+    padding-bottom: 60px;
+}
+.one-and-half-months {
+    padding-bottom: 90px;
+}
+.three-months {
+    padding-bottom: 180px;
+}
+
+#experiences li {
+
+    /* so that pseudoelements are positioned relatively to their "li"s*/
+    position:relative; 
+
+    /* use padding-bottom instead of margin-bottom.*/ 
+    margin-bottom: 0;
+}
+
+/* bullets */
+#experiences li.before_now {
+    list-style: url('/entry-files/W/WH/WHE/Where/img/before_now.png');
+}
+#experiences li.now {
+    list-style: url('/entry-files/W/WH/WHE/Where/img/now.gif');
+}
+#experiences li.after_now {
+    list-style: url('/entry-files/W/WH/WHE/Where/img/after_now.png');
+}
+#experiences li.where_next {
+    list-style: url('/entry-files/W/WH/WHE/Where/img/where_next.png');
+}
+
+/* lines */
+#experiences li:before {
+    content:"";
+    position: absolute;
+    border-left: 1px solid black;
+    height: 100%;
+    width: 1px;
+}
+
+/* lines */
+#experiences li:nth-last-child(2):before {
+    border-left: 1px dashed black;
+}
+
+/* adjust manually */
+#experiences li:before {
+    left: -19px; 
+}
+
+#experiences li.now:before {
+    top: 17px;
+}
+
+#experiences li.after_now:before {
+    top: 20px;
+}
+
+/* first li's line 
+ * moves the line down so that it disappears under the bullet. 
+ * Adjust manually
+ */
+#experiences li:first-child:before {
+   top: 10px;
+}
+
+/* last li's line
+ * shorten the line so it goes only up to the bullet. 
+ * Is equal to top of first-child:before
+ */
+#experiences li:last-child:before {
+   height: 0px;
+}
+/* end reverse trip timeline */
+/* end /where/ styles */
+
+/* iPhone 5 320px */
+@media (min-width:300px) {
+	#searchtoggle {
+		font-size: x-small;
+	}
+}
+
+@media(max-width:740px) {
+    body {
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+
+    .halfWidth, pre, #play, aside, table, 
+    #text > p, #text > ol, #text > ul, #slide,
+    h2, h3, blockquote p, .footnote {
+        width: 85%; 
+        margin: 0 auto;
+    }
+
+    #text > p {
+        margin-top: 1.2em;
+    }
+
+    h2, h3 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+}
+
+@media print {
+    .halfWidth, pre, #play, aside, table, 
+    #text > p, #text > ol, #text > ul, #slide,
+    h2, h3, blockquote p, .footnote {
+        width: 85%; 
+        margin: 0 auto;
+    }
+
+    #text > p {
+        margin-top: 1.2em;
+    }
+
+    h2, h3 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" /> -->
+
+    <!-- <link rel="stylesheet" href="/entry-files/{{entryDir}}/css/styles.css"> -->
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <div class="container">
+        {{> header}}
+
+        {{{content}}}
+
+        {{> footer}}
+    </div>
+
+    <script src="/node-files/leaflet/dist/leaflet.js"></script>
+
+    <!-- <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
+    <script src="https://cdn.klokantech.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script> -->
+
+    <script src="/js/punkish.js"></script>
+    <script src="/entry-files/{{entryDir}}/js/script.js"></script>
+    <script>
+    PK['{{js}}'].init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<section class="row">
+    <h1 class="title">Entries by Date</h1>
+    <div class="date">{{created}}</div>
+
+    <ul class="content">
+        {{#posts}}
+        <li><a href="/{{file}}">{{title}}</a></li>
+        {{/posts}}
+    </ul>
+</section>

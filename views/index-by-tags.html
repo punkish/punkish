@@ -1,0 +1,16 @@
+<section class="row">
+    <h1 class="title">Entries by Tag</h1>
+    <div class="date">{{created}}</div>
+
+    <ul class="content">
+        {{#each posts}}
+        <li>{{@key}} 
+            <ul>
+                {{#.}}
+                <li><a href="/{{file}}">{{title}}</a></li>
+                {{/.}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</section>

@@ -1,0 +1,69 @@
+header {
+	margin-bottom: 3em;
+}
+.home {
+	text-decoration: none;
+	color: black;
+	font-size: x-large;
+	font-weight: 800;
+}
+header div {
+	border-bottom: 1px solid lightgrey;
+}
+nav a {
+	margin-right: 0.75em;
+	font-size: small;
+}
+ul.tags {
+	list-style: none;
+	margin-top: 3em;
+}
+ul.tags:after {
+	clear: both;
+	margin-bottom: 2em;
+}
+.tags li {
+  float: left;
+	margin-right: 0.75em;
+	border: solid 1px grey;
+	padding: 0 5px 0 5px;
+	border-radius: 5px;
+	font-size: small;
+}
+ul.bottomNav {
+	clear: both;
+	list-style: none;
+}
+ul.bottomNav li {
+	margin-bottom: 0;
+}
+li.prev:before {
+	content: '\2190 ';
+}
+li.next:before {
+	content: '\2192 ';
+}
+figure img {
+	width: 100%;
+}
+#map {
+	width: 100%;
+	height: 400px;
+}
+.title {
+	margin-bottom: 0;
+	font-size: 2em;;
+}
+.content {
+	margin-top: 3em;
+	font-family: serif;
+	font-size: large;
+}
+.on {
+	visibility: visible;
+	display: block;
+}
+.off {
+	visibility: hidden;
+	display: none;
+}

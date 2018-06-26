@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="punkish.org">
+    <meta name="Copyright" content="CC0 Public Domain Dedication">
+    <meta name="Author" content="Puneet Kishor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/Skeleton-2.0.4/css/skeleton.css"> -->
+    <link rel="stylesheet" href="/css/remark-styles.css">
+    <link rel="stylesheet" href="/highlight/styles/monokai.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <div class="container">
+
+{{{content}}}
+
+    </div>
+
+	<script src="/highlight/highlight.pack.js"></script>
+	<script src="/remark/remark.min.js"></script>
+    <script>
+    window.onload = function() {
+		var slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: true,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		slideshow.on('showSlide', function (slide) {
+			hljs.initHighlighting();
+			//PK.initializeDictionary();
+
+			if (slide.properties.mapfn1) {
+				eval(slide.properties.mapfn1);
+			}
+		});
+
+		slideshow.on('afterShowSlide', function (slide) {
+			if (slide.properties.mapfn2) {	
+				eval(slide.properties.mapfn2);
+			}
+
+			// var found = slide.properties.name.match(/term\d/);
+			// if (found[0]) {
+			// 	term(found[0]);
+			// }
+		});
+
+		/*
+		var a = document.getElementById('infomap');
+		var AK = document.getElementById('AK');
+		AK.addEventListener('click', function(e) {
+			var b = this.getBoundingClientRect();
+			a.setAttribute("viewBox", b.x+" "+b.y+" "+b.width+" "+b.height);
+			e.preventDefault();
+			e.stopPropagation();
+		});
+		*/
+
+		
+	}
+    </script>
+</body>
+</html>
