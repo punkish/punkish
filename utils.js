@@ -11,7 +11,7 @@ const sh = new showdown.Converter({
     tables: true
 });
 
-const dir = '/Users/punkish/Projects/pk3/entries';
+const dir = './entries';
 const untaggedLabel = 'untagged';
 
 const utils = {
