@@ -16,8 +16,6 @@ stars      :
     <figcaption>Lady with the beard</figcaption>
 </figure>
 
-</div>
-
 As I got on to my flight  
 I saw an unforgetful sight  
 That in my dreams I'd always feared  

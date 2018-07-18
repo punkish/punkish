@@ -6,14 +6,17 @@ created    : 2013-08-03 17:26:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - kid
     - Cape Town
     - South Africa
 stars      : 
-background : cape_town_kid.jpg
-layout     : full-screen-image
 ---
 
-Hanging out at the market in Cape Town
+<figure>
+    <img src="cape_town_kid.jpg">
+    <figcaption>Hanging out at the market in Cape Town</figcaption>
+</figure>
+
+
