@@ -12,9 +12,7 @@ tags        :
 stars      : 
 ---
 
-<div style="position: fixed; z-index: -10;">
-<img class='foo' src='/data/M/MY/MY-/My-Love-is-a-Sensor/punkishheartssensor.gif'>
-</div>
+<img src='/entry-files/M/MY/MY-/My-Love-is-a-Sensor/img/punkishheartssensor.png' style="position: fixed; z-index: -10;">
 
 When I saw it first that thing,  
 Was covered in argentum bling,  
