@@ -13,8 +13,10 @@ tags        :
     - graffiti
     - murals
 stars      : 
-background : art_alley.jpg
-layout     : full-screen-image
 ---
 
-Berlin walls
+<figure>
+    <img src="art_alley.jpg">
+    <figcaption>Berlin walls</figcaption>
+</figure>
+

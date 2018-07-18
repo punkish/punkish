@@ -11,8 +11,10 @@ tags        :
     - Argentina
     - Buenos Aires
 stars      : 
-background : IMG_3902.JPG
-layout     : full-screen-image
 ---
 
-Chess in the park in Buenos Aires
+<figure>
+    <img src="IMG_3902.JPG">
+    <figcaption>Chess in the park in Buenos Aires</figcaption>
+</figure>
+

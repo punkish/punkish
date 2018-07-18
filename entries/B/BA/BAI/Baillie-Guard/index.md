@@ -12,8 +12,11 @@ tags        :
     - Lucknow
     - India
 stars      : 
-layout     : full-screen-image
-background : baillie-guard.jpg
 ---
+
+<figure>
+    <img src="baillie-guard.jpg">
+    <figcaption>Baillie Guard</figcaption>
+</figure>
 
 I saw him perched on that old monument, lord of all he surveyed

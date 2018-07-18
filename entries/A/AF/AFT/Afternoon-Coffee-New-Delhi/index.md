@@ -6,14 +6,15 @@ created    : 2013-08-03 15:49:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Coffee House
     - New Delhi
     - India
-stars      : 
-layout     : full-screen-image
-background : afternoon_coffee.JPG
+stars     :
 ---
 
-Waiting for filter coffee
+<figure>
+    <img src="afternoon_coffee.JPG">
+    <figcaption>Waiting for filter coffee</figcaption>
+</figure>

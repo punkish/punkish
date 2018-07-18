@@ -12,8 +12,10 @@ tags        :
     - Buenos Aires
     - portraits
 stars      : 
-background : IMG_3903.JPG
-layout     : full-screen-image
 ---
 
-Bookseller at the Sunday market in Buenos Aires
+<figure>
+    <img src="IMG_3903.JPG">
+    <figcaption>Bookseller at the Sunday market in Buenos Aires</figcaption>
+</figure>
+

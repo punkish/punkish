@@ -12,8 +12,13 @@ tags        :
     - India
     - portraits
 stars      :
-background : badaloo.jpg
-layout     : full-screen-image
 ---
 
+<figure>
+    <img src="badaloo.jpg">
+    <figcaption>Badaloo</figcaption>
+</figure>
+
 “बदलू” or Badaloo, literally “one who changes,” has been selling fresh vegetables to my mom off his bicycle for more than 25 years.
+
+Update: Badaloo passed away in 2017.

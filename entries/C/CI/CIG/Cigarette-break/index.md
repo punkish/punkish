@@ -12,8 +12,10 @@ tags        :
     - Germany
     - portraits
 stars      :
-background : cigarette_break.JPG
-layout     : full-screen-image
 ---
 
-A quiet moment in Berlin
+<figure>
+    <img src="cigarette_break.JPG">
+    <figcaption>A quiet moment in Berlin</figcaption>
+</figure>
+

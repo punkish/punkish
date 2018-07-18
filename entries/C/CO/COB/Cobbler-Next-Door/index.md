@@ -12,8 +12,11 @@ tags        :
     - India
     - portraits
 stars      :
-background : cobbler.jpg
-layout     : full-screen-image
 ---
+
+<figure>
+    <img src="cobbler.jpg">
+    <figcaption>the Mankhurd cobbler</figcaption>
+</figure>
 
 This guy has a shop on the Mankhurd Station road, on the sidewalk, in between the chicken butcher and the barber. He fixed my bag.

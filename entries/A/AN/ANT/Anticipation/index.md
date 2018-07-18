@@ -11,8 +11,10 @@ tags        :
     - Istanbul
     - Turkey
 stars      :
-background : anticipation.jpg
-layout     : full-screen-image
 ---
 
-Waiting… at Aǧa Sofya
+<figure>
+    <img src="anticipation.jpg">
+    <figcaption>Waiting… at Aǧa Sofya</figcaption>
+</figure>
+

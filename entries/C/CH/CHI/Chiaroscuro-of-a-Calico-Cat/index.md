@@ -10,9 +10,12 @@ tags        :
     - photos
     - Mew Mew
 stars      : 
-background : miumiu.jpg
-layout     : full-screen-image
 ---
+
+<figure>
+    <img src="miumiu.jpg">
+    <figcaption>mew mew</figcaption>
+</figure>
 
 When I got this beauty, she and her brother were just a few weeks old. She was meowing incessantly, so Nes promptly decided to name her "Mew Mew." Mew Mew is not with me anymore, but I recently discovered this photo of her I took a few years ago. The light and dark really exemplify her feline beauty.
 

@@ -11,8 +11,11 @@ tags        :
     - Istanbul
     - Turkey
 stars      :
-background : cruel-things.jpg
-layout     : full-screen-image
 ---
 
-I have seen cruel things, right in the shadow of our gods.
+<figure>
+    <img src="cruel-things.jpg">
+    <figcaption>I have seen cruel things, right in the shadow of our gods.</figcaption>
+</figure>
+
+

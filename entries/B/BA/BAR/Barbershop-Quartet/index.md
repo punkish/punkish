@@ -11,8 +11,9 @@ tags        :
     - Mumbai
     - India
 stars      : 
-background : IMG_3965.jpg
-layout     : full-screen-image
 ---
 
-Sidewalk shaves in Mumbai
+<figure>
+    <img src="IMG_3965.jpg">
+    <figcaption>Sidewalk shaves in Mumbai</figcaption>
+</figure>
