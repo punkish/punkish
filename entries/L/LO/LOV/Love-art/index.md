@@ -13,8 +13,10 @@ tags        :
     - graffiti
     - murals
 stars      : 
-layout     : full-screen-image
-background : love_art.JPG
 ---
 
-and leave it at that
+<figure>
+    <img src="love_art.jpg">
+    <figcaption>and leave it at that</figcaption>
+</figure>
+
