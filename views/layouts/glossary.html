@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
     <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
     <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/entry-files/{{entryDir}}/css/{{css}}.css">
-
+    <link rel="stylesheet" href="/entry-files/{{entryUrl}}/css/styles.css">
+    
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
@@ -20,14 +20,11 @@
         {{> header}}
 
         {{{content}}}
-        
+
         {{> footer}}
     </div>
 
     <script src="/public/js/punkish.js"></script>
-    <script src="/entry-files/{{entryDir}}/js/{{js}}.js"></script>
-    <script>
-    PK.where.init();
-    </script>
+    <script src="/entry-files/{{entryUrl}}/js/script.js"></script>
 </body>
 </html>

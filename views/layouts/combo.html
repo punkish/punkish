@@ -10,41 +10,61 @@
     <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
     <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/entry-files/{{entryUrl}}/css/{{css}}.css">
 
+    {{#isCode}}
+    <link rel="stylesheet" href="/public/highlight/styles/monokai.css">
+    {{/isCode}}
+
+    {{#isMap}}
+    <link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css" />
+    {{/isMap}}
+
+    {{#isQGISMapper}}
     <link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" />
-
     <link rel="stylesheet" href="/public/qgis-mapper/css/qgis2web.css">
     <link rel="stylesheet" href="/public/qgis-mapper/css/MarkerCluster.css" />
     <link rel="stylesheet" href="/public/qgis-mapper/css/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="/public/qgis-mapper/css/leaflet-search.css" />
-    
+    {{/isQGISMapper}}
+
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
-    <style>
-    #map {
-        width: 100%;
-        height: 400px;
-        padding: 0;
-        margin: 0;
-    }
-    </style>
 </head>
 <body>
     <div class="container">
         {{> header}}
 
         {{{content}}}
-
+        
         {{> footer}}
     </div>
 
-    <script src="/node-files/leaflet/dist/leaflet.js"></script>
+    <script src="/public/js/punkish.js"></script>
 
+    {{#isJs}}
+    <script src="/entry-files/{{entryUrl}}/js/{{js}}.js"></script>
+    {{/isJs}}
+
+    {{#isCode}}
+    <script src="/public/highlight/highlight.pack.js"></script>
+    {{/isCode}}
+
+    {{#isMap}}
+    <script src="/node-files/leaflet/dist/leaflet.js"></script>
+    {{/isMap}}
+
+    {{#isLEDStrip}}
+    <!-- beg: LED Strip -->
+    <script src="/node-files/smoothie/smoothie.js"></script>
+    <script src="/node-files/web-audio-daw/build/wad.min.js"></script>
+    {{/isLEDStrip}}
+
+    {{#isQGISMapper}}
+    <script src="/node-files/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
     <script src="https://cdn.klokantech.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
-    
     <script src="/public/qgis-mapper/js/leaflet-heat.js"></script>
     <script src="/public/qgis-mapper/js/leaflet.rotatedMarker.js"></script>
     <script src="/public/qgis-mapper/js/OSMBuildings-Leaflet.js"></script>
@@ -52,11 +72,23 @@
     <script src="/public/qgis-mapper/js/Autolinker.min.js"></script>
     <script src="/public/qgis-mapper/js/leaflet.markercluster.js"></script>
     <script src="/public/qgis-mapper/js/leaflet-search.js"></script>
-
-    <script src="/public/js/punkish.js"></script>
-
     <script src="/entry-files/{{entryDir}}/js/json_parcels0.js"></script>
+    {{/isQGISMapper}}
+
     <script>
+        {{#isCV}}
+        PK.cv.init();
+        {{/isCV}}
+        
+        {{#isLEDStrip}}
+        PK['led-strip'].init();
+        {{/isLEDStrip}}
+
+        {{#isWhere}}
+        PK['where'].init();
+        {{/isWhere}}
+
+        {{#isQGISMapper}}
         var highlightLayer;
 
         function highlightFeature(e) {
@@ -148,6 +180,8 @@
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'shapename'}));
+        {{/isQGISMapper}}
     </script>
+    
 </body>
 </html>

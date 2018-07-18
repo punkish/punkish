@@ -4,7 +4,7 @@ const utils = require('../utils.js');
 
 const entry = {
     method: 'GET',
-    path: '/{entry}',
+    path: '/{entry}/{subentry?}',
     config: {
         description: "dynamic serving of a specific entry",
         tags: ['private']
@@ -14,26 +14,24 @@ const entry = {
         let file = request.server.app.posts.sortedByDates[0]['file'];
         let subfile;
 
-        file = request.params['entry'];
+        if (request.params['entry']) {
+            file = request.params['entry'];
+
+            if (request.params['subentry']) {
+                subfile = request.params['subentry'];
+            }
+        }
         
         if (file === 'cv') {
             file = 'cv-latest';
         }
 
-        let queryParam = '';
-        if (request.query) {
-            queryParam = Object.keys(request.query)[0];
-        }
-
-        const entryData = utils.getEntry({
-            file: file, 
-            queryParam: queryParam, 
-            singleEntry: true
-        });
-
+        const entryData = utils.getEntry(file, subfile, true);
+        
         return h.view(
             entryData.type || 'entry', 
             entryData,
+            // { layout: entryData.layout || 'main' }
             { layout: entryData.layout || 'combo' }
         );
     }

@@ -67,3 +67,15 @@ figure img {
 	visibility: hidden;
 	display: none;
 }
+.archive {
+	background-color: lightcoral;
+	color: black;
+	font-family: sans-serif;
+	font-size: small;
+	border: 1px solid;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+.archive u {
+	color: white;
+}

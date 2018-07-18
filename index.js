@@ -100,8 +100,9 @@ const init = async () => {
     });
     
     server.route([
+        require('./resources/default-entry.js'),
         require('./resources/public.js'),
-        require('./resources/entries-files.js'),
+        require('./resources/entry-files.js'),
         require('./resources/node-files.js'),
         require('./resources/entries.js'),
         require('./resources/entry.js')

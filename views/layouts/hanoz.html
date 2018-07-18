@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>punkish.org: {{title}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="punkish.org">
+    <meta name="Copyright" content="CC0 Public Domain Dedication">
+    <meta name="Author" content="Puneet Kishor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="stylesheet" href="/public/remark/remark-style.css">
+	<link rel="stylesheet" href="/public/css/remark-hanoz.css">
+</head>
+
+<body class="container">
+    
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+{{{content}}}
+</textarea>
+
+	<script src="/public/remark/remark.min.js"></script>
+	<script type="text/javascript">
+	window.onload = function() {
+		var slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: true,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true
+		});
+	}
+	</script>
+</body>
+</html>

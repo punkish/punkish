@@ -33,13 +33,13 @@ Zay a 'border' yetst bay mir.
 Vi a fremder tsol ikh ir dem rent.  
 
 Refrain:  
-*Ikh bin a 'border' bay mayn vayb,  
+Ikh bin a 'border' bay mayn vayb,  
 Au gut, ay voyl, ay gut,  
 Mener, iz dos a tay'rer 'dzhab'  
 Ay gut, ay voyl, ay gut.  
 Zi 'atendet' mikh mit ales,  
 Ven ikh kum fregt zi keyn shayles,  
-Ikh bin a 'border' bay mayn vayb.*
+Ikh bin a 'border' bay mayn vayb.
 
 Ikh zog aykh yetst oysdriklekh  
 Az ikh fil zikh gliklekh,  

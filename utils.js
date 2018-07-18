@@ -15,83 +15,109 @@ const dir = './entries';
 const untaggedLabel = 'untagged';
 
 const utils = {
-    getEntry: function(file, singleEntry) {
+    hanoz: [],
+
+    getEntry: function(options) {
+        const file = options['file'] || '';
+        const subfile = options['subfile'] || '';
+        const queryParam = options['queryParam'] || '';
+        const singleEntry = options['singleEntry'] || '';
 
         const o = file.substr(0, 1).toUpperCase();
         const t = file.substr(0, 2).toUpperCase();
         const r = file.substr(0, 3).toUpperCase();
-        const entryDir = `${o}/${t}/${r}/${file}`;
 
-        const entryIndex = `./entries/${entryDir}/index.md`;
-        // const entryImgDir = `entries-files/${entryDir}/img/`;
-        // const entryCssDir = `entries-files/${entryDir}/css/`;
-        // const entryJsDir = `entries-files/${entryDir}/js/`;
+        let entryDir = `./entries/${o}/${t}/${r}/${file}`;
+        let entryUrl = `${o}/${t}/${r}/${file}`;
+
+        if (subfile) {
+            entryDir = `./entries/${o}/${t}/${r}/${file}/${subfile}`;
+            entryUrl = `${o}/${t}/${r}/${file}/${subfile}`;
+        }
+
+        const entryIndex = `${entryDir}/index.md`;
         
         try {
-            fs.accessSync(entryIndex, fs.constants.R_OK);
+            if ((file.toLowerCase() === 'hanoz') && (queryParam === 'book')) {
 
-            const fileContents = fs.readFileSync(entryIndex, 'utf8');
-
-            let entry = Yaml.loadFront(fileContents);
-            
-            if (entry) {
-
-                // format user-entered date using moment
-                let dateFormat = 'YYYY-MM-DD HH:MM:SS';
-                if (singleEntry) {
-                    dateFormat = 'MMM DD, YYYY';
+                if (this.hanoz.length == 0) {
+                    this.buildHanozIndex();
                 }
                 
-                if (entry.modified) {
-                    entry.created = moment(entry.modified).format(dateFormat);
-                }
-                else if (entry.created) {
-                    entry.created = moment(entry.created).format(dateFormat);
-                }
-                else {
-                    entry.created = moment().format(dateFormat);
-                }
+                return {
+                    pages: this.hanoz,
+                    layout: 'hanoz',
+                    type: 'hanoz'
+                };
+            }
+            else {
+                fs.accessSync(entryIndex, fs.constants.R_OK);
 
-                if (!entry.title) {
-                    entry.title = file;
-                }
+                const fileContents = fs.readFileSync(entryIndex, 'utf8');
 
-                entry.entryDir = entryDir;
+                let entry = Yaml.loadFront(fileContents);
+                
+                if (entry) {
 
-                if (singleEntry) {
-                    if (entry.type !== 'presentation') {
-                        entry.__content = sh.makeHtml(entry.__content);
-                        entry.__content = entry.__content.replace(
-                            /(img src=")(.*?)\.(png|gif|jpg)(.*)/g, 
-                            `$1entry-files/${entryDir}/img/$2.$3$4`
-                        );
+                    // format user-entered date using moment
+                    let dateFormat = 'YYYY-MM-DD HH:MM:SS';
+                    if (singleEntry) {
+                        dateFormat = 'MMM DD, YYYY';
+                    }
+                    
+                    if (entry.modified) {
+                        entry.created = moment(entry.modified).format(dateFormat);
+                    }
+                    else if (entry.created) {
+                        entry.created = moment(entry.created).format(dateFormat);
+                    }
+                    else {
+                        entry.created = moment().format(dateFormat);
+                    }
 
-                        // find prev and next entries
-                        let i = 0;
-                        const j = this.posts.sortedByDates.length;
-                        for (; i < j; i++) {
-                            if (file === this.posts.sortedByDates[i]['file']) {
-                                if (i == 0) {
-                                    entry.prev = this.posts.sortedByDates[i];
+                    if (!entry.title) {
+                        entry.title = file;
+                    }
+
+                    entry.entryDir = entryDir;
+                    entry.entryUrl = entryUrl;
+
+                    if (singleEntry) {
+                        
+                        if (entry.type !== 'presentation') {
+                            entry.__content = sh.makeHtml(entry.__content);
+                            entry.__content = entry.__content.replace(
+                                /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                                `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                            );
+                            
+                            // find prev and next entries
+                            let i = 0;
+                            const j = this.posts.sortedByDates.length;
+                            for (; i < j; i++) {
+                                if (file === this.posts.sortedByDates[i]['file']) {
+                                    if (i == 0) {
+                                        entry.prev = this.posts.sortedByDates[i];
+                                    }
+                                    else if (i > 1) {
+                                        entry.prev = this.posts.sortedByDates[i - 1];
+                                    }
+                                    
+                                    if (i < j) {
+                                        entry.next = this.posts.sortedByDates[i + 1];
+                                    }
+                                    else if (i == j) {
+                                        entry.next = this.posts.sortedByDates[i];
+                                    }
+                                    
+                                    break;
                                 }
-                                else if (i > 1) {
-                                    entry.prev = this.posts.sortedByDates[i - 1];
-                                }
-                                
-                                if (i < j) {
-                                    entry.next = this.posts.sortedByDates[i + 1];
-                                }
-                                else if (i == j) {
-                                    entry.next = this.posts.sortedByDates[i];
-                                }
-                                
-                                break;
                             }
                         }
                     }
-                }
 
-                return entry;
+                    return entry;
+                }
             }
         }
         catch (e) {
@@ -101,6 +127,46 @@ const utils = {
             }
         }
     },
+
+    buildHanozIndex: function() {
+
+        const dir = "./entries/H/HA/HAN/Hanoz/hindi";
+
+        const files = fs.readdirSync(dir).filter(function(file, index) {
+            var path_to_file = path.join(dir, file);
+
+            // remove entries that start with "."
+            if (file.substr(0, 1) !== ".") {
+                return fs.lstatSync(path_to_file).isFile();
+            }
+        });
+        
+        for (let i = 0, j = files.length; i < j; i++) {
+            const filename = dir + '/' + files[i];
+            const fileContents = fs.readFileSync(filename, 'utf8');
+            const metadata = Yaml.loadFront(fileContents);
+
+            let page = {};
+    
+            if (metadata) {
+                page.gifn = metadata["gifn"];
+                if (metadata["side"] === "left") {
+                    page.l_opaque = ".lcol.opaque";
+                    page.r_opaque = ".rcol";
+                    page.l_text = metadata["__content"];
+                    page.r_text = "";
+                }
+                else {
+                    page.l_opaque = ".lcol";
+                    page.r_opaque = ".rcol.opaque";
+                    page.l_text = "";
+                    page.r_text = metadata["__content"];
+                }
+            }
+
+            this.hanoz.push(page);
+        }
+    },    
 
     posts: {
         sortedByTags: {},
