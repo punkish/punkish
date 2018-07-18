@@ -11,8 +11,11 @@ tags        :
 stars      : 
 ---
 
-<div class="halfWidth">
-<img class="bar" src="lady.gif" width="100%">
+<figure>
+    <img src="lady.gif">
+    <figcaption>Lady with the beard</figcaption>
+</figure>
+
 </div>
 
 As I got on to my flight  
