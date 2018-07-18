@@ -113,6 +113,10 @@ const utils = {
                                     break;
                                 }
                             }
+
+                            if (entry.js) {
+                                entry.isJs = true;
+                            }
                         }
                     }
 
@@ -189,7 +193,11 @@ const utils = {
     
                     const nextParts = next.split('/');
                     const file = nextParts[nextParts.length - 2];
-                    const entry = utils.getEntry(file, false);
+                    const entry = utils.getEntry({
+                        file: file, 
+                        queryParam: null, 
+                        singleEntry: false
+                    });
     
                     const entryIdx = {
                         title: entry.title,
@@ -238,6 +246,7 @@ const utils = {
             return 0;
         });
         
+        //console.log(this.posts.sortedByDates)
         return this.posts;
     }
 };

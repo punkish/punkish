@@ -13,7 +13,7 @@ tags       :
 stars      : 
 css        : led-strip
 js         : led-strip
-layout     : led-strip
+isLEDStrip : true
 ---
 
 

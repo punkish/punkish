@@ -12,7 +12,11 @@ const defaultEntry = {
     handler: function (request, h) {
 
         const file = request.server.app.posts.sortedByDates[0]['file'];
-        const entryData = utils.getEntry(file, null, true);
+        const entryData = utils.getEntry({
+            file: file, 
+            queryParam: null, 
+            singleEntry: true
+        });
         
         return h.view(
             entryData.type || 'entry', 
