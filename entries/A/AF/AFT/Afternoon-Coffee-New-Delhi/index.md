@@ -15,6 +15,6 @@ stars     :
 ---
 
 <figure>
-    <img src="afternoon_coffee.JPG">
+    <img src="afternoon_coffee.jpg">
     <figcaption>Waiting for filter coffee</figcaption>
 </figure>

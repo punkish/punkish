@@ -6,14 +6,16 @@ created    : 2014-02-21 18:05:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Bangalore
     - India
     - portraits
 stars      : 
-layout     : full-screen-image
-background : P0005222.jpg
 ---
 
-He was the cook on the plantation
+<figure>
+    <img src="P0005222.jpg">
+    <figcaption>He was the cook on the plantation</figcaption>
+</figure>
+

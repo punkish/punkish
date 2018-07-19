@@ -6,13 +6,14 @@ created    : 2014-02-21 18:05:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - New Delhi
     - India
 stars      : 
-layout     : full-screen-image
-background : IMG_1285.jpg
 ---
 
-Afternoon nap
+<figure>
+    <img src="IMG_1285.jpg">
+    <figcaption>Afternoon nap</figcaption>
+</figure>

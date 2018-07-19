@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="cigarette_break.JPG">
+    <img src="cigarette_break.jpg">
     <figcaption>A quiet moment in Berlin</figcaption>
 </figure>
 

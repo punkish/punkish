@@ -6,15 +6,16 @@ created    : 2016-02-08 19:15:00
 viewcount  : 0
 id         :
 gmap       :
-tags        :
+tags       :
     - photos
     - CUBE
     - Mumbai
     - India
     - portraits
 stars      :
-layout     : full-screen-image
-background : 3-cubists.jpg
 ---
 
-Shivani, Sneha and Likita
+<figure>
+    <img src="3-cubists.jpg">
+    <figcaption>Shivani, Sneha and Likita</figcaption>
+</figure>

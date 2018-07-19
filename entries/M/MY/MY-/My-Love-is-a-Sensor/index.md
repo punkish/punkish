@@ -14,7 +14,7 @@ stars      :
 
 <img src='/entry-files/M/MY/MY-/My-Love-is-a-Sensor/img/punkishheartssensor.png' style="position: fixed; z-index: -10;">
 
-When I saw it first that thing,  
+When I saw it first, that thing  
 Was covered in argentum bling,  
 Lucent display shy and bold.  
 A flash of light, a ray, a shine,  

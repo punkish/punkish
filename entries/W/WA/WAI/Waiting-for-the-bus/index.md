@@ -6,14 +6,14 @@ created    : 2013-08-03 15:49:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Göteborg
     - Sweden
 stars      : 
-layout     : full-screen-image
-background : waiting_for_the_bus.JPG
 ---
 
-Waiting for the bus in Göteborg
-
+<figure>
+    <img src="waiting_for_the_bus.JPG">
+    <figcaption>Waiting for the bus in Göteborg</figcaption>
+</figure>

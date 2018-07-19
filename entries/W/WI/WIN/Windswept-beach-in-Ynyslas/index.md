@@ -6,16 +6,19 @@ created    : 2016-02-08 15:08:00
 viewcount  : 42
 id         : 68
 gmap       :
-tags        :
+tags       :
     - photos
     - Ynyslas
     - Borth
     - Wales
     - UK
 stars      :
-background : beach.jpg
-layout     : full-screen-image
 ---
+
+<figure>
+    <img src="beach.jpg">
+    <figcaption>Ynyslas</figcaption>
+</figure>
 
 I've been sitting on this photo for almost eight months since I took it on a really windy day on the shores of the Cardigan Bay. From the wikipedia, 
 

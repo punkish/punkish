@@ -6,14 +6,16 @@ created    : 2014-02-21 18:05:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Lucknow
     - India
     - portraits
 stars      : 
-layout     : full-screen-image
-background : P8200589.jpg
 ---
 
-The svelte form of this policeman can stop all traffic
+<figure>
+    <img src="P8200589.jpg">
+    <figcaption>The svelte form of this policeman can stop all traffic</figcaption>
+</figure>
+

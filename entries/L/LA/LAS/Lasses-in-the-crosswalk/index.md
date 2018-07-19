@@ -6,13 +6,15 @@ created    : 2012-12-23 11-51-00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Denmark
     - Copenhagen
 stars      : 
-layout     : full-screen-image
-background : crosswalk.JPG
 ---
 
-Lasses in the crosswalk, that's all
+<figure>
+    <img src="crosswalk.JPG">
+    <figcaption>Lasses in the crosswalk, that's all</figcaption>
+</figure>
+

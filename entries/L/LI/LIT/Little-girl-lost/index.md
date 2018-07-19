@@ -6,14 +6,17 @@ created    : 2015-12-01 12:20:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Lucknow
     - India
 stars      : 
-layout     : full-screen-image
-background : KBAC2128.jpg
 ---
+
+<figure>
+    <img src="KBAC2128.jpg">
+    <figcaption>A Little Girl Lost</figcaption>
+</figure>
 
 Children of the future age,  
 Reading this indignant page,  

@@ -6,14 +6,16 @@ created    : 2015-10-28 15:03:00
 viewcount  : 42
 id         : 68
 gmap       :
-tags        :
+tags       :
     - photos
     - Hamburg
     - Germany
     - portraits
 stars      :
-background : deichtorhallen.jpg
-layout     : full-screen-image
 ---
 
-At the Kunsthalle in Hamburg
+<figure>
+    <img src="deichtorhallen.jpg">
+    <figcaption>At the Kunsthalle in Hamburg</figcaption>
+</figure>
+

@@ -6,14 +6,15 @@ created    : 2016-10-21 10:00:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Lucknow
     - India
     - portraits
 stars      : 
-layout     : full-screen-image
-background : IMG_7412.jpg
 ---
 
-Once or twice a month he does gardening in my mom's garden.
+<figure>
+    <img src="IMG_7412.jpg">
+    <figcaption>Once or twice a month he does gardening in my mom's garden</figcaption>
+</figure>

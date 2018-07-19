@@ -6,13 +6,14 @@ created    : 2015-08-21 09:48:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Istanbul
     - Turkey
 stars      : 
-layout     : full-screen-image
-background : IMG_0037.jpg
 ---
 
-These young women at Sultanahmet Čamii were doing what any young woman with a smartphone will do after finishing her prayers… take a selfie.
+<figure>
+    <img src="IMG_0037.jpg">
+    <figcaption>These young women at Sultanahmet Čamii were doing what any young woman with a smartphone will do after finishing her prayers… take a selfie</figcaption>
+</figure>

@@ -6,13 +6,14 @@ created    : 2016-09-27 20:46:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Marseille
     - France
 stars      : 
-layout     : full-screen-image
-background : marseille.jpg
 ---
 
-The Marseille vieux port, as seen from the ramparts of the Fort Saint-Jean
+<figure>
+    <img src="marseille.jpg">
+    <figcaption>The Marseille vieux port, as seen from the ramparts of the Fort Saint-Jean</figcaption>
+</figure>

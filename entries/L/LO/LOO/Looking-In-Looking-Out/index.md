@@ -6,14 +6,16 @@ created    : 2015-08-27 16:46:59
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Istanbul Modern
     - Istanbul
     - Turkey
 stars      : 
-layout     : full-screen-image
-background : IMG_2262.jpg
 ---
 
- at Istanbul Modern 
+<figure>
+    <img src="IMG_2262.jpg">
+    <figcaption>at Istanbul Modern</figcaption>
+</figure>
+ 

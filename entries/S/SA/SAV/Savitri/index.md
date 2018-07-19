@@ -6,14 +6,15 @@ created    : 2014-02-21 18:05:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Lucknow
     - India
     - portraits
 stars      : 
-layout     : full-screen-image
-background : P0005118.jpg
 ---
 
-Savitri, all dressed up
+<figure>
+    <img src="P0005118.jpg">
+    <figcaption>Savitri, all dressed up</figcaption>
+</figure>

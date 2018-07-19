@@ -6,14 +6,16 @@ created    : 2013-08-03 15:49:00
 viewcount  : 42
 id         : 68
 gmap       :
-tags        :
+tags       :
     - photos
     - Berlin
     - Germany
     - portraits
 stars      :
-layout     : full-screen-image
-background : u_bahn.JPG
 ---
 
-A fellow traveler
+<figure>
+    <img src="u_bahn.JPG">
+    <figcaption>A fellow traveler</figcaption>
+</figure>
+

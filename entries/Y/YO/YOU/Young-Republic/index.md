@@ -6,14 +6,16 @@ created    : 2015-07-27 19:57:25
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - République
     - Paris
     - France
 stars      : 
-background : IMG_1818.jpg
-layout     : full-screen-image
 ---
 
-Waiting for a connection at République
+<figure>
+    <img src="IMG_1818.jpg">
+    <figcaption>Waiting for a connection at République</figcaption>
+</figure>
+

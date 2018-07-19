@@ -6,15 +6,17 @@ created    : 2013-08-03 15:49:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Paris
     - France
     - cranes
 stars      : 
-layout     : full-screen-image
-background : twin-towers.jpg
 ---
 
-La tour Eiffel et une grue marquer le ciel Parisien
+<figure>
+    <img src="twin-towers.jpg">
+    <figcaption>La tour Eiffel et une grue marquer le ciel Parisien</figcaption>
+</figure>
+
 

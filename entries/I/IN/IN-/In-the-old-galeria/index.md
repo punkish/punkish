@@ -6,13 +6,15 @@ created    : 2012-12-23 11-51-00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Argentina
     - Buenos Aires
 stars      : 
-layout     : full-screen-image
-background : IMG_3979.JPG
 ---
 
-Confab
+<figure>
+    <img src="IMG_3979.JPG">
+    <figcaption>Confab</figcaption>
+</figure>
+
