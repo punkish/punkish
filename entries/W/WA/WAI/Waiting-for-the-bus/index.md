@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="waiting_for_the_bus.JPG">
+    <img src="waiting_for_the_bus.jpg">
     <figcaption>Waiting for the bus in Göteborg</figcaption>
 </figure>

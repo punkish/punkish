@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="u_bahn.JPG">
+    <img src="u_bahn.jpg">
     <figcaption>A fellow traveler</figcaption>
 </figure>
 
