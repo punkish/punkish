@@ -55,10 +55,10 @@ CPI, calculated using the following three formulae, is the product of rarity, ex
 2. ER = log(10 x Original Area / Remaining Area)
 3. PS = log (Original Area / Protected Area)
 
-<div class="halfWidth">
-<img class="bar" src="biovalue.png" width="100%">
-<b>Biovalue</b>
-</div>
+<figure>
+    <img src="biovalue.png">
+    <figcaption>Biovalue</figcaption>
+</figure> 
 
 **Spatial Analysis**
 
@@ -73,7 +73,7 @@ The resulting composite map was used to generate an area matrix used for calcula
 
 <figure>
     <img src="cost.png">
-    <figcaption>biovalue</figcaption>
+    <figcaption>cost</figcaption>
 </figure> 
 
 The biovalue array was utilized to calculate the opportunity cost of conserving biodiversity.
