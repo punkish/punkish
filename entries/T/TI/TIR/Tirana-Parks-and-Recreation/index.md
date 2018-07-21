@@ -11,7 +11,7 @@ tags       :
     - cafés
     - bars
 stars      : 
-layout     : qgis-mapper
+js         : tirana
 ---
 
 Agjencia e Parqeve dhe Rekreacionit Tiranë

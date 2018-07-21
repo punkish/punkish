@@ -13,9 +13,8 @@ tags       :
 stars      : 
 css        : led-strip
 js         : led-strip
-isLEDStrip : true
+layout     : led-strip
 ---
-
 
 <div id="led-strip"></div>
 <canvas id="smoothie-chart" width="550" height="50">

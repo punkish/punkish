@@ -6,7 +6,7 @@ created    : 2012-03-06 11-23-00
 viewcount  : 0
 id         :
 gmap       :
-tags        :
+tags       :
     - code
     - PL/R
     - R
@@ -21,9 +21,12 @@ A Voronoi diagram represents proximity information about a set of points. The po
 
 > Voronoi diagrams were first discussed by Peter Lejeune-Dirichlet in 1850. But it was more than a half of a century later in 1908 that these diagrams were written about in a paper by Voronoi, hence the name Voronoi Diagrams. The Voronoi cells/polygons are sometimes also called Thiessen Polytopes or Dirichlet Regions.
 
-![macrostrat](macrostrat.jpg)
+<figure>
+	<img src="macrostrat.jpg">
+	<figcaption>Macrostrat</figcaption>
+</figure>
 
-Ever wanted to create a Voronoi tessellation for your points? Well, <a href="http://earth-base.org/strats">so have I, for our Macrostrat points</a>. Fortunately for us, others already figured out how to do this. I have dusted off the original code by [Mike Leahy](http://www.linkedin.com/in/mgleahy) ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.
+Ever wanted to create a Voronoi tessellation for your points? Well, so have I, for our Macrostrat points. Fortunately for us, others already figured out how to do this. I have dusted off the original code by [Mike Leahy](http://www.linkedin.com/in/mgleahy) ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.
 
 <pre class="brush: sql"><code>
 	SELECT v.id, v.polygon

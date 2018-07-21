@@ -2,12 +2,17 @@
 
 const moment = require('moment');
 const utils = require('../utils.js');
-const toTitleCase = function(str) {
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-};
 
 const entries = {
     method: 'GET',
+
+    /*
+     *
+     * /entries<?by=dates>
+     * /entries?q=<searchterm>
+     * /entries?by=tags
+     * 
+     */
 
     path: '/entries',
 
@@ -18,26 +23,41 @@ const entries = {
 
     handler: function (request, h) {
 
-        
-        if (request.query.sortedBy) {
-            return h.view(
-                `index-by-${request.query.sortedBy}`, 
-                {
-                    posts: request.server.app.posts['sortedBy' + toTitleCase(request.query.sortedBy)],
-                    created: moment().format('MMM DD, YYYY')
-                },
-                { layout: 'main' }
-            );
+        let template;
+        let data = {
+            'created': moment().format('MMM DD, YYYY')
+        };
+        let layout = 'combo';
+
+        if (request.query['by']) {
+            template = `entries-by-${request.query['by']}`;
+            data['posts'] = request.server.app.posts['by' + utils.toTitleCase(request.query['by'])];
+        }
+        else if (request.query['q']) {
+            template = 'search';
+            data['search_results'] = idx.search(q).map(function(result) {
+                return {
+                    ref : result.ref,
+                    disp : result.ref.replace(/-/g, ' ')
+                }
+            });
         }
         else {
-            return h.view(
-                `index-of-entries`, 
-                {
-                    created: moment().format('MMM DD, YYYY')
-                },
-                { layout: 'main' }
-            );
+            template = 'entries-by-date';
+            data['posts'] = request.server.app.posts['byDate'];
         }
+
+        return h.view(
+
+            // content template
+            template, 
+
+            // data
+            data,
+
+            // layout
+            { layout: layout }
+        );
         
     }
 };

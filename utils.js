@@ -15,13 +15,24 @@ const dir = './entries';
 const untaggedLabel = 'untagged';
 
 const utils = {
+    toTitleCase: function(str) {
+        return str.replace(
+            /\w\S*/g, 
+            function(txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            }
+        );
+    },
+
     hanoz: [],
 
     getEntry: function(options) {
-        const file = options['file'] || '';
-        const subfile = options['subfile'] || '';
-        const queryParam = options['queryParam'] || '';
-        const singleEntry = options['singleEntry'] || '';
+        const file = options['file'];
+        const subfile = options['subfile'];
+        const queryParam = options['queryParam'];
+        const singleEntry = options['singleEntry'];
+
+        //console.log(options);
 
         const o = file.substr(0, 1).toUpperCase();
         const t = file.substr(0, 2).toUpperCase();
@@ -38,7 +49,7 @@ const utils = {
         const entryIndex = `${entryDir}/index.md`;
         
         try {
-            if ((file.toLowerCase() === 'hanoz') && (queryParam === 'book')) {
+            if ((file.toLowerCase() === 'hanoz') && (queryParam === 'presentation')) {
 
                 if (this.hanoz.length == 0) {
                     this.buildHanozIndex();
@@ -52,11 +63,9 @@ const utils = {
             }
             else {
                 fs.accessSync(entryIndex, fs.constants.R_OK);
-
                 const fileContents = fs.readFileSync(entryIndex, 'utf8');
 
                 let entry = Yaml.loadFront(fileContents);
-                
                 if (entry) {
 
                     // format user-entered date using moment
@@ -90,33 +99,41 @@ const utils = {
                                 /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
                                 `img src="/entry-files/${entryUrl}/img/$1.$2$3`
                             );
-                            
+
                             // find prev and next entries
                             let i = 0;
-                            const j = this.posts.sortedByDates.length;
+                            const j = this.posts.byDate.length;
                             for (; i < j; i++) {
-                                if (file === this.posts.sortedByDates[i]['file']) {
+                                if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
                                     if (i == 0) {
-                                        entry.prev = this.posts.sortedByDates[i];
+                                        entry.prev = this.posts.byDate[i];
                                     }
                                     else if (i > 1) {
-                                        entry.prev = this.posts.sortedByDates[i - 1];
+                                        entry.prev = this.posts.byDate[i - 1];
                                     }
                                     
                                     if (i < j) {
-                                        entry.next = this.posts.sortedByDates[i + 1];
+                                        entry.next = this.posts.byDate[i + 1];
                                     }
                                     else if (i == j) {
-                                        entry.next = this.posts.sortedByDates[i];
+                                        entry.next = this.posts.byDate[i];
                                     }
                                     
                                     break;
                                 }
                             }
+                        }
 
-                            if (entry.js) {
-                                entry.isJs = true;
-                            }
+                        if (entry.tags && entry.tags.includes('code')) {
+                            entry.hasCode = true;
+                        }
+
+                        if (entry.css) {
+                            entry.hasCss = true;
+                        }
+
+                        if (entry.js) {
+                            entry.hasJs = true;
                         }
                     }
 
@@ -173,8 +190,8 @@ const utils = {
     },    
 
     posts: {
-        sortedByTags: {},
-        sortedByDates: []
+        byTag: {},
+        byDate: []
     },
 
     dirWalker: function(start) {
@@ -207,24 +224,24 @@ const utils = {
     
                     if (entry.tags) {
                         for (i = 0, j = entry.tags.length; i < j; i++) {
-                            if (this.posts.sortedByTags[entry.tags[i]]) {
-                                this.posts.sortedByTags[entry.tags[i]].push(entryIdx);
+                            if (this.posts.byTag[entry.tags[i]]) {
+                                this.posts.byTag[entry.tags[i]].push(entryIdx);
                             }
                             else {
-                                this.posts.sortedByTags[entry.tags[i]] = [entryIdx]
+                                this.posts.byTag[entry.tags[i]] = [entryIdx]
                             }
                         }
                     }
                     else {
-                        if (this.posts.sortedByTags[untaggedLabel]) {
-                            this.posts.sortedByTags[untaggedLabel].push(entryIdx);
+                        if (this.posts.byTag[untaggedLabel]) {
+                            this.posts.byTag[untaggedLabel].push(entryIdx);
                         }
                         else {
-                            this.posts.sortedByTags[untaggedLabel] = [entryIdx]
+                            this.posts.byTag[untaggedLabel] = [entryIdx]
                         }
                     }
                     
-                    this.posts.sortedByDates.push(entryIdx);
+                    this.posts.byDate.push(entryIdx);
                 }
             }
         }
@@ -234,7 +251,7 @@ const utils = {
         
         this.dirWalker(dir);
         
-        this.posts.sortedByDates.sort(function(a, b) {
+        this.posts.byDate.sort(function(a, b) {
             if (a.created < b.created) {
                 return 1;
             }

@@ -6,21 +6,27 @@ const defaultEntry = {
     method: 'GET',
     path: '/',
     config: {
-        description: "dynamic serving of a specific entry",
+        description: "serve the latest entry if no specific entry is requested",
         tags: ['private']
     },
     handler: function (request, h) {
 
-        const file = request.server.app.posts.sortedByDates[0]['file'];
         const entryData = utils.getEntry({
-            file: file, 
-            queryParam: null, 
+            file: request.server.app.posts.byDate[0]['file'], 
+            subfile: '',
+            queryParam: '', 
             singleEntry: true
         });
         
         return h.view(
+
+            // content template
             entryData.type || 'entry', 
+
+            // data
             entryData,
+
+            // layout
             { layout: entryData.layout || 'main' }
         );
     }

@@ -6,7 +6,7 @@ created    : 2012-01-03 18:31:00
 viewcount  : 0
 id         : 569
 gmap       : 
-tags       : 
+tags       : poetry, Urdu
 stars      : 
 ---
 
@@ -24,6 +24,6 @@ My dad, Dr. Kesri Kishor, was a teacher, a professor of pharmacology at King Geo
 
 Since I didn’t understand the meaning of the couplet that inspired the title of the book, I turned [Hajnalka Kovács](<a href="https://sas.fas.harvard.edu/people/catherine-warner" target="_blank">)[^1], a scholar of “Bedil” at the University of Chicago, who very kindly translated the above couplet.
 
-Now, 34 years after the book was published, I have made available the [entire content of the book, along with Hindi transliteration of the poems where available](/Hanoz?book). This is a long-term project, and as I, with the help of a few dear friends, am able to transliterate more poems, I will add them to the web site.
+Now, 34 years after the book was published, I have made available the [entire content of the book, along with Hindi transliteration of the poems where available](/Hanoz?show=presentation). This is a long-term project, and as I, with the help of a few dear friends, am able to transliterate more poems, I will add them to the web site.
 
 [^1]: Hajnalka Kovács was completing her Ph.D. at the University of Chicago when I contacted her in 2011. <a href="https://sas.fas.harvard.edu/people/catherine-warner" target="_blank">She is now a preceptor</a> at the Dept. of South Asian Studies at Harvard University.

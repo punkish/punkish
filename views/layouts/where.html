@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>punkish</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
-    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/entry-files/{{entryDir}}/css/{{css}}.css">
-
-    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+{{> meta}}
 </head>
 <body>
     <div class="container">
-        {{> header}}
-
-        {{{content}}}
-        
-        {{> footer}}
+    {{> header}}
+    
+    {{{content}}}
+    
+    {{> footer}}
     </div>
 
     <script src="/public/js/punkish.js"></script>
-    <script src="/entry-files/{{entryDir}}/js/{{js}}.js"></script>
+    <script src="/entry-files/W/WH/WHE/Where/js/where.js"></script>
     <script>
-    PK.where.init();
+        PK.where.init();
     </script>
 </body>
 </html>
