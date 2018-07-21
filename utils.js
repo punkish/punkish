@@ -105,10 +105,11 @@ const utils = {
                             const j = this.posts.byDate.length;
                             for (; i < j; i++) {
                                 if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
+
                                     if (i == 0) {
                                         entry.prev = this.posts.byDate[i];
                                     }
-                                    else if (i > 1) {
+                                    else if (i > 0) {
                                         entry.prev = this.posts.byDate[i - 1];
                                     }
                                     
