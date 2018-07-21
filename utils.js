@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+const lunr = require('lunr');
 const Yaml = require('yaml-front-matter');
 const showdown = require('showdown');
 const footnotes = require('./public/js/footnotes.js');
@@ -15,6 +16,7 @@ const dir = './entries';
 const untaggedLabel = 'untagged';
 
 const utils = {
+
     toTitleCase: function(str) {
         return str.replace(
             /\w\S*/g, 
@@ -220,6 +222,8 @@ const utils = {
                     const entryIdx = {
                         title: entry.title,
                         file: file,
+                        tags: entry.tags,
+                        body: entry.__content,
                         created: entry.created
                     };
     
@@ -263,8 +267,22 @@ const utils = {
             // names must be equal
             return 0;
         });
-        
-        //console.log(this.posts.sortedByDates)
+
+        utils['idx'] = lunr(function () {
+            this.field('title', { boost: 10 }),
+            this.field('tags'),
+            this.field('body'), { boost: 20 },
+            this.ref('file')
+
+            utils.posts.byDate.forEach(function (doc) {
+                this.add(doc)
+            }, this)
+        });
+
+        // for (var i=0; i<utils.posts.byDate.length; i++) {
+        //     utils.idx.add(utils.posts.byDate[i]);
+        // }
+
         return this.posts;
     }
 };

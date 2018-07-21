@@ -1,0 +1,10 @@
+<section class="row">
+    <h1 class="title">Search Results</h1>
+    <div class="date">{{created}}</div>
+
+    <ul class="content">
+        {{#search_results}}
+        <li class="punkish-entries"><a href="/{{ref}}">{{disp}}</a></li>
+        {{/search_results}}
+    </ul>
+</section>

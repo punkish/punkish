@@ -27,15 +27,16 @@ const entries = {
         let data = {
             'created': moment().format('MMM DD, YYYY')
         };
-        let layout = 'combo';
+        let layout = 'main';
 
         if (request.query['by']) {
             template = `entries-by-${request.query['by']}`;
             data['posts'] = request.server.app.posts['by' + utils.toTitleCase(request.query['by'])];
         }
         else if (request.query['q']) {
+            const q = request.query['q'];
             template = 'search';
-            data['search_results'] = idx.search(q).map(function(result) {
+            data['search_results'] = utils.idx.search(q).map(function(result) {
                 return {
                     ref : result.ref,
                     disp : result.ref.replace(/-/g, ' ')
