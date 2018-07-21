@@ -1,4 +1,4 @@
-PK['qgismapper'] = {
+PK['tirana'] = {
     init: function() {
         var highlightLayer;
 
@@ -87,7 +87,7 @@ PK['qgismapper'] = {
         raster_group.addTo(map);
         feature_group.addTo(map);
         var baseMaps = {'OSM HOT': basemap0};
-        L.control.layers(baseMaps,{'<img src="/entry-files/{{entryDir}}/img/parcels0.png" /> parcels': json_parcels0JSON,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="/entry-files/T/TI/TIR/Tirana-Parks-and-Recreation/img/parcels0.png" /> parcels': json_parcels0JSON,},{collapsed:false}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: feature_group,

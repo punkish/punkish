@@ -12,6 +12,7 @@ tags       :
     - bars
 stars      : 
 js         : tirana
+layout     : qgis-mapper
 ---
 
 Agjencia e Parqeve dhe Rekreacionit Tiranë
