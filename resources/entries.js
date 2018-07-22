@@ -30,6 +30,7 @@ const entries = {
         let layout = 'main';
 
         if (request.query['by']) {
+
             template = `entries-by-${request.query['by']}`;
             data['posts'] = request.server.app.posts['by' + utils.toTitleCase(request.query['by'])];
         }

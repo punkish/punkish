@@ -113,7 +113,7 @@ const utils = {
                 };
             }
             else {
-                //fs.accessSync(entryIndex, fs.constants.R_OK);
+
                 const fileContents = fs.readFileSync(entryIndex, 'utf8');
 
                 let entry = Yaml.loadFront(fileContents);
@@ -328,6 +328,15 @@ const utils = {
                 this.add(doc)
             }, this)
         });
+
+        //fs.writeFileSync('public/js/lunridx.json', JSON.stringify(utils.idx), 'utf8');
+
+        let postsByTitle = [];
+        this.posts.byDate.forEach(function(el) {
+            postsByTitle.push([el.title, el.file]);
+        });
+
+        fs.writeFileSync('public/js/posts.js', JSON.stringify(postsByTitle.sort()));
 
         return this.posts;
     }

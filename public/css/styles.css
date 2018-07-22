@@ -9,6 +9,8 @@ header {
 }
 header div {
 	border-bottom: 1px solid lightgrey;
+	overflow: hidden;
+	width: 100%
 }
 nav a {
 	margin-right: 0.75em;
@@ -23,12 +25,18 @@ ul.tags:after {
 	margin-bottom: 2em;
 }
 .tags li {
-  float: left;
+  	float: left;
 	margin-right: 0.75em;
 	border: solid 1px grey;
 	padding: 0 5px 0 5px;
 	border-radius: 5px;
 	font-size: small;
+}
+.tags li:hover {
+	background-color: yellow;
+}
+.tags li a {
+	text-decoration: none;
 }
 ul.bottomNav {
 	clear: both;
@@ -78,4 +86,18 @@ figure img {
 }
 .archive u {
 	color: white;
+}
+header div img {
+	float: left;
+}
+header div form {
+	float: left;
+	height: 0px;
+}
+input[name=q] {
+	width: 220px;
+	border: none;
+}
+header nav {
+	float: left;
 }

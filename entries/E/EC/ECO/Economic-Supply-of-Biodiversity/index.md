@@ -120,4 +120,3 @@ Spatial data from RePPProt Land Use maps at 1:250,000 were digitized in Arcinfo 
 <object id="paper" data="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf" type="application/pdf" width="100%" style="height:80vh;">
      <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf">Download PDF</a>.</p>
 </object>
-
