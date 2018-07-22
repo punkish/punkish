@@ -1,0 +1,12 @@
+body, header, footer, #searchform, #q {
+    background-color: #444 !important;
+    color: #fff !important;
+}
+
+#bottombanner a, #bottommenu a, footer a {
+    color: #39f !important;
+}
+
+p.big {
+    font-size: x-large;
+}
