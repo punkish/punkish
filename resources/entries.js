@@ -36,7 +36,8 @@ const entries = {
         else if (request.query['q']) {
             const q = request.query['q'];
             template = 'search';
-            data['search_results'] = utils.idx.search(q).map(function(result) {
+            data['searchTitle'] = 'Search Results';
+            data['searchResults'] = utils.idx.search(q).map(function(result) {
                 return {
                     ref : result.ref,
                     disp : result.ref.replace(/-/g, ' ')

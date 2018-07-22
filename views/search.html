@@ -1,10 +1,12 @@
 <section class="row">
-    <h1 class="title">Search Results</h1>
+    <h1 class="title">{{searchTitle}}</h1>
     <div class="date">{{created}}</div>
 
+    <div class="content">{{searchMessage}}</div>
+
     <ul class="content">
-        {{#search_results}}
+        {{#searchResults}}
         <li class="punkish-entries"><a href="/{{ref}}">{{disp}}</a></li>
-        {{/search_results}}
+        {{/searchResults}}
     </ul>
 </section>

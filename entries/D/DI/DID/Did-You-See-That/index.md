@@ -6,15 +6,14 @@ created    : 2015-06-29 09:18:07
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - photos
     - Edinburgh
     - Scotland
 stars      : 
 ---
 
-<div class="halfWidth">
-<img class="bar" src="IMG_1364.jpg" width="100%">
-</div>
-
-What sparked the little guy's curiosity ?
+<figure>
+    <img src="IMG_1364.jpg">
+    <figcaption>What sparked the little guy's curiosity?</figcaption>
+</figure>

@@ -6,7 +6,7 @@ created    : 2015-11-25 17:44:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - commentary
     - open licensing
     - RDA
@@ -19,9 +19,10 @@ stars      :
 
 So, RDA/US launched a [new website](http://us.rd-alliance.org) "blending modern design, streamlined navigation and a user-friendly experience." Congratulations for entering the modern era, something that the [main RDA website](http://rd-alliance.org) still can’t claim to have done. But once I scrolled passed the blinking lights, what do I see?
 
-<div class="halfWidth">
-<img class='bar' src='/data/E/EV/EVI/Evil-communications/rda-arr.png' width="100%">
-</div>
+<figure>
+    <img src="rda-arr.png">
+    <figcaption>All Rights Reserved</figcaption>
+</figure>
 
 > © 2015 Research Data Alliance, All rights reserved.
 
@@ -35,9 +36,10 @@ Hmmm… curious that I am, I click on [Terms of Services](http://us.rd-alliance.
 
 Fair enough. Moving on…
 
-<div class="halfWidth">
-<img class='bar' src='/data/E/EV/EVI/Evil-communications/rda-tos.png' width="100%">
-</div>
+<figure>
+    <img src="rda-tos.png">
+    <figcaption>Terms of Service</figcaption>
+</figure>
 
 <!--
 > ### Copyright/Intellectual Property

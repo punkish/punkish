@@ -15,8 +15,7 @@ stars      :
 ---
 
 
-<div class="halfWidth" style="font-size: 2em; font-weight: bold;">- .... . / --. .-. . .- - . ... - / -- -.-- ... - . .-. -.--</div>
-
+<div style="font-size: 2em; font-weight: bold;">- .... . / --. .-. . .- - . ... - / -- -.-- ... - . .-. -.--</div>
 ----
 
 I heard those words in different tongues  

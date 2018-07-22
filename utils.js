@@ -28,30 +28,79 @@ const utils = {
 
     hanoz: [],
 
+    findFile: function(file) {
+
+        // since the user-entered file could be different from the 
+        // actual file on disk (different case, different words, etc.)
+        // we have to figure out the correct file. We do that by 
+        // finding its instance in the pre-built 'posts' index
+        for (let i = 0, j = utils.posts.byDate.length; i < j; i++) {
+            if (file.toLowerCase() === utils.posts.byDate[i]['file'].toLowerCase()) {
+                file = utils.posts.byDate[i]['file'];
+                return file;
+            }
+        }
+
+        return {
+            type: 'search',
+            created: moment().format('MMM DD, YYYY'),
+            searchTitle: 'Error',
+            searchMessage: "The page you requested doesn't exist. Perhaps you were looking for one of the following.",
+            layout: 'main',
+            searchResults: utils.idx.search(`title:${file}~1`).map(function(result) {
+                return {
+                    ref : result.ref,
+                    disp : result.ref.replace(/-/g, ' ')
+                }
+            })
+        };
+    },
+
     getEntry: function(options) {
-        const file = options['file'];
-        const subfile = options['subfile'];
+        let file = options['file'];
+        let subfile = options['subfile'];
         const queryParam = options['queryParam'];
         const singleEntry = options['singleEntry'];
 
-        //console.log(options);
+        if (singleEntry) {
 
+            const res = this.findFile(file);
+            if (typeof(res) === 'string') {
+                file = res;
+            }
+            else {
+                return res;
+            }
+        }
+        
+
+        // construct the entry directory and the entry URL
         const o = file.substr(0, 1).toUpperCase();
         const t = file.substr(0, 2).toUpperCase();
         const r = file.substr(0, 3).toUpperCase();
-
         let entryDir = `./entries/${o}/${t}/${r}/${file}`;
         let entryUrl = `${o}/${t}/${r}/${file}`;
 
+        // modify the entry direction and the entry URL if a subfile is present
         if (subfile) {
+
+            const res = this.findFile(subfile);
+            if (typeof(res) === 'string') {
+                subfile = res;
+            }
+            else {
+                return res;
+            }
+
             entryDir = `./entries/${o}/${t}/${r}/${file}/${subfile}`;
             entryUrl = `${o}/${t}/${r}/${file}/${subfile}`;
         }
 
+        // this is the path to the actual entry file
         const entryIndex = `${entryDir}/index.md`;
         
         try {
-            if ((file.toLowerCase() === 'hanoz') && (queryParam === 'presentation')) {
+            if ((file === 'Hanoz') && (queryParam === 'presentation')) {
 
                 if (this.hanoz.length == 0) {
                     this.buildHanozIndex();
@@ -64,7 +113,7 @@ const utils = {
                 };
             }
             else {
-                fs.accessSync(entryIndex, fs.constants.R_OK);
+                //fs.accessSync(entryIndex, fs.constants.R_OK);
                 const fileContents = fs.readFileSync(entryIndex, 'utf8');
 
                 let entry = Yaml.loadFront(fileContents);
@@ -268,20 +317,17 @@ const utils = {
             return 0;
         });
 
+        // create the search index and store it for later use
         utils['idx'] = lunr(function () {
             this.field('title', { boost: 10 }),
             this.field('tags'),
             this.field('body'), { boost: 20 },
-            this.ref('file')
+            this.ref('file'),
 
             utils.posts.byDate.forEach(function (doc) {
                 this.add(doc)
             }, this)
         });
-
-        // for (var i=0; i<utils.posts.byDate.length; i++) {
-        //     utils.idx.add(utils.posts.byDate[i]);
-        // }
 
         return this.posts;
     }

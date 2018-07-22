@@ -6,51 +6,43 @@ created    : 2016-07-09 00:00:00
 viewcount  : 0
 id         : 700
 gmap       : 
-tags        :
+tags       :
     - Montreal Jazz Festival 2016
     - photos
 stars      : 
 ---
 
-<div class="halfWidth">
-<img class="bar" src="jazz_anim.gif" width="100%">
-ten days of music
-</div>
+<figure>
+    <img src="jazz_anim.gif">
+    <figcaption>ten days of music</figcaption>
+</figure>
 
-<br clear="left">
+<figure>
+    <img src="kid.jpg">
+    <figcaption>young listener</figcaption>
+</figure>
 
-<div class="halfWidth">
-<img class="bar" src="kid.jpg" width="100%">
-young listener
-</div>
+<figure>
+    <img src="tia-brazda.jpg">
+    <figcaption>Tia Brazda</figcaption>
+</figure>
 
-<br clear="left">
+<figure>
+    <img src="IMG_5973.jpg">
+    <figcaption>the crowds</figcaption>
+</figure>
 
-<div class="halfWidth">
-<img class="bar" src="tia-brazda.jpg" width="100%">
-Tia Brazda
-</div>
+<figure>
+    <img src="IMG_6022.jpg">
+    <figcaption>getting ready</figcaption>
+</figure>
 
-<br clear="left">
+<figure>
+    <img src="IMG_6076.jpg">
+    <figcaption></figcaption>
+</figure>
 
-![the crowds](IMG_5973.jpg)
-the crowds
-
-<br clear="left">
-
-<div class="halfWidth">
-<img class="bar" src="IMG_6022.jpg" width="100%">
-getting ready
-</div>
-
-<br clear="left">
-
-<div class="halfWidth">
-<img class="bar" src="IMG_6076.jpg" width="100%">
-</div>
-
-<br clear="left">
-
-<div class="halfWidth">
-<img class="bar" src="style.jpg" width="100%">
-</div>
+<figure>
+    <img src="style.jpg">
+    <figcaption></figcaption>
+</figure>

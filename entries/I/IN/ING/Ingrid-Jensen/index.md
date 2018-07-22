@@ -6,7 +6,7 @@ created    : 2016-07-09 00:00:00
 viewcount  : 0
 id         : 700
 gmap       : 
-tags        :
+tags       :
     - Montreal Jazz Festival 2016
     - photos
 stars      : 
@@ -14,14 +14,12 @@ stars      :
 
 Ingrid Jensen, who played with the Marianne Trudel Trio, was a great revelation.
 
-<div class="halfWidth">
-<img class="bar" src="ingrid-jensen.jpg" width="100%">
-Ingrid Jensen
-</div>
+<figure>
+    <img src="ingrid-jensen.jpg">
+    <figcaption>Ingrid Jensen</figcaption>
+</figure>
 
-<br clear="left">
-
-<div class="halfWidth">
-<img class="bar" src="IMG_6044.jpg" width="100%">
-</div>
-
+<figure>
+    <img src="IMG_6044.jpg">
+    <figcaption>Ingrid Jensen</figcaption>
+</figure>

@@ -20,11 +20,10 @@ On the ContentMine Slack channel, Chris Hartgerink made an off-hand comment wish
 ★ The API is fully-documented (Swagger, I/O, homegrown, doesn't matter) and is browsable (HATEOAS)  
 ★ There are no throttling limits
 
-<div class="halfWidth">
-<img class="bar" src="badge.png" width="300">
-</div>
-
-<br clear="both">
+<figure>
+    <img src="badge.png">
+    <figcaption></figcaption>
+</figure>
 
 The stars are mutually exclusive, so it is possible to have 0 to 5 stars. Fewer than 3 stars make the publisher unfriendly, and three or more stars make the publisher TDM-friendly.
 

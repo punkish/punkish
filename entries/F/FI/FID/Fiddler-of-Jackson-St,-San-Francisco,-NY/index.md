@@ -6,15 +6,16 @@ created    : 2013-12-22
 viewcount  : 0
 id         : 232
 gmap       : 
-tags        :
+tags       :
     - prose
     - San Francisco
 stars      : 
 ---
 
-<div class="halfWidth">
-<img class="bar" src="mark.gif" width="100%">
-</div>
+<figure>
+    <img src="mark.gif">
+    <figcaption>The fiddler</figcaption>
+</figure>
 
 The window said “Mark’s Hair Cutting Salon $8 and up.” But the salon was empty except for the wail of the violin. He was sitting in the corner, wielding the bow in the same chair where usually a Chinese lady would sit to get her hair cut, for $8 and up. When the tune stopped, I asked him:
 
