@@ -337,30 +337,31 @@ PK['a-list'] = {
 
     // create custom icons for each layerGroup
     classifyPoints: function() {
+        const imgDir = 'entry-files/A/A-/A-L/A-List/img';
 
         let layerGroups = {
             'restaurant': {
-                iconUrl: '/img/cafe-food.svg',
+                iconUrl: `${imgDir}/cafe-food.svg`,
                 markers: [],
                 layerGroup: null
             },
             'salon de thé': {
-                iconUrl: '/img/cafe-coffee.svg',
+                iconUrl: `${imgDir}/cafe-coffee.svg`,
                 markers: [],
                 layerGroup: null
             },
             'café': {
-                iconUrl: '/img/cafe-coffee.svg',
+                iconUrl: `${imgDir}/cafe-coffee.svg`,
                 markers: [],
                 layerGroup: null
             },
             'drinks': {
-                iconUrl: '/img/cafe-drinks.svg',
+                iconUrl: `${imgDir}/cafe-drinks.svg`,
                 markers: [],
                 layerGroup: null
             },
             'hidden delight': {
-                iconUrl: '/img/hidden-delight.svg',
+                iconUrl: `${imgDir}/hidden-delight.svg`,
                 markers: [],
                 layerGroup: null
             }
