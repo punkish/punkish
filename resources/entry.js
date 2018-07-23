@@ -28,6 +28,11 @@ const entry = {
             file = 'cv-latest';
         }
 
+        if (file === 'Circle-whose-center-is_everywhere') {
+            
+            return h.redirect('/Circle-whose-center-is-everywhere');
+        }
+
         let subfile = request.params['subentry'] || '';
 
         let queryParam = request.query['show'] || '';

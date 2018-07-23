@@ -1,5 +1,5 @@
 ---
-title      : <h1 class="title">A Circle Whose Center is Everywhere<sup id="punkish-fnref:1"><a href="#punkish-fn:1" rel="footnote">1</a></sup></h1>
+title      : A Circle Whose Center is Everywhere
 description: 
 modified   : 2018-07-23 00:31:00
 created    : 2018-07-23 00:31:00
