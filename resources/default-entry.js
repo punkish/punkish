@@ -11,24 +11,25 @@ const defaultEntry = {
     },
     handler: function (request, h) {
 
-        const entryData = utils.getEntry({
-            file: request.server.app.posts.byDate[0]['file'], 
-            subfile: '',
-            queryParam: '', 
-            singleEntry: true
-        });
+        return h.redirect(request.server.app.posts.byDate[0]['file']);
+        // const entryData = utils.getEntry({
+        //     file: request.server.app.posts.byDate[0]['file'], 
+        //     subfile: '',
+        //     queryParam: '', 
+        //     singleEntry: true
+        // });
         
-        return h.view(
+        // return h.view(
 
-            // content template
-            entryData.type || 'entry', 
+        //     // content template
+        //     entryData.type || 'entry', 
 
-            // data
-            entryData,
+        //     // data
+        //     entryData,
 
-            // layout
-            { layout: entryData.layout || 'main' }
-        );
+        //     // layout
+        //     { layout: entryData.layout || 'main' }
+        // );
     }
 };
 
