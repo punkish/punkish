@@ -65,6 +65,10 @@
         {{#hasJs}}
         PK['{{js}}'].init();
         {{/hasJs}}
+
+        {{#hasCode}}
+        hljs.initHighlighting();
+        {{/hasCode}}
     </script>
 </body>
 </html>
