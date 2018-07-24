@@ -54,6 +54,7 @@ li.next:before {
 figure {
 	width: 100%;
 	margin: 0;
+	margin-bottom: 1em;
 }
 figure img {
 	width: 100%;
