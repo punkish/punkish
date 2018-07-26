@@ -25,7 +25,7 @@ Some of what I may want seems innocuous—don’t take credit for my work, and i
 
 All these choices for the ways I can restrict you in what you can do with my work—obligating you to acknowledge me, preventing you from making money off of it, restricting you from creating new works based on it, forcing you to impose conditions on derivations of my work that are the same conditions as those I imposed on mine, these are not choices that increase freedom. These choices restrict freedom. Real freedom is when you have nothing left to choose.
 
-This is why, as long as I <strike>work at a university where I</strike> get paid to produce knowledge, I will use only [CC0 (CC Zero) waiver of license](http://creativecommons.org/about/cc0) for all my creations. See below for my CC0 public domain dedication.
+This is why, <strike>as long as I work at a university where I get paid to produce knowledge,</strike> I will use only [CC0 (CC Zero) waiver of license](http://creativecommons.org/about/cc0) for all my creations. See below for my CC0 public domain dedication.
 
 Acknowledgment [^1]
 
