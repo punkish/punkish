@@ -57,5 +57,26 @@ let PK = {
             leapY -= step;
             if (leapY < stopY) leapY = stopY; timer++;
         }
+    },
+
+    translateThis: function(e) {
+        if (this.dataset.key === '') {
+            this.dataset.key = this.innerHTML;
+            this.innerHTML = this.dataset.val;
+        }
+        else {
+            var tmp = this.dataset.key;
+            this.dataset.key = this.innerHTML;
+            this.innerHTML = tmp;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+    },
+
+    initializeDictionary: function() {
+        var pairs = document.getElementsByClassName('punkish-pair');
+        for (var i=0, j=pairs.length; i<j; i++) {
+            pairs[i].onclick = PK.translateThis;
+        }
     }
 };
