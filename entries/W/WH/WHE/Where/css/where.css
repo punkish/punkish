@@ -54,16 +54,16 @@
 
 /* bullets */
 #experiences li.before_now {
-    list-style: url('/entry-files/W/WH/WHE/Where/img/before_now.png');
+    list-style: url('/entry-files/W/WH/WHE/Where/img/img/before_now.png');
 }
 #experiences li.now {
-    list-style: url('/entry-files/W/WH/WHE/Where/img/now.gif');
+    list-style: url('/entry-files/W/WH/WHE/Where/img/img/now.gif');
 }
 #experiences li.after_now {
-    list-style: url('/entry-files/W/WH/WHE/Where/img/after_now.png');
+    list-style: url('/entry-files/W/WH/WHE/Where/img/img/after_now.png');
 }
 #experiences li.where_next {
-    list-style: url('/entry-files/W/WH/WHE/Where/img/where_next.png');
+    list-style: url('/entry-files/W/WH/WHE/Where/img/img/where_next.png');
 }
 
 /* lines */

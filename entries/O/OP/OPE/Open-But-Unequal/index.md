@@ -326,7 +326,7 @@ The content is behind login walls, is IP-protected and expensive
 .right-column[
 Labs and instruments are out-of-reach of those not a member of the institution  
 
-<img src="/data/O/OP/OPE/Open-But-Unequal/makerspace-restricted.jpg" width="100%" class="bar">
+<img src="/entry-files/O/OP/OPE/Open-But-Unequal/img/makerspace-restricted.jpg" width="100%" class="bar">
 ]
 
 ???
@@ -431,5 +431,5 @@ Integration of citizen/extra-institutional science with traditional science is a
 
 ---
 
-<img src="/data/O/OP/OPE/Open-But-Unequal/open.gif" width="100%" class="bar">
+<img src="/entry-files/O/OP/OPE/Open-But-Unequal/img/open.gif" width="100%" class="bar">
 

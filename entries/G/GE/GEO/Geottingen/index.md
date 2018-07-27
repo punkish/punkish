@@ -24,7 +24,7 @@ stars      :
 ## Geoparsing
 .byline[skunkworks project]
 
-<img src="/data/G/GE/GEO/Geottingen/pauliner.jpg" style="width: 100%; max-width: 669px; border: 1px solid black;">
+<img src="entry-files/G/GE/GEO/Geottingen/img/pauliner.jpg" style="width: 100%; max-width: 669px; border: 1px solid black;">
 
 ---
 
@@ -108,7 +108,7 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 
 --
 
-<img src="/data/G/GE/GEO/Geottingen/geotagging-workflow.png" style="width: 100%; max-width: 544px; border: 1px solid black;">
+<img src="/entry-files/G/GE/GEO/Geottingen/img/img/geotagging-workflow.png" style="width: 100%; max-width: 544px; border: 1px solid black;">
 
 --
 
@@ -136,7 +136,7 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 ## 3D Modeling and Visualization
 .byline[giving shape to the world]
 
-<img src="/data/G/GE/GEO/Geottingen/3d-pipeline.png" style="width: 100%; max-width: 709px; border: 1px solid black;">
+<img src="/entry-files/G/GE/GEO/Geottingen/img/img/3d-pipeline.png" style="width: 100%; max-width: 709px; border: 1px solid black;">
 
 ---
 
@@ -174,6 +174,4 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 
 .three-right-column[]
 
-<img src="/data/G/GE/GEO/Geottingen/goetgit.jpg" style="width: 100%; max-width: 720px; border: 1px solid black;">
-
----
+<img src="/entry-files/G/GE/GEO/Geottingen/img/img/goetgit.jpg" style="width: 100%; max-width: 720px; border: 1px solid black;">

@@ -544,11 +544,9 @@ Because of the increased interest in carbon calculations driven by the concerns 
 </tbody>
 </table>
 
-   
 ---
 
 ## Steps
-
 
 *   Identify the study set
 *   Create a questionnaire-based survey that measures the models per the factors
@@ -637,11 +635,9 @@ Because of the increased interest in carbon calculations driven by the concerns 
 *  The independent variables are measurable, but the dependent variables are, for the most part, opinion
 *   Freeness can't be measured unless defined, and the way it is defined decides how and what can be measured
 
-   
 ---
 
 ## References
-
 
 *   AAAS. 2007. International Intellectual Property Experiences : A Report of Four Countries. Washington DC: Project on Science and Intellectual Property in the Public Interest.
 *   Achen, Christopher H. 2005. Two cheers for Charles Ragin. Studies in Comparative International Development 40:27-32.
@@ -689,6 +685,3 @@ Because of the increased interest in carbon calculations driven by the concerns 
 *   Van Orsdel, Lee C., and Kathleen Born. 2009. Reality Bites : Periodicals Price Survey. In Library Journal.
 *   Weber, Steven. 2005. The Success of Open Source: Harvard University Press.
 *   White, Sonya, and Claire Creaser. 2007. Trends in Scholarly Journal Prices 2000-2006. In LISU Occasional Paper: Loughborough University.
-
-   
-

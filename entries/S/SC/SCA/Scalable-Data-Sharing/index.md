@@ -18,7 +18,7 @@ stars      :
 ---
 
 
-background-image: url('/data/S/SC/SCA/Scalable-Data-Sharing/macrostrat-cover-sm.jpg')
+background-image: url('/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/macrostrat-cover-sm.jpg')
 background-size: cover
 class: center, middle
 
@@ -49,7 +49,7 @@ Data are aggregated from multiple published and online sources, including those 
 
 ## Data are CC BY 4.0
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/cc-by-4.jpg" width="100%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/cc-by-4.jpg" width="100%">
 
 ---
 
@@ -63,13 +63,13 @@ http://strata.geology.wisc.edu/news.html
 
 ## Macrostrat Apps
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/burwell_logo.png" width="150" height="150">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/burwell_logo.png" width="150" height="150">
 
 ### [Burwell](https://macrostrat.org/map) Geological bedrock maps linked to geodeepdive and elevation profiles
 
 --
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/sift_logo.png" width="150" height="150">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/sift_logo.png" width="150" height="150">
 
 ### [Sift](https://macrostrat.org/sift): Macrostrat columns, with to bedrock maps and PBDB fossils
 
@@ -79,7 +79,7 @@ http://strata.geology.wisc.edu/news.html
 
 ### [What is at a point lat 51.5115, lng 10.2242?](https://macrostrat.org/burwell/#11/51.5115/10.2242)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/burwell-point.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/burwell-point.jpg" width="80%">
 
 ---
 
@@ -87,7 +87,7 @@ http://strata.geology.wisc.edu/news.html
 
 ### [elevation profile between two points lat 51.5113, lng 10.1256](https://macrostrat.org/burwell/#11/51.5113/10.1256)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/burwell-elevation.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/burwell-elevation.jpg" width="80%">
 
 
 <!-- https://macrostrat.org/api/v2/elevation?start_lng=10.05867&start_lat=51.48395&end_lng=10.24063&end_lat=51.56896 -->
@@ -98,7 +98,7 @@ http://strata.geology.wisc.edu/news.html
 
 Search for [John Day - Suplee, Central Oregon](https://macrostrat.org/sift/#/column/290). Learn more about that column. 
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/sift-john-day.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/sift-john-day.jpg" width="80%">
 
 <!-- https://macrostrat.org/api/v2/columns?col_id=290 -->
 
@@ -108,7 +108,7 @@ Search for [John Day - Suplee, Central Oregon](https://macrostrat.org/sift/#/col
 
 Check out one of its units, say [Unit 7511 - Keller Creek Shale](https://macrostrat.org/sift/#/unit/7511)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/sift-keller-unit.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/sift-keller-unit.jpg" width="80%">
 
 <!-- https://macrostrat.org/api/v2/units?unit_id=7511 -->
 
@@ -118,7 +118,7 @@ Check out one of its units, say [Unit 7511 - Keller Creek Shale](https://macrost
 
 Can I search between certain ages? Yes, by using time [intervals which define ages](https://macrostrat.org/sift/#/interval/981)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/sift-interval.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/sift-interval.jpg" width="80%">
 
 ---
 
@@ -126,7 +126,7 @@ Can I search between certain ages? Yes, by using time [intervals which define ag
 
 [Lithology](https://macrostrat.org/sift/#/lithology/107)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/sift-lithology.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/sift-lithology.jpg" width="80%">
 
 <!-- https://macrostrat.org/api/columns?age_top=500&age_bottom=510&format=geojson_bare -->
 
@@ -284,7 +284,7 @@ https://macrostrat.org/api/v2/defs/
 
 ## Fun with coal
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/coal-greenland.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/coal-greenland.jpg" width="80%">
 
 <cite class="footnote">National Museum of Denmark. Greenland in the late 19th-early 20th century. The coal mine at Qaarsuarsuk. Photo: Th. N. Krabbe 1889-1909. <a href="https://www.flickr.com/photos/thenationalmuseumofdenmark/11288976563/in/photolist-icyXqX-pfY7Xk-oskiQf-owhfWC-nj4pUC-8S6ADA-nQGpip-6Xcoeg-R6gA7Q-ouaAiw-RyVeXj-cqqWZ1-pDSDFE-o85x6d-pV9TAW-oy8DLc-6K8BG7-4jCzJj-8ZNzeF-7v1Uqu-nFfJGF-owjWNa-o6b3RV-6XcEg2-a4JwZt-8S6JcS-bLoKCZ-oweZbf-ocBppo-ouyCyq-oueQM4-cQA4gL-6gBqre-6K8A9b-dtoNrm-odfCif-r5yraZ-bxtZzA-nZvDfX-n1aXE6-4jyYrq-cqqqV3-qASj4z-otDLV1-cXCnLJ-owpbtL-r7x31V-7uWZkB-8QT2dC-sQkoqS" target="_blank">more</a>. No known copyright restrictions.</cite>.
 
@@ -734,13 +734,13 @@ dev.off()
 
 ## Coal through time (units)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/coal-through-time-units.png" width="100%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/coal-through-time-units.png" width="100%">
 
 ---
 
 ## Coal through time (proportions)
 
-<img src="/data/S/SC/SCA/Scalable-Data-Sharing/coal-through-time-proportions.png" width="100%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/coal-through-time-proportions.png" width="100%">
 
 ---
 

@@ -44,13 +44,13 @@ Released under a [CC0 Public Domain Dedication](http://creativecommons.org/publi
 
 ---
 
-<img src="/data/O/OP/OPE/Open-Science-in-HSR/1.jpg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Science-in-HSR/img/1.jpg" width="100%">
 
 ---
 
-<img src="/data/O/OP/OPE/Open-Science-in-HSR/2.jpg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Science-in-HSR/img/2.jpg" width="100%">
 
 ---
 
-<img src="/data/O/OP/OPE/Open-Science-in-HSR/3.jpg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Science-in-HSR/img/3.jpg" width="100%">
 

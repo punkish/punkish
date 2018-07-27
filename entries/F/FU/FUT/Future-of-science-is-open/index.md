@@ -230,7 +230,7 @@ https://en.wikipedia.org/wiki/Open_science
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.001.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.001.png" width="90%">
 
 ???
 
@@ -240,7 +240,7 @@ We can start this cycle anywhere, which is why it is called a "cycle." But let's
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.002.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.002.png" width="90%">
 
 ???
 
@@ -250,7 +250,7 @@ In the course of that experiment, we create new information. We measure and coll
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.003.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.003.png" width="90%">
 
 ???
 
@@ -260,7 +260,7 @@ Publish. This act requires us to document, archive, and advertise our results wh
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.004.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.004.png" width="90%">
 
 ???
 
@@ -270,7 +270,7 @@ Discovered by another researcher, and the cycle continues.
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.005.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.005.png" width="90%">
 
 ???
 
@@ -280,7 +280,7 @@ We have all heard of Open Access (OA). The focus of OA is on this part. My probl
 
 ## Scientific Information Lifecycle
 
-<img src="/data/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.006.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.006.png" width="90%">
 
 ???
 
@@ -307,31 +307,31 @@ other parts of the scientific information lifecycle are neglected. As you can se
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/data/O/OP/OPE/Open-Ecosystem-is-Vital/ecosystem.001.jpeg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.001.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/data/O/OP/OPE/Open-Ecosystem-is-Vital/ecosystem.002.jpeg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.002.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/data/O/OP/OPE/Open-Ecosystem-is-Vital/ecosystem.003.jpeg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.003.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/data/O/OP/OPE/Open-Ecosystem-is-Vital/ecosystem.004.jpeg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.004.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/data/O/OP/OPE/Open-Ecosystem-is-Vital/ecosystem.005.jpeg" width="100%">
+<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.005.jpeg" width="100%">
 
 ---
 
@@ -429,7 +429,7 @@ class: middle, center
 ]
 .right-column[
 <figure>
-    <img src="/data/U/UP/UPG/Upgrading-GIS-Capacity-at-Parks-and-Recreation-Tirana/parcels-tables.jpg" width="100%">
+    <img src="/entry-files/U/UP/UPG/Upgrading-GIS-Capacity-at-Parks-and-Recreation-Tirana/img/parcels-tables.jpg" width="100%">
     <figcaption>park parcels stored in a spreadsheet</figcaption>
 </figure>
 ]
@@ -445,7 +445,7 @@ class: middle, center
 ]
 .right-column[
 <figure>
-    <img src="/data/U/UP/UPG/Upgrading-GIS-Capacity-at-Parks-and-Recreation-Tirana/qgis.jpg" width="100%">
+    <img src="/entry-files/U/UP/UPG/Upgrading-GIS-Capacity-at-Parks-and-Recreation-Tirana/img/qgis.jpg" width="100%">
     <figcaption>parks coverage in QGIS</figcaption>
 </figure>
 ]

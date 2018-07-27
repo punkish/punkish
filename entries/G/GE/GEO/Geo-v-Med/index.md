@@ -299,5 +299,3 @@ Medical/health is none of the above. No one wants to think about illness and dea
 Geo is valuable but literally priceless (non-monetizable). No one wants to pay for it but without it the platform is worthless.
 
 Medical/health is big money.
-
----

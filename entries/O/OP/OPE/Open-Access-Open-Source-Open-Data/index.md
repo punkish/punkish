@@ -294,7 +294,7 @@ then why shouldn't we demand the same goal for the publication of research?
 
 [Creative Commons License Chooser](http://creativecommons.org/choose/)
 
-<img src="/data/O/OP/OPE/Open-Access-Open-Source-Open-Data/cc-chooser.jpg" width="375" height="430">
+<img src="/entry-files/O/OP/OPE/Open-Access-Open-Source-Open-Data/img/cc-chooser.jpg" width="375" height="430">
 
 ---
 

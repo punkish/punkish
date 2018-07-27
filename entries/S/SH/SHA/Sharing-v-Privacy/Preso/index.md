@@ -66,7 +66,7 @@ Released under a [CC0 Public Domain Dedication](http://creativecommons.org/publi
 
 ## The Two Edges
 
-<img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_nuffield.png" align="left" style="padding: 10px 20px 0px 0px;"> **Sharing** and **privacy** are “are mutually implicated in each other: there are private interests in the achievement of common goals and a public interest in the protection of privacy that encourages cooperation.”
+<img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/img/logo_nuffield.png" align="left" style="padding: 10px 20px 0px 0px;"> **Sharing** and **privacy** are “are mutually implicated in each other: there are private interests in the achievement of common goals and a public interest in the protection of privacy that encourages cooperation.”
 
 —The Nuffield Council on Bioethics
 
@@ -74,7 +74,7 @@ Released under a [CC0 Public Domain Dedication](http://creativecommons.org/publi
 
 ## The Privacy Imperative v. Emphasizing Sharing
 
-<img src="/data/S/SH/SHA/Sharing-v-Privacy/sharingvprivacyclips.jpg" width="100%">
+<img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/img/sharingvprivacyclips.jpg" width="100%">
 
 > Instead of emphasizing the intricacies of privacy to the citizen from whom the data are being sourced, if alongwith providing a reasonable assurance to protect privacy we were to also communicate the potential benefits of sharing, then the citizen would be more inclined to give consent to sharing.
 
@@ -99,7 +99,7 @@ Washington DC
 
 <table>
 <tr>
-  <td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_cc.png"></td>
+  <td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_cc.png"></img/td>
   <td>
     <a href="http://creativecommons.org/" target="_blank">Creative Commons</a><br>
     <p class="small">A global nonprofit organization that enables the sharing and use of creativity and knowledge through free legal tools.</p>
@@ -114,7 +114,7 @@ Washington DC
 <table>
 
 <tr>
-<td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_rwjf.png"></td>
+<td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_rwjf.png"></img/td>
 <td>
 <a href="http://rwjf.org/" target="_blank">Robert Wood Johnson Foundation</a><br>
   <p class="small">Strives to bring about meaningful, lasting change—with the goal of building a Culture of Health that enables all in our diverse society to lead healthier lives.</p>
@@ -130,7 +130,7 @@ Washington DC
 <table>
 
 <tr>
-<td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_ihg.png"></td>
+<td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_ihg.png"></img/td>
 <td>
   <a href="http://humangenetics.ucsf.edu/" target="_blank">Institute for Human Genetics, UCSF</a><br>
   <p class="small">A focal point on the UCSF campus for faculty who share an interest in human genetics.</p>
@@ -138,7 +138,7 @@ Washington DC
 </tr>
 
 <tr>
-<td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_ct2g.png"></td>
+<td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_ct2g.png"></img/td>
 <td>
   <a href="http://www.ct2g.org/" target="_blank">CT2G, UCSF</a><br>
   <p class="small">A resource for ethical, legal, social and policy analysis of emerging issues in translational genomics at UCSF.</p>
@@ -146,7 +146,7 @@ Washington DC
 </tr>
 
 <tr>
-<td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_pgp.png"></td>
+<td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_pgp.png"></img/td>
 <td>
   <a href="http://www.personalgenomes.org/" target="_blank">Personal Genomes Project</a><br>
   <p class="small">Creating public genome, health, and trait data of participants willing to  share their personal data.</p>
@@ -154,7 +154,7 @@ Washington DC
 </tr>
 
 <tr>
-<td><img src="/data/S/SH/SHA/Sharing-v-Privacy/logo_uzh.png"></td>
+<td><img src="/entry-files/S/SH/SHA/Sharing-v-Privacy/logo_uzh.png"></img/td>
 <td>
   <a href="http://www.ethik.uzh.ch/ibme_en.html" target="_blank">Institute for Biomedical Ethics and History of Medicine</a><br>
   <p class="small">Belongs to the Medical Faculty of the University of Zürich and forms part of the Centre for Ethics.</p>

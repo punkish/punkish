@@ -25,7 +25,7 @@ notes      : Ownership, legally defined as a bundle of rights in the thing that 
 <cite>Hall MA, Schulman KA. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">Ownership of Medical Information.</a> JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389.</cite>
 
 .left-column[
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
 ]
 .right-column[
 **The one who receives care?**
@@ -40,7 +40,7 @@ Privacy law (which grows out of tort law) may appear to give patients property-l
 --
 count: false
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/no.png" class="overlay">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/no.png" class="overlay">
 
 ---
 
@@ -49,8 +49,8 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
 ]
 .right-column[
 **The one who gives care?**
@@ -65,7 +65,7 @@ Clinicians, as owners of the paper records they maintain, can give or sell medic
 --
 count: false
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/no.png" class="overlay">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/no.png" class="overlay">
 
 ---
 
@@ -74,9 +74,9 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></img/h3>
 ]
 .right-column[
 **The one who pays for care?**
@@ -91,7 +91,7 @@ Insurers own the tangible vessels in which they store patients’ medical inform
 --
 count: false
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/no.png" class="overlay">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/no.png" class="overlay">
 
 ---
 
@@ -100,10 +100,10 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></h3>
-<h3><img src="/data/W/WH/WHO/Who-Owns-My-Data/who-owns.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/who-owns.png" width="67"></img/h3>
 ]
 .right-column[
 **Does it really matter?**
@@ -116,7 +116,7 @@ In the emerging era of electronic health informatics, few other medicolegal ques
 --
 count: false
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/maybe.png" class="overlay">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/maybe.png" class="overlay">
 
 ---
 
@@ -125,7 +125,7 @@ count: false
 <cite>Health Information & the Law Project. 2012. <a href="http://www.healthinfolaw.org/comparative-analysis/who-owns-medical-records-50-state-comparison" target="_blank">Who Owns Medical Records: 50 State Comparison</a>. Milken Institute of Public Health</cite>
 
 <figure class="svg-container">
-    <img src="/data/W/WH/WHO/Who-Owns-My-Data/us-states-ownership.jpg" width="100%">
+    <img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/us-states-ownership.jpg" width="100%">
 </figure>
 
 ---
@@ -134,7 +134,7 @@ count: false
 ### from Wisconsin
 
 <figure class="svg-container">
-    <img src="/data/W/WH/WHO/Who-Owns-My-Data/us-states-ownership-none.jpg" width="100%">
+    <img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/us-states-ownership-none.jpg" width="100%">
     <figcaption>ownership undefined</figcaption>
 </figure>
 
@@ -144,7 +144,7 @@ count: false
 ### <span class="punkish-dim">from Wisconsin</span> to California
 
 <figure class="svg-container">
-    <img src="/data/W/WH/WHO/Who-Owns-My-Data/us-states-ownership-hospital.jpg" width="100%">
+    <img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/us-states-ownership-hospital.jpg" width="100%">
     <figcaption>hospital owns my data</figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ count: false
 ### <span class="punkish-dim">from Wisconsin to California</span> to New Hampshire?
 
 <figure class="svg-container">
-    <img src="/data/W/WH/WHO/Who-Owns-My-Data/us-states-ownership-me.jpg" width="100%">
+    <img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/us-states-ownership-me.jpg" width="100%">
     <figcaption>I own my <span class="hilite">what?</span></figcaption>
 </figure>
 
@@ -545,7 +545,7 @@ count: false
 
 ## MIDATA.coop
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/midata-scheme.jpg" width="100%">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/midata-scheme.jpg" width="100%">
 
 ### Values
 
@@ -559,7 +559,7 @@ count: false
 
 ## MIDATA.coop
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/midata-scheme.jpg" width="100%">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/midata-scheme.jpg" width="100%">
 
 ### Citizen owned
 
@@ -571,7 +571,7 @@ count: false
 
 ## MIDATA.coop
 
-<img src="/data/W/WH/WHO/Who-Owns-My-Data/midata-scheme-break.jpg" width="100%">
+<img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/midata-scheme-break.jpg" width="100%">
 
 ### Point of Failure
 
