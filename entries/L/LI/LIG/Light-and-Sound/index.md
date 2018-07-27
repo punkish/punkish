@@ -21,6 +21,6 @@ her no slights my call to dance
 the light does fade but sound remains  
 
 <figure>
-    <img src="IMG_5061.JPG">
+    <img src="IMG_5061.jpg">
     <figcaption>light and sound</figcaption>
 </figure>

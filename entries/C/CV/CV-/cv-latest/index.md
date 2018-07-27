@@ -1,7 +1,7 @@
 ---
 title      : Curriculum Vita
 description:
-modified   : 2018-05-08 00:00:00
+modified   : 2018-07-27 00:00:00
 created    : 2018-05-08 00:00:00
 viewcount  : 0
 id         :
@@ -45,11 +45,11 @@ js         : cv
                 <div class="cv-subjob">Current Projects</div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of Plazi, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues.
+                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">TopLabs, Berlin, Germany.</span> I am an active member of the biolab and art space run by >top e.V.
+                    <span class="cv-dept">TopLabs, Berlin, Germany.</span> I am an active member of the biolab and art space run by <a href="http://top-ev.de" target="_blank">>top e.V.</a>
                 </div>
 
                 <div class="cv-subjob">Recent Past Projects</div>

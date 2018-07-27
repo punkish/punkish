@@ -12,6 +12,7 @@ tags        :
     - Creative Commons
     - Google
     - hand drawn maps
+    - maps
 stars      : 
 ---
 

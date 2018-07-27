@@ -10,6 +10,7 @@ tags        :
     - Marseille
     - France
     - hand drawn maps
+    - maps
 stars      : 
 ---
 
