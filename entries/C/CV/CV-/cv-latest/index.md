@@ -15,7 +15,6 @@ js         : cv
 ---
 
 <div id="punkish-text">
-
     <div class="cv-tabs">
         <span class="cv-tab-section" id="Experience">Experience</span>
         <div class="cv-quicktabs">
@@ -28,12 +27,9 @@ js         : cv
             <a href="#Committees" class="cv-tab">Committees</a>
         </div>
     </div>
-
     <br clear="both">
-
     <div id="punkish-panels">
         <div name="panel" class="cv-panel" id="pnl_Experience">
-
             <div class="cv-panel_intro">
                 <p>I am an international open science advocate helping domain scientists make sense of data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. Since 1985, my career has spanned rural appropriate technology design to international development, academia, research and science information policy. <a id="cv-less-link" href="/cv#less">less &larr;</a></p>
                 </span>
