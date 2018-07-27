@@ -65,19 +65,19 @@ An idea for more informed citizens based on work done by
 
 ## Shields of Consent
 
-![Shields of Consent](consent1.gif)
+<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent1.gif" width="90%">
 
 ---
 
 ## How we share data…
 
-![How we share data](consent2.gif)
+<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent2.gif" width="90%">
 
 ---
 
 ## How we share data
 
-![How we share data](consent3.gif)
+<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent3.gif" width="90%">
 
 ---
 

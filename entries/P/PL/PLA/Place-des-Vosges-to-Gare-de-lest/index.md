@@ -10,7 +10,6 @@ tags        :
     - Paris
     - France
     - hand drawn maps
-    - maps
 stars      : 
 ---
 

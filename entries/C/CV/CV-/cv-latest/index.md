@@ -1,7 +1,7 @@
 ---
 title      : Curriculum Vita
 description:
-modified   : 2018-07-27 00:00:00
+modified   : 2018-05-08 00:00:00
 created    : 2018-05-08 00:00:00
 viewcount  : 0
 id         :
@@ -15,7 +15,6 @@ js         : cv
 ---
 
 <div id="punkish-text">
-
     <div class="cv-tabs">
         <span class="cv-tab-section" id="Experience">Experience</span>
         <div class="cv-quicktabs">
@@ -28,12 +27,9 @@ js         : cv
             <a href="#Committees" class="cv-tab">Committees</a>
         </div>
     </div>
-
     <br clear="both">
-
     <div id="punkish-panels">
         <div name="panel" class="cv-panel" id="pnl_Experience">
-
             <div class="cv-panel_intro">
                 <p>I am an international open science advocate helping domain scientists make sense of data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. Since 1985, my career has spanned rural appropriate technology design to international development, academia, research and science information policy. <a id="cv-less-link" href="/cv#less">less &larr;</a></p>
                 </span>
@@ -220,24 +216,23 @@ js         : cv
 
         <div name="panel" class="cv-panel" id="pnl_Publications">
             <div class="panel_intro">All my publications and presentations are released under the CC0 Public Domain Dedication. They are free for anyone to use as they wish without any obligation whatsoever, without having to ask for permission, and without needing to give me credit. In case of joint-publications, my co-authors may retain their copyright but will always use an open license.</div>
-
             <div class="cv-pub">Willi Egloff, Donat Agosti, <span class="cv-subdept">Puneet Kishor</span>, David Patterson, Jeremy A. Miller. 2017. Copyright and the Use of Images as Biodiversity Data. doi: <a href="https://doi.org/10.1101/087015" target="_blank">https://doi.org/10.1101/087015</a></div>
             <div class="cv-pub">Scott Bulua, <span class="cv-subdept">Puneet Kishor</span>, Sonaar Luthra, and Jason Schultz. 2015. Open Source Sensors: Promoting Access to Knowledge and Data Reliability, report from a workshop on Open Hardware, workshop sponsored by the Sloan Foundation.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Effy Vayena, Robert Nussbaum, Jason Bobe, and Barbara Koenig. 2015. Sharing v. Privacy, report from a workshop on balancing the need for privacy with the desire to share, workshop sponsored by the Robert Wood Johnson Foundation.</div>
             <div class="cv-pub">Micah Altman, Daniel Cohen, and <span class="cv-subdept">Puneet Kishor</span>. 2013. Emerging Principles for Data Citation. In Yvonne M Socha (Ed.) <a href="https://www.jstage.jst.go.jp/article/dsj/12/0/12_OSOM13-043/_article" target="_blank">Out of Cite, Out of Mind.</a>. Data Science Journal 12: 1–76. doi:10.2481/dsj.OSOM13-043</div>
             <div class="cv-pub">Shanan E. Peters, Miron Livny, Kurt Squire, Jack Williams, Bill Hibbard, <span class="cv-subdept">Puneet Kishor</span>, Sam Batzli, Patrick McLaughlin, Susan Millar, Tom Whittaker, Nancy Wiegand, and Terry Millar. 2011. Towards a New Distributed Platform for Integrative Geoscience: An EarthCube Design Approach and Prototype Plan. White paper submitted to the NSF as part of the EarthCube Initiative, Washington DC.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Oshani Seneviratne, and Noah Giansiracusa. 2009. <a href="http://arxiv.org/abs/1304.5755" target="_blank">Policy Aware Geospatial Data.</a> In, ACM. Seattle: ACM</div>
-            <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/entry-files/P/PU/PUB/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</img/div>
+            <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/entry-files/P/PU/PUB/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2009. Public Policy—bringing technology and law together for open access. Presented at AAAS ST Global Conference, Washington DC, USA.</div>
             <div class="cv-pub">Boll, Susanne, Christopher Jones, Eric Kansa, <span class="cv-subdept">Puneet Kishor</span>, Mor Naaman, Ross Purves, Arno Scharl, and Erik Wilde. 2008.  LOCWEB ‘08: Proceedings of the first international workshop on Location and the web. ACM, New York, NY.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2008. Public Policy and the Geospatial Information Commons. 2008 Conference on Science and Technology for Society, AAAS, Washington DC.</div>
-            <div class="cv-pub">CODATA. 2007. <a href="/entry-files/S/ST/STR/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</img/div>
+            <div class="cv-pub">CODATA. 2007. <a href="/entry-files/S/ST/STR/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2007. Open GeoSpatial Data: Difficult But Necessary. CODATA and NAS Workshop on “Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development,” Atibaia, Brazil.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> and Steve Ventura. 2006. What Can GIS Learn From Open Source, Proceedings of the 9th International Conference of the Global Spatial Data Infrastructure Committee, Santiago, Chile.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2000. “Are you ready to do business online?” URISA News.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1997. Using GIS for Pollution Control. Environment Department Dissemination Notes, The World Bank, Washington, DC, 20433.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1996. Strategies for Disseminating Large Spatial Databases. Environment Department Dissemination Notes, The World Bank, Washington, DC, 20433.</div>
-            <div class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</img/div>
+            <div class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1995. When Tools Become the Barrier: Modernizing Spatial Information Against All Odds. National Center for Geographic Information and Analysis (NCGIA), Maine.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Kristine Kuhlman, Ben Niemann, Jr., Steve Ventura, Earl Epstein, John Bossler, D. David Moyer, and William Holland. 1993. Law that Drives Change: Wisconsin Land Information Program and GIS Adoption by Local Governments, GIS/LIS '93, Minneapolis.</div>
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1991. Land Rationalization Study, Trinidad & Tobago, Inter-American Development Bank. 1991.</div>
