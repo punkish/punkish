@@ -19,11 +19,11 @@ Using only vanilla JavaScript
     [ 'a', 'l', 'b', 'e', 'r', 't', 'o' ]
     > union = a.concat(b)
     [ 'a', 'n', 't', 'o', 'n', 'i', 'o', 'a', 'l', 'b', 'e', 'r', 't', 'o' ]
-    > unionUniq = a.concat(b.filter(x => { return a.indexOf(x) < 0 }))
+    > uniqUnion = a.concat(b.filter(x => { return a.indexOf(x) < 0 }))
     [ 'a', 'n', 't', 'o', 'n', 'i', 'o', 'l', 'b', 'e', 'r' ]
     > intersection = a.filter(x => b.includes(x))
     [ 'a', 't', 'o', 'o' ]
     > difference = a.filter(x => !b.includes(x))
     [ 'n', 'n', 'i' ]
-    > differenceSym = a.filter(x => !b.includes(x)).concat(b.filter(x => !a.includes(x)))
+    > symmetricDifference = a.filter(x => !b.includes(x)).concat(b.filter(x => !a.includes(x)))
     [ 'n', 'n', 'i', 'l', 'b', 'e', 'r' ]
