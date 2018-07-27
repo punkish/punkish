@@ -1,6 +1,3 @@
-p {
-	font-size: 120%;
-}	
 header {
 	margin-bottom: 3em;
 }
@@ -15,25 +12,9 @@ header div {
 	overflow: hidden;
 	width: 100%
 }
-header div img {
-	float: left;
-}
-header div form {
-	float: left;
-	height: 0px;
-}
-/* header nav {
-	float: left;
-	visibility: hidden;
-} */
 nav a {
 	margin-right: 0.75em;
 	font-size: small;
-}
-input[name=q] {
-	width: 220px;
-	border: none;
-	font-size: xx-small;
 }
 ul.tags {
 	list-style: none;
@@ -84,8 +65,7 @@ figure img {
 }
 .title {
 	margin-bottom: 0;
-	font-weight: 400;
-	font-size: 3em;
+	font-size: 2em;;
 }
 .content {
 	margin-top: 3em;
@@ -112,47 +92,21 @@ figure img {
 .archive u {
 	color: white;
 }
+header div img {
+	float: left;
+}
+header div form {
+	float: left;
+	height: 0px;
+}
+input[name=q] {
+	width: 220px;
+	border: none;
+}
+header nav {
+	float: left;
+}
 .punkish-pair {
 	border-bottom: 1px dotted grey;
 	cursor: pointer;
 }
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-/* Larger than mobile */
-@media (min-width: 375px) {
-	input[name=q] {
-	 width: 270px;
-	 font-size: x-small;
-  }
-}
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-	input[name=q] {
-	 width: 300px;
-	 font-size: small;
-  }
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-	input[name=q] {
-	 width: 720px;
-	 font-size: initial;
-  }
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}

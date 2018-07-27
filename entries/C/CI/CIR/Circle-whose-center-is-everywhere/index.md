@@ -59,4 +59,4 @@ For a variety of reasons, I don’t expect to be buried on death, but I can imag
 > Well, he’s too old for Earth, and he’s too old for dyin’  
 > This bloodstained and meek hand of mankind and iron
 
-[^1]: The title of this post is taken from a phrase from the book. The full phrase is “Circle whose center is everywhere and whose circumference nowhere.”
+[^1]: The title of this post is taken from a phrase from the book. The full phrase is "Circle whose center is everywhere and whose circumference nowhere."
