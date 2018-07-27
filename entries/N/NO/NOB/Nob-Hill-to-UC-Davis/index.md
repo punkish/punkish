@@ -10,6 +10,7 @@ tags        :
     - San Francisco
     - California
     - hand drawn maps
+    - maps
 stars      : 
 ---
 

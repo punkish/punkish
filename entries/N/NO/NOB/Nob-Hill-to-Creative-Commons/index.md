@@ -12,6 +12,7 @@ tags        :
     - California
     - Creative Commons
     - hand drawn maps
+    - maps
 stars      : 
 ---
 

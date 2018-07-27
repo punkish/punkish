@@ -10,6 +10,7 @@ tags        :
     - Dublin
     - Ireland
     - hand drawn maps
+    - maps
 stars      : 
 ---
 
