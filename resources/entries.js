@@ -35,7 +35,11 @@ const entries = {
             data['posts'] = request.server.app.posts['by' + utils.toTitleCase(request.query['by'])];
         }
         else if (request.query['q']) {
-            const q = request.query['q'];
+            let q = request.query['q'];
+            if (q.indexOf('tag:') > -1) {
+                q = q.replace('tag:', 'tags:');
+            }
+
             template = 'search';
             data['searchTitle'] = 'Search Results';
             data['searchResults'] = utils.idx.search(q).map(function(result) {

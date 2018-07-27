@@ -90,7 +90,7 @@ TDM defined over the years. Made easier by high speed networks, cheap and fast C
 
 ## Typical TDM Workflow
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow.png)
 
 ???
 
@@ -199,19 +199,19 @@ Discovering a New Link between Genes and Osteoporosis
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow1.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow1.png)
 
 A CC license does not apply to uses such as TDM that qualify as Exceptions and Limitations, and the user does not need to comply with terms and conditions of the license if TDM doesn’t implicate copyright or similar rights covered by the CC license.
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow1.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow1.png)
 
 CC 4.0 ND license specifically grants the rights to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database, provided any Adapted Material is not Shared
 
 ---
 
-<img src="/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-license-tree.jpg" width="100%" alt="TDM license decision tree">
+<img src="/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/img/tdm-license-tree.jpg" width="100%" alt="TDM license decision tree">
 
 **Note:** Data sets resulting from TDM are not necessarily adaptations of the original licensed material. For example, an analysis based on findings would not constitute an adaptation. The data set mined may be an adaptation if it is a modified version of the original.
 
@@ -286,13 +286,13 @@ CC 4.0 ND license specifically grants the rights to extract, reuse, reproduce, a
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow2.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow2.png)
 
 Any modification in TDM analysis requires running it again on the corpus, a time-consumptive process made easier by a persistent cache of the corpus. Publisher contracts can create hurdles in creating such a persistent cache.
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow3.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow3.png)
 
 Licenses/contracts on the corpus can affect the license under which the final results and data are published. What would happen if the corpus were made of entities under different kinds of licenses?
 
@@ -414,31 +414,31 @@ Data citation methods should be sufficiently flexible to accommodate the variant
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow4.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow4.png)
 
 **Importance Principle:** Data should be considered legitimate, citable products of research. Data citations should be accorded the same importance in the scholarly record as citations of other research objects, such as publications. *Possible only if the corpus and the data extracted from it are made available to the public.*
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow5.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow5.png)
 
 **Credit and Attribution Principle:** Data citations should facilitate giving scholarly credit and normative and legal attribution to all contributors to the data, recognizing that a single style or mechanism of attribution may not be applicable to all data. *Possible only if the published literature and the corpus that it cites are made available to the public.*
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow1.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow1.png)
 
 **Note:** a CC License does not apply to uses (such as TDM) that qualify as Exceptions and Limitations, and the user does not need to comply with terms and conditions of the license if the TDM doesn’t implicate copyright
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow6.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow6.png)
 
 **Evidence Principle:** Where a specific claim rests upon data, the corresponding data citation should be provided. *Possible only if the corpus is made available to the public.*
 
 ---
 
-![TDM workflow](/data/L/LE/LEG/Legal-Implications-of-TDM/tdm-workflow6.png)
+![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow6.png)
 
 **Access Principle:** Data citations should facilitate access to the data themselves and to such associated metadata, documentation, and other materials, as are necessary for both humans and machines to make informed use of the referenced data. *Possible only if the corpus can be made available to the public.*
 

@@ -117,6 +117,6 @@ Spatial data from RePPProt Land Use maps at 1:250,000 were digitized in Arcinfo 
 
 *Work was partially supported by a grant from the Government of Norway. Findings and views expressed in this study are those of the authors and do not represent the official view of the World Bank.*
 
-<object id="paper" data="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf" type="application/pdf" width="100%" style="height:80vh;">
-     <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf">Download PDF</a>.</p>
+<object id="paper" data="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf" type="application/img/pdf" width="100%" style="height:80vh;">
+     <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/img/Economic-Supply-of-Biodiversity.pdf">Download PDF</a>.</img/p>
 </object>

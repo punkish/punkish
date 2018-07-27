@@ -43,11 +43,11 @@ notes      : I gave the following "lecture" to a bunch of IIT students visiting 
 
 * **vectors:** geometric definitions of data (think Adobe Illustrator). Examples include [ArcInfo](http://www.esri.com/software/arcgis/index.html), [MapInfo](http://www.mapinfo.com), [GeoMedia](http://www.intergraph.com/geomedia/)
 
-![vector](/data/B/BA/BAS/Basics-of-GIS/vector.png)
+![vector](/entry-files/B/BA/BAS/Basics-of-GIS/img/vector.png)
 
 * **raster:** area divided, or [tessellated](http://www.answers.com/tessellate) into a grid (think Adobe Photoshop). The most famous example is the free and open source [GRASS](http://grass.itc.it)
 
-![raster](/data/B/BA/BAS/Basics-of-GIS/raster.png)
+![raster](/entry-files/B/BA/BAS/Basics-of-GIS/img/raster.png)
 
 ---
 
@@ -106,15 +106,15 @@ Either way, several different kinds of [Spatial Analyses] are possible
 
 * Boolean operations - Union, Identity, Intersect
 
-![booleanoperations](/data/B/BA/BAS/Basics-of-GIS/booleanoperations.png)
+![booleanoperations](/entry-files/B/BA/BAS/Basics-of-GIS/img/booleanoperations.png)
 
 * Spatial overlays - point-in-polygon, line-in-polygon, polygon-in-polygon
 
-![overlayoperations](/data/B/BA/BAS/Basics-of-GIS/overlayoperations.png)
+![overlayoperations](/entry-files/B/BA/BAS/Basics-of-GIS/img/overlayoperations.png)
 
 * Networks operations - shortest distance, shortest time, location-allocation
 
-![networkoperations](/data/B/BA/BAS/Basics-of-GIS/networkoperations.png)
+![networkoperations](/entry-files/B/BA/BAS/Basics-of-GIS/img/networkoperations.png)
 
 There are many ways of [Outputting Geographic Data].
 
@@ -126,7 +126,7 @@ There are many ways of [Outputting Geographic Data].
 
 * paper maps, online, cellphones and hand-helds
 
-![outputtinggeogdata](/data/B/BA/BAS/Basics-of-GIS/outputtinggeogdata.png)
+![outputtinggeogdata](/entry-files/B/BA/BAS/Basics-of-GIS/img/outputtinggeogdata.png)
 
 There are many [Applications of GIS](/Applications-of-GIS)
 
@@ -194,7 +194,7 @@ Because of the large number of players involved, both managing and using the dat
 
 * db, map, and web server work together to put maps and limited but useful functionality accessible via a browser.
 
-![webbasedgis](/data/B/BA/BAS/Basics-of-GIS/webbasedgis.png)
+![webbasedgis](/entry-files/B/BA/BAS/Basics-of-GIS/img/webbasedgis.png)
 
 Traditional implementation is like most web applications - a point-to-point [Web Model](/Web-Model).
 
@@ -204,7 +204,7 @@ Traditional implementation is like most web applications - a point-to-point [Web
 
 * provider publishes, user views
 
-![ptppublishing](/data/B/BA/BAS/Basics-of-GIS/ptppublishing.png)
+![ptppublishing](/entry-files/B/BA/BAS/Basics-of-GIS/img/ptppublishing.png)
 
 This point-to-point publishing made web what it is today. However, the inherent disadvantage is that everyone who wants to publish has to have their own datasource. This is akin to the way [Restrictive Software] works.
 
@@ -214,7 +214,7 @@ The current web implementation rage is [Web Services Model](/Web-Services-Model)
 
 ## Distributed Publishing
 
-![distributedpublishing](/data/B/BA/BAS/Basics-of-GIS/distributedpublishing.png)
+![distributedpublishing](/entry-files/B/BA/BAS/Basics-of-GIS/img/distributedpublishing.png)
 
 * provider publishes
 * user can assimilate and re-publish
@@ -231,7 +231,7 @@ The current web implementation rage is [Web Services Model](/Web-Services-Model)
 
 Provider publishes, user can assimilate from various sources and re-publish, other users can view... this brings up [Parallels Between FOSS and GIS].
 
-![distributed_publishing](/data/B/BA/BAS/Basics-of-GIS/distributedpublishing.png)
+![distributed_publishing](/entry-files/B/BA/BAS/Basics-of-GIS/img/distributedpublishing.png)
 
 Explore [Further Links](/Further-Links) on GIS.
 

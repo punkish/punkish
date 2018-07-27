@@ -322,6 +322,7 @@ const utils = {
             this.field('title', { boost: 10 }),
             this.field('tags'),
             this.field('body'), { boost: 20 },
+            this.field('created'),
             this.ref('file'),
 
             utils.posts.byDate.forEach(function (doc) {
