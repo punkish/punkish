@@ -63,8 +63,9 @@ class: center, middle
 class: center, middle
 
 <video width="100%" controls>
-  <source src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/Science-The-Inoculation-Against-Charlatans.mp4"
-          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+    <source 
+        src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/Science-The-Inoculation-Against-Charlatans.mp4" 
+        type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
 </video>
 
 ---
@@ -102,15 +103,16 @@ class: center, middle
 <br>
 
 <video width="100%" controls>
-  <source src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/Jerry-Seinfeld-weather.mp4"
-          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+    <source 
+        src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/Jerry-Seinfeld-weather.mp4"
+        type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
 </video>
 
 ---
 
 ## Data, What Data?
 
-<img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/img/my-gut.jpg" width="100%" alt="my gut">
+<img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/my-gut.jpg" width="100%" alt="my gut">
 
 ---
 
@@ -121,7 +123,7 @@ class: center, middle
 
 ## Open Humans
 
-<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/openhumans.jpg" width="100%" alt="OpenHumans">
+<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/openhumans.jpg" width="100%" alt="OpenHumans">
 
 ---
 class: center, middle
@@ -171,13 +173,13 @@ Data are aggregated from multiple published and online sources, including those 
 
 ### Scientific norms *and* legal requirement
 
-<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/macrostrat-credits.jpg" width="90%">
+<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/macrostrat-credits.jpg" width="90%">
 
 ---
 
 ## Data are CC BY 4.0
 
-<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/img/cc-by-4.jpg" width="90%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/cc-by-4.jpg" width="90%">
 
 ---
 
@@ -185,7 +187,7 @@ Data are aggregated from multiple published and online sources, including those 
 
 ### [What is at a point lat 51.5115, lng 10.2242?](https://macrostrat.org/burwell/#11/51.5115/10.2242)
 
-<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/img/burwell-point.jpg" width="80%">
+<img src="/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/burwell-point.jpg" width="80%">
 
 ---
 
@@ -507,7 +509,7 @@ Elevation profile data
 
 https://zenodo.org/search?page=1&size=20&q=pelagic
 
-<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/zenodo-1.jpg" width="90%">
+<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/zenodo-1.jpg" width="90%">
 
 ---
 
@@ -515,7 +517,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic
 
 https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=png&keywords=animalia&type=image&subtype=figure
 
-<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/zenodo-2.jpg" width="90%">
+<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/zenodo-2.jpg" width="90%">
 
 ---
 
@@ -523,7 +525,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=p
 
 [https://zenodo.org/record/273847]()
 
-<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/img/zenodo-3.jpg" width="90%">
+<img src="/entry-files/B/BA/BAC/Back-to-the-Future-of-Data-Sharing/img/zenodo-3.jpg" width="90%">
 
 ---
 
@@ -690,4 +692,3 @@ charlatanry | <span class="byline">ˈSHärlətənrē, -lətnrē</span> | noun
 ORIGIN
 <hr>
 early 17th century (denoting an itinerant seller of supposed remedies): from French, from Italian ***ciarlatano***, from ***ciarlare*** ‘to babble’.
-

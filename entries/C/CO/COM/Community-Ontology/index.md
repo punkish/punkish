@@ -109,10 +109,3 @@ Just like in Perl a hash can
   taste => "yucky",
 );
 </pre>
-
----
-
-## A Ball As A Graph
-
-[img=ball_as_an_rdf_graph]
-

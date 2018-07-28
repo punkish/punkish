@@ -25,7 +25,7 @@ notes      : Ownership, legally defined as a bundle of rights in the thing that 
 <cite>Hall MA, Schulman KA. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">Ownership of Medical Information.</a> JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389.</cite>
 
 .left-column[
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/patient.png" width="67"></h3>
 ]
 .right-column[
 **The one who receives care?**
@@ -49,8 +49,8 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/patient.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/care-provider.png" width="67"></h3>
 ]
 .right-column[
 **The one who gives care?**
@@ -74,9 +74,9 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/patient.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/care-provider.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/payer.png" width="67"></h3>
 ]
 .right-column[
 **The one who pays for care?**
@@ -100,10 +100,10 @@ count: false
 <cite>Hall MA, Schulman KA. Ownership of Medical Information. JAMA. 2009;301(12):1282-1284. doi:10.1001/jama.2009.389. <a href="http://jama.jamanetwork.com/article.aspx?articleid=183601" target="_blank">http://jama.jamanetwork.com/article.aspx?articleid=183601</a></cite>
 
 .left-column[
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/patient.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/care-provider.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/payer.png" width="67"></img/h3>
-<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/who-owns.png" width="67"></img/h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/patient.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/care-provider.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/payer.png" width="67"></h3>
+<h3><img src="/entry-files/W/WH/WHO/Who-Owns-My-Data/img/who-owns.png" width="67"></h3>
 ]
 .right-column[
 **Does it really matter?**

@@ -110,3 +110,6 @@ header nav {
 	border-bottom: 1px dotted grey;
 	cursor: pointer;
 }
+pre {
+	font-size: small;
+}

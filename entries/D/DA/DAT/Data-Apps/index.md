@@ -257,5 +257,3 @@ class: inverse, left, top
 - version
 - license
 - resources
-
----

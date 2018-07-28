@@ -8,6 +8,7 @@ id         : 232
 gmap       : 
 tags       :
     - language
+    - Nada
 stars      : 
 layout     : map
 js         : circle
