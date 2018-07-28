@@ -230,7 +230,7 @@ https://en.wikipedia.org/wiki/Open_science
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.001.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.001.png" width="90%">
 
 ???
 
@@ -240,7 +240,7 @@ We can start this cycle anywhere, which is why it is called a "cycle." But let's
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.002.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.002.png" width="90%">
 
 ???
 
@@ -250,7 +250,7 @@ In the course of that experiment, we create new information. We measure and coll
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.003.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.003.png" width="90%">
 
 ???
 
@@ -260,7 +260,7 @@ Publish. This act requires us to document, archive, and advertise our results wh
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.004.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.004.png" width="90%">
 
 ???
 
@@ -270,7 +270,7 @@ Discovered by another researcher, and the cycle continues.
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.005.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.005.png" width="90%">
 
 ???
 
@@ -280,7 +280,7 @@ We have all heard of Open Access (OA). The focus of OA is on this part. My probl
 
 ## Scientific Information Lifecycle
 
-<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/info-lifecycle.006.png" width="90%">
+<img src="/entry-files/A/A-/A-L/A-lawyer-a-scientist-and-a-kid/img/info-lifecycle.006.png" width="90%">
 
 ???
 

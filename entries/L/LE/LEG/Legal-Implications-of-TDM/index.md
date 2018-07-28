@@ -211,7 +211,7 @@ CC 4.0 ND license specifically grants the rights to extract, reuse, reproduce, a
 
 ---
 
-<img src="/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/img/tdm-license-tree.jpg" width="100%" alt="TDM license decision tree">
+<img src="/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-license-tree.jpg" width="100%" alt="TDM license decision tree">
 
 **Note:** Data sets resulting from TDM are not necessarily adaptations of the original licensed material. For example, an analysis based on findings would not constitute an adaptation. The data set mined may be an adaptation if it is a modified version of the original.
 

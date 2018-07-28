@@ -429,7 +429,7 @@ The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.goo
 
 ### To “public by default, no choice”
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/img/1862.gif" width="100%" style="max-width: 450px" alt="Surveillance">
+<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/1862.gif" width="100%" style="max-width: 450px" alt="Surveillance">
 
 ---
 
@@ -536,7 +536,7 @@ April 4, 2017
 
 ## The Ugly
 
-<img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/img/motherboard-another-day-another-hack.jpg" width="100%" alt="Another Day Another Hack">
+<img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/motherboard-another-day-another-hack.jpg" width="100%" alt="Another Day Another Hack">
 [more](https://motherboard.vice.com/en_us/topic/Another-Day-Another-Hack)
 
 ---

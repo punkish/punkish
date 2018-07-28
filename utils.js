@@ -144,7 +144,23 @@ const utils = {
 
                     if (singleEntry) {
                         
-                        if (entry.type !== 'presentation') {
+                        if (entry.tags.indexOf('presentation') > -1) {
+                            const me = 'Puneet Kishor';
+                            if (entry.authors) {
+                                if (entry.authors.length > 1) {
+                                    entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
+                                    entry.authors.unshift(me);
+                                    entry.authors = entry.authors.join(', ');
+                                }
+                                else {
+                                    entry.authors = me + ' and ' + entry.authors[0];
+                                }
+                            }
+                            else {
+                                entry.authors = me;
+                            }
+                        }
+                        else {
                             entry.__content = sh.makeHtml(entry.__content);
                             entry.__content = entry.__content.replace(
                                 /img src="(.*?)\.(png|gif|jpg)(.*)/g, 

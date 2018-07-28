@@ -225,5 +225,3 @@ Projects where members of the public are working on their own, either individual
 
 <br clear="both">
 <span class='footnote'>Hunter, J., Alabri, A. and van Ingen, C. 2013. <a href="http://onlinelibrary.wiley.com/doi/10.1002/cpe.2923/full" target="_blank">Assessing the quality and trustworthiness of citizen science data</a>. Concurrency Computat.: Pract. Exper., 25: 454–466. doi: 10.1002/cpe.2923</span>
-
----

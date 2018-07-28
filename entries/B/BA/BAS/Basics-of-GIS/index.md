@@ -261,5 +261,3 @@ More about [Open Source](/Open-Source).
 and, of course,
 
 * [GIS on Google](http://www.google.com/search?hl=en&lr=&c2coff=1&client=safari&rls=en-us&q=GIS&btnG=Search)
-
----
