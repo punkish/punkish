@@ -481,13 +481,13 @@ PK.where = {
         },
         {
             "w": "Berlin",
-            "h": "Freiberuflich",
+            "h": "Freiberufler",
             "f": "Jun 1, 2018",
             "t": "Sep 14, 2018",
             "d": "three-months"
         },
         {
-            "w": "Sofia, Bulgaria",
+            "w": "Sofia",
             "h": "Plazi meetings",
             "f": "Sep 14, 2018",
             "t": "Sep 20, 2018",
@@ -540,7 +540,7 @@ PK.where = {
     
             html += '<li' + (time_class === "now" ? ' id="now" ' : '') + ' class="' + this.trip[i].d + ' ' + time_class + '">' +
                     '<div class="anno">' +
-                    '<span class="where"><a href="/tags/' + this.trip[i].w + '">' + this.trip[i].w + '</a></span> ' +
+                    '<span class="where"><a href="/entries?q=tags:' + this.trip[i].w + '">' + this.trip[i].w + '</a></span> ' +
                     '<span class="when">' + this.trip[i].f + '-' + this.trip[i].t + '</span><br>' +
                     '<div class="what">' + this.trip[i].h + '</div>' +
                     '</div>' +
