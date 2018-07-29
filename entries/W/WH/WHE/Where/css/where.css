@@ -5,7 +5,7 @@
     list-style: none;
 } */
 .where {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-top: -20px;
 }
 .what {
@@ -14,7 +14,7 @@
 }
 .when {
     color: #444;
-    font-size: 0.6em;
+    font-size: 0.8em;
     margin-top: -10px;
 }
 
@@ -50,6 +50,9 @@
 
     /* use padding-bottom instead of margin-bottom.*/ 
     margin-bottom: 0;
+    
+    font-family: sans-serif;
+    line-height: 1.5em;
 }
 
 /* bullets */
