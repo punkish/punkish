@@ -51,3 +51,5 @@ Using [Andrey Naumenko’s high performance JavaScript 2D Convex Hull program](h
     }
 
 All we need is a set of words, points in space and time, and the curiosity afforded by `convexHull(points)` to explore the world of ideas.
+
+[^1]: The animated convex hull based on an image from the [Evacuation of Nada](http://irahadzic.com/evacuation-of-nada) by Ira Hadžić.
