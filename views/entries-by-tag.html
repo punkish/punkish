@@ -4,15 +4,14 @@
     <div class="desc">also see <a href="/entries?by=date">entries by date</a></div>
     <div class="date">{{created}}</div>
 
-    <ul class="content">
-        {{#each posts}}
-        <li>{{@key}} 
-            <ul>
-                {{#.}}
-                <li><a href="/{{file}}">{{title}}</a></li>
-                {{/.}}
-            </ul>
-        </li>
-        {{/each}}
-    </ul>
+    {{#each posts}}
+    <details>
+        <summary>{{@key}}</summary>
+        <ul>
+        {{#.}}
+        <li><a href="/{{file}}">{{title}}</a></li>
+        {{/.}}
+        </ul>
+    </details>
+    {{/each}}
 </section>

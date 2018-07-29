@@ -266,6 +266,7 @@ const utils = {
         const files = fs.readdirSync(start);
         let i = 0;
         let j = files.length;
+
         for (; i < j; i++) {
             const f = files[i];
             const next = start + '/' + f;
@@ -310,7 +311,7 @@ const utils = {
                             this.posts.byTag[untaggedLabel] = [entryIdx]
                         }
                     }
-                    
+
                     this.posts.byDate.push(entryIdx);
                 }
             }
@@ -345,8 +346,6 @@ const utils = {
                 this.add(doc)
             }, this)
         });
-
-        //fs.writeFileSync('public/js/lunridx.json', JSON.stringify(utils.idx), 'utf8');
 
         let postsByTitle = [];
         this.posts.byDate.forEach(function(el) {

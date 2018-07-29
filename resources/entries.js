@@ -31,10 +31,20 @@ const entries = {
 
         if (request.query['by']) {
 
-            template = `entries-by-${request.query['by']}`;
-            data['posts'] = request.server.app.posts['by' + utils.toTitleCase(request.query['by'])];
+            let by = request.query['by'];
+            if (by.indexOf('tags') > -1) {
+                by = by.replace('tags', 'tag');
+
+            }
+            else if (by.indexOf('dates') > -1) {
+                by = by.replace('dates', 'date');
+            }
+
+            template = `entries-by-${by}`;
+            data['posts'] = request.server.app.posts['by' + utils.toTitleCase(by)];
         }
         else if (request.query['q']) {
+
             let q = request.query['q'];
             if (q.indexOf('tag:') > -1) {
                 q = q.replace('tag:', 'tags:');

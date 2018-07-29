@@ -51,14 +51,15 @@
 
                 for (let i = 0; i < j; i++) {
                     if (~posts[i][0].toLowerCase().indexOf(term)) {
-                        matches.push(posts[i][0]);
+                        matches.push(posts[i][1]);
                     }
                 }
 
                 suggest(matches);
             },
             onSelect: function(e, term, item) {
-                document.querySelector('form[name=search]').submit();
+                //document.querySelector('form[name=search]').submit();
+                location.href = `/${term}`;
             }
         });
 
