@@ -4,9 +4,25 @@
     <div class="desc">also see <a href="/entries?by=tag">entries by tag</a></div>
     <div class="date">{{created}}</div>
 
-    <ul class="content">
+    <!-- <ul class="content">
         {{#posts}}
         <li>{{created}} <a href="/{{file}}">{{title}}</a></li>
         {{/posts}}
-    </ul>
+    </ul> -->
+    {{#years}}
+    <details class="year">
+        <summary>{{year}}</summary>
+        {{#months}}
+        <details class="month">
+            <summary>{{month}}</summary>
+            {{#entries}}
+            <details class="entry">
+                <summary>{{title}}</summary>
+                <div class="notes">{{notes}} <a href="/{{file}}">more</a></div>
+            </details>
+            {{/entries}}
+        </details>
+        {{/months}}
+    </details>
+    {{/years}}
 </section>

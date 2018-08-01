@@ -41,7 +41,106 @@ const entries = {
             }
 
             template = `entries-by-${by}`;
-            data['posts'] = request.server.app.posts['by' + utils.toTitleCase(by)];
+            data['years'] = request.server.app.posts['byYears'];
+
+            /*
+            const years = [
+                { 
+                    year: 2008,
+                    months: [
+                        { 
+                            month: 12,
+                            entries: [
+                                {
+                                    title: "One Entry in 2008-12", 
+                                    file: "One-Entry", 
+                                    notes: "This is entry one in Dec 2008" 
+                                },
+                                { 
+                                    title: "Two Entry in 2008-12", 
+                                    file: "Two-Entry", 
+                                    notes: "This is entry two in Dec 2008" 
+                                },
+                                { 
+                                    title: "Three Entry in 2008-12", 
+                                    file: "Three-Entry", 
+                                    notes: "This is entry three in Dec 2008" 
+                                }
+                            ]
+                        },
+                        { 
+                            month: 11,
+                            entries: [
+                                {
+                                    title: "One Entry in 2008-11", 
+                                    file: "One-Entry", 
+                                    notes: "This is entry one in Nov 2008" 
+                                },
+                                { 
+                                    title: "Two Entry in 2008-11", 
+                                    file: "Two-Entry", 
+                                    notes: "This is entry two in Nov 2008" 
+                                },
+                                { 
+                                    title: "Three Entry in 2008-11", 
+                                    file: "Three-Entry", 
+                                    notes: "This is entry three in Nov 2008" 
+                                }
+                            ]
+                        }
+                    ]
+                },
+                { 
+                    year: 2007,
+                    months: [
+                        { 
+                            month: 12,
+                            entries: [
+                                {
+                                    title: "One Entry in 2007-12", 
+                                    file: "One-Entry", 
+                                    notes: "This is entry one in Dec 2007" 
+                                },
+                                { 
+                                    title: "Two Entry in 2007-12", 
+                                    file: "Two-Entry", 
+                                    notes: "This is entry two in Dec 2007" 
+                                },
+                                { 
+                                    title: "Three Entry in 2007-12", 
+                                    file: "Three-Entry", 
+                                    notes: "This is entry three in Dec 2007" 
+                                }
+                            ]
+                        },
+                        { 
+                            month: 11,
+                            entries: [
+                                {
+                                    title: "One Entry in 2007-11", 
+                                    file: "One-Entry", 
+                                    notes: "This is entry one in Nov 2007" 
+                                },
+                                { 
+                                    title: "Two Entry in 2007-11", 
+                                    file: "Two-Entry", 
+                                    notes: "This is entry two in Nov 2007" 
+                                },
+                                { 
+                                    title: "Three Entry in 2007-11", 
+                                    file: "Three-Entry", 
+                                    notes: "This is entry three in Nov 2007" 
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ];
+
+            data['years'] = years;
+            */
+
+            
         }
         else if (request.query['q']) {
 

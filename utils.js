@@ -259,7 +259,8 @@ const utils = {
 
     posts: {
         byTag: {},
-        byDate: []
+        byDate: [],
+        byYears: []
     },
 
     dirWalker: function(start) {
@@ -275,12 +276,13 @@ const utils = {
                 this.dirWalker(next);
             }
             else if (stats.isFile()) {
-                if (path.extname(next) === '.md') {
+                if (path.basename(next) === 'index.md') {
     
                     const nextParts = next.split('/');
                     const file = nextParts[nextParts.length - 2];
                     const entry = utils.getEntry({
                         file: file, 
+                        subfile: null,
                         queryParam: null, 
                         singleEntry: false
                     });
@@ -312,6 +314,50 @@ const utils = {
                         }
                     }
 
+                    const entryYear = moment(entry.created).format('YYYY');
+                    const entryMonth = moment(entry.created).format('M');
+                    const indexOfYear = this.posts.byYears.map(x => { return x.year }).indexOf(entryYear);
+                    const entrySmallIdx = {
+                        title: entry.title,
+                        file: file,
+                        notes: entry.notes
+                    };
+
+                    if (indexOfYear > -1) {
+                        
+                        const indexOfMonth = this.posts.byYears[indexOfYear].months.map(x => { return x.month }).indexOf(entryMonth);
+                        if (indexOfMonth > -1) {
+
+                            if (this.posts.byYears[indexOfYear].months[indexOfMonth].entries.length) {
+                                this.posts.byYears[indexOfYear].months[indexOfMonth].entries.push(entrySmallIdx);
+                            }
+                            else {
+                                this.posts.byYears[indexOfYear].months[indexOfMonth].entries = [ entrySmallIdx ];
+                            }
+                        }
+                        else {
+                            this.posts.byYears[indexOfYear].months.push(
+                                {
+                                    month: entryMonth,
+                                    entries: [ entrySmallIdx ]
+                                }
+                            )
+                        }
+                    }
+                    else {
+                        this.posts.byYears.push(
+                            {
+                                year: entryYear,
+                                months: [
+                                    {
+                                        month: entryMonth,
+                                        entries: [ entrySmallIdx ]
+                                    }
+                                ]
+                            }
+                        )
+                    }
+
                     this.posts.byDate.push(entryIdx);
                 }
             }
@@ -322,16 +368,26 @@ const utils = {
         
         this.dirWalker(dir);
         
-        this.posts.byDate.sort(function(a, b) {
-            if (a.created < b.created) {
-                return 1;
+        const sortFunc = function(field) {
+            return function(a, b) {
+                if (a[field] < b[field]) {
+                    return 1;
+                }
+                if (a[field] > b[field]) {
+                    return -1;
+                }
+        
+                // names must be equal
+                return 0;
             }
-            if (a.created > b.created) {
-                return -1;
-            }
-    
-            // names must be equal
-            return 0;
+        };
+
+        this.posts.byDate.sort(sortFunc('created'));
+
+        this.posts.byYears.sort((a, b) => b['year'] - a['year']); // For descending sort
+
+        this.posts.byYears.forEach(x => {
+            x.months.sort((a, b) => b['month'] - a['month']); // For descending sort
         });
 
         // create the search index and store it for later use

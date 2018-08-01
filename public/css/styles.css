@@ -113,6 +113,17 @@ header nav {
 pre {
 	font-size: small;
 }
+div.date {
+	margin-bottom: 2em;
+}
+details.month,
+details.entry,
+details.entry .notes {
+	margin-left: 2em;
+}
+details.entry .notes {
+	margin-bottom: 1em;
+}
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*
