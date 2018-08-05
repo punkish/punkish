@@ -26,54 +26,54 @@ I too am traveling around the world, but as I worry about my train tickets and f
 By the time we’re done with dancing,<br>
 elsewhere darling you’ll be glancing<br>
 and the night’s a river-torrent tearing us apart.<br>
-
+<br>
 Merely melody entwined us,<br>
 easily the ties that bind us<br>
 break in fibrillations of the heart.<br>
-
+<br>
 Don’t cry out or cling in terror<br>
 darling that’s a fatal error<br>
 clinging to a somebody you thought you knew was yours.<br>
-
+<br>
 Dispossession by attrition<br>
 is a permanent condition<br>
 that the wretched modern world endures.<br>
-
+<br>
 You drift away, you’re carried by a stream.<br>
 refugee a wanderer you roam;<br>
 you lose your way, so it will come to seem:<br>
 no place in particular is home.<br>
-
+<br>
 You glance away, your house has disappeared,<br>
 the sweater you’ve been knitting has unpurled.<br>
 you live adrift, and everything you feared<br>
 comes to you in this undoing world.<br>
-
+<br>
 Copper-plated, nailed together,<br>
 buffeted by ocean weather<br>
 stands the Queen of Exiles and our mother she may be.<br>
-
+<br>
 Hollow-breasted broken-hearted<br>
 watching for her dear departed<br>
 for her children cast upon the sea.<br>
-
+<br>
 At her back the great idyllic<br>
 land of justice for exilic<br>
 peoples ponders making justice private property.<br>
-
+<br>
 Darling never dream another<br>
 woman might have been your mother<br>
 someday you may be a refugee.<br>
-
+<br>
 A refugee, who’s running from the wars,<br>
 hiding from the fire-bombs they’re hurled;<br>
 eternally a person out-of-doors,<br>
 desperate in this undoing world.<br>
-
+<br>
 Mother for your derelicted<br>
 children from your womb evicted<br>
 grant us shelter harbor solace safety, let us in!<br>
-
+<br>
 Let us tell you where we travelled<br>
 how our hopes our lives unravelled<br>
 how unwelcome everywhere we’ve been.<br>
