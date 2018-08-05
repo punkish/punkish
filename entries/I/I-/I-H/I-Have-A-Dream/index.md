@@ -7,8 +7,7 @@ viewcount  : 74
 id         : 196
 gmap       : 
 tags        :
-    - Martin Luther King
-    - Jr.
+    - Martin Luther King, Jr.
     - dream
 stars      : 
 ---

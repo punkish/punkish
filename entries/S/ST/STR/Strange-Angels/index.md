@@ -31,13 +31,13 @@ Benjamin loved cities, but he didn’t romanticize them. Leading with André Bre
 
 > Marseilles: the yellow-studded maw of a seal with salt water running out between the teeth. When this gullet opens to catch the black and brown proletarian bodies thrown to it by ship’s companies according to their timetables, it exhales a stink of oil, urine, and printer’s ink. This comes from the tartar baking hard on the massive jaws: newspaper kiosks, lavatories, and oyster stalls. The harbor people are a bacillus culture the porters and whores products of decomposition with a resemblance to human beings. But the palate itself is pink, which is the color of shame here, of poverty. Hunchbacks wear it, and beggarwomen. And the faded women of the rue Bouterie are given their only tint by the sole pieces of clothing they wear: pink shifts.
 
-—Walter Benjamin - Selected Writings, 1927-1930
+— Walter Benjamin - Selected Writings, 1927-1930
 
 Benjamin realized that, Jeffries realizes that, and I realize the same. The ugliness on surface hides lessons on how we can live together in peace while the normalized, santized and homogenized malls populated with stores of global chains offer a sameness that may seem pretty on surface but is dehumanizing in its lack of purpose. After all, if I can get the same thing in one place, devoid of the local color or passion, why even go to another.
 
 Strangely, I didn’t know about Walter Benjamin until a few weeks ago. Here is how that story goes—
 
-<img src="strange-angels.jpg" width="174" height="173" align="left"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album **Strange Angels**.
+<img src="strange-angels.jpg" width="174" height="173" align="left" style="margin-right: 10px;"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album **Strange Angels**.
 
 <aside>(I saw Laurie Anderson during her promo tour for that album. I had arrived in the US in 1987 and discovered Anderson, and had a chance to see her live just a couple years later when she performed in Madison, Wisconsin.)</aside>
 
@@ -45,6 +45,7 @@ Strangely, I didn’t know about Walter Benjamin until a few weeks ago. Here is 
 <p>The lyrics of the songs are:</p>
 
 <blockquote>
+<p>
 Hansel and Gretel are alive and well<br>
 And they’re living in Berlin<br>
 She is a cocktail waitress<br>
@@ -62,6 +63,7 @@ To repair the things that have been broken<br>
 But there is a storm blowing from Paradise<br>
 And the storm keeps blowing the angel backwards into the future<br>
 And this storm, this storm is called Progress
+</p>
 </blockquote>
 
 As much as I enjoyed that song, I never really understood the words until recently when I happened to read about Walter Benjamin and his [Theses on the Philosophy of History](https://en.wikipedia.org/wiki/Theses_on_the_Philosophy_of_History):

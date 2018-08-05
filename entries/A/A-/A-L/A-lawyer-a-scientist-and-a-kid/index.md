@@ -1,11 +1,11 @@
 ---
 title      : A lawyer, a scientist, and a kid walk into a makerspace
 description: only one makes something
-modified   : 2015-08-19
-created    : 2015-08-19
+modified   : 2015-08-19 00:00:00
+created    : 2015-08-19 00:00:00
 viewcount  : 0
 id         : 232
-venue      : iKNOW Conference, TU Graz
+where      : iKNOW Conference, TU Graz
 when       : October 2015
 gmap       : 
 type       : presentation

@@ -80,6 +80,13 @@ figure img {
 	visibility: hidden;
 	display: none;
 }
+blockquote {
+	border-left: 2px solid grey;
+	margin-left: 0px;
+}
+blockquote p {
+	padding-left: 20px;
+}
 .archive {
 	background-color: lightcoral;
 	color: black;
@@ -118,7 +125,8 @@ div.date {
 }
 details.month,
 details.entry,
-details.entry .notes {
+details.entry .notes,
+ul.posts {
 	margin-left: 2em;
 }
 details.entry .notes {

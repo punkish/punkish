@@ -35,14 +35,15 @@
         }
 
         //usage:
-        var posts;
-        readTextFile("/public/js/posts.js", function(text){
-            posts = JSON.parse(text);
-        });
+        // var posts;
+        // readTextFile("/public/js/posts.js", function(text){
+        //     posts = JSON.parse(text);
+        // });
 
         new autoComplete({
             selector: document.querySelector('input[name=q]'),
             minChars: 3,
+            /*
             source: function(term, suggest) {
                 
                 term = term.toLowerCase();
@@ -56,6 +57,15 @@
                 }
 
                 suggest(matches);
+            },
+            */
+            source: function(term, response){
+                readTextFile(`/entries/${term}`, function(data) { 
+                    //console.log(data);
+
+                    response(JSON.parse(data)); 
+                });
+
             },
             onSelect: function(e, term, item) {
                 //document.querySelector('form[name=search]').submit();

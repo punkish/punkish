@@ -6,7 +6,9 @@ created    : 2012-01-03 18:31:00
 viewcount  : 0
 id         : 569
 gmap       : 
-tags       : poetry, Urdu
+tags       : 
+    - poetry
+    - Urdu
 stars      : 
 ---
 

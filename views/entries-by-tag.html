@@ -7,11 +7,17 @@
     {{#each posts}}
     <details>
         <summary>{{@key}}</summary>
-        <ul>
+        {{#.}}
+        <details class="entry">
+            <summary>{{title}}</summary>
+            <div class="notes">{{notes}} <a href="/{{file}}">more</a></div>
+        </details>
+        {{/.}}
+        <!-- <ul class="posts">
         {{#.}}
         <li><a href="/{{file}}">{{title}}</a></li>
         {{/.}}
-        </ul>
+        </ul> -->
     </details>
     {{/each}}
 </section>
