@@ -21,6 +21,8 @@ In any case, neither could go back to Mosul for as far in the future they could 
 
 I too am traveling around the world, but as I worry about my train tickets and flights, and my AirBnBs, I try but can’t even fathom the life of folks such as these two, displaced from their lives for no good reason. Suddenly, open science, data and copyright seem so trivial, and all I can do is to go over and over the heart-wrenching words from Tony Kushner’s **It’s An Undoing World:**
 
+<blockquote>
+<p>
 By the time we’re done with dancing,  
 elsewhere darling you’ll be glancing  
 and the night’s a river-torrent tearing us apart.  
@@ -75,5 +77,6 @@ grant us shelter harbor solace safety, let us in!
 Let us tell you where we travelled  
 how our hopes our lives unravelled  
 how unwelcome everywhere we’ve been.  
-
+</p>
+</blockquote>
 <!-- http://catalepton.altervista.org/2008/03/an-undoing-world/ -->
