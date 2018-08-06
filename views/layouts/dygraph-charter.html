@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+</head>
+<body>
+    <div class="container">
+    {{> header}}
+    
+    {{{content}}}
+    
+    {{> footer}}
+    </div>
+
+    <script src="/public/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/public/js/polyfill.js"></script>
+    <script src="/public/js/punkish.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+    
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        //usage:
+        // var posts;
+        // readTextFile("/public/js/posts.js", function(text){
+        //     posts = JSON.parse(text);
+        // });
+
+        new autoComplete({
+            selector: document.querySelector('input[name=q]'),
+            minChars: 3,
+            /*
+            source: function(term, suggest) {
+                
+                term = term.toLowerCase();
+                let matches = [];
+                let j = posts.length;
+
+                for (let i = 0; i < j; i++) {
+                    if (~posts[i][0].toLowerCase().indexOf(term)) {
+                        matches.push(posts[i][1]);
+                    }
+                }
+
+                suggest(matches);
+            },
+            */
+            source: function(term, response){
+                readTextFile(`/entries/${term}`, function(data) { 
+                    //console.log(data);
+
+                    response(JSON.parse(data)); 
+                });
+
+            },
+            onSelect: function(e, term, item) {
+                //document.querySelector('form[name=search]').submit();
+                location.href = `/${term}`;
+            }
+        });
+
+        const g2 = new Dygraph(
+            document.getElementById("graphdiv2"),
+            "/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/upper.csv", 
+            {
+                rollPeriod: 7,
+                showRoller: true
+            }
+        );
+    </script>
+</body>
+</html>
