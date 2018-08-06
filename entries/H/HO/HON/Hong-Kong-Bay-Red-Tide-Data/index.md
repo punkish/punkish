@@ -15,3 +15,5 @@ layout     : dygraph-charter
 ---
 
 <div id="graphdiv2" style="width:960px; height:540px;"></div>
+
+Yim Tin Tsai fish culture zone red tide data measured in June 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD.
