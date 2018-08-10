@@ -29,6 +29,7 @@
     <script src="/public/js/polyfill.js"></script>
     <script src="/public/js/punkish.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+    <script src="/node-files/papaparse/papaparse.min.js"></script>
     
     <script>
         function readTextFile(file, callback) {
@@ -43,34 +44,11 @@
             rawFile.send(null);
         }
 
-        //usage:
-        // var posts;
-        // readTextFile("/public/js/posts.js", function(text){
-        //     posts = JSON.parse(text);
-        // });
-
         new autoComplete({
             selector: document.querySelector('input[name=q]'),
             minChars: 3,
-            /*
-            source: function(term, suggest) {
-                
-                term = term.toLowerCase();
-                let matches = [];
-                let j = posts.length;
-
-                for (let i = 0; i < j; i++) {
-                    if (~posts[i][0].toLowerCase().indexOf(term)) {
-                        matches.push(posts[i][1]);
-                    }
-                }
-
-                suggest(matches);
-            },
-            */
             source: function(term, response){
                 readTextFile(`/entries/${term}`, function(data) { 
-                    //console.log(data);
 
                     response(JSON.parse(data)); 
                 });
@@ -82,15 +60,138 @@
             }
         });
 
-        const g2 = new Dygraph(
-            document.getElementById("graphdiv2"),
-            "/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/upper.csv", 
+        
+        const foo = function(data) {
+
+            let Sonde = {
+                Upper: [],
+                Bottom: []
+            };
+
+            const fields = [
+                'DateTime',
+                'Depth(m)',
+                'Temperature(C)',
+                'Salinity(ppt)',
+                'Dissolved oxygen (mg/L)'
+            ];
+
+            for (let i = 0, j = data.data.length; i < j; i++) {
+
+                const row = data.data[i];
+                if (row['Sonde_Name'] === 'Upper') {
+                    Sonde.Upper.push(row);
+                }
+                else if (row['Sonde_Name'] === 'Bottom') {
+                    Sonde.Bottom.push(row);
+                }
+            }
+
+            const focusOn = function(sondeName) {
+
+                let focus = [];
+                let data = Sonde[sondeName];
+
+                const d = new Date();
+                const todayDate = d.getDate();
+                const todayHour = d.getHours();
+                const todayMins = d.getMinutes();
+
+                let newReadings = false;
+
+                for (let i = 0, j = data.length; i < j; i++) {
+
+                    const row = data[i];
+                    
+                    const focusedRow = [
+                        new Date(row['Date'] + ' ' + row['Time']),
+                        parseFloat(row['Depth(m)']),
+                        parseFloat(row['Temperature(C)']),
+                        parseFloat(row['Salinity(ppt)']),
+                        parseFloat(row['Dissolved oxygen (mg/L)'])
+                    ];
+                    const timePadding = 5;
+                    
+                    if (newReadings) {
+                        focus.push(focusedRow);
+                    }
+                    else {
+                        const date = parseInt(row['Date'].split('/')[1]);
+
+                        if (date == todayDate) {
+
+                            const time = row['Time'].split(':');
+                            const hour = parseInt(time[0]);
+
+                            if (hour == todayHour) {
+
+                                const mins = parseInt(time[1]);
+
+                                const range = [todayMins - timePadding, todayMins + timePadding]
+                                if (mins > range[0] && mins < range[1]) {
+
+                                    focus.push(focusedRow);
+                                    newReadings = true;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return focus;
+            };
+
+            let SondeName = 'Upper';
+            const focus = focusOn(SondeName);
+            let dygraphData = [focus[0]];
+            //console.log(focus)
+
+            const g2 = new Dygraph(
+                document.getElementById("graphdiv2"),
+                dygraphData, 
+                {
+                    rollPeriod: 7,
+                    showRoller: true,
+                    title: 'Yim Tin Tsai Fish Culture Zone',
+                    legend: 'always',
+                    showRangeSelector: true,
+                    labels: fields
+                }
+            );
+
+            // readings are recorded at 10 min intervals. While that may be
+            // fine for real life, it is too long a time period to do any 
+            // meaningful visualization over short periods. So we divide the 
+            // emissionPeriod by the timerAdjustment to get a fake but more 
+            // visualizable emissionPeriod. A timerAdjustment of 1 will keep 
+            // the emissionPeriod to 10 mins. A timerAdjustment of 2 will 
+            // halve the emissionPeriod to 5 mins, and so on. A  timerAdjusment
+            // of 600 is suggested for an emissionPeriod of 1 second.
+            let timerAdjustment = 600;
+            const emissionPeriod = 600000  / timerAdjustment;
+
+            let count = 1;
+            const emitter = setInterval(function() {
+
+                dygraphData.push(focus[count]);
+                g2.updateOptions( { 'file': dygraphData } );
+                count++;
+            }, emissionPeriod);
+
+            // window.intervalId = setInterval(function() {
+            //     var x = new Date();  // current time
+            //     var y = Math.random();
+            //     data.push([x, y]);
+            //     g.updateOptions( { 'file': data } );
+            // }, 1000);
+        };
+
+        const data = Papa.parse(
+            '/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/Yim-Tin-Tsai-FCZ.csv', 
             {
-                rollPeriod: 7,
-                showRoller: true,
-                title: 'Yim Tin Tsai Fish Culture Zone',
-                legend: 'always',
-                showRangeSelector: true
+                header: "true",
+                download: true,
+                complete: foo
             }
         );
     </script>

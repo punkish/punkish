@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <style>
+div.smoothie-chart-tooltip {
+    background: #444;
+    padding: 1em;
+    margin-top: 20px;
+    font-family: consolas;
+    color: white;
+    font-size: 10px;
+    pointer-events: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    {{> header}}
+    
+    <canvas id="smoothie-chart" width="960" height="540">
+    {{{content}}}
+    
+    {{> footer}}
+    </div>
+
+    <script src="/public/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/node-files/smoothie/smoothie.js"></script>
+    <script src="/node-files/papaparse/papaparse.min.js"></script>
+    <script src="/public/js/polyfill.js"></script>
+    <script src="/public/js/punkish.js"></script>
+    
+    
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function() {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        new autoComplete({
+            selector: document.querySelector('input[name=q]'),
+            minChars: 3,
+            source: function(term, response){
+                readTextFile(`/entries/${term}`, function(data) { 
+
+                    response(JSON.parse(data)); 
+                });
+
+            },
+            onSelect: function(e, term, item) {
+                //document.querySelector('form[name=search]').submit();
+                location.href = `/${term}`;
+            }
+        });
+
+        canvas = document.getElementById('smoothie-chart');
+
+        // let data = new TimeSeries();
+        // let chart = new SmoothieChart({
+        //     millisPerPixel:89,
+        //     interpolation:'linear',
+        //     tooltip: true,
+        //     timestampFormatter: SmoothieChart.timeFormatter,
+        //     limitFPS:15
+        // });
+        let data;
+
+        // readTextFile("/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/upper.csv", function(data) { 
+
+        //     readings = JSON.parse(data); 
+        // });
+        Papa.parse("/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/upper.csv", {
+            download: true,
+            complete: function(results) {
+                //console.log(results);
+                data = results;
+            }
+        });
+        // const datum = PK['led-strip'].getRandomIntInclusive(min, max);
+
+        // const t = new Date().getTime();
+        // data.append(t, datum);
+
+        // chart.addTimeSeries(data, {strokeStyle:'#00ff00'});
+        // chart.streamTo(canvas, 500);
+    </script>
+</body>
+</html>
