@@ -6,7 +6,9 @@ created    : 2008-08-21 12:40:35
 viewcount  : 0
 id         : 567
 gmap       : 
-tags       : album, atlas
+tags       : 
+    - album
+    - atlas
 stars      : 
 ---
 
