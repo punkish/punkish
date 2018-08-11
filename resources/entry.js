@@ -24,13 +24,15 @@ const entry = {
     handler: function (request, h) {
 
         let file = request.params['entry'];
-        if (file === 'cv') {
-            file = 'cv-latest';
-        }
 
         if (file === 'Circle-whose-center-is_everywhere') {
             
             return h.redirect('/Circle-whose-center-is-everywhere');
+        }
+
+        if (file === 'cv') {
+
+            file = 'cv-latest';
         }
 
         let subfile = request.params['subentry'] || '';

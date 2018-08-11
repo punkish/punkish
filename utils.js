@@ -160,6 +160,47 @@ const utils = {
                                 entry.authors = me;
                             }
                         }
+                        else if (entry.tags.indexOf('album') > -1) {
+                            entry.images = fs.readdirSync(entry.entryDir + '/img')
+                                .filter(img => {
+                                    const imgExt = img.slice(-4);
+                                    return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
+                                })
+                                .map(img => {
+                                    return `/entry-files/${entry.entryUrl}/img/${img}`;
+                                });
+
+                            entry.type = 'album';
+                            entry.__content = sh.makeHtml(entry.__content);
+                            entry.__content = entry.__content.replace(
+                                /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                                `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                            );
+
+                            // find prev and next entries
+                            let i = 0;
+                            const j = this.posts.byDate.length;
+                            for (; i < j; i++) {
+                                if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
+
+                                    if (i == 0) {
+                                        entry.prev = this.posts.byDate[i];
+                                    }
+                                    else if (i > 0) {
+                                        entry.prev = this.posts.byDate[i - 1];
+                                    }
+                                    
+                                    if (i < j) {
+                                        entry.next = this.posts.byDate[i + 1];
+                                    }
+                                    else if (i == j) {
+                                        entry.next = this.posts.byDate[i];
+                                    }
+                                    
+                                    break;
+                                }
+                            }
+                        }
                         else {
                             entry.__content = sh.makeHtml(entry.__content);
                             entry.__content = entry.__content.replace(

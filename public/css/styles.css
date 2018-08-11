@@ -132,6 +132,16 @@ ul.posts {
 details.entry .notes {
 	margin-bottom: 1em;
 }
+div.oldstyle {
+	font-size: x-large;
+	font-weight: 400;
+}
+div.oldstyle title {
+	text-align: center;
+	font-size: xx-large;
+	font-weight: 800;
+	margin-bottom: 5rem;
+}
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*

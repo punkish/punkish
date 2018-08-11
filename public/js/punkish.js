@@ -78,5 +78,34 @@ let PK = {
         for (var i=0, j=pairs.length; i<j; i++) {
             pairs[i].onclick = PK.translateThis;
         }
+    },
+
+    xhr: function(url, callback) {
+        const x = new XMLHttpRequest();
+        x.overrideMimeType("application/json");
+        x.open("GET", url, true);
+        x.onreadystatechange = function() {
+            if (x.readyState === 4 && x.status == "200") {
+                callback(x.responseText);
+            }
+        };
+        x.send(null);
+    },
+
+    autocomplete: function() {
+        new autoComplete({
+            selector: document.querySelector('input[name=q]'),
+            minChars: 3,
+            source: function(term, response){
+                PK.xhr(`/entries/${term}`, function(data) { 
+
+                    response(JSON.parse(data)); 
+                });
+
+            },
+            onSelect: function(e, term, item) {
+                location.href = `/${term}`;
+            }
+        });
     }
 };

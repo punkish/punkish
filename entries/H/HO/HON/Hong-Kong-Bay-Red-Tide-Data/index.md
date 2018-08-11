@@ -14,8 +14,38 @@ stars      :
 layout     : dygraph-charter
 ---
 
-<div id="graphdiv2" style="width: 960px; height: 540px;"></div>
+<script>
+    const ranger = function() {
+        const val = document.querySelector('input[name="time"]').value;
+        
+        const range = [
+            ['10 mins', 600000],
+            ['5 mins', 300000],
+            ['2 mins', 120000],
+            ['1 min', 60000],
+            ['30 secs', 30000],
+            ['10 secs', 10000],
+            ['5 secs', 5000],
+            ['1 sec', 1000]
+        ];
 
-Yim Tin Tsai fish culture zone red tide data measured in June 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD.
+        document.getElementById('timerAdjustment').innerText = range[val][0];
+    };
+</script>
 
-**Note:** The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 600 is being used in the example above which sets the emissionPeriod to 1 second.
+<div id="graphdiv2" style="width: 960px; height: 540px; margin-bottom: 24px;"></div>
+
+<!--
+<select name="sonde">
+    <option value="">choose a sonde…</option>
+    <option value="Upper">Upper</option>
+    <option value="Lower">Lower</option>
+</select>
+
+<input type="range" name="time" min="0" max="7" step="1" onchange="ranger();">
+<div id="timerAdjustment" style="width: 100px; height: 25px; border: 1px solid black;"></div>
+-->
+
+Yim Tin Tsai Fish Culture Zone red tide data measured in June 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD.
+
+**Note:** The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.

@@ -29,40 +29,12 @@
     <script src="/public/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/public/js/polyfill.js"></script>
     <script src="/public/js/punkish.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script> -->
     <script src="/node-files/dygraphs/dist/dygraph.min.js"></script>
     <script src="/node-files/papaparse/papaparse.min.js"></script>
     
     <script>
-        function readTextFile(file, callback) {
-            var rawFile = new XMLHttpRequest();
-            rawFile.overrideMimeType("application/json");
-            rawFile.open("GET", file, true);
-            rawFile.onreadystatechange = function() {
-                if (rawFile.readyState === 4 && rawFile.status == "200") {
-                    callback(rawFile.responseText);
-                }
-            }
-            rawFile.send(null);
-        }
+        PK.autocomplete();
 
-        new autoComplete({
-            selector: document.querySelector('input[name=q]'),
-            minChars: 3,
-            source: function(term, response){
-                readTextFile(`/entries/${term}`, function(data) { 
-
-                    response(JSON.parse(data)); 
-                });
-
-            },
-            onSelect: function(e, term, item) {
-                //document.querySelector('form[name=search]').submit();
-                location.href = `/${term}`;
-            }
-        });
-
-        
         const foo = function(data) {
 
             let Sonde = {
@@ -169,7 +141,7 @@
             // the emissionPeriod to 10 mins. A timerAdjustment of 2 will 
             // halve the emissionPeriod to 5 mins, and so on. A  timerAdjusment
             // of 600 is suggested for an emissionPeriod of 1 second.
-            let timerAdjustment = 600;
+            let timerAdjustment = 60;
             const emissionPeriod = 600000  / timerAdjustment;
 
             let count = 1;
@@ -179,19 +151,12 @@
                 g2.updateOptions( { 'file': dygraphData } );
                 count++;
             }, emissionPeriod);
-
-            // window.intervalId = setInterval(function() {
-            //     var x = new Date();  // current time
-            //     var y = Math.random();
-            //     data.push([x, y]);
-            //     g.updateOptions( { 'file': data } );
-            // }, 1000);
         };
 
         const data = Papa.parse(
             '/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/Yim-Tin-Tsai-FCZ.csv', 
             {
-                header: "true",
+                header: true,
                 download: true,
                 complete: foo
             }
