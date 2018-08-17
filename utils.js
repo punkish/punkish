@@ -519,8 +519,8 @@ const utils = {
             }
         };
 
-        //this.posts.byDate.sort(sortFunc('created'));
-        this.posts.byDate.sort(sortFunc('title'));
+        this.posts.byDate.sort(sortFunc('created'));
+        //this.posts.byDate.sort(sortFunc('title'));
 
         this.posts.byYear.sort((a, b) => b['year'] - a['year']); // For descending sort
 
