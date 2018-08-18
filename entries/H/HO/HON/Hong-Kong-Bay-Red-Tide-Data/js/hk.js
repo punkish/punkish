@@ -1,93 +1,112 @@
 PK['hk'] = {
-    foo: function(data) {
 
-        let Sonde = {
-            Upper: [],
-            Bottom: []
-        };
-    
-        const fields = [
-            'DateTime',
-            'Depth(m)',
-            'Temperature(C)',
-            'Salinity(ppt)',
-            'Dissolved oxygen (mg/L)'
-        ];
+    Sonde: {
+        Upper: [],
+        Bottom: []
+    },
+
+    fields: [
+        'DateTime',
+        'Depth(m)',
+        'Temperature(C)',
+        'Salinity(ppt)',
+        'Dissolved oxygen (mg/L)'
+    ],
+
+    prepareData: function(data) {
     
         for (let i = 0, j = data.data.length; i < j; i++) {
     
             const row = data.data[i];
             if (row['Sonde_Name'] === 'Upper') {
-                Sonde.Upper.push(row);
+                PK.hk.Sonde.Upper.push(row);
             }
             else if (row['Sonde_Name'] === 'Bottom') {
-                Sonde.Bottom.push(row);
+                PK.hk.Sonde.Bottom.push(row);
             }
         }
-    
-        const focusOn = function(sondeName) {
-    
-            let focus = [];
-            let data = Sonde[sondeName];
-    
-            const d = new Date();
-            const todayDate = d.getDate();
-            const todayHour = d.getHours();
-            const todayMins = d.getMinutes();
-    
-            let newReadings = false;
-    
-            for (let i = 0, j = data.length; i < j; i++) {
-    
-                const row = data[i];
-                
-                const focusedRow = [
-                    new Date(row['Date'] + ' ' + row['Time']),
-                    parseFloat(row['Depth(m)']),
-                    parseFloat(row['Temperature(C)']),
-                    parseFloat(row['Salinity(ppt)']),
-                    parseFloat(row['Dissolved oxygen (mg/L)'])
-                ];
-                const timePadding = 5;
-                
-                if (newReadings) {
-                    focus.push(focusedRow);
-                }
-                else {
-                    const date = parseInt(row['Date'].split('/')[1]);
-    
-                    if (date == todayDate) {
-    
-                        const time = row['Time'].split(':');
-                        const hour = parseInt(time[0]);
-    
-                        if (hour == todayHour) {
-    
-                            const mins = parseInt(time[1]);
-    
-                            const range = [todayMins - timePadding, todayMins + timePadding]
-                            if (mins > range[0] && mins < range[1]) {
-    
-                                focus.push(focusedRow);
-                                newReadings = true;
-                            }
+
+        PK.hk.initChart();
+    },
+
+    findFocus: function(sondeName) {
+
+        let focus = [];
+        let data = PK.hk.Sonde[sondeName];
+        const d = new Date();
+        const todayDate = d.getDate();
+        const todayHour = d.getHours();
+        const todayMins = d.getMinutes();
+
+        let newReadings = false;
+
+        for (let i = 0, j = data.length; i < j; i++) {
+
+            const row = data[i];
+            
+            const focusedRow = [
+                new Date(row['Date'] + ' ' + row['Time']),
+                parseFloat(row['Depth(m)']),
+                parseFloat(row['Temperature(C)']),
+                parseFloat(row['Salinity(ppt)']),
+                parseFloat(row['Dissolved oxygen (mg/L)'])
+            ];
+            const timePadding = 5;
+            
+            if (newReadings) {
+                focus.push(focusedRow);
+            }
+            else {
+                const date = parseInt(row['Date'].split('/')[1]);
+
+                if (date == todayDate) {
+
+                    const time = row['Time'].split(':');
+                    const hour = parseInt(time[0]);
+
+                    if (hour == todayHour) {
+
+                        const mins = parseInt(time[1]);
+
+                        const range = [todayMins - timePadding, todayMins + timePadding]
+                        if (mins > range[0] && mins < range[1]) {
+
+                            focus.push(focusedRow);
+                            newReadings = true;
                         }
                     }
                 }
             }
-    
-            return focus;
-        };
-    
-        let SondeName = 'Upper';
-        const focus = focusOn(SondeName);
-        let dygraphData = [focus[0]];
-        //console.log(focus)
-    
-        
-    
-        PK.hk.emissions(60);
-        
+        }
+
+        return focus;
+    },
+
+    g: null,
+    dygraphData: [],
+
+    initChart: function(sondeName = 'Upper', timerAdjustment = 60) {
+
+        if (PK.hk.g !== null) {
+            PK.hk.g.destroy();
+        }
+
+        const focusedData = PK.hk.findFocus(sondeName);
+        PK.hk.dygraphData.push(focusedData[0]);
+
+        PK.hk.g = new Dygraph(
+            document.getElementById("graph"),
+            PK.hk.dygraphData, 
+            {
+                rollPeriod: 7,
+                showRoller: true,
+                title: 'Yim Tin Tsai Fish Culture Zone',
+                legend: 'always',
+                showRangeSelector: true,
+                labels: PK.hk.fields
+            }
+        );
+        PK.hk.emissions(focusedData, timerAdjustment);
     },
     
     // readings are recorded at 10 min intervals. While that may be
@@ -96,23 +115,25 @@ PK['hk'] = {
     // emissionPeriod by the timerAdjustment to get a fake but more 
     // visualizable emissionPeriod. A timerAdjustment of 1 will keep 
     // the emissionPeriod to 10 mins. A timerAdjustment of 2 will 
-    // halve the emissionPeriod to 5 mins, and so on. A  timerAdjusment
-    // of 600 is suggested for an emissionPeriod of 1 second
-    emissions: function(timerAdjusment) {
+    // halve the emissionPeriod to 5 mins, and so on. A  timerAdjustment
+    // of 60 is suggested for an emissionPeriod of 10 second
+    emissions: function(focusedData, timerAdjustment) {
         
         const emissionPeriod = 600000  / timerAdjustment;
-    
+        
         let count = 1;
         const emitter = setInterval(function() {
     
-            dygraphData.push(focus[count]);
-            g2.updateOptions( { 'file': dygraphData } );
+            PK.hk.dygraphData.push(focusedData[count]);
+            PK.hk.g.updateOptions( { 'file': PK.hk.dygraphData } );
             count++;
         }, emissionPeriod);
     },
     
     changeSonde: function() {
-    
+        const val = document.querySelector('select[name="sonde"]');
+        const sondeName = val.options[val.selectedIndex].value;
+        PK.hk.initChart(sondeName, undefined);
     },
     
     changeRange: function() {
@@ -133,25 +154,15 @@ PK['hk'] = {
     },
 
     init: function() {
+        // document.querySelector('select[name="sonde"]').addEventListener("change", PK.hk.changeSonde);
+        // document.querySelector('input[name="time"]').addEventListener("change", PK.hk.changeRange);
+
         const data = Papa.parse(
             '/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/Yim-Tin-Tsai-FCZ.csv', 
             {
                 header: true,
                 download: true,
-                complete: this.foo
-            }
-        );
-
-        let g2 = new Dygraph(
-            document.getElementById("graph"),
-            dygraphData, 
-            {
-                rollPeriod: 7,
-                showRoller: true,
-                title: 'Yim Tin Tsai Fish Culture Zone',
-                legend: 'always',
-                showRangeSelector: true,
-                labels: fields
+                complete: this.prepareData
             }
         );
     }

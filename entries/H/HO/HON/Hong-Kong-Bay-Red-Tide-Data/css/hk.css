@@ -1,3 +1,15 @@
+#graph {
+    width: 960px; 
+    height: 540px; 
+    margin-bottom: 24px;
+}
+
 .graphControl {
 	margin-right: 30px;
+}
+
+#timerAdjustment {
+    width: 100px; 
+    height: 25px; 
+    border: 1px solid black;
 }

@@ -1,5 +1,5 @@
 ---
-title      : Canidae can I do?
+title      : Canidae, can I do?
 description: 
 modified   : 2017-04-11 09:54:00
 created    : 2017-04-11 09:54:00
@@ -19,10 +19,8 @@ stars      :
     <figcaption>puppies</figcaption>
 </figure>
 
-I have never been a dog person, but for the past couple of years, dogs have been wiggling and wagging their way into my heart. Most recently, a couple of stray puppies have adopted my mom, hanging out at her doorstep, playing with each other at a breakneck speed, barking at everything that moves, and wolfing down the leftover rice and rotis that they get at the end of the day. 
+I was never a dog person, but for the past few years, dogs have been wiggling and wagging their way into my heart. Most recently, a couple of stray puppies have adopted my mom, hanging out at her doorstep, playing with each other at a breakneck speed, barking at everything that moves, and wolfing down the leftover rice and rotis that they get at the end of the day. 
 
 Just a few days of feeding them has earned me the privilege of getting jumped upon by them, getting my toes licked, and being presented with a belly to scratch. Their mom, only slightly bigger than them and just as skinny, brings them food in her gullet, regurgitates it and they wolf that down as well. Then they play with her at a breakneck speed before she tires of them and trots away. 
 
-A few days of observing their simple and instinctual response to being treated nicely has made me realize a few maxims about life, relationships, love and caring. On the one hand, the dogs respond almost immediately to gentle treatment, and on the other side, we humans have this tremendously strong need to give, to take care of others. This makes for close to a flawless give-take-respond relationship. Somewhere within each of us is a dog and its caretaker. If we just listen to the both of them within us, we can enjoy the most fulfilling of relationships with others: parents, siblings, friends, cohabitants, lovers.[^1] Yes, we can.
-
-[^1]: I asked B who knows dogs, and B agrees with me.
+A few days of observing their simple and instinctual response to being treated nicely has made me realize a maxim about life, relationships, love and caring. Dogs respond almost immediately to gentle treatment, and we humans have this tremendously strong need to give, to take care of others. This makes for close to a flawless give-take-respond relationship, uncondiontal from both sides. Within each of us are both a dog and its owner. If we just listen to the both of them within us, we can learn to enjoy the most fulfilling of relationships: with parents, siblings, friends, cohabitants, and with lovers. Yes, we can.

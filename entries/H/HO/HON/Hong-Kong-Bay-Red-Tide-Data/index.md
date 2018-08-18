@@ -16,16 +16,19 @@ js         : hk
 layout     : dygraph-charter
 ---
 
-<div id="graph" style="width: 960px; height: 540px; margin-bottom: 24px;"></div>
+<div id="graph"></div>
 
+<!--
 <select name="sonde" class="graphControl u-pull-left">
     <option value="">choose a sonde…</option>
     <option value="Upper">Upper</option>
-    <option value="Lower">Lower</option>
+    <option value="Bottom">Bottom</option>
 </select>
 
-<input type="range" name="time" min="0" max="7" step="1" onchange="ranger();" class="graphControl u-pull-left">
-<div id="timerAdjustment" style="width: 100px; height: 25px; border: 1px solid black;" class="graphControl u-pull-left"></div>
+<input type="range" name="time" min="0" max="7" step="1" class="graphControl u-pull-left">
+
+<div id="timerAdjustment" class="graphControl u-pull-left"></div>
+-->
 
 <p class="u-cf">Yim Tin Tsai Fish Culture Zone red tide data measured in June 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD.</p>
 
