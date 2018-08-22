@@ -16,14 +16,18 @@ PK['hk'] = {
     prepareData: function(data) {
     
         for (let i = 0, j = data.data.length; i < j; i++) {
-    
+            
             const row = data.data[i];
-            if (row['Sonde_Name'] === 'Upper') {
-                PK.hk.Sonde.Upper.push(row);
-            }
-            else if (row['Sonde_Name'] === 'Bottom') {
-                PK.hk.Sonde.Bottom.push(row);
-            }
+            
+            const thisRow = [
+                new Date(row['Date'] + ' ' + row['Time']),
+                parseFloat(row['Depth(m)']),
+                parseFloat(row['Temperature(C)']),
+                parseFloat(row['Salinity(ppt)']),
+                parseFloat(row['Dissolved oxygen (mg/L)'])
+            ];
+
+            PK.hk.Sonde[row['Sonde_Name']].push(thisRow);
         }
 
         PK.hk.initChart();
@@ -31,55 +35,32 @@ PK['hk'] = {
 
     findFocus: function(sondeName) {
 
-        let focus = [];
-        let data = PK.hk.Sonde[sondeName];
         const d = new Date();
         const todayDate = d.getDate();
         const todayHour = d.getHours();
         const todayMins = d.getMinutes();
 
-        let newReadings = false;
+        const timePadding = 5;
+        const range = [todayMins - timePadding, todayMins + timePadding];
 
-        for (let i = 0, j = data.length; i < j; i++) {
+        //console.log(sondeName);
+        for (let i = 0, j = PK.hk.Sonde[sondeName].length; i < j; i++) {
 
-            const row = data[i];
-            
-            const focusedRow = [
-                new Date(row['Date'] + ' ' + row['Time']),
-                parseFloat(row['Depth(m)']),
-                parseFloat(row['Temperature(C)']),
-                parseFloat(row['Salinity(ppt)']),
-                parseFloat(row['Dissolved oxygen (mg/L)'])
-            ];
-            const timePadding = 5;
-            
-            if (newReadings) {
-                focus.push(focusedRow);
-            }
-            else {
-                const date = parseInt(row['Date'].split('/')[1]);
+            const row = PK.hk.Sonde[sondeName][i];            
+            const date = row[0];
 
-                if (date == todayDate) {
+            if (date.getDate() == todayDate) {
 
-                    const time = row['Time'].split(':');
-                    const hour = parseInt(time[0]);
+                if (date.getHours() == todayHour) {
+                    
+                    if (date.getMinutes() > range[0] && date.getMinutes() < range[1]) {
 
-                    if (hour == todayHour) {
-
-                        const mins = parseInt(time[1]);
-
-                        const range = [todayMins - timePadding, todayMins + timePadding]
-                        if (mins > range[0] && mins < range[1]) {
-
-                            focus.push(focusedRow);
-                            newReadings = true;
-                        }
+                        return i;
+                        break;
                     }
                 }
             }
         }
-
-        return focus;
     },
 
     g: null,
@@ -91,8 +72,8 @@ PK['hk'] = {
             PK.hk.g.destroy();
         }
 
-        const focusedData = PK.hk.findFocus(sondeName);
-        PK.hk.dygraphData.push(focusedData[0]);
+        let focus = PK.hk.findFocus(sondeName);
+        PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
 
         PK.hk.g = new Dygraph(
             document.getElementById("graph"),
@@ -100,14 +81,26 @@ PK['hk'] = {
             {
                 rollPeriod: 7,
                 showRoller: true,
-                title: 'Yim Tin Tsai Fish Culture Zone',
+                title: `Yim Tin Tsai Fish Culture Zone ${sondeName} sonde`,
                 legend: 'always',
                 showRangeSelector: true,
-                labels: PK.hk.fields
+                labels: PK.hk.fields,
+                strokeWidth: 1.0,
+                drawPoints: true,
+                pointSize: 1.5,
+                labelsDiv: document.getElementById('status'),
+                labelsSeparateLines: true
             }
         );
-        PK.hk.emissions(focusedData, timerAdjustment);
+
+        if (PK.hk.emitter !== null) {
+            PK.hk.emitter.clearInterval();
+        }
+        
+        PK.hk.emissions(sondeName, focus++, timerAdjustment);
     },
+
+    emitter: null,
     
     // readings are recorded at 10 min intervals. While that may be
     // fine for real life, it is too long a time period to do any 
@@ -117,16 +110,16 @@ PK['hk'] = {
     // the emissionPeriod to 10 mins. A timerAdjustment of 2 will 
     // halve the emissionPeriod to 5 mins, and so on. A  timerAdjustment
     // of 60 is suggested for an emissionPeriod of 10 second
-    emissions: function(focusedData, timerAdjustment) {
+    emissions: function(sondeName, focus, timerAdjustment) {
         
         const emissionPeriod = 600000  / timerAdjustment;
         
-        let count = 1;
-        const emitter = setInterval(function() {
+        //let count = 1;
+        PK.hk.emitter = setInterval(function() {
     
-            PK.hk.dygraphData.push(focusedData[count]);
+            PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
             PK.hk.g.updateOptions( { 'file': PK.hk.dygraphData } );
-            count++;
+            focus++;
         }, emissionPeriod);
     },
     
@@ -154,7 +147,10 @@ PK['hk'] = {
     },
 
     init: function() {
-        // document.querySelector('select[name="sonde"]').addEventListener("change", PK.hk.changeSonde);
+        // const selectWidget = document.querySelector('select[name="sonde"]');
+        // selectWidget.selectedIndex = 0;
+
+        // selectWidget.addEventListener("change", PK.hk.changeSonde);
         // document.querySelector('input[name="time"]').addEventListener("change", PK.hk.changeRange);
 
         const data = Papa.parse(

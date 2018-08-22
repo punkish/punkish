@@ -31,47 +31,51 @@ js         : cv
     <div id="punkish-panels">
         <div name="panel" class="cv-panel" id="pnl_Experience">
             <div class="cv-panel_intro">
-                <p>I am an international open science advocate helping domain scientists make sense of data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. Since 1985, my career has spanned rural appropriate technology design to international development, academia, research and science information policy. <a id="cv-less-link" href="/cv#less">less &larr;</a></p>
+                <p>Since 1985, my career has spanned rural appropriate technology design, international development, academia, research and science information policy. I help domain scientists make sense of their data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. As such, I have expertise in both ‘science for policy’ as well as ‘policy for science.’ <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. In a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast network, I work to enable science as a gift that keeps on giving through the use of “private data for public good” as well as “public data for private good.” And I work on the policies to create an environment where information is open by default.<a id="cv-less-link" href="/cv#less">less &larr;</a></p>
                 </span>
             </div>
 
             <div class="cv-job">
-                2015-continuing. Independent Consultant
+                2015-continuing. Independent Open Science Advocate
 
                 <div class="cv-subjob">Current Projects</div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues.
+                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the Biodiversity Literature Repository. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">TopLabs, Berlin, Germany.</span> I am an active member of the biolab and art space run by <a href="http://top-ev.de" target="_blank">>top e.V.</a>
+                    <span class="cv-dept">TOP Labs, Berlin, Germany.</span> I am an active member of the biolab and art space run by <a href="http://top-ev.de" target="_blank">>top e.V.</a>
                 </div>
 
                 <div class="cv-subjob">Recent Past Projects</div>
-                
+
                 <div class="cv-cat">
-                    <span class="cv-dept">Academy Health, Washington DC.</span> At Academy Health, the leading non-profit in the United States focusing on Health Services Research (HSR), I was working on <a href="http://www.edm-forum.org/cielo" target="_blank">CIELO</a>, a web-based platform for archiving and sharing information, data and software on medical/health projects.
+                    <span class="cv-dept">art+science Residency, Khoj International Artists Association, New Delhi.</span> From October 2017-April 2018, I was working on creating <a href="https://mycoprinter.punkish.org" target="_blank">MycoPrinter</a> a 3D bio-printer, with Darya Warner, a Brooklyn-based bioartist. The residency was funded by the Dept. of Biotechnology, Government of India, and Wellcome Trust, UK.
                 </div>
 
                  <div class="cv-cat">
-                    <span class="cv-dept">Homi Bhabha Centre for Science Education (HBCSE), TIFR, Mumbai, India.</span> I am a visiting scientist at Gnowledge Labs and <a href="http://www.metastudio.org/cube" target="_blank">CUBE</a>, a bio learning and hacking space within HBCSE.
+                    <span class="cv-dept">Homi Bhabha Centre for Science Education (HBCSE), TIFR, Mumbai, India.</span> Since 2015, I have been a visiting scientist at Gnowledge Labs and <a href="http://www.metastudio.org/cube" target="_blank">CUBE</a>, a bio learning and hacking space within HBCSE.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">SUB (the state and university library) and GCDH (Göttingen Centre for Digital Humanities), University of Göttingen, Göttingen, Germany.</span> Since September 2016, I have a visiting fellowship at SUB and GCDH, exploring their various open science/data initiatives with a focus on visualizing and sharing geospatial information.
+                    <span class="cv-dept">SUB (the state and university library) and GCDH (Göttingen Centre for Digital Humanities), University of Göttingen, Germany.</span> From September 2016-August 2017, I was a visiting fellowship at SUB and GCDH, exploring their various open science/data initiatives with a focus on visualizing and sharing geospatial information.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">The World Bank, Washington DC.</span> I am creating a meta-MOOC of <a href="http://punkish.org/learning/" target="_blank">learning resources</a> on spatial information technologies and data.
+                    <span class="cv-dept">Global Alliance for Genomics and Health (GA4GH).</span> Until 2017, I was a member of the <a href="http://www.genomicsandhealth.org" target="_blank">Data Products Licensing Task Team</a> tasked with selecting, developing, and adopting open source licensing models for GA4GH data products. The group is looking to support and develop open source paradigms that balance the desire for scientific research collaborations without compromising incentives to innovate and realize commercial benefits.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Global Alliance for Genomics and Health (GA4GH).</span> I am a member of the <a href="http://www.genomicsandhealth.org" target="_blank">Data Products Licensing Task Team</a> tasked with selecting, developing, and adopting open source licensing models for GA4GH data products. The group is looking to support and develop open source paradigms that balance the desire for scientific research collaborations without compromising incentives to innovate and realize commercial benefits.
+                    <span class="cv-dept">Academy Health, Washington DC.</span> April-June, 2016, I was at Academy Health, the leading non-profit in the United States focusing on Health Services Research (HSR), working on <a href="http://www.edm-forum.org/cielo" target="_blank">CIELO</a>, a web-based platform for archiving and sharing information, data and software on medical/health projects. In addition, I was helping Academy Health move <a href="https://repository.edm-forum.org/egems/" target="_blank">eGEMS</a>, their peer-reviewed, open access journal on health services research, to an open publishing platform.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Department of GeoScience, University of Wisconsin, Madison, WI, USA.</span> I was working on <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0113523" target="_blank">PaleoDeepDive</a>, a machine reading and learning system, built upon a new kind of digital library resource.
+                    <span class="cv-dept">The World Bank, Washington DC.</span> From 2015-2016, I was creating a meta-MOOC of <a href="http://punkish.org/learning/" target="_blank">learning resources</a> on spatial information technologies and data.
+                </div>
+
+                <div class="cv-cat">
+                    <span class="cv-dept">Department of GeoScience, University of Wisconsin, Madison, WI, USA.</span> In the summer of 2015, I was working on <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0113523" target="_blank">PaleoDeepDive</a>, a machine reading and learning system, built upon a new kind of digital library resource.
                 </div>
             </div>
 
