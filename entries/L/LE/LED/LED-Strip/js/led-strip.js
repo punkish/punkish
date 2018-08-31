@@ -22,7 +22,7 @@ const saw = new Wad({
     offset  : 0,     // Where in the audio clip playback begins, measured in seconds from the start of the audio clip.
     //pitch   : 'C5',  // Set a default pitch on the constuctor if you don't want to set the pitch on <code>play()</code>.
     detune  : 0,     // Set a default detune on the constructor if you don't want to set detune on <code>play()</code>. Detune is measured in cents. 100 cents is equal to 1 semitone.
-    panning : -.5,   // Horizontal placement of the sound source. Possible values are from 1 to -1.
+    //panning : -.5,   // Horizontal placement of the sound source. Possible values are from 1 to -1.
     
     env     : {      // This is the ADSR envelope.
         attack  : 0.0,  // Time in seconds from onset to peak volume.  Common values for oscillators may range from 0.05 to 0.3.
