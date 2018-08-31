@@ -36,21 +36,29 @@ PK['hk'] = {
     findFocus: function(sondeName) {
 
         const d = new Date();
-        const todayDate = d.getDate();
+
+        let todayDate = d.getDate();
+
+        // Since the data are from June, the highest date possible is 30.
+        // But, it is possible that todayDate might be greater than 30, 
+        // so we adjust for that
+        if (todayDate > 30) {
+            todayDate = 1;
+        }
+
         const todayHour = d.getHours();
         const todayMins = d.getMinutes();
 
         const timePadding = 5;
         const range = [todayMins - timePadding, todayMins + timePadding];
 
-        //console.log(sondeName);
         for (let i = 0, j = PK.hk.Sonde[sondeName].length; i < j; i++) {
 
             const row = PK.hk.Sonde[sondeName][i];            
             const date = row[0];
-
+            
             if (date.getDate() == todayDate) {
-
+                
                 if (date.getHours() == todayHour) {
                     
                     if (date.getMinutes() > range[0] && date.getMinutes() < range[1]) {
@@ -61,6 +69,7 @@ PK['hk'] = {
                 }
             }
         }
+
     },
 
     g: null,
@@ -73,6 +82,7 @@ PK['hk'] = {
         }
 
         let focus = PK.hk.findFocus(sondeName);
+        
         PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
 
         PK.hk.g = new Dygraph(

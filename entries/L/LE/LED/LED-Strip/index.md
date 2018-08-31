@@ -25,4 +25,4 @@ layout     : led-strip
     <input type="radio" name="synDataType" value="letters"> letters 
     <input type="radio" name="synDataType" value="mixed"> mixed<br>
     <button id="synDataGenerator" type="submit">start</button>
-</form>
+</form> 

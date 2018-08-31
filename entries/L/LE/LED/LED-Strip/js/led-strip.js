@@ -1,8 +1,7 @@
-let generateSyntheticData;
 const maxScale = 4186.01;
 const minScale = 27.5;
 const range = maxScale - minScale;
-const intervals = 10;
+const intervals = 1000;
 const intervalSize = range / intervals;
 const midRange = function(hz) {
     for (let i = 0; i < intervals; i++) {
@@ -32,48 +31,48 @@ const saw = new Wad({
         hold    : 0.25, // Time in seconds to maintain the sustain volume level. If this is not set to a lower value, oscillators must be manually stopped by calling their stop() method.
         release : 0     // Time in seconds from the end of the hold period to zero volume, or from calling stop() to zero volume.
     },
-    /*
-    filter  : {
-        type      : 'lowpass', // What type of filter is applied.
-        frequency : 600,       // The frequency, in hertz, to which the filter is applied.
-        q         : 1,         // Q-factor.  No one knows what this does. The default value is 1. Sensible values are from 0 to 10.
-        env       : {          // Filter envelope.
-            frequency : 800, // If this is set, filter frequency will slide from filter.frequency to filter.env.frequency when a note is triggered.
-            attack    : 0.5  // Time in seconds for the filter frequency to slide from filter.frequency to filter.env.frequency
-        }
-    },
-    reverb  : {
-        wet     : 1,                                            // Volume of the reverberations.
-        impulse : 'https://www.myServer.com/path/to/impulse.wav' // A URL for an impulse response file, if you do not want to use the default impulse response.
-    },
+    
+    // filter  : {
+    //     type      : 'lowpass', // What type of filter is applied.
+    //     frequency : 600,       // The frequency, in hertz, to which the filter is applied.
+    //     q         : 1,         // Q-factor.  No one knows what this does. The default value is 1. Sensible values are from 0 to 10.
+    //     env       : {          // Filter envelope.
+    //         frequency : 800, // If this is set, filter frequency will slide from filter.frequency to filter.env.frequency when a note is triggered.
+    //         attack    : 0.5  // Time in seconds for the filter frequency to slide from filter.frequency to filter.env.frequency
+    //     }
+    // },
+    // reverb  : {
+    //     wet     : 1,                                            // Volume of the reverberations.
+    //     impulse : 'https://www.myServer.com/path/to/impulse.wav' // A URL for an impulse response file, if you do not want to use the default impulse response.
+    // },
     delay   : {
         delayTime : .5,  // Time in seconds between each delayed playback.
         wet       : .25, // Relative volume change between the original sound and the first delayed playback.
         feedback  : .25, // Relative volume change between each delayed playback and the next. 
     },
-    */
+    
     // vibrato : { // A vibrating pitch effect.  Only works for oscillators.
     //     shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
     //     magnitude : 3,      // how much the pitch changes. Sensible values are from 1 to 10.
     //     speed     : 4,      // How quickly the pitch changes, in cycles per second.  Sensible values are from 0.1 to 10.
     //     attack    : 0       // Time in seconds for the vibrato effect to reach peak magnitude.
     // },
-    /*
+    
     tremolo : { // A vibrating volume effect.
         shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
         magnitude : 3,      // how much the volume changes. Sensible values are from 1 to 10.
         speed     : 4,      // How quickly the volume changes, in cycles per second.  Sensible values are from 0.1 to 10.
         attack    : 0       // Time in seconds for the tremolo effect to reach peak magnitude.
     },
-    tuna   : {
-        Chorus : {
-            intensity: 0.3,  //0 to 1
-            rate: 4,         //0.001 to 8
-            stereoPhase: 0, //0 to 180
-            bypass: 0
-        }
-    }
-    */
+    // tuna   : {
+    //     Chorus : {
+    //         intensity: 0.3,  //0 to 1
+    //         rate: 4,         //0.001 to 8
+    //         stereoPhase: 0, //0 to 180
+    //         bypass: 0
+    //     }
+    // }
+    
 });
 
 PK['led-strip'] = {
@@ -227,12 +226,14 @@ PK['led-strip'] = {
     },
     
     letterMaker: function(letter, type) {
-        
+
         let html = '<div class="led-letter">';
+
+
         for (let i = 0; i < 8; i++) {
             html += '<div class="led-row">';
             
-            const leds = this[type][letter][i].split('');
+            const leds = PK['led-strip'][type][letter][i].split('');
 
             for (let m = 0; m < 5; m++) {
                 const state = leds[m] === '1' ? 'on' : 'off';
@@ -246,125 +247,130 @@ PK['led-strip'] = {
         return html;
     }, 
     
-    status: document.getElementById('status'),
-    canvas: document.getElementById('smoothie-chart'),
+    // html elements
+    hEls: {
+        status: document.getElementById('status'),
+        canvas: document.getElementById('smoothie-chart'),
+        synData: document.getElementById('synData'),
+        strip: document.getElementById('led-strip'),
+        
+        // radio buttons
+        synDataType: document.getElementsByName('synDataType'),
 
-    //The maximum is inclusive and the minimum is inclusive 
+        // form button
+        synDataGenerator: document.getElementById('synDataGenerator'),
+    },
+
+    generateSyntheticData: null,
+    
+    // The maximum and minimum are both inclusive
     getRandomIntInclusive: function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min; 
     },
 
-    
-
-    generate: function() {
-        if (num < maxNumOfAlpha) {
-            generateSynNumbers(num);
-            status.innerText = `generated ${num} numbers`;
-            num++;
-        }
-        else {
-            status.innerText = `generated ${num} numbers… done`;
-        }
-
-        chart.addTimeSeries(data, {lineWidth: 1, strokeStyle: '#00ff00'});
-        chart.streamTo(this.canvas, 250);
-    },
-
     syntheticData: function(synDataType) {
         
+        const status = PK['led-strip'].hEls.status;
+        const synData = PK['led-strip'].hEls.synData;
+        const getRandomIntInclusive = PK['led-strip'].getRandomIntInclusive;
+        const drawMessage = PK['led-strip'].drawMessage;
+        const lettersLC = PK['led-strip'].lettersLC;
+        const lettersUC = PK['led-strip'].lettersUC;
+        const canvas = PK['led-strip'].hEls.canvas;
+
         status.innerText = 'starting generation of ' + synDataType + ' data…';
-        const synData = document.getElementById('synData');
         let data = new TimeSeries();
         let chart = new SmoothieChart({
             tooltip: true,
             timestampFormatter: SmoothieChart.timeFormatter
         });
+
         let num = 0;
-        const maxNumOfAlpha = 200;
+        const maxNumOfChars = 50;
+
+        function generateSynNumbers(num, min, max) {
+            const datum = getRandomIntInclusive(min, max);
+            synData.innerText = synData.innerText + ' ' + datum;
+    
+            const t = new Date().getTime();
+            data.append(t, datum);
+    
+            saw.play({pitch : midRange(datum)})
+            
+            drawMessage(datum.toString());
+        };
+
+        function generateSynLetters(num) {
+            const rand = Math.random();
+            const rand26 = Math.floor(rand * 26);
+            const datum =  rand > 0.5 ? lettersLC[rand26] : lettersUC[rand26];
+            
+            synData.innerText = synData.innerText + ' ' + datum;
+
+            const t = new Date().getTime();
+            data.append(t, datum);
+
+            saw.play({pitch : midRange(datum)})
+            
+            drawMessage(datum.toString());
+        }
 
         if (synDataType === 'numbers') {
 
-            function generateSynNumbers(num, min, max) {
-                const datum = PK['led-strip'].getRandomIntInclusive(min, max);
-                synData.innerText = synData.innerText + ' ' + datum;
-        
-                const t = new Date().getTime();
-                data.append(t, datum);
-        
-                saw.play({pitch : midRange(datum)})
-                
-                PK['led-strip'].drawMessage(datum.toString());
-            };
-
             const min = 0;
             const max = 120;
-            generateSynNumbers(num, min, max);
-        }
-        else if (synDataType === 'letters') {
-            const lettersLC = Object.keys(this.lettersLC);
-            const lettersUC = Object.keys(this.lettersUC);
-
-            function generateSynLetters(num) {
-                const rand = Math.random();
-                const rand26 = Math.floor(rand * 26);
-                const datum =  rand > 0.5 ? lettersLC[rand26] : lettersUC[rand26];
-                
-                synData.innerText = synData.innerText + ' ' + datum;
-
-                const t = new Date().getTime();
-                data.append(t, datum);
-
-                saw.play({pitch : midRange(datum)})
-                
-                this.drawMessage(datum.toString());
-            }
 
             function generate() {
-                if (num < maxNumOfAlpha) {
-                    generateSynLetters(num);
+                if (num < maxNumOfChars) {
+                    generateSynNumbers(num, min, max);
                     status.innerText = `generated ${num} letters`;
                     num++;
                 }
                 else {
                     status.innerText = `generated ${num} letters… done`;
                 }
-
+    
                 chart.addTimeSeries(data, {lineWidth: 1, strokeStyle: '#00ff00'});
-                chart.streamTo(this.canvas, 250);
+                chart.streamTo(canvas, 250);
             }
+    
+            num = 0;
+            PK['led-strip'].generateSyntheticData = setInterval(generate, 250);
+        }
+        else if (synDataType === 'letters') {
+            const lettersLC = Object.keys(this.lettersLC);
+            const lettersUC = Object.keys(this.lettersUC);
         }
 
-        num = 0;
-        generateSyntheticData = setInterval(generate, 250);
+        
     },
-
-    // radio buttons
-    synDataType: document.getElementsByName('synDataType'),
-
-    // form button
-    synDataGenerator: document.getElementById('synDataGenerator'),
 
     stripContent: '',
 
     drawMessage: function(msg) {
 
-        this.stripContent = this.stripContent ? this.stripContent + ' ' + msg : msg;
+        const strip = PK['led-strip'].hEls.strip;
+        const letterMaker = PK['led-strip'].letterMaker;
 
-        //console.log(msg);
-        const strip = document.getElementById('led-strip');
-        const width = strip.getBoundingClientRect().width;
+        PK['led-strip'].stripContent = PK['led-strip'].stripContent ? 
+            PK['led-strip'].stripContent + ' ' + msg : 
+            msg;
+        
+        const stripWidth = strip.getBoundingClientRect().width;
+        const charWidth = 48;
 
         // willFit is the number of letters that will fit on the strip
-        const willFit = Math.round(width / 40);
+        const willFit = Math.round(stripWidth / charWidth);
 
-        let html = '';
-
-        if (this.stripContent.length >= willFit) {
-            this.stripContent = this.stripContent.slice(msg.length + 4);
+        if (PK['led-strip'].stripContent.length >= willFit) {
+            PK['led-strip'].stripContent = PK['led-strip'].stripContent.slice(PK['led-strip'].stripContent.length - willFit);
         }
 
-        for (let i = 0; i < this.stripContent.length; i++) {
-            html += this.letterMaker(this.stripContent[i], 'numbers');
+        const chars = PK['led-strip'].stripContent.split('');
+        let html = '';
+        for (let i = 0; i < chars.length; i++) {
+           
+            html += letterMaker(chars[i], 'alphaNum');
         }
         
         strip.innerHTML = html;
@@ -372,29 +378,37 @@ PK['led-strip'] = {
 
     stopSynData: function(event) {
             
+        const synDataType = PK['led-strip'].hEls.synDataType;
+        const status = PK['led-strip'].hEls.status;
+        const synDataGenerator = PK['led-strip'].hEls.synDataGenerator;
+        const startSynData = PK['led-strip'].startSynData;
+        const stopSynData = PK['led-strip'].stopSynData;
+
         // stop data generation
         status.innerText = 'stopping generation of data…';
-        clearInterval(generateSyntheticData);
+        clearInterval(PK['led-strip'].generateSyntheticData);
         //v.stop(a.currentTime + 2);
         
-        for (let i = 0, j = this.synDataType.length; i < j; i++) {
-            this.synDataType[i].disabled = false;
+        // reset all the radio buttons
+        for (let i = 0, j = synDataType.length; i < j; i++) {
+            synDataType[i].disabled = false;
         }
 
-        this.synDataGenerator.removeEventListener('click', stopSynData);
-        this.synDataGenerator.addEventListener('click', startSynData, false);
-        this.synDataGenerator.innerText = 'start';
-        this.synDataGenerator.classList.remove('button-primary');
+        synDataGenerator.removeEventListener('click', stopSynData);
+        synDataGenerator.addEventListener('click', startSynData, false);
+        synDataGenerator.innerText = 'start';
+        synDataGenerator.classList.remove('button-primary');
 
         event.preventDefault();
     },
 
     startSynData: function(event) {
         
-        const synDataType = PK['led-strip'].synDataType;
-        const synDataGenerator = PK['led-strip'].synDataGenerator;
+        const synDataType = PK['led-strip'].hEls.synDataType;
+        const synDataGenerator = PK['led-strip'].hEls.synDataGenerator;
         const startSynData = PK['led-strip'].startSynData;
         const stopSynData = PK['led-strip'].stopSynData;
+        const syntheticData = PK['led-strip'].syntheticData;
 
         for (const val of synDataType) {
             if (val.checked) {
@@ -408,7 +422,7 @@ PK['led-strip'] = {
                 synDataGenerator.removeEventListener('click', startSynData, false);
                 synDataGenerator.addEventListener('click', stopSynData, false);
 
-                PK['led-strip'].syntheticData(val.value);
+                syntheticData(val.value);
                 break;
             }
         }
@@ -418,6 +432,6 @@ PK['led-strip'] = {
     
     init: function() {
         
-        this.synDataGenerator.addEventListener('click', this.startSynData, false);
+        this.hEls.synDataGenerator.addEventListener('click', this.startSynData, false);
     }
 };
