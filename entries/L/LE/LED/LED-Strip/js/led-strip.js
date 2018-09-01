@@ -14,68 +14,9 @@ const midRange = function(hz) {
     }
 };
 
-const saw = new Wad({
-    source  : 'square',
-    volume  : 1.0,   // Peak volume can range from 0 to an arbitrarily high number, but you probably shouldn't set it higher than 1.
-    loop    : false, // If true, the audio will loop. This parameter only works for audio clips, and does nothing for oscillators. 
-    rate    : 1.0, // How fast to play an audio clip, relative to its normal speed. 2.0 is double speed, 0.5 is half speed, etc.
-    offset  : 0,     // Where in the audio clip playback begins, measured in seconds from the start of the audio clip.
-    //pitch   : 'C5',  // Set a default pitch on the constuctor if you don't want to set the pitch on <code>play()</code>.
-    detune  : 0,     // Set a default detune on the constructor if you don't want to set detune on <code>play()</code>. Detune is measured in cents. 100 cents is equal to 1 semitone.
-    //panning : -.5,   // Horizontal placement of the sound source. Possible values are from 1 to -1.
-    
-    env     : {      // This is the ADSR envelope.
-        attack  : 0.0,  // Time in seconds from onset to peak volume.  Common values for oscillators may range from 0.05 to 0.3.
-        decay   : 0.0,  // Time in seconds from peak volume to sustain volume.
-        sustain : 0.25,  // Sustain volume level. This is a percent of the peak volume, so sensible values are between 0 and 1.
-        hold    : 0.25, // Time in seconds to maintain the sustain volume level. If this is not set to a lower value, oscillators must be manually stopped by calling their stop() method.
-        release : 0     // Time in seconds from the end of the hold period to zero volume, or from calling stop() to zero volume.
-    },
-    
-    // filter  : {
-    //     type      : 'lowpass', // What type of filter is applied.
-    //     frequency : 600,       // The frequency, in hertz, to which the filter is applied.
-    //     q         : 1,         // Q-factor.  No one knows what this does. The default value is 1. Sensible values are from 0 to 10.
-    //     env       : {          // Filter envelope.
-    //         frequency : 800, // If this is set, filter frequency will slide from filter.frequency to filter.env.frequency when a note is triggered.
-    //         attack    : 0.5  // Time in seconds for the filter frequency to slide from filter.frequency to filter.env.frequency
-    //     }
-    // },
-    // reverb  : {
-    //     wet     : 1,                                            // Volume of the reverberations.
-    //     impulse : 'https://www.myServer.com/path/to/impulse.wav' // A URL for an impulse response file, if you do not want to use the default impulse response.
-    // },
-    delay   : {
-        delayTime : .5,  // Time in seconds between each delayed playback.
-        wet       : .25, // Relative volume change between the original sound and the first delayed playback.
-        feedback  : .25, // Relative volume change between each delayed playback and the next. 
-    },
-    
-    // vibrato : { // A vibrating pitch effect.  Only works for oscillators.
-    //     shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
-    //     magnitude : 3,      // how much the pitch changes. Sensible values are from 1 to 10.
-    //     speed     : 4,      // How quickly the pitch changes, in cycles per second.  Sensible values are from 0.1 to 10.
-    //     attack    : 0       // Time in seconds for the vibrato effect to reach peak magnitude.
-    // },
-    
-    tremolo : { // A vibrating volume effect.
-        shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
-        magnitude : 3,      // how much the volume changes. Sensible values are from 1 to 10.
-        speed     : 4,      // How quickly the volume changes, in cycles per second.  Sensible values are from 0.1 to 10.
-        attack    : 0       // Time in seconds for the tremolo effect to reach peak magnitude.
-    },
-    // tuna   : {
-    //     Chorus : {
-    //         intensity: 0.3,  //0 to 1
-    //         rate: 4,         //0.001 to 8
-    //         stereoPhase: 0, //0 to 180
-    //         bypass: 0
-    //     }
-    // }
-    
-});
-
 PK['led-strip'] = {
+    saw: null,
+
     lettersUC: {
         'A': ['00100','01010','10001','10001','11111','10001','10001','00000'],
         'B': ['11110','10001','10001','11110','10001','10001','11110','00000'],
@@ -253,9 +194,10 @@ PK['led-strip'] = {
         canvas: document.getElementById('smoothie-chart'),
         synData: document.getElementById('synData'),
         strip: document.getElementById('led-strip'),
+        graph: document.getElementById('graph'),
         
         // radio buttons
-        synDataType: document.getElementsByName('synDataType'),
+        //synDataType: document.getElementsByName('synDataType'),
 
         // form button
         synDataGenerator: document.getElementById('synDataGenerator'),
@@ -268,6 +210,7 @@ PK['led-strip'] = {
         return Math.floor(Math.random() * (max - min + 1)) + min; 
     },
 
+    
     syntheticData: function(synDataType) {
         
         const status = PK['led-strip'].hEls.status;
@@ -276,15 +219,11 @@ PK['led-strip'] = {
         const drawMessage = PK['led-strip'].drawMessage;
         const lettersLC = PK['led-strip'].lettersLC;
         const lettersUC = PK['led-strip'].lettersUC;
-        const canvas = PK['led-strip'].hEls.canvas;
-
+        const graph = PK['led-strip'].hEls.graph;
+        let data = [];
+        
         status.innerText = 'starting generation of ' + synDataType + ' data…';
-        let data = new TimeSeries();
-        let chart = new SmoothieChart({
-            tooltip: true,
-            timestampFormatter: SmoothieChart.timeFormatter
-        });
-
+        
         let num = 0;
         const maxNumOfChars = 50;
 
@@ -293,9 +232,9 @@ PK['led-strip'] = {
             synData.innerText = synData.innerText + ' ' + datum;
     
             const t = new Date().getTime();
-            data.append(t, datum);
+            data.push([t, datum]);
     
-            saw.play({pitch : midRange(datum)})
+            PK['led-strip'].saw.play({pitch : midRange(datum)})
             
             drawMessage(datum.toString());
         };
@@ -308,7 +247,7 @@ PK['led-strip'] = {
             synData.innerText = synData.innerText + ' ' + datum;
 
             const t = new Date().getTime();
-            data.append(t, datum);
+            data.push([t, datum]);
 
             saw.play({pitch : midRange(datum)})
             
@@ -320,18 +259,32 @@ PK['led-strip'] = {
             const min = 0;
             const max = 120;
 
+            generateSynNumbers(++num, min, max);
+
+            var g = new Dygraph(
+                graph, 
+                data,
+                {
+                    drawPoints: true,
+                    labels: ['Time', 'Reading'],
+                    legend: "never",
+                    labelsDiv: document.getElementById('legend'),
+                    labelsSeparateLines: true
+                }
+            );
+
             function generate() {
                 if (num < maxNumOfChars) {
                     generateSynNumbers(num, min, max);
-                    status.innerText = `generated ${num} letters`;
+                    status.innerText = `generated ${num} readings`;
                     num++;
                 }
                 else {
-                    status.innerText = `generated ${num} letters… done`;
+                    status.innerText = `generated ${num} readings… done`;
+                    PK['led-strip'].stopSynData();
                 }
     
-                chart.addTimeSeries(data, {lineWidth: 1, strokeStyle: '#00ff00'});
-                chart.streamTo(canvas, 250);
+                g.updateOptions( { 'file': data } )
             }
     
             num = 0;
@@ -378,7 +331,7 @@ PK['led-strip'] = {
 
     stopSynData: function(event) {
             
-        const synDataType = PK['led-strip'].hEls.synDataType;
+        //const synDataType = PK['led-strip'].hEls.synDataType;
         const status = PK['led-strip'].hEls.status;
         const synDataGenerator = PK['led-strip'].hEls.synDataGenerator;
         const startSynData = PK['led-strip'].startSynData;
@@ -390,48 +343,115 @@ PK['led-strip'] = {
         //v.stop(a.currentTime + 2);
         
         // reset all the radio buttons
-        for (let i = 0, j = synDataType.length; i < j; i++) {
-            synDataType[i].disabled = false;
-        }
+        // for (let i = 0, j = synDataType.length; i < j; i++) {
+        //     synDataType[i].disabled = false;
+        // }
 
         synDataGenerator.removeEventListener('click', stopSynData);
         synDataGenerator.addEventListener('click', startSynData, false);
         synDataGenerator.innerText = 'start';
         synDataGenerator.classList.remove('button-primary');
 
-        event.preventDefault();
+        if (event) {
+            event.preventDefault();
+        }
     },
 
     startSynData: function(event) {
         
-        const synDataType = PK['led-strip'].hEls.synDataType;
+        //const synDataType = PK['led-strip'].hEls.synDataType;
         const synDataGenerator = PK['led-strip'].hEls.synDataGenerator;
         const startSynData = PK['led-strip'].startSynData;
         const stopSynData = PK['led-strip'].stopSynData;
         const syntheticData = PK['led-strip'].syntheticData;
 
-        for (const val of synDataType) {
-            if (val.checked) {
+        // for (const val of synDataType) {
+        //     if (val.checked) {
                 
-                for (let i = 0, j = synDataType.length; i < j; i++) {
-                    synDataType[i].disabled = true;
-                }
+        //         for (let i = 0, j = synDataType.length; i < j; i++) {
+        //             synDataType[i].disabled = true;
+        //         }
 
                 synDataGenerator.innerText = 'stop';
                 synDataGenerator.classList.add('button-primary');
                 synDataGenerator.removeEventListener('click', startSynData, false);
                 synDataGenerator.addEventListener('click', stopSynData, false);
 
-                syntheticData(val.value);
-                break;
-            }
-        }
+                //syntheticData(val.value);
+                syntheticData('numbers');
+        //         break;
+        //     }
+        // }
 
-        event.preventDefault();
+        if (event) {
+            event.preventDefault();
+        }
+        
     },
     
     init: function() {
         
+        this.saw = new Wad({
+            source  : 'square',
+            volume  : 1.0,   // Peak volume can range from 0 to an arbitrarily high number, but you probably shouldn't set it higher than 1.
+            loop    : false, // If true, the audio will loop. This parameter only works for audio clips, and does nothing for oscillators. 
+            rate    : 1.0, // How fast to play an audio clip, relative to its normal speed. 2.0 is double speed, 0.5 is half speed, etc.
+            offset  : 0,     // Where in the audio clip playback begins, measured in seconds from the start of the audio clip.
+            //pitch   : 'C5',  // Set a default pitch on the constuctor if you don't want to set the pitch on <code>play()</code>.
+            detune  : 0,     // Set a default detune on the constructor if you don't want to set detune on <code>play()</code>. Detune is measured in cents. 100 cents is equal to 1 semitone.
+            //panning : -.5,   // Horizontal placement of the sound source. Possible values are from 1 to -1.
+            
+            env     : {      // This is the ADSR envelope.
+                attack  : 0.0,  // Time in seconds from onset to peak volume.  Common values for oscillators may range from 0.05 to 0.3.
+                decay   : 0.0,  // Time in seconds from peak volume to sustain volume.
+                sustain : 0.25,  // Sustain volume level. This is a percent of the peak volume, so sensible values are between 0 and 1.
+                hold    : 0.25, // Time in seconds to maintain the sustain volume level. If this is not set to a lower value, oscillators must be manually stopped by calling their stop() method.
+                release : 0     // Time in seconds from the end of the hold period to zero volume, or from calling stop() to zero volume.
+            },
+            
+            // filter  : {
+            //     type      : 'lowpass', // What type of filter is applied.
+            //     frequency : 600,       // The frequency, in hertz, to which the filter is applied.
+            //     q         : 1,         // Q-factor.  No one knows what this does. The default value is 1. Sensible values are from 0 to 10.
+            //     env       : {          // Filter envelope.
+            //         frequency : 800, // If this is set, filter frequency will slide from filter.frequency to filter.env.frequency when a note is triggered.
+            //         attack    : 0.5  // Time in seconds for the filter frequency to slide from filter.frequency to filter.env.frequency
+            //     }
+            // },
+            // reverb  : {
+            //     wet     : 1,                                            // Volume of the reverberations.
+            //     impulse : 'https://www.myServer.com/path/to/impulse.wav' // A URL for an impulse response file, if you do not want to use the default impulse response.
+            // },
+            delay   : {
+                delayTime : .5,  // Time in seconds between each delayed playback.
+                wet       : .25, // Relative volume change between the original sound and the first delayed playback.
+                feedback  : .25, // Relative volume change between each delayed playback and the next. 
+            },
+            
+            // vibrato : { // A vibrating pitch effect.  Only works for oscillators.
+            //     shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
+            //     magnitude : 3,      // how much the pitch changes. Sensible values are from 1 to 10.
+            //     speed     : 4,      // How quickly the pitch changes, in cycles per second.  Sensible values are from 0.1 to 10.
+            //     attack    : 0       // Time in seconds for the vibrato effect to reach peak magnitude.
+            // },
+            
+            tremolo : { // A vibrating volume effect.
+                shape     : 'sine', // shape of the lfo waveform. Possible values are 'sine', 'sawtooth', 'square', and 'triangle'.
+                magnitude : 3,      // how much the volume changes. Sensible values are from 1 to 10.
+                speed     : 4,      // How quickly the volume changes, in cycles per second.  Sensible values are from 0.1 to 10.
+                attack    : 0       // Time in seconds for the tremolo effect to reach peak magnitude.
+            },
+            // tuna   : {
+            //     Chorus : {
+            //         intensity: 0.3,  //0 to 1
+            //         rate: 4,         //0.001 to 8
+            //         stereoPhase: 0, //0 to 180
+            //         bypass: 0
+            //     }
+            // }
+            
+        });
+
         this.hEls.synDataGenerator.addEventListener('click', this.startSynData, false);
     }
 };

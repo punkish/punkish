@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/entry-files/{{entryUrl}}/css/{{css}}.css" />
     
     <link rel="stylesheet" href="/node-files/dygraphs/dist/dygraph.min.css" />
-
 </head>
 <body>
     <div class="container">
@@ -33,11 +32,14 @@
     <script src="/public/js/polyfill.js"></script>
     <script src="/public/js/punkish.js"></script>
     <script src="/node-files/dygraphs/dist/dygraph.min.js"></script>
-    <script src="/node-files/papaparse/papaparse.min.js"></script>
+    <!-- <script src="/node-files/moment/min/moment.min.js"></script> -->
     <script src="/entry-files/{{entryUrl}}/js/{{js}}.js"></script>
+
+    <script src="/node-files/papaparse/papaparse.min.js"></script>
+    <script src="/node-files/web-audio-daw/build/wad.min.js"></script>
+    
     <script>
         PK.autocomplete();
-
         PK["{{js}}"].init();
     </script>
 </body>

@@ -13,9 +13,15 @@ tags       :
 stars      : 
 css        : hk
 js         : hk
-layout     : dygraph-charter
+layout     : dygraph
 ---
 
+<div id="timer">
+    <!-- <div id="days"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div> -->
+</div>
 <div id="graphContainer">
     <div id="graph"></div>
 </div>

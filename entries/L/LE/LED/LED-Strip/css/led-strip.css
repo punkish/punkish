@@ -12,9 +12,7 @@
         2px 5px 5px 0px #111;
     border-radius: 5px; */
 }
-#smoothie-chart {
-    width: 100%;
-    height: 50px;
+/* #smoothie-chart {
     background: linear-gradient(0deg, #111, #222);
 }
 div.smoothie-chart-tooltip {
@@ -25,10 +23,13 @@ div.smoothie-chart-tooltip {
     color: white;
     font-size: 10px;
     pointer-events: none;
-}
+} */
 .led-letter {
     float: left;
     margin-right: 3px;
+}
+.led-letter:first-child {
+    margin-left: 55px;
 }
 .led-row {
     float: unset;
@@ -59,4 +60,41 @@ div.smoothie-chart-tooltip {
     border: none;
     overflow-y: auto;
     display: block;
+}
+
+/* dygraph */
+#graphContainer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#graphContainer:after {
+    padding-top: 12.5%;
+    /* 1:8 ratio */
+    display: block;
+    content: '';
+}
+#graph {
+    position: absolute; 
+    left: 0px; 
+    right: 0px; 
+    top: 0px; 
+    bottom: 0px;
+    border: 1px solid silver;
+}
+#graph .dygraph-title { 
+    font-family: sans-serif; 
+}
+.graphControl {
+	margin-right: 20px;
+    margin-left: 10px;
+}
+#controls {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#timerAdjustment {
+    width: 100px; 
+    height: 25px; 
+    border: 1px dotted black;
 }
