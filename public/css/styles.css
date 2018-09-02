@@ -67,6 +67,10 @@ figure img {
 	margin-bottom: 0;
 	font-size: 2em;;
 }
+.description {
+	font-family: sans-serif;
+	font-weight: bold;
+}
 .content {
 	margin-top: 3em;
 	font-family: "et-book", serif;
@@ -84,7 +88,7 @@ blockquote {
 	border-left: 2px solid grey;
 	margin-left: 0px;
 }
-blockquote p {
+blockquote * {
 	padding-left: 20px;
 }
 .archive {
