@@ -19,7 +19,7 @@ Moi: “uh ummmm”
 
 ----
 
-The reality is that, by traditional standards, I am terribly well unread. But while I don’t read books, I actually do read a lot. Most of my readings are article-length. The hard part is trying to figure out which ones of these have been life- or perspective-altering enough that I would recommend them to others. After a few days of thinking about this, I decided to compile a list. And at the risk of getting pegged based on this list, here are a few (in no order) that made me think a lot:
+The reality is that, by traditional standards, I am terribly well unread. But while I don’t read books, I actually do read a lot. Most of my readings are article-length. The hard part is trying to figure out which ones of these have been life- or perspective-altering enough that I would recommend them to others. After a few days of thinking about this, I decided to compile a list. And at the risk of getting pegged based on this list, here are a few (in no order) that changed me:
 
 ### [When Your Greatest Romance is Friendship](https://www.nytimes.com/2017/02/24/style/modern-love-when-your-greatest-romance-is-friendship.html)  
 by Victor Lodato
