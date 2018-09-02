@@ -26,14 +26,10 @@ by Victor Lodato
 
 > That night, I had an odd realization: Some of the greatest romances of my life have been friendships. And these friendships have been, in many ways, more mysterious than erotic love: more subtle, less selfish, more attuned to kindness.
 
-----
-
 ### [Superbabies Don’t Cry](http://velamag.com/superbabies-dont-cry/)  
 by Heather Kirn Lanier
 
 > Perhaps the point of life was not to achieve some kind of perfection. Perhaps illness was an integral part of life’s dance. Perhaps fragility was built into our very design. Perhaps fragility was also strength. Through the neutral lens of science, my kid’s genetic deletion was a product of diversity, and who could be upset about that?
-
-----
 
 ### [Here Is Everything I Learned in New York City](https://themorningnews.org/article/here-is-everything-i-learned-in-new-york)  
 by Sarah Hepola
@@ -51,8 +47,6 @@ by Sarah Hepola
 
 <p>To give someone your full and undivided attention is one of the greatest gifts you can offer. In life, we are alone. It’s good to be surrounded by people who can help us find our way.</p>
 </blockquote>
-
-----
 
 ### [Fresco](http://www.worldcat.org/title/fresco-selected-poetry-of-luljeta-lleshanaku/oclc/48074247)  
 by poems by Llujeta Lleshanaku (in Albanian), translated into English by Henry Israeli
@@ -72,21 +66,15 @@ and then…
 </p>
 </blockquote>
 
-----
-
 ### [Being Mortal](http://atulgawande.com/book/being-mortal/)  
 by Atul Gawande
 
 > This is a book about the modern experience of mortality—about what it’s like to be creatures who age and die, how medicine has changed the experience and how it hasn’t, where our ideas about how to deal with our finitude have got the reality wrong.
 
-----
-
 ### [A Daring Escape from Communist East Germany to the West via China](http://www.spiegel.de/international/germany/a-daring-escape-from-communist-east-germany-to-the-west-via-china-a-861412.html)  
 by Peter Wensierski
 
 > They were young and in love -- and trapped in an oppressive regime. In 1987, an East German couple traveled clandestinely from Berlin to Beijing in a brazen attempt to escape to the West. Only one of them would make it to freedom.
-
-----
 
 ### [Evacuation of Nada](http://irahadzic.com/evacuation-of-Nada/)  
 by Ira Hadžić
