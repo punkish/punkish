@@ -35,7 +35,7 @@ js         : cv
                 
                 <!-- <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. In a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast network, I work to enable science as a gift that keeps on giving through the use of “private data for public good” as well as “public data for private good.” And I work on the policies to create an environment where information is open by default.<a id="cv-less-link" href="/cv#less">less &larr;</a>
                 </span> -->
-                
+
             </div>
 
             <div class="cv-job">
@@ -44,7 +44,7 @@ js         : cv
                 <div class="cv-subjob">Current Projects</div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the Biodiversity Literature Repository. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
+                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the <a href="http://biolitrepo.org" target="_blank">Biodiversity Literature Repository</a> in a project funded by <a href="https://www.arcadiafund.org.uk/grants/grant-detail/" target="_blank">The Arcadia Fund</a>. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
                 </div>
 
                 <div class="cv-cat">
