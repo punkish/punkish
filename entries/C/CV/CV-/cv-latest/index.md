@@ -31,8 +31,11 @@ js         : cv
     <div id="punkish-panels">
         <div name="panel" class="cv-panel" id="pnl_Experience">
             <div class="cv-panel_intro">
-                <p>Since 1985, my career has spanned rural appropriate technology design, international development, academia, research and science information policy. I help domain scientists make sense of their data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. As such, I have expertise in both ‘science for policy’ as well as ‘policy for science.’ <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. In a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast network, I work to enable science as a gift that keeps on giving through the use of “private data for public good” as well as “public data for private good.” And I work on the policies to create an environment where information is open by default.<a id="cv-less-link" href="/cv#less">less &larr;</a></p>
-                </span>
+                <p>Since 1985, my career has spanned rural appropriate technology design, international development, academia, research, and science information policy. I help domain scientists make sense of their data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. As such, I have expertise in both ‘science for policy’ as well as ‘policy for science.’ I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that publicly funded scientific information is open by default and our work has the highest possibility of making an impact.</p>
+                
+                <!-- <a id="cv-more-link" href="/cv#more">more &rarr;</a> <span id="cv-more-intro">I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that our work has the highest possibility of making an impact. In a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast network, I work to enable science as a gift that keeps on giving through the use of “private data for public good” as well as “public data for private good.” And I work on the policies to create an environment where information is open by default.<a id="cv-less-link" href="/cv#less">less &larr;</a>
+                </span> -->
+                
             </div>
 
             <div class="cv-job">
@@ -59,7 +62,7 @@ js         : cv
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">SUB (the state and university library) and GCDH (Göttingen Centre for Digital Humanities), University of Göttingen, Germany.</span> From September 2016-August 2017, I was a visiting fellowship at SUB and GCDH, exploring their various open science/data initiatives with a focus on visualizing and sharing geospatial information.
+                    <span class="cv-dept">SUB (the state and university library) and the Göttingen Centre for Digital Humanities (GCDH), University of Göttingen, Germany.</span> From September 2016-August 2017, I was a visiting fellow at SUB and GCDH, exploring their various open science/data initiatives with a focus on visualizing and sharing geospatial information. I continue to maintain an informal association with SUB.
                 </div>
 
                 <div class="cv-cat">
