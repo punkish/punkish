@@ -89,17 +89,32 @@ PK['hk'] = {
             document.getElementById("graph"),
             PK.hk.dygraphData, 
             {
-                rollPeriod: 7,
-                showRoller: true,
+                //rollPeriod: 7,
+                showRoller: false,
                 title: `Yim Tin Tsai Fish Culture Zone ${sondeName} sonde`,
                 legend: 'always',
-                showRangeSelector: true,
+                //showRangeSelector: true,
                 labels: PK.hk.fields,
-                strokeWidth: 1.0,
-                drawPoints: true,
-                pointSize: 1.5,
                 labelsDiv: document.getElementById('status'),
-                labelsSeparateLines: true
+                labelsSeparateLines: true,
+                strokeWidth: 3.0,
+                drawPoints: true,
+                pointSize: 1,
+                highlightCircleSize: 6,
+                series: {
+                    'Depth(m)': {
+                        color: '#ff0000'
+                    },
+                    'Temperature(C)': {
+                        color: '#00ff00'
+                    },
+                    'Salinity(ppt)': {
+                        color: '#0000ff'
+                    },
+                    'Dissolved oxygen (mg/L)': {
+                        color: '#000000'
+                    }
+                }
             }
         );
 
