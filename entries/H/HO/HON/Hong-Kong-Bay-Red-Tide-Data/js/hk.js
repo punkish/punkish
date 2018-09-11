@@ -82,40 +82,42 @@ PK['hk'] = {
         }
 
         let focus = PK.hk.findFocus(sondeName);
+        //console.log(focus);
         
         PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
+        const dygraphOpts = {
+            //rollPeriod: 7,
+            showRoller: false,
+            title: `Yim Tin Tsai Fish Culture Zone ${sondeName} sonde`,
+            legend: 'always',
+            //showRangeSelector: true,
+            labels: PK.hk.fields,
+            labelsDiv: document.getElementById('status'),
+            labelsSeparateLines: true,
+            strokeWidth: 3.0,
+            drawPoints: true,
+            pointSize: 3.5,
+            highlightCircleSize: 6,
+            series: {
+                'Depth(m)': {
+                    color: '#ff0000'
+                },
+                'Temperature(C)': {
+                    color: '#00ff00'
+                },
+                'Salinity(ppt)': {
+                    color: '#0000ff'
+                },
+                'Dissolved oxygen (mg/L)': {
+                    color: '#000000'
+                }
+            }
+        };
 
         PK.hk.g = new Dygraph(
             document.getElementById("graph"),
             PK.hk.dygraphData, 
-            {
-                //rollPeriod: 7,
-                showRoller: false,
-                title: `Yim Tin Tsai Fish Culture Zone ${sondeName} sonde`,
-                legend: 'always',
-                //showRangeSelector: true,
-                labels: PK.hk.fields,
-                labelsDiv: document.getElementById('status'),
-                labelsSeparateLines: true,
-                strokeWidth: 3.0,
-                drawPoints: true,
-                pointSize: 1,
-                highlightCircleSize: 6,
-                series: {
-                    'Depth(m)': {
-                        color: '#ff0000'
-                    },
-                    'Temperature(C)': {
-                        color: '#00ff00'
-                    },
-                    'Salinity(ppt)': {
-                        color: '#0000ff'
-                    },
-                    'Dissolved oxygen (mg/L)': {
-                        color: '#000000'
-                    }
-                }
-            }
+            dygraphOpts
         );
 
         if (PK.hk.emitter !== null) {
@@ -143,6 +145,9 @@ PK['hk'] = {
         //let count = 1;
         PK.hk.emitter = setInterval(function() {
     
+            if (PK.hk.dygraphData.length > 100) {
+                PK.hk.dygraphData.shift();
+            }
             PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
             PK.hk.g.updateOptions( { 'file': PK.hk.dygraphData } );
             focus++;
@@ -222,6 +227,7 @@ PK['hk'] = {
     },
 
     init: function() {
+        
         // const selectWidget = document.querySelector('select[name="sonde"]');
         // selectWidget.selectedIndex = 0;
 

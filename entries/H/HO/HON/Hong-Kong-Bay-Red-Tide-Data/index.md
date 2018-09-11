@@ -16,12 +16,14 @@ js         : hk
 layout     : dygraph
 ---
 
+<!-- 
 <div id="timer">
-    <!-- <div id="days"></div>
+    <div id="days"></div>
     <div id="hours"></div>
     <div id="minutes"></div>
-    <div id="seconds"></div> -->
+    <div id="seconds"></div>
 </div>
+ -->
 <div id="graphContainer">
     <div id="graph"></div>
 </div>
@@ -42,4 +44,4 @@ layout     : dygraph
 
 <p class="u-cf">Yim Tin Tsai Fish Culture Zone red tide data measured in June 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD.</p>
 
-**Note:** The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.
+<p><b>Note:</b> The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.</p>
