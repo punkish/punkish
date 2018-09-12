@@ -25,14 +25,22 @@ const entry = {
 
         let file = request.params['entry'];
 
-        if (file === 'Circle-whose-center-is_everywhere') {
-            
-            return h.redirect('/Circle-whose-center-is-everywhere');
+        const redirects = {
+            'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
+            'Hong-Kong-Bay-Red-Tide-Data': 'Hong-Kong-Bay-Water-Quality-Data'
+        };
+
+        const renames = {
+            'cv': 'cv-latest'
+        };
+
+        if (file in redirects) {
+
+            return h.redirect(`/${redirects[file]}`);
         }
+        else if (file in renames) {
 
-        if (file === 'cv') {
-
-            file = 'cv-latest';
+            file = renames[file];
         }
 
         let subfile = request.params['subentry'] || '';

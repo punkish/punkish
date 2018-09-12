@@ -5,10 +5,11 @@ PK['hk'] = {
         Bottom: []
     },
 
+    // Date,Time,Site_name,Sonde_Name,Depth(m),Temperature (℃),Salinity(ppt),Dissolved oxygen (mg/L)
     fields: [
         'DateTime',
         'Depth(m)',
-        'Temperature(C)',
+        'Temperature (℃)',
         'Salinity(ppt)',
         'Dissolved oxygen (mg/L)'
     ],
@@ -22,7 +23,7 @@ PK['hk'] = {
             const thisRow = [
                 new Date(row['Date'] + ' ' + row['Time']),
                 parseFloat(row['Depth(m)']),
-                parseFloat(row['Temperature(C)']),
+                parseFloat(row['Temperature (℃)']),
                 parseFloat(row['Salinity(ppt)']),
                 parseFloat(row['Dissolved oxygen (mg/L)'])
             ];
@@ -35,37 +36,29 @@ PK['hk'] = {
 
     findFocus: function(sondeName) {
 
-        const d = new Date();
-
-        let todayDate = d.getDate();
-
-        // Since the data are from June, the highest date possible is 30.
-        // But, it is possible that todayDate might be greater than 30, 
-        // so we adjust for that
-        if (todayDate > 30) {
-            todayDate = 1;
-        }
-
-        const todayHour = d.getHours();
-        const todayMins = d.getMinutes();
-
-        const timePadding = 5;
-        const range = [todayMins - timePadding, todayMins + timePadding];
+        const today = new Date();
+        const month = today.getMonth();
+        const todayDate = today.getDate();
+        const todayHour = today.getHours();
+        const todayMins = today.getMinutes();
+        const todaySeconds = today.getSeconds();
+        const newToday = new Date(`08/${todayDate}/18 ${todayHour}:${todayMins}:${todaySeconds}`);
 
         for (let i = 0, j = PK.hk.Sonde[sondeName].length; i < j; i++) {
 
             const row = PK.hk.Sonde[sondeName][i];            
             const date = row[0];
             
-            if (date.getDate() == todayDate) {
-                
-                if (date.getHours() == todayHour) {
-                    
-                    if (date.getMinutes() > range[0] && date.getMinutes() < range[1]) {
+            if (date > newToday) {
 
-                        return i;
-                        break;
-                    }
+                const diffFromPrev = date - PK.hk.Sonde[sondeName][i - 1][0];
+                const diffFromNext = PK.hk.Sonde[sondeName][i + 1][0] - date;
+                
+                if (diffFromPrev >= diffFromNext) {
+                    return i + 1;
+                }
+                else {
+                    return i - 1;
                 }
             }
         }
@@ -82,7 +75,6 @@ PK['hk'] = {
         }
 
         let focus = PK.hk.findFocus(sondeName);
-        //console.log(focus);
         
         PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
         const dygraphOpts = {
@@ -102,7 +94,7 @@ PK['hk'] = {
                 'Depth(m)': {
                     color: '#ff0000'
                 },
-                'Temperature(C)': {
+                'Temperature (℃)': {
                     color: '#00ff00'
                 },
                 'Salinity(ppt)': {
@@ -235,7 +227,7 @@ PK['hk'] = {
         // document.querySelector('input[name="time"]').addEventListener("change", PK.hk.changeRange);
 
         const data = Papa.parse(
-            '/entry-files/H/HO/HON/Hong-Kong-Bay-Red-Tide-Data/js/Yim-Tin-Tsai-FCZ.csv', 
+            '/entry-files/H/HO/HON/Hong-Kong-Bay-Water-Quality-Data/js/Yim-Tin-Tsai-FCZ-08-2018.csv', 
             {
                 header: true,
                 download: true,

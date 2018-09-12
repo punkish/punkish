@@ -1,4 +1,4 @@
-Date,Time,Site_name,Sonde_Name,Depth(m),Temperature(C),Salinity(ppt),Dissolved oxygen (mg/L)
+Date,Time,Site_name,Sonde_Name,Depth(m),Temperature (℃),Salinity(ppt),Dissolved oxygen (mg/L)
 6/1/18,0:00:01,Yim Tin Tsai,Upper,0.973,30.63,32.32,7.18
 6/1/18,0:00:01,Yim Tin Tsai,Bottom,3.807,25.36,33.7,5.23
 6/1/18,0:10:01,Yim Tin Tsai,Upper,0.973,30.58,32.32,7.14
