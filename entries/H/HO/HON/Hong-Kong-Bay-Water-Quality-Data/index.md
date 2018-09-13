@@ -16,14 +16,8 @@ js         : hk
 layout     : dygraph
 ---
 
-<!-- 
-<div id="timer">
-    <div id="days"></div>
-    <div id="hours"></div>
-    <div id="minutes"></div>
-    <div id="seconds"></div>
-</div>
- -->
+<div>next reading in <span id="timer"></span></div>
+
 <div id="graphContainer">
     <div id="graph"></div>
 </div>

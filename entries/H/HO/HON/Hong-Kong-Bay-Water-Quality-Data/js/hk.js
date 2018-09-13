@@ -37,7 +37,6 @@ PK['hk'] = {
     findFocus: function(sondeName) {
 
         const today = new Date();
-        const month = today.getMonth();
         const todayDate = today.getDate();
         const todayHour = today.getHours();
         const todayMins = today.getMinutes();
@@ -52,14 +51,9 @@ PK['hk'] = {
             if (date > newToday) {
 
                 const diffFromPrev = date - PK.hk.Sonde[sondeName][i - 1][0];
-                const diffFromNext = PK.hk.Sonde[sondeName][i + 1][0] - date;
+                const diffFromThis = PK.hk.Sonde[sondeName][i][0] - date;
                 
-                if (diffFromPrev >= diffFromNext) {
-                    return i + 1;
-                }
-                else {
-                    return i - 1;
-                }
+                return (diffFromPrev >= diffFromThis ? i : i - 1);
             }
         }
 
@@ -67,6 +61,21 @@ PK['hk'] = {
 
     g: null,
     dygraphData: [],
+    
+    timer: function(t = 10000) {
+        
+        function pad2(number) {
+            number = '0' + Math.floor(number);
+            return number.substr(number.length - 2);
+        }
+
+        const seconds = Math.floor(t/1000);
+        const minutes = Math.floor( (t/1000/60) % 60 );
+        const hours = Math.floor( (t/(1000*60*60)) % 24 );
+        const days = Math.floor( t/(1000*60*60*24) );
+
+        document.getElementById('timer').innerHTML = pad2(hours) + 'h ' + pad2(minutes) + 'm ' + pad2(seconds) + 's';
+    },
 
     initChart: function(sondeName = 'Upper', timerAdjustment = 60) {
 
@@ -112,119 +121,35 @@ PK['hk'] = {
             dygraphOpts
         );
 
-        if (PK.hk.emitter !== null) {
-            PK.hk.emitter.clearInterval();
-        }
+        let duration = 10000;
+        PK.hk.timer(duration);
         
-        PK.hk.emissions(sondeName, focus++, timerAdjustment);
-        //this.countdownTimer();
-    },
+        const timerUpdate = 1000;
+        let timeRemaining = duration - 1000;
 
-    emitter: null,
-    
-    // readings are recorded at 10 min intervals. While that may be
-    // fine for real life, it is too long a time period to do any 
-    // meaningful visualization over short periods. So we divide the 
-    // emissionPeriod by the timerAdjustment to get a fake but more 
-    // visualizable emissionPeriod. A timerAdjustment of 1 will keep 
-    // the emissionPeriod to 10 mins. A timerAdjustment of 2 will 
-    // halve the emissionPeriod to 5 mins, and so on. A  timerAdjustment
-    // of 60 is suggested for an emissionPeriod of 10 second
-    emissions: function(sondeName, focus, timerAdjustment) {
-        
-        const emissionPeriod = 600000  / timerAdjustment;
-        
-        //let count = 1;
-        PK.hk.emitter = setInterval(function() {
-    
-            if (PK.hk.dygraphData.length > 100) {
-                PK.hk.dygraphData.shift();
-            }
-            PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
-            PK.hk.g.updateOptions( { 'file': PK.hk.dygraphData } );
-            focus++;
-        }, emissionPeriod);
-    },
-    
-    changeSonde: function() {
-        const val = document.querySelector('select[name="sonde"]');
-        const sondeName = val.options[val.selectedIndex].value;
-        PK.hk.initChart(sondeName, undefined);
-    },
-    
-    changeRange: function() {
-        const val = document.querySelector('input[name="time"]').value;
-        
-        const range = [
-            ['10 mins', 600000],
-            ['5 mins', 300000],
-            ['2 mins', 120000],
-            ['1 min', 60000],
-            ['30 secs', 30000],
-            ['10 secs', 10000],
-            ['5 secs', 5000],
-            ['1 sec', 1000]
-        ];
-    
-        document.getElementById('timerAdjustment').innerText = range[val][0];
-    },
-
-    countdownTimer: function() {
-        
-
-        function getTimeRemaining(endtime){
-            var t = Date.parse(endtime) - Date.parse(new Date());
-            var seconds = Math.floor( (t/1000) % 60 );
-            var minutes = Math.floor( (t/1000/60) % 60 );
-            var hours = Math.floor( (t/(1000*60*60)) % 24 );
-            var days = Math.floor( t/(1000*60*60*24) );
-            return {
-                'total': t,
-                'days': days,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds
-            };
-        }
-        
-        function initializeClock(clock, endtime){
-            //var clock = document.getElementById(id);
-            var timeinterval = setInterval(function(){
-                var t = getTimeRemaining(endtime);
-                clock.innerHTML = 'days: ' + t.days + ' ' +
-                                    'hours: '+ t.hours + ' ' +
-                                    'minutes: ' + t.minutes + ' ' +
-                                    'seconds: ' + t.seconds;
-                if(t.total<=0){
-                    clearInterval(timeinterval);
+        setInterval(function() {
+            
+            if (timeRemaining == 0) {
+                if (PK.hk.dygraphData.length > 100) {
+                    PK.hk.dygraphData.shift();
                 }
-            }, 1000);
-        }
-        
-        
-        
-        const deadline = function(t, duration) {
-            return new Date(Date.parse(t) + duration);
-        };
+                focus++;
+                PK.hk.dygraphData.push(PK.hk.Sonde[sondeName][focus]);
+                PK.hk.g.updateOptions( { 'file': PK.hk.dygraphData } );
+                
+            }
+            else if (timeRemaining < 0) {
+                timeRemaining = duration;
+            }
+            
+            PK.hk.timer(timeRemaining);
+            timeRemaining = timeRemaining - timerUpdate;
 
-        const now = new Date();
-        const duration = 10000;
-        let end = deadline(now, duration);
-
-        const timer = setInterval(function() {
-            initializeClock(document.getElementById('timer'), end);
-            end = deadline(end, duration);
-        }, duration)
-        
+            
+        }, timerUpdate);
     },
 
     init: function() {
-        
-        // const selectWidget = document.querySelector('select[name="sonde"]');
-        // selectWidget.selectedIndex = 0;
-
-        // selectWidget.addEventListener("change", PK.hk.changeSonde);
-        // document.querySelector('input[name="time"]').addEventListener("change", PK.hk.changeRange);
 
         const data = Papa.parse(
             '/entry-files/H/HO/HON/Hong-Kong-Bay-Water-Quality-Data/js/Yim-Tin-Tsai-FCZ-08-2018.csv', 
