@@ -69,7 +69,7 @@ PK['hk'] = {
             return number.substr(number.length - 2);
         }
 
-        const seconds = Math.floor(t/1000);
+        const seconds = Math.floor((t/1000) % 60);
         const minutes = Math.floor( (t/1000/60) % 60 );
         const hours = Math.floor( (t/(1000*60*60)) % 24 );
         const days = Math.floor( t/(1000*60*60*24) );
