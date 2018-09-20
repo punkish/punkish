@@ -95,22 +95,22 @@ PK['hk'] = {
             labels: PK.hk.fields,
             labelsDiv: document.getElementById('status'),
             labelsSeparateLines: true,
-            strokeWidth: 3.0,
+            strokeWidth: 1.0,
             drawPoints: true,
-            pointSize: 3.5,
-            highlightCircleSize: 6,
+            pointSize: 2.0,
+            highlightCircleSize: 4.0,
             series: {
                 'Depth(m)': {
-                    color: '#ff0000'
+                    color: 'lightblue'
                 },
                 'Temperature (℃)': {
-                    color: '#00ff00'
+                    color: 'lightcoral'
                 },
                 'Salinity(ppt)': {
-                    color: '#0000ff'
+                    color: 'darkgreen'
                 },
                 'Dissolved oxygen (mg/L)': {
-                    color: '#000000'
+                    color: '#444444'
                 }
             }
         };
