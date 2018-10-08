@@ -10,19 +10,16 @@ tags       :
     - code
     - web design
 stars      : 
+css        : state
 ---
 
-<style>
-th { cursor: pointer; }
-</style>
-
-Imagine the following scenario: The user goes to `https://punkish.org/Saving-and-Recreating-State-via-the-URL`, enters a term in a search field and hits the **go** button. (Go ahead, enter some text in the field below and hit the button.)
+Imagine the following scenario: The user goes to `https://punkish.org/Saving-and-Recreating-State-via-the-URL`, enters a term in a search field and hits the **go** button. <span class="prompt">Go ahead, enter some text in the field below and hit the button.</span>
 
 <input id='s' type="search" placeholder="enter something"> <button id="go">go</button>
 
-<div id='search-result' style='visibility: hidden;'>The results are displayed and the URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span></code>. Note that the search field shows that a search was performed for "<span class="search-term"></span>". The user then clicks on the <a href="#table">table</a> link (which is an anchor on the page). This causes the page to scroll down to the section with the table.</div>
+<div id='search-result' class="step2">The results are displayed and the URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span></code>. Note that the search field shows that a search was performed for "<span class="search-term"></span>". The user then clicks on the <a href="#table">table</a> link (which is an anchor on the page). This causes the page to scroll down to the section with the table. <span class="prompt">Go ahead, click on that <code>table</code> link to the left.</span></div>
 
-<table id="table">
+<table id="table" class="step3">
     <tr><td colspan="3">The URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span>#table</code>.</td></tr>
     <tr>
         <th id="1">one</th>
@@ -31,9 +28,9 @@ Imagine the following scenario: The user goes to `https://punkish.org/Saving-and
     </tr>
 </table>
 
-<p>The user clicks on a table cell firing an event that highlights that cell in red. The URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span>#table!highlightCell:id?</code> where <code>id</code> is the <b>id</b> of the highlighted cell.</p>
+<p>The user clicks on a table cell firing an event that highlights that cell in red. <span class="prompt">Go ahead, click on any of the table cells above.</span> The URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span>#table!highlightCell:id?</code> where <code>id</code> is the <b>id</b> of the highlighted cell.</p>
 
-Then the user bookmarks the URL or sends it to a friend. When its recipient opens that URL (or when the user clicks on the bookmark at some point in time later), the state is restored exactly as what it was for the sender. In other words, the URL is parsed and the actions performed to restore the state… 
+Then the user bookmarks the URL or sends it to a friend. When its recipient opens that URL (or when the user clicks on the bookmark at some point in time later), the state is restored exactly as what it was for the sender. In other words, the URL is parsed and the actions performed to restore the state… <span class="prompt">You can test this right now by selecting the URL and pasting it in a new browser window. The contents in that new window should look exactly like this one.</span>
 
 1. the query is performed for "bar" and the results are shown, with the search field indicating the search term.
 2. the page scrolls down to the **table** section, and
@@ -60,7 +57,7 @@ document.getElementById('go').addEventListener('click', function(event) {
     const st = document.getElementById('s').value;
 
     document.querySelectorAll('.search-term').forEach(el => { el.innerHTML = st });
-    document.querySelector('#search-result').style.visibility = 'visible';
+    document.querySelector('#search-result').style.marginTop = 'unset';
 
     history.pushState(
         {urlPath: `https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=${st}`},
@@ -112,9 +109,12 @@ if (window.location.search) {
 
 if (window.location.hash) {
     const h = window.location.hash.substr(1).split('!');
-    if (h[1]) {
-        ha = h[1].split(':');
-        fn[ha[0]](ha[1]);
+
+    if (h.length > 0) {
+        for (let i = 1, j = h.length; i < j; i++) {
+            ha = h[i].split(':');
+            fn[ha[0]](ha[1]);
+        }
     }
     window.location.hash = h[0];
     window.location.hash = h.join('!');
