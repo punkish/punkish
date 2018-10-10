@@ -67,7 +67,16 @@ figure.not100 img {
 }
 cite {
 	font-style: normal;
+	background-color: #f5f5f5
 }
+q {
+	border: 0px solid silver;
+	background-color: silver;
+	border-radius: 5px;
+	padding: 10px;
+	quotes: none;
+}
+
 #map {
 	width: 100%;
 	height: 400px;
@@ -102,6 +111,7 @@ blockquote * {
 }
 .hilite {
 	background-color: #ffcc00;
+	padding: 10px;
 }
 .archive {
 	background-color: lightcoral;
