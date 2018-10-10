@@ -36,7 +36,7 @@ That diagram is from an article titled, [Results of the Dane County Land Records
 
 </ul>
 
-Since I shared my office with my friend Jerome Gill Sullivan, I reached out to Jerry and asked him about the provenance of that diagram. Jerry said that actually he and Nick Chrisman made that diagram in ODYSSEY and published it in an article in the Proceedings of the American Congress on Surveying and Mapping (ACSM), 1984. *(I am still trying to locate a physical or digital copy of that article.)*
+Since I shared my office with my friend Jerome Gill Sullivan, I reached out to Jerry and asked him about the provenance of that diagram. Jerry said that actually he and Nick Chrisman made that diagram in ODYSSEY and published it in an article in the Proceedings of the American Congress on Surveying and Mapping (ACSM), 1984. *(I am still trying to locate a physical or digital copy of that article, and will add the full citation to it soon as I get my hands on it.)*
 
 [^1]: Ben Niemann was my Master’s and PhD advisor.
 
