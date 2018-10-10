@@ -44,6 +44,10 @@ js         : cv
                 <div class="cv-subjob">Current Projects</div>
 
                 <div class="cv-cat">
+                    <span class="cv-dept">Dept. of Political Science, University of Vienna.</span> As a <a href="https://politikwissenschaft.univie.ac.at/forschung/forschungsschwerpunkte/cescos-zeitgenoessische-solidaritaetsstudien/#c311429" target="_blank">Solidary Research Fellow</a> at the Center for Contemporary Solidarity, I am focusing on the tension between the desire to share medical data (for many of its touted benefits) and the need to protect the privacy of individuals (from many of the feared harms from breach and misuse of such data).
+                </div>
+
+                <div class="cv-cat">
                     <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the <a href="http://biolitrepo.org" target="_blank">Biodiversity Literature Repository</a> in a project funded by <a href="https://www.arcadiafund.org.uk/grants/grant-detail/" target="_blank">The Arcadia Fund</a>. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
                 </div>
 
