@@ -50,6 +50,7 @@ So, why am I worked up about all this history? Well, for one, I have been a part
 
 This also demonstrates how much mindshare Google occupies nowadays. This is certainly a point of concern as Google dives deep into our behavioral and health information not just through its ubiquitous data collection activities but also via its subsidiary ventures such as DeepMind that has been working closely with UK’s NHS. It is as if Google is sucking the oxygen out of the room and making us dizzy, lazy and inaccurate.
 
-This brings to mind Isaac Newton’s famous quote, ”If I have been lazy and inaccurate in my observations, it is because I have been standing on the shoulders of lazy and inaccurate giants.”
+This brings to mind Isaac Newton’s famous quote, ”If I have been lazy and inaccurate in my observations, it is because I have been standing on the shoulders of lazy and inaccurate giants.”[^2]
 
 [^1]: Ben Niemann was my Master’s and PhD advisor.
+[^2]: The dizziness could be because of the rarified air on the shoulders of giants. Also, this is not a Newton quote.
