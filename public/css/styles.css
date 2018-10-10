@@ -100,6 +100,9 @@ blockquote {
 blockquote * {
 	padding-left: 20px;
 }
+.hilite {
+	background-color: #ffcc00;
+}
 .archive {
 	background-color: lightcoral;
 	color: black;
