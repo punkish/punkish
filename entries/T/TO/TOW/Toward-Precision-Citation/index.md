@@ -38,8 +38,6 @@ That diagram is from an article titled, [Results of the Dane County Land Records
 
 Since I shared my office with my friend Jerome Gill Sullivan, I reached out to Jerry and asked him about the provenance of that diagram. Jerry said that actually he and Nick Chrisman made that diagram in ODYSSEY and published it in an article in the Proceedings of the American Congress on Surveying and Mapping (ACSM), 1984. *(I am still trying to locate a physical or digital copy of that article, and will add the full citation to it soon as I get my hands on it.)*
 
-[^1]: Ben Niemann was my Master’s and PhD advisor.
-
 In [Charting the Unknown: How computer mapping at Harvard became GIS](https://users.cs.duke.edu/~brd/Historical/hlcg/HarvardBLAD_screen.pdf), Nick Chrisman writes, “One December night, as Nick Chrisman, the designer of POLYVRT, and Denis White were waiting for batch editing jobs, they saw the solution to the Urban Atlas problem, a system of processors to manage large geographic files, or ODYSSEY.” That was in 1975.
 
 According to the Wikipedia’s entry on Global Positioning System (GPS), [the GPS project was initiated in 1973 and became fully operational in 1995](https://en.wikipedia.org/wiki/Global_Positioning_System#History). The National Park Service (NPS) website [states](https://www.nps.gov/gis/gps/history.html), “On June 26, 1993, however, the answer became as simple as the question. On that date, the U.S. Air Force launched the 24th Navstar satellite into orbit, completing a network of 24 satellites known as the Global Positioning System, or GPS.” (Quoted from an articled titled “The Global Position System: The Role of Atomic Clocks”)
@@ -53,3 +51,5 @@ So, why am I worked up about all this history? Well, for one, I have been a part
 This also demonstrates how much mindshare Google occupies nowadays. This is certainly a point of concern as Google dives deep into our behavioral and health information not just through its ubiquitous data collection activities but also via its subsidiary ventures such as DeepMind that has been working closely with UK’s NHS. It is as if Google is sucking the oxygen out of the room and making us dizzy, lazy and inaccurate.
 
 This brings to mind Isaac Newton’s famous quote, ”If I have been lazy and inaccurate in my observations, it is because I have been standing on the shoulders of lazy and inaccurate giants.”
+
+[^1]: Ben Niemann was my Master’s and PhD advisor.
