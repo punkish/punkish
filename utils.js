@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const moment = require('moment');
 const lunr = require('lunr');
 const Yaml = require('yaml-front-matter');
 const showdown = require('showdown');
@@ -14,6 +13,8 @@ const sh = new showdown.Converter({
 
 const dir = './entries';
 const untaggedLabel = 'untagged';
+const today  = new Date();
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 const utils = {
 
@@ -43,7 +44,7 @@ const utils = {
 
         return {
             type: 'search',
-            created: moment().format('MMM DD, YYYY'),
+            created: today.toLocaleDateString("en-US", dateOptions),
             searchTitle: 'Error',
             searchMessage: "The page you requested doesn't exist. Perhaps you were looking for one of the following.",
             layout: 'main',
@@ -118,21 +119,15 @@ const utils = {
 
                 let entry = Yaml.loadFront(fileContents);
                 if (entry) {
-
-                    // format user-entered date using moment
-                    let dateFormat = 'YYYY-MM-DD HH:MM:SS';
-                    if (singleEntry) {
-                        dateFormat = 'MMM DD, YYYY';
-                    }
                     
                     if (entry.modified) {
-                        entry.created = moment(entry.modified).format(dateFormat);
+                        entry.created = new Date(entry.modified);
                     }
                     else if (entry.created) {
-                        entry.created = moment(entry.created).format(dateFormat);
+                        entry.created = new Date(entry.created);
                     }
                     else {
-                        entry.created = moment().format(dateFormat);
+                        entry.created = today;
                     }
 
                     if (!entry.title) {
@@ -141,112 +136,116 @@ const utils = {
 
                     entry.entryDir = entryDir;
                     entry.entryUrl = entryUrl;
+                    
+                    if (entry.created.getTime() < today.getTime()) {
+                        if (singleEntry) {
 
-                    if (singleEntry) {
-                        
-                        if (entry.tags.indexOf('presentation') > -1) {
-                            const me = 'Puneet Kishor';
-                            if (entry.authors) {
-                                if (entry.authors.length > 1) {
-                                    entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
-                                    entry.authors.unshift(me);
-                                    entry.authors = entry.authors.join(', ');
+                            //console.log(entry.created.getTime(), today.getTime());
+                            
+                            
+                                if (entry.tags.indexOf('presentation') > -1) {
+
+                                    const me = 'Puneet Kishor';
+                                    if (entry.authors) {
+                                        if (entry.authors.length > 1) {
+                                            entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
+                                            entry.authors.unshift(me);
+                                            entry.authors = entry.authors.join(', ');
+                                        }
+                                        else {
+                                            entry.authors = me + ' and ' + entry.authors[0];
+                                        }
+                                    }
+                                    else {
+                                        entry.authors = me;
+                                    }
+                                }
+                                else if (entry.tags.indexOf('album') > -1) {
+                                    entry.images = fs.readdirSync(entry.entryDir + '/img')
+                                        .filter(img => {
+                                            const imgExt = img.slice(-4);
+                                            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
+                                        })
+                                        .map(img => {
+                                            return `/entry-files/${entry.entryUrl}/img/${img}`;
+                                        });
+
+                                    entry.type = 'album';
+                                    entry.__content = sh.makeHtml(entry.__content);
+                                    entry.__content = entry.__content.replace(
+                                        /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                                        `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                                    );
+
+                                    // find prev and next entries
+                                    let i = 0;
+                                    const j = this.posts.byDate.length;
+                                    for (; i < j; i++) {
+                                        if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
+
+                                            if (i == 0) {
+                                                entry.prev = this.posts.byDate[i];
+                                            }
+                                            else if (i > 0) {
+                                                entry.prev = this.posts.byDate[i - 1];
+                                            }
+                                            
+                                            if (i < j) {
+                                                entry.next = this.posts.byDate[i + 1];
+                                            }
+                                            else if (i == j) {
+                                                entry.next = this.posts.byDate[i];
+                                            }
+                                            
+                                            break;
+                                        }
+                                    }
                                 }
                                 else {
-                                    entry.authors = me + ' and ' + entry.authors[0];
+                                    entry.__content = sh.makeHtml(entry.__content);
+                                    entry.__content = entry.__content.replace(
+                                        /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                                        `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                                    );
+
+                                    // find prev and next entries
+                                    let i = 0;
+                                    const j = this.posts.byDate.length;
+                                    for (; i < j; i++) {
+                                        if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
+
+                                            if (i == 0) {
+                                                entry.prev = this.posts.byDate[i];
+                                            }
+                                            else if (i > 0) {
+                                                entry.prev = this.posts.byDate[i - 1];
+                                            }
+                                            
+                                            if (i < j) {
+                                                entry.next = this.posts.byDate[i + 1];
+                                            }
+                                            else if (i == j) {
+                                                entry.next = this.posts.byDate[i];
+                                            }
+                                            
+                                            break;
+                                        }
+                                    }
                                 }
-                            }
-                            else {
-                                entry.authors = me;
-                            }
-                        }
-                        else if (entry.tags.indexOf('album') > -1) {
-                            entry.images = fs.readdirSync(entry.entryDir + '/img')
-                                .filter(img => {
-                                    const imgExt = img.slice(-4);
-                                    return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
-                                })
-                                .map(img => {
-                                    return `/entry-files/${entry.entryUrl}/img/${img}`;
-                                });
 
-                            entry.type = 'album';
-                            entry.__content = sh.makeHtml(entry.__content);
-                            entry.__content = entry.__content.replace(
-                                /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-                                `img src="/entry-files/${entryUrl}/img/$1.$2$3`
-                            );
-
-                            // find prev and next entries
-                            let i = 0;
-                            const j = this.posts.byDate.length;
-                            for (; i < j; i++) {
-                                if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
-
-                                    if (i == 0) {
-                                        entry.prev = this.posts.byDate[i];
-                                    }
-                                    else if (i > 0) {
-                                        entry.prev = this.posts.byDate[i - 1];
-                                    }
-                                    
-                                    if (i < j) {
-                                        entry.next = this.posts.byDate[i + 1];
-                                    }
-                                    else if (i == j) {
-                                        entry.next = this.posts.byDate[i];
-                                    }
-                                    
-                                    break;
+                                if (entry.tags && entry.tags.includes('code')) {
+                                    entry.hasCode = true;
                                 }
-                            }
-                        }
-                        else {
-                            entry.__content = sh.makeHtml(entry.__content);
-                            entry.__content = entry.__content.replace(
-                                /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-                                `img src="/entry-files/${entryUrl}/img/$1.$2$3`
-                            );
 
-                            // find prev and next entries
-                            let i = 0;
-                            const j = this.posts.byDate.length;
-                            for (; i < j; i++) {
-                                if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
-
-                                    if (i == 0) {
-                                        entry.prev = this.posts.byDate[i];
-                                    }
-                                    else if (i > 0) {
-                                        entry.prev = this.posts.byDate[i - 1];
-                                    }
-                                    
-                                    if (i < j) {
-                                        entry.next = this.posts.byDate[i + 1];
-                                    }
-                                    else if (i == j) {
-                                        entry.next = this.posts.byDate[i];
-                                    }
-                                    
-                                    break;
-                                }
-                            }
+                                entry.hasCss = entry.css ? true : false;
+                                entry.hasJs = entry.js   ? true : false;
                         }
-
-                        if (entry.tags && entry.tags.includes('code')) {
-                            entry.hasCode = true;
-                        }
-
-                        if (entry.css) {
-                            entry.hasCss = true;
-                        }
-
-                        if (entry.js) {
-                            entry.hasJs = true;
-                        }
+                    
+                        return entry;
                     }
-
-                    return entry;
+                    else {
+                        return false;
+                    }
                 }
             }
         }
@@ -355,8 +354,10 @@ const utils = {
                         }
                     }
 
-                    const entryYear = moment(entry.created).format('YYYY');
-                    const entryMonth = moment(entry.created).format('M');
+                    // const entryYear = moment(entry.created).format('YYYY');
+                    // const entryMonth = moment(entry.created).format('M');
+                    const entryYear = new Date(entry.created).getFullYear();
+                    const entryMonth = new Date(entry.created).getMonth();
                     const indexOfYear = this.posts.byYear.map(x => { return x.year }).indexOf(entryYear);
                     const entrySmallIdx = {
                         title: entry.title,

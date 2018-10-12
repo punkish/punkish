@@ -506,7 +506,49 @@ PK.where = {
             "f": "Oct 1, 2018",
             "t": "Nov 30, 2018",
             "d": "two-months"
+        },
+        {
+            "w": "Berlin",
+            "h": "…",
+            "f": "Dec 1, 2018",
+            "t": "Jan 1, 2019",
+            "d": "one-month"
+        },
+        {
+            "w": "Lucknow/Mumbai",
+            "h": "…",
+            "f": "Jan 1, 2019",
+            "t": "Jan 31, 2019",
+            "d": "one-month"
         }
+        // {
+        //     "w": "Genève",
+        //     "h": "CERN",
+        //     "f": "Feb 1, 2019",
+        //     "t": "Feb 7, 2019",
+        //     "d": "one-week"
+        // },
+        // {
+        //     "w": "Marseille",
+        //     "h": "Walter Benjamin",
+        //     "f": "Feb 7, 2019",
+        //     "t": "Feb 14, 2019",
+        //     "d": "one-week"
+        // },
+        // {
+        //     "w": "Siorac-en-Périgord",
+        //     "h": "animals",
+        //     "f": "Feb 14, 2019",
+        //     "t": "Feb 21, 2019",
+        //     "d": "one-week"
+        // },
+        // {
+        //     "w": "Paris",
+        //     "h": "Solidarity",
+        //     "f": "Oct 1, 2018",
+        //     "t": "Nov 30, 2018",
+        //     "d": "two-months"
+        // }
     ],
 
     init: function() {

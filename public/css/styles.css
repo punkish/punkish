@@ -83,16 +83,24 @@ q {
 }
 .title {
 	margin-bottom: 0;
-	font-size: 2em;;
+	font-size: 2em;
+	font-weight: 800;
 }
 .description {
-	font-family: sans-serif;
-	font-weight: bold;
+	font-family: serif;
+	font-size: 1.5em;
+	font-weight: 400;
+	font-style: italic;
 }
 .content {
 	margin-top: 3em;
 	font-family: "et-book", serif;
 	font-size: 21px;
+}
+h2 {
+	margin-bottom: 0;
+	font-size: 1.5em;
+	font-weight: 800;
 }
 .on {
 	visibility: visible;
@@ -180,6 +188,15 @@ dd {
 
 code {
 	font-family: Hack, monospace;
+}
+ol.punkish-footnotes {
+	border-top: 1px dotted; 
+	font-size: 0.8em;
+	font-family: sans-serif;
+}
+li.punkish-footnote {
+	margin-left: 1em;
+	text-indent: -1em;
 }
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

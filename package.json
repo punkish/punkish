@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "blipp": "^3.0.0",
+    "crypto-js": "^3.1.9-1",
     "dygraphs": "^2.1.0",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
