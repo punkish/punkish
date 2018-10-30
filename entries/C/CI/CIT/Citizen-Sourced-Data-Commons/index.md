@@ -1,13 +1,13 @@
 ---
 title      : Citizen-Sourced Data Commons
-description: governance implications for <b>Open Science</b>
+description: 
 modified   : 2016-05-31 12:14:00
 created    : 2000-12-24 00:00:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      :
+when       :
 tags       :
     - presentation
     - governance
@@ -17,6 +17,7 @@ tags       :
     - health
     - health data
 stars      : 
+notes      : governance implications for <b>Open Science</b>
 ---
 
 .left-column[

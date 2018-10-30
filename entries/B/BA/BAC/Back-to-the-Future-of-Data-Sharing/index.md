@@ -1,21 +1,19 @@
 ---
 title      : Back to the Future of Data Sharing
-description: 
+description: in the words of Marty McFly, “If you put your mind to it, you can accomplish anything.”
 modified   : 2017-08-27 21:25:00
 created    : 2017-08-27 21:25:00
 viewcount  : 0
 id         : 232
 gmap       : 
-venue      : Observatoire Océanologique de Villefranche
+where      : Observatoire Océanologique de Villefranche
 when       : Journée des Jeunes Chercheurs, Sep 29, 2017
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - science
     - data sharing
 stars      : 
-notes      : Scientists have always shared data, just not freely, and not with *anyone* who wants the data. For the most part, scientists have shared data with their collaborators, and on occasion, with those who might especially ask them for it. But as science has become more data-intensive, and as the technologies, mainly the network speeds and computing power, to collect, manage, analyze and visualize data, have become more powerful and ubiquitous, the sharing has not kept pace. The relatively recent awareness of intellectual property rights in data have at times brought about a contrarian change — scientists applying unsuitable licenses to their content creating an unintended but significant legal hurdle. All this confusion makes it seem that the goal of seamless data sharing between those who create it and those who want it may be moving further away from our grasp. So what is one to do? Well, in the words of Marty McFly, “If you put your mind to it, you can accomplish anything.”
+notes      : Scientists have always shared data, just not freely, and not with *anyone* who wants the data. For the most part, scientists have shared data with their collaborators, and on occasion, with those who might especially ask them for it. But as science has become more data-intensive, and as the technologies, mainly the network speeds and computing power, to collect, manage, analyze and visualize data, have become more powerful and ubiquitous, the sharing has not kept pace. The relatively recent awareness of intellectual property rights in data have at times brought about a contrarian change — scientists applying unsuitable licenses to their content creating an unintended but significant legal hurdle. All this confusion makes it seem that the goal of seamless data sharing between those who create it and those who want it may be moving further away from our grasp. So what is one to do?
 ---
 
 ## Scientists have always shared data

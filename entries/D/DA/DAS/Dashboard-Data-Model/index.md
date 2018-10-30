@@ -1,13 +1,13 @@
 ---
 title      : Dashboard Data Model
-description: Presented at Seagrant Institute, University of Wisconsin-Madison
-modified   : 2007-02-17
-created    : 
+description: 
+modified   : 2007-02-17 00:00:00
+created    : 2007-02-17 00:00:00
 viewcount  : 2
 id         : 116
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Seagrant Institute, University of Wisconsin-Madison
+when       : February 2007
 tags       :
     - presentation
 stars      : 

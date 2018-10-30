@@ -1,27 +1,17 @@
 ---
 title      : Measuring Information Accessibility
-description: 
+description: A proposal
 modified   : 2010-09-22 00:48:22
 created    : 2010-09-22 00:48:22
 viewcount  : 0
 id         : 715
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : 
+wwhen      : September 2010
 tags       :
     - presentation
 stars      : 
----
-
-## Measuring Information Accessibility
-
-A proposal
-
-???
-
-Can we recognize free when we see it? Can we measure accessibility? Can we rate one source of information as being more or less accessible than another?
-
-
+notes      : Can we recognize free when we see it? Can we measure accessibility? Can we rate one source of information as being more or less accessible than another?
 ---
 
 ## Why

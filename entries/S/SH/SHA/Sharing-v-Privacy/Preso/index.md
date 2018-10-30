@@ -6,8 +6,8 @@ created    : 2015-05-14
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Washington DC
+when       : February 2015
 tags       :
     - presentation
     - health
@@ -15,14 +15,11 @@ tags       :
     - social contract
     - open data
 stars      : 
+notes      : While the need for privacy and security have to be respected, access to patient data is essential for continuous learning as well as for diagnosis of edge cases. But the former makes it difficult to achieve the latter creating a tension that seems intractable. A workshop organized by Creative Commons, with generous support from Robert Wood Johnson Foundation, brought together those eager to resolve this tension, and make it possible to share data while respecting privacy.
 ---
 
 ## Sharing v. Privacy
 ### two edges of the same sword
-
-???
-
-While the need for privacy and security have to be respected, access to patient data is essential for continuous learning as well as for diagnosis of edge cases. But the former makes it difficult to achieve the latter creating a tension that seems intractable. A workshop organized by Creative Commons, with generous support from Robert Wood Johnson Foundation, brought together those eager to resolve this tension, and make it possible to share data while respecting privacy.
 
 ---
 

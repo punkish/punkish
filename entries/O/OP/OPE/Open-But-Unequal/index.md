@@ -6,24 +6,15 @@ created    : 2015-10-06
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Institute for Biology and Biochemistry, Polish Academy of Sciences, Warszawa, Poland.
+when       : October 2015
 tags       :
     - presentation
     - science
     - informal academies
     - informal learning
 stars      : 
----
-
-## Open But Unequal
-<p>&nbsp;</p>
-### science outside institutions
-
-???
-
-*Open* is not enough when conducting or promoting science outside institutions. First presented at the Institute for Biology and Biochemistry, Polish Academy of Sciences, Warszawa, Poland. <a href="/Open-But-Unequal?a=show#1">start presentation &raquo;</a>
-
+notes      :
 ---
 
 ## Open But Unequal

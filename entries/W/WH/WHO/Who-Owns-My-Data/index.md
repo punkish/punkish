@@ -6,10 +6,8 @@ created    : 2017-10-07 15:34:00
 viewcount  : 0
 id         : 232
 gmap       : 
-venue      : Maastricht, NL
+where      : University of Maastricht, NL
 when       : Nov 9-10, 2017
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - science

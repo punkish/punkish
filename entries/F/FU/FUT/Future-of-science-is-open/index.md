@@ -6,10 +6,8 @@ created    : 2017-09-09 12:18:00
 viewcount  : 0
 id         : 232
 gmap       : 
-venue      : Ulaanbaatar, Mongolia
+where      : Ulaanbaatar, Mongolia
 when       : Sep 18, 2017
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - science

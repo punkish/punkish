@@ -6,8 +6,8 @@ created    :
 viewcount  : 53
 id         : 45
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : online to students at the University of Waterloo
+when       : October 2015
 tags       :
     - presentation
     - geospatial

@@ -1,13 +1,13 @@
 ---
 title      : Citizens Consent
 description: Based on work done at the Data Privacy Legal Hackathon
-modified   : 2014-05-01
-created    : 2014-05-01
+modified   : 2014-05-01 00:00:00
+created    : 2014-05-01 00:00:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Mozilla offices, San Francisco
+when       : May 2014
 tags       :
     - presentation
     - governance

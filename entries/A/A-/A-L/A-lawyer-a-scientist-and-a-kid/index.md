@@ -8,8 +8,6 @@ id         : 232
 where      : iKNOW Conference, TU Graz
 when       : October 2015
 gmap       : 
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - science

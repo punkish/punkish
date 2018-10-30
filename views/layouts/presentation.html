@@ -10,27 +10,27 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="/public/css/remark-styles.css">
+    <link rel="stylesheet" href="/public/css/remark-styles-iframes.css">
 	<link rel="stylesheet" href="/public/highlight/styles/monokai.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <!-- <link rel="stylesheet" href="/public/css/styles.css"> -->
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container"> -->
 
 {{{content}}}
 
-    </div>
+    <!-- </div> -->
 
 	{{#hasJs}}
-    <script src="/entry-files/{{entryUrl}}/js/{{js}}.js"></script>
+    <!-- <script src="/entry-files/{{entryUrl}}/js/{{js}}.js"></script> -->
 	{{/hasJs}}
 	
 	<script src="/public/highlight/highlight.pack.js"></script>
 	<script src="/public/remark/remark.min.js"></script>
-	<script src="/node-files/crypto-js/crypto-js.js"></script>
+	<!-- <script src="/node-files/crypto-js/crypto-js.js"></script> -->
     <script>
     window.onload = function() {
 		var slideshow = remark.create({
@@ -82,7 +82,7 @@
 			e.stopPropagation();
 		});
 		*/
-		foo();
+		//foo();
 		
 	}
     </script>

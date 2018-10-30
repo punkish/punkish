@@ -1,36 +1,25 @@
 ---
 title      : What Would Schumpeter Think Of Open Source
 description: 
-modified   : 2007-02-13
-created    : 
+modified   : 2007-02-13 00:00:00
+created    : 2007-02-13 00:00:00
 viewcount  : 0
 id         : 105
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : The Doctoral Seminar in Technology Entrepreneurship, School of Business, University of Wisconsin-Madison
+when       : Feb 13, 2007
 tags       :
     - presentation
     - open source
     - Schumpeter
 stars      : 
----
-
-## What Would Schumpeter Think Of Open Source?
-
-
-Puneet Kishor  
-Nelson Institute for Environmental Studies  
-University of Wisconsin-Madison
-
-The Doctoral Seminar in Technology Entrepreneurship, School of Business  
-Feb 13, 2007
-
+notes      : 
 ---
 
 ## What is ""Creative Destruction""?
 
-*   ""Creative Destruction is when you *think* before smashing; otherwise it is 
-    just Destruction"" &ndash; William Anderson, Co-chair, CODATA
+*   “Creative Destruction is when you *think* before smashing; otherwise it is 
+    just Destruction” — William Anderson, Co-chair, CODATA
 
 ---
 
@@ -45,11 +34,11 @@ Feb 13, 2007
 ## Capitalism is Evolutionary
 
 *   It is a form or method of economic change and is never stationary
-*   ""The process of industrial mutation incessantly revolutionizes the 
+*   “The process of industrial mutation incessantly revolutionizes the 
     economic structure from within, incessantly destroying the old one, 
-    incessantly creating a new one""
-*   ""This is the process of *Creative Destruction*, and is an essential fact 
-    of capitalism""
+    incessantly creating a new one”
+*   “This is the process of *Creative Destruction*, and is an essential fact 
+    of capitalism”
 
 ---
 

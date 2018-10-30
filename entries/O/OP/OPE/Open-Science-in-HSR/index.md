@@ -6,23 +6,15 @@ created    : 2016-06-27 00:00:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Annual Research Meeting (ARM) of AcademyHealth 2016, Boston, MA
+when       : June 2016
 tags       :
     - presentation
     - health
     - health services research
     - open science
 stars      : 
----
-
-## Open Science in HSR
-<p>&nbsp;</p>
-### Annual Research Meeting (ARM) of AcademyHealth 2016, Boston, MA
-
-???
-
-
+notes      :
 ---
 
 ## Open Science in HSR

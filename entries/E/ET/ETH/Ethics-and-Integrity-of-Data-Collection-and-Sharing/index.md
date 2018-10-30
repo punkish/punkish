@@ -1,13 +1,13 @@
 ---
 title      : Ethics and Integrity of Data Collection and Sharing
-description: Rencontres Mondiales du Logiciel Libre 2015, Beauvais, France
+description: 
 modified   : 2015-05-14
 created    : 2015-05-14
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Rencontres Mondiales du Logiciel Libre 2015, Beauvais, France
+when       : May 2015
 tags       :
     - presentation
     - open science

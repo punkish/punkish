@@ -6,12 +6,12 @@ created    : 2010-02-06 06:45:48
 viewcount  : 0
 id         : 649
 gmap       :
-type       : presentation
-layout     : presentation
+where      : High Level Experts Group Meeting on *e-Infrastructure for Scientific Data* at the European Commission, Brussels, Belgium
+when       : February 2010
 tags       :
     - presentation
 stars      :
-notes      : Presented at the High Level Experts Group Meeting on *e-Infrastructure for Scientific Data* at the European Commission, Brussels, Belgium
+notes      : 
 ---
 
 ## Creative Commons objectives

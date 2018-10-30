@@ -6,15 +6,14 @@ created    : 2015-12-19 17:55:00
 viewcount  : 0
 id         : 717
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : TERI, New Delhi
+when       : Dec 19, 2015
 tags       :
     - presentation
     - licenses
     - science
 stars      : 
-venue      : TERI, New Delhi
-when       : Dec 19, 2015
+notes      :
 ---
 
 ### A license is a permission to do something

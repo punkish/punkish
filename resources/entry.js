@@ -1,6 +1,13 @@
 'use strict';
 
 const utils = require('../utils.js');
+const redirects = {
+    'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
+    'Hong-Kong-Bay-Red-Tide-Data': 'Hong-Kong-Bay-Water-Quality-Data'
+};
+const renames = {
+    'cv': 'cv-latest'
+};
 
 const entry = {
     method: 'GET',
@@ -24,16 +31,6 @@ const entry = {
     handler: function (request, h) {
 
         let file = request.params['entry'];
-
-        const redirects = {
-            'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
-            'Hong-Kong-Bay-Red-Tide-Data': 'Hong-Kong-Bay-Water-Quality-Data'
-        };
-
-        const renames = {
-            'cv': 'cv-latest'
-        };
-
         if (file in redirects) {
 
             return h.redirect(`/${redirects[file]}`);
@@ -43,21 +40,21 @@ const entry = {
             file = renames[file];
         }
 
-        let subfile = request.params['subentry'] || '';
+        const subfile = request.params['subentry'] || false;
+        const presentation = request.query['presentation'] || false;
+        const showHidden = request.query['showHidden'] || false;
 
-        let queryParam = request.query['show'] || '';
-
-        const entryData = utils.getEntry({
+        const entryData = utils.getSingleEntry({
             file: file, 
             subfile: subfile,
-            queryParam: queryParam, 
-            singleEntry: true
+            presentation: presentation, 
+            showHidden: showHidden
         });
         
         return h.view(
 
             // content template
-            entryData.type || 'entry', 
+            entryData.template || 'entry', 
 
             // data
             entryData,

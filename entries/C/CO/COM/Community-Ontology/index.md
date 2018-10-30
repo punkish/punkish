@@ -1,34 +1,26 @@
 ---
 title      : Community Ontology
 description: 
-modified   : 2007-02-14
-created    : 
+modified   : 2007-02-14 00:00:00
+created    : 2007-02-14 00:00:00
 viewcount  : 1
 id         : 46
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : University of Wisconsin-Madison
+when       : February 2007
+authors    : 
+    - Lewis Friedland, School of Journalism and Mass Communications, UW-Madison
 tags       :
     - presentation
+    - citizen journalism
 stars      : 
----
-
-## Community Ontology
-
-by Puneet Kishor[^1] and Lewis Friedland[^2]  
-University of Wisconsin-Madison
-
-[^1]: Nelson Institute for Environmental Studies  
-[^2]: School of Journalism and Mass Communications
-
-
+notes      : exploring ontology relevant in the context of a community.
 ---
 
 ## What is "Ontology"?
 
-
 * The terms used to describe and represent an area of knowledge
-* Includes ... definitions of basic concepts in the domain and the relationships among them
+* Includes… definitions of basic concepts in the domain and the relationships among them
 * Encodes knowledge *in* a domain and also knowledge that *spans* domains
 slidehandout:
 
@@ -43,8 +35,8 @@ slidehandout:
 
 ## "Community Ontology"
 
-* The terms used to describe and represent knowledge of...
-* entities and relationships among them in...
+* The terms used to describe and represent knowledge of…
+* entities and relationships among them in…
 * an aggregation of organizations, people, locations, and relationships between them
 
 ---
@@ -60,14 +52,14 @@ slidehandout:
 ## RDF is a collection of triples
 
 In Perl
-<pre>
+<pre><code>
 %ball = (
   shape => "round",
   color => "red",
   feels => "squishy",
   taste => "yucky",
 );
-</pre>
+</code></pre>
 
 In RDF
 
@@ -91,7 +83,6 @@ In RDF
 ## RDF is a collection of triples
 
 [img=rdf_triple_graph]
-slidehandout:
 
 ---
 
@@ -101,11 +92,11 @@ In RDF
 
 A bundle of triples can describe an entity uniquely
 Just like in Perl a hash can
-<pre>
+<pre><code>
 %ball = (
   shape => "round",
   color => "red",
   feels => "squishy",
   taste => "yucky",
 );
-</pre>
+</code></pre>

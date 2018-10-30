@@ -1,17 +1,18 @@
 ---
 title      : Geottingen
-description: Geo activities at Göttingen
+description: 
 modified   : 2016-10-12 22:16:00
 created    : 2016-10-12 22:16:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+when       : October 2016
+where      : University of Göttingen
 tags       :
     - presentation
     - Göttingen
 stars      : 
+notes      : Present and future geo activities at Göttingen
 ---
 
 ## Geoparsing

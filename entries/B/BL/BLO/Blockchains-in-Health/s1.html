@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.min.css">
+    <link rel="stylesheet" href="/entry-files/B/BL/BLO/Blockchains-in-Health/css/bc.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <p>The ideal cryptographic hash function has five main properties:</p>
+
+            <ul>
+                <li>deterministic so the same message always results in the same hash</li>
+                <li>quick to compute the hash value for any given message</li>
+                <li>infeasible to generate a message from its hash value except by trying all possible messages</li>
+                <li>a small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value</li>
+                <li>infeasible to find two different messages with the same hash value</li>
+            </ul>
+            
+            <input type="text" name="textString" size="70%"> 
+            <button id="createHash">create hash</button>
+            <div id="textStringHash"></div>
+        </div>
+    </div>
+</div>
+<script src="/node-files/crypto-js/crypto-js.js"></script>
+<script src="/entry-files/B/BL/BLO/Blockchains-in-Health/js/bc.js"></script>
+<script>
+window.onload = function() {
+    BC.init();
+}
+</script>
+</body>
+</html>

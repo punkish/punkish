@@ -1,13 +1,13 @@
 ---
 title      : Interoperability As A Guiding Principle For Long-Term Archives
-description: Presented at <b>Archive '10</b>, NSF Workshop on on Archiving Experiments to Raise Scientific Standards, May 25-26, 2010 at the <a href='http://users.emulab.net/trac/archive10/'>Dept. of Comp. Sci., University of Utah, Salt Lake City, Utah, USA</a>
+description: 
 modified   : 2010-05-09 07:16:26
 created    : 2010-05-09 07:16:26
 viewcount  : 0
 id         : 651
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : <b>Archive '10</b>, NSF Workshop on on Archiving Experiments to Raise Scientific Standards, May 25-26, 2010 at the <a href='http://users.emulab.net/trac/archive10/'>Dept. of Comp. Sci., University of Utah, Salt Lake City, Utah, USA</a>
+when       : May 2010
 tags       :
     - presentation
 stars      : 

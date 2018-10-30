@@ -6,31 +6,14 @@ created    : 2015-08-23
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : 
+when       : August 2015
 tags       :
     - presentation
     - TDM
 stars      : 
----
-
-## Legal Implications of Text and Data Mining
-
-???
-
-Originally created by the Creative Commons Science, Policy and Legal teams, subsequently revised by me for the web. Placed in the public domain under the CC0 Public Domain Dedication.
+notes      : Originally created by the Creative Commons Science, Policy and Legal teams, subsequently revised by me for the web. Placed in the public domain under the CC0 Public Domain Dedication.
  <a href="/Legal-Implications-of-TDM?a=show#1">start presentation &raquo;</a>
-
---
-
-<div class="author">by Puneet Kishor</div>
-
-Released under a [CC0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/).
-
-<hr>
-
-**Help:** Notes are hidden, but may be seen or hidden by pressing 'p'. Swipe on touch devices or use ← and → keys on your keyboard to change slides.
-
 ---
 
 ## TDM Defined

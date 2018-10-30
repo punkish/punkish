@@ -5,18 +5,16 @@ modified   : 2017-01-09 16:00:00
 created    : 2017-01-09 16:00:00
 viewcount  : 0
 id         : 232
-venue      : Digital Humanities Seminar, University of Göttingen
+where      : Digital Humanities Seminar, University of Göttingen
 when       : June 2017
 gmap       : 
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - Göttingen
     - science
     - Public Domain
 stars      : 
-css        : remark-style
+notes      :
 ---
 
 ## Twenty Things I Care About

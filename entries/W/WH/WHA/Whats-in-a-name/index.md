@@ -6,14 +6,15 @@ created    : 2016-01-02 15:54:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : presentation
+when       : January 2016
 tags       :
     - presentation
     - science
     - names
     - taxonomy
 stars      : 
+notes      : why names matter in taxonomy, and how technology can help.
 ---
 
 ## What’s in a Name?

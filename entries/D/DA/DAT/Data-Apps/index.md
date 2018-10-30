@@ -6,8 +6,8 @@ created    : 2016-10-05 13:51:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Department of GeoScience, University of Göttingen
+when       : October 2016
 tags       :
     - presentation
     - science

@@ -6,8 +6,8 @@ created    : 2017-06-14 16:15:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : Department of GeoScience, University of Göttingen
+when       : June 2017
 tags       :
     - presentation
     - Göttingen
@@ -16,7 +16,6 @@ tags       :
     - Washington DC
 stars      : 
 ---
-
 
 background-image: url('/entry-files/S/SC/SCA/Scalable-Data-Sharing/img/macrostrat-cover-sm.jpg')
 background-size: cover

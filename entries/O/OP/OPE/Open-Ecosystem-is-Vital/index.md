@@ -5,16 +5,15 @@ modified   : 2017-03-29 12:00:00
 created    : 2017-03-29 12:00:00
 viewcount  : 0
 id         : 232
-venue      : Depto. de Ciencias de la Computación, Universidad de Chile, Santiago, Chile
+where      : Depto. de Ciencias de la Computación, Universidad de Chile, Santiago, Chile
 when       : March 2017
 gmap       : 
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - science
     - open
 stars      : 
+notes      :
 ---
 
 <h2>Open <span class="punkish-dim">Definition</span></h2>

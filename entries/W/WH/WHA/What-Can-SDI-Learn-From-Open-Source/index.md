@@ -10,8 +10,6 @@ authors     :
     - Steve Ventura
 where      : GSDI-9, Santiago de Chile
 when       : Nov 09, 2006
-type       : presentation
-layout     : presentation
 tags       :
     - presentation
     - Santiago

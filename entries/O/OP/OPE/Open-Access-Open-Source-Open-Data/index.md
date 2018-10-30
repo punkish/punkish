@@ -6,8 +6,8 @@ created    : 2015-04-20
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : 
+when       : April 2015
 tags       :
     - presentation
     - open source

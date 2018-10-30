@@ -6,13 +6,14 @@ created    : 2017-05-29 10:35:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : University of Göttingen
+when       : May 2017
 tags       :
     - presentation
     - Göttingen
     - Germany
 stars      : 
+notes      : a comparison between the geo and medical related activies in the open source world.
 ---
 
 ## NPM

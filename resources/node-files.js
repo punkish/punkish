@@ -17,5 +17,4 @@ const nodeFiles = {
     }
 };
 
-
 module.exports = nodeFiles;

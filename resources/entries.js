@@ -66,6 +66,32 @@ const entries = {
             // /entries?q=searchterm
             else if (request.query['q']) {
 
+                /*
+                Notes from Oliver Nightingale, the creator of lunrjs
+
+                var idx = lunr(function () {
+                    this.ref('id')
+                    this.field('tags')
+                    
+                    this.add({
+                        id: 'a',
+                        tags: ['foo bar baz']
+                    })
+                })
+                    
+                // avoid query string parsing altogether
+                // by constructing a query manually
+                var queryResults = idx.query(function () {
+                    this.term('foo bar baz')
+                })
+                
+                // escape the spaces in the query string
+                var searchResults = idx.search('foo\\ bar\\ baz')
+                
+                // use wildcards to match spaces (or anything else)
+                var wildcardResults = idx.search('foo*bar*baz')
+                */
+
                 data['searchTitle'] = 'Search Results';
 
                 let q = request.query['q'];

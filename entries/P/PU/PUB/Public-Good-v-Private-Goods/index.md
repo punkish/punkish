@@ -6,15 +6,13 @@ created    : 2017-05-17 10:12:00
 viewcount  : 0
 id         : 232
 gmap       : 
-type       : presentation
-layout     : presentation
+where      : INSERM atelier 246, Bordeaux, France
+when       : May 17, 2017
 tags       :
     - presentation
     - health
     - governance
 stars      : 
-venue      : INSERM atelier 246, Bordeaux, France
-when       : May 17, 2017
 notes      : The good news is that the private sector is taking over from the public agencies when it comes to innovation and investment in the medical/health domains. As such, the difficult but crucial technological advancements, especially when it comes to balancing the desire for sharing with the need for privacy, are going to come from the private sector. The bad thing is that we are already witnessing unintended side-effects to this. And the ugly part is that there will be many more undesirable consequences in the future. The necessary checks and balances—consent, governance, and reparations from harm—will have to come from the public sector, that is, both the government and the common people.
 ---
 
