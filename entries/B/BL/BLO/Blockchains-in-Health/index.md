@@ -73,32 +73,25 @@ A linked list in which every link (except the first one) is linked to the previo
 A linked list in which every link (except the first one) is linked to the previous link via a hash function
 
 ```
-const calcHash = function(index, timestamp, name, bp, prevHash) {
-    return SHA(index, timestamp, name, bp, prevHash);
-}
-
-let blockchain = [
-    {
+let blockchain = [{
         index: 0,
-        timestamp: new Data(),
+        timestamp: new Date(),
         data: 'some data',
         prevHash: null,
-        thisHash: `hash(0)`
-    },
-    {
+        thisHash: thisHash
+    }, {
         index: 1,
-        timestamp: new Data(),
+        timestamp: new Date(),
         data: 'some more data',
         bp: '120/80',
-        prevHash: `hash(0)`
-        thisHash: `hash(1)`
-    },
-    {
+        prevHash: this[0]['thisHash']
+        thisHash: thisHash
+    }, {
         index: 2,
-        timestamp: new Data(),
+        timestamp: new Date(),
         data: 'different data',
-        prevHash: `hash(1)`
-        thisHash: `hash(2)`
+        prevHash: hash(1)
+        thisHash: thisHash
     },
 ]
 ```
@@ -115,9 +108,19 @@ https://en.wikipedia.org/wiki/Proof-of-work_system
 
 Google’s definition of “blockchain” is “a digital ledger in which transactions made in bitcoin or another cryptocurrency are recorded chronologically and publicly.” While most people would agree that a blockchain is a digital ledger, many blockchains do not have an associated cryptocurrency and are not recorded publicly. Some would even argue that a blockchain needn’t be digital.
 
+---
+
 Investopedia says, “A blockchain is a digitized, decentralized, public ledger of all cryptocurrency transactions.” Again, many blockchains are not public, and many others are not decentralized.
 
-IBM’s definition says, “Blockchain technology is used in a peer-to-peer network of parties, who all participate in a given transaction.” Except that at least for one well-publicized blockchain, the one built by World Food Programme, there is only one participating party: itself. IBM goes on: “Because the ledger is distributed, everyone involved can see the ‘world state’ at any point in time and can monitor the progress of the transaction.” Mastercard’s blockchain, however, is not viewable by anybody (and seems to have no function outside of marketing since Mastercard admits that payments are still running through its existing system).
+---
+
+IBM’s definition says, “Blockchain technology is used in a peer-to-peer network of parties, who all participate in a given transaction.” Except that at least for one well-publicized blockchain, the one built by World Food Programme, there is only one participating party: itself. 
+
+---
+
+IBM goes on: “Because the ledger is distributed, everyone involved can see the ‘world state’ at any point in time and can monitor the progress of the transaction.” Mastercard’s blockchain, however, is not viewable by anybody (and seems to have no function outside of marketing since Mastercard admits that payments are still running through its existing system).
+
+---
 
 “Since 2007 Estonia has been operating a universal national digital identity scheme using blockchain,” the Harvard Business Review wrote last year.
 
