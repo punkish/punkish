@@ -409,7 +409,9 @@ const utils = {
                 }
 
                 if (presentation) {
-                    entry.layout = 'presentation';
+                    if (!entry.layout) {
+                        entry.layout = 'presentation';
+                    }
                     entry.template = 'presentation';
                 }
                 else {

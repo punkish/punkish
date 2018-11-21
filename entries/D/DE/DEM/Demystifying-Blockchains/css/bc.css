@@ -1,0 +1,35 @@
+img.remark {
+    height: 50vh;
+}
+#pow, 
+#textStringHash {
+    font-family: monospace;
+    font-size: 0.8em;
+}
+.left-column h3,
+.right-column h3 {
+    font-size: 20px;
+}
+textarea[name='textString'] {
+    width: 90%;
+    height: 100px;
+}
+#latestBtc {
+    height: 70vh !important;
+}
+th {
+    text-align: center;
+    font-weight: bold;
+}
+th,
+td {
+    padding: 2px 5px;
+    font-size: 0.8em; 
+}
+.rssViewer {
+    height: 70vh;
+    overflow: auto;
+}
+.rssItem {
+    font-size: 0.8em;
+}
