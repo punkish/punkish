@@ -630,7 +630,7 @@ A smart contract is a computer protocol intended to digitally facilitate, verify
 
 source: [https://airtable.com/shreIXQjzluCxam37/tbl7qVDFKKiEcFFrc]()
 
-<table class="table table-bordered table-hover table-condensed">
+<table id="bcInGovt">
 <thead><tr><th title="Field #1">Government Entity</th>
 <th title="Field #2">Project Name</th>
 <th title="Field #3">Current Progress</th>

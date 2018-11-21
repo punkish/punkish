@@ -209,6 +209,8 @@ font-size: xx-large;
 
 .remark-inline-code { 
   font-family: 'Ubuntu Mono'; 
+  font-size: 1em;
+  background-color: #f0f0f0;
 }
 .footnote {
 font: normal 200 0.9em/1.2em sans-serif;

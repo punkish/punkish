@@ -15,7 +15,12 @@ textarea[name='textString'] {
     height: 100px;
 }
 #latestBtc {
-    height: 70vh !important;
+    height: 60vh !important;
+}
+#bcInGovt {
+    display: block;
+    height: 60vh !important;
+    overflow-y: scroll;
 }
 th {
     text-align: center;
@@ -32,4 +37,7 @@ td {
 }
 .rssItem {
     font-size: 0.8em;
+}
+.remark-code { 
+  max-height: 45vh !important;
 }
