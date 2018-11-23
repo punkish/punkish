@@ -1,10 +1,19 @@
 const BC = {
     initS1: function() {
         document.getElementById('createHash').addEventListener('click', function() {
-            let hash = document.getElementById('textStringHash').innerHTML;
-            //hash = hash + '<br>' + CryptoJS.SHA256(document.querySelector('input[name="textString"]').value);
-            hash = hash + '<br>' + CryptoJS.SHA256(document.querySelector('textarea[name="textString"]').value);
-            document.getElementById('textStringHash').innerHTML = hash;
+            const tsh = document.getElementById('textStringHash');
+            const hp = document.getElementById('hashPrompt');
+            const ts = document.querySelector('textarea[name="textString"]');
+
+            let hash = tsh.innerHTML;
+            hash = hash + '<br>' + CryptoJS.SHA256(ts.value);
+            tsh.innerHTML = hash;
+            if (hp.innerHTML === '') {
+                hp.innerHTML = 'Now, delete or change just one character, any character, in the text above and create hash again';
+            }
+            else {
+                hp.innerHTML = 'See how different the hash is even though the change to the input string was very slight. Try other strings. When done, use the arrow keys on your keyboard to go to the next slide.';
+            }
         });
     },
 

@@ -169,7 +169,6 @@ The `array[]` is analagous to the entire table, and each `object{}` (aka JavaScr
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <br>
     <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
 ]
 .right-column[
@@ -183,7 +182,6 @@ A data structure consisting of a collection of nodes which together represent a 
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <br>
     <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
 ]
 .right-column[
@@ -263,6 +261,7 @@ The ideal cryptographic hash function has the following properties:
  
 &lt;textarea name="textString" placeholder="enter something"&gt;&lt;/textarea&gt;
 <button id="createHash">create hash</button>
+<div id="hashPrompt"></div>
 <div id="textStringHash"></div>
 
 ---
@@ -377,9 +376,9 @@ class BlockChain {
     </thead>
     <tbody>
         <tr>
-            <td><input type="text" name="name"></td>
-            <td><input type="text" name="systolic"></td>
-            <td><input type="text" name="diastolic"></td>
+            <td><input type="text" name="name" placeholder="name"></td>
+            <td><input type="text" name="systolic" placeholder="systolic"></td>
+            <td><input type="text" name="diastolic" placeholder="diastolic"></td>
             <td><button name="submit">add</button></td>
         </tr>
     </tbody>
