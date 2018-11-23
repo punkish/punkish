@@ -189,7 +189,7 @@ h4:first-child {
 padding-top: 1em;
 } */
 
-#navlinks {
+.navlinks {
   float: right;
   font-size: 0.8em;
   margin-right: 60px;
