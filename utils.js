@@ -363,19 +363,11 @@ const utils = {
 
         // if the queryParam 'presentation' is true
         // we have to show the presentation using remarkjs
-        if (presentation && file.toLowerCase() === 'hanoz') {
+        // if (presentation) {
 
-            if (hanoz.length == 0) {
-                buildHanozIndex();
-            }
             
-            return {
-                pages: hanoz,
-                layout: 'hanoz',
-                template: 'hanoz'
-            };
-        }
-        else {
+        // }
+        // else {
                 
             // get basic details of the entry
             try {
@@ -409,10 +401,27 @@ const utils = {
                 }
 
                 if (presentation) {
-                    if (!entry.layout) {
-                        entry.layout = 'presentation';
+
+                    if (file.toLowerCase() === 'hanoz') {
+
+                        if (hanoz.length == 0) {
+                            buildHanozIndex();
+                        }
+                        
+                        return {
+                            pages: hanoz,
+                            layout: 'hanoz',
+                            template: 'hanoz'
+                        };
                     }
-                    entry.template = 'presentation';
+                    else {
+                        if (!entry.layout) {
+                            entry.layout = 'presentation';
+                        }
+                        if (!entry.template) {
+                            entry.template = 'presentation';
+                        }
+                    }
                 }
                 else {
                     if (entry.tags.indexOf('presentation') > -1) {
@@ -523,7 +532,7 @@ const utils = {
                     __content: "Unable to read the file"
                 }
             }
-        }
+        //}
     },
 
     getEntry: function(options) {

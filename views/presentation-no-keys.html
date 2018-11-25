@@ -1,0 +1,40 @@
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# {{title}}
+## {{description}}
+
+{{where}} • {{when}}
+
+{{authors}}
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/{{url}}"><img src="/public/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/public/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+
+---
+
+layout: true
+
+<div class="slidefooter">
+    <a href="/{{url}}"><img src="/public/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/public/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+
+---
+
+{{{__content}}}
+</textarea>

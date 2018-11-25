@@ -5,9 +5,6 @@ modified   : 2014-05-01 00:00:00
 created    : 2014-05-01 00:00:00
 viewcount  : 0
 id         : 232
-gmap       : 
-where      : Mozilla offices, San Francisco
-when       : May 2014
 tags       :
     - presentation
     - governance
@@ -17,6 +14,9 @@ tags       :
     - health
     - health data
 stars      : 
+where      : Mozilla offices, San Francisco
+when       : May 2014
+notes      : 
 ---
 
 ## Citizens Consent

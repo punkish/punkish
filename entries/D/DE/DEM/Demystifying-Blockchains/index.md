@@ -17,6 +17,7 @@ where      : University of Vienna
 when       : Nov 21, 2017
 notes      : A blockchain primer
 layout     : presentation-blockchain
+template   : presentation-no-keys
 ---
 
 ## Blockchain Is…
@@ -236,16 +237,6 @@ let bloodpressure = [{
 
 ## Cryptographic Hash
 
-SHA-2 (Secure Hash Algorithm 2) is a set of cryptographic hash functions designed by the United States National Security Agency (NSA). The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256.
-
-<cite>Wikipedia contributors. (2018, November 14). SHA-2. In Wikipedia, The Free Encyclopedia. [Retrieved 14:13, November 17, 2018](https://en.wikipedia.org/w/index.php?title=SHA-2&oldid=868862549)</cite>
-
-We are going to use SHA-256 for our demo (this is also what Bitcoin uses for its blockchain).
-
----
-
-## Cryptographic Hash
-
 The ideal cryptographic hash function has the following properties:
 
 - deterministic so the same message always results in the same hash
@@ -258,8 +249,18 @@ The ideal cryptographic hash function has the following properties:
 
 ## Cryptographic Hash
 
+SHA-2 (Secure Hash Algorithm 2) is a set of cryptographic hash functions designed by the United States National Security Agency (NSA). The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256.
+
+<cite>Wikipedia contributors. (2018, November 14). SHA-2. In Wikipedia, The Free Encyclopedia. [Retrieved 14:13, November 17, 2018](https://en.wikipedia.org/w/index.php?title=SHA-2&oldid=868862549)</cite>
+
+We are going to use SHA-256 for our demo (this is also what Bitcoin uses for its blockchain).
+
+---
+
+## Cryptographic Hash
+
  
-&lt;textarea name="textString" placeholder="enter something"&gt;&lt;/textarea&gt;
+&lt;textarea name="textString" placeholder="enter something and click the button"&gt;&lt;/textarea&gt;
 <button id="createHash">create hash</button>
 <div id="hashPrompt"></div>
 <div id="textStringHash"></div>
@@ -369,7 +370,8 @@ class BlockChain {
 
 ## Blockchain demo
 
-<br>
+Enter some values below and click [add]
+
 <table>
     <thead>
         <tr><th>name</th><th>systolic</th><th>diastolic</th><th></th></tr>
