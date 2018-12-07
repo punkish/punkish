@@ -485,6 +485,9 @@ const utils = {
                         }
                     }
                     else {
+                        entry.layout = 'main';
+                        entry.template = 'entry';
+
                         entry.__content = sh.makeHtml(entry.__content);
                         entry.__content = entry.__content.replace(
                             /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
@@ -523,6 +526,8 @@ const utils = {
                         break;
                     }
                 }
+
+                //console.log(entry.layout, entry.template);
 
                 return entry;
             }
