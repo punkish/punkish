@@ -508,18 +508,18 @@ PK.where = {
             "d": "two-months"
         },
         {
-            "w": "Berlin",
-            "h": "…",
+            "w": "Lucknow",
+            "h": "home again",
             "f": "Dec 1, 2018",
-            "t": "Jan 1, 2019",
-            "d": "one-month"
+            "t": "Dec 9, 2018",
+            "d": "one-week"
         },
         {
-            "w": "Lucknow/Mumbai",
-            "h": "…",
-            "f": "Jan 1, 2019",
-            "t": "Jan 31, 2019",
-            "d": "one-month"
+            "w": "Mumbai",
+            "h": "makerlab",
+            "f": "Dec 10, 2018",
+            "t": "Jan 1, 2019",
+            "d": "three-weeks"
         }
         // {
         //     "w": "Genève",
