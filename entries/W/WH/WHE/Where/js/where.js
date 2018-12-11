@@ -520,35 +520,28 @@ PK.where = {
             "f": "Dec 10, 2018",
             "t": "Jan 1, 2019",
             "d": "three-weeks"
+        },
+        {
+            "w": "Marseille/Carcassonne",
+            "h": "",
+            "f": "Jan 1, 2019",
+            "t": "Jan 15, 2019",
+            "d": "two-weeks"
+        },
+        {
+            "w": "Siorac-en-Périgord",
+            "h": "animals",
+            "f": "Jan 15, 2019",
+            "t": "Jan 31, 2019",
+            "d": "two-weeks"
+        },
+        {
+            "w": "Paris/Genève",
+            "h": "",
+            "f": "Feb 1, 2019",
+            "t": "Feb 10, 2019",
+            "d": "two-weeks"
         }
-        // {
-        //     "w": "Genève",
-        //     "h": "CERN",
-        //     "f": "Feb 1, 2019",
-        //     "t": "Feb 7, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Marseille",
-        //     "h": "Walter Benjamin",
-        //     "f": "Feb 7, 2019",
-        //     "t": "Feb 14, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Siorac-en-Périgord",
-        //     "h": "animals",
-        //     "f": "Feb 14, 2019",
-        //     "t": "Feb 21, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Paris",
-        //     "h": "Solidarity",
-        //     "f": "Oct 1, 2018",
-        //     "t": "Nov 30, 2018",
-        //     "d": "two-months"
-        // }
     ],
 
     init: function() {
