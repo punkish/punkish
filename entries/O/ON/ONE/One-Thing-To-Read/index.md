@@ -58,12 +58,7 @@ So long as we still reflect each other —<br>
 even deformed — as through silver spoons,<br>
 wine glasses, and exultant bottles<br>
 on the table of a dinner party about to begin,<br>
-things can’t be that bad.<br>
-But, eventually, steam<br>
-rolls in through the kitchen door<br>
-like a ghost without a soul<br>
-and then…<br>
-and then…
+things can’t be that bad.
 </p>
 </details>
 
