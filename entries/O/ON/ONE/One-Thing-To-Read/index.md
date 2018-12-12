@@ -19,7 +19,7 @@ Moi: “uh ummmm”
 
 ----
 
-The reality is that, by traditional standards, I am terribly well unread. But while I don’t read books, I actually do read a lot. Most of my readings are article-length. The hard part is trying to figure out which ones of these have been life- or perspective-altering enough that I would recommend them to others. After a few days of thinking about this, I decided to compile a list. And at the risk of getting pegged based on this list, here are a few (in no order) that their mark on  me:
+By traditional standards, I am terribly well unread. But while I don’t read books, I actually do read a lot. Most of my readings are article-length. The hard part is trying to figure out which ones of these have been life- or perspective-altering enough that I would recommend them to others. After a few days of thinking about this, I decided to compile a list. And at the risk of getting pegged based on this list, here are a few (in no order) that have left their mark on  me:
 
 <details open>
 <summary id="GreatestRomance">
