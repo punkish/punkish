@@ -1,6 +1,6 @@
 ---
 title      : The One Thing To Read
-description: here are <strike>five</strike> six
+description: 
 modified   : 2017-05-16 15:35:00
 created    : 2017-05-16 15:35:00
 viewcount  : 0
@@ -13,7 +13,7 @@ stars      :
 
 Tu: “Which one book or article would you recommend that I read? Or lecture that I should listen to?”
 
-Moi: “uh ummmm”
+Moi: “uh ummmm, here are <strike>five</strike> six”
 
 ***note:** about [Tu et Moi](Ce-que-tu-demandes)*
 
