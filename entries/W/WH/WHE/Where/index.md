@@ -9,7 +9,7 @@ gmap       :
 tags       :
     - travels
 layout     : where
-css        : where
+css        : where2
 js         : where
 ---
 

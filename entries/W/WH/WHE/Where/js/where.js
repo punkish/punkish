@@ -554,6 +554,7 @@ PK.where = {
         let from;
         let t;
         let to;
+        let time_class;
 
         for (; i < j; i++) {
     
@@ -564,24 +565,29 @@ PK.where = {
             to = new Date(t[2], this.months[t[0]], t[1]);
     
             if (now < from) {
-                time_class = 'after_now';
+                time_class = 'afterNow';
             }
             else if ((now >= from) && (now <= to)) {
                 time_class = 'now';
             }
             else if (now > to) {
-                time_class = 'before_now';
+                time_class = 'beforeNow';
             }
     
-            html += '<li' + (time_class === "now" ? ' id="now" ' : '') + ' class="' + this.trip[i].d + ' ' + time_class + '">' +
-                    '<div class="anno">' +
-                    '<span class="where"><a href="/entries?q=tags:' + this.trip[i].w + '">' + this.trip[i].w + '</a></span> ' +
-                    '<span class="when">' + this.trip[i].f + '-' + this.trip[i].t + '</span><br>' +
-                    '<div class="what">' + this.trip[i].h + '</div>' +
-                    '</div>' +
-                    '</li>';
+            // html += '<li' + (time_class === "now" ? ' id="now" ' : '') + ' class="' + this.trip[i].d + ' ' + time_class + '">' +
+            //         '<div class="anno">' +
+            //         '<span class="where"><a href="/entries?q=tags:' + this.trip[i].w + '">' + this.trip[i].w + '</a></span> ' +
+            //         '<span class="when">' + this.trip[i].f + '-' + this.trip[i].t + '</span><br>' +
+            //         '<div class="what">' + this.trip[i].h + '</div>' +
+            //         '</div>' +
+            //         '</li>';
+
+            let id = (time_class === "now" ? "now" : "");
+            html += `<li id="${id}" class="${this.trip[i].d}">
+                <span class="${time_class}">•</span><a href="/entries?q=tags:${this.trip[i].w}">${this.trip[i].w}</a> ${this.trip[i].f}–${this.trip[i].t}, ${this.trip[i].h}
+            </li>`;
         }
-        html += '<li class="one-week where_next"></li>';
+        html += '<li class="one-week"><span class="whereNext">?</span></li>';
     
         PK.$("#experiences").innerHTML = html;
     
