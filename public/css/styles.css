@@ -253,6 +253,10 @@ li.punkish-footnote {
 .intro-slide a {
 	font-size: 1.2em;
 }
+/*
+nice blockquotes
+https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+*/
 .quote {
 	background: #f9f9f9;
   border-left: 10px solid #ccc;

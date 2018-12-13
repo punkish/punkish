@@ -43,13 +43,19 @@
     padding-bottom: 180px;
 }
 
+#experiences {
+    margin-left: 2.5em;
+    margin-right: 2em
+}
 #experiences li {
 
+    border: 0px solid red;
+    
     /* so that pseudoelements are positioned relatively to their "li"s*/
     position:relative; 
 
     /* use padding-bottom instead of margin-bottom.*/ 
-    margin-bottom: 0;
+
     
     font-family: sans-serif;
     line-height: 1.5em;
@@ -70,7 +76,11 @@
 }
 
 /* lines */
-#experiences li:before {
+#experiences li.before_now:before,
+#experiences li.now:before,
+#experiences li.after_now:before,
+#experiences li.where_next:before
+{
     content:"";
     position: absolute;
     border-left: 1px solid black;
@@ -85,15 +95,15 @@
 
 /* adjust manually */
 #experiences li:before {
-    left: -19px; 
+    left: -17px; 
 }
 
 #experiences li.now:before {
-    top: 17px;
+    top: 9px;
 }
 
 #experiences li.after_now:before {
-    top: 20px;
+    top: 10px;
 }
 
 /* first li's line 
@@ -110,6 +120,14 @@
  */
 #experiences li:last-child:before {
    height: 0px;
+}
+
+#experiences li div.anno {
+    border: 0px solid;
+}
+
+#experiences li div.what {
+   margin-top: 0px;
 }
 /* end reverse trip timeline */
 /* end /where/ styles */
