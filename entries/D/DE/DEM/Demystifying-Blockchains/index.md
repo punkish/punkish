@@ -13,7 +13,7 @@ tags       :
     - privacy
     - security
 stars      : 
-where      : University of Vienna
+where      : The University of Vienna
 when       : Nov 21, 2017
 notes      : A blockchain primer
 layout     : presentation-blockchain
