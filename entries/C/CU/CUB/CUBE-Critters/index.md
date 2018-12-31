@@ -46,9 +46,3 @@ Much fun was had today tinkering in CUBE with Kirti, Nirja, Salome, and Ulhas, a
     <img src="2007-01-01-065733.jpg">
     <figcaption><a href="https://en.wikipedia.org/wiki/Drosophila_suzukii" target="_blank">Drosophila suzukii</a></figcaption>
 </figure>
-
-<figure>
-    <img src="IMG_4402.JPG">
-    <figcaption></figcaption>
-</figure>
-
