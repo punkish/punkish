@@ -44,6 +44,6 @@ Spectrophotometry is the quantitative measurement of the reflection or transmiss
 </figure>
 
 <figure>
-    <img src="waveforms.png">
+    <img src="waveforms.jpg">
     <figcaption>waveforms</figcaption>
 </figure>
