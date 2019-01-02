@@ -283,6 +283,15 @@ https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
   margin-right: 0;
   vertical-align: -0.4em;
 }
+
+.fauxcode {
+	font-family: monospace;
+	font-size: 120%;
+	background-color: #c0c0c0;
+	padding: 2px;
+	border-radius: 2px;
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*
