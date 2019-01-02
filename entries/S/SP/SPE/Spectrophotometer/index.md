@@ -24,13 +24,8 @@ Spectrophotometry is the quantitative measurement of the reflection or transmiss
 </figure>
 
 <figure>
-    <img src="spectro-side.jpg">
-    <figcaption>side view with stepper motor control buttons</figcaption>
-</figure>
-
-<figure>
-    <img src="spectro-side-closed.jpg">
-    <figcaption>side view with lid closed</figcaption>
+    <img src="spectro.jpg">
+    <figcaption>side views with stepper motor control buttons</figcaption>
 </figure>
 
 <figure>
