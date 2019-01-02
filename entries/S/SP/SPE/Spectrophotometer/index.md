@@ -41,3 +41,8 @@ Light from a white light source is split into its components by a monochromator 
     <img src="solutions.jpg">
     <figcaption>solutions</figcaption>
 </figure>
+
+<figure>
+    <img src="waveforms.jpg">
+    <figcaption>waveforms</figcaption>
+</figure>
