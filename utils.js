@@ -485,8 +485,13 @@ const utils = {
                         }
                     }
                     else {
-                        entry.layout = 'main';
-                        entry.template = 'entry';
+                        if (!entry.layout) {
+                            entry.layout = 'main';
+                        }
+                        
+                        if (!entry.template) {
+                            entry.template = 'entry';
+                        }
 
                         entry.__content = sh.makeHtml(entry.__content);
                         entry.__content = entry.__content.replace(
