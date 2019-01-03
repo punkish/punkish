@@ -9,11 +9,10 @@ window.chartColors = {
 };
 
 function wl(i) {
-    let r = 0;
-    let g = 0;
-    let b = 0;
-    let gamma = 0.80;
-    let depth = 255;
+    let [r, g, b] = [0, 0, 0];
+
+    const gamma = 0.80;
+    const depth = 255;
 
     if (i >= 380 && i <= 440) {
         r = -1 * (i - 440) / (440 - 380);
@@ -40,15 +39,12 @@ function wl(i) {
     }
 
     // LET THE INTENSITY SSS FALL OFF NEAR THE VISION LIMITS
-    let sss;
+    let sss = 1;
     if (i > 700) {
         sss = 0.3 + 0.7 * (780 - i) / (780 - 700);
     }
     else if (i < 420) {
         sss = 0.3 + 0.7 * (i - 380) / (420 - 380);
-    }
-    else {
-        sss = 1;
     }
 
     // GAMMA ADJUST AND WRITE IMAGE TO AN ARRAY
