@@ -7,10 +7,10 @@ viewcount  : 0
 id         : 662
 gmap       : 
 tags       :
-    - DIY
     - CUBE
     - HBCSE
     - open hardware
+    - spectrophotometer
 stars      : 
 ---
 
