@@ -522,8 +522,8 @@ PK.where = {
             "d": "three-weeks"
         },
         {
-            "w": "Marseille/Carcassonne",
-            "h": "",
+            "w": "Marseille",
+            "h": "Walter Benjamin and the sea",
             "f": "Jan 1, 2019",
             "t": "Jan 15, 2019",
             "d": "two-weeks"
@@ -536,11 +536,18 @@ PK.where = {
             "d": "two-weeks"
         },
         {
-            "w": "Paris/Genève",
-            "h": "",
+            "w": "Paris",
+            "h": "Palais du Suisse",
             "f": "Feb 1, 2019",
-            "t": "Feb 10, 2019",
-            "d": "two-weeks"
+            "t": "Feb 3, 2019",
+            "d": "half-week"
+        },
+        {
+            "w": "Genève",
+            "h": "CERN",
+            "f": "Feb 3, 2019",
+            "t": "Feb 9, 2019",
+            "d": "one-week"
         }
     ],
 
