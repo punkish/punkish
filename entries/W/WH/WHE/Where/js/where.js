@@ -548,6 +548,13 @@ PK.where = {
             "f": "Feb 3, 2019",
             "t": "Feb 9, 2019",
             "d": "one-week"
+        },
+        {
+            "w": "Berlin",
+            "h": "no work is done until the paperwork is done",
+            "f": "Feb 9, 2019",
+            "t": "Mar 1, 2019",
+            "d": "three-weeks"
         }
     ],
 
