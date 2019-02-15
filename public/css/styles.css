@@ -99,8 +99,12 @@ q {
 } */
 h2 {
 	margin-bottom: 0;
-	font-size: 1.5em;
-	font-weight: 800;
+	font-size: 2em;
+	font-weight: 400;
+}
+h3 {
+	font-size: 2rem;
+	font-weight: 400;
 }
 .on {
 	visibility: visible;
