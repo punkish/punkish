@@ -66,7 +66,7 @@ The house band at the Sarajevska Pivara is playing mainly pop songs. The crowd l
 
 <figure>
     <img src="green-grass.jpg">
-    <figcaption>Green, Green Grass of Home by Maja Bajević</figcaption>
+    <figcaption><i>Green, Green, Grass of Home</i> by Maja Bajević</figcaption>
 </figure>
 
 The old gentleman at the National Gallery can’t speak any English. For some reason, he chooses to talk to me in French with a few Bosnian words thrown in. “Da, l'exposition se poursuit au deuxième étage.” When I leave the gallery, my mind is stuck on the video by Maja Bajević describing from memory her grandmother’s apartment that she lost in the war.
@@ -180,6 +180,6 @@ I came to Bosnia with no intention of judging anything, and I am leaving with a 
     <figcaption>Bosnia, at the crossroads of the past and the future</figcaption>
 </figure>
 
-I am under no illusion that it will be easy. The jump from being able to pronounce a few words correctly or identify a few musicians to actually making my way into the culture and the lives of the people, that leap is pretty big. Maybe it is not love (yet). Perhaps I am smitten, overcome with infatuation. but there is nothing wrong with infatuation as it can lead to a lifelong love. Just like fate and faith, infatuation and love too are cousins. The former shows me what is possible, but then I have to make it happen through a lifelong of nurturing, driven probably by both fate and faith. I don’t know if I will succeed but I have to try. As Krishna said in Bhagvadgita, I have to stop worrying about the results and just do what I believe is required of me. All I can do is to make my friendship and love available. The rest is not my concern. Ovo je život.
+I am under no illusion that it will be easy. The jump from being able to pronounce a few words correctly or identify a few musicians to actually making my way into the culture and the lives of the people, that leap is pretty big. Maybe it is not love (yet). Perhaps I am smitten, overcome with infatuation. but there is nothing wrong with infatuation as it can lead to a lifelong love. Just like fate and faith, infatuation and love too are cousins. The former shows me what is possible, but then I have to make it happen through a lifelong of nurturing, driven probably by both fate and faith. I don’t know if I will succeed but I have to try. As Krishna said in Bhagvadgita, I have to stop worrying about the results and just do what I believe is required of me. All I can do is to make my friendship and love available. The rest is not my concern. Ovo je život. Čekam te na starom mjestu tamo gde prijateljstvo počinje.
 
 •
