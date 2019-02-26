@@ -442,7 +442,7 @@ PK.where = {
             "h": "prep for GeoScience",
             "f": "Jan 15, 2018",
             "t": "Feb 27, 2018",
-            "d": "six-weeks"
+            "d": "one-and-half-months"
         },
         {
             "w": "New Delhi",
