@@ -550,11 +550,25 @@ PK.where = {
             "d": "one-week"
         },
         {
-            "w": "Berlin",
+            "w": "Göttingen/Berlin",
             "h": "no work is done until the paperwork is done",
             "f": "Feb 9, 2019",
             "t": "Mar 1, 2019",
             "d": "three-weeks"
+        },
+        {
+            "w": "Madrid",
+            "h": "FAIR4Health",
+            "f": "Mar 1, 2019",
+            "t": "Mar 30, 2019",
+            "d": "one-month"
+        },
+        {
+            "w": "Göttingen/Berlin",
+            "h": "reup the cycle",
+            "f": "Mar 30, 2019",
+            "t": "Apr 15, 2019",
+            "d": "two-weeks"
         }
     ],
 
