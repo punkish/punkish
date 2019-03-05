@@ -167,8 +167,8 @@ S.popList('-1');
 var pv = completely(
     document.getElementById('container'), 
     {
-        fontFamily:'sans-serif',
-        fontSize:'26px'
+        fontFamily:'sans-serif'
+        // fontSize:'26px'
     }
 );
 //pv.setText();

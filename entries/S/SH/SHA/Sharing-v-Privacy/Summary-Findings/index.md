@@ -16,6 +16,7 @@ tags       :
     - open data
 stars      : 
 notes      : While the need for privacy and security have to be respected, access to patient data is essential for continuous learning as well as for diagnosis of edge cases. But the former makes it difficult to achieve the latter creating a tension that seems intractable. A workshop organized by Creative Commons, with generous support from Robert Wood Johnson Foundation, brought together those eager to resolve this tension, and make it possible to share data while respecting privacy.
+css        : style
 ---
 
 ## Sharing v. Privacy
@@ -227,24 +228,27 @@ Univ. of Houston School of Law
 
 ## Four Sessions
 
-### Ethics
+<details open>
+  <summary>Ethics</summary>
+  <p>Can privacy requirements be trumped, and if yes, under what conditions? Can we waive our right to genomic privacy, and if not, when is this right not waiveable? Should we strive only for adequate privacy?</p>
+</details>
 
-<p class="small">Can privacy requirements be trumped, and if yes, under what conditions? Can we waive our right to genomic privacy, and if not, when is this right not waiveable? Should we strive only for adequate privacy?</p>
+<details open>
+  <summary>Encouraging Data Sharing</summary>
+  <p>This session reflected on why we want access to data, what data should be made accessible? What limits should be placed on who can use the data and for what? What are the risks associated with breach?</p>
+</details>
 
-### Encouraging Data Sharing
+<details open>
+  <summary>Engagement Tools</summary>
+  <p>Organizing an effective research study is complex. The “legal stack” alone can have many interconnected components such as informed consent, privacy policy, terms of use, DUAs, IRBs. Tools can help.</p>
+</details>
 
-<p class="small">This session reflected on why we want access to data, what data should be made accessible? What limits should be placed on who can use the data and for what? What are the risks associated with breach?</p>
-
-### Engagement Tools
-
-<p class="small">Organizing an effective research study is complex. The “legal stack” alone can have many interconnected components such as informed consent, privacy policy, terms of use, DUAs, IRBs. Tools can help.</p>
-
-### Protocols
-
-<p class="small">The final session focused on communications with citizens, the source of the data, and how to involve them in decision-making via mechanisms of  inclusive governance and deliberative democracy.</p>
+<details open>
+  <summary>Protocols</summary>
+  <p>The final session focused on communications with citizens, the source of the data, and how to involve them in decision-making via mechanisms of  inclusive governance and deliberative democracy.</p>
+</details>
 
 ---
-layout: false
 .left-column[
   ## Ethics
 ]
@@ -300,9 +304,7 @@ something on MVD
 .right-column[
 **Minimum Viable Dataset:** The least amount of data that, if shared, would benefit research
 
-**Social Contract:** creates a trusted environment for research
-- a patient's obligation to share data
-- a researcher's obligation to use data properly
+**Social Contract:** creates a trusted environment for research through a patient's obligation to share data *and* a researcher's obligation to use data properly
 
 ]
 
@@ -315,10 +317,18 @@ something on MVD
 A revised social contract for health research that focuses on the creation of trusted environments for research. Such a contract would spell out reasonable privacy expectations in different research contexts, enable sustained engagement between the research and its participants, and promote a sharing culture through fulfilling mutual responsibilities of both the participants and the researchers.
 
 ---
+.left-column[
+  ## Ethics
+  ## Data Sharing
+]
+.right-column[
+**Minimum Viable Dataset:** The least amount of data that, if shared, would benefit research
 
-# Will this <span class="hilite">social contract</span> also be a <span class="hilite">legal contract</span>? 
+**Social Contract:** creates a trusted environment for research through a patient's obligation to share data *and* a researcher's obligation to use data properly
 
-If **yes**, it would gather all the cruft of law. If **no**, from where would it get its teeth in case of violations?
+**Question:** Will this <span class="hilite">social contract</span> also be a <span class="hilite">legal contract</span>? If **yes**, it would gather all the cruft of law. If **no**, from where would it get its teeth in case of violations?
+]
+
 
 ---
 .left-column[
@@ -328,9 +338,9 @@ If **yes**, it would gather all the cruft of law. If **no**, from where would it
 .right-column[
 **Minimum Viable Dataset:** The least amount of data that, if shared, would benefit research
 
-**Social Contract:** creates a trusted environment for research
-- a patient's obligation to share data
-- a researcher's obligation to use data properly
+**Social Contract:** creates a trusted environment for research through a patient's obligation to share data *and* a researcher's obligation to use data properly
+
+**Question:** Will this <span class="hilite">social contract</span> also be a <span class="hilite">legal contract</span>? If **yes**, it would gather all the cruft of law. If **no**, from where would it get its teeth in case of violations?
 
 **De-identification** is an illusion, and de-identified datasets are less useful
 
@@ -341,12 +351,6 @@ If **yes**, it would gather all the cruft of law. If **no**, from where would it
 Researchers should sign up to a social contract to not re-identify.
 
 ---
-
-> Anonymization is increasingly easily defeated by the very techniques that are being developed for many legitimate applications of big data. In general, as the size and diversity of available data grows, the likelihood of being able to re‐identify individuals (that is, re‐associate their records with their names) grows substantially. While anonymization may remain somewhat useful as an added safeguard in some situations, approaches that deem it, by itself, a sufficient safeguard need updating.
-
-—PCAST. 2014. Big Data and Privacy: A Technological Perspective.
-
----
 .left-column[
   ## Ethics
   ## Data Sharing
@@ -354,9 +358,9 @@ Researchers should sign up to a social contract to not re-identify.
 .right-column[
 **Minimum Viable Dataset:** The least amount of data that, if shared, would benefit research
 
-**Social Contract:** creates a trusted environment for research
-- a patient's obligation to share data
-- a researcher's obligation to use data properly
+**Social Contract:** creates a trusted environment for research through a patient's obligation to share data *and* a researcher's obligation to use data properly
+
+**Question:** Will this <span class="hilite">social contract</span> also be a <span class="hilite">legal contract</span>? If **yes**, it would gather all the cruft of law. If **no**, from where would it get its teeth in case of violations?
 
 **De-identification** is an illusion, and de-identified datasets are less useful
 
@@ -379,12 +383,6 @@ something on continuous learning
 
 .
 ]
-
----
-
->Only in a fantasy world do users actually read the consent notices and understand their implications. The conceptual problem with notice and consent is that it fundamentally places the burden of privacy protection on the individual. Notice and consent creates a non‐level playing field in the implicit privacy negotiation between provider and user. The provider offers a complex, take‐it‐or‐leave‐it set of terms, while the user, in practice, can allocate only a few seconds to evaluating the offer. This is a kind of market failure.
-
-—PCAST. 2014. Big Data and Privacy: A Technological Perspective.
 
 ---
 .left-column[
@@ -457,7 +455,21 @@ something on continuous learning
 Researcher, clinicians, tool makers, and most importantly, the participants,  should have a seat at the governance table
 
 ]
+---
 
+## The False Promise of Anonymization
+
+> Anonymization is increasingly easily defeated by the very techniques that are being developed for many legitimate applications of big data. In general, as the size and diversity of available data grows, the likelihood of being able to re‐identify individuals (that is, re‐associate their records with their names) grows substantially. While anonymization may remain somewhat useful as an added safeguard in some situations, approaches that deem it, by itself, a sufficient safeguard need updating.
+
+—PCAST. 2014. Big Data and Privacy: A Technological Perspective.
+
+---
+
+## The False Promise of Consent
+
+> Only in a fantasy world do users actually read the consent notices and understand their implications. The conceptual problem with notice and consent is that it fundamentally places the burden of privacy protection on the individual. Notice and consent creates a non‐level playing field in the implicit privacy negotiation between provider and user. The provider offers a complex, take‐it‐or‐leave‐it set of terms, while the user, in practice, can allocate only a few seconds to evaluating the offer. This is a kind of market failure.
+
+—PCAST. 2014. Big Data and Privacy: A Technological Perspective.
 ---
 
 # What Next?

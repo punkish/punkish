@@ -19,15 +19,15 @@ stars      :
 
 ## Sensored City
 
-Funded by a generous grant from Robert Wood Johnson Foundation, we are working with the City of Louisville to design and implement a network of sensor-based hardware that will collect environmental data and drive a public installation of data-driven art. [more &rarr;](/Sensored-City-Project)
+Funded by a generous grant from Robert Wood Johnson Foundation, we are working with the City of Louisville to design and implement a network of sensor-based hardware that will collect environmental data and drive a public installation of data-driven art. [more &rarr;](/Sensored-City)
 
 ## Sharing vs. Privacy
 
-Funded by a generous grant from Robert Wood Johnson Foundation, we are working with our partners to explore the potential of shifting the conversation from privacy to sharing to encourage data sharing. [more &rarr;](/Sharing-v-Privacy-Project)
+Funded by a generous grant from Robert Wood Johnson Foundation, we are working with our partners to explore the potential of shifting the conversation from privacy to sharing to encourage data sharing. [more &rarr;](/Sharing-v-Privacy)
 
 ## Open Hardware
 
-Funded by a generous grant from Alfred P. Sloan Foundation, we are evaluating the available open licensing options for their strengths and weaknesses, with an emphasis on distributed sensing hardware. Our goal is to produce a whitepaper that will become the authoritative reference for open hardware developers when choosing their licensing strategy. [more &rarr;](/Open-Hardware-Project)
+Funded by a generous grant from Alfred P. Sloan Foundation, we are evaluating the available open licensing options for their strengths and weaknesses, with an emphasis on distributed sensing hardware. Our goal is to produce a whitepaper that will become the authoritative reference for open hardware developers when choosing their licensing strategy. [more &rarr;](/Open-Hardware)
     
 ## Text and Data Mining
 
