@@ -218,6 +218,7 @@ https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ra
 	width: 100%;
 	padding-bottom: 56.25%;
 	position: relative;
+	margin-top: 2em;
 	font-family: "et-book", serif;
 	background: #555;
 	box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5);
@@ -266,7 +267,9 @@ https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ra
 .intro-slide a:hover {
 	color: yellow;
 }
-
+.intro-slide .when {
+	margin-bottom: 2em;
+}
 /*
 nice blockquotes
 https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/

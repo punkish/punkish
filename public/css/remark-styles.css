@@ -145,8 +145,10 @@ td:last-child {
   padding-right: 0; }
 
 /* end Skeleton styles */
-h2 {
-  margin-bottom: 1em !important;;
+.remark-slide-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1em !important;
 }
 
 details {
@@ -225,10 +227,9 @@ bottom: 3em;
 
 .red { font-weight: bold; color: #fa0000; }
 
-
 /* Two-column layout */
 .left-column {
-/* color: #dadada; */
+color: #dadada;
 width: 40%;
 /* height: 92%; */
 float: left;
