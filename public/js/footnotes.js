@@ -10,20 +10,20 @@
             { type: 'lang', filter: function(text) {                            
                 // Inline footnotes e.g. "foo[^1]"                              
                 var i = 0;                                                      
-                var inline_regex = /\[\^(\d|n)\](?!:)/g;                        
+                var inline_regex = /\[\^(\d+|n)\](?!:)/g;                        
                 text = text.replace(inline_regex, function(match, n) {          
                     // We allow both automatic and manual footnote numbering    
                     if (n == "n") n = i+1;                                      
 
-                    var s = '<sup id="punkish-fnref:'+n+'">' +                          
-                              '<a href="#punkish-fn:'+n+'" rel="footnote">'+n+'</a>' +  
+                    var s = '<sup id="fnref:'+n+'">' +                          
+                              '<a href="#fn:'+n+'" rel="footnote">'+n+'</a>' +  
                             '</sup>';                                           
                     i += 1;                                                     
                     return s;                                                   
                 });                                                             
 
                 // Expanded footnotes at the end e.g. "[^1]: cool stuff"        
-                var end_regex = /\[\^(\d|n)\]: (.*?)\n/g;                       
+                var end_regex = /\[\^(\d+|n)\]: (.*?)\n/g;                       
                 var m = text.match(end_regex);                                  
                 var total = m ? m.length : 0;                                   
                 var i = 0;                                                      
@@ -37,8 +37,8 @@
                     //             '" title="return to article"> ↩</a>' +          
                     //           '</p>' +                                          
                     //         '</li>'   
-                    var s = '<li class="punkish-footnote" id="punkish-fn:'+n+'">' + 
-                              content+'<a href="#punkish-fnref:'+n + 
+                    var s = '<li class="punkish-footnote" id="fn:'+n+'">' + 
+                              content+'<a href="#fnref:'+n + 
                                 '" title="return to article"> ↩</a>' + 
                             '</li>'
 
