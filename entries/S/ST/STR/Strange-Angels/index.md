@@ -42,6 +42,7 @@ Strangely, I didn’t know about Walter Benjamin until a few weeks ago. Here is 
 <aside>(I saw Laurie Anderson during her promo tour for that album. I had arrived in the US in 1987 and discovered Anderson, and had a chance to see her live just a couple years later when she performed in Madison, Wisconsin.)</aside>
 
 <br>
+
 <p>The lyrics of the songs are:</p>
 
 <blockquote>

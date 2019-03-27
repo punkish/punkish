@@ -1,8 +1,8 @@
 ---
-title      : Sharing v. Privacy Preso
-description: 
-modified   : 2007-10-20 20:47:23
-created    : 2007-10-20 20:47:23
+title      : Sharing v. Privacy
+description: A workshop funded by RWJF
+modified   : 2015-05-14
+created    : 2015-05-14
 viewcount  : 43
 id         : 534
 gmap       : 
