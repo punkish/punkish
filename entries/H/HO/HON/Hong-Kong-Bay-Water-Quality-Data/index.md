@@ -7,9 +7,12 @@ viewcount  : 0
 id         : 232
 gmap       : 
 tags       :
-    - data
+    - open data
     - water quality
     - Hong Kong
+    - citizen science
+    - art science
+    - environmental monitoring
 stars      : 
 css        : hk
 js         : hk
@@ -23,6 +26,6 @@ layout     : dygraph
 </div>
 
 <p class="u-cf"></p>
-The display of monitoring data was developed for the [gravitational currents and the life magic](https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/) exhibition at the [Empty Gallery Hong Kong](https://emptygallery.com) an exhibition of works by [Susanne Winterling](http://www.susannewinterling.com). It is a part of planetary sensing navigations below the surface an artistic research project.
+The display of monitoring data was developed for the [gravitational currents and the life magic](https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/) exhibition at the [Empty Gallery Hong Kong](https://emptygallery.com) an exhibition of works by [Susanne Winterling](http://www.susannewinterling.com). It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface.
 
 <!-- <p><b>Note:</b> The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.</p> -->
