@@ -10,6 +10,8 @@ tags        :
     - photos
     - sotto
     - dancing
+    - Madison
+    - Wisconsin
 stars      : 
 ---
 
@@ -18,4 +20,4 @@ stars      :
     <figcaption>Sotto by night</figcaption>
 </figure>
 
-It was Degi’s birthday, so she took a bunch of us to Sotto. I danced like I hadn’t in the previous 15 years, loved it as it happened, and regretted it the next day. Gotta keep… dancing.
+It was Degi‘s birthday, so she took a bunch of us to Sotto. I danced like I hadn’t in the previous 15 years, loved it as it happened, and regretted it the next day. Gotta keep… dancing.

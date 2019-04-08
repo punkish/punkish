@@ -570,27 +570,27 @@ PK.where = {
             "t": "Apr 10, 2019",
             "d": "two-weeks"
         },
-        // {
-        //     "w": "Washington DC",
-        //     "h": "reup the cycle",
-        //     "f": "Apr 10, 2019",
-        //     "t": "May 10, 2019",
-        //     "d": "one-month"
-        // },
-        // {
-        //     "w": "New York City",
-        //     "h": "Timber",
-        //     "f": "May 10, 2019",
-        //     "t": "May 15, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Porto Alegre, Brazil",
-        //     "h": "scraping",
-        //     "f": "May 15, 2019",
-        //     "t": "Jun 15, 2019",
-        //     "d": "one-month"
-        // },
+        {
+            "w": "Washington DC",
+            "h": "reup the cycle",
+            "f": "Apr 10, 2019",
+            "t": "May 10, 2019",
+            "d": "one-month"
+        },
+        {
+            "w": "New York City",
+            "h": "Timber",
+            "f": "May 10, 2019",
+            "t": "May 15, 2019",
+            "d": "half-week"
+        },
+        {
+            "w": "Porto Alegre, Brazil",
+            "h": "scraping",
+            "f": "May 15, 2019",
+            "t": "Jun 15, 2019",
+            "d": "one-month"
+        },
         // {
         //     "w": "Madrid",
         //     "h": "return",
