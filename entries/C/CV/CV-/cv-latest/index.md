@@ -44,25 +44,29 @@ js         : cv
                 <div class="cv-subjob">Current Projects</div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Dept. of Political Science, University of Vienna.</span> As a <a href="https://politikwissenschaft.univie.ac.at/forschung/forschungsschwerpunkte/cescos-zeitgenoessische-solidaritaetsstudien/#c311429" target="_blank">Solidary Research Fellow</a> at the Center for Contemporary Solidarity, I am focusing on the tension between the desire to share medical data (for many of its touted benefits) and the need to protect the privacy of individuals (from many of the feared harms from breach and misuse of such data).
+                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the <a href="http://biolitrepo.org" target="_blank">Biodiversity Literature Repository</a> in a project funded by <a href="https://www.arcadiafund.org.uk/grants/grant-detail/" target="_blank">The Arcadia Fund</a>. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Plazi, Bern, Switzerland.</span> As a member of <a href="https://plazi.org" target="_blank">Plazi</a>, a non-profit dedicated to text mining taxonomic literature, I work on open access policy, technology and quality control issues. I work with the <a href="https://zenodo.org" target="_blank">Zenodo</a> team at CERN, Geneva, and <a href="https://pensoft.net" target="_blank">Pensoft</a>, Sofia, Bulgaria, both Plazi partners in developing the <a href="http://biolitrepo.org" target="_blank">Biodiversity Literature Repository</a> in a project funded by <a href="https://www.arcadiafund.org.uk/grants/grant-detail/" target="_blank">The Arcadia Fund</a>. Two of my recent projects are <a href="https://ocellus.punkish.org" target="_blank">Ocellus</a>, a web-based image search and retrieval application, and <a href="https://zenodeo.punkish.org" target="_blank">Zenodeo</a>, a nodejs-based RESTful API to Zenodo’s ElasticSearch API.
+                    <span class="cv-dept">Dept. Biblioteconomía y Documentación, Universidad Carlos III de Madrid.</span> I am a visiting researcher at the Department of Library and Information Sciences, focusing on the ethical implilcations of health data sharing in publicly funded research projects in the EU.
+                </div>
+
+                <div class="cv-cat">
+                    <span class="cv-dept">Dept. of Political Science, University of Vienna.</span> As a <a href="https://politikwissenschaft.univie.ac.at/forschung/forschungsschwerpunkte/cescos-zeitgenoessische-solidaritaetsstudien/#c311429" target="_blank">Solidary Research Fellow</a> at the Center for Contemporary Solidarity, I am focusing on the tension between the desire to share medical data (for many of its touted benefits) and the need to protect the privacy of individuals (from many of the feared harms from breach and misuse of such data).
                 </div>
 
                 <div class="cv-cat">
                     <span class="cv-dept">TOP Labs, Berlin, Germany.</span> I am an active member of the biolab and art space run by <a href="http://top-ev.de" target="_blank">>top e.V.</a>
                 </div>
 
+                <div class="cv-cat">
+                    <span class="cv-dept">Homi Bhabha Centre for Science Education (HBCSE), TIFR, Mumbai, India.</span> Since 2015, I have been a visiting scientist at Gnowledge Labs and <a href="http://www.metastudio.org/cube" target="_blank">CUBE</a>, a bio learning and hacking space within HBCSE.
+                </div>
+
                 <div class="cv-subjob">Recent Past Projects</div>
 
                 <div class="cv-cat">
                     <span class="cv-dept">art+science Residency, Khoj International Artists Association, New Delhi.</span> From October 2017-April 2018, I was working on creating <a href="https://mycoprinter.punkish.org" target="_blank">MycoPrinter</a> a 3D bio-printer, with Darya Warner, a Brooklyn-based bioartist. The residency was funded by the Dept. of Biotechnology, Government of India, and Wellcome Trust, UK.
-                </div>
-
-                 <div class="cv-cat">
-                    <span class="cv-dept">Homi Bhabha Centre for Science Education (HBCSE), TIFR, Mumbai, India.</span> Since 2015, I have been a visiting scientist at Gnowledge Labs and <a href="http://www.metastudio.org/cube" target="_blank">CUBE</a>, a bio learning and hacking space within HBCSE.
                 </div>
 
                 <div class="cv-cat">
