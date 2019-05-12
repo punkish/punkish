@@ -52,7 +52,7 @@ js         : cv
                 </div>
 
                 <div class="cv-cat">
-                    <span class="cv-dept">Dept. of Political Science, University of Vienna.</span> As a <a href="https://politikwissenschaft.univie.ac.at/forschung/forschungsschwerpunkte/cescos-zeitgenoessische-solidaritaetsstudien/#c311429" target="_blank">Solidary Research Fellow</a> at the Center for Contemporary Solidarity, I am focusing on the tension between the desire to share medical data (for many of its touted benefits) and the need to protect the privacy of individuals (from many of the feared harms from breach and misuse of such data).
+                    <span class="cv-dept">Dept. of Political Science, University of Vienna.</span> As a <a href="https://politikwissenschaft.univie.ac.at/forschung/forschungsschwerpunkte/cescos-zeitgenoessische-solidaritaetsstudien/#c311429" target="_blank">Solidarityy Research Fellow</a> at the Center for the Study of Contemporary Solidarity (CeSCOS), I am focusing on the tension between the desire to share medical data (for many of its touted benefits) and the need to protect the privacy of individuals (from many of the feared harms from breach and misuse of such data).
                 </div>
 
                 <div class="cv-cat">
