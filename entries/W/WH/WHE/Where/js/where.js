@@ -593,14 +593,14 @@ PK.where = {
         },
         {
             "w": "Madrid",
-            "h": "return",
+            "h": "autónomo ?",
             "f": "Jun 16, 2019",
             "t": "Jun 30, 2019",
             "d": "two-weeks"
         },
         {
             "w": "Göttingen/Berlin",
-            "h": "return",
+            "h": "Freiberuflich ?",
             "f": "Jul 1, 2019",
             "t": "Jul 14, 2019",
             "d": "two-weeks"
@@ -614,14 +614,14 @@ PK.where = {
         },
         {
             "w": "Lucknow",
-            "h": "return",
+            "h": "demat",
             "f": "Aug 29, 2019",
             "t": "Sep 5, 2019",
             "d": "one-week"
         },
         {
             "w": "Paris",
-            "h": "return",
+            "h": "fall by lights",
             "f": "Sep 5, 2019",
             "t": "Sep 8, 2019",
             "d": "half-week"
