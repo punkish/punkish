@@ -591,48 +591,48 @@ PK.where = {
             "t": "Jun 15, 2019",
             "d": "one-month"
         },
-        // {
-        //     "w": "Madrid",
-        //     "h": "return",
-        //     "f": "Jun 16, 2019",
-        //     "t": "Jun 30, 2019",
-        //     "d": "two-weeks"
-        // },
-        // {
-        //     "w": "Göttingen/Berlin",
-        //     "h": "return",
-        //     "f": "Jul 1, 2019",
-        //     "t": "Jul 14, 2019",
-        //     "d": "two-weeks"
-        // },
-        // {
-        //     "w": "Goa",
-        //     "h": "Colva by the sea",
-        //     "f": "Jul 15, 2019",
-        //     "t": "Aug 28, 2019",
-        //     "d": "six-weeks"
-        // },
-        // {
-        //     "w": "Lucknow",
-        //     "h": "return",
-        //     "f": "Aug 29, 2019",
-        //     "t": "Sep 5, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Paris",
-        //     "h": "return",
-        //     "f": "Sep 5, 2019",
-        //     "t": "Sep 8, 2019",
-        //     "d": "half-week"
-        // },
-        // {
-        //     "w": "Genève",
-        //     "h": "CERN",
-        //     "f": "Sep 8, 2019",
-        //     "t": "Sep 14, 2019",
-        //     "d": "one-week"
-        // },
+        {
+            "w": "Madrid",
+            "h": "return",
+            "f": "Jun 16, 2019",
+            "t": "Jun 30, 2019",
+            "d": "two-weeks"
+        },
+        {
+            "w": "Göttingen/Berlin",
+            "h": "return",
+            "f": "Jul 1, 2019",
+            "t": "Jul 14, 2019",
+            "d": "two-weeks"
+        },
+        {
+            "w": "Goa",
+            "h": "Colva by the sea",
+            "f": "Jul 15, 2019",
+            "t": "Aug 28, 2019",
+            "d": "six-weeks"
+        },
+        {
+            "w": "Lucknow",
+            "h": "return",
+            "f": "Aug 29, 2019",
+            "t": "Sep 5, 2019",
+            "d": "one-week"
+        },
+        {
+            "w": "Paris",
+            "h": "return",
+            "f": "Sep 5, 2019",
+            "t": "Sep 8, 2019",
+            "d": "half-week"
+        },
+        {
+            "w": "Genève",
+            "h": "CERN",
+            "f": "Sep 8, 2019",
+            "t": "Sep 14, 2019",
+            "d": "one-week"
+        },
         // {
         //     "w": "Berlin",
         //     "h": "return",
