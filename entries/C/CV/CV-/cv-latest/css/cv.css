@@ -27,6 +27,7 @@ div.cv-panel_intro {
 	font: italic normal 1.1em serif !important;
 	color: grey;
 	margin-bottom: 1em;
+	line-height: 1.5em !important;
 }
 
 /* nth-child(odd)/(even) trick from
@@ -47,6 +48,7 @@ div.cv-job {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	border-top: 1px solid #ccc;
+	clear: both;
 }
 
 div.cv-job blockquote, 

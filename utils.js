@@ -26,11 +26,14 @@ const hanoz = [];
 
 const findFile = function(file, showHidden) {
 
+    //console.log(utils.hiddenPosts.byDate)
+
     // since the user-entered file could be different from the 
     // actual file on disk (different case, different words, etc.)
     // we have to figure out the correct file. We do that by 
     // finding its instance in the pre-built 'posts' index
     if (showHidden) {
+        //console.log(`searching for a hidden ${file}`)
         for (let i = 0, j = utils.hiddenPosts.byDate.length; i < j; i++) {
             if (file.toLowerCase() === utils.hiddenPosts.byDate[i]['file'].toLowerCase()) {
                 file = utils.hiddenPosts.byDate[i]['file'];
@@ -312,26 +315,35 @@ const dirWalker = function(start) {
     }
 };
 
+const checkFileExists = function(file, showHidden) {
+
+    // since the file name has been provided by the user, 
+    // we have to check whether it exists or not
+    const res = findFile(file, showHidden);
+    if (res) {
+        return res;
+    }
+    
+    // if no valid file was found, return an error message
+    // and suggestions for possibly matching files
+    else {
+        return false;
+    }
+};
+
 const utils = {
 
     getSingleEntry: function(options) {
+                
         let file = options['file'];
         let subfile = options['subfile'];
         const presentation = options['presentation'];
         const showHidden = options['showHidden'];
 
-        // since the file name has been provided 
-        // by the user, we have to check whether it 
-        // exists or not
-        const res = findFile(file, showHidden);
-        if (res) {
-            file = res;
-        }
-        
-        // if no valid file was found, return an error message
-        // and suggestions for possibly matching files
-        else {
-            return fileNotFound(file);
+        let tmpfile = file;
+        file = checkFileExists(file, showHidden);
+        if (!file) {
+            return fileNotFound(tmpfile);
         }
 
         // construct the entry directory and the entry URL
@@ -342,207 +354,197 @@ const utils = {
         let entryDir = `./entries/${pathToFile}`;
         let entryUrl = `${pathToFile}`;
 
+        
         // modify the entry direction and the entry URL 
         // if a subfile is present
         if (subfile) {
 
-            const res = findFile(subfile, showHidden);
-            if (res) {
-                subfile = res;
-            }
-            else {
-                return fileNotFound(subfile);;
+            tmpfile = subfile;
+            subfile = checkFileExists(subfile, showHidden);
+            if (!subfile) {
+                return fileNotFound(tmpfile);
             }
 
             entryDir = `./entries/${pathToFile}/${subfile}`;
             entryUrl = `${pathToFile}/${subfile}`;
         }
-
+        
         // this is the path to the actual entry file
         const entryIndex = `${entryDir}/index.md`;
+                
+        // get basic details of the entry
+        try {
+            const fileContents = fs.readFileSync(entryIndex, 'utf8');
 
-        // if the queryParam 'presentation' is true
-        // we have to show the presentation using remarkjs
-        // if (presentation) {
-
+            let entry = Yaml.loadFront(fileContents);
             
-        // }
-        // else {
-                
-            // get basic details of the entry
-            try {
-                const fileContents = fs.readFileSync(entryIndex, 'utf8');
-
-                let entry = Yaml.loadFront(fileContents);
-                
-                if (entry.hidden && (entry.hidden !== showHidden)) {
-                    return fileNotFound(file);
+            if (entry.hidden && (entry.hidden.toString() !== showHidden)) {
+                return fileNotFound(file);
+            }
+            else {
+                if (entry.modified) {
+                    entry.created = new Date(entry.modified);
+                }
+                else if (entry.created) {
+                    entry.created = new Date(entry.created);
                 }
                 else {
-                    if (entry.modified) {
-                        entry.created = new Date(entry.modified);
-                    }
-                    else if (entry.created) {
-                        entry.created = new Date(entry.created);
-                    }
-                    else {
-                        entry.created = today;
-                    }
-
-                    entry.created = entry.created.toLocaleDateString("en-US", dateOptions)
-
-                    if (!entry.title) {
-                        entry.title = file;
-                    }
-
-                    entry.entryDir = entryDir;
-                    entry.entryUrl = entryUrl;
-                    entry.url = file;
+                    entry.created = today;
                 }
 
-                if (presentation) {
+                entry.created = entry.created.toLocaleDateString("en-US", dateOptions)
 
-                    if (file.toLowerCase() === 'hanoz') {
+                if (!entry.title) {
+                    entry.title = file;
+                }
 
-                        if (hanoz.length == 0) {
-                            buildHanozIndex();
-                        }
-                        
-                        return {
-                            pages: hanoz,
-                            layout: 'hanoz',
-                            template: 'hanoz'
-                        };
+                entry.entryDir = entryDir;
+                entry.entryUrl = entryUrl;
+                entry.url = file;
+            }
+
+            if (presentation) {
+
+                if (file.toLowerCase() === 'hanoz') {
+
+                    if (hanoz.length == 0) {
+                        buildHanozIndex();
                     }
-                    else {
-                        if (!entry.layout) {
-                            entry.layout = 'presentation';
-                        }
-                        if (!entry.template) {
-                            entry.template = 'presentation';
-                        }
-                    }
+                    
+                    return {
+                        pages: hanoz,
+                        layout: 'hanoz',
+                        template: 'hanoz'
+                    };
                 }
                 else {
-                    if (entry.tags.indexOf('presentation') > -1) {
+                    if (!entry.layout) {
+                        entry.layout = 'presentation';
+                    }
+                    if (!entry.template) {
+                        entry.template = 'presentation';
+                    }
+                }
+            }
+            else {
+                if (entry.tags.indexOf('presentation') > -1) {
 
-                        entry.layout = 'main';
-                        entry.template = 'entry-presentation';
+                    entry.layout = 'main';
+                    entry.template = 'entry-presentation';
 
-                        if (entry.authors) {
-                            if (entry.authors.length > 1) {
-                                entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
-                                entry.authors.unshift(me);
-                                entry.authors = entry.authors.join(', ');
-                            }
-                            else {
-                                entry.authors = me + ' and ' + entry.authors[0];
-                            }
+                    if (entry.authors) {
+                        if (entry.authors.length > 1) {
+                            entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
+                            entry.authors.unshift(me);
+                            entry.authors = entry.authors.join(', ');
                         }
                         else {
-                            entry.authors = me;
-                        }
-                    }
-                    else if (entry.tags.indexOf('album') > -1) {
-                        entry.images = fs.readdirSync(entry.entryDir + '/img')
-                            .filter(img => {
-                                const imgExt = img.slice(-4);
-                                return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
-                            })
-                            .map(img => {
-                                return `/entry-files/${entry.entryUrl}/img/${img}`;
-                            });
-
-                        entry.type = 'album';
-                        entry.__content = sh.makeHtml(entry.__content);
-                        entry.__content = entry.__content.replace(
-                            /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-                            `img src="/entry-files/${entryUrl}/img/$1.$2$3`
-                        );
-
-                        // find prev and next entries
-                        let i = 0;
-                        const j = this.posts.byDate.length;
-                        for (; i < j; i++) {
-                            if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
-
-                                if (i == 0) {
-                                    entry.prev = this.posts.byDate[i];
-                                }
-                                else if (i > 0) {
-                                    entry.prev = this.posts.byDate[i - 1];
-                                }
-                                
-                                if (i < j) {
-                                    entry.next = this.posts.byDate[i + 1];
-                                }
-                                else if (i == j) {
-                                    entry.next = this.posts.byDate[i];
-                                }
-                                
-                                break;
-                            }
+                            entry.authors = me + ' and ' + entry.authors[0];
                         }
                     }
                     else {
-                        if (!entry.layout) {
-                            entry.layout = 'main';
-                        }
-                        
-                        if (!entry.template) {
-                            entry.template = 'entry';
-                        }
-
-                        entry.__content = sh.makeHtml(entry.__content);
-                        entry.__content = entry.__content.replace(
-                            /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-                            `img src="/entry-files/${entryUrl}/img/$1.$2$3`
-                        );
+                        entry.authors = me;
                     }
                 }
+                else if (entry.tags.indexOf('album') > -1) {
+                    entry.images = fs.readdirSync(entry.entryDir + '/img')
+                        .filter(img => {
+                            const imgExt = img.slice(-4);
+                            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
+                        })
+                        .map(img => {
+                            return `/entry-files/${entry.entryUrl}/img/${img}`;
+                        });
 
-                if (entry.tags && entry.tags.includes('code')) {
-                    entry.hasCode = true;
-                }
+                    entry.type = 'album';
+                    entry.__content = sh.makeHtml(entry.__content);
+                    entry.__content = entry.__content.replace(
+                        /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                        `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                    );
 
-                entry.hasCss = entry.css ? true : false;
-                entry.hasJs = entry.js   ? true : false;
+                    // find prev and next entries
+                    let i = 0;
+                    const j = this.posts.byDate.length;
+                    for (; i < j; i++) {
+                        if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
 
-                // find prev and next entries
-                let i = 0;
-                const j = this.posts.byDate.length;
-                for (; i < j; i++) {
-                    if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
-
-                        if (i == 0) {
-                            entry.prev = this.posts.byDate[i];
+                            if (i == 0) {
+                                entry.prev = this.posts.byDate[i];
+                            }
+                            else if (i > 0) {
+                                entry.prev = this.posts.byDate[i - 1];
+                            }
+                            
+                            if (i < j) {
+                                entry.next = this.posts.byDate[i + 1];
+                            }
+                            else if (i == j) {
+                                entry.next = this.posts.byDate[i];
+                            }
+                            
+                            break;
                         }
-                        else if (i > 0) {
-                            entry.prev = this.posts.byDate[i - 1];
-                        }
-                        
-                        if (i < j) {
-                            entry.next = this.posts.byDate[i + 1];
-                        }
-                        else if (i == j) {
-                            entry.next = this.posts.byDate[i];
-                        }
-                        
-                        break;
                     }
                 }
+                else {
+                    if (!entry.layout) {
+                        entry.layout = 'main';
+                    }
+                    
+                    if (!entry.template) {
+                        entry.template = 'entry';
+                    }
 
-                //console.log(entry.layout, entry.template);
-
-                return entry;
-            }
-            catch (e) {
-                return {
-                    title: "Error",
-                    __content: "Unable to read the file"
+                    entry.__content = sh.makeHtml(entry.__content);
+                    entry.__content = entry.__content.replace(
+                        /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
+                        `img src="/entry-files/${entryUrl}/img/$1.$2$3`
+                    );
                 }
             }
-        //}
+
+            if (entry.tags && entry.tags.includes('code')) {
+                entry.hasCode = true;
+            }
+
+            entry.hasCss = entry.css ? true : false;
+            entry.hasJs = entry.js   ? true : false;
+
+            // find prev and next entries
+            let i = 0;
+            const j = this.posts.byDate.length;
+            for (; i < j; i++) {
+                if (file.toLowerCase() === this.posts.byDate[i]['file'].toLowerCase()) {
+
+                    if (i == 0) {
+                        entry.prev = this.posts.byDate[i];
+                    }
+                    else if (i > 0) {
+                        entry.prev = this.posts.byDate[i - 1];
+                    }
+                    
+                    if (i < j) {
+                        entry.next = this.posts.byDate[i + 1];
+                    }
+                    else if (i == j) {
+                        entry.next = this.posts.byDate[i];
+                    }
+                    
+                    break;
+                }
+            }
+
+            //console.log(entry.layout, entry.template);
+
+            return entry;
+        }
+        catch (e) {
+            return {
+                title: "Error: Unable to read the file",
+                __content: e
+            }
+        }
     },
 
     getEntry: function(options) {

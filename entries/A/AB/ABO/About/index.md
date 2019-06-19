@@ -6,7 +6,7 @@ created    :
 viewcount  : 168
 id         : 346
 gmap       :
-tags        :
+tags       :
     - bio
     - CV
 stars      :
@@ -28,4 +28,3 @@ stars      :
 <p>I help domain scientists make sense of data by adopting, adapting and creating novel data acquisition, analysis and access techniques. And I work on the policies to create an environment where information is <b>open by default.</b> I serve as an advisor on various scientific projects, and advocate for a more participatory, collaborative way of working in a world where information and analytics are embedded in every aspect of our lives.</p>
 
 <p><a href="/cv/">A detailed CV</a> and a <a href="/cv/puneet-kishor-cv.pdf">PDF version</a> are available. A CV in the <a href="/cv/puneet-kishor-biosketch.pdf">NIH BioSketch format</a> is also available.</p>
-
