@@ -235,8 +235,14 @@ js         : cv
 
         <div name="panel" class="cv-panel" id="pnl_Publications">
             <div class="panel_intro">All my publications and presentations are released under the CC0 Public Domain Dedication. They are free for anyone to use as they wish without any obligation whatsoever, without having to ask for permission, and without needing to give me credit. In case of joint-publications, my co-authors may retain their copyright but will always use an open license.</div>
+
+            <div class="cv-pub">Agosti D, Catapano T, Sautter G, <span class="cv-subdept">Kishor P</span>, Nielsen L, Ioannidis-Pantopikos A, Bigarella C, Georgiev T, Penev L, Egloff W (2019) Biodiversity Literature Repository (BLR), a repository for FAIR data and publications. Biodiversity Information Science and Standards 3: e37197. https://doi.org/10.3897/biss.3.37197</div>
+
+            <div class="cv-pub">Scott Bulua, <span class="cv-subdept">Puneet Kishor</span>, Sonaar Luthra, and Jason Schultz. 2015. Open Source Sensors: Promoting Access to Knowledge and Data Reliability, report from a workshop on Open Hardware, workshop sponsored by the Sloan Foundation.</div>
+
             <div class="cv-pub">Willi Egloff, Donat Agosti, <span class="cv-subdept">Puneet Kishor</span>, David Patterson, Jeremy A. Miller. 2017. Copyright and the Use of Images as Biodiversity Data. doi: <a href="https://doi.org/10.1101/087015" target="_blank">https://doi.org/10.1101/087015</a></div>
             <div class="cv-pub">Scott Bulua, <span class="cv-subdept">Puneet Kishor</span>, Sonaar Luthra, and Jason Schultz. 2015. Open Source Sensors: Promoting Access to Knowledge and Data Reliability, report from a workshop on Open Hardware, workshop sponsored by the Sloan Foundation.</div>
+
             <div class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Effy Vayena, Robert Nussbaum, Jason Bobe, and Barbara Koenig. 2015. Sharing v. Privacy, report from a workshop on balancing the need for privacy with the desire to share, workshop sponsored by the Robert Wood Johnson Foundation.</div>
             <div class="cv-pub">Micah Altman, Daniel Cohen, and <span class="cv-subdept">Puneet Kishor</span>. 2013. Emerging Principles for Data Citation. In Yvonne M Socha (Ed.) <a href="https://www.jstage.jst.go.jp/article/dsj/12/0/12_OSOM13-043/_article" target="_blank">Out of Cite, Out of Mind.</a>. Data Science Journal 12: 1–76. doi:10.2481/dsj.OSOM13-043</div>
             <div class="cv-pub">Shanan E. Peters, Miron Livny, Kurt Squire, Jack Williams, Bill Hibbard, <span class="cv-subdept">Puneet Kishor</span>, Sam Batzli, Patrick McLaughlin, Susan Millar, Tom Whittaker, Nancy Wiegand, and Terry Millar. 2011. Towards a New Distributed Platform for Integrative Geoscience: An EarthCube Design Approach and Prototype Plan. White paper submitted to the NSF as part of the EarthCube Initiative, Washington DC.</div>
