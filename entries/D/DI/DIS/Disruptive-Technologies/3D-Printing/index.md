@@ -15,6 +15,11 @@ stars      :
 css        : ../../css/disruptive
 ---
 
+<figure>
+    <img src="3axis-robot.png">
+    <figcaption>Rendering of a cartesian robot by Puneet Kishor, based on a modular, hackable biology lab automation system by Modular Science released under a CC0 Public Domain Dedication</figcaption>
+</figure>
+
 ## Introduction
 
 3D printing, most typically uses a process known as Fused Deposition Modeling (FDM), sometimes also known as Fused Filament Fabrication (FFF). FDM printers use a thermoplastic filament, which is heated to its melting point and then extruded, layer by layer, to create a three dimensional object. The 3D object is designed in a CAD program such as OpenSCAD that can then export STL files that are read by a Slicer program. The Slicer literally slices the 3D model into layers and then prepares G-Code that can be read by a firmware. Other 3D printing techniques include Stereolithography (SLA), Direct Light Processing (DLP), Selective Laser Sintering (SLS), Material Jetting (MJ), Drop on Demand (DOD), Binder Jetting (BJ), and Powder Bed Fusion.
