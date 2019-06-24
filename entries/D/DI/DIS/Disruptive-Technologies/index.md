@@ -11,19 +11,47 @@ tags       :
     - tech primer
     - international development
 stars      : 
+css        : disruptive
 ---
+
+1859. “Extinction of old forms is the almost inevitable consequence of the production of new forms” — Charles Darwin, Origin of Species.
+1887. “If a temple is to be erected a temple must be destroyed: that is the law” — Friedrich Nietzsche, On the Genealogy of Morality.
+1913. “Again, however, from destruction a new spirit of creation arises” — Werner Sombart, Krieg und Kapitalismus.
+1942. “[… Capitalism requires] the perennial gale of Creative Destruction.” — Joseph Schumpeter, Joseph A. Capitalism, Socialism and Democracy.
+1997. “Disruptive technologies typically enable new markets to emerge.” — Clayton M. Christensen, The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail.
+2019. The Disruptive Technologies for Development Challenge… addresses the need… to adopt disruptive technologies to enhance the impact of operations and policy advice in member countries. The World Bank.
 
 ## Background
 
-The World Bank Group has placed a growing emphasis on better understanding the implications of a new world of disruptive technologies that could change development paradigms in fundamental ways. As part of this effort, the Sustainable Development Practice Group has requested the Transport and Digital Development Global Practice to better understand these technologies and their implications, both positive and negative, on sustainable development. This includes an improved understanding of the scale and implications of these disruptive changes, as well as how to help clients get better access to disruptive technologies and institutional arrangements that can help them meet their evolving development challenges, as well as to help clients better buffer themselves against the implications of these changes. These technologies include:
+The World Bank Group has placed a growing emphasis on better understanding the implications of a new world of disruptive technologies that could change development paradigms in fundamental ways. As part of this effort, the Sustainable Development Practice Group has requested the Transport and Digital Development Global Practice to better understand these technologies and their implications, both positive and negative, on sustainable development. This includes an improved understanding of the scale and implications of these disruptive changes, as well as how to help clients get better access to disruptive technologies and institutional arrangements that can help them meet their evolving development challenges, as well as to help clients better buffer themselves against the implications of these changes. 
 
-- ✔︎ [Artificial Intelligence](Disruptive-Technologies/Artificial-Intelligence)
-- ✘ [Sensors](Disruptive-Technologies/Sensors)
-- ✘ [3D Printing](Disruptive-Technologies/3D-Printing)
-- ✘ [Blockchain](Disruptive-Technologies/Blockchain)
-- ✘ [Open Science and Open Data](Disruptive-Technologies/Open-Science-Open-Data)
+The technologies and trends addressed in this report include:
 
-## Information Lifecycle
+- [Artificial Intelligence](Disruptive-Technologies/Artificial-Intelligence)
+- [Sensors](Disruptive-Technologies/Sensors)
+- [3D Printing](Disruptive-Technologies/3D-Printing)
+- [Blockchain](Disruptive-Technologies/Blockchain)
+- [Open Science and Open Data](Disruptive-Technologies/Open-Science-Open-Data)
+
+Each section, including this introduction, has five parts: Introduction; Disruptive Power; Potential for Development; Caveats; and Resources.
+
+## Disruptive Power
+
+All of the technologies mentioned above have the power to disrupt existing systems. Some of them (AI and the forerunners of open science and open data) have been around for a while but have recently gained steam with easy and cheap availability of network bandwidth and computing power. Others are more recent but have rapidly developed to the point of already being implemented in production systems underpinning medium to large scale investments and activities. 
+
+AI is disintermediating human analysis as a first run on large scale data inputs so experts can devote their precious time to more demanding and immediate problems. Sensors are being used for monitoring in remote and uninhabitable but important environments as well as in densely populated areas to provide realtime data on ambient conditions. 3D printing is being utilized to circumvent slow and cumbersome prototyping with immediate development and feedback as well for creation of valuable and scarce material such as human skin and tissues needed for burn and trauma victims. Blockchain is being used in financial systems where smart contracts are automating cumbersome legal transactions between contracting parties. And open science and data are upending traditional publishing and publicising processes.
+
+To be disruptive, technologies need not be radical or novel from an engineering or technical point of view. Many become disruptive merely because they cross a tipping point in price or performance or dramatically increase accessibility and/or capabilities relative to the incumbent technologies. Sometimes, ubiquity also characterizes a disruptive technology.
+
+## Potential for Development
+
+From using AI technologies for early detecton of disease outbreaks to sensors for environmental quality monitoring to using 3D printers for both rapidy industrial prototyping as well as for human tissue generation for trauma victims and those needing assistance to implementing blockchain-based civic service delivery to energizing the scientific and entrepreneurial landscape with easily accessible data, software and literature – the applications of disruptive technologies to the various processes of government, civic society, businesses, and creative and personal lives are limited only by imagination, implementation and resources.
+
+## Caveats
+
+The one thing all these technologies have in common is that they depend on computers, and as such, are susceptible to all the dangers that are applicable to information technologies in general. The information these technologies generate or use  can be hacked by malicious parties, manipulated, and leveraged or utilized for wrong purposes. We see evidence of this in the constant reports of customer databases at businesses being breached, ransomware demands, blockchain hacks, use of 3D printers for making restricted items (for example, guns), intrusive sensors and the spread of fake news. There is a tension between the need to restrict or eliminate such incidents on the one hand and the freedom to innovate and create technology that can do a lot of good things but also enable such undesirable outcomes. The only feasible ways to balance this tension in free societies is via policy instruments and education. A few of the areas requring specific attention are described below.
+
+### Information Lifecycle
 
 The citizen who is the source of data and the collector of that data, interface at the five points, namely, Ⓐ, Ⓑ, Ⓒ, Ⓓ and Ⓔ as shown in the information lifecycle diagram below 
 
@@ -42,72 +70,30 @@ The citizen who is the source of data and the collector of that data, interface 
 
 **E**: Demystify the Data Use Agreements (DUA).
 
-## Citizens Consent
+### Citizens Consent
 
-## Citizens Consent
+An omnipresent problem is that citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used. It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and perhaps even intentionally obfuscating. Citizens Consent can be thought of as analagous to informed consent. Consent is not good unless the user understands the facts, implications, and consequences of giving it. A well-understood and given consent is the right of the citizen and the responsibility of the data collector. There have been many prior attempts at standardizing privacy policies but few have gained traction. A working solution would have to be simple, attractive, and visually display of the data collecting organization’s data sharing policy. It would be targeted at the average user, and focused on data sharing, be unformative instead of over-whelming, and be backed by a legally-binding policy.
 
-An idea for more informed citizens based on work done by
+### Artificial Intelligence
+Ironically, perhaps the best tool to fight AI-powered malintentioned activities is AI itself. AI sits at the top of the tech food-chain as combating tech malfeasance at scale is only possible via programmatic responses.
 
-* Dan Garon
-* Puneet Kishor
-* Lysle
-* Herrick
-* Beth McCarthy
+### Policy and Regulation
 
----
+Traditionally law has trailed the rapid changes in technology and technology-drive cultural changes. In the United States, HIPAA and Common Rule, designed to protect human subjects can also become a deterrent to innovation by restricting the flow of information to legiitmate users of it. In Europe, the General Data Protection Regulation (GDPR) proposes a layered set of standards to protect individual privacy. All these regulations have to belance the requirement for security and privacy with the need for sharing. Similarly, policy and regulation also have to permit healthy innovation in fields such as stem cells, CRISPR genetic manipulation, and use of 3D printers for human tissue while also dissuading dangerous or ethically questionable experiments.
 
-## The Problem
+## Resources
 
-* Citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used.
+<details open class="text">
+    <summary>National Research Council. 2010. <a href="https://www.nap.edu/read/12557/chapter/1" target="_blank">Persistent Forecasting of Disruptive Technologies.</a> Washington, DC: The National Academies Press. doi: 10.17226/12557.</summary>
+    <p>Technological innovations are key causal agents of surprise and disruption. These innovations, and the disruption they produce, have the potential to affect people and societies and therefore government policy, especially policy related to national security. Because the innovations can come from many sectors, they are difficult to predict and prepare for. The purpose of predicting technology is to minimize or eliminate this surprise. To aid in the development of forecasting methodologies and strategies, the Committee on Forecasting Future Disruptive Technologies of the National Research Council (NRC) was funded by the Director, Defense Research and Engineering (DDR&E) and the Defense Intelligence Agency’s (DIA’s) Defense Warning Office (DWO) to provide an analysis of disruptive technologies.</p>
+</details>
 
-* It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and perhaps even intentionally obfuscating.
+<details class="text">
+    <summary>Daniel Leipziger and Victoria Dodev. 2016. <a href="https://www2.gwu.edu/~iiep/assets/docs/papers/2016WP/LeipzigerDodevIIEPWP2016-13.pdf" target="_blank">Disruptive Technologies and their Implications for Economic Policy: Some Preliminary Observations.</a> Institute for International Economic Policy, George Washington University, Washington DC.</summary>
+    <p>It is generally accepted that technological innovation has been at the core of firm level productivity gains and the economic growth of countries. This general proposition as described by Solow (1956) and enhanced by Romer (1990), Aghion and Howitt (1992), and others embeds in it the notion that more productive firms will displace less productive ones in a Schumpeterian fashion. … Disruptive technologies have the potential to impact growth, employment, and inequality by creating new markets and business practices, needs for new product infrastructure, and different labor skills. This, in addition to affecting existing firms in established markets, can also affect the labor market, incomes of workers, and ultimately the distribution of income.</p>
+</details>
 
----
-
-## Citizens Consent
-
-* Analogy to *Informed Consent*
-* Consent is not good unless the user understands the facts, implications, and  consequences.
-* A well-understood and given consent is the right of the citizen and the responsibility of the data collector.
-
----
-
-## Prior Attempts
-
-* Many attempts at standardizing privacy policies
-* Few have gained traction
-
----
-
-## Solution
-
-* Simple, attractive, visual display of a company's data sharing policiy
-* Targeted at average user, and focused on data sharing
-* Informative instead of over-whelming
-* Backed by a legally-binding policy
-
----
-
-## Shields of Consent
-
-<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent1.gif" width="90%">
-
----
-
-## How we share data…
-
-<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent2.gif" height="400px">
-
----
-
-## How we share data
-
-<img src="/entry-files/C/CI/CIT/Citizens-Consent/img/consent3.gif" height="400px">
-
----
-
-## Additional features
-
-* Staged decision-tree to allow web sites and apps to generate the citizens consent report
-* Citizen can subscribe and receive notifications when the policy changes
-* Auto-generate legally binding data privacy and sharing policies
+<details class="text">
+    <summary>KPMG. <a href="https://assets.kpmg/content/dam/kpmg/it/pdf/2017/03/KPMG_Disruptive-tech-2017-part1.pdf" target="_blank">The changing landscape of disruptive technologies: Global technology innovation hubs.</a></summary>
+    <p>This report showcases the rise of new ecosystems of incubators, accelerators, and venture capital alongside government incentives across the world. In this section, we unfold the cities and countries that are making significant strides in innovation development and provide 15 country perspectives. With stakes so high to compete in a global technology industry ecosystem, we also examine the global leadership views on innovation management.</p>
+</details>

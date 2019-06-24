@@ -51,26 +51,24 @@
 .three-months {
     padding-bottom: 180px;
 }
+
 #experiences {
     list-style: none !important;
 }
 #experiences li {
-    /* padding-bottom: 40px; */
     position:relative;
     margin-bottom: unset !important;
-    /* font-size: 8px; */
 }
 #experiences li span {
+    border: 1px solid black;
     border-radius: 50%;
     padding: 3px 10px;
     margin-right: 10px;
 }
 #experiences li span.beforeNow {
-    border: 1px solid black;
     background:#000
 }
 #experiences li span.now {
-    border: 1px solid black;
     background:#e84c3d;
     box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
     -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -79,30 +77,35 @@
     animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 #experiences li span.afterNow {
-    border: 1px solid black;
     background:#fff
 }
 #experiences li span.whereNext {
     border: 1px dashed black;
-    background:#fff
+    padding: 3px 8px;
+    background: #fff
 }
 #experiences li span.beforeNow:before,
 #experiences li span.now:before,
 #experiences li span.afterNow:before,
 #experiences li span.whereNext:before {
-    content:'';
-    position:absolute;
-    border-left:1px solid ;
-    left:14px;
-    bottom:0;
-    z-index:-1;
-    height:100%
+    content: '';
+    position: absolute;
+    border-left: 2px solid ;
+    left: 13px;
+    bottom: -4px;
+    z-index: -1;
+    height: 100%
 }
 #experiences li:last-child span:before{
     content:none;
 }
 #experiences li:last-child{
     padding-bottom:0
+}
+
+#experiences li ul {
+    list-style: none;
+    margin-top: -28px;
 }
 
 /* 

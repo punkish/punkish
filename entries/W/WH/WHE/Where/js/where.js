@@ -428,7 +428,7 @@ PK.where = {
             "h": "homes, one of many",
             "f": "Dec 4, 2017",
             "t": "Dec 11, 2017",
-            "d": "one-weeks"
+            "d": "one-week"
         },
         {
             "w": "Bangalore",
@@ -609,8 +609,15 @@ PK.where = {
             "w": "Goa",
             "h": "Colva by the sea",
             "f": "Jul 15, 2019",
+            "t": "Aug 14, 2019",
+            "d": "four-weeks"
+        },
+        {
+            "w": "Mumbai",
+            "h": "making",
+            "f": "Aug 14, 2019",
             "t": "Aug 28, 2019",
-            "d": "six-weeks"
+            "d": "two-weeks"
         },
         {
             "w": "Lucknow",
@@ -710,7 +717,7 @@ PK.where = {
 
             let id = (time_class === "now" ? "now" : "");
             html += `<li id="${id}" class="${this.trip[i].d}">
-                <span class="${time_class}">•</span><a href="/entries?q=tags:${this.trip[i].w}">${this.trip[i].w}</a> ${this.trip[i].f}–${this.trip[i].t}, ${this.trip[i].h}
+                <span class="${time_class}">•</span><ul><li><a href="/entries?q=tags:${this.trip[i].w}">${this.trip[i].w}</a> ${this.trip[i].f}–${this.trip[i].t}, ${this.trip[i].h}</li></ul>
             </li>`;
         }
         html += '<li class="one-week"><span class="whereNext">?</span></li>';
