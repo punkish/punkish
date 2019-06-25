@@ -15,6 +15,11 @@ stars      :
 css        : ../../css/disruptive
 ---
 
+<figure>
+    <img src="blockchain.png">
+    <figcaption>Blockchain illustration released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+</figure>
+
 ## Introduction
 
 A blockchain is distributed digital ledger technology (DLT) with transactions (or blocks thereof) linked by timestamped, cryptographic hashes. A blockchain that may be private (permissioned) or public (permissionless), with a mechanism, typically “proof of work,” for coming to a consensus about the valid state of the chain determined by a majority of the participants all of whom have equal access to all of the chain.

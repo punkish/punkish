@@ -15,6 +15,11 @@ stars      :
 css        : ../../css/disruptive
 ---
 
+<figure>
+    <img src="garp.jpg">
+    <figcaption>Shading represents the predicted distribution of the Common BushTanagers Chlorospingus ophthalmicus in Mexico modeled in Genetic Algorithm for Rule Set Production (GARP) using an artificial intelligence approach (the genetic algorithm) to produce an abstraction of the ecological niche of a species. No known copyright restrictions.</figcaption>
+</figure>
+
 ## Introduction
 
 Artificial Intelligence (AI) is a field of computer science that encompasses a myriad of disciplines focused on improving computer programs to become self-learning. From natural language processing (NLP) to image classification to sound analysys, AI programs are “trained” on large training datasets allowing them to recognize patterns and act accordingly. Once an AI program is trained, it can be used to analyze real world data to deliver analysis and decisions. AI programs can also be trained against other AI programs using a technique called generative adversarial networks (GAN) wherein one AI program tries to learn while an adversarial AI program tries to defeat the first one. This way both AI programs train against each other and get better.

@@ -15,6 +15,12 @@ stars      :
 css        : ../../css/disruptive
 ---
 
+<figure>
+    <img src="water-quality-sensor.png">
+    <figcaption>Portable water quality sensor developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/" target="_blank">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com" target="_blank">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com" target="_blank">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores <a href="http://web.v-a.pt/planetary-sensing/" target="_blank">planetary sensing navigations</a> below the surface. The device is based on a design by <a href="https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter" target="_blank">Shan He of Public Lab</a> in cooperation with the folks at <a href="https://www.dfrobot.com" target="_blank">DF Robot</a>. Original design mods and photo released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+</figure>
+
+
 ## Introduction
 
 Sensors is a generic term for devices, both atomic and composite, that are capable of sensing various external stimuli and act upon those readings from simply recording them to even reacting to them when a pre-determined threshold is crossed. Typically sensors convert external stimuli to electrical current and then either transmit the data or store it locally. Any device that senses, captures, and reports information can be called a sensor. 

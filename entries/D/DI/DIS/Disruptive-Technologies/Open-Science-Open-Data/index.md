@@ -16,6 +16,11 @@ stars      :
 css        : ../../css/disruptive
 ---
 
+<figure>
+    <img src="ossi.jpg">
+    <figcaption>Posterized rendering of photo of Open Source Seed Initiative packaging released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+</figure>
+
 ## Introduction
 
 Open science and open data are terms that describe both the practice and products of science in a way that is participatory, inclusive, open for inspection, and available fo reuse with none to few attached restrictions.
