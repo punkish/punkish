@@ -199,7 +199,7 @@ dd {
 }
 
 code {
-	font-family: Hack, monospace;
+	font-family: 'Fira Code', Hack, monospace;
 }
 ol.punkish-footnotes {
 	border-top: 1px dotted; 

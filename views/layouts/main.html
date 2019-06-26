@@ -19,6 +19,7 @@
     
     {{#hasCode}}
     <script src="/public/highlight/highlight.pack.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     {{/hasCode}}
     
     <script>
@@ -26,13 +27,13 @@
 
         PK.initializeDictionary();
 
-        {{#hasJs}}
-        PK['{{js}}'].init();
-        {{/hasJs}}
-
         {{#hasCode}}
         hljs.initHighlighting();
         {{/hasCode}}
+
+        {{#hasJs}}
+        PK['{{js}}'].init();
+        {{/hasJs}}
     </script>
 </body>
 </html>
