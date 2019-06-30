@@ -109,17 +109,17 @@ Traditionally law has trailed the rapid changes in technology and technology-dri
 
 ## Resources
 
-<details open class="text">
+<details class="text" open>
     <summary>National Research Council. 2010. <a href="https://www.nap.edu/read/12557/chapter/1" target="_blank">Persistent Forecasting of Disruptive Technologies.</a> Washington, DC: The National Academies Press. doi: 10.17226/12557.</summary>
     <p>Technological innovations are key causal agents of surprise and disruption. These innovations, and the disruption they produce, have the potential to affect people and societies and therefore government policy, especially policy related to national security. Because the innovations can come from many sectors, they are difficult to predict and prepare for. The purpose of predicting technology is to minimize or eliminate this surprise. To aid in the development of forecasting methodologies and strategies, the Committee on Forecasting Future Disruptive Technologies of the National Research Council (NRC) was funded by the Director, Defense Research and Engineering (DDR&E) and the Defense Intelligence Agency’s (DIA’s) Defense Warning Office (DWO) to provide an analysis of disruptive technologies.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Daniel Leipziger and Victoria Dodev. 2016. <a href="https://www2.gwu.edu/~iiep/assets/docs/papers/2016WP/LeipzigerDodevIIEPWP2016-13.pdf" target="_blank">Disruptive Technologies and their Implications for Economic Policy: Some Preliminary Observations.</a> Institute for International Economic Policy, George Washington University, Washington DC.</summary>
     <p>It is generally accepted that technological innovation has been at the core of firm level productivity gains and the economic growth of countries. This general proposition as described by Solow (1956) and enhanced by Romer (1990), Aghion and Howitt (1992), and others embeds in it the notion that more productive firms will displace less productive ones in a Schumpeterian fashion. … Disruptive technologies have the potential to impact growth, employment, and inequality by creating new markets and business practices, needs for new product infrastructure, and different labor skills. This, in addition to affecting existing firms in established markets, can also affect the labor market, incomes of workers, and ultimately the distribution of income.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>KPMG. <a href="https://assets.kpmg/content/dam/kpmg/it/pdf/2017/03/KPMG_Disruptive-tech-2017-part1.pdf" target="_blank">The changing landscape of disruptive technologies: Global technology innovation hubs.</a></summary>
     <p>This report showcases the rise of new ecosystems of incubators, accelerators, and venture capital alongside government incentives across the world. In this section, we unfold the cities and countries that are making significant strides in innovation development and provide 15 country perspectives. With stakes so high to compete in a global technology industry ecosystem, we also examine the global leadership views on innovation management.</p>
 </details>

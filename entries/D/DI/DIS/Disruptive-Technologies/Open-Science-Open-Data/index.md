@@ -46,47 +46,47 @@ The most important caveat to the use of open science and open data is to pay att
     <p>A mission-driven project to help make ‘Open’ the default setting for all global research. All video content is open for re-use.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=3YcZ3Zqk0a8" target="_blank">Tim Berners-Lee: The year open data went worldwide</a></summary>
     <p>At TED2009, Tim Berners-Lee called for "raw data now" — for governments, scientists and institutions to make their data openly available on the web. At TED University in 2010, he shows a few of the interesting results when the data gets linked up.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=L5rVH1KGBCY" target="_blank">Open Access Explained!</a></summary>
     <p>What is open access? An explanation of the world of open access publishing.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=T3O7bkjrVb0" target="_blank">Making Malaysia Government Transparent & Accountable with Open Data</a></summary>
     <p>Co-founder of Sinar Project: Khairil leads a team of dedicated developers at the non-profit and non-partisan Sinar Project, which uses open source technology and ideas to track and measure corruption. Sinar Project is a collection of related open source projects that comprises open data providers and applications that make information accessible to Malaysian citizens.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=bwX5MAZ6zKI" target="_blank">The Potential of Open Data</a></summary>
     <p>Open data has the potential to change the way we see our ourselves, our world and our future. Open Data NZ is the New Zealand government's open data programme, driving the supply and demand of open government data. Open Data NZ is made up of Stats NZ and the Department of Internal Affairs. </p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=XNrX4RnJzJc" target="_blank">Open Data’s Disruptive Potential</a></summary>
     <p>Making data easily accessible can do far more than support transparency; it has the power to transform government. Open innovation expert David Eaves shares his vision for the evolution open data programs.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary><a href="https://www.nature.com/articles/s41587-019-0053-y" target="_blank">How bioinformatics and open data can boost basic science in countries and universities with limited resources</a></summary>
     <p>Providing training and access to standard computing hardware and cloud-based resources can enable scientists in lower-resource institutions and countries to reanalyze published ‘-omics’ data and produce career-enhancing STEM research.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary><a href="https://www.nature.com/articles/d41586-019-01166-x" target="_blank">Facing up to injustice in genome science. Nature.</a></summary>
     <p>The reasons behind the lack of diversity in genome research are many. But they include a past fraught with abuses by Western scientists. One infamous tale involved Arizona State University researchers, who in the 1990s took DNA samples from members of the Havasupai Tribe in Arizona for a study on diabetes, but later used the samples without the tribe’s consent for studies on schizophrenia and patterns of population mixing and migration. In 2010, the Havasupai won a US$700,000 settlement, and the university was forced to return all the samples it had collected.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary><a href="https://journals.kent.ac.uk/index.php/feministsatlaw/article/view/7/54" target="_blank">What's Feminist about Open Access?</a></summary>
     <p>(The authors) attempt to show what it is about the open access endeavor that resonates with a feminist theory of law and society… In doing so, (they) discover vital synergies between this branch of feminist legal theory and the open access movement.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary><a href="https://www.theguardian.com/science/2018/oct/08/genetics-research-biased-towards-studying-white-europeans" target="_blank">Genetics research 'biased towards studying white Europeans</a></summary>
     <p>eople from minority ethnic backgrounds are set to lose out on medical benefits of genetics research due to an overwhelming bias towards studying white European populations, a leading scientist has warned.</p>
 </details>

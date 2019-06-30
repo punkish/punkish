@@ -67,47 +67,47 @@ How do we implement the right to be forgotten in a technology that is designed t
     <p>What is a blockchain and how do they work? Explained in simple and plain English!</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://punkish.org/Demystifying-Blockchains" target="_blank">Demystifying Blockchains</a></summary>
     <p>A blockchain primer and demo.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=8fbhI1qVj0c" target="_blank">How Blockchain can transform India</a></summary>
     <p>Blockchain is currently at the peak of the Hype Cycle. It is a simple concept, yet difficult to understand and comprehend. It is also in the same place as the Internet was in 1995 – very early, with its major applications yet to be built. Blockchain is a much a philosophy as a technology, and has the potential to change the world as the Internet did. It promises to radically transform identity, agriculture, money, energy, governance, and pretty much everything else, especially in the emerging countries. This TEDx talk demystifies blockchain as never before, and explains how it can change the world around you.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Stuart Haber and Scott Stornetta. 1991. <a href="https://www.anf.es/pdf/Haber_Stornetta.pdf" target="_blank">How to Time-Stamp a Digital Document.</a> Journal of Cryptology, Vol. 3, No. 2, pp. 99-111</summary>
     <p>The prospect of a world in which all text, audio, picture, and video documents are in digital form on easily modifiable media raises the issue of how to certify when a document was created or last changed. The problem is to time-stamp the data, not the medium. We propose computationally practical procedures for digital time-stamping of such documents so that it is infeasible for a user either to back-date or to forward-date his document, even with the collusion of a time-stamping service. Our procedures maintain complete privacy of the documents themselves, and require no record-keeping by the time-stamping service.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Satoshi Nakamoto. 2009. <a href="https://bitcoin.org" target="_blank">Bitcoin: A Peer-to-Peer Electronic Cash System</a></summary>
     <p>A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Giuseppe Ateniese, Bernardo Magri, Daniele Venturi, and Ewerton Andrade. 2016. <a href="https://eprint.iacr.org/2016/757.pdf" target="_blank">Redactable Blockchain – or – Rewriting History in Bitcoin and Friends.</a> Eprints</summary>
     <p>We put forward a new framework that makes it possible to re-write or compress the content of any number of blocks in decentralized services exploiting the blockchain technol- ogy. As we argue, there are several reasons to prefer an editable blockchain, spanning from the necessity to remove inappropriate content and the possibility to support applications requiring re-writable storage, to “the right to be forgotten.”</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Angela Walch. 2017. <a href="https://ssrn.com/abstract=2940335" target="_blank">The Path of the Blockchain Lexicon (and the Law).</a> 36 Review of Banking & Financial Law 713. SSRN</summary>
     <p>The terminology around blockchain technology is notoriously confusing, with disputes over whether a blockchain is the same as a distributed ledger, or whether an appcoin is the same as a protocol token. In this article, I examine the difficulties the rapidly shifting, contested vocabulary poses for regulators seeking to understand, govern, and potentially use blockchain technology, and offer suggestions for how to fight through the haze of unclear language.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>James Hazard and Helena Haapio. 2017. <a href="https://ssrn.com/abstract=2925871" target="_blank">Wise Contracts: Smart Contracts that Work for People and Machines (February 23, 2017). In Trends and Communities of Legal Informatics.</a> Proceedings of the 20th International Legal Informatics Symposium IRIS 2017. Österreichische Computer Gesellschaft, Wien 2017, pp. 425–432; Jusletter IT.</summary>
     <p>Modern economies are held together by innumerable contracts. However, current contracts are neither machine-readable nor easily human-readable. The Ricardian Contract paradigm of parameters, prose and code posits a hybrid model of automation and conventional legal text. This paper connects recent work on design criteria for 'Smart Contract Templates' with prose objects and prototype inheritance demonstrated at CommonAccord. Templates authored and shared as prose objects can become the basis for automation, codification, big data analysis and graphic presentations.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Wikipedia contributors. (2018, November 19). <a href="https://en.wikipedia.org/w/index.php?title=Smart_contract&oldid=869532500" target="_blank">Smart contract. In Wikipedia, The Free Encyclopedia.</a> Retrieved 11:18, November 21, 2018</summary>
     <p>A smart contract is a computer protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties. These transactions are trackable and irreversible.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary>Primavera de Filippi. <a href="https://wiki.p2pfoundation.net/Legal_Framework_For_Crypto-Ledger_Transactions" target="_blank">Legal Framework For Crypto-Ledger Transactions.</a> P2P Foundation.</summary>
     <p>This article describes a hybrid model that combines legal contracts with software code via smart contract templates.</p>
 </details>

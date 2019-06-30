@@ -49,17 +49,17 @@ The regional-scale sensors such as airborne or satellites will continue to be im
     <p>Environmental pollutants won’t be able to hide thanks to new sensing technologies that accurately pinpoint and monitor the quality of our environment. Together with physical analytics combined with artificial intelligence, these technologies will unlock insights to help us prevent pollution and fully harness the promise of cleaner fuels like natural gas.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=82Cw7gi6hF0" target="_blank">Real-time Air Quality Monitoring Network Using Low-Cost Devices</a></summary>
     <p>India has the dubious distinction of having 10 out of the 20 most polluted cities in the world. The number of government air quality monitoring stations in these cities, barring New Delhi (which has 12), are between 1 or 2 stations for a population of 1 to 2 million people. This is woefully inadequate. A new wave of low-cost particulate matter sensors (PM2.5 and PM10 being the most harmful of the air pollutants) enabled with IoT technologies is empowering citizens and communities to participate in their own governance and policy making. IndiaSpend has built India's first independent, real-time air quality monitoring network using indigenously built low-cost IoT devices. The project was launched in December 2015 and is currently active in 6 cities of India (with 10 more cities coming online in the near future). The talk will cover lessons learned from the IoT architecture perspective and the current Fast Time-Series based APIs developed which has enabled a significant enhancement in the accuracy and scalability of the air quality data analysis.</p>
 </details>
 
-<details class="video">
+<details class="video" open>
     <summary><a href="https://www.youtube.com/watch?v=F1DK3IhyZao" target="_blank">Water Quality Sensors</a></summary>
     <p>Junhong Chen, Ph.D., Mechanical Engineering, shows new sensor technology that helps identify contaminants in water. Learn how Milwaukee Engineers' partnerships with industry leaders such as A.O. Smith and Badger Meter acellerates the process of bringing innovative technology from lab to market.</p>
 </details>
 
-<details class="text">
+<details class="text" open>
     <summary><a href="https://distap.mit.edu/research-novel-sensors/" target="_blank">Research: Novel Sensors</a></summary>
     <p>Plant hormones play a significant role in controlling plant growth and plants’ response to environmental stimuli. The development of nanosensors with high sensitivity would deepen our understanding of the complex plant signaling pathways. Our goal is to generate a library of polymers and discover an optimal CoPhMoRe (Corona Phase Molecular Recognition) sensor for specific plant hormone. Corona phase of SWCNT refers to the phase of the polymer adsorbed around its surface. The recognition takes place by the lateral interactions of the analytes of our interest with the polymer in this corona phase. Depending on the structure of amphiphilic polymers, various kinds of corona phases can be created. Using this property, SWCNT-based sensors can be developed to measure the targeting molecules within the small range of concentration. We aim to study the spatial and temporal distribution of the plants’ signaling pathways in real time and non-destructive manner with high sensitivity.</p>
 </details>
