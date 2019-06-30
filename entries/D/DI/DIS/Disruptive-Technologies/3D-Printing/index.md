@@ -22,13 +22,13 @@ css        : ../../css/disruptive
 
 ## Introduction
 
-3D printing, most typically uses a process known as Fused Deposition Modeling (FDM), sometimes also known as Fused Filament Fabrication (FFF). FDM printers use a thermoplastic filament, which is heated to its melting point and then extruded, layer by layer, to create a three dimensional object. The 3D object is designed in a CAD program such as OpenSCAD that can then export STL files that are read by a Slicer program. The Slicer literally slices the 3D model into layers and then prepares G-Code that can be read by a firmware. Other 3D printing techniques include Stereolithography (SLA), Direct Light Processing (DLP), Selective Laser Sintering (SLS), Material Jetting (MJ), Drop on Demand (DOD), Binder Jetting (BJ), and Powder Bed Fusion.
+3D printing, most typically, uses a process known as Fused Deposition Modeling (FDM), sometimes also known as Fused Filament Fabrication (FFF). FDM printers use a thermoplastic filament that is heated to its melting point and then extruded, layer by layer, to create a three dimensional object. The 3D object is designed in a CAD program such as OpenSCAD that can then export STL files that are read by a Slicer program. The Slicer literally slices the 3D model into layers and then prepares G-Code that can be read by a firmware. Other 3D printing techniques include Stereolithography (SLA), Direct Light Processing (DLP), Selective Laser Sintering (SLS), Material Jetting (MJ), Drop on Demand (DOD), Binder Jetting (BJ), and Powder Bed Fusion.
 
 If the printhead (the extruder) in a 3D printer is replaced with a mechanism that pushes out a biological substrate, we get a 3D bioprinter that can be used to print human tissue and even entire organs.
 
 ## Disruptive Power
 
-The obvious disruptive potential of 3D printing is in rapid prototyping, obviating the need for a time-consuming design, produce, test, redesign, approve process while doing so with streamlined or almost negligible physical infrastructure. Sufficiently sophisticated and fast 3D printing technology can also disrupt traditional delivery systems whereby purchased objects don’t have to be shipped from point A to point B. Instead, the design can be sent online and printed at the destination. But the really powerful disruption lies in the area of human tissue printing, for example, using a 3D printer to print organs for transplanting in patients, or printing human skin tissue for burn victims.
+The obvious disruptive potential of 3D printing is in rapid prototyping, obviating the need for a time-consuming design – produce – test – redesign – approve cycle while doing so with streamlined or almost negligible physical infrastructure. Sufficiently sophisticated and fast 3D printing technology can also disrupt traditional delivery systems whereby purchased objects don’t have to be shipped from point A to point B. Instead, the design can be sent online and printed at the destination. But the really powerful disruption lies in the area of human tissue printing, for example, using a 3D printer to print organs for transplanting in patients, or printing human skin tissue for burn victims. This can short-circuit long waits for human organs or make rehabilitation possible in remote areas with a scarcity of human tissue.
 
 ## Potential for Development
 
@@ -36,7 +36,7 @@ From printing of replacement machine parts in manufacturing and agriculture to h
 
 ## Caveats
 
-The clear danger of 3D printing is its use to print prohitibited or restricted objects such as guns or other weapons. Use of 3D printing to create parts use in manufacture also opens up the potential for bad design and fabrication causing failure of the larger systems, something that doesn’t happen in the more traditional 2D printing. There have been reports of 3D printing of experimental body parts and implants especially from the biohacking movement. Such experimentation, while a hallmark of a vibrant and creative culture, can also be dangerous for the practitioners. As in everything, the viable solution is going to be a mix of regulation and education.
+The clear danger of 3D printing is in its use to print prohibited or restricted objects such as guns or other weapons. Use of 3D printing to create parts use in manufacture also opens up the potential for bad design and fabrication causing failure of the larger systems, something that doesn’t happen in the more traditional 2D printing. There have been reports of 3D printing of experimental body parts and implants especially from the biohacking movement. Such experimentation, while a hallmark of a vibrant and creative culture, can also be dangerous for the practitioners. As with everything, a viable solution going forward in this field is going involve a mix of regulation and education.
 
 ## Resources
 

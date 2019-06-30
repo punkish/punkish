@@ -17,12 +17,12 @@ css        : ../../css/disruptive
 
 <figure>
     <img src="blockchain.png">
-    <figcaption>Blockchain illustration released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+    <figcaption>Blockchain illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 
 ## Introduction
 
-A blockchain is distributed digital ledger technology (DLT) with transactions (or blocks thereof) linked by timestamped, cryptographic hashes. A blockchain that may be private (permissioned) or public (permissionless), with a mechanism, typically “proof of work,” for coming to a consensus about the valid state of the chain determined by a majority of the participants all of whom have equal access to all of the chain.
+A blockchain is a distributed digital ledger technology (DLT) with transactions (or blocks thereof) linked by timestamped, cryptographic hashes. A blockchain may be private (permissioned) or public (permissionless), with a mechanism, typically “proof of work,” for coming to a consensus about the valid state of the chain determined by a majority of the participants all of whom have equal access to all of the chain.
 
 ### Permissioned vs. Permission-less
 
@@ -42,19 +42,19 @@ A blockchain is made possible by the dual application of cryptography and some k
 
 ## Disruptive Power
 
-The most obvious and well-known disruption attributed to blockchain is, of course, the financial system, so much so that blockchain is almost synonymous with Bitcoin, the cryptocurrency that utilizes blockchain for recording its transactions. But blockchain can be used in any system that requires keeping a ledger of transactions of any kind – interaction with health providers, service delivery of benefits, and civic services. Having an open but tamperproof ledge of activities can be useful for ensuring transparency in government and social services.
+The most obvious and well-known disruption attributed to blockchain is, of course, the financial system, so much so that blockchain is almost synonymous with Bitcoin, the cryptocurrency that utilizes blockchain for recording its transactions. But blockchain can be quite disruptive to any established services that are generally opaque to common citizens and, in places, rife with corruption.
 
 ## Potential for Development
 
-Blockchain can be used in any system that requires keeping a ledger of transactions of any kind – interaction with health providers, service delivery of benefits, and civic services. Having an open but tamperproof ledge of activities can be useful for ensuring transparency in government and social services. As such, blockchain can be quite disruptive to established services that are generally opaque to common citizens and, in places, rife with corruption.
+Having an open but tamperproof ledger of activities can be useful for ensuring transparency in government and social services. As such, blockchain can be used in any system that requires keeping a ledger of transactions of any kind – interaction with health providers, service delivery of benefits, and civic services.
 
 ## Caveats
 
-Like any new technology, or perhaps even more so, blockchain is hyped beyond its potential. Its use in cryptocurrency has potential for massive financial frauds, and many countries around the world are still figuring out how to allow, if at all, such currencies to coexist with the established financial system. Also, since the transparency of the blockchain is important in that it allows everyone to look at it, it may not be the desired platform where privacy is important. It’s impossible to correct errors without reversing a transaction, and it is the irreversibility that makes a blockchain special in the first place. Finally, whether or not smart contracts are legally enforceable remains to be seen.
+Like any new technology, or perhaps even more so, blockchain is hyped beyond its potential. Its use in cryptocurrency has potential for massive financial frauds, and many countries around the world are still figuring out how to allow, if at all, such currencies to coexist with the established financial system. Also, since transparency of blockchain is important in that it allows everyone to look at it, it may not be the desired platform where privacy is important. It’s impossible to correct errors without reversing a transaction, and it is the irreversibility that makes a blockchain special in the first place. Finally, smart contracts that seem to hold so much potential remain to be tested in the real world because it is not clear whether or not they are legally enforceable.
 
 ### Definitions set expectations that may not be met
 
-The bulk of the discourse around blockchain technology states simply that “immutability is a characteristic of blockchain technology.” While it is possible that any variety of the technology could yield the emergent property of immutability, this seems highly unlikely, and is definitely not yet firmly established. For example, legislation is being proposed based on definitions, but stating that “the data on the ledger is . . . immutable” in a statute does not mean that the data is immutable (i.e., unchangeable) in reality.
+The bulk of the discourse around blockchain technology states simply that “immutability is a characteristic of blockchain technology.” While it is possible that any variety of the technology could yield the emergent property of immutability, this seems highly unlikely, and is definitely not yet firmly established. For example, legislation is being proposed based on definitions, but stating that “the data on the ledger is… immutable” in a statute does not mean that the data is immutable (i.e., unchangeable) in reality.
 
 ### Clash With Existing Legislation and Values
 
@@ -78,7 +78,7 @@ How do we implement the right to be forgotten in a technology that is designed t
 </details>
 
 <details class="text">
-    <summary>Stuart Haber and Scott Stornetta. 1991. <a href="" target="_blank">How to Time-Stamp a Digital Document.</a> Journal of Cryptology, Vol. 3, No. 2, pp. 99-111</summary>
+    <summary>Stuart Haber and Scott Stornetta. 1991. <a href="https://www.anf.es/pdf/Haber_Stornetta.pdf" target="_blank">How to Time-Stamp a Digital Document.</a> Journal of Cryptology, Vol. 3, No. 2, pp. 99-111</summary>
     <p>The prospect of a world in which all text, audio, picture, and video documents are in digital form on easily modifiable media raises the issue of how to certify when a document was created or last changed. The problem is to time-stamp the data, not the medium. We propose computationally practical procedures for digital time-stamping of such documents so that it is infeasible for a user either to back-date or to forward-date his document, even with the collusion of a time-stamping service. Our procedures maintain complete privacy of the documents themselves, and require no record-keeping by the time-stamping service.</p>
 </details>
 
@@ -109,7 +109,7 @@ How do we implement the right to be forgotten in a technology that is designed t
 
 <details class="text">
     <summary>Primavera de Filippi. <a href="https://wiki.p2pfoundation.net/Legal_Framework_For_Crypto-Ledger_Transactions" target="_blank">Legal Framework For Crypto-Ledger Transactions.</a> P2P Foundation.</summary>
-    <p>A hybrid model that combines legal contracts with software code via smart contract templates might be of help.</p>
+    <p>This article describes a hybrid model that combines legal contracts with software code via smart contract templates.</p>
 </details>
 
 ----

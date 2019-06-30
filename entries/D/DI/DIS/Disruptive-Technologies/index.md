@@ -14,18 +14,45 @@ stars      :
 css        : disruptive
 ---
 
-1859. “Extinction of old forms is the almost inevitable consequence of the production of new forms” — Charles Darwin, Origin of Species.
-1887. “If a temple is to be erected a temple must be destroyed: that is the law” — Friedrich Nietzsche, On the Genealogy of Morality.
-1913. “Again, however, from destruction a new spirit of creation arises” — Werner Sombart, Krieg und Kapitalismus.
-1942. “[… Capitalism requires] the perennial gale of Creative Destruction.” — Joseph Schumpeter, Joseph A. Capitalism, Socialism and Democracy.
-1997. “Disruptive technologies typically enable new markets to emerge.” — Clayton M. Christensen, The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail.
-2019. The Disruptive Technologies for Development Challenge… addresses the need… to adopt disruptive technologies to enhance the impact of operations and policy advice in member countries. The World Bank.
+<main>
+  <ul class="timeline">
+    <li class="one">
+        <div class="year">1859</div>
+        <div class="quote">Extinction of old forms is the almost inevitable consequence of the production of new forms</div>
+        <div class="who">Charles Darwin, Origin of Species</div>
+    </li>
+    <li class="one">
+        <div class="year">1887</div>
+        <div class="quote">If a temple is to be erected a temple must be destroyed: that is the law</div>
+        <div class="who">Friedrich Nietzsche, On the Genealogy of Morality</div>
+    </li>
+    <li class="one">
+        <div class="year">1913</div>
+        <div class="quote">Again, however, from destruction a new spirit of creation arises</div>
+        <div class="who">Werner Sombart, Krieg und Kapitalismus</div>
+    </li>
+    <li class="one">
+        <div class="year">1942</div>
+        <div class="quote">[… Capitalism requires] the perennial gale of Creative Destruction</div>
+        <div class="who">Joseph A. Schumpeter, Socialism and Democracy</div>
+    </li>
+    <li class="one">
+        <div class="year">1997</div>
+        <div class="quote">Disruptive technologies typically enable new markets to emerge</div>
+        <div class="who">Clayton M. Christensen, The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail</div>
+    </li>
+    <li class="now">
+        <div class="year">2019</div>
+        <div class="quote">The Disruptive Technologies for Development Challenge… addresses the need… to adopt disruptive technologies to enhance the impact of operations and policy advice in member countries</div>
+        <div class="who">The World Bank</div>
+    </li>
+    <li class="last"></li>
+  </ul>
+</main>
 
 ## Background
 
-The World Bank Group has placed a growing emphasis on better understanding the implications of a new world of disruptive technologies that could change development paradigms in fundamental ways. As part of this effort, the Sustainable Development Practice Group has requested the Transport and Digital Development Global Practice to better understand these technologies and their implications, both positive and negative, on sustainable development. This includes an improved understanding of the scale and implications of these disruptive changes, as well as how to help clients get better access to disruptive technologies and institutional arrangements that can help them meet their evolving development challenges, as well as to help clients better buffer themselves against the implications of these changes. 
-
-The technologies and trends addressed in this report include:
+For as long as there has been technology and business, the old order has been replaced by the new. Arguably, this is intrinsic to life itself as any ecologist will point to fire as the agent of change that burns down the old growth so new life can emerge. It is not that the World Bank Group has suddenly become woke to this phenomenon but instead, it realizes the need to better understand the implications of disruptive technologies that could change development paradigms in fundamental ways. The Sustainable Development Practice Group has requested the Transport and Digital Development Global Practice to better understand disruptive technologies and their implications, both positive and negative, on sustainable development. This includes an improved understanding of the scale and implications of these disruptive changes, as well as how to help clients get better access to these technologies and institutional arrangements that can help them meet their evolving development challenges, as well as to help clients better buffer themselves against the implications of these changes. The technologies and trends addressed in this report include:
 
 - [Artificial Intelligence](Disruptive-Technologies/Artificial-Intelligence)
 - [Sensors](Disruptive-Technologies/Sensors)
@@ -37,49 +64,48 @@ Each section, including this introduction, has five parts: Introduction; Disrupt
 
 ## Disruptive Power
 
-All of the technologies mentioned above have the power to disrupt existing systems. Some of them (AI and the forerunners of open science and open data) have been around for a while but have recently gained steam with easy and cheap availability of network bandwidth and computing power. Others are more recent but have rapidly developed to the point of already being implemented in production systems underpinning medium to large scale investments and activities. 
+All of the technologies mentioned above have the power to disrupt existing systems. Some of them such as artificial intelligence (AI) and the forerunners of open science and open data have been around for a while but have recently gained steam with easy and cheap availability of network bandwidth and computing power. Others are more recent but have rapidly developed to the point of already being implemented in production systems underpinning medium to large scale investments and activities. 
 
-AI is disintermediating human analysis as a first run on large scale data inputs so experts can devote their precious time to more demanding and immediate problems. Sensors are being used for monitoring in remote and uninhabitable but important environments as well as in densely populated areas to provide realtime data on ambient conditions. 3D printing is being utilized to circumvent slow and cumbersome prototyping with immediate development and feedback as well for creation of valuable and scarce material such as human skin and tissues needed for burn and trauma victims. Blockchain is being used in financial systems where smart contracts are automating cumbersome legal transactions between contracting parties. And open science and data are upending traditional publishing and publicising processes.
+AI is disintermediating human analysis as a first run on large scale data inputs so experts can devote their precious time to more demanding problems. Sensors are being used for monitoring in remote and uninhabitable but important environments as well as in densely populated areas to provide realtime data on ambient conditions. 3D printing is being utilized to circumvent slow and cumbersome prototyping with immediate development and feedback as well for creation of valuable and scarce materials such as human skin and tissues needed for burn and trauma victims. Blockchain is being used in financial systems where smart contracts are automating cumbersome legal transactions between contracting parties. And open science and data are upending traditional publishing and publicizing processes.
 
 To be disruptive, technologies need not be radical or novel from an engineering or technical point of view. Many become disruptive merely because they cross a tipping point in price or performance or dramatically increase accessibility and/or capabilities relative to the incumbent technologies. Sometimes, ubiquity also characterizes a disruptive technology.
 
 ## Potential for Development
 
-From using AI technologies for early detecton of disease outbreaks to sensors for environmental quality monitoring to using 3D printers for both rapidy industrial prototyping as well as for human tissue generation for trauma victims and those needing assistance to implementing blockchain-based civic service delivery to energizing the scientific and entrepreneurial landscape with easily accessible data, software and literature – the applications of disruptive technologies to the various processes of government, civic society, businesses, and creative and personal lives are limited only by imagination, implementation and resources.
+From using AI technologies for early detection of disease outbreaks to sensors for environmental quality monitoring to using 3D printers for both rapidly industrial prototyping as well as for human tissue generation for trauma victims and those needing assistance to implementing blockchain-based civic service delivery to energizing the scientific and entrepreneurial landscape with easily accessible data, software and literature – the applications of disruptive technologies to the various processes of government, civic society, businesses, and creative and personal lives are limited only by imagination, implementation and resources.
 
 ## Caveats
 
-The one thing all these technologies have in common is that they depend on computers, and as such, are susceptible to all the dangers that are applicable to information technologies in general. The information these technologies generate or use  can be hacked by malicious parties, manipulated, and leveraged or utilized for wrong purposes. We see evidence of this in the constant reports of customer databases at businesses being breached, ransomware demands, blockchain hacks, use of 3D printers for making restricted items (for example, guns), intrusive sensors and the spread of fake news. There is a tension between the need to restrict or eliminate such incidents on the one hand and the freedom to innovate and create technology that can do a lot of good things but also enable such undesirable outcomes. The only feasible ways to balance this tension in free societies is via policy instruments and education. A few of the areas requring specific attention are described below.
+The one thing all these technologies have in common is that they depend on computers, and as such, are susceptible to all the dangers that are applicable to information technologies in general. The information these technologies generate or use can be hacked by malicious parties, manipulated, and leveraged or utilized for wrong purposes. We see evidence of this in the constant reports of customer databases at businesses being breached, ransomware demands, blockchain hacks, use of 3D printers for making restricted items such as guns, intrusive sensors and the spread of fake news. There is a tension between the need to restrict or eliminate such incidents on the one hand and the freedom to innovate and create technology that can do a lot of good things but also enable such undesirable outcomes. The only feasible ways to balance this tension in free societies is via policy instruments and education. A few of the areas requiring specific attention are described below.
 
 ### Information Lifecycle
 
-The citizen who is the source of data and the collector of that data, interface at the five points, namely, Ⓐ, Ⓑ, Ⓒ, Ⓓ and Ⓔ as shown in the information lifecycle diagram below 
+Information is the raw material for more information. And in that continuous cycle are the two main participants, the data collector and the one on whom the data are being collected.
 
 <figure>
     <img src="privacy-information-lifecycle.png">
-    <figcaption>Information Lifecycle</figcaption>
+    <figcaption>The citizen who is the source of data and the collector of that data, interface at the five points, namely, Ⓐ, Ⓑ, Ⓒ, Ⓓ and Ⓔ as shown in the information lifecycle diagram above. Original illustration by Puneet Kishor released under the CC0 Public Domain Dedication.</figcaption>
 </figure>
 
-**A**: Explore the potential of changing the conversation from the imperative of protecting privacy to the benefits of sharing. We can call this [Citizens Consent](Citizens-Consent).
+To make an information lifecycle that is responsive to the fast changing landscape of disruptive technologies, it has to serve the users while protecting those who are the subjects. The five interfaces that need particular attention are described below.
 
-**B**: Demystify the terms of data collection, sharing, access, and reuse by simplifying terms of services (TOS), privacy and sharing policies.
-
-**C**: Engage the citizens by involving them in the management and interpretation of the data sourced from them.
-
-**D**: Change the way data are collected and packaged for redistribution and sharing.
-
-**E**: Demystify the Data Use Agreements (DUA).
+- **A**: Explore the potential of changing the conversation from the imperative of protecting privacy to the benefits of sharing.
+- **B**: Demystify the terms of data collection, sharing, access, and reuse by simplifying terms of services (TOS), privacy and sharing policies.
+- **C**: Engage citizens by involving them in the management and interpretation of the data sourced from them.
+- **D**: Change the way data are collected and packaged for redistribution and sharing.
+- **E**: Demystify the Data Use Agreements (DUA).
 
 ### Citizens Consent
 
-An omnipresent problem is that citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used. It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and perhaps even intentionally obfuscating. Citizens Consent can be thought of as analagous to informed consent. Consent is not good unless the user understands the facts, implications, and consequences of giving it. A well-understood and given consent is the right of the citizen and the responsibility of the data collector. There have been many prior attempts at standardizing privacy policies but few have gained traction. A working solution would have to be simple, attractive, and visually display of the data collecting organization’s data sharing policy. It would be targeted at the average user, and focused on data sharing, be unformative instead of over-whelming, and be backed by a legally-binding policy.
+An omnipresent problem is that citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used. It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and sometimes even intentionally obfuscating. Citizens Consent can be thought of as analogous to informed consent. Consent is not good unless the user understands the facts, implications, and consequences of giving it. A well-understood and given consent is the right of the citizen and the responsibility of the data collector. There have been many prior attempts at standardizing privacy policies but few have gained traction. A working solution would have to be simple, attractive, and visually display the collecting organization’s data use and sharing policy. It would be targeted at the average user, and focused on data sharing, be informative instead of over-whelming, and be backed by a legally-binding policy.
 
 ### Artificial Intelligence
-Ironically, perhaps the best tool to fight AI-powered malintentioned activities is AI itself. AI sits at the top of the tech food-chain as combating tech malfeasance at scale is only possible via programmatic responses.
+
+Ironically, perhaps the best tool to fight AI-powered mal-intentioned activities is AI itself. AI sits at the top of the tech food-chain as combating tech malfeasance at scale is only possible via programmatic responses overseen by expert human curation.
 
 ### Policy and Regulation
 
-Traditionally law has trailed the rapid changes in technology and technology-drive cultural changes. In the United States, HIPAA and Common Rule, designed to protect human subjects can also become a deterrent to innovation by restricting the flow of information to legiitmate users of it. In Europe, the General Data Protection Regulation (GDPR) proposes a layered set of standards to protect individual privacy. All these regulations have to belance the requirement for security and privacy with the need for sharing. Similarly, policy and regulation also have to permit healthy innovation in fields such as stem cells, CRISPR genetic manipulation, and use of 3D printers for human tissue while also dissuading dangerous or ethically questionable experiments.
+Traditionally law has trailed the rapid changes in technology and technology-driven cultural changes. In the United States, HIPAA and Common Rule, designed to protect human subjects can also become a deterrent to innovation by restricting the flow of information to legitimate users of it. In Europe, the General Data Protection Regulation (GDPR) proposes a layered set of standards to protect individual privacy. All these regulations have to balance the requirement for security and privacy with the legitimate need for sharing. Similarly, policy and regulation also have to permit healthy innovation in fields such as stem cells, CRISPR genetic manipulation, and use of 3D printers for human tissue while also dissuading dangerous or ethically questionable experiments.
 
 ## Resources
 

@@ -23,14 +23,7 @@ css        : ../../css/disruptive
 
 ## Introduction
 
-Sensors is a generic term for devices, both atomic and composite, that are capable of sensing various external stimuli and act upon those readings from simply recording them to even reacting to them when a pre-determined threshold is crossed. Typically sensors convert external stimuli to electrical current and then either transmit the data or store it locally. Any device that senses, captures, and reports information can be called a sensor. 
-
-<figure>
-    <img src="sensors.png">
-    <figcaption>A Taxonomy of Sensors</figcaption>
-</figure>
-
-Sensors can range from nano– to micro–size devices that can be implanted on or even inside the subject (human or non-human) all the way to regional scale sensors such as those installed in satellites.
+Sensors is a generic term for devices, both atomic and composite, that are capable of sensing various external stimuli and acting upon those readings from simply recording them to even reacting to them when a pre-determined threshold is crossed. Typically sensors convert external stimuli to electrical current and then either transmit the data or store it locally. Any device that senses, captures, and reports information can be called a sensor. Sensors can range from nano– to micro–size devices that can be implanted on or even inside the subject (human or non-human) all the way to regional scale sensors such as those installed in satellites.
 
 ## Disruptive Power
 
@@ -38,11 +31,16 @@ By being constantly on and providing a continuous stream of real– or near real
 
 ## Potential for Development
 
-Sensor-based delivery systems for plant nutrition can make agriculture more productive and responsive to local conditions. Local-scale sensors form the basis for smart-cities—canopies of PV leaves that generate enough power for local lighting, traffic lights that adjust to traffic volumes reducing idling, pollution monitors that indicate problem spots, drains that phone the public work department when they get clogged, cars that sense potholes and phone the roads dept. with location and depth of the hole, parking meters and spaces that signal availability to a parking map app, windows that become darker like sunglasses when the sun is shining really bright, conductive paint that can embed circuits in the wall, even crowdsourced mapping of stagnant pools of water that are malaria breeding grounds, and so on.
+Sensor-based delivery systems for plant nutrition can make agriculture more productive and responsive to local conditions. Local-scale sensors form the basis for smart-cities—canopies of PV leaves that generate enough power for local lighting, traffic lights that adjust to traffic volumes reducing idling, pollution monitors that indicate problem spots, drains that phone the public work department when they get clogged, cars that sense potholes and phone the roads dept. with location and depth of the hole, parking meters and spaces that signal availability to a parking map app, windows that become darker like sunglasses when the sun is shining really bright, and conductive paint that can embed circuits in the wall.
 
 ## Caveats
 
-The regional-scale sensors such as airborne or satellites will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool’s errand unless we change the conversation around privacy and sharing. A sweet spot for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown below. "Local" sensors, on the other hand, have a better chance to not just scale, but also change the way we collect data about ourselves and our local environments with high temporal and spatial resolutions. By not collecting individual info, we sidestep the issues of privacy and security. These "local" sensors occupy a sweet spot providing useful local detail without getting tied up in privacy issues. Additionally, we can power them however we want, and we already know their position because they are static, so there is no need for battery-consumptive GPS.
+The regional-scale sensors such as airborne or satellites will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool’s errand unless we change the conversation around privacy and sharing. Local sensors have a better chance to not just scale, but also change the way we collect data about ourselves and our local environments with high temporal and spatial resolutions. By not collecting individual info, we sidestep the issues of privacy and security. These local sensors occupy a sweet spot providing useful local detail without getting tied up in privacy issues. Additionally, we can power them however we want, and we already know their position because they are static, so there is no need for battery-consumptive GPS.
+
+<figure>
+    <img src="sensors.png">
+    <figcaption> sweet spot for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown above. Original illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+</figure>
 
 ## Resources
 
@@ -53,7 +51,7 @@ The regional-scale sensors such as airborne or satellites will continue to be im
 
 <details class="video">
     <summary><a href="https://www.youtube.com/watch?v=82Cw7gi6hF0" target="_blank">Real-time Air Quality Monitoring Network Using Low-Cost Devices</a></summary>
-    <p>India has the dubious distinction of having 10 out of the 20 most polluted cities in the world. The number of government air quality monitoring stations in these cities, baring New Delhi (which has 12), are between 1 or 2 stations for a population of 1 to 2 million people. This is woefully inadequate. A new wave of Low-cost Particulate Matter sensors (PM2.5 and PM10 being the most harmful of the air pollutants) enabled with IoT technologies is empowering citizens and communities to participate in their own governance and policy making. IndiaSpend has built India's first Independent, Real-time Air Quality Monitoring Network using indigenously built Low-cost IoT devices. The project was launched in December 2015 and is currently active in 6 cities of India (with 10 more cities coming online in the near future). The talk will cover lessons learned from the IoT architecture perspective and the current Fast Time-Series based APIs developed which has enabled a significant enhancement in the accuracy & scalability of the air quality data analysis.</p>
+    <p>India has the dubious distinction of having 10 out of the 20 most polluted cities in the world. The number of government air quality monitoring stations in these cities, barring New Delhi (which has 12), are between 1 or 2 stations for a population of 1 to 2 million people. This is woefully inadequate. A new wave of low-cost particulate matter sensors (PM2.5 and PM10 being the most harmful of the air pollutants) enabled with IoT technologies is empowering citizens and communities to participate in their own governance and policy making. IndiaSpend has built India's first independent, real-time air quality monitoring network using indigenously built low-cost IoT devices. The project was launched in December 2015 and is currently active in 6 cities of India (with 10 more cities coming online in the near future). The talk will cover lessons learned from the IoT architecture perspective and the current Fast Time-Series based APIs developed which has enabled a significant enhancement in the accuracy and scalability of the air quality data analysis.</p>
 </details>
 
 <details class="video">

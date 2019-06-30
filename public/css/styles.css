@@ -122,13 +122,7 @@ h3 {
 	visibility: hidden;
 	display: none;
 }
-blockquote {
-	border-left: 2px solid grey;
-	margin-left: 0px;
-}
-blockquote * {
-	padding-left: 20px;
-}
+
 .hilite {
 	background-color: #ffcc00;
 	padding: 10px;
@@ -282,6 +276,13 @@ https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ra
 nice blockquotes
 https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 */
+blockquote {
+	border-left: 2px solid grey;
+	margin-left: 0px;
+}
+blockquote * {
+	padding-left: 20px;
+}
 .quote {
 	background: #f9f9f9;
   border-left: 10px solid #ccc;
