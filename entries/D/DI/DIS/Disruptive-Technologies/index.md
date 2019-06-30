@@ -16,37 +16,37 @@ css        : disruptive
 
 <main>
   <ul class="timeline">
-    <li class="one">
+    <li class="others one-four">
         <div class="year">1859</div>
         <div class="quote">Extinction of old forms is the almost inevitable consequence of the production of new forms</div>
         <div class="who">Charles Darwin, Origin of Species</div>
     </li>
-    <li class="one">
+    <li class="others one-three">
         <div class="year">1887</div>
         <div class="quote">If a temple is to be erected a temple must be destroyed: that is the law</div>
         <div class="who">Friedrich Nietzsche, On the Genealogy of Morality</div>
     </li>
-    <li class="one">
+    <li class="others one-four">
         <div class="year">1913</div>
         <div class="quote">Again, however, from destruction a new spirit of creation arises</div>
         <div class="who">Werner Sombart, Krieg und Kapitalismus</div>
     </li>
-    <li class="one">
+    <li class="others two-seven">
         <div class="year">1942</div>
         <div class="quote">[… Capitalism requires] the perennial gale of Creative Destruction</div>
         <div class="who">Joseph A. Schumpeter, Socialism and Democracy</div>
     </li>
-    <li class="one">
+    <li class="others one-one">
         <div class="year">1997</div>
         <div class="quote">Disruptive technologies typically enable new markets to emerge</div>
         <div class="who">Clayton M. Christensen, The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail</div>
     </li>
-    <li class="now">
+    <li class="now zero">
         <div class="year">2019</div>
         <div class="quote">The Disruptive Technologies for Development Challenge… addresses the need… to adopt disruptive technologies to enhance the impact of operations and policy advice in member countries</div>
         <div class="who">The World Bank</div>
     </li>
-    <li class="last"></li>
+    <li class="none"></li>
   </ul>
 </main>
 
