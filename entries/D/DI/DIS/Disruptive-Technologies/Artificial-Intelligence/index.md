@@ -55,17 +55,20 @@ There is a real concern about the generation of fake news, both by human and alg
 ## Resources
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=nKW8Ndu7Mjw" target="_blank">The 7 Steps of Machine Learning (AI Adventures)</a></summary> 
+    <summary>The 7 Steps of Machine Learning (AI Adventures)</summary> 
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/nKW8Ndu7Mjw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>How can we tell if a drink is beer or wine? Machine learning, of course! In this episode of Cloud AI Adventures, Yufeng walks through the 7 steps involved in applied machine learning.</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=h0e2HAPTGF4" target="_blank">Introduction to Machine Learning</a></summary>
+    <summary>Introduction to Machine Learning</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/h0e2HAPTGF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p><a href="http://ocw.mit.edu/6-0002F16" title="View the complete course" target="_blank">MIT 6.0002 Introduction to Computational Thinking and Data Science, Fall 2016.</a> Instructor: Eric Grimson. In this lecture, Prof. Grimson introduces machine learning and shows examples of supervised learning using feature vectors</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=XCO8ET66xE4" target="_blank">Moral Machine – Human Perspectives on Machine Ethics</a></summary>
+    <summary>Moral Machine – Human Perspectives on Machine Ethics</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/XCO8ET66xE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p><a href="http://moralmachine.mit.edu/" target="_blank">The Moral Machine</a> is a platform for gathering a human perspective on moral decisions made by machine intelligence, such as self-driving cars. We show you moral dilemmas, where a driverless car must choose the lesser of two evils, such as killing two passengers or five pedestrians. As an outside observer, you judge which outcome you think is more acceptable. You can then see how your responses compare with those of other people.</p>
 </details>
 

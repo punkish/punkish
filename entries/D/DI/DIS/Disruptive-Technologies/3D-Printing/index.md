@@ -41,12 +41,14 @@ The clear danger of 3D printing is in its use to print prohibited or restricted 
 ## Resources
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=GqJYMgAcc0Q" target="_blank">Bioengineers clear major hurdle on path to 3D printing replacement organs.</a></summary>
+    <summary>Bioengineers clear major hurdle on path to 3D printing replacement organs</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/GqJYMgAcc0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>Bioengineers have cleared a major hurdle on the path to 3D printing replacement organs and tissues with a new open-source technique for bioprinting tissues and templates with exquisitely entangled vascular networks similar to the body's natural passageways for blood, air, lymph and other vital fluids.</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=SDV0thJFnpQ" target="_blank">Mimicking the growth of human organs through 3D bio-printing</a></summary>
+    <summary>Mimicking the growth of human organs through 3D bio-printing</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/SDV0thJFnpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>If you need a heart or liver or lung transplant, imagine if you could simply 3D-print the necessary new organ instead of having to wait for a donor. That may still be decades away, but Adam Feinberg – an Associate Professor at Carnegie Mellon – explains the steps his lab is taking to bring this vision from science fiction towards clinical reality.</p>
 </details>
 

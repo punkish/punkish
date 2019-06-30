@@ -47,27 +47,32 @@ The most important caveat to the use of open science and open data is to pay att
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=3YcZ3Zqk0a8" target="_blank">Tim Berners-Lee: The year open data went worldwide</a></summary>
+    <summary>Tim Berners-Lee: The year open data went worldwide</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/3YcZ3Zqk0a8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>At TED2009, Tim Berners-Lee called for "raw data now" — for governments, scientists and institutions to make their data openly available on the web. At TED University in 2010, he shows a few of the interesting results when the data gets linked up.</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=L5rVH1KGBCY" target="_blank">Open Access Explained!</a></summary>
+    <summary>Open Access Explained!</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/L5rVH1KGBCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>What is open access? An explanation of the world of open access publishing.</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=T3O7bkjrVb0" target="_blank">Making Malaysia Government Transparent & Accountable with Open Data</a></summary>
+    <summary>Making Malaysia Government Transparent & Accountable with Open Data</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/T3O7bkjrVb0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>Co-founder of Sinar Project: Khairil leads a team of dedicated developers at the non-profit and non-partisan Sinar Project, which uses open source technology and ideas to track and measure corruption. Sinar Project is a collection of related open source projects that comprises open data providers and applications that make information accessible to Malaysian citizens.</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=bwX5MAZ6zKI" target="_blank">The Potential of Open Data</a></summary>
+    <summary>The Potential of Open Data</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/bwX5MAZ6zKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>Open data has the potential to change the way we see our ourselves, our world and our future. Open Data NZ is the New Zealand government's open data programme, driving the supply and demand of open government data. Open Data NZ is made up of Stats NZ and the Department of Internal Affairs. </p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=XNrX4RnJzJc" target="_blank">Open Data’s Disruptive Potential</a></summary>
+    <summary>Open Data’s Disruptive Potential</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/XNrX4RnJzJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>Making data easily accessible can do far more than support transparency; it has the power to transform government. Open innovation expert David Eaves shares his vision for the evolution open data programs.</p>
 </details>
 

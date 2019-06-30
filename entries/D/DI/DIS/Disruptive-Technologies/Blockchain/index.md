@@ -63,18 +63,20 @@ How do we implement the right to be forgotten in a technology that is designed t
 ## Resources
 
 <details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=SSo_EIwHSd4" target="_blank">How does a blockchain work - Simply Explained</a></summary> 
+    <summary>How does a blockchain work - Simply Explained</summary> 
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/SSo_EIwHSd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <p>What is a blockchain and how do they work? Explained in simple and plain English!</p>
 </details>
 
 <details class="video" open>
-    <summary><a href="https://punkish.org/Demystifying-Blockchains" target="_blank">Demystifying Blockchains</a></summary>
-    <p>A blockchain primer and demo.</p>
+    <summary>How Blockchain can transform India</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/8fbhI1qVj0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    <p>Blockchain is currently at the peak of the Hype Cycle. It is a simple concept, yet difficult to understand and comprehend. It is also in the same place as the Internet was in 1995 – very early, with its major applications yet to be built. Blockchain is a much a philosophy as a technology, and has the potential to change the world as the Internet did. It promises to radically transform identity, agriculture, money, energy, governance, and pretty much everything else, especially in the emerging countries. This TEDx talk demystifies blockchain as never before, and explains how it can change the world around you.</p>
 </details>
 
-<details class="video" open>
-    <summary><a href="https://www.youtube.com/watch?v=8fbhI1qVj0c" target="_blank">How Blockchain can transform India</a></summary>
-    <p>Blockchain is currently at the peak of the Hype Cycle. It is a simple concept, yet difficult to understand and comprehend. It is also in the same place as the Internet was in 1995 – very early, with its major applications yet to be built. Blockchain is a much a philosophy as a technology, and has the potential to change the world as the Internet did. It promises to radically transform identity, agriculture, money, energy, governance, and pretty much everything else, especially in the emerging countries. This TEDx talk demystifies blockchain as never before, and explains how it can change the world around you.</p>
+<details class="text" open>
+    <summary><a href="https://punkish.org/Demystifying-Blockchains" target="_blank">Demystifying Blockchains</a></summary>
+    <p>A blockchain primer and demo.</p>
 </details>
 
 <details class="text" open>

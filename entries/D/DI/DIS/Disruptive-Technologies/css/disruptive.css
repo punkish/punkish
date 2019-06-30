@@ -171,3 +171,21 @@ line-height: 0.1em;
 margin-right: 0;
 vertical-align: -0.4em;
 } */
+
+/* https://stackoverflow.com/questions/15844500/shrink-a-youtube-video-to-responsive-width#15844571 */
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
