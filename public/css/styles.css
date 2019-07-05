@@ -17,9 +17,12 @@ em {
 	font-family: serif;
 }
 blockquote i, 
+blockquote em {
+	font-family: serif;
+}
+blockquote i, 
 blockquote em,
 blockquote a {
-	font-family: serif;
 	padding-left: 0 !important;
 }
 a {
