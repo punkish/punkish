@@ -1,4 +1,4 @@
-const entryFiles = {
+module.exports = {
     method: 'GET',
 
     path: '/entry-files/{param*}',
@@ -16,6 +16,3 @@ const entryFiles = {
         }
     }
 };
-
-
-module.exports = entryFiles;

@@ -160,9 +160,10 @@ header div form {
 	height: 0px;
 }
 input[name=q] {
-	width: 220px;
 	border: none;
+	min-width: 400px;
 }
+
 header nav {
 	float: left;
 }

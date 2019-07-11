@@ -6,7 +6,7 @@
 //     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 // };
 
-const entries = {
+module.exports = {
     method: 'GET',
 
     path: '/tags',
@@ -19,17 +19,9 @@ const entries = {
     handler: function (request, h) {
 
         return h.view(
-
-            // content template
-            'index-of-tags', 
-
-            // data
-            entryData,
-
-            // layout
-            { layout: entryData.layout || 'combo' }
+            'index-of-tags',                        // content template
+            entryData,                              // data
+            { layout: entryData.layout || 'combo' } // layout
         ); 
     }
 };
-
-module.exports = entries;

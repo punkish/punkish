@@ -16,56 +16,35 @@ To sync images and other binary files, run `rsync` from within 'punkish'
 
 */
 
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 
 // blipp is a simple hapi plugin to display the routes table at startup
 const Blipp = require('blipp');
 
 // Static file and directory handlers for hapi.js
-const Inert = require('inert');
+const Inert = require('@hapi/inert');
 
 // Templates rendering support for hapi.js
-const Vision = require('vision');
+const Vision = require('@hapi/vision');
 
 const Handlebars = require('handlebars');
 
 // hapi process monitoring
-const Good = require('good');
+const Good = require('@hapi/good');
 const goodOptions = {
-    ops: {
-        interval: 1000
-    },
+    ops: { interval: 1000 },
     reporters: {
-        myConsoleReporter: [{
-            module: 'good-squeeze',
-            name: 'Squeeze',
-            args: [{ log: '*', response: '*' }]
-        }, {
-            module: 'good-console'
-        }, 'stdout'],
-        myFileReporter: [{
-            module: 'good-squeeze',
-            name: 'Squeeze',
-            args: [{ ops: '*' }]
-        }, {
-            module: 'good-squeeze',
-            name: 'SafeJson'
-        }, {
-            module: 'good-file',
-            args: ['./test/fixtures/awesome_log']
-        }],
-        myHTTPReporter: [{
-            module: 'good-squeeze',
-            name: 'Squeeze',
-            args: [{ error: '*' }]
-        }, {
-            module: 'good-http',
-            args: ['http://prod.logs:3000', {
-                wreck: {
-                    headers: { 'x-api-key': 12345 }
-                }
-            }]
-        }]
+        myConsoleReporter: [
+            {
+                module: '@hapi/good-squeeze',
+                name: 'Squeeze',
+                args: [{ log: '*', response: '*' }]
+            }, 
+            {
+                module: 'good-console'
+            }, 
+            'stdout'
+        ]
     }
 };
 
@@ -75,7 +54,6 @@ const server = Hapi.server({
 });
 
 const utils = require('./utils.js');
-
 
 const init = async () => {
 
@@ -87,6 +65,7 @@ const init = async () => {
     ]);
 
     server.app.posts = utils.init();
+    //console.log(server.app.posts.byDate);
 
     server.views({
         engines: { html: Handlebars },
@@ -100,7 +79,6 @@ const init = async () => {
     });
     
     server.route([
-        require('./resources/default-entry.js'),
         require('./resources/public.js'),
         require('./resources/entry-files.js'),
         require('./resources/node-files.js'),
@@ -113,7 +91,6 @@ const init = async () => {
 };
 
 process.on('unhandledRejection', (err) => {
-
     console.log(err);
     process.exit(1);
 });

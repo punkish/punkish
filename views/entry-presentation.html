@@ -6,12 +6,12 @@
     <div class="content">{{{notes}}}</div>
 
     <div class="slideContainer">
-        <div class="intro-slide" onclick="window.location='{{url}}?presentation=true';">
+        <div class="intro-slide" onclick="window.location='{{name}}?presentation=true';">
             <h2>{{{title}}}</h2>
             <h3>{{{authors}}}</h3>
             <div class="where">a presentation given at {{{where}}}</div>
             <div class="when">{{{when}}}</div>
-            <a href="{{url}}?presentation=true">start slideshow</a>
+            <a href="{{name}}?presentation=true">start slideshow</a>
         </div>
     </div>
 
@@ -22,8 +22,5 @@
     </ul>
 
     
-    <ul class="bottomNav">
-        <li class="prev"><a href="/{{prev.file}}">{{prev.title}}</a></li>
-        <li class="next"><a href="/{{next.file}}">{{next.title}}</a></li>
-    </ul>
+    {{> prevNext}}
 </section>

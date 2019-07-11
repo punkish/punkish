@@ -7,7 +7,7 @@ viewcount  : 0
 id         : 
 gmap       : 
 tags       :
-    - movie
+    - video
     - art
     - under water
     - noise
@@ -16,11 +16,7 @@ stars      :
 layout     : darkmain
 ---
 
-<video width="100%" controls>
-    <source 
-        src="/entry-files/U/UN/UND/Under-Noise/img/luciferina.mp4" 
-        type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
-</video>
+![luciferina](luciferina.mp4)
 
 Wed. 1.07.2019 (18:00-23:00) at Top: Schillerpromenade 4
 

@@ -9,19 +9,11 @@ const renames = {
     'cv': 'cv-latest'
 };
 
-const entry = {
+module.exports = {
     method: 'GET',
 
-    /*
-     *
-     * /<Entry>
-     * /<Entry>?show=presentation
-     * /<Entry>/<Sub-Entry>
-     * /<Entry>/<Sub-Entry>?show=presentation
-     * 
-     */
-
-    path: '/{entry}/{subentry?}',
+    //path: '/{entry}/{subentry?}',
+    path: '/{entry*}',
 
     config: {
         description: "dynamic serving of a specific entry or a subentry",
@@ -30,39 +22,37 @@ const entry = {
 
     handler: function (request, h) {
 
-        let file = request.params['entry'];
-        if (file in redirects) {
-
-            return h.redirect(`/${redirects[file]}`);
+        let name = request.params['entry'];
+        if (name) {
+            if (name in redirects) {
+                return h.redirect(`/${redirects[name]}`);
+            }
+            else if (name in renames) {
+                name = renames[name];
+            }
+    
+            const entry = utils.getEntry({
+                name: name,
+                showHidden: request.query['showHidden'] || false
+            });
+    
+            let template = entry.template || 'entry';
+            let layout = entry.layout || 'main';
+    
+            if (request.query['presentation']) {
+                template = 'presentation';
+                layout = 'presentation';
+            }
+            
+            return h.view(
+                template,               // content template
+                entry,                  // data
+                { layout: layout }      // layout
+            );
         }
-        else if (file in renames) {
-
-            file = renames[file];
+        else {
+            return h.redirect(request.server.app.posts.byDate[0].name);
         }
-
-        const subfile = request.params['subentry'] || false;
-        const presentation = request.query['presentation'] || false;
-        const showHidden = request.query['showHidden'] || false;
-
-        const entryData = utils.getSingleEntry({
-            file: file, 
-            subfile: subfile,
-            presentation: presentation, 
-            showHidden: showHidden
-        });
         
-        return h.view(
-
-            // content template
-            entryData.template || 'entry', 
-
-            // data
-            entryData,
-
-            // layout
-            { layout: entryData.layout || 'main' }
-        );
     }
 };
-
-module.exports = entry;

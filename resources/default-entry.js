@@ -1,8 +1,6 @@
 'use strict';
 
-//const utils = require('../utils.js');
-
-const defaultEntry = {
+module.exports =  {
     method: 'GET',
     path: '/',
     config: {
@@ -11,8 +9,6 @@ const defaultEntry = {
     },
     handler: function (request, h) {
 
-        return h.redirect(request.server.app.posts.byDate[0]['file']);
+        return h.redirect(request.server.app.posts.byDate[0].name);
     }
 };
-
-module.exports = defaultEntry;

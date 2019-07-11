@@ -32,12 +32,13 @@ const entries = {
         if (request.params['abc']) {
             const abc = request.params['abc'].toLowerCase();
             let matches = [];
-            let j = utils.posts.byDate.length;
+            let e = utils.entries.public.byDate;
+            let j = e.length;
 
             for (let i = 0; i < j; i++) {
-                if (~utils.posts.byDate[i]['title'].toLowerCase().indexOf(abc)) {
+                if (~e[i].title.toLowerCase().indexOf(abc)) {
                     //matches.push([utils.posts.byDate[i]['title'], utils.posts.byDate[i]['file']]);
-                    matches.push(utils.posts.byDate[i]['title']);
+                    matches.push([e[i].title, e[i].name]);
                 }
             }
 
@@ -150,15 +151,9 @@ const entries = {
             // }
 
             return h.view(
-
-                // content template
-                template, 
-    
-                // data
-                data,
-    
-                // layout
-                { layout: layout }
+                template,           // content template
+                data,               // data
+                { layout: layout }  // layout
             );
         }
 

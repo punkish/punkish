@@ -7,7 +7,7 @@ viewcount  : 0
 id         : 
 gmap       : 
 tags        :
-    - movie
+    - video
     - music
     - jazz
 stars      : 

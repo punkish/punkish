@@ -484,7 +484,16 @@ PK.where = {
             "h": "Freiberufler",
             "f": "Jun 1, 2018",
             "t": "Sep 14, 2018",
-            "d": "three-months"
+            "d": "three-months",
+            "s": [
+                {
+                    "w": "Prague",
+                    "h": "Czechia-1",
+                    "f": "Jun 28, 2018",
+                    "t": "Jul 2, 2018",
+                    "d": "half-week"
+                }
+            ]
         },
         {
             "w": "Sofia",
@@ -505,7 +514,37 @@ PK.where = {
             "h": "Solidarity",
             "f": "Oct 1, 2018",
             "t": "Nov 30, 2018",
-            "d": "two-months"
+            "d": "two-months",
+            "s": [
+                {
+                    "w": "Llubljana",
+                    "h": "SFRY-1",
+                    "f": "Oct 15, 2018",
+                    "t": "Oct 17, 2018",
+                    "d": "half-week"
+                },
+                {
+                    "w": "Bratislava",
+                    "h": "Czechia-2",
+                    "f": "Oct 25, 2018",
+                    "t": "Oct 26, 2018",
+                    "d": "half-week"
+                },
+                {
+                    "w": "Budapest",
+                    "h": "Pest",
+                    "f": "Oct 29, 2018",
+                    "t": "Oct 31, 2018",
+                    "d": "half-week"
+                },
+                {
+                    "w": "Sarajevo",
+                    "h": "SFRY-2",
+                    "f": "Nov 4, 2018",
+                    "t": "Nov 8, 2018",
+                    "d": "half-week"
+                }
+            ]
         },
         {
             "w": "Lucknow",
@@ -677,50 +716,64 @@ PK.where = {
         // }
     ],
 
-    init: function() {
+    foo: function(dest) {
         const now = new Date();
+
+        let f = dest.f.replace(',', '').split(/ /);
+        from = new Date(f[2], this.months[f[0]], f[1]);
+
+        t = dest.t.replace(',', '').split(/ /);
+        to = new Date(t[2], this.months[t[0]], t[1]);
+
+        if (now < from) {
+            time_class = 'afterNow';
+        }
+        else if ((now >= from) && (now <= to)) {
+            time_class = 'now';
+        }
+        else if (now > to) {
+            time_class = 'beforeNow';
+        }
+
+        return time_class;
+    },
+
+    bar: function(dest) {
+        return `<span class='${dest.time_class}'>•</span><a href='/entries?q=tags:${dest.w}'>${dest.w}</a> ${dest.f}–${dest.t}, ${dest.h}`;
+    },
+
+    init: function() {
         
-        let html = '';
+        let html = '<ul class="experiences">';
         let i = 0;
         const j = this.trip.length;
-        let f;
-        let from;
-        let t;
-        let to;
-        let time_class;
 
         for (; i < j; i++) {
     
-            f = this.trip[i].f.replace(',', '').split(/ /);
-            from = new Date(f[2], this.months[f[0]], f[1]);
-    
-            t = this.trip[i].t.replace(',', '').split(/ /);
-            to = new Date(t[2], this.months[t[0]], t[1]);
-    
-            if (now < from) {
-                time_class = 'afterNow';
-            }
-            else if ((now >= from) && (now <= to)) {
-                time_class = 'now';
-            }
-            else if (now > to) {
-                time_class = 'beforeNow';
-            }
-    
-            // html += '<li' + (time_class === "now" ? ' id="now" ' : '') + ' class="' + this.trip[i].d + ' ' + time_class + '">' +
-            //         '<div class="anno">' +
-            //         '<span class="where"><a href="/entries?q=tags:' + this.trip[i].w + '">' + this.trip[i].w + '</a></span> ' +
-            //         '<span class="when">' + this.trip[i].f + '-' + this.trip[i].t + '</span><br>' +
-            //         '<div class="what">' + this.trip[i].h + '</div>' +
-            //         '</div>' +
-            //         '</li>';
+            const dest = this.trip[i];
+            dest.time_class = this.foo(dest);
 
-            let id = (time_class === "now" ? "now" : "");
-            html += `<li id="${id}" class="${this.trip[i].d}">
-                <span class="${time_class}">•</span><ul><li><a href="/entries?q=tags:${this.trip[i].w}">${this.trip[i].w}</a> ${this.trip[i].f}–${this.trip[i].t}, ${this.trip[i].h}</li></ul>
-            </li>`;
+            let id = dest.time_class === 'now' ? 'id="now"' : '';
+            html += `<li ${id} class='${dest.d}'>${this.bar(dest)}`;
+
+            if (dest.s) {
+                let subhtml = '<ul class="experiences">';
+                let i = 0;
+                const j = dest.s.length;
+
+                for (; i < j; i++) {
+                    const d = dest.s[i];
+                    d.time_class = this.foo(d);
+                    subhtml += `<li class='${d.d}'>${this.bar(d)}</li>`;
+                }
+
+                subhtml += '</ul>';
+                html += subhtml;
+            }
+
+            html += '</li>';
         }
-        html += '<li class="one-week"><span class="whereNext">?</span></li>';
+        html += '<li class="one-week"><span class="whereNext">?</span></li></ul>';
     
         PK.$("#experiences").innerHTML = html;
     

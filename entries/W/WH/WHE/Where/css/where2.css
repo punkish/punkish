@@ -52,23 +52,23 @@
     padding-bottom: 180px;
 }
 
-#experiences {
+.experiences {
     list-style: none !important;
 }
-#experiences li {
+.experiences > li {
     position:relative;
     margin-bottom: unset !important;
 }
-#experiences li span {
+.experiences > li span {
     border: 1px solid black;
     border-radius: 50%;
     padding: 3px 10px;
     margin-right: 10px;
 }
-#experiences li span.beforeNow {
+.experiences > li span.beforeNow {
     background:#000
 }
-#experiences li span.now {
+.experiences > li span.now {
     background:#e84c3d;
     box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
     -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -76,18 +76,18 @@
     -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
-#experiences li span.afterNow {
+.experiences > li span.afterNow {
     background:#fff
 }
-#experiences li span.whereNext {
+.experiences > li span.whereNext {
     border: 1px dashed black;
     padding: 3px 8px;
     background: #fff
 }
-#experiences li span.beforeNow:before,
-#experiences li span.now:before,
-#experiences li span.afterNow:before,
-#experiences li span.whereNext:before {
+.experiences > li span.beforeNow:before,
+.experiences > li span.now:before,
+.experiences > li span.afterNow:before,
+.experiences > li span.whereNext:before {
     content: '';
     position: absolute;
     border-left: 2px solid ;
@@ -96,16 +96,16 @@
     z-index: -1;
     height: 100%
 }
-#experiences li:last-child span:before{
+.experiences > li:last-child span:before{
     content:none;
 }
-#experiences li:last-child{
+.experiences > li:last-child{
     padding-bottom:0
 }
 
-#experiences li ul {
+.experiences > li ul {
     list-style: none;
-    margin-top: -28px;
+    /* margin-top: -28px; */
 }
 
 /* 

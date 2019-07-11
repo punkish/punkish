@@ -97,11 +97,14 @@ let PK = {
             selector: document.querySelector('input[name=q]'),
             minChars: 3,
             source: function(term, response){
-                PK.xhr(`/entries/${term}`, function(data) { 
-
+                PK.xhr(`/entries/${term}`, function(data) {
                     response(JSON.parse(data)); 
                 });
-
+            },
+            renderItem: function (item, search){
+                search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+                return `<div class="autocomplete-suggestion" data-val="${item[1]}">${item[0].replace(re, "<b>$1</b>")}</div>`;
             },
             onSelect: function(e, term, item) {
                 location.href = `/${term}`;

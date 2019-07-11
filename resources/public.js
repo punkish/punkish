@@ -1,6 +1,4 @@
-// This is for serving the static files in the public directory
-
-const inert = {
+module.exports = {
     method: 'GET',
 
     path: '/public/{param*}',
@@ -18,5 +16,3 @@ const inert = {
         }
     }
 };
-
-module.exports = inert;

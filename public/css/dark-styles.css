@@ -10,7 +10,6 @@ a {
 input[name=q] {
 	background-color: black;
 	color: white;
-	min-width: 400px;
 }
 
 h1,
