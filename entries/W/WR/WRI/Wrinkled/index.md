@@ -45,7 +45,7 @@ ett: ... ripples on the water, hokusai's waves ...
 emm: ... muddy ditches ...  
 ett. ... the mountains of the wrinkled earth, and the valleys of the moon.  
 emm: don't go overboard, you'll be calling her a landscape painter soon.  
-ett: that's the point, wrinkled paper is a landscape, no less than the main in the moon.  
+ett: that's the point, wrinkled paper is a landscape, no less than the man in the moon.  
 emm: then maybe liliana is a cartographer.  
 ett: good grief, i'd never thought of that!  
 

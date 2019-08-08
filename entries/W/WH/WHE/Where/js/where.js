@@ -679,20 +679,27 @@ PK.where = {
             "t": "Sep 14, 2019",
             "d": "one-week"
         },
-        // {
-        //     "w": "Berlin",
-        //     "h": "return",
-        //     "f": "Sep 14, 2019",
-        //     "t": "Sep 30, 2019",
-        //     "d": "two-weeks"
-        // },
-        // {
-        //     "w": "Madrid",
-        //     "h": "return",
-        //     "f": "Oct 1, 2019",
-        //     "t": "Oct 31, 2019",
-        //     "d": "one-month"
-        // },
+        {
+            "w": "Dijon",
+            "h": "",
+            "f": "Sep 15, 2019",
+            "t": "Sep 20, 2019",
+            "d": "one-week"
+        },
+        {
+            "w": "Toulouse",
+            "h": "",
+            "f": "Sep 20, 2019",
+            "t": "Sep 25, 2019",
+            "d": "one-week"
+        },
+        {
+            "w": "Madrid",
+            "h": "return",
+            "f": "Sep 25, 2019",
+            "t": "Oct 31, 2019",
+            "d": "one-month"
+        }
         // {
         //     "w": "Berlin",
         //     "h": "return",
