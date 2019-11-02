@@ -12,7 +12,10 @@ tags        :
 stars      : 
 ---
 
-![The light at the break of dawn](light.jpg)
+<figure>
+    <img src="light.jpg">
+    <figcaption>The light at the break of dawn</figcaption>
+</figure>
 
 When hell broke loose I lost my ways  
 When nights turned long and long were days  
