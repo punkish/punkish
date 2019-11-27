@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="punkish.jpg">
+    <img src="punkish-2.jpg">
     <figcaption></figcaption>
 </figure>
 
