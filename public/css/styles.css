@@ -161,7 +161,8 @@ header div form {
 }
 input[name=q] {
 	border: none;
-	min-width: 400px;
+	min-width: 240px;
+	font-size: 10px;
 }
 
 header nav {
