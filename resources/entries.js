@@ -54,11 +54,11 @@ const entries = {
                 let by = request.query['by'];
                 if (by.indexOf('tag') > -1) {
                     by = 'tag';
-                    data['posts'] = request.server.app.posts['byTag'];
+                    data['entries'] = request.server.app.entries['byTag'];
                 }
                 else if (by.indexOf('date') > -1) {
                     by = 'date';
-                    data['posts'] = request.server.app.posts['byYear'];
+                    data['entries'] = request.server.app.entries['byYear'];
                 }
 
                 template = `entries-by-${by}`;
@@ -100,8 +100,8 @@ const entries = {
                 if ((q.indexOf('tag:') > -1) || (q.indexOf('tags:') > -1)) {
                     const tag = q.split(':')[1];
 
-                    if (utils.posts.byTag[tag]) {
-                        data['searchResults'] = utils.posts.byTag[tag].map(x => {
+                    if (utils.entries.public.byTag[tag]) {
+                        data['searchResults'] = utils.entries.public.byTag[tag].map(x => {
                             return {
                                 ref: x.file,
                                 disp: x.title
