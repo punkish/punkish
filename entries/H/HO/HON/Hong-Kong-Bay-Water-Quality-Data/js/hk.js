@@ -121,7 +121,7 @@ PK['hk'] = {
             dygraphOpts
         );
 
-        let duration = 600000;
+        let duration = 60000;
         PK.hk.timer(duration);
         
         const timerUpdate = 1000;

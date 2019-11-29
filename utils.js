@@ -69,12 +69,8 @@ const dirWalker = function(dir) {
 
                 const fileContents = fs.readFileSync(fullfilename, 'utf8');
 
-                /// the following three entries create max span reached error because of embedded SVG/XML
-                // wary-of-wearables
-                // oa-decision-tree
-                // information-lifecycle
-
                 const entry = Yaml.loadFront(fileContents);
+
                 //const pres = {};
 
                 /*
@@ -267,7 +263,7 @@ const regularEntry = function(entry) {
     if (!entry.template) {
         entry.template = 'entry';
     }
-
+    
     entry.__content = sh.makeHtml(entry.__content);
     entry.__content = makeImg(entry);
     entry.__content = makeVid(entry);
@@ -379,7 +375,7 @@ const utils = {
             };
         }
 
-        const type = showHidden? 'hidden' : 'public';
+        const type = showHidden ? 'hidden' : 'public';
         const entry = this.entries[type].byName[nameLowerCase];
 
         if (entry) {

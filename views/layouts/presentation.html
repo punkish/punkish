@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="/public/css/remark-styles.css">
     {{#hasCss}}
-    <link rel="stylesheet" href="/entry-files/{{entryUrl}}/css/{{css}}.css">
+    <link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
     {{/hasCss}}
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
@@ -26,7 +26,7 @@
     <!-- </div> -->
 
 	{{#hasJs}}
-    <!-- <script src="/entry-files/{{entryUrl}}/js/{{js}}.js"></script> -->
+    <!-- <script src="/entry-files/{{url}}/js/{{js}}.js"></script> -->
 	{{/hasJs}}
 	
 	<script src="/public/remark/remark-latest.min.js"></script>

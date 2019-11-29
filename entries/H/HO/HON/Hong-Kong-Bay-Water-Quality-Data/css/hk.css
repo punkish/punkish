@@ -48,3 +48,8 @@
     /* top: unset !important;
     bottom: 0px !important; */
 }
+#timer {
+    background-color: green;
+    color: white;
+    padding: 2px 5px;
+}
