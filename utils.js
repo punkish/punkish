@@ -16,6 +16,8 @@ const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'num
 const dir = './entries';
 const hanozDir = "./entries/H/HA/HAN/Hanoz/hindi";
 const untaggedLabel = 'untagged';
+const log = require('picolog');
+log.level = log.INFO;
 
 // entry = {
 //     title: title,

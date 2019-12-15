@@ -49,23 +49,24 @@ const entries = {
         
             // /entries?by=tag(s)
             // /entries?by=date(s)
-            if (request.query['by']) {
+            if (request.query.by) {
 
-                let by = request.query['by'];
+                let by = request.query.by;
+                
                 if (by.indexOf('tag') > -1) {
                     by = 'tag';
-                    data['entries'] = request.server.app.entries['byTag'];
+                    data.entries = request.server.app.entries.byTag;
                 }
                 else if (by.indexOf('date') > -1) {
                     by = 'date';
-                    data['entries'] = request.server.app.entries['byYear'];
+                    data.entries = request.server.app.entries.byYear;
                 }
 
                 template = `entries-by-${by}`;
             }
 
             // /entries?q=searchterm
-            else if (request.query['q']) {
+            else if (request.query.q) {
 
                 /*
                 Notes from Oliver Nightingale, the creator of lunrjs
@@ -93,15 +94,15 @@ const entries = {
                 var wildcardResults = idx.search('foo*bar*baz')
                 */
 
-                data['searchTitle'] = 'Search Results';
+                data.searchTitle = 'Search Results';
 
-                let q = request.query['q'];
+                let q = request.query.q;
 
                 if ((q.indexOf('tag:') > -1) || (q.indexOf('tags:') > -1)) {
                     const tag = q.split(':')[1];
 
-                    if (utils.entries.public.byTag[tag]) {
-                        data['searchResults'] = utils.entries.public.byTag[tag].map(x => {
+                    if (utils.entries.byTag[tag]) {
+                        data.searchResults = utils.entries.byTag[tag].map(x => {
                             return {
                                 ref: x.file,
                                 disp: x.title
@@ -109,7 +110,7 @@ const entries = {
                         });
                     }
                     else {
-                        data['searchResults'] = utils.idx.query(function () {
+                        data.searchResults = utils.idx.query(function () {
                             this.term(`${tag}~1`, {
                                 fields: ['tags']
                             });
@@ -122,7 +123,7 @@ const entries = {
                     }
                 }
                 else {
-                    data['searchResults'] = utils.idx.search(q)
+                    data.searchResults = utils.idx.search(q)
                         .map(result => {
                             return {
                                 ref: result.ref,

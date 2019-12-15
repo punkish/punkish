@@ -64,7 +64,7 @@ const init = async () => {
         { plugin: Good, goodOptions }
     ]);
 
-    server.app.posts = utils.init();
+    server.app.entries = utils.init();
     //console.log(server.app.posts.byDate);
 
     server.views({

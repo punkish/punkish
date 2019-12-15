@@ -4,7 +4,7 @@
     <div class="desc">also see <a href="/entries?by=tag">entries by tag</a></div>
     <div class="date">{{created}}</div>
 
-    {{#posts}}
+    {{#entries}}
     <details class="year">
         <summary>{{year}}</summary>
         {{#months}}
@@ -13,11 +13,11 @@
             {{#entries}}
             <details class="entry">
                 <summary>{{title}}</summary>
-                <div class="notes">{{notes}} <a href="/{{file}}">more</a></div>
+                <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
             </details>
             {{/entries}}
         </details>
         {{/months}}
     </details>
-    {{/posts}}
+    {{/entries}}
 </section>

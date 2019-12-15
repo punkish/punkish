@@ -51,7 +51,7 @@ module.exports = {
             );
         }
         else {
-            return h.redirect(request.server.app.posts.byDate[0].name);
+            return h.redirect(request.server.app.entries.byDate[0].name);
         }
         
     }
