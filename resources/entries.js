@@ -101,10 +101,12 @@ const entries = {
                 if ((q.indexOf('tag:') > -1) || (q.indexOf('tags:') > -1)) {
                     const tag = q.split(':')[1];
 
-                    if (utils.entries.byTag[tag]) {
-                        data.searchResults = utils.entries.byTag[tag].map(x => {
+                    const byTag = utils.entries.public.byTag;
+
+                    if (byTag[tag]) {
+                        data.searchResults = byTag[tag].map(x => {
                             return {
-                                ref: x.file,
+                                ref: x.name,
                                 disp: x.title
                             }
                         });
