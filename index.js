@@ -8,7 +8,7 @@ Compile templates
 Start this program from the command line with `pm2`
 
     ~/Nodes/punkish$ NODE_ENV=production pm2 start index.js --name punkish
-    ~/Nodes/punkish$ NODE_ENV=production pm2 restart index.js
+    ~/Nodes/punkish$ NODE_ENV=production pm2 restart punkish
 
 To sync images and other binary files, run `rsync` from within 'punkish'
 
