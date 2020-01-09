@@ -157,15 +157,13 @@ const addEntryByNameAndTagsAndYears = function(entry) {
         }
     }
     else {
-        utils.entries[type].byYear.push(
-            {
-                year: entryYear,
-                months: [{
-                    month: entryMonth,
-                    entries: [ entrySmallIdx ]
-                }]
-            }
-        )
+        utils.entries[type].byYear.push({
+            year: entryYear,
+            months: [{
+                month: entryMonth,
+                entries: [ entrySmallIdx ]
+            }]
+        })
     }
 };
 

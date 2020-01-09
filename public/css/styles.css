@@ -85,6 +85,7 @@ figure img {
 }
 figure.not100 img {
 	width: unset;
+	max-width: 100%;
 }
 cite {
 	font-style: normal;
