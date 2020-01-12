@@ -107,7 +107,8 @@ PK['copyright-treaties'] = {
 			"Ecuador": "BAC Aug. 31, 1914; UCC Geneva June 5, 1957; Phonograms Sept. 14, 1974; UCC Paris Sept. 6, 1991; Berne (Paris) Oct. 9, 1991; WTO Jan. 21, 1996; WCT Mar. 6, 2002; WPPT May 20, 2002",
 			"Egypt": "Berne (Paris) June 7, 1977; Phonograms Apr. 23, 1978; WTO June 30, 1995",
 			"El Salvador": "Bilateral June 30, 190817; Phonograms Feb. 9, 1979; UCC Geneva Mar. 29, 1979; UCC Paris Mar. 29, 1979; Berne (Paris) Feb. 19, 1994; WTO May 7, 1995; WCT Mar. 6, 2002; WPPT May 20, 2002; FTA Mar. 1, 200616; SAT July 22, 2008",
-			"Equatorial Guinea": "Berne (Paris) June 26, 1997 Eritrea": "None",
+			"Equatorial Guinea": "Berne (Paris) June 26, 1997",
+			"Eritrea": "None",
 			"Estonia": "Berne (Paris) Oct. 26, 1994; WTO Nov. 13, 1999; Phonograms May 28, 2000; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
 			"Ethiopia": "None",
 			"European Union18": "WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
@@ -133,11 +134,11 @@ PK['copyright-treaties'] = {
 			"Iceland": "Berne (Paris) Sept. 7, 1947; UCC Geneva Dec. 18, 1956; WTO Jan. 1, 1995",
 			"India": "Berne(Paris)Apr.1,1928;BilateralAug.15, 1947; UCC Geneva Jan. 21, 1958; Phonograms Feb. 12, 1975; UCC Paris Apr. 7, 1988; WTO Jan. 1, 1995",
 			"Indonesia": "BilateralAug.1,1989;WTOJan.1, 1995; Berne (Paris) Sept. 5, 1997; WCT Mar. 6, 2002; WPPT Feb. 15, 2005",
-			"Iran": "None Iraq": "None",
+			"Iran": "None", 
+			"Iraq": "None",
 			"Ireland": "Berne (Paris) Oct. 5, 1927; Bilateral Oct. 1, 1929; UCC Geneva Jan. 20, 1959; WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
 			"Israel": "Bilateral May 15, 1948; Berne (Paris) Mar. 24, 1950; UCC Geneva Sept. 16, 1955; Phonograms May 1, 1978; FTA Aug. 19, 1985; Bilateral Sept. 1, 1985; WTO Apr. 21, 1995",
-			"Italy": "Berne (Paris) Dec. 5, 1887; Bilateral Oct. 31, 1892; Bilateral May 1, 1915; UCC Geneva",
-			"Jan. 24, 1957; Phonograms Mar. 24, 1977; UCC Paris Jan. 25, 1980; SAT July 7, 1981; WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
+			"Italy": "Berne (Paris) Dec. 5, 1887; Bilateral Oct. 31, 1892; Bilateral May 1, 1915; UCC Geneva Jan. 24, 1957; Phonograms Mar. 24, 1977; UCC Paris Jan. 25, 1980; SAT July 7, 1981; WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
 			"Jamaica": "Berne (Paris) Jan. 1, 1994; Phonograms Jan. 11, 1994; WTO Mar. 9, 1995; SAT Jan. 12, 2000; WCT June 12, 2002; WPPT June 12, 2002",
 			"Japan23": "Berne (Paris) July 15, 1899; Bilateral May 10, 1906; UCC Geneva Apr. 28, 1956; UCC Paris Oct. 21, 1977; Phonograms Oct. 14, 1978; WTO Jan. 1, 1995; WCT Mar. 6, 2002; WPPT Oct. 9, 2002",
 			"Jordan": "Berne (Paris) July 28, 1999; WTO Apr. 11, 2000; FTA Dec. 17, 200124; WCT Apr. 27, 2004; WPPT May 24, 2004",
@@ -156,7 +157,7 @@ PK['copyright-treaties'] = {
 			"Luxembourg": "Berne (Paris) June 20, 1888; Bilateral (two) June 29, 1910; UCC Geneva Oct. 15, 1955; Phonograms Mar. 8, 1976; WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
 			"Macau, China25": "WTO Jan. 1, 1995",
 			"Kiribati": "Berne (Paris) Jan. 2, 2018",
-			"Korea, Democratic People’s Republic of North Berne (Paris) Apr. 28, 2003",
+			"Korea, Democratic People’s Republic of North": "Berne (Paris) Apr. 28, 2003",
 			"Korea, Republic of": "UCC Geneva Oct. 1, 1987; UCC Paris Oct. 1, 1987; Phonograms Oct. 10, 1987; WTO Jan. 1, 1995; Berne (Paris) Aug. 21, 1996; WCT June 24, 2004; WPPT Mar. 18, 2009; FTA Mar. 15, 2012",
 			"Macedonia, Former Yugoslav Republic of": "Berne (Paris) Sept. 8, 1991; SAT Sept. 2, 1977; UCC Geneva Apr. 30, 1997; UCC Paris Apr. 30, 1997; Phonograms Mar. 2, 1998; WTO Apr. 4, 2003; WCT Feb. 4, 2004; WPPT Mar. 20, 2005",
 			"Madagascar": "Berne (Brussels) Jan. 1, 1966; WTO Nov. 17, 1995; WCT Feb. 24, 2015; WPPT Feb. 24, 2015",
@@ -175,7 +176,8 @@ PK['copyright-treaties'] = {
 			"Montenegro": "Berne (Paris) June 3, 2006; Phonograms June 3, 2006; WCT June 3, 2006; WPPT June 3, 2006; SAT Oct. 23, 2006; UCC Geneva Apr. 26, 2007; UCC Paris Apr. 26, 2007; WTOApr.29,2012",
 			"Morocco": "Berne (Paris) June 16, 1917; UCC Geneva May 8, 1972; UCC Paris Jan. 28, 1976; SAT June 30, 1983; WTO Jan. 1, 1995; FTA Jan. 1, 200626; WCT July 20, 2011; WPPT July 20, 2011",
 			"Mozambique": "WTOAug.26,1995;Berne (Paris) Nov. 22, 2013",
-			"Myanmar, Union of": "WTO Jan. 1, 1995 Namibia": "Berne (Paris) Mar. 21, 1990; WTO Jan. 1, 1995",
+			"Myanmar, Union of": "WTO Jan. 1, 1995",
+			"Namibia": "Berne (Paris) Mar. 21, 1990; WTO Jan. 1, 1995",
 			"Nauru": "Unclear",
 			"Nepal": "WTO Apr. 23, 2004; Berne (Paris) Jan. 11, 2006",
 			"Netherlands27": "Bilateral Nov. 20, 1899; Berne (Paris) Nov. 1, 1912; UCC Geneva June 22, 1967; UCC Paris Nov. 30, 1985; Phonograms Oct. 12, 1993; WTO Jan. 1, 1995; WCT Mar. 14, 2010; WPPT Mar. 14, 2010",
@@ -208,11 +210,11 @@ PK['copyright-treaties'] = {
 			"Saudi Arabia": "UCC Geneva July 13, 1994 ; UCC Paris July 13, 1994; Berne (Paris) Mar. 11, 2004; WTO Dec. 11, 2005",
 			"Senegal": "Berne (Paris) Aug. 25, 1962; UCC Geneva July 9, 1974; UCC Paris July 10, 1974; WTO Jan. 1, 1995; WCT May 18, 2002; WPPT May 20, 2002",
 			"Serbia": "Berne (Paris) Apr. 27, 1992; SAT Mar. 12, 2001; UCC Paris Sept. 11, 2001; UCC Geneva Nov. 11, 2001; Phonograms June 10, 2003; WCT June 13, 2003; WPPT June 13, 2003",
-			"Seychelles": "WTOApr.26,2015 Sierra Leone": "WTO July 23, 1995",
+			"Seychelles": "WTO Apr.26,2015",
+			"Sierra Leone": "WTO July 23, 1995",
 			"Singapore": "Bilateral May 18, 1987; WTO Jan. 1, 1995; Berne (Paris) Dec. 21, 1998; FTA Jan. 1, 200432; WCT Apr. 17, 2005; WPPT Apr. 17, 2005; SAT Apr. 27, 2005",
 			"Slovakia": "Berne (Paris) Jan. 1, 1993; Phonograms Jan. 1, 1993; UCC Geneva Mar. 31, 1993; UCC Paris Mar. 31, 1993; WTO Jan. 1, 1995; WCT Mar. 6, 2002; WPPT May 20, 2002",
-			"Slovenia": "Berne (Paris) June 25, 1991; SAT Nov. 3, 1992; UCC Geneva Nov. 5, 1992;",
-			"UCC Paris Nov. 5, 1992; WTO July 30, 1995; Phonograms Oct. 15, 1996; WCT Mar. 6, 2002; WPPT May 20, 2002",
+			"Slovenia": "Berne (Paris) June 25, 1991; SAT Nov. 3, 1992; UCC Geneva Nov. 5, 1992; UCC Paris Nov. 5, 1992; WTO July 30, 1995; Phonograms Oct. 15, 1996; WCT Mar. 6, 2002; WPPT May 20, 2002",
 			"Solomon Islands": "WTO July 26, 1996",
 			"Somalia": "Unclear",
 			"South Africa": "Bilateral July 1, 1924; Berne (Brussels) Oct. 3, 1928; WTO Jan. 1, 1995",
@@ -407,7 +409,7 @@ PK['copyright-treaties'] = {
 			"28": {"cn":"Burundi", "la": -3.3667, "lo": 29.35, "ni": 0, "tr": [[16, "July 23, 1995 "]]},
 			"29": {"cn":"Cambodia", "la": 11.55, "lo": 104.9167, "ni": 0, "tr": [[11, "Sept. 16, 1955"],[16, "Oct. 13, 2004"]]},
 			"30": {"cn":"Cameroon", "la": 3.8667, "lo": 11.5167, "ni": 0, "tr": [[2, "Sept. 21, 1964"],[11, "May 1, 1973"],[12, "July 10, 1974"],[16, "Dethis. 13, 1995"]]},
-			"31": {"cn":"Canada", "la": 45.4167, "lo": -75.7, "ni": 0, "tr": [[7, "Jan. 1, 1924"],[2, "Apr. 10, 1928"],[11, "Aug. 10, 1962"],[16, "Jan. 1, 1995"]]},
+			"31": {"cn":"Canada", "la": 45.41117, "lo": -75.69812, "ni": 0, "tr": [[7, "Jan. 1, 1924"],[2, "Apr. 10, 1928"],[11, "Aug. 10, 1962"],[16, "Jan. 1, 1995"]]},
 			"32": {"cn":"Cape Verde", "la": 14.9167, "lo": -23.5167, "ni": 0, "tr": [[2, "July 7, 1997"],[16, "July 23, 2008 "]]},
 			"33": {"cn":"Central African Republic", "la": 4.3667, "lo": 18.5833, "ni": 0, "tr": [[2, "Sept. 3, 1977"],[16, "May 31, 1995"]]},
 			"34": {"cn":"Chad", "la": 12.1, "lo": 15.0333, "ni": 0, "tr": [[16, "Oct. 19, 1996"]]},
@@ -581,7 +583,7 @@ PK['copyright-treaties'] = {
 		for (let t in this.data.treaties) {
 			layerGroups[this.data.treaties[t].sn] = {
 				icon: L.icon({ 
-					iconUrl: '/img/treaty.png', 
+					iconUrl: 'entry-files/C/CO/COP/Copyright-Treaties-With-The-US/img/treaty.png', 
 					iconSize: [32, 32],
 					iconAnchor: [16, 16],
 					popupAnchor: [1, -3]
@@ -595,8 +597,7 @@ PK['copyright-treaties'] = {
 			const point = this.data.countries[i];
 
 			let popupHtml = 
-				`<div class='punkish-map-name'>${point.cn}</div>
-				 <div class='punkish-map-name'>Treaties</div>
+				`<h2>${point.cn}</h2>
 				 <ul>
 				`;
 
