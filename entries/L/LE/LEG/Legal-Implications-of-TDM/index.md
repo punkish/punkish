@@ -6,7 +6,7 @@ created    : 2015-08-23
 viewcount  : 0
 id         : 232
 gmap       : 
-where      : 
+where      : Creative Commons
 when       : August 2015
 tags       :
     - presentation
@@ -32,11 +32,13 @@ TDM defined over the years. Made easier by high speed networks, cheap and fast C
 
 ---
 
-## TDM Defined
+<h2>TDM Defined</h2>
+
 .left-column[
   ### 1982    
   ### 1999  
 ]
+
 .right-column[
 > (semi)automated discovery of trends and patterns across very large datasets  
 …  
@@ -53,7 +55,8 @@ TDM defined over the years. Made easier by high speed networks, cheap and fast C
 
 ---
 
-## TDM Defined
+<h2>TDM Defined</h2>
+
 .left-column[
   ### 1982  
   ### 1999  
@@ -81,7 +84,8 @@ Analyze a corpus of text (A) using TDM algorithms such as optical character reco
 
 ---
 
-## TDM Examples
+<h2>TDM Examples</h2>
+
 .left-column[
   ### GeoDeepDive  
 ]
@@ -93,7 +97,8 @@ a system that helps geoscientists discover information and knowledge buried in t
 
 ---
 
-## TDM Examples
+<h2>TDM Examples</h2>
+
 .left-column[
   ### GeoDeepDive  
   ### Curation  
@@ -106,7 +111,8 @@ Leveraging text mining to improve human curation
 
 ---
 
-## TDM Examples
+<h2>TDM Examples</h2>
+
 .left-column[
   ### GeoDeepDive  
   ### Curation  
@@ -281,7 +287,7 @@ Licenses/contracts on the corpus can affect the license under which the final re
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -292,7 +298,7 @@ Data should be considered legitimate, citable products of research. Data citatio
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -304,7 +310,7 @@ Data citations should facilitate giving scholarly credit and normative and legal
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -317,7 +323,7 @@ Where a specific claim rests upon data, the corresponding data citation should b
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -331,7 +337,7 @@ A data citation should include a persistent method for identification that is ma
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -346,7 +352,7 @@ Data citations should facilitate access to the data themselves and to such assoc
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -362,7 +368,7 @@ Metadata describing the data, and unique identifiers should persist, even beyond
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -379,7 +385,7 @@ Data citations should facilitate identification and access to different versions
 
 ---
 
-## Force11 Data Citation Principles
+<h2>Force11 Data Citation Principles</h2>
 
 .left-column[
   #### Importance  
@@ -424,5 +430,3 @@ Data citation methods should be sufficiently flexible to accommodate the variant
 ![TDM workflow](/entry-files/L/LE/LEG/Legal-Implications-of-TDM/img/tdm-workflow6.png)
 
 **Access Principle:** Data citations should facilitate access to the data themselves and to such associated metadata, documentation, and other materials, as are necessary for both humans and machines to make informed use of the referenced data. *Possible only if the corpus can be made available to the public.*
-
----
