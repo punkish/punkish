@@ -1,23 +1,26 @@
 <!-- entries by dates -->
-<section class="row">
+<section>
     <h1 class="title">Entries by Date</h1>
-    <div class="desc">also see <a href="/entries?by=tag">entries by tag</a></div>
-    <div class="date">{{created}}</div>
+    <div class="created">{{created}}</div>
 
-    {{#entries}}
-    <details class="year">
-        <summary>{{year}}</summary>
-        {{#months}}
-        <details class="month">
-            <summary>{{month}}</summary>
-            {{#entries}}
-            <details class="entry">
-                <summary>{{title}}</summary>
-                <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+    <div class="content">
+        <p>entries sorted by year and month. (also see <a href="/entries?by=tag">entries by tag</a>.)</p>
+
+        {{#entries}}
+        <details class="year">
+            <summary>{{year}}</summary>
+            {{#months}}
+            <details class="month">
+                <summary>{{month}}</summary>
+                {{#entries}}
+                <details class="entry">
+                    <summary>{{title}}</summary>
+                    <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+                </details>
+                {{/entries}}
             </details>
-            {{/entries}}
+            {{/months}}
         </details>
-        {{/months}}
-    </details>
-    {{/entries}}
+        {{/entries}}
+    </div>
 </section>

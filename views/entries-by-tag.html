@@ -1,18 +1,21 @@
 <!-- entries by tags -->
-<section class="row">
+<section>
     <h1 class="title">Entries by Tag</h1>
-    <div class="desc">also see <a href="/entries?by=date">entries by date</a></div>
-    <div class="date">{{created}}</div>
+    <div class="created">{{created}}</div>
 
-    {{#each entries}}
-    <details>
-        <summary>{{@key}}</summary>
-        {{#.}}
-        <details class="entry">
-            <summary>{{title}}</summary>
-            <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+    <div class="content">
+        <p>entries sorted by tags. (also see <a href="/entries?by=date">entries by date</a>.)</p>
+
+        {{#each entries}}
+        <details>
+            <summary>{{@key}}</summary>
+            {{#.}}
+            <details class="entry">
+                <summary>{{title}}</summary>
+                <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+            </details>
+            {{/.}}
         </details>
-        {{/.}}
-    </details>
-    {{/each}}
+        {{/each}}
+    </div>
 </section>

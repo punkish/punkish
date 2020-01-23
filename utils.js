@@ -6,50 +6,15 @@ const Yaml = require('yaml-front-matter');
 const lunr = require('lunr');
 const showdown = require('showdown');
 const footnotes = require('./public/js/footnotes.js');
-const sh = new showdown.Converter({
-    extensions: [footnotes],
-    tables: true
-});
+const sh = new showdown.Converter({extensions: [footnotes], tables: true});
+const log = require('picolog');
 
+log.level = log.INFO;
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const dir = './entries';
 const hanozDir = "./entries/H/HA/HAN/Hanoz/hindi";
 const untaggedLabel = 'untagged';
-const log = require('picolog');
-log.level = log.INFO;
-
-// entry = {
-//     title: title,
-//     file: file,
-//     notes: note
-// };
-
-// posts = {
-//     byTitle: [ entry ],
-//     byTags: [ { tag: tag, entries: [ entry ] } ],
-//     byYear: [ { year: year, months: [ { month: month, entries: [ entry ] } ] } ]
-// }
-
-const cleanDates = function(entry) {
-    //console.log(`f: ${entry.file}, c: ${entry.created}, m: ${entry.modified}`)
-    const datere = /\d\d\d\d-\d+-\d+ \d+:\d+:\d+/;
-    const fakedate = '9999-99-99 99:99:99';
-
-    if (entry.modified) {
-        entry.created = new Date(entry.modified).toLocaleDateString("en-US", dateOptions);
-    }
-    else {
-        entry.modified = new Date(fakedate).toLocaleDateString("en-US", dateOptions);
-    }
-
-    if (entry.created) {
-        entry.created = new Date(entry.created).toLocaleDateString("en-US", dateOptions);
-    }
-    else {
-        entry.created = new Date(fakedate).toLocaleDateString("en-US", dateOptions);
-    }    
-};
 
 const dirWalker = function(dir) {
 
@@ -90,8 +55,75 @@ const dirWalker = function(dir) {
                 
                 entry.name = rest.length === 2 ? `${e}/${rest[0]}` : e;
                 entry.url = `${o}/${t}/${h}/${entry.name}`;
-                cleanDates(entry);
-                makeEntry(entry);
+
+                // remove content
+                delete entry.__content;
+
+                // clean the dates
+                const fakedate = new Date('1980-01-01 00:00:00').toLocaleDateString("en-US", dateOptions);
+    
+                if (entry.modified) {
+                    entry.modified = new Date(entry.modified).toLocaleDateString("en-US", dateOptions);
+                }
+                else {
+                    entry.modified = fakedate;
+                }
+
+                if (entry.created) {
+                    entry.created = new Date(entry.created).toLocaleDateString("en-US", dateOptions);
+                }
+                else {
+                    entry.created = fakedate;
+                }
+
+
+                // make the entry
+
+                // presentation entry
+                if (entry.tags && entry.tags.indexOf('presentation') > -1) {
+                    entry.layout = 'main';
+                    entry.template = 'entry-presentation';
+
+                    if (entry.authors) {
+                        if (entry.authors.length > 1) {
+                            entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
+                            entry.authors.unshift(me);
+                            entry.authors = entry.authors.join(', ');
+                        }
+                        else {
+                            entry.authors = me + ' and ' + entry.authors[0];
+                        }
+                    }
+                    else {
+                        entry.authors = me;
+                    }
+                }
+
+                // album entry
+                else if (entry.tags && entry.tags.indexOf('album') > -1) {
+                    const imgdir = `./entries/${entry.url}/img`;
+                    entry.images = fs.readdirSync(imgdir)
+                        .filter(img => {
+                            const imgExt = img.slice(-4);
+                            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
+                        })
+                        .map(img => {
+                            return `/entry-files/${entry.url}/img/${img}`;
+                        });
+
+                    entry.type = 'album';
+                }
+
+                // regular entry
+                else {
+                    if (!entry.layout) entry.layout = 'main';
+                    if (!entry.template) entry.template = 'entry';
+                }
+            
+                entry.hasCode = entry.tags && entry.tags.includes('code') ? true : false;
+                entry.hasCss = entry.css ? true : false;
+                entry.hasJs = entry.js   ? true : false;
+
                 addEntryByNameAndTagsAndYears(entry);                
             }
         }
@@ -112,26 +144,34 @@ const addEntryByNameAndTagsAndYears = function(entry) {
     };
 
     if (entry.tags) {
+
         let i = 0;
         let j = entry.tags.length;
+
         for (; i < j; i++) {
+
             if (utils.entries[type].byTag[entry.tags[i]]) {
                 utils.entries[type].byTag[entry.tags[i]].push(entrySmallIdx);
             }
             else {
                 utils.entries[type].byTag[entry.tags[i]] = [entrySmallIdx]
             }
+
         }
+        
     }
     else {
+
         if (utils.entries[type].byTag[untaggedLabel]) {
             utils.entries[type].byTag[untaggedLabel].push(entrySmallIdx);
         }
         else {
             utils.entries[type].byTag[untaggedLabel] = [entrySmallIdx]
         }
+
     }
 
+    // now build an index of entries by year and month
     const entryYear = new Date(entry.created).getFullYear() || '9999';
     const entryMonth = new Date(entry.created).toLocaleDateString('en-US', {month: 'long'}) || 'January';
     const indexOfYear = utils.entries[type].byYear.map(x => { return x.year }).indexOf(entryYear);
@@ -165,6 +205,7 @@ const addEntryByNameAndTagsAndYears = function(entry) {
             }]
         })
     }
+
 };
 
 const moonShot = function(entries) {
@@ -238,74 +279,21 @@ const prevNext = function() {
     }   
 };
 
-const makeVid = function(entry) {
+const makeVid = function(text, url) {
 
-    return entry.__content.replace(
+    return text.replace(
         /<img src="(.*?)\.(mp4)(.*)/g, 
         `<video width="100%" controls>
-            <source src="/entry-files/${entry.url}/img/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="/entry-files/${url}/img/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
         </video>`
     )
 };
 
-const makeImg = function(entry) {
-    return entry.__content.replace(
+const makeImg = function(text, url) {
+    return text.replace(
         /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-        `img src="/entry-files/${entry.url}/img/$1.$2$3`
+        `img src="/entry-files/${url}/img/$1.$2$3`
     )
-};
-
-const regularEntry = function(entry) {
-    if (!entry.layout) {
-        entry.layout = 'main';
-    }
-    
-    if (!entry.template) {
-        entry.template = 'entry';
-    }
-    
-    entry.__content = sh.makeHtml(entry.__content);
-    entry.__content = makeImg(entry);
-    entry.__content = makeVid(entry);
-
-    return entry;
-};
-
-const albumEntry = function(entry) {
-    const imgdir = dir + '/' + entry.url + '/img';
-    entry.images = fs.readdirSync(imgdir)
-        .filter(img => {
-            const imgExt = img.slice(-4);
-            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif';
-        })
-        .map(img => {
-            return `/entry-files/${entry.url}/img/${img}`;
-        });
-
-    entry.type = 'album';
-
-    return entry;
-};
-
-const presentationEntry = function(entry) {
-    entry.layout = 'main';
-    entry.template = 'entry-presentation';
-
-    if (entry.authors) {
-        if (entry.authors.length > 1) {
-            entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
-            entry.authors.unshift(me);
-            entry.authors = entry.authors.join(', ');
-        }
-        else {
-            entry.authors = me + ' and ' + entry.authors[0];
-        }
-    }
-    else {
-        entry.authors = me;
-    }
-
-    return entry;
 };
 
 const buildHanozIndex = function() {
@@ -346,25 +334,11 @@ const buildHanozIndex = function() {
     }
 };
 
-const makeEntry = function(entry) {
-    if (entry.tags && entry.tags.indexOf('presentation') > -1) {
-        entry = presentationEntry(entry);
-    }
-    else if (entry.tags && entry.tags.indexOf('album') > -1) {
-        entry = albumEntry(entry);
-    }
-    else {
-        entry = regularEntry(entry);
-    }
-
-    entry.hasCode = entry.tags && entry.tags.includes('code') ? true : false;
-    entry.hasCss = entry.css ? true : false;
-    entry.hasJs = entry.js   ? true : false;
-};
-
 const utils = {
 
     getEntry: function({name, showHidden = false}) {
+
+        //log.info(`name: ${name}`);
 
         const nameLowerCase = name.toLowerCase();
         if (nameLowerCase === 'hanoz') {
@@ -378,7 +352,28 @@ const utils = {
         const type = showHidden ? 'hidden' : 'public';
         const entry = this.entries[type].byName[nameLowerCase];
 
+        //log.info(JSON.stringify(entry));
+
         if (entry) {
+
+            const fullfilename = `${dir}/${entry.url}/index.md`;
+            const fileContents = fs.readFileSync(fullfilename, 'utf8');
+            const e = Yaml.loadFront(fileContents);
+
+            for (let key in e) {
+                if (key === '__content') {
+                    let text = e.__content;
+                    text = sh.makeHtml(text);
+                    text = makeImg(text, entry.url);
+                    text = makeVid(text, entry.url);
+                    entry.__content = text;
+                }
+                else if (!(key in entry)) {
+                    entry[key] = e[key];
+                }
+            }
+
+            //log.info(JSON.stringify(entry));
             return entry;
         }
         else {

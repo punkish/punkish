@@ -1,13 +1,113 @@
-{{> meta}}
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KONS">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    
+    <title>punkish: {{title}}</title>
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <style>
+*{box-sizing:border-box;}body{font:16px/1.5 "Georgia",serif;margin:0 auto;max-width:66ch;padding:1rem;}h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue","Helvetica","Arial",sans-serif;margin:2.5rem 0 1rem;}ul li, ol li{margin-top:0.5rem;}a,a:visited{color:black;}a:hover{color:dodgerblue;}img{height:auto;max-width:100%;}pre{border: 1px solid lightgrey;overflow:auto;}code{color:orangered;display:inline-block;}pre code{padding:1rem;}blockquote{border-left:5px solid lightgrey;font-size:120%;font-style:italic;margin:2rem 0;padding:1rem;}table{border-collapse:collapse;margin:2rem 0;text-align:left;width:100%;}tr{border-bottom:1px solid lightgrey;}th,td{padding:0.5rem;}hr{background:lightgrey;border:0;height:1px;margin:2rem 0;}
+
+body { font-size: 24px; }
+a { color: blue !important; }
+a.visited { color: teal !important; }
+small, .description, .created, figcaption { font-family: sans-serif; }
+small a { margin-right: 10px; }
+small b { margin-right: 10px; }
+footer { font-family: sans-serif; border-top: 1px solid grey; }
+pre code, nav, small, footer, .description, .created, figcaption {font-size: small;}
+header nav {margin-top: 0.85rem; border-top: 1px solid grey;}
+header nav a {margin-right: 0.5rem;}
+header div {clear: both;}
+header div a { float: left;}
+header div form input {width: calc(100% - 50px); border: none;}
+ul.tags {
+	list-style: none;
+	margin-top: 3em;
+  min-height: 20px;
+}
+ul.tags:after {
+	clear: both;
+	margin-bottom: 2em;
+}
+.tags li {
+  	float: left;
+	margin-right: 0.75em;
+	border: solid 1px grey;
+	padding: 0 5px 0 5px;
+	border-radius: 5px;
+	font-size: small;
+  font-family: sans-serif
+}
+.tags li:hover {
+	background-color: yellow;
+}
+.tags li a {
+	text-decoration: none;
+}
+ul.bottomNav {
+	clear: both;
+	list-style: none;
+  min-height: 20px;
+  font-size: small;
+  font-family: sans-serif
+}
+ul.bottomNav li {
+	margin-bottom: 0;
+  float: left;
+  margin-right: 0.75rem;
+}
+li.prev:before {
+	content: '\2190 ';
+}
+li.next:after {
+	content: ' \2192';
+}
+    </style>
+
+{{#hasCss}}
+<link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
+{{/hasCss}}
+
+{{#hasCode}}
+<link rel="stylesheet" href="/public/highlight/styles/monokai.css">
+{{/hasCode}}
+
 </head>
 <body>
-    <div class="container">
-    {{> header}}
+    <header>
+        <div>
+            <a href="/" class="home"><img src="/public/img/PunkishEidesisOrg.gif"></a> 
+            <form name="search" method="GET" action="/entries">
+                <input name="q" type="search" placeholder="there are none so blind as those who don’t see">
+            </form>
+        </div>
+        <nav>
+            <a href="/cv">cv</a>
+            <a href="/Where">where</a>
+            <a href="/entries?by=date">dates</a>
+            <a href="/entries?by=tag">tags</a>
+        </nav>
+    </header>
+
+    <main>
     
     {{{content}}}
     
-    {{> footer}}
-    </div>
+    </main>
+
+    <footer>
+        <p class="small">Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p>
+    </footer>
 
     <script src="/public/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/public/js/polyfill.js"></script>

@@ -13,7 +13,7 @@ tags       :
     - noise
     - marine life
 stars      : 
-layout     : darkmain
+isDark     : true
 ---
 
 ![luciferina](luciferina.mp4)

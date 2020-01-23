@@ -1,28 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 <head>
     <meta charset="utf-8">
-    <title>punkish: {{title}}</title>
-    <meta name="description" content="">
-    <meta name="author" content="Puneet Kishor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KONS">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    
+    <title>punkish: {{title}}</title>
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
-    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
-    <link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
-    <link rel="stylesheet" href="/public/FiraCode_1.206/fira_code.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400i&display=swap" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="/public/css/fonts.css">
-    <link rel="stylesheet" href="/public/hack/hack-subset.css"> -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    
-    {{#hasCss}}
-    <link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
-    {{/hasCss}}
-    
-    {{#hasCode}}
-    <link rel="stylesheet" href="/public/highlight/styles/monokai.css">
-    {{/hasCode}}
+    <style>
+/* uglyduck.ca */
+*{box-sizing:border-box;}body{font:16px/1.5 "Georgia",serif;margin:0 auto;max-width:66ch;padding:1rem;}h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue","Helvetica","Arial",sans-serif;margin:2.5rem 0 1rem;}ul li, ol li{margin-top:0.5rem;}a,a:visited{color:black;}a:hover{color:dodgerblue;}img{height:auto;max-width:100%;}pre{border: 1px solid lightgrey;overflow:auto;}code{color:orangered;display:inline-block;}pre code{padding:1rem;}blockquote{border-left:5px solid lightgrey;font-size:120%;font-style:italic;margin:2rem 0;padding:1rem;}table{border-collapse:collapse;margin:2rem 0;text-align:left;width:100%;}tr{border-bottom:1px solid lightgrey;}th,td{padding:0.5rem;}hr{background:lightgrey;border:0;height:1px;margin:2rem 0;}
+
+
+/* punkish customization **************/
+body { font-size: 18px; }
+blockquote {font-size: 100%;}
+h1.title {margin-bottom: -3px;}
+
+{{#isDark}}
+/* normal background customization *****/
+body, form input { background-color: #000; color: #ccc; }
+a { color: grey !important; }
+/***************************************/
+{{/isDark}}
+
+{{^isDark}}
+/* dark background customization ******/
+body { background-color: #fff; }
+a { color: blue !important; }
+/**************************************/
+{{/isDark}}
+
+small, .description, .created, figcaption { font-family: sans-serif; }
+small a, small b { margin-right: 10px; }
+pre code, nav, footer, .description, .created { font-size: small; }
+header nav {clear: both;}
+header nav, footer {border-top: 1px solid grey;}
+header nav a {margin-right: 0.5rem;}
+header div a { float: left;}
+header div form input {width: calc(100% - 50px); border: none;}
+
+/* images *********************************/
+figure { width: 100%; margin: 0; margin-bottom: 1em; }
+figure img { width: 100%; }
+figure.not100 img { width: unset; max-width: 100%; }
+figcaption {font-size: small;}
+/*****************************************/
+
+/* tags and bottom navigation bar *******/
+ul.tags, ul.bottomNav { font: small sans-serif; list-style: none; min-height: 20px; }
+ul.tags { margin-top: 3em; }
+ul.tags:after { clear: both; margin-bottom: 2em; }
+ul.tags li { float: left; margin-right: 0.75em; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; }
+ul.tags li:hover { background-color: yellow; }
+ul.tags li a { text-decoration: none; }
+ul.bottomNav { clear: both; }
+ul.bottomNav li { margin-bottom: 0; float: left; margin-right: 0.75rem; }
+/* ul.bottomNav li.prev:before { content: '\2190 '; }
+ul.bottomNav li.next:after { content: ' \2192'; } */
+/*****************************************/
+
+/* tags and dates lists ******************/
+details.month > summary {margin-left: 1rem;}
+details.entry > summary {margin-left: 2rem;}
+details.entry > div.notes {margin-left: 3rem;}
+/*****************************************/
+
+/* a slide entry *************************/
+
+/* 
+Fitting a div to the screen size AND an aspect ratio.
+https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ratio
+*/
+
+.slideContainer { border: 1px solid silver; width: 100%; padding-bottom: 56.25%; position: relative; margin-top: 2em; font-family: "et-book", serif; background: #555; box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); display: flex; box-sizing: border-box; border: 10px solid #cecece; }
+.intro-slide { padding: 1em 1em 3em 1em; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; color: white; font-size: 1rem; font-family: sans-serif; overflow-y: auto; cursor: pointer; }
+.intro-slide:hover { background-color: #f5f5f5; color: #444; }
+.intro-slide h2 { font-size: 2em; }
+.intro-slide h3 { font-size: 1.5em; }
+.intro-slide .where { font-size: 1.3em; }
+.intro-slide .notes { font-size: 1.2em; overflow: auto; margin-top: 2em; }
+.intro-slide a { font-size: 1.2em; color: lightgrey; }
+.intro-slide a:hover { color: yellow; }
+.intro-slide .when { margin-bottom: 2em; }
+/*****************************************/
+    </style>
+
+<link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
+
+{{#hasCss}}
+<link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
+{{/hasCss}}
+
+{{#hasCode}}
+<link rel="stylesheet" href="/public/highlight/styles/monokai.css">
+{{/hasCode}}
+</head>

@@ -1,6 +1,6 @@
 ---
 title      : Demystifying Blockchains
-description: you keep on using that term “blockchain.” I don’t think it means what you think it means
+description: A blockchain primer
 modified   : 2018-11-21 12:00:00
 created    : 2018-11-21 12:00:00
 viewcount  : 0
@@ -15,7 +15,7 @@ tags       :
 stars      : 
 where      : The University of Vienna
 when       : Nov 21, 2017
-notes      : A blockchain primer
+notes      : you keep on using that term “blockchain.” I don’t think it means what you think it means
 layout     : presentation-blockchain
 template   : presentation-no-keys
 ---

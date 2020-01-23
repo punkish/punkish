@@ -1,6 +1,15 @@
 <header class="row">
     <div>
-        <a href="/" class="home"><img src="/public/img/PunkishEidesisOrg.gif"></a> 
+        <a href="/" class="home">
+            {{#isDark}}
+            <img src="/public/img/PunkishEidesisOrg-inverse.png">
+            {{/isDark}}
+
+            {{^isDark}}
+            <img src="/public/img/PunkishEidesisOrg.gif">
+            {{/isDark}}
+        </a> 
+
         <form name="search" method="GET" action="/entries">
             <input name="q" type="search" placeholder="there are none so blind as those who don’t see">
         </form>

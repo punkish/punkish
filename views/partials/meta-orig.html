@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/normalize-7.0.0.min.css">
+    <link rel="stylesheet" href="/public/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
+    <link rel="stylesheet" href="/public/FiraCode_1.206/fira_code.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400i&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="/public/css/fonts.css">
+    <link rel="stylesheet" href="/public/hack/hack-subset.css"> -->
+    <link rel="stylesheet" href="/public/css/styles.css">
+    
+    {{#hasCss}}
+    <link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
+    {{/hasCss}}
+    
+    {{#hasCode}}
+    <link rel="stylesheet" href="/public/highlight/styles/monokai.css">
+    {{/hasCode}}

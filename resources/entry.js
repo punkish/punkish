@@ -1,5 +1,6 @@
 'use strict';
 
+const log = require('picolog');
 const utils = require('../utils.js');
 const redirects = {
     'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
@@ -12,7 +13,6 @@ const renames = {
 module.exports = {
     method: 'GET',
 
-    //path: '/{entry}/{subentry?}',
     path: '/{entry*}',
 
     config: {
@@ -23,6 +23,7 @@ module.exports = {
     handler: function (request, h) {
 
         let name = request.params['entry'];
+
         if (name) {
             if (name in redirects) {
                 return h.redirect(`/${redirects[name]}`);
@@ -35,7 +36,7 @@ module.exports = {
                 name: name,
                 showHidden: request.query['showHidden'] || false
             });
-    
+
             let template = entry.template || 'entry';
             let layout = entry.layout || 'main';
     
