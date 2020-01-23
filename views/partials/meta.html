@@ -25,14 +25,14 @@ blockquote {font-size: 100%;}
 h1.title {margin-bottom: -3px;}
 
 {{#isDark}}
-/* normal background customization *****/
-body, form input { background-color: #000; color: #ccc; }
+/* dark background customization *****/
+body, input[type="text"] { background-color: #000; color: #ccc; }
 a { color: grey !important; }
 /***************************************/
 {{/isDark}}
 
 {{^isDark}}
-/* dark background customization ******/
+/*  normal background customization ******/
 body { background-color: #fff; }
 a { color: blue !important; }
 /**************************************/
