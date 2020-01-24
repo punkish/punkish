@@ -31,7 +31,7 @@
 	
 	<script src="/public/remark/remark-latest.min.js"></script>
     <script>
-		var slideshow;
+	var slideshow;
     window.onload = function() {
 		slideshow = remark.create({
 			
@@ -56,24 +56,24 @@
 		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
 		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
 
-		slideshow.on('showSlide', function (slide) {
-			//PK.initializeDictionary();
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
 
-			if (slide.properties.mapfn1) {
-				eval(slide.properties.mapfn1);
-			}
-		});
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
 
-		slideshow.on('afterShowSlide', function (slide) {
-			if (slide.properties.mapfn2) {	
-				eval(slide.properties.mapfn2);
-			}
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
 
-			// var found = slide.properties.name.match(/term\d/);
-			// if (found[0]) {
-			// 	term(found[0]);
-			// }
-		});
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
 	}
     </script>
 </body>

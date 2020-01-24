@@ -2,7 +2,7 @@
 title      : A Digital Library Everywhere
 description: 
 modified   : 2020-01-08 15:22:00
-created    : 
+created    : 2020-01-08 15:22:00
 viewcount  : 26
 id         : 123
 gmap       : 

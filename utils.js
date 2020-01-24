@@ -336,7 +336,7 @@ const buildHanozIndex = function() {
 
 const utils = {
 
-    getEntry: function({name, showHidden = false}) {
+    getEntry: function({name, showHidden = false, entrytype = 'regular'}) {
 
         //log.info(`name: ${name}`);
 
@@ -363,9 +363,13 @@ const utils = {
             for (let key in e) {
                 if (key === '__content') {
                     let text = e.__content;
-                    text = sh.makeHtml(text);
-                    text = makeImg(text, entry.url);
-                    text = makeVid(text, entry.url);
+
+                    if (entrytype === 'regular') {
+                        text = sh.makeHtml(text);
+                        text = makeImg(text, entry.url);
+                        text = makeVid(text, entry.url);
+                    }
+                    
                     entry.__content = text;
                 }
                 else if (!(key in entry)) {

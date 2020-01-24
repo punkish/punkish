@@ -1,0 +1,10 @@
+/* cv ************************************/
+section#Bio p {font-style: italic;}
+section h2 {margin-bottom: 0px;}
+nav.cv-tabs a {font-family: sans-serif; margin-right: 0.5rem;}
+nav.cv-tabs a.cv-currenttab {text-decoration: none; color: black !important;font-weight: bold;}
+.cv-dept {font-weight: bold;}
+ul.cv-pubs {list-style: none;}
+li.cv-pub {padding-top: 0.5rem; padding-bottom: 0.5rem; margin-left: -2.5rem;}
+.cv-subdept {background-color: #ccc; padding: 2px 7px; border-radius: 5px;}
+/*****************************************/

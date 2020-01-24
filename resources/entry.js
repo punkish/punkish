@@ -34,7 +34,8 @@ module.exports = {
     
             const entry = utils.getEntry({
                 name: name,
-                showHidden: request.query['showHidden'] || false
+                showHidden: request.query['showHidden'] || false,
+                entrytype: request.query['presentation'] || 'regular'
             });
 
             let template = entry.template || 'entry';

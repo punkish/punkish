@@ -1,375 +1,62 @@
-header {
-	margin-bottom: 3em;
-}
-.home {
-	text-decoration: none;
-	color: black;
-	font-size: x-large;
-	font-weight: 800;
-}
-header div {
-	border-bottom: 1px solid lightgrey;
-	overflow: hidden;
-	width: 100%
-}
-i, 
-em {
-	font-family: serif;
-}
-blockquote i, 
-blockquote em {
-	font-family: serif;
-}
-blockquote i, 
-blockquote em,
-blockquote a {
-	padding-left: 0 !important;
-}
-a {
-	color: blue;
-}
-nav a {
-	margin-right: 0.75em;
-	font-size: small;
-}
-ul.tags {
-	list-style: none;
-	margin-top: 3em;
-}
-ul.tags:after {
-	clear: both;
-	margin-bottom: 2em;
-}
-.tags li {
-  	float: left;
-	margin-right: 0.75em;
-	border: solid 1px grey;
-	padding: 0 5px 0 5px;
-	border-radius: 5px;
-	font-size: small;
-}
-.tags li:hover {
-	background-color: yellow;
-}
-.tags li a {
-	text-decoration: none;
-}
-ul.bottomNav {
-	clear: both;
-	list-style: none;
-}
-ul.bottomNav li {
-	margin-bottom: 0;
-}
-li.prev:before {
-	content: '\2190 ';
-}
-div.content li.next:before {
-	content: '\2192 ';
-}
-div.content ul {
-	list-style: disc outside;
-}
-li {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-}
+/* uglyduck.ca */
+*{box-sizing:border-box;}body{font:16px/1.5 "Georgia",serif;margin:0 auto;max-width:66ch;padding:1rem;}h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue","Helvetica","Arial",sans-serif;margin:2.5rem 0 1rem;}ul li, ol li{margin-top:0.5rem;}a,a:visited{color:black;}a:hover{color:dodgerblue;}img{height:auto;max-width:100%;}pre{border: 1px solid lightgrey;overflow:auto;}code{color:orangered;display:inline-block;}pre code{padding:1rem;}blockquote{border-left:5px solid lightgrey;font-size:120%;font-style:italic;margin:2rem 0;padding:1rem;}table{border-collapse:collapse;margin:2rem 0;text-align:left;width:100%;}tr{border-bottom:1px solid lightgrey;}th,td{padding:0.5rem;}hr{background:lightgrey;border:0;height:1px;margin:2rem 0;}
 
-figure {
-	width: 100%;
-	margin: 0;
-	margin-bottom: 1em;
-}
-figure img {
-	width: 100%;
-}
-figure.not100 img {
-	width: unset;
-	max-width: 100%;
-}
-cite {
-	font-style: normal;
-	background-color: #f5f5f5
-}
-q {
-	border: 0px solid silver;
-	background-color: silver;
-	border-radius: 5px;
-	padding: 10px;
-	quotes: none;
-}
 
-#map {
-	width: 100%;
-	height: 400px;
-}
-.title {
-	margin-bottom: 0;
-	font-size: 1.5em;
-	font-weight: 400;
-}
-.description {
-	font-family: serif;
-	font-size: 1.2em;
-	font-weight: 800;
-/* 	font-style: italic; */
-}
-/* .content {
-	margin-top: 3em;
-	font-family: "et-book", serif;
-	font-size: 21px;
-} */
-h2 {
-	margin-bottom: 0;
-	font-size: 1.2em;
-	font-weight: 800;
-}
-h3 {
-	font-size: 2rem;
-	font-weight: 400;
-}
-.on {
-	visibility: visible;
-	display: block;
-}
-.off {
-	visibility: hidden;
-	display: none;
-}
+/* punkish customization **************/
+body { font-size: 18px; background-color: #fff; }
+blockquote {font-size: 100%;}
+h1.title {margin-bottom: -3px; font-family: serif; font-size: 180%;}
+a { color: blue !important; }
+/**************************************/
 
-.hilite {
-	background-color: #ffcc00;
-	padding: 10px;
-}
-.archive {
-	background-color: lightcoral;
-	color: black;
-	font-family: sans-serif;
-	font-size: small;
-	border: 1px solid;
-	padding: 5px;
-	margin-bottom: 50px;
-}
-.archive u {
-	color: white;
-}
-header div img {
-	float: left;
-}
-header div form {
-	float: left;
-	height: 0px;
-}
-input[name=q] {
-	border: none;
-	min-width: 240px;
-	font-size: 10px;
-}
+small, .description, .created, figcaption { font-family: sans-serif; }
+small a, small b { margin-right: 10px; }
+pre code, nav, footer, .description, .created { font-size: small; }
+header nav {clear: both;}
+header nav, footer {border-top: 1px solid grey;}
+header nav a {margin-right: 0.5rem;}
+header div a { float: left;}
+header div form input {width: calc(100% - 50px); border: none;}
 
-header nav {
-	float: left;
-}
-.punkish-pair {
-	border-bottom: 1px dotted grey;
-	cursor: pointer;
-}
-pre {
-	font-size: small;
-}
-div.date {
-	margin-bottom: 2em;
-}
-details.month,
-details.entry,
-details.entry .notes,
-ul.posts {
-	margin-left: 2em;
-}
-details.entry .notes {
-	margin-bottom: 1em;
-}
-div.oldstyle {
-	font-size: x-large;
-	font-weight: 400;
-}
-div.oldstyle title {
-	text-align: center;
-	font-size: xx-large;
-	font-weight: 800;
-	margin-bottom: 5rem;
-}
+/* images *********************************/
+figure { width: 100%; margin: 0; margin-bottom: 1em; }
+figure img { width: 100%; }
+figure.not100 img { width: unset; max-width: 100%; }
+figcaption {font-size: small;}
+/*****************************************/
 
-dt {
-	font-weight: bold;
-  margin-top: 1.5rem;
-}
+/* tags and bottom navigation bar *******/
+ul.tags, ul.bottomNav { font: small sans-serif; list-style: none; min-height: 20px; }
+ul.tags { margin-top: 3em; }
+ul.tags:after { clear: both; margin-bottom: 2em; }
+ul.tags li { float: left; margin-right: 0.75em; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; }
+ul.tags li:hover { background-color: yellow; }
+ul.tags li a { text-decoration: none; }
+ul.bottomNav { clear: both; }
+ul.bottomNav li { margin-bottom: 0; float: left; margin-right: 0.75rem; }
+/*****************************************/
 
-dd {
-	margin-left: 0;
-}
+/* tags and dates lists ******************/
+details.month > summary {margin-left: 1rem;}
+details.entry > summary {margin-left: 2rem;}
+details.entry > div.notes {margin-left: 3rem;}
+/*****************************************/
 
-code {
-	font-family: 'Fira Code', Hack, monospace;
-}
-ol.punkish-footnotes {
-	border-top: 1px dotted; 
-	font-size: 0.8em;
-	font-family: sans-serif;
-}
-li.punkish-footnote {
-	margin-left: 1em;
-	text-indent: -1em;
-}
-.content {
-	width: 100%;
-	position: relative;
-/* 	font-family: "et-book", serif; */
-}
+/* a slide entry *************************/
 
 /* 
 Fitting a div to the screen size AND an aspect ratio.
 https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ratio
 */
 
-.slideContainer {
-	border: 1px solid silver;
-	width: 100%;
-	padding-bottom: 56.25%;
-	position: relative;
-	margin-top: 2em;
-	font-family: "et-book", serif;
-	background: #555;
-	box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5);
-	display: flex;
-	box-sizing: border-box;
-	border: 10px solid #cecece;
-}
-
-.intro-slide {
-	padding: 1em 1em 3em 1em;
-	position: absolute;
-	top: 0; 
-	bottom: 0; 
-	left: 0; 
-	right: 0;
-	overflow: auto;
-	color: white;
-	font-size: 1rem;
-	font-family: sans-serif;
-	overflow-y: auto;
-	cursor: pointer;
-}
-.intro-slide:hover {
-	background-color: #f5f5f5;
-	color: #444;
-}
-.intro-slide h2 {
-	font-size: 2em;
-}
-.intro-slide h3 {
-	font-size: 1.5em;
-}
-.intro-slide .where {
-	font-size: 1.3em;
-}
-.intro-slide .notes {
-	font-size: 1.2em;
-	/* height: 50%; */
-	overflow: auto;
-	margin-top: 2em;
-}
-.intro-slide a {
-	font-size: 1.2em;
-	color: lightgrey;
-}
-.intro-slide a:hover {
-	color: yellow;
-}
-.intro-slide .when {
-	margin-bottom: 2em;
-}
-/*
-nice blockquotes
-https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
-*/
-blockquote {
-	border-left: 2px solid grey;
-	margin-left: 0px;
-}
-blockquote * {
-	padding-left: 20px;
-}
-.quote {
-	background: #f9f9f9;
-	border-left: 10px solid #ccc;
-	margin: 1.5em 10px;
-	padding: 0.5em 10px;
-  	quotes: "\201C""\201D""\2018""\2019";
-}
-.quote:before {
-	color: #ccc;
-	content: '“';
-	font-size: 4em;
-	line-height: 0.1em;
-	margin-right: 0;
-	vertical-align: -0.4em;
-}
-
-.fauxcode {
-	font-family: monospace;
-	font-size: 120%;
-	background-color: #c0c0c0;
-	padding: 2px;
-	border-radius: 2px;
-}
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-	input[name=q] {
-		width: 600px;
-	}
-	.slideContainer {
-		border-width: 25px;
-	}
-	.intro-slide {
-		padding: 2em 2em 5em 2em;
-		font-size: 1.25rem;
-	}
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-	.intro-slide {
-		padding: 3em 3em 8em 3em;
-		font-size: 2rem;
-	}
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
-	.slideContainer {
-		width: 70%;
-		padding-bottom: 39.375%;
-		font-size: 1.25rem;
-	}
-	.intro-slide {
-		padding: 2em 2em 5em 2em;
-		font-size: 1.25rem;
-	}
-}
+.slideContainer { border: 1px solid silver; width: 100%; padding-bottom: 56.25%; position: relative; margin-top: 2em; font-family: "et-book", serif; background: #555; box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); display: flex; box-sizing: border-box; border: 10px solid #cecece; }
+.intro-slide { padding: 1em 1em 3em 1em; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; color: white; font-size: 1rem; font-family: sans-serif; overflow-y: auto; cursor: pointer; }
+.intro-slide:hover { background-color: #f5f5f5; color: #444; }
+.intro-slide h2 { font-size: 2em; }
+.intro-slide h3 { font-size: 1.5em; }
+.intro-slide .where { font-size: 1.3em; }
+.intro-slide .notes { font-size: 1.2em; overflow: auto; margin-top: 2em; }
+.intro-slide a { font-size: 1.2em; color: lightgrey; }
+.intro-slide a:hover { color: yellow; }
+.intro-slide .when { margin-bottom: 2em; }
+/*****************************************/
