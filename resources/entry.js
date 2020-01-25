@@ -35,21 +35,34 @@ module.exports = {
             const entry = utils.getEntry({
                 name: name,
                 showHidden: request.query['showHidden'] || false,
-                entrytype: request.query['presentation'] || 'regular'
+                displaymode: request.query['presentation'] || 'regular'
             });
 
-            let template = entry.template || 'entry';
-            let layout = entry.layout || 'main';
+            log.info(`template is ${entry.template}`);
+            log.info(`layout is ${entry.layout}`);
+
+            // let template = entry.template || 'entry';
+            // let layout = entry.layout || 'main';
     
-            if (request.query['presentation']) {
-                template = 'presentation';
-                layout = 'presentation';
+            // if (request.query['presentation']) {
+            //     if (!entry.template) template = 'presentation';
+            //     if (!entry.layout) layout = 'presentation';
+            // }
+
+            if (!request.query['presentation']) {
+                if (entry.tags && entry.tags.indexOf('presentation') > -1) {
+                    entry.layout = 'main';
+                    entry.template = 'entry-presentation';
+                }
             }
             
+            
             return h.view(
-                template,               // content template
-                entry,                  // data
-                { layout: layout }      // layout
+                entry.template || 'entry',              // content template
+                entry,                                  // data
+                { 
+                    layout: entry.layout || 'main'      // layout
+                }      
             );
         }
         else {

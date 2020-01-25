@@ -81,8 +81,6 @@ const dirWalker = function(dir) {
 
                 // presentation entry
                 if (entry.tags && entry.tags.indexOf('presentation') > -1) {
-                    entry.layout = 'main';
-                    entry.template = 'entry-presentation';
 
                     if (entry.authors) {
                         if (entry.authors.length > 1) {
@@ -336,7 +334,7 @@ const buildHanozIndex = function() {
 
 const utils = {
 
-    getEntry: function({name, showHidden = false, entrytype = 'regular'}) {
+    getEntry: function({name, showHidden = false, displaymode = 'regular'}) {
 
         //log.info(`name: ${name}`);
 
@@ -364,11 +362,17 @@ const utils = {
                 if (key === '__content') {
                     let text = e.__content;
 
-                    if (entrytype === 'regular') {
+                    // convert Markdown to html *only* if entry is 
+                    // regular kind. Don't convert for a presentation 
+                    // because that conversion is done by remarkjs
+                    if (displaymode === 'regular') {
                         text = sh.makeHtml(text);
                         text = makeImg(text, entry.url);
                         text = makeVid(text, entry.url);
                     }
+                    // else if (displaymode === 'presentation') {
+                    //     log.info('entry type is not regular')
+                    // }
                     
                     entry.__content = text;
                 }

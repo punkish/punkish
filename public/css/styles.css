@@ -4,7 +4,7 @@
 
 /* punkish customization **************/
 body { font-size: 18px; background-color: #fff; }
-blockquote {font-size: 100%;}
+blockquote {font-size: 100%; padding: 0; padding-left: 1rem;}
 h1.title {margin-bottom: -3px; font-family: serif; font-size: 180%;}
 a { color: blue !important; }
 /**************************************/

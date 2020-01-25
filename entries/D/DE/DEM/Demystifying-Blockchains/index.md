@@ -391,7 +391,7 @@ Enter some values below and click [add]
 
 ---
 
-## Blockchain demo
+<h2>Blockchain demo</h2>
 
 <pre><code class="newdata"></code></pre>
 <button id="validate">validate</button>
@@ -399,7 +399,7 @@ Enter some values below and click [add]
 
 ---
 
-## Blockchain demo
+<h2>Blockchain demo</h2>
 
 <pre><code id="tamperedData" class="newdata" contenteditable="true"></code></pre>
 <button id="revalidate">revalidate</button>
@@ -587,7 +587,7 @@ A smart contract is a computer protocol intended to digitally facilitate, verify
 
 ---
 
-## Standards Work: [ISO/TC 307](https://www.iso.org/committee/6266604/x/catalogue/p/1/u/1/w/0/d/0)
+<h2>Standards Work: <a href="https://www.iso.org/committee/6266604/x/catalogue/p/1/u/1/w/0/d/0" target="_blank">ISO/TC 307</a></h2>
 
 <div class="rssViewer">
     <div class="rssItem">
