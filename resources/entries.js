@@ -2,6 +2,7 @@
 
 const moment = require('moment');
 const utils = require('../utils.js');
+const log = require('picolog');
 
 const entries = {
     method: 'GET',
@@ -55,7 +56,18 @@ const entries = {
                 
                 if (by.indexOf('tag') > -1) {
                     by = 'tag';
-                    data.entries = request.server.app.entries.byTag;
+                    //data.entries = request.server.app.entries.byTag;
+                    data.entries = [];
+                    const keys = Object.keys(request.server.app.entries.byTag).sort();
+                    for (let i = 0, j = keys.length; i < j; i++) {
+                        const entry = request.server.app.entries.byTag[keys[i]];
+
+                        //log.info(entry)
+                        data.entries.push({
+                            tag: keys[i], 
+                            entry: entry
+                        })
+                    }
                 }
                 else if (by.indexOf('date') > -1) {
                     by = 'date';

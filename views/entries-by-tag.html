@@ -8,13 +8,13 @@
 
         {{#each entries}}
         <details>
-            <summary>{{@key}}</summary>
-            {{#.}}
+            <summary>{{tag}}</summary>
+            {{#each entry}}
             <details class="entry">
                 <summary>{{title}}</summary>
                 <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
             </details>
-            {{/.}}
+            {{/each}}
         </details>
         {{/each}}
     </div>
