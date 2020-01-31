@@ -12,6 +12,7 @@ tags       :
     - governance
     - privacy
     - security
+    - blockchain
 stars      : 
 where      : The University of Vienna
 when       : Nov 21, 2017

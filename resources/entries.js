@@ -56,17 +56,34 @@ const entries = {
                 
                 if (by.indexOf('tag') > -1) {
                     by = 'tag';
-                    //data.entries = request.server.app.entries.byTag;
-                    data.entries = [];
-                    const keys = Object.keys(request.server.app.entries.byTag).sort();
-                    for (let i = 0, j = keys.length; i < j; i++) {
-                        const entry = request.server.app.entries.byTag[keys[i]];
+                                        
+                    const byTag = request.server.app.entries.byTag;
+                    const lowerCaseTags = {};
 
-                        //log.info(entry)
+                    for (const tag in byTag) {
+                        const lct = tag.toLowerCase();
+                        const entriesByTag = byTag[tag];
+
+                        if (lct in lowerCaseTags) {
+                            lowerCaseTags[lct].push(entriesByTag)
+                        }
+                        else {
+                            lowerCaseTags[lct] = entriesByTag;
+                        }
+                        
+                    }
+
+                    data.entries = [];
+                    const tags = Object.keys(lowerCaseTags).sort();
+                    
+                    for (let i = 0, j = tags.length; i < j; i++) {
+
+                        const entriesByTag = lowerCaseTags[tags[i]];
                         data.entries.push({
-                            tag: keys[i], 
-                            entry: entry
+                            tag: tags[i], 
+                            entriesByTag: entriesByTag
                         })
+                        
                     }
                 }
                 else if (by.indexOf('date') > -1) {

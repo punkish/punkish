@@ -80,7 +80,7 @@ things can’t be that bad.
 
 <details open>
 <summary id="EvacuationOfNada">
-    [Evacuation of Nada](http://irahadzic.com/evacuation-of-Nada/) by Ira Hadžić
+    [Evacuation of Nada](https://www.irahadzic.com/project/nada-1st) by Ira Hadžić
 </summary>
 
 <p class="quote">Evacuation of Nada is a response to a letter contained in its prologue from the author’s grandfather to help his recently re-located grand-daughter to find inspiration. Its premise is a multi-story building that is governed by a numerical order, the silent writings on its walls, a public staircase that is visible but mute and private areas existing behind closed doors, devoid of visuality yet fully inhabited by sound.</p>

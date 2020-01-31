@@ -38,8 +38,8 @@ module.exports = {
                 displaymode: request.query['presentation'] || 'regular'
             });
 
-            log.info(`template is ${entry.template}`);
-            log.info(`layout is ${entry.layout}`);
+            // log.info(`template is ${entry.template}`);
+            // log.info(`layout is ${entry.layout}`);
 
             // let template = entry.template || 'entry';
             // let layout = entry.layout || 'main';
