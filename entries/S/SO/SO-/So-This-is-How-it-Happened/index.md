@@ -1,8 +1,8 @@
 ---
 title      : So This is How it Happened
 description:
-modified   : 2004-12-05
-created    :
+modified   : 2004-02-05 00:00:00
+created    : 2004-02-05 00:00:00
 viewcount  : 72
 id         : 394
 gmap       :
