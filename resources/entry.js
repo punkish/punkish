@@ -28,34 +28,37 @@ module.exports = {
             if (name in redirects) {
                 return h.redirect(`/${redirects[name]}`);
             }
-            else if (name in renames) {
-                name = renames[name];
-            }
-    
-            const entry = utils.getEntry({
-                name: name,
-                showHidden: request.query['showHidden'] || false,
-                displaymode: request.query['presentation'] || 'regular'
-            });
+            else {
 
-            if (!request.query['presentation']) {
-                if (entry.tags && entry.tags.indexOf('presentation') > -1) {
-                    entry.layout = 'main';
-                    entry.template = 'entry-presentation';
-                }
+                if (name in renames) name = renames[name];
+                const presentation = request.query['presentation'];
+        
+                const entry = utils.getEntry({
+                    name: name,
+                    showHidden: request.query['showHidden'] || false,
+                    displaymode: presentation ? 'presentation' : 'regular'
+                });
+    
+                // if (!presentation) {
+                //     if (entry.tags && entry.tags.indexOf('presentation') > -1) {
+                //         entry.layout = 'main';
+                //         entry.template = 'entry-presentation';
+                //     }
+                // }
+                
+                return h.view(
+                    entry.template || 'entry',              // content template
+                    entry,                                  // data
+                    { 
+                        layout: entry.layout || 'main'      // layout
+                    }      
+                );
+
             }
             
-            // log.info(`template is ${entry.template}`);
-            // log.info(`layout is ${entry.layout}`);
-            
-            return h.view(
-                entry.template || 'entry',              // content template
-                entry,                                  // data
-                { 
-                    layout: entry.layout || 'main'      // layout
-                }      
-            );
         }
+
+        // redirect to the latest entry
         else {
             return h.redirect(request.server.app.entries.byDate[0].name);
         }

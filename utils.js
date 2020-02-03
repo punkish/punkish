@@ -9,7 +9,7 @@ const footnotes = require('./public/js/footnotes.js');
 const sh = new showdown.Converter({extensions: [footnotes], tables: true});
 const log = require('picolog');
 
-log.level = log.INFO;
+log.level = log.ERROR;
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const dir = './entries';
@@ -336,7 +336,9 @@ const utils = {
 
     getEntry: function({name, showHidden = false, displaymode = 'regular'}) {
 
-        //log.info(`name: ${name}`);
+        log.info(`name: ${name}`);
+        log.info(`showHidden: ${name}`);
+        log.info(`displaymode: ${displaymode}`);
 
         const nameLowerCase = name.toLowerCase();
         if (nameLowerCase === 'hanoz') {
@@ -348,9 +350,7 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
-        const entry = this.entries[type].byName[nameLowerCase];
-
-        //log.info(JSON.stringify(entry));
+        const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
 
         if (entry) {
 
@@ -360,28 +360,30 @@ const utils = {
 
             for (let key in e) {
                 if (key === '__content') {
-                    let text = e.__content;
+                    //let text = e.__content;
 
                     // convert Markdown to html *only* if entry is 
                     // regular kind. Don't convert for a presentation 
                     // because that conversion is done by remarkjs
                     if (displaymode === 'regular') {
-                        text = sh.makeHtml(text);
-                        text = makeImg(text, entry.url);
-                        text = makeVid(text, entry.url);
+                        e.__content = sh.makeHtml(e.__content);
+                        e.__content = makeImg(e.__content, entry.url);
+                        e.__content = makeVid(e.__content, entry.url);
+
+                        entry.layout = 'main';
+                        entry.template = 'entry-presentation';
                     }
-                    // else if (displaymode === 'presentation') {
-                    //     log.info('entry type is not regular')
-                    // }
                     
-                    entry.__content = text;
+                    //entry.__content = text;
                 }
                 else if (!(key in entry)) {
                     entry[key] = e[key];
                 }
             }
 
-            //log.info(JSON.stringify(entry));
+            log.info(`template: ${entry.template}`);
+            log.info(`layout: ${entry.layout}`);
+
             return entry;
         }
         else {
