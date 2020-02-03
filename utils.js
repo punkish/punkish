@@ -360,15 +360,16 @@ const utils = {
 
             for (let key in e) {
                 if (key === '__content') {
+                    entry.__content = e.__content;
                     //let text = e.__content;
 
                     // convert Markdown to html *only* if entry is 
                     // regular kind. Don't convert for a presentation 
                     // because that conversion is done by remarkjs
                     if (displaymode === 'regular') {
-                        e.__content = sh.makeHtml(e.__content);
-                        e.__content = makeImg(e.__content, entry.url);
-                        e.__content = makeVid(e.__content, entry.url);
+                        entry.__content = sh.makeHtml(entry.__content);
+                        entry.__content = makeImg(entry.__content, entry.url);
+                        entry.__content = makeVid(entry.__content, entry.url);
 
                         entry.layout = 'main';
                         entry.template = 'entry-presentation';
@@ -381,8 +382,9 @@ const utils = {
                 }
             }
 
-            log.info(`template: ${entry.template}`);
-            log.info(`layout: ${entry.layout}`);
+            // log.info(`template: ${entry.template}`);
+            // log.info(`layout: ${entry.layout}`);
+            //log.info(`entry: ${JSON.stringify(entry)}`);
 
             return entry;
         }
