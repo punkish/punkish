@@ -3,12 +3,18 @@
     <h1 class="title">Entries by Tag</h1>
     <div class="created">{{created}}</div>
 
+    <form id="searchInPage">
+        <input name="tag" type="text"> 
+        <button type="submit">search</button>
+        <!-- <button type="reset">reset</button> -->
+    </form>
+
     <div class="content">
         <p>entries sorted by tags. (also see <a href="/entries?by=date">entries by date</a>.)</p>
 
         {{#each entries}}
         <details>
-            <summary>{{tag}}</summary>
+            <summary class="tag">{{tag}}</summary>
             {{#each entriesByTag}}
             <details class="entry">
                 <summary>{{title}}</summary>

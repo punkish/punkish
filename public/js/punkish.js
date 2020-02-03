@@ -110,5 +110,20 @@ let PK = {
                 location.href = `/${term}`;
             }
         });
+    },
+
+    searchInPage: function() {
+        
+        const tags = document.getElementsByClassName("tag");
+
+        function s(str) {
+            for (let i=0, j=tags.length; i<j; i++) {
+                const ix = tags[i].innerText.indexOf(str);
+                tags[i].parentElement.style.display = ix == -1 ? 'none' : 'block';
+            }
+        }
+
+        const inp = document.getElementsByName('tag');
+        s(inp[0].value);
     }
 };

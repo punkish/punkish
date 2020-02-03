@@ -38,17 +38,6 @@ module.exports = {
                 displaymode: request.query['presentation'] || 'regular'
             });
 
-            // log.info(`template is ${entry.template}`);
-            // log.info(`layout is ${entry.layout}`);
-
-            // let template = entry.template || 'entry';
-            // let layout = entry.layout || 'main';
-    
-            // if (request.query['presentation']) {
-            //     if (!entry.template) template = 'presentation';
-            //     if (!entry.layout) layout = 'presentation';
-            // }
-
             if (!request.query['presentation']) {
                 if (entry.tags && entry.tags.indexOf('presentation') > -1) {
                     entry.layout = 'main';
@@ -56,6 +45,8 @@ module.exports = {
                 }
             }
             
+            // log.info(`template is ${entry.template}`);
+            // log.info(`layout is ${entry.layout}`);
             
             return h.view(
                 entry.template || 'entry',              // content template
