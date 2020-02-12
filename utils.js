@@ -337,7 +337,7 @@ const utils = {
     getEntry: function({name, showHidden = false, displaymode = 'regular'}) {
 
         log.info(`name: ${name}`);
-        log.info(`showHidden: ${name}`);
+        log.info(`showHidden: ${showHidden}`);
         log.info(`displaymode: ${displaymode}`);
 
         const nameLowerCase = name.toLowerCase();
@@ -350,6 +350,8 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
+        log.info(`type: ${showHidden}`);
+
         const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
 
         if (entry) {
@@ -372,7 +374,7 @@ const utils = {
                         entry.__content = makeVid(entry.__content, entry.url);
 
                         entry.layout = 'main';
-                        entry.template = 'entry-presentation';
+                        entry.template = 'entry';
                     }
                     
                     //entry.__content = text;
