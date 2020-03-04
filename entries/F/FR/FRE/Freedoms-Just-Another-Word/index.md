@@ -2,11 +2,11 @@
 title      : Freedom’s Just Another Word for Nothin’ Left To Choose
 description: 
 modified   : 2012-03-11 21:46:00
-created    : 2012-03-11 21-46-00
+created    : 2012-03-11 21:46:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - CC0
     - philosophy
     - copyright
