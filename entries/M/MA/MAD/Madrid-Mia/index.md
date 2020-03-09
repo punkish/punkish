@@ -1,6 +1,6 @@
 ---
 title      : ¡ Madrid Mia !
-description: thanks to T, L and many others
+description: 
 modified   : 2020-03-09 11:46:00
 created    : 2020-03-09 11:46:00
 viewcount  : 0
@@ -18,6 +18,8 @@ isMap      : true
 js         : a-list
 ---
 
-A list of places I’ve been enjoying in Madrid.
+A list of crowdsourced[^1] places I’ve been enjoying in Madrid.
 
 <div id="map"></div>
+
+[^1]: a “crowd” of mostly TH, LL, and one or two others
