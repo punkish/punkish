@@ -32,13 +32,12 @@ module.exports = {
 
                 if (name in renames) name = renames[name];
                 const presentation = request.query['presentation'];
-        
                 const entry = utils.getEntry({
                     name: name,
                     showHidden: request.query['showHidden'] || false,
                     displaymode: presentation ? 'presentation' : 'regular'
                 });
-    
+
                 // if (!presentation) {
                 //     if (entry.tags && entry.tags.indexOf('presentation') > -1) {
                 //         entry.layout = 'main';
@@ -47,11 +46,9 @@ module.exports = {
                 // }
                 
                 return h.view(
-                    entry.template || 'entry',              // content template
-                    entry,                                  // data
-                    { 
-                        layout: entry.layout || 'main'      // layout
-                    }      
+                    entry.template,
+                    entry,
+                    { layout: entry.layout }      
                 );
 
             }

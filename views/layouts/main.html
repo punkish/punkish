@@ -1,16 +1,74 @@
-{{> meta}}
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+
+    <title>punkish: {{title}}</title>
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/JavaScript-autoComplete/auto-complete.css">
+    {{#hasCss}}<link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">{{/hasCss}}
+    {{#hasCode}}<link rel="stylesheet" href="/public/highlight/styles/monokai.css">{{/hasCode}}
+    {{#isDark}}<link rel="stylesheet" href="/public/css/dark.css">{{/isDark}}
+    {{#isMap}}<link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css">
+    <style>#map { width: 100%; height: 400px; padding: 0; margin: 0; }</style>{{/isMap}}
+</head>
 
 <body>
 
-    {{> header}}
-
-    <main>
+    <header class="row">
+        <div>
+            <a href="/" class="home">
+                {{#isDark}}<img src="/public/img/PunkishEidesisOrg-inverse.png">{{/isDark}}
+                {{^isDark}}<img src="/public/img/PunkishEidesisOrg.gif">{{/isDark}}
+            </a> 
     
-    {{{content}}}
-    
-    </main>
+            <form name="search" method="GET" action="/entries">
+                <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+            </form>
+        </div>
+        <nav>
+            <a href="/cv">cv</a>
+            <a href="/Where">where</a>
+            <a href="/entries?by=date">dates</a>
+            <a href="/entries?by=tag">tags</a>
+        </nav>
+    </header>
 
-    {{> footer}}
+    <main>{{{content}}}</main>
+
+    <footer>{{> footer}}</footer>
+
+<script src="/public/JavaScript-autoComplete/auto-complete.js"></script>
+<script src="/public/js/polyfill.js"></script>
+<script src="/public/js/punkish.js"></script>
+
+{{#hasJs}}<script src="/entry-files/{{url}}/js/{{js}}.js"></script>{{/hasJs}}
+{{#hasCode}}<script src="/public/highlight/highlight.pack.js"></script>
+<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>{{/hasCode}}
+{{#isMap}}<script src="/node-files/leaflet/dist/leaflet.js"></script>{{/isMap}}
+
+<script>
+    PK.autocomplete();
+    PK.initializeDictionary();
+
+    const searchInPage = document.getElementById('searchInPage');
+    if (searchInPage) {
+        const inp = document.getElementsByName('tag');
+        inp[0].addEventListener('keyup', PK.searchInPage);
+    }
+
+    {{#hasCode}}hljs.initHighlighting();{{/hasCode}}
+
+    {{#hasJs}}PK['{{js}}'].init();{{/hasJs}}
+</script>
 
 </body>
 </html>

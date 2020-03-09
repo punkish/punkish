@@ -1,22 +1,15 @@
 {{> meta}}
 
-<link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css" />
-<!-- <link rel="stylesheet" href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" /> -->
-
-<!-- <link rel="stylesheet" href="/entry-files/{{entryDir}}/css/styles.css"> -->
-
-<style>
-#map { width: 100%; height: 400px; padding: 0; margin: 0; }
-</style>
-</head>
 <body>
-    <div class="container">
     {{> header}}
 
+    <main>
+    
     {{{content}}}
+    
+    </main>
 
     {{> footer}}
-    </div>
 
     <script src="/node-files/leaflet/dist/leaflet.js"></script>
 

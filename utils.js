@@ -350,7 +350,7 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
-        log.info(`type: ${showHidden}`);
+        log.info(`type: ${type}`);
 
         const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
 
@@ -373,8 +373,8 @@ const utils = {
                         entry.__content = makeImg(entry.__content, entry.url);
                         entry.__content = makeVid(entry.__content, entry.url);
 
-                        entry.layout = 'main';
-                        entry.template = 'entry';
+                        entry.layout = e.layout || 'main';
+                        entry.template = e.template || 'entry';
                     }
                     
                     //entry.__content = text;
@@ -386,7 +386,7 @@ const utils = {
 
             // log.info(`template: ${entry.template}`);
             // log.info(`layout: ${entry.layout}`);
-            //log.info(`entry: ${JSON.stringify(entry)}`);
+            // log.info(`entry: ${JSON.stringify(entry)}`);
 
             return entry;
         }

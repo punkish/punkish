@@ -2,7 +2,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="KONS">
     <meta name="version" content="4.0">
     <meta name="author" content="Puneet Kishor">
     <meta name="copyright" content="CC0 Public Domain Dedication">
@@ -28,4 +27,11 @@
     {{#isDark}}
     <link rel="stylesheet" href="/public/css/dark.css">
     {{/isDark}}
+
+    {{#isMap}}
+    <link rel="stylesheet" href="/node-files/leaflet/dist/leaflet.css" />
+    <style>
+    #map { width: 100%; height: 400px; padding: 0; margin: 0; }
+    </style>
+    {{/isMap}}
 </head>

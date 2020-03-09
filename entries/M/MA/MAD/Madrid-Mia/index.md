@@ -1,15 +1,18 @@
 ---
-title      : The “A” List
+title      : Madrid Mia
 description: 
-modified   : 2016-07-30 14:46:00
-created    : 2016-07-30 14:46:00
+modified   : 2020-03-09 11:46:00
+created    : 2020-03-09 11:46:00
 viewcount  : 0
 id         : 232
 gmap       : 
 tags       :
-    - restaurants
+    - Madrid
     - cafés
     - bars
+    - art galleries
+    - museums
+    - shows
 stars      : 
 isMap      : true
 js         : a-list
