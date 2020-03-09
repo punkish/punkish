@@ -18,8 +18,6 @@ isMap      : true
 js         : a-list
 ---
 
-A crowd-sourced[^1] list of restaurants and bars in Paris that I am making my way through slowly.
+A list of places I’ve been enjoying in Madrid.
 
 <div id="map"></div>
-
-[^1]: A crowd of two.
