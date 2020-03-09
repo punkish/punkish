@@ -90,7 +90,7 @@ PK['a-list'] = {
                 "name" : "La Falda",
                 "type" : "drinks",
                 "coords" : [40.4106612, -3.7000247],
-                "desc" : "a nice neighbor bar for drinks",
+                "desc" : "a nice neighborhood bar for drinks",
                 "srce" : "Laura",
                 "addr" : "Calle de Miguel Servet, 4, 28012 Madrid", 
                 "url" : "lafalda.es",
