@@ -10,6 +10,7 @@ tags        :
     - code
     - data dictionary
 stars      : 
+---
 
 Data are central to everything we do at [Plazi](https://plazi.org), and the main focus of (almost) everything I do at Plazi — the [Zenodeo API](https://zenodeo.punkish.org) and [Ocellus](https://ocellus.punkish.org), a sample application that uses that API. Both applications are written in JavaScript. While I stay away from frameworks and libraries as much as I can help it, I do use the wonderful [Hapijs](https://hapi.dev) for all the REST infrastructure. Hapi‘s tagline is *configuration over code*, and I’ve really come to appreciate that.
 
