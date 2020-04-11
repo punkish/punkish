@@ -21,14 +21,23 @@ There is not much to add to [Nicky’s most excellent explanation](https://ncase
              Alice                   Bob                      
                                                               
 ═══╦══════╦════════════════════════════════════════════════   
-   │day 0 │  gets infected                                    
+   │day 0 │  - gets infected
+   │      │  - doesn't know
+   |      |  - doesn't show any
+   |      |    symptoms
 ───┼──────┼────────────────────────────────────────────────   
    │day 1 │                                                   
 ───┼──────┼────────────────────────────────────────────────   
    │day 2 │                                                   
 ───┼──────┼────────────────────────────────────────────────   
-   │day 3 │  becomes contagious  - come in contact w Alice    
-   │      │                      - gets infected              
+   │day 3 │  becomes contagious  - comes in contact w Alice    
+   │      │                      - possibly gets infected
+   │      │                      - doesn't know
+   |      |                      - doesn't show any
+   |      |                        symptoms
+   |      |                      - phone records random 
+   |      |                        codes sent by everyone 
+   |      |                        nearby, including Alice
  ──┼──────┼─────────────────────────────────────────────────  
    │day 4 │                                                   
  ──┼──────┼─────────────────────────────────────────────────  
