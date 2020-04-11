@@ -58,7 +58,7 @@ There is not much to add to [Nicky’s most excellent explanation](https://ncase
  ──┴──────┴─────────────────────────────────────────────────  
  ```
 
- Note that the above lies on a few assumptions and a lot of voluntary actions. Here are a few I can think of:
+ Note that the above depeneds on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:
 
 - Is there any voluntary action anywhere?
 1. yes, on the part of Alice and Bob, to install that app allow it to do its job, which is to send out the random codes every 5 mins, and to poll the central db for matching codes (this becomes useful in step four below
