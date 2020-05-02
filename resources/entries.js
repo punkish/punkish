@@ -31,12 +31,15 @@ const entries = {
         };
         
         if (request.params['abc']) {
+
             const abc = request.params['abc'].toLowerCase();
             let matches = [];
             let e = utils.entries.public.byDate;
-            let j = e.length;
+            let i = 0
+            const j = e.length;
 
-            for (let i = 0; i < j; i++) {
+            for (; i < j; i++) {
+
                 if (~e[i].title.toLowerCase().indexOf(abc)) {
                     //matches.push([utils.posts.byDate[i]['title'], utils.posts.byDate[i]['file']]);
                     matches.push([e[i].title, e[i].name]);

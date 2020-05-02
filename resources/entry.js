@@ -4,8 +4,10 @@ const log = require('picolog');
 const utils = require('../utils.js');
 const redirects = {
     'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
-    'Hong-Kong-Bay-Red-Tide-Data': 'Hong-Kong-Bay-Water-Quality-Data'
+    'Hong-Kong-Bay-Red-Tide-Data': 'Hong-Kong-Bay-Water-Quality-Data',
+    'Importance-of-Data-Dictionary': 'Configuration-Over-Code'
 };
+
 const renames = {
     'cv': 'cv-latest'
 };
@@ -26,6 +28,7 @@ module.exports = {
 
         if (name) {
             if (name in redirects) {
+
                 return h.redirect(`/${redirects[name]}`);
             }
             else {
@@ -57,7 +60,8 @@ module.exports = {
 
         // redirect to the latest entry
         else {
-            return h.redirect(request.server.app.entries.byDate[0].name);
+
+            return h.redirect(utils.entries.public.byDate[0].name);
         }
         
     }

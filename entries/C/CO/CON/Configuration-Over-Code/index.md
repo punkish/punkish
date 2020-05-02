@@ -1,6 +1,6 @@
 ---
-title      : The Importance of a Data Dictionary
-description: configuration over code
+title      : Configuration Over Code 
+description: iow The Importance of a Data Dictionary
 modified   : 2020-03-29 15:43:00
 created    : 2020-03-29 15:43:00
 viewcount  : 7

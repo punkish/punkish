@@ -9,7 +9,7 @@ const footnotes = require('./public/js/footnotes.js');
 const sh = new showdown.Converter({extensions: [footnotes], tables: true});
 const log = require('picolog');
 
-log.level = log.ERROR;
+log.level = log.INFO;
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const dir = './entries';
@@ -29,13 +29,14 @@ const dirWalker = function(dir) {
 
         const stats = fs.statSync(fullfilename);
         if (stats.isDirectory()) {
+
             dirWalker(fullfilename);
         }
         else if (stats.isFile()) {
+
             if (path.basename(fullfilename) === 'index.md') {
-
+                
                 const fileContents = fs.readFileSync(fullfilename, 'utf8');
-
                 const entry = Yaml.loadFront(fileContents);
 
                 //const pres = {};
@@ -57,25 +58,12 @@ const dirWalker = function(dir) {
                 entry.url = `${o}/${t}/${h}/${entry.name}`;
 
                 // remove content
-                delete entry.__content;
+                //delete entry.__content;
 
                 // clean the dates
                 const fakedate = new Date('1980-01-01 00:00:00').toLocaleDateString("en-US", dateOptions);
-    
-                if (entry.modified) {
-                    entry.modified = new Date(entry.modified).toLocaleDateString("en-US", dateOptions);
-                }
-                else {
-                    entry.modified = fakedate;
-                }
-
-                if (entry.created) {
-                    entry.created = new Date(entry.created).toLocaleDateString("en-US", dateOptions);
-                }
-                else {
-                    entry.created = fakedate;
-                }
-
+                entry.modified = entry.modified ? new Date(entry.modified).toLocaleDateString("en-US", dateOptions) : fakedate;
+                entry.created  = entry.created  ? new Date(entry.created).toLocaleDateString("en-US", dateOptions)  : fakedate;
 
                 // make the entry
 
@@ -83,22 +71,27 @@ const dirWalker = function(dir) {
                 if (entry.tags && entry.tags.indexOf('presentation') > -1) {
 
                     if (entry.authors) {
+
                         if (entry.authors.length > 1) {
+
                             entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1];
                             entry.authors.unshift(me);
                             entry.authors = entry.authors.join(', ');
                         }
                         else {
+
                             entry.authors = me + ' and ' + entry.authors[0];
                         }
                     }
                     else {
+
                         entry.authors = me;
                     }
                 }
 
                 // album entry
                 else if (entry.tags && entry.tags.indexOf('album') > -1) {
+
                     const imgdir = `./entries/${entry.url}/img`;
                     entry.images = fs.readdirSync(imgdir)
                         .filter(img => {
@@ -114,6 +107,7 @@ const dirWalker = function(dir) {
 
                 // regular entry
                 else {
+
                     if (!entry.layout) entry.layout = 'main';
                     if (!entry.template) entry.template = 'entry';
                 }
@@ -134,12 +128,14 @@ const addEntryByNameAndTagsAndYears = function(entry) {
     const eLower = entry.name.toLowerCase();
 
     utils.entries[type].byName[eLower] = entry;
-
     const entrySmallIdx = {
         name: entry.name,
         title: entry.title,
+        date: entry.modified,
         notes: entry.notes
     };
+
+    utils.entries[type].byDate.push(entrySmallIdx);
 
     if (entry.tags) {
 
@@ -156,14 +152,15 @@ const addEntryByNameAndTagsAndYears = function(entry) {
             }
 
         }
-        
     }
     else {
 
         if (utils.entries[type].byTag[untaggedLabel]) {
+
             utils.entries[type].byTag[untaggedLabel].push(entrySmallIdx);
         }
         else {
+
             utils.entries[type].byTag[untaggedLabel] = [entrySmallIdx]
         }
 
@@ -181,13 +178,16 @@ const addEntryByNameAndTagsAndYears = function(entry) {
         if (indexOfMonth > -1) {
 
             if (utils.entries[type].byYear[indexOfYear].months[indexOfMonth].entries.length) {
+
                 utils.entries[type].byYear[indexOfYear].months[indexOfMonth].entries.push(entrySmallIdx);
             }
             else {
+
                 utils.entries[type].byYear[indexOfYear].months[indexOfMonth].entries = [ entrySmallIdx ];
             }
         }
         else {
+
             utils.entries[type].byYear[indexOfYear].months.push({
                 month: entryMonth,
                 entries: [ entrySmallIdx ]
@@ -195,6 +195,7 @@ const addEntryByNameAndTagsAndYears = function(entry) {
         }
     }
     else {
+
         utils.entries[type].byYear.push({
             year: entryYear,
             months: [{
@@ -219,33 +220,22 @@ const moonShot = function(entries) {
     });
 };
 
-const postsByDate = function(posts) {
-    for (let i in posts) {
-        const e = posts[i];
-        utils.entries.public.byDate.push({
-            date: new Date(e.created),
-            name: e.name,
-            title: e.title
-        })
-    }
+const sortFunc = function(field) {
 
-    const sortFunc = function(field) {
-        return function(a, b) {
-            //return a[field] < b[field] ? 1 : -1;
-            if (a[field] < b[field]) {
-                return 1;
-            }
-            else if (a[field] > b[field]) {
-                return -1;
-            }
-    
-            //names must be equal
-            return 0;
+    return function(a, b) {
+
+        let s = 0;
+        if (field === 'date') {
+            s = new Date(b[field]) - new Date(a[field]);
         }
-    };
+        else {
+            s = b[field] - a[field];
+        }
 
-    utils.entries.public.byDate.sort(sortFunc('date'));
+        return s;
+    }
 };
+
 
 const prevNext = function() {
 
@@ -336,12 +326,9 @@ const utils = {
 
     getEntry: function({name, showHidden = false, displaymode = 'regular'}) {
 
-        log.info(`name: ${name}`);
-        log.info(`showHidden: ${showHidden}`);
-        log.info(`displaymode: ${displaymode}`);
-
         const nameLowerCase = name.toLowerCase();
         if (nameLowerCase === 'hanoz') {
+
             return {
                 pages: this.entries.public.hanoz,
                 layout: 'hanoz',
@@ -350,7 +337,6 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
-        log.info(`type: ${type}`);
 
         const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
 
@@ -406,7 +392,7 @@ const utils = {
             };
         }
     },
-
+    
     entries: {
         public: {
             byName: {},
@@ -430,7 +416,7 @@ const utils = {
 
     init: function() {
         dirWalker(dir);
-        postsByDate(this.entries.public.byName);
+        utils.entries.public.byDate.sort(sortFunc('date'));
 
         // For descending sort
         this.entries.public.byYear.sort((a, b) => b['year'] - a['year']); 
@@ -441,7 +427,6 @@ const utils = {
         prevNext();
         buildHanozIndex();
         moonShot(Object.values(this.entries.public.byName));
-        return this.entries.public;
     }
 };
 

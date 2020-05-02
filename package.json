@@ -8,24 +8,22 @@
   "license": "CC0-1.0",
   "private": true,
   "dependencies": {
-    "@hapi/good": "^8.2.0",
-    "@hapi/good-console": "^8.1.0",
-    "@hapi/good-squeeze": "^5.2.0",
-    "@hapi/hapi": "^18.3.1",
-    "@hapi/inert": "^5.2.1",
-    "@hapi/vision": "^5.5.2",
-    "blipp": "^4.0.0",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
+    "@hapi/vision": "^6.0.0",
+    "blipp": "^4.0.1",
     "crypto-js": "^3.1.9-1",
     "dygraphs": "^2.1.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.6",
     "leaflet": "^1.6.0",
     "lunr": "^2.3.6",
+    "moment": "^2.24.0",
     "papaparse": "^5.0.0",
     "paper": "^0.12.3",
     "picolog": "^1.0.4",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "smoothie": "^1.35.0",
     "web-audio-daw": "^4.6.0",
-    "yaml-front-matter": "^4.0.0"
+    "yaml-front-matter": "^4.1.0"
   }
 }
