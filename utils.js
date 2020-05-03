@@ -271,7 +271,7 @@ const makeVid = function(text, url) {
 
     return text.replace(
         /<img src="(.*?)\.(mp4)(.*)/g, 
-        `<video width="100%" controls>
+        `<video width="100%" controls poster="/entry-files/${url}/img/$1.jpg">
             <source src="/entry-files/${url}/img/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
         </video>`
     )
@@ -337,7 +337,7 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
-
+        
         const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
 
         if (entry) {
