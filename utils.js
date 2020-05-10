@@ -337,8 +337,9 @@ const utils = {
         }
 
         const type = showHidden ? 'hidden' : 'public';
-        
-        const entry = JSON.parse(JSON.stringify(this.entries[type].byName[nameLowerCase]));
+        const entry = this.entries[type].byName[nameLowerCase];
+        //console.log(entry)
+       // const entry = JSON.parse(JSON.stringify(n));
 
         if (entry) {
 

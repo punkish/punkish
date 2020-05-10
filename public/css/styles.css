@@ -23,6 +23,7 @@ figure { width: 100%; margin: 0; margin-bottom: 1em; }
 figure img { width: 100%; }
 figure.not100 img { width: unset; max-width: 100%; }
 figcaption {font-size: small;}
+figure.inline { width: 100%; margin-left: 0; margin-bottom: 1em; float: left; max-width: 400px; margin-right: 1em; }
 /*****************************************/
 
 /* tags and bottom navigation bar *******/

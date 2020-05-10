@@ -1,5 +1,5 @@
 ---
-title      : About Me
+title      : Itinerant Open Science/Data Advocate
 description:
 modified   : 2015-08-08
 created    :
@@ -12,12 +12,19 @@ tags       :
 stars      :
 ---
 
-<figure>
+<!-- <figure>
     <img src="punkish-2.jpg">
+    <figcaption></figcaption> 
+</figure> -->
+
+<figure class="inline">
+    <picture>
+        <source srcset="/entry-files/A/AB/ABO/About/img/right-profile-960.jpg" media="(min-width:800px)">
+        <source srcset="/entry-files/A/AB/ABO/About/img/right-profile-768.jpg" media="(min-width:600px)">
+        <img src="right-profile-400.jpg">
+    </picture>
     <figcaption></figcaption>
 </figure>
-
-<h2>Itinerant Open Science and Data Advocate</h2>
 
 <p>I am a science researcher and an open access advocate, an engineer and an environmental scientist with expertise in both ‘science for policy’ as well as ‘policy for science.’. I travel to wherever my experience and skills can help make a system, an organization, or a community more open.</p>
 
