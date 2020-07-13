@@ -344,6 +344,7 @@ const utils = {
         if (entry) {
 
             const fullfilename = `${dir}/${entry.url}/index.md`;
+
             const fileContents = fs.readFileSync(fullfilename, 'utf8');
             const e = Yaml.loadFront(fileContents);
 
@@ -364,6 +365,7 @@ const utils = {
                         entry.template = e.template || 'entry';
                     }
                     
+                    
                     //entry.__content = text;
                 }
                 else if (!(key in entry)) {
@@ -374,7 +376,7 @@ const utils = {
             // log.info(`template: ${entry.template}`);
             // log.info(`layout: ${entry.layout}`);
             // log.info(`entry: ${JSON.stringify(entry)}`);
-
+            
             return entry;
         }
         else {

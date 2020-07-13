@@ -12,6 +12,8 @@ tags       :
     - presentation
     - TDM
 stars      : 
+layout     : presentation
+template   : presentation
 notes      : Originally created by the Creative Commons Science, Policy and Legal teams, subsequently revised by me for the web. Placed in the public domain under the CC0 Public Domain Dedication.
  <a href="/Legal-Implications-of-TDM?a=show#1">start presentation &raquo;</a>
 ---
