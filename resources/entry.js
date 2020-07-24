@@ -25,14 +25,14 @@ module.exports = {
     handler: function (request, h) {
 
         let name = request.params['entry'];
-
+        
         if (name) {
             if (name in redirects) {
 
                 return h.redirect(`/${redirects[name]}`);
             }
             else {
-
+                
                 if (name in renames) name = renames[name];
                 const presentation = request.query['presentation'];
 
@@ -41,7 +41,7 @@ module.exports = {
                     showHidden: request.query['showHidden'] || false,
                     displaymode: presentation ? 'presentation' : 'regular'
                 });
-
+                
                 if (entry.tags && entry.tags.indexOf('presentation') > -1) {
                     if (presentation) {
                         return h.view(
@@ -57,6 +57,13 @@ module.exports = {
                             { layout: 'main' }      
                         );
                     }
+                }
+                else {
+                    return h.view(
+                        'entry',
+                        entry,
+                        { layout: 'main' }      
+                    );
                 }
 
             }
