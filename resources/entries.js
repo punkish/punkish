@@ -2,7 +2,7 @@
 
 const moment = require('moment');
 const utils = require('../utils.js');
-const log = require('picolog');
+//const log = require('picolog');
 
 const entries = {
     method: 'GET',

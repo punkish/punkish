@@ -1,6 +1,6 @@
 'use strict';
 
-const log = require('picolog');
+//const log = require('picolog');
 const utils = require('../utils.js');
 const redirects = {
     'Circle-whose-center-is_everywhere': 'Circle-whose-center-is-everywhere',
@@ -43,6 +43,7 @@ module.exports = {
                 });
                 
                 if (entry.tags && entry.tags.indexOf('presentation') > -1) {
+                    
                     if (presentation) {
                         return h.view(
                             'presentation',
@@ -57,6 +58,13 @@ module.exports = {
                             { layout: 'main' }      
                         );
                     }
+                }
+                else if (entry.layout) {
+                    return h.view(
+                        'entry',
+                        entry,
+                        { layout: entry.layout }
+                    )
                 }
                 else {
                     return h.view(

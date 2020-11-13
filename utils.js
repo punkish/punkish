@@ -7,9 +7,9 @@ const lunr = require('lunr');
 const showdown = require('showdown');
 const footnotes = require('./public/js/footnotes.js');
 const sh = new showdown.Converter({extensions: [footnotes], tables: true});
-const log = require('picolog');
+//const log = require('picolog');
 
-log.level = log.INFO;
+//log.level = log.INFO;
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const dir = './entries';

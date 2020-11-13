@@ -16,7 +16,7 @@
     "dygraphs": "^2.1.0",
     "handlebars": "^4.7.6",
     "leaflet": "^1.6.0",
-    "lunr": "^2.3.6",
+    "lunr": "^2.3.9",
     "moment": "^2.24.0",
     "papaparse": "^5.0.0",
     "paper": "^0.12.3",
