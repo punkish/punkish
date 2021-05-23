@@ -23,6 +23,7 @@
     "picolog": "^1.0.4",
     "showdown": "^1.9.1",
     "smoothie": "^1.35.0",
+    "walker": "^1.0.7",
     "web-audio-daw": "^4.6.0",
     "yaml-front-matter": "^4.1.0"
   }

@@ -1,8 +1,8 @@
 ---
 title      : Curriculum Vita
 description:
-modified   : 2019-04-01 00:00:00
-created    : 2019-04-01 00:00:00
+modified   : 2021-05-01 00:00:00
+created    : 2021-05-01 00:00:00
 viewcount  : 0
 id         :
 gmap       :
@@ -58,7 +58,7 @@ js         :
             </div>
 
             <div class="cv-cat">
-                <p><span class="cv-dept">TOP Labs, Berlin, Germany.</span> I am a member emeritus of the biolab and art space run by <a href="http://top-ev.de" target="_blank">>top e.V.</a></p>
+                <p><span class="cv-dept">TOP Lab, Berlin, Germany.</span> I am a member of <a href="http://top-ev.de" target="_blank">>top e.V.</a> as well as a member emeritus of TOP Lab, the biolab and transdisciplinary project space run by top e.V.</p>
             </div>
     
         </div>
@@ -179,7 +179,7 @@ js         :
         <div class="cv-cat">
             <div class="cv-dept">Department of Journalism</div>
             <ul>
-                <li>Commons</li>
+                <li>Commons of Citizen Journalism</li> under Prof. Lewis Friedland
             </ul>
         </div>
     </div>
