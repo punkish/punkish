@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Potimarron</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Potimarron</h1>
+    <div class="description">for Daniele, who first introduced me to potimarron and made it for me</div>
+    <div class="created">Saturday, September 24, 2016</div>
+    
+    <div class="content"><style>
+figcaption {clear: both;}
+</style>
+<p>I got this beautiful <em>Hokkaido Kürbis</em> in Göttingen and couldn’t resist. The sweetness of the vegetable (known as <em>potimarron</em> in French, a word I love the sound of, and that always reminds me of Daniele), was countered with a liberal dose of cayenne and paprika. The coconut milk made it Thai-ish, and a tablespoon or so of cumin made it Indian-ish.</p>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7275.jpg">
+<figcaption>potimarron</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7276.jpg">
+<figcaption>28 minutes later</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7280.jpg">
+<figcaption>garlic and ginger</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7278.jpg">
+<figcaption>sizzling in olive oil</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7279.jpg">
+<figcaption>toss and turn</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7281.jpg">
+<figcaption>28 minutes later</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7283.jpg">
+<figcaption>lait de coco</figcaption>
+</figure>
+<figure>
+<img src="/entry-files/undefined/img/IMG_7284.jpg">
+<figcaption>ready to eat, with basmati rice and brown lentils</figcaption>
+</figure></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:photos">photos</a></li>
+        <li><a href="/entries?q=tags:potimarron">potimarron</a></li>
+        <li><a href="/entries?q=tags:Hokkaido kürbis">Hokkaido kürbis</a></li>
+        <li><a href="/entries?q=tags:red kuri squash">red kuri squash</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Toy-Town">↜ Toy Town</a></li>
+        <li class="next"><a href="/Digital-Manaslu">Digital Manaslu ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

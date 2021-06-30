@@ -1,0 +1,114 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Text-mining limited access corpuses</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Text-mining limited access corpuses</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>For scientists who have no other option but to do analysis on closed/limited access corpuses, a discussion on the merits and drawbacks of text-mining such corpuses is irrelevant. For them, it is a choice of either doing their science or not doing it at all. </p>
+<p>But, let us consider the scientists who do have a choice. This discussion applies really only to this latter group who can either choose to conduct their research using alternative corpuses, or to dig their feet in the ground and insist upon more liberal licensing terms in line with the spirit of open science. </p>
+<p>Restricting myself to just this group of scientists, I see no strength or opportunity in conducting text mining on closed/limited/restricted access text under onerous/restrictive licensing:</p>
+<ul>
+<li>licenses that restrict sharing of text mining output undermine the ideals and even the practical motivations of academia</li>
+<li>agreeing to the restrictive terms of publishers potentially weakens subsequent claims to accessing scientific corpuses under open terms</li>
+</ul>
+<hr />
+<p>Friends of mine have been working on a text-mining project in the course of which they are building a very large corpus that is off-limits to the general public. This is because of a special and restrictive license negoatiated between the university and a big-name publisher:</p>
+<ol>
+<li>If the publisher had put very onerous terms in the license agreement that allowed you to download the papers, would you have done the project?</li>
+</ol>
+<p>This describes our starting point. The university had already signed draconian agreements that gave up rights that we would have normally had under copyright law.</p>
+<ol start="2">
+<li>Let’s assume that the terms were onerous enough to be unacceptable to you. But doing that research was really important for you. Would you have accepted the terms or would you have chosen to forego that research and do something else?</li>
+</ol>
+<p>Re-negotiation of terms is what we have spent a lot of time doing so #2 is part of what we are still doing now. It is a pain in the ass and slow, as multiple back-and-forths are required. What we are doing is new.</p>
+<ol start="3">
+<li>Do you in any way now feel hamstrung by the terms now that you are well into your project? Any regrets for having signed that?</li>
+</ol>
+<p>To some extent #3 applies, but for the most part we have the range of uses we would like. There are gray areas about what we can and cannot distribute/do because of the multiple steps of separation between origial document and a result/product. Nobody has access to the original documents, nobody has access to “full corpus downloads” of first-step software output from those documents (e.g., ocr, NLP). I <em>think</em> that satisfies the contracts. use after that point is outside of the restrictions of any kind, though we expect citation</p>
+<hr />
+<p>The above experience seems quite in line with the kind of outcome we can expect if we negotiate these one-off terms with the publishers. if one compromises on principle, if the principle is negotiable, then it is not a principle. I do believe that one has to take a truly principled stance against the publishers. This is particularly meaningful (and problematic) for a researcher who has to either stay true to the principle and forego the research or do the research at the cost of the principle.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:TDM">TDM</a></li>
+        <li><a href="/entries?q=tags:closed access">closed access</a></li>
+        <li><a href="/entries?q=tags:limited access">limited access</a></li>
+        <li><a href="/entries?q=tags:Text-mining">Text-mining</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Access-and-Benefit-Sharing-of-Genetic-Data">↜ Access and Benefit Sharing of Genetic Data</a></li>
+        <li class="next"><a href="/todo">Things I’d Like To Do ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

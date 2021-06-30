@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: A Manifesto for Science</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">A Manifesto for Science</h1>
+    <div class="description"></div>
+    <div class="created">Wednesday, December 24, 2014</div>
+    
+    <div class="content"><h2 id="thedeceptivesuccessofcopyrightlicenses">The Deceptive Success of Copyright Licenses</h2>
+<p>In the 12 years of its existence, Creative Commons has achieved remarkable success, and among the most basic of metrics of its success is the number of CC-licensed works on the web. <a href="The-Deceptive-Success-of-Copyright-Licenses">more</a></p>
+<h2 id="ittakesallkindstomakeacommons">It Takes All Kinds to Make a Commons</h2>
+<p>Value <em>v</em> of any work is the sum of many kinds of values: monetary, social, cultural, strategic, etc. Value <em>V</em> of a dataset is the sum of the value of each work in the dataset: <code>V = v&lt;sub&gt;1&lt;/sub&gt; + v&lt;sub&gt;2&lt;/sub&gt; … v&lt;sub&gt;n&lt;/sub&gt;</code> <a href="It-Takes-All-Kinds-to-Make-a-Commons">more</a></p>
+<h2 id="theproblemwithcopyright">The Problem With Copyright</h2>
+<p>Copyright has a limited relevance to science. It applies only to copyrightable information that includes working and peer-reviewed papers, books and articles, and presentations, videos, photos, and other such creative works. <a href="The-Problem-With-Copyright">more</a></p>
+<h2 id="thepwords">The “P” Words</h2>
+<p>A particularly thorny problem is reconciling the need to share data with the imperative to protect privacy. <a href="The-P-Words">more</a></p>
+<h2 id="changingtheculture">Changing the Culture</h2>
+<p>Creative Commons contribution has not been as much a development of its licenses as it has been in creating a global community of people who are keen to share their creations around a certain ethic. <a href="Changing-the-Culture">more</a></p>
+<h2 id="fromayetosi">From Aye to Si</h2>
+<p>To change the culture of science and education we have to encourage risk taking, experimentation, questioning conventional wisdom, unorthodox methods—we have to learn to say “yes” in many domains, in many languages. <a href="From-Aye-to-Si">more</a></p>
+<h2 id="beyondlaw">Beyond Law</h2>
+<p>Creative Commons, in spite of its reluctance toward non-copyright focused projects, has undertaken a few novel experiments. <a href="Beyond-Law">more</a></p>
+<h2 id="learningbymakingteachingbydoing">Learning by Making, Teaching by Doing</h2>
+<p>The hacker/maker movement embodied in hacker/maker spaces is the best convergence of the new old form of learning by making and teaching by doing. <a href="Learning-by-Making">more</a></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:A Manifesto for Science">A Manifesto for Science</a></li>
+        <li><a href="/entries?q=tags:Creative Commons">Creative Commons</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Citizen-Engagement-in-Science">↜ Citizen Engagement in Science</a></li>
+        <li class="next"><a href="/The-Deceptive-Success-of-Copyright-Licenses">The Deceptive Success of Copyright Licenses ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

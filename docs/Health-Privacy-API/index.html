@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: A Health Privacy API</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">A Health Privacy API</h1>
+    <div class="description"></div>
+    <div class="created">Thursday, May 26, 2016</div>
+    
+    <div class="content"><p><strong><em>An addendum:</em></strong> <em>Most folks must have heard about <a href="http://viv.ai">Viv</a> by now, the new “intelligent voice-assistant” from the original creators of Siri. It is interesting that they tout the following byline: “INTELLIGENCE BECOMES A UTILITY” (their all-caps). What I am dreaming of here is privacy/security as a utility.</em></p>
+<p>For the past year and a half I have been working on health/medical information from the edges going in. There is nothing structurally unique about information in this domain. For example, it is not like geospatial information, and that too ceased being different once we figured out how to store it in relational (and now even key-value) databases and create structured queries against it. The two things that do make the domain of health/medical information unique are social: one is consent, and the second is the ethical and regulatory requirements to deal with its security and privacy aspects. And both those requirements are not like the first-sale doctrine in that the consent, privacy and security considerations of the information source have to be respected by not just the first user but by all secondary users.</p>
+<p>I wrote up a small note on a <a href="/Perfect-Health-Repo-Desiderata">perfect health repo desiderata</a>, and one of those requirements (see #15 in the aforementioned post) would be to assist the information contributor to determine what privacy and security regimes apply to the contribution. One way to do that would be to have a service that asks a few simple <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> questions and then suggests a course of action.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> Sadly, it seems that <a href="http://datatags.org">Data Tags</a> may not have a future, but the need remains unfulfilled.</p>
+<p>Just like rationalized, harmonized and simplified consent, TOS/TOU, DUA and other policies, that are not only important but also desired by many players in the field, the kind of privacy/security service that I describe above too is actually desired and needed by the researchers in the medical/health field. This is a real need, and it would be best served by a service provided via an API.</p>
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">ok, not a few and perhaps not that simple.<a href="#fnref:1" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:2">even better if the service can also perform the suggested course of action.<a href="#fnref:2" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:privacy">privacy</a></li>
+        <li><a href="/entries?q=tags:security">security</a></li>
+        <li><a href="/entries?q=tags:health">health</a></li>
+        <li><a href="/entries?q=tags:health data">health data</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Citizen-Sourced-Data-Commons">↜ Citizen-Sourced Data Commons</a></li>
+        <li class="next"><a href="/All-That-Glitters-is-Not-Sold">All That Glitters is Not Sold ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

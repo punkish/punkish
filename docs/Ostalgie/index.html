@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Ostalgie</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Ostalgie</h1>
+    <div class="description"></div>
+    <div class="created">Invalid Date</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/ostalgie.jpg">
+    <figcaption></figcaption>
+</figure>
+<p><strong>ostalgie</strong> | ˈɑstalɡī |</p>
+<p>noun</p>
+<p>a sentimental longing or wistful affection for life in the former East Germany</p>
+<hr />
+<p>Ever since I saw a couple of exhibitions at <a href="http://www.co-berlin.org">C|O</a> on life in the former East Germany, I have been displaying what apparently is already a thing. In other words, I have set myself up as a cliché for waxing nostalgic about a bygone time and place that also had its horrible sides. Here is my defence.</p>
+<p>Mine is not really nostalgia, for I never experienced communism anywhere, and certainly not in GDR. Mine is, I believe, a twinge of sadness for the loss of certain qualities that had not been corporatized. I saw what happened even in the three years I lived in San Francisco. All the crazy and the creative people got driven out and a new horde with a new design sensibility took hold. Everything was sanitized. Everything became a monument to computers and software. Everything had the imprint of a 22 year old white kid who could barely keep his espresso down. </p>
+<p>I am seeing the same changes in Berlin. A couple of days ago, on the lovely river, a beautiful evening spoiled by half a dozen powered boats and rafts with beer swilling, loud, obnoxious, young white guys (sadly, almost always <em>young</em> and <em>white</em> and <em>guys</em>), drunk equally on their beer as much as on the number of digits in their salary which makes them believe they are entitled to everyone’s attention. The problem with success is that it makes one believe that one actually is intelligent and deserves it.</p>
+<p>Perhaps I sound bitter because two numbers are against me – I am about 20 years older than them and make about $50,000 less. But I don’t think of myself as bitter at all. I just feel sad at the dehumanization that comes from the loss of diversity, from the increasingly mind-numbing sameness sponsored by the next great app that has every bad tech writer breathless.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:nostalgia">nostalgia</a></li>
+        <li><a href="/entries?q=tags:East Germany">East Germany</a></li>
+        <li><a href="/entries?q=tags:C|O">C|O</a></li>
+        <li><a href="/entries?q=tags:Berlin">Berlin</a></li>
+        <li><a href="/entries?q=tags:Germany">Germany</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/India-cranks-it-to-11">↜ India cranks it to 11</a></li>
+        <li class="next"><a href="/Khakassia">Khakassia ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -3,15 +3,10 @@ title      : Curriculum Vita
 description:
 modified   : 2021-05-01 00:00:00
 created    : 2021-05-01 00:00:00
-viewcount  : 0
-id         :
-gmap       :
 tags       :
     - cv
-stars      :
-layout     :
-css        : cv-simple
-js         :
+css        : 
+    - cv-simple
 ---
 
 <section id="Bio">

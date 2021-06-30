@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Gazpacho Andaluz</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Gazpacho Andaluz</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><h3 id="ingredients">Ingredients</h3>
+<ul>
+<li><p>Three slices of while bread or half of a baguette with crusts removed </p></li>
+<li><p>Half cup of extra virgin olive oil </p></li>
+<li><p>Two cloves garlic, pressed </p></li>
+<li><p>Three pounds ripe tomatoes (Big Boy, Wisconsin 55, or other round variety), cored and roughly chopped. Skins may be left on (more flavor) or removed (less acid) </p></li>
+<li><p>One cucumber, peeled and chopped </p></li>
+<li><p>One medium onion, quartered </p></li>
+<li><p>Handful of flat-leaf (Italian) parsley </p></li>
+<li><p>Salt to taste </p></li>
+<li><p>Red wine vinegar to taste </p>
+<h3 id="method">Method</h3>
+<p>Into a stone or glass bowl that holds three or more quarts, crumb bread between your fingers; add olive oil and garlic. Add a bit of water, perhaps 1/4 cup. Let stand a few hours or overnight. </p>
+<p>In a blender or food processor, combine tomatoes, cucumber, onion, and parsley. Then, add vegetables to bread crumbs and mix thoroughly. Season to taste with salt and red wine vinegar. You may substitute regular white distilled vinegar but do not use balsamic vinegar, which overwhelms the fresh taste. Somewhere in each mouthful of soup, you should taste, if only faintly, the salt and vinegar. Chill for several hours. </p>
+<p>Traditional garnishes are sliced hardboiled eggs, sliced avocados, sliced red onion, steamed and peeled shrimp, sliced cucumbers, diced tomatoes, and/or parsley. Cold lager beer and crusty bread are good accompaniments. Pass vinegar and olive oil cruets on table. </p></li>
+</ul></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:recipe">recipe</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Kill">↜ Kill</a></li>
+        <li class="next"><a href="/Curried-Rice-Beans-And-Vegetable-Pilaf">Curried Rice Beans And Vegetable Pilaf ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

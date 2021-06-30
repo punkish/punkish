@@ -11,8 +11,13 @@ tags       :
     - cafés
     - bars
 stars      : 
-js         : tirana
-layout     : qgis-mapper
+css        :
+    - map
+js         : 
+    - tirana
+    - json_parcels0
+template   : map
+type       : qgis-mapper
 ---
 
 Agjencia e Parqeve dhe Rekreacionit Tiranë

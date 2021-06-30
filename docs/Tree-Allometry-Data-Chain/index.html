@@ -1,0 +1,107 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Tree Allometry Data Chain</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Tree Allometry Data Chain</h1>
+    <div class="description"></div>
+    <div class="created">Sunday, October 23, 2011</div>
+    
+    <div class="content"><p><a href="http://forestecology.forest.wisc.edu/dugarjav.html" title="D. Dugarjav">D. Delgerjargal</a> studies trees to establish allometric relationships between tree stem diameter and its biomass. Here is the data chain for her work:</p>
+<ul>
+<li><p>visit potential field sites and decide on which one is going to be our research site based on certain criteria such as plantation quality and distance to site </p>
+<p>![map of study site](map.png w=673 h=347)<br />
+image courtesy D. Delgerjargal under a CC-BY 3.0 License</p></li>
+<li><p>go to the field and measure trees for <em>diameter at breast height</em> (dbh) and enter plot size, plot number, tree number, and dbh in MS-Excel spreadsheet</p></li>
+<li><p>selectively cut some of the trees for "destructive analysis" on-site and weigh the biomass components of trees for wet mass and take sample branches and stem discs for further analysis to the lab</p>
+<p>![tree stem disc](stem_disc.jpg w=400 h=453)<br />
+image courtesy Delgerjargal Dugarjav under a CC-BY 3.0 License</p></li>
+<li><p>categorize biomass samples into tissue types (stem, branch and foliage) and weigh them for wet mass and then dry them in the oven to obtain dry-mass</p>
+<p>![stem dry mass](stem<em>dry</em>mass.png w=400 h=326)<br />
+image courtesy Delgerjargal Dugarjav under a CC-BY 3.0 License</p></li>
+<li><p>take foliage sub-samples and measure for leaf area </p></li>
+<li><p>use the wet-to-dry mass ratio to estimate dry-mass of biomass components of whole tree</p></li>
+<li><p>do statistical analysis to see if it meets certain assumptions, and if not, then transform the data to see if it meets the assumptions</p></li>
+<li><p>establish allometric relationships between stem diameter and dry mass of biomass components</p></li>
+<li><p>compose allometric equations in R</p></li>
+<li><p>validate and compare equations and produce plots and charts</p></li>
+</ul></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:data chains">data chains</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Photosynthetic-Light-Data-Chain">↜ Photosynthetic Light Data Chain</a></li>
+        <li class="next"><a href="/Data-Chain">Data Chain ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: “Open” health data and GDPR</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">“Open” health data and GDPR</h1>
+    <div class="description">three constituencies at odds</div>
+    <div class="created">Friday, March 15, 2019</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/3-constituencies.png">
+    <figcaption>Three constituencies at odds</figcaption>
+</figure>
+<h2 id="axioms">Axioms</h2>
+<ul>
+<li>De-identification is ineffective and expensive<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>There is no such thing as foolproof de-identification<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
+<li>Unimportant items of information can be combined to create important information;<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup><sup>;</sup> <sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></li>
+<li>Ubiquitous data collection means we have no– to little–control over our data</li>
+<li>All digital databases can and very likely will be breached<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></li>
+<li>Remedy for harm from breach is not always calculable or enforceable<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></li>
+<li>Consent is imperfect<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup> but is necessary even if it is implicit</li>
+<li>Sharing and privacy are two sides of the same coin<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup></li>
+</ul>
+<h2 id="cliniciansandresearcherswant">Clinicians and Researchers Want</h2>
+<p>Non-de-identified data. Data from which the identify of the patient has been removed is not as useful as data that identifies the patient. Doctors are not interested in personal identity, but they want to know personal characteristics such as race, age, gender, where the patient was born, where the patient lives, even the income level, etc. These characteristics impact health in important and specific ways but they also identify the patient personally.</p>
+<p>Specific, targeted data, not-generic and not-voluminous data. For example, MBs of fitbit data are not useful, but focused blood pressure readings or heart beat data may be useful. One term used is “prescribed data,” that is, the doctor prescribes to the patient to collect and submit specific data.</p>
+<h2 id="gdprwants">GDPR wants</h2>
+<p>GDPR has specific definitions for personal data,<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup> genetic data,<sup id="fnref:10"><a href="#fn:10" rel="footnote">10</a></sup> biometric<sup id="fnref:11"><a href="#fn:11" rel="footnote">11</a></sup> and health data.<sup id="fnref:12"><a href="#fn:12" rel="footnote">12</a></sup> The Article 6 of GDPR<sup id="fnref:13"><a href="#fn:13" rel="footnote">13</a></sup> allows lawful processing of personal data if one or more of the following conditions are met:</p>
+<ul>
+<li>the data subject has given consent;</li>
+<li>it is necessary for the performance of a contract to which the data subject is party;</li>
+<li>it is necessary for compliance with a legal obligation;</li>
+<li>it is necessary to protect the vital interest of the data subject or another natural - person;</li>
+<li>it is necessary for the performance of a task carried out in the public interest;</li>
+<li>it is necessary for the purposes of the legitimate interests pursued by the controller or third party.</li>
+</ul>
+<p>However GDPR prohibits processing of biometric, genetic, and health data unless one of the three conditions below would apply:</p>
+<ul>
+<li>The data subject must have given “explicit consent.”</li>
+<li>“Processing is necessary for the purposes of preventive or occupational medicine, for the assessment of the working capacity of the employee, medical diagnosis, the provision of health or social care or treatment or the management of health or social care systems and services”</li>
+<li>“Processing is necessary for reasons of public interest in the area of public health, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices”</li>
+</ul>
+<h2 id="fair4healthwants">FAIR4Health wants</h2>
+<p>Data from publicly funded research to be findable, accessible, interoperable, and reusable. But, does that include clinical research? Clinical research, as opposed to basic research, is based on personally identifiable information, and as such, is required by law to be protected.<sup id="fnref:14"><a href="#fn:14" rel="footnote">14</a></sup></p>
+<p>Personal health data from non-medical, commercially available devices such as pedometers, blood pressure monitors, and sleep trackers are usually shared with the device providers via contractual agreements “signed” by the people when they sign up for these services. These data are not from publicly funded research, but can be valuable for medical purposes. My assumption is that FAIR4Health excludes such data.
+Since EHRs are not a product of publicly funded research, my assumption is that FAIR4Health excludes such data.</p>
+<p>However, publicly funded research data may also contain personally identifiable information. If so, that information has to be removed through a process of specified de-identification. However, it may still have to be restricted to a certain community rather than be made available to everyone. Is the data still FAIR if it is restricted to a specified community?</p>
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">“Anonymization is increasingly easily defeated by the very techniques that are being developed for many legitimate applications of big data. In general, as the size and diversity of available data grows, the likelihood of being able to re‐identify individuals (that is, re‐associate their records with their names) grows substantially. While anonymization may remain somewhat useful as an added safeguard in some situations, approaches that deem it, by itself, a sufficient safeguard need updating.” — <a href="https://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/PCAST/pcast_big_data_and_privacy_-_may_2014.pdf" target="_blank">PCAST. 2014. Big Data and Privacy: A Technological Perspective.</a><a href="#fnref:1" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:2">"87% of the U.S. Population are uniquely identified by just three pieces of information — date of birth, gender, ZIP." <a href="http://latanyasweeney.org/work/identifiability.html" target="_blank">Latanya Sweeney on Identifiability</a> <a href="#fnref:2" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:3">C. Hanson, T. Berners-Lee, L. Kagal, G. J. Sussman and D. Weitzner, <a href="http://dig.csail.mit.edu/2006/Papers/Policy07/data-purpose-algebra.pdf" target="_blank">“Data-Purpose Algebra: Modeling Data Usage Policies</a>,” Eighth IEEE International Workshop on Policies for Distributed Systems and Networks (POLICY'07), Bologna, 2007, pp. 173-177. doi: 10.1109/POLICY.2007.14<a href="#fnref:3" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:4">People’s faces are being used without their permission, in order to power technology that could eventually be used to surveil them, legal experts say. NBC News. 2019. <a href="https://www.nbcnews.com/tech/internet/facial-recognition-s-dirty-little-secret-millions-online-photos-scraped-n981921" target="_blank">Facial recognition’s ‘dirty little secret’: Millions of online photos scraped without consent</a>.<a href="#fnref:4" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:5">Steven Brenner. 2013. <a href="https://drive.google.com/open?id=0B_t-G30CZ3Znamc2ZVBEczhCWUE&authuser=1" target="_blank">Be Prepared for the Big Genome Leak, Nature, Vol 498, p 139</a><a href="#fnref:5" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:6">For all the concern expressed about companies' exposure to lawsuits in the wake of of data breaches, a decision earlier this week by a federal appeals court shows yet again what a challenge it can be for consumers to actually win redress when one occurs. Jaikumar Vijayan. 2007. <a href="https://www.computerworld.com/article/2540587/are-data-breach-lawsuits-just-tilting-at-windmills-.html" target="_blank">Are data breach lawsuits just tilting at windmills?</a> Computerworld<a href="#fnref:6" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:7">“Only in a fantasy world do users actually read the consent notices and understand their implications. The conceptual problem with notice and consent is that it fundamentally places the burden of privacy protection on the individual. Notice and consent creates a non‐level playing field in the implicit privacy negotiation between provider and user. The provider offers a complex, take‐it‐or‐leave‐it set of terms, while the user, in practice, can allocate only a few seconds to evaluating the offer. This is a kind of market failure.” — <a href="https://obamawhitehouse.archives.gov/sites/default/files/microsites/ostp/PCAST/pcast_big_data_and_privacy_-_may_2014.pdf" target="_blank">PCAST. 2014. Big Data and Privacy: A Technological Perspective.</a><a href="#fnref:7" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:8">“(Sharing and privacy are) mutually implicated in each other: there are private interests in the achievement of common goals and a public interest in the protection of privacy that encourages cooperation.” — The Nuffield Council on Bioethics. 2015. <a href="http://nuffieldbioethics.org/wp-content/uploads/Biological_and_health_data_web.pdf" target="_blank">The collection, linking and use of data in biomedical research and health care: ethical issues.</a><a href="#fnref:8" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:9">‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person — <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">GDPR Article 4(1)</a><a href="#fnref:9" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:10">Genetic data should be defined as personal data relating to the inherited or acquired genetic characteristics of a natural person which result from the analysis of a biological sample from the natural person in question, in particular chromosomal, deoxyribonucleic acid (DNA) or ribonucleic acid (RNA) analysis, or from the analysis of another element enabling equivalent information to be obtained. — <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">GDPR Recital 34</a><a href="#fnref:10" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:11">‘biometric data’ means personal data resulting from specific technical processing relating to the physical, physiological or behavioural characteristics of a natural person, which allow or confirm the unique identification of that natural person, such as facial images or dactyloscopic data — <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">GDPR Article 4(14)</a><a href="#fnref:11" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:12">Personal data concerning health should include all data pertaining to the health status of a data subject which reveal information relating to the past, current or future physical or mental health status of the data subject. This includes information about the natural person collected in the course of the registration for, or the provision of, health care services as referred to in Directive 2011/24/EU of the European Parliament and of the Council¹ to that natural person; a number, symbol or particular assigned to a natural person to uniquely identify the natural person for health purposes; information derived from the testing or examination of a body part or bodily substance, including from genetic data and biological samples; and any information on, for example, a disease, disability, disease risk, medical history, clinical treatment or the physiological or biomedical state of the data subject independent of its source, for example from a physician or other health professional, a hospital, a medical device or an in vitro diagnostic test. — <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">GDPR Recital 35</a><a href="#fnref:12" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:13">Lawfulness of Processing. <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">GDPR Article 6</a><a href="#fnref:13" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:14">“Clinical researchers in psychiatry are usually trained as clinicians before they begin to do research. In clinical circles, the oft-cited credo to “do no harm” to the patient also implies some effort to provide some help as well. In contrast, the primary objective of the properly conducted research interview is to simply get the facts and essentially to “give no help” in order to minimize the placebo response.” Targum SD. <a href="https://gdpr-info.eu/art-4-gdpr/" target="_blank">The Distinction between Clinical and Research Interviews in Psychiatry.</a> Innov Clin Neurosci. 2011;8(3):40-4.<a href="#fnref:14" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:health data">health data</a></li>
+        <li><a href="/entries?q=tags:medical data">medical data</a></li>
+        <li><a href="/entries?q=tags:GDPR">GDPR</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Disruptive-Technologies">↜ Open Science and Open Data</a></li>
+        <li class="next"><a href="/RGB-to-Visible-Spectrum">RGB to Visible Spectrum ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

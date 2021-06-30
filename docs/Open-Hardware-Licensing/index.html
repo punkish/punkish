@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Open Hardware Licensing</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Open Hardware Licensing</h1>
+    <div class="description">with contribution from Ari Douglas, Sonaar Luthra and Jason Schultz</div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>Massively-distributed, sensor-based hardware can revolutionize collection of behavioral, environmental and public health data. However, a lack of clarity, custom and choices regarding the intellectual property (IP) of hardware poses special challenges for its developers and limits collaboration and reuse compared to the success of the free and open source software (FOSS). </p>
+<p>FOSS is a demonstrated success. Software developers have created a movement where they feel safe to contribute to software projects, knowing that their work will remain freely available, and that others can improve it and share the results. This reduces duplication-of-effort, accelerates follow-on innovation, and fosters transparency; the state-of-the-art is advanced; direct participants and wider society benefit.</p>
+<p>FOSS has entered into the hardware space with projects like <a href="http://www.arduino.cc/">Arduino</a>, a micro-controller board that runs open software on a proprietary chip, and <a href="http://www.raspberrypi.org/">Raspberry Pi</a> which runs the Linux operating system on proprietary chips. These hybrid hardware-software projects were driven by the FOSS ethos, with hardware as an incidental component.</p>
+<p>The next frontier of open is hardware. It is a natural progression of the FOSS community’s hunger for knowledge, and it is enabled by lowered barriers to manufacturing and availability of design tools. There is a demand to carry the FOSS philosophy and ethos into the hardware space, but IP law complicates matters.</p>
+<p>FOSS relies on copyright law which provides source code with copyright protection, and FOSS licenses with the legal teeth. Hardware, in the form of the physical layout of components on a circuit board or the arrangement of transistors inside of silicon microchips are ineligible for copyright, due to the “Useful Articles” doctrine] and the “Idea-Expression Dichotomy.” (Not to be confused with the “Functionality Doctrine” of trademark law.)</p>
+<p>Copyright law protects original, creative works. If the work’s form is dictated by its function, the utilitarian or functional aspects of the work cannot be protected by copyright. For example, copyright might protect the graphic embellishments of a fancy chair, but the fact that the chair has four legs is necessary for it to function, and that portion of the design is ineligible for copyright protection. Circuits and circuit boards, while requiring creativity and skill to design, are considered Useful Articles, and are ineligible for copyright protection.  </p>
+<p>This has created confusion for hardware developers, such as when they purport to release hardware designs under software licenses even though there is no underlying copyrightable work on which to base the license. It has also made the creation of binding open hardware licenses (OHL) difficult.</p>
+<p>The two most high-profile examples of OHL are the <a href="http://www.ohwr.org/projects/cernohl/wiki">CERN OHL</a> and the <a href="https://www.tapr.org/OHL">TAPR OHL</a>. Neither license has achieved a critical mass of adoption, and they differ fundamentally in scope and approach. There are open questions regarding the effectiveness of the two licenses; and their lack of adoption indicates some flaw, even if it is just a lack of understanding by hardware developers.</p>
+<p>Another complicating matter is the subject of patents. While software patents have been widely debated and acknowledged, FOSS has not squarely dealt with the issue. In fact, the popular FOSS license, the General Public License (GPL), did not address patents in any form until its third revision. And many software projects have failed to adopt GPLv3 due to real or perceived incompatibility with previous versions of the license. To the credit of the CERN OHL and TAPR OHL, both have provisions attempting to address patent licensing.</p>
+<p>The topic of patents is introduced not merely because open hardware deals with tangible objects, but because there are considerations peculiar to open hardware. Briefly, these include how to effect a patent license without an underlying copyright, transferability of licenses and third-party liability for patent infringement, and the pragmatic realization that there are more and newer patents in the hardware space than in software. Many of these patent considerations are unfamiliar to developers coming from the FOSS community. </p>
+<p>There are scenarios where hardware developers wish to release their work under OHL even when the work is encumbered by patents. They may be a patent licensee themselves, with the ability to sub-license. Or, they may have acquired patents for defensive purposes as is possible by the <a href="http://www.defensivepatentlicense.com/">Defensive Patent License</a> (DPL).</p>
+<p>Finally, and probably the most novel area of this application is the matter of data integrity in the context of open distributed sensing hardware. There is a pressing need for hardware developers in this space to exercise some control over downstream hardware, even when they desire to allow the public to freely modify and reproduce the hardware. However, retaining any control is largely anathema to the FOSS community.</p>
+<p>Open hardware is a natural fit for distributed scientific or safety sensors. The fact that end-users have hardware designs ensures integrity through transparency. Additionally, social entrepreneurs wishing to deploy sensor networks want to leverage the mechanism of the free-market to reduce the cost of manufactured products. Manufactures are enticed to do this by the free nature of the OHL. End-users can buy the manufactured products from manufacturers, but the social entrepreneur, hardware developer needs to ensure that the manufacturer does not release faulty products.    </p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:open hardware">open hardware</a></li>
+        <li><a href="/entries?q=tags:hardware">hardware</a></li>
+        <li><a href="/entries?q=tags:OHL">OHL</a></li>
+        <li><a href="/entries?q=tags:data certification">data certification</a></li>
+        <li><a href="/entries?q=tags:FOSS">FOSS</a></li>
+        <li><a href="/entries?q=tags:CERN">CERN</a></li>
+        <li><a href="/entries?q=tags:TAPR">TAPR</a></li>
+        <li><a href="/entries?q=tags:sensors">sensors</a></li>
+        <li><a href="/entries?q=tags:intellectual property">intellectual property</a></li>
+        <li><a href="/entries?q=tags:licenses">licenses</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/We-Real-Cool">↜ We Real Cool</a></li>
+        <li class="next"><a href="/Wary-of-Wearables">Wary of Wearables ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

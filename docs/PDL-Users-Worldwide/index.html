@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: PDL Users Worldwide</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">PDL Users Worldwide</h1>
+    <div class="description"></div>
+    <div class="created">Friday, July 2, 2010</div>
+    
+    <div class="content"><div id="tabs">
+    <ul>
+        <li><a href="#tab1">Map</a></li>
+        <li><a href="#tab2">Data</a></li>
+    </ul>
+    <div id="tab1">
+        <iframe width="895px" height="420px" scrolling="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&q=select+col2+from+3138571+&h=false&lat=25.165173368663954&lng=30.05859375&z=2&t=1&l=col2"></iframe>
+    </div>
+    <div id="tab2">
+        <iframe width="895px" height="420px" frameborder="0" src="https://docs.google.com/spreadsheet/ccc?key=0Am3SSF48QCE9dERjcko2YWNrSzJVLUZLd1QyaldsYXc&single=true&gid=0&output=html&widget=true"></iframe>
+    </div>
+</div></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:Perl">Perl</a></li>
+        <li><a href="/entries?q=tags:PDL">PDL</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Vivek-Wadhwa-Tries-Linkbaiting-With-The-Help-Of-iPads">↜ Vivek Wadhwa Tries Linkbaiting With The Help Of iPads</a></li>
+        <li class="next"><a href="/Interoperability-As-A-Guiding-Principle-For-Long-Term-Archives">Interoperability As A Guiding Principle For Long-Term Archives ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The “P” Words</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The “P” Words</h1>
+    <div class="description"></div>
+    <div class="created">Saturday, December 20, 2014</div>
+    
+    <div class="content"><p>A particularly thorny problem is reconciling the need to share data with the imperative to protect <strong>privacy</strong>. Privacy, or protecting personally identifiable information (PII), is important in any domain involving human subjects but could also be important in other domains where cultural or historical heritage or natural or strategic resources have to be protected. While solving the problem of privacy protection may be beyond the capabilities of any one organization, there are innovations possible in the way data are governed, terms of services are crafted, and consent to share is acquired that can make facilitate sharing of certain kinds of data.</p>
+<p>When thinking of any kind of systemic change, there are three main points of intervention, the 3Ps: policy, program and practice.</p>
+<p><strong>Policy</strong> interventions are at the very top of the food chain and like anything at the top of a pyramid, have the potential of affecting the biggest swath of constituents below.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+<p>Below the policy level lie the <strong>programs</strong> operationalized by institutions, disciplines, scholarly societies, funding and rewarding agencies, etc. These programs react to both policy directive from above and to practice from below. </p>
+<p>Finally, at the ground level we have individuals who <strong>practice</strong> their responsibilities, interests, professions and vocations.</p>
+<p>While policy changes can help create an environment in which cultural change can thrive, the latter has to be provoked, catalyzed and nurtured from the outside. Policy interventions are also hard to achieve and not always do they trickle down to practice.</p>
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">This is a coarse description of the structure. There can be advantages of scale even at individual levels, for example, at the level of practice we can have trainers who train others providing local economies of scale. The franchise model works well for teaching skills and concepts to those who in turn will teach others. While not providing the scale of policy interventions, this can be a highly effective strategy.<a href="#fnref:1" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:A Manifesto for Science">A Manifesto for Science</a></li>
+        <li><a href="/entries?q=tags:privacy">privacy</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/The-Problem-With-Copyright">↜ The Problem With Copyright</a></li>
+        <li class="next"><a href="/Changing-the-Culture">Changing the Culture ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

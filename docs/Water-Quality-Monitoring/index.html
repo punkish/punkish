@@ -1,0 +1,279 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Water Quality Monitoring</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Water Quality Monitoring</h1>
+    <div class="description"></div>
+    <div class="created">Monday, August 6, 2018</div>
+    
+    <div class="content"><style>
+td.num,
+th.num {
+    text-align: right;
+}
+</style>
+<div class="row">
+    <div class="six columns">
+        <figure>
+            <img src="/entry-files/undefined/img/wmd1.jpg">
+            <figcaption>Water quality monitor</figcaption>
+        </figure>
+    </div>
+    <div class="six columns">
+        <figure>
+            <img src="/entry-files/undefined/img/wmd2.jpg">
+            <figcaption>schematic</figcaption>
+        </figure>
+    </div>
+</div>
+<p>I created this water monitoring device for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface. The device is based on a design by <a href="https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter">Shan He of Public Lab</a> in cooperation with the folks at <a href="https://www.dfrobot.com">DF Robot</a>.</p>
+<h2 id="parts">Parts</h2>
+<p>The following part list is based on what was available in Berlin. The DF Robot parts were mail-ordered. The rest of the parts were procured locally from Condor, an electronics/hobby shop, and Bauhaus, a hardware store.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Vendor</th>
+            <th>EUR</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Gravity: I2C SD2405 RTC Module</td>
+            <td>DF Robot</td>
+            <td class="num">7.31</td>
+        </tr>
+        <tr>
+            <td>SD/MicroSD Memory Card (8 GB Class10 SDHC)</td>
+            <td>DF Robot</td>
+            <td class="num">8.46</td>
+        </tr>
+        <tr>
+            <td>Gravity: Waterproof DS18B20 Sensor Kit</td>
+            <td>DF Robot</td>
+            <td class="num">6.38</td>
+        </tr>
+        <tr>
+            <td>Bluno - An Arduino Bluetooth 4.0 (BLE) Board</td>
+            <td>DF Robot</td>
+            <td class="num">42.33</td>
+        </tr>
+        <tr>
+            <td>Gravity: Analog pH Sensor / Meter Kit For Arduino</td>
+            <td>DF Robot</td>
+            <td class="num">25.08</td>
+        </tr>
+        <tr>
+            <td>Gravity IO Expansion Shield for Arduino V7.1</td>
+            <td>DF Robot</td>
+            <td class="num">7.57</td>
+        </tr>
+        <tr>
+            <td>Gravity: Analog Sensor Cable for Arduino (10 Pack)</td>
+            <td>DF Robot</td>
+            <td class="num">5.10</td>
+        </tr>
+        <tr>
+            <td>MicroSD card module for Arduino</td>
+            <td>DF Robot</td>
+            <td class="num">4.42</td>
+        </tr>
+        <tr>
+            <td>Gravity: Digital Sensor Cable For Arduino (10 Pack)</td>
+            <td>DF Robot</td>
+            <td class="num">5.10</td>
+        </tr>
+        <tr>
+            <td>Gravity: Analog Signal Isolator</td>
+            <td>DF Robot</td>
+            <td class="num">16.96</td>
+        </tr>
+        <tr>
+            <td>discount</td>
+            <td>DF Robot</td>
+            <td class="num">-12.87</td>
+        </tr>
+        <tr>
+            <td>Customs duty</td>
+            <td>DHL</td>
+            <td class="num">37.17</td>
+        </tr>
+        <tr>
+            <td>LogiLink waterproof electic box</td>
+            <td>Lets-Sell</td>
+            <td class="num">13.95</td>
+        </tr>
+        <tr>
+            <td>Ladegerat V-Charge 1000</td>
+            <td>Conrad</td>
+            <td class="num">12.99</td>
+        </tr>
+        <tr>
+            <td>niedervolt stecker 2.1mm</td>
+            <td>Conrad</td>
+            <td class="num">3.79</td>
+        </tr>
+        <tr>
+            <td>7.4v Eco-Line Lipo akku</td>
+            <td>Conrad</td>
+            <td class="num">17.99</td>
+        </tr>
+        <tr>
+            <td>PVC quadratrohr</td>
+            <td>Bauhaus</td>
+            <td class="num">4.70</td>
+        </tr>
+        <tr>
+            <td>PVC rechteck-U</td>
+            <td>Bauhaus</td>
+            <td class="num">2.25</td>
+        </tr>
+        <tr>
+            <td>PVC winkel</td>
+            <td>Bauhaus</td>
+            <td class="num">2.20</td>
+        </tr>
+        <tr>
+            <td>spezialkleber</td>
+            <td>Bauhaus</td>
+            <td class="num">2.79</td>
+        </tr>
+        <tr>
+            <td>Flügel mutter</td>
+            <td>Bauhaus</td>
+            <td class="num">4.24</td>
+        </tr>
+        <tr>
+            <td>FL-K-SCHR schlitz</td>
+            <td>Bauhaus</td>
+            <td class="num">2.40</td>
+        </tr>
+        <tr>
+            <td>sechskant muttern</td>
+            <td>Bauhaus</td>
+            <td class="num">1.95</td>
+        </tr>
+        <tr>
+            <td>kunstoff schrauben</td>
+            <td>Bauhaus</td>
+            <td class="num">1.40</td>
+        </tr>
+        <tr>
+            <td>plexiglas</td>
+            <td>Bauhaus</td>
+            <td class="num">15.95</td>
+        </tr>
+        <tr>
+            <td>USB-datenkabel</td>
+            <td>Conrad</td>
+            <td class="num">6.99</td>
+        </tr>
+        <tr>
+            <td>losterklemme</td>
+            <td>Conrad</td>
+            <td class="num">1.39</td>
+        </tr>
+        <tr>
+            <td>Lipo sensorkabel</td>
+            <td>Conrad</td>
+            <td class="num">4.19</td>
+        </tr>
+        <tr>
+            <td>helatape flex schwarz</td>
+            <td>Conrad</td>
+            <td class="num">1.79</td>
+        </tr>
+        <tr>
+            <th>total</th>
+            <th></th>
+            <th class="num">253.95</th>
+        </tr>
+    </tbody>
+</table></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:open data">open data</a></li>
+        <li><a href="/entries?q=tags:open hardware">open hardware</a></li>
+        <li><a href="/entries?q=tags:water quality">water quality</a></li>
+        <li><a href="/entries?q=tags:Hong Kong">Hong Kong</a></li>
+        <li><a href="/entries?q=tags:citizen science">citizen science</a></li>
+        <li><a href="/entries?q=tags:red tide">red tide</a></li>
+        <li><a href="/entries?q=tags:art science">art science</a></li>
+        <li><a href="/entries?q=tags:environmental monitoring">environmental monitoring</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Hong-Kong-Bay-Water-Quality-Data">↜ Hong Kong Bay Water Quality Data</a></li>
+        <li class="next"><a href="/Convex-Hull">Convex Hull ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

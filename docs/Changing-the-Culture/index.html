@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Changing the Culture</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Changing the Culture</h1>
+    <div class="description"></div>
+    <div class="created">Friday, December 19, 2014</div>
+    
+    <div class="content"><p>Creative Commons contribution has not been as much a development of its licenses as it has been in creating a global community of people who are keen to share their creations around a certain ethic. In the end the licenses don’t matter if no one sues anyone and everyone does what everyone thinks is the right thing to do. If the crowd thinks that the spirit of a CC BY license is for a big corporation to not make money off of those works, well, the letter of the license means little.</p>
+<p>Changing the culture is arguably way more important than changing the law. Technology moves faster than the market, the market faster than culture, and culture moves faster than both institutions and law. While it is good to have the teeth of law backing any social convention, most of our world works on trust, per sociocultural conventions established through practice.</p>
+<p>As suggested above, Creative Commons has been transformational in the way a huge number of people around the world view the act of creation, sharing and reuse. This community is not the end but the beginning of change in the way education and science are practiced, created, recorded, communicated and reused to create more. While Creative Commons has achieved its success within the relatively narrow field of copyright, this success can and should be parlayed into areas where copyright may be less relevant but the ethics of sharing and reuse are just as important.</p>
+<p>Creative Commons is seen as an organization that is a source and steward of trust. We are routinely asked to take on tasks that others have either failed at or have simply not considered. These requests may involve doing for other legal instruments what Creative Commons has done for copyright licenses, that is, simplify them by creating a human readable, machine readable and universally harmonized legal text, or creating custom CC licenses. Creative Commons typically resists forays into these new areas as they lie outside the narrow zone of copyright and are not scalable in the way of copyright licenses.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:A Manifesto for Science">A Manifesto for Science</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/The-P-Words">↜ The “P” Words</a></li>
+        <li class="next"><a href="/From-Aye-to-Si">From Aye to Si ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

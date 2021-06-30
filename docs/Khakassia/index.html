@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Khakassia</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Khakassia</h1>
+    <div class="description">Olga Amelchenko Quartet</div>
+    <div class="created">Sunday, July 30, 2017</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/olga-q.jpg">
+    <figcaption>Olga Amelchenko Quartet</figcaption>
+</figure>
+<p>Per the Wikipedia, the Republic of Khakassia (Russian: Респу́блика Хака́сия, Respublika Khakasiya; Khakass: Хакас Республиказы, Hakas Respublikazı) or Khakasiya, aka “Warm Siberia,” is a federal subject of Russia located in the south of Eastern Siberia, part of the Siberian Federal District. Abakan is the capital of Khakassia. </p>
+<p>Home to 546,072 people, it is the 71st largest division in Russia in terms of population. One of those half-a-million plus is <a href="https://www.olga-amelchenko.com/">Olga Amelchenko</a>, saxophonist and composer, who now lives in, and studies and plays jazz in Berlin. I had the pleasure of seeing Olga and her quartet play a lovely couple of sets at the <strong>b-flat</strong> in Berlin. One of the tunes she composed and played in the set was called <em>Khakassia</em>.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:jazz">jazz</a></li>
+        <li><a href="/entries?q=tags:b-flat">b-flat</a></li>
+        <li><a href="/entries?q=tags:Berlin">Berlin</a></li>
+        <li><a href="/entries?q=tags:Germany">Germany</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Ostalgie">↜ Ostalgie</a></li>
+        <li class="next"><a href="/Even-Gods-Are-Fallible">Even Gods Are Fallible ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

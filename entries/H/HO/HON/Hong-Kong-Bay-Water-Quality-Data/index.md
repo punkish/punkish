@@ -14,9 +14,11 @@ tags       :
     - art science
     - environmental monitoring
 stars      : 
-css        : hk
-js         : hk
-layout     : dygraph
+css        : 
+    - hk
+js         : 
+    - hk
+isDygraph  : true
 ---
 
 <p class="u-cf">Yim Tin Tsai Fish Culture Zone water quality data measured in August 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD. Next reading in <span id="timer"></span> <em><b>Note:</b> The chart update has been sped by by 10X to make the web page more interesting. In real-life, the chart updates every ten minutes.</em></p>

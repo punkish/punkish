@@ -1,0 +1,21 @@
+<div>
+    <a href="/" class="home">
+        {{#isDark}}
+        <img src="/lib/img/PunkishEidesisOrg-inverse.png">{
+        {{/isDark}}
+
+        {{^isDark}}
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+        {{/isDark}}
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav>

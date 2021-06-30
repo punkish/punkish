@@ -1,0 +1,164 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Heatmaps In PostGIS (with PL/R)</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Heatmaps In PostGIS (with PL/R)</h1>
+    <div class="description">a primer on licensing options</div>
+    <div class="created">Invalid Date</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/heatmap.jpg">
+    <figcaption>heatmap</figcaption>
+</figure>
+<hr />
+<p>The map above shows a heatmap of fossil clusters overlaid on top of fossil occurrence density per 1 degree square grid cell. The clusters are calculated using a function written in PL/R, and the heatmap is drawn with the JSON data.</p>
+<pre><code class="SQL">--  This function calculates requested number of clusters for a 
+--  set of lnt/lat points using R's built-in 'kmeans' method.
+
+--  Mar 24, 2012
+--  Puneet Kishor punkish@eidesis.org
+--  All my contribution is released under a CC0 License Waiver
+--  Effectively in the Public Domain
+
+--  Requirements: 
+--      R-2.14.0
+--      PostgreSQL-9.0.x with PostGIS-1.5.x and PL/R-8.2.0.4 installed
+
+--      SELECT r_clusters(
+--           $num_of_clusters, 
+--            array_agg(ST_X(the_geom)), 
+--            array_agg(ST_Y(the_geom))
+--        ) 
+--        FROM table  
+
+--  Where:
+--  'table' is the table or query containing the points to be used 
+--      for calculating the clusters
+
+--  Output: returns a recordset of the clusters, which contains  
+--      the center of the cluster
+
+-- Function: r_clusters(integer, double precision[], double precision[])
+
+-- DROP FUNCTION r_clusters(integer, double precision[], double precision[]);
+
+CREATE OR REPLACE FUNCTION r_clusters(
+    num_of_clusters integer, 
+    lon double precision[], 
+    lat double precision[]
+)
+RETURNS numeric[] AS
+$BODY$
+</code></pre>
+<p>R code below</p>
+<pre><code class="R"># Puneet Kishor, Dec 20, 2011.
+# Adapted for PL/R
+
+# Takes a number of clusters, and two arrays, one for lon and the other for lat.
+# Returns an array of lon, lat, and count for each cluster.
+data &lt;- cbind(lon, lat)
+
+cl &lt;- kmeans(data, num_of_clusters)
+
+lon = as.numeric(cl$centers[,1])
+lat = as.numeric(cl$centers[,2])
+size = cl$size
+
+result &lt;- t(data.frame(lon = lon, lat = lat, size = size))
+return(result)
+</code></pre>
+<p>Close off with SQL</p>
+<pre><code class="SQL">$BODY$
+LANGUAGE 'plr';
+</code></pre></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:PostGIS">PostGIS</a></li>
+        <li><a href="/entries?q=tags:PL/R">PL/R</a></li>
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:kmeans">kmeans</a></li>
+        <li><a href="/entries?q=tags:R">R</a></li>
+        <li><a href="/entries?q=tags:programming">programming</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Serving-Data,-Licenses,-Citations,-and-Tracking-Use">↜ Serving Data, Licenses, Citations, and Tracking Use</a></li>
+        <li class="next"><a href="/Licensing-Scientific-Data-Collections">Licensing Scientific Data Collections ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

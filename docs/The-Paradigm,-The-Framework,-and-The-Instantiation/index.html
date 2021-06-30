@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Paradigm, The Framework, and The Instantiation</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The Paradigm, The Framework, and The Instantiation</h1>
+    <div class="description"></div>
+    <div class="created">Wednesday, October 12, 2011</div>
+    
+    <div class="content"><p>There are three independent yet inter-related concepts at play when building an open data infrastructure for science -- I call them "The Paradigm," "The Framework," and "The Instantiation."</p>
+<h2 id="theparadigm">The Paradigm</h2>
+<p>The web is our inspiration. Arguably the most important human invention since the printing press, the web has succeeded, for the most part, because of its simplicity. The web allows easy and ubiquitous data sharing. Hence, the paradigm is the architecture on which the web is built.</p>
+<p>This architecture relies on unique nouns and a limited vocabulary of verbs. Every resource has a unique identifier, a noun, which is its <a href="http://www.ietf.org/rfc/rfc2396.txt">uniform resource identifier</a>. This URI is reachable from anywhere in the world, and always identifies a unique resource.</p>
+<p>It is of utmost importance to realize that URIs are unique, and that <a href="http://www.w3.org/Provider/Style/URI">"cool URIs don't change."</a> If, for some reason, the path to the URIs changes, proper use of <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http redirect codes</a> can lead the user to the new location.</p>
+<p>The limited vocabulary of verbs are those implemented by the hypertext transfer protocol (http). The commons ones are <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">GET, HEAD, PUT, DELETE, and POST, and a couple of others</a>.</p>
+<p>Articulated by Fielding as <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">REpresentational State Transfer, or REST</a>, the architecture of the web, is our paradigm.</p>
+<h2 id="theframework">The Framework</h2>
+<p>The web allows us to easily serve resources and for users to easily reach those resources. But, in science, we need a way to correlate different resources.  While correlation does not indicate causation, correlation is the first step toward understanding, because it allows us to put seemingly disparate things in the same framework. Because everything happens somewhere at some time, we use the framework of space and time to correlate disparate data. The four vectors of <em>x</em>, <em>y</em>, <em>z</em>, and <em>t</em> allow us to view things in relation to each other.</p>
+<p>Hence, space and time are our unifying framework.</p>
+<h2 id="theinstantiation">The Instantiation</h2>
+<p>According to <a href="http://www.geog.ucsb.edu/~tobler/publications/pdf_docs/geog_analysis/ComputerMovie.pdf">Tobler's first law of geography</a>, "everything is related to everything else, but near things are more related than distant things." Taking disparate datasets and unifying them in a common framework is one thing, but users still have to be able to find them, and do something useful with them. The instantiation allows us to bring these disparate datasets close to each other, perhaps at a single parent URI, where data creators and publishers can submit their data streams and data users can discover and explore them. The instantiation also allows us to offer additional user services such as accounting (<em>who is using my data?</em>), permanence and caching (<em>make my data available even if my own server goes down</em>), discovery (<em>what are all the data sets that meet certain criteria?</em>), licensing (<em>what can I legally do with a data?</em>), and more.</p>
+<p>We are building <a href="http://earth-base.org">Earth-Base</a>, an <strong>Instantiation</strong> built on <strong>The Paradigm</strong> using <strong>The Framework</strong>.</p>
+<h2 id="summary">Summary</h2>
+<p>The Paradigm allows us to serve our data and to allow others to use them, because if it is not available on the web, it doesn't exist for the rest of us. The Framework allows us to unify disparate datasets. And, the Instantiation allows us to bring the datasets into a common space, in close proximity, add additionaly services and value, and enable new, interdisiplinary discovery and science.</p>
+<p>Not all datasets can be served, as is, per the Paradigm. That is ok. We can't solve <strong>all</strong> the problems, but we can make <strong>a lot</strong> of data available to others. The data chain, from raw data that come out of sensors all the way to cooked data that have been analyzed and interpreted, has many steps. At <strong>some</strong> step in the data chain, the data become suitable for serving on the web.</p>
+<p>Not all datasets may fit the space/time framework. That is ok as well. But, most will, and we can bring those into the fold.</p>
+<p>There have been many initiatives, some abandoned, some continuing, to build a data infrastructure. Earth-Base would offer the proven simplicity of the web, the conceptually easy to understand space/time framework, and the space within which different data sets can be offered, discovered, compared, integrated and analyzed.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:web">web</a></li>
+        <li><a href="/entries?q=tags:REST">REST</a></li>
+        <li><a href="/entries?q=tags:open data">open data</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Seismology-Data-Chain">↜ Seismology Data Chain</a></li>
+        <li class="next"><a href="/Senior-Analyst,-Geosciences,-University-of-Wisconsin,-Madison,-WI">Senior Analyst, Geosciences, University of Wisconsin, Madison, WI ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

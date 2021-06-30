@@ -12,10 +12,10 @@ tags       :
     - open hardware
     - code
     - spectrophotometer
-stars      : 
-layout     : canvas
+isCanvas   : true
 template   : canvas
-js         : script
+js         : 
+    - script
 ---
 
 <canvas>RGB values to wavelengths of visible light</canvas>

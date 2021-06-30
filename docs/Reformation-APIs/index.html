@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Reformation APIs</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The Reformation APIs</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, October 24, 2017</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/luther_95_thesen.jpg" width="100%">
+</figure>
+<p>If five hundred years ago, almost to the day, a monk can hang his theses to change the course of religion, I can, rather more modestly, create a few APIs to experiment with changing how information is accessed or processed. I call these, my adventures in programming, the Reformation APIs.</p>
+<h2 id="zenodeo">Zenodeo</h2>
+<p><code>Zenodo + nodejs = Zenodeo</code></p>
+<p><a href="https://zenodo.org">Zenodo</a> has an API, but we wanted an API that would serve the needs of the <a href="https://biolitrepo.org">Biodiversity Literature Repository</a> community. Additionally, we wanted to provide more documentation and hand-holding than is provided by Zenodo. While we were at it, we also decided to document the API using the <a href="https://www.openapis.org/">OpenAPI 3.0</a> specification. Presenting <a href="http://zenodeo.punkish.org/about">Zenodeo</a></p>
+<h2 id="deuxems">Deuxems</h2>
+<p>I am building a REST interface to simple NLP tasks as a device to learn both programming and NLP. For now, it supports</p>
+<ul>
+<li>tokenize and stem</li>
+<li>POS tagging</li>
+<li>n-grams</li>
+<li>geoparsing</li>
+</ul>
+<p>Check out <a href="http://deuxems.punkish.org/about">Deuxems</a></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:nodejs">nodejs</a></li>
+        <li><a href="/entries?q=tags:APIs">APIs</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/todo">↜ Things I’d Like To Do</a></li>
+        <li class="next"><a href="/Who-Owns-My-Data">Who Owns My Data? ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

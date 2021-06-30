@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Data Chain</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Data Chain</h1>
+    <div class="description"></div>
+    <div class="created">Friday, October 21, 2011</div>
+    
+    <div class="content"><p>The scientific data chain is long and convoluted. Stretching from, perhaps, raw data that come from a sensor on the one end to highly processed, interpreted, “cooked”  analysis that is published in a scientific journal, data go through many steps and transformations. Each step creates new insights and new information, which, in turn, becomes data for the next step of analysis.</p>
+<p>Not every step in the chain may produce data suitable for general consumption. Not every level of data may be usable without specialized training, software, or understanding. Some interim manifestations may simply be temporary staging points for the next step of processing and analysis in the chain.</p>
+<p>While the web is the sole medium of ubiquitous data transfer and access, publishing data on the web may not make sense for every step in the data chain. And, even when it does, web publication of data doesn’t preclude or co-opt other steps and manifestations in the data chain. Those wanting data in more raw a state than available via a web app will still approach the scientist or do whatever they have done for centuries. Those wanting more analyzed versions of information will seek publications that make sense of the data. There will be, however, a large number of those who will take the data published via the web mechanism and make it there own. Perhaps they will use it as input to their own models, or make a web application which transforms the data and presents it differently, or import it in their spreadsheets or statistical analysis software, or mash it up with other data streams.</p>
+<p>Nevertheless, understanding the data chain is a fundamental prerequisite to making assertions that “data should be free” or “data should be archived.” Below are a few examples of the data chain.</p>
+<h3 id="seismologydatachain">Seismology Data Chain</h3>
+<p>From voltage variations in a sensor stuck in the ground to wiggles on the scientist’s computer screen, and to an RSS feed of earthquake events, <a href="Seismology-Data-Chain">seismology data chain</a> is indeed long and convoluted.</p>
+<h3 id="treeallometrydatachain">Tree Allometry Data Chain</h3>
+<p>A shorter workflow for establishing allometric relationships, the <a href="Tree-Allometry-Data-Chain">tree allometry data chain</a> is, nevertheless, not straightforward.</p>
+<h3 id="photosyntheticlightdatachain">Photosynthetic Light Data Chain</h3>
+<p>Determining the effect of light on crops and its conversion into biomass requires light measurements in field and validating them against farmer reported yields. Learn more about the <a href="Photosynthetic-Light-Data-Chain">photosynthetic light data chain</a>.</p>
+<h3 id="stableisoptopebiogeochemistrydatachain">Stable Isoptope Biogeochemistry Data Chain</h3>
+<p>Measuring the extent to which the biochemistry tends to concentrate C<sub>12</sub> instead of C<sub>13</sub> inside cyanobacteria fossils gives us an idea of the metabolic strategy, <em>aka</em> the photosynthetic strategy, of those organism. Check out the <a href="Stable-Isotope-Biogeochemistry-Data-Chain">stable isotope biogeochemistry data chain</a>.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:raw data">raw data</a></li>
+        <li><a href="/entries?q=tags:processed data">processed data</a></li>
+        <li><a href="/entries?q=tags:information">information</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Tree-Allometry-Data-Chain">↜ Tree Allometry Data Chain</a></li>
+        <li class="next"><a href="/Seismology-Data-Chain">Seismology Data Chain ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

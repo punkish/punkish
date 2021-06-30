@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: CC Science Archive</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">CC Science Archive</h1>
+    <div class="description"></div>
+    <div class="created">Saturday, October 20, 2007</div>
+    
+    <div class="content"><div class="archive">
+    These content below constitutes a part of the work I did while working as the Manager of Science and Data Policy at Creative Commons. This content is an archive of what used to be on <u>http://science.creativecommons.org/</u> but is no longer available on the web. I have preserved the original content and added more material to them.
+</div>
+<h2 id="sensoredcity">Sensored City</h2>
+<p>Funded by a generous grant from Robert Wood Johnson Foundation, we are working with the City of Louisville to design and implement a network of sensor-based hardware that will collect environmental data and drive a public installation of data-driven art. <a href="/Sensored-City">more &rarr;</a></p>
+<h2 id="sharingvsprivacy">Sharing vs. Privacy</h2>
+<p>Funded by a generous grant from Robert Wood Johnson Foundation, we are working with our partners to explore the potential of shifting the conversation from privacy to sharing to encourage data sharing. <a href="/Sharing-v-Privacy">more &rarr;</a></p>
+<h2 id="openhardware">Open Hardware</h2>
+<p>Funded by a generous grant from Alfred P. Sloan Foundation, we are evaluating the available open licensing options for their strengths and weaknesses, with an emphasis on distributed sensing hardware. Our goal is to produce a whitepaper that will become the authoritative reference for open hardware developers when choosing their licensing strategy. <a href="/Open-Hardware">more &rarr;</a></p>
+<h2 id="textanddatamining">Text and Data Mining</h2>
+<p>TDM is increasingly becoming an important scientific technique for analyzing large corpora of articles. The technique is used to uncover both existing and new insights in unstructured data sets that typically are obtained programmatically from many different sources. <a href="/Text-and-Data-Mining">more &rarr;</a></p>
+<h2 id="termsofservices">Terms of Services</h2>
+<p>Everyone agrees to them, no one understands them. Terms of Services (TOS) are ubiquitous and inversely understood. We are working to create a standardized and easily understandable TOS that pulls in various different and complementary concepts. <a href="/Terms-of-Services">more &rarr;</a></p>
+<h2 id="dashboard">Dashboard</h2>
+<p>All our work viewable on a timeline and a map. <a href="/Dashboard">more &rarr;</a></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:CC Science">CC Science</a></li>
+        <li><a href="/entries?q=tags:RWJF">RWJF</a></li>
+        <li><a href="/entries?q=tags:Sloan">Sloan</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Intellectual-Property-Rights">↜ Intellectual Property Rights</a></li>
+        <li class="next"><a href="/Scientific-Data-License">Scientific Data License ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

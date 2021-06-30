@@ -1,0 +1,157 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: On Nicky’s Contact Tracing Proposal</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">On Nicky’s Contact Tracing Proposal</h1>
+    <div class="description"></div>
+    <div class="created">Saturday, April 11, 2020</div>
+    
+    <div class="content"><p>There is not much to add to <a href="https://ncase.me/contact-tracing/">Nicky’s most excellent explanation</a> of a privacy-protecting yet effective contact-tracing app. That said, I find the following diagram to add to the original, wonderful illustrations and text.</p>
+<pre><code>             Alice                   Bob                      
+
+═══╦══════╦════════════════════════════════════════════════   
+   │day 0 │  - gets infected
+   │      │  - doesn't know
+   |      |  - doesn't show any
+   |      |    symptoms
+───┼──────┼────────────────────────────────────────────────   
+   │day 1 │                                                   
+───┼──────┼────────────────────────────────────────────────   
+   │day 2 │                                                   
+───┼──────┼────────────────────────────────────────────────   
+   │day 3 │  becomes contagious  - comes in contact w Alice    
+   │      │                      - possibly gets infected
+   │      │                      - doesn't know
+   |      |                      - doesn't show any
+   |      |                        symptoms
+   |      |                      - phone records random 
+   |      |                        codes sent by everyone 
+   |      |                        nearby, including Alice
+ ──┼──────┼─────────────────────────────────────────────────  
+   │day 4 │                                                   
+ ──┼──────┼─────────────────────────────────────────────────  
+   │      │  - shows symptoms   - phone automatically         
+   │      │  - gets tested        determines he came in         
+   │day 5 │  - confirmed pos.     contact with someone          
+   │      │  - uploads data       who was infected              
+   │      │                     - self-quarantines            
+ ──┼──────┼─────────────────────────────────────────────────  
+   │day 6 │                     X chain is broken             
+ ──┼──────┼─────────────────────────────────────────────────  
+   │day 7 │                                                   
+ ──┼──────┼─────────────────────────────────────────────────  
+   │      │                     - shows symptoms              
+   │day 8 │                     - gets tested                 
+   │      │                     - confirmed neg.              
+   │      │                     - no need to upload data      
+ ──┴──────┴─────────────────────────────────────────────────  
+</code></pre>
+<p>Note that the above depeneds on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:</p>
+<ul>
+<li>Is there any voluntary action anywhere?</li>
+</ul>
+<ol>
+<li>yes, on the part of Alice and Bob, to install that app allow it to do its job, which is to send out the random codes every 5 mins, and to poll the central db for matching codes (this becomes useful in step four below</li>
+<li>yes, on the part of Alice to get tested as soon as she shows symptoms</li>
+<li>yes, on the part of Alice to upload her data anonymously to the central db</li>
+<li>yes, on the part of Alice and Bob to let their app check the central db for matching codes</li>
+</ol>
+<ul>
+<li>Does the model depend on Alice voluntarily sending all the sent-received-messages to the hospital or does this happen automatically?</li>
+</ul>
+<ol>
+<li>Alice has upload her data to the central db once she knows she is infected, which happens once she is tested, which happens once she shows symptoms. More on this below.</li>
+</ol>
+<ul>
+<li>Who asserts that Alice is infected?</li>
+</ul>
+<ol>
+<li>Alice gets tested as soon as she shows symptoms. More on this below.</li>
+</ol>
+<p>Here is more — All of the above assumes the following:</p>
+<p><strong>cooperation:</strong> download the app and let it do its thing<br />
+<strong>education:</strong> everyone knows about the app, how to download and install it properly and let it do its thing, what the symptoms, and who to call soon as symptoms are visible<br />
+<strong>availability of testing:</strong> naturally, this is a prerequisite</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:Nicky Case">Nicky Case</a></li>
+        <li><a href="/entries?q=tags:Contact Tracing">Contact Tracing</a></li>
+        <li><a href="/entries?q=tags:COVID-19">COVID-19</a></li>
+        <li><a href="/entries?q=tags:Covid19">Covid19</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Trust-and-Faith">↜ Trust and Faith</a></li>
+        <li class="next"><a href="/Coronovirus-Host-Community">Coronavirus Host Community ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

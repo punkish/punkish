@@ -1,0 +1,15 @@
+<section>
+    <h1 class="title">{{{title}}}</h1>
+    <div class="description">{{{description}}}</div>
+    <div class="created">{{created}}</div>
+    
+    <div class="content">{{{__content}}}</div>
+
+    <ul class="tags">
+        {{#tags}}
+        <li><a href="/entries?q=tags:{{.}}">{{.}}</a></li>
+        {{/tags}}
+    </ul>
+
+    {{> prevNext}}
+</section>

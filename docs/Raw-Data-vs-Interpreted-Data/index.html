@@ -1,0 +1,119 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Raw Data vs Interpreted Data</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Raw Data vs Interpreted Data</h1>
+    <div class="description"></div>
+    <div class="created">Thursday, October 22, 2009</div>
+    
+    <div class="content"><p><a href="#prelim_stats">Preliminary stats from the survey</a>
+<br></p>
+<h3 id="abriefsurveyofthekindofdatayouuseinyourdailywork">A brief survey of the kind of data you use in your daily work</h3>
+<p><br></p>
+<form>
+<div style='font: normal 8pt "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif; background-image: url(/img/page/Raw_Data_vs_Interpreted_Data/closed.png) '>
+<b>Briefly describe the data you use on a routine basis</b> ("Hydrology," "temperature," "income," "disease occurrence," whatever it may be, just be pointed and brief.) <input type="text" size="20" disabled>
+<br>
+<br>
+<b>What format is the above data in when you get it?</b> ("Spreadsheet," "Excel spreadsheet," "database," "raw ASCII," "SQL dump," "Oracle tables," "AVHRR imagery" are all valid answers. State the generic format type, the brand name of the software, or both, as the case may be for you.) <input type="text" size="20" disabled>
+<br>
+<br>
+<b>With regards to the data described above, would you call it "raw" data or "interpreted" data?</b> ("Raw" data are those in which no human creativity was involved. For example, consider readings from a sensor, or census tabulation. Typically, these readings are then processed so they become suitable for human-consumption. For the purpose of this survey, we call these latter "interpreted data." Remember, we are focusing on the data that you get, not what it becomes after you have worked on it.)<br>
+<input type="radio" disabled> Raw Data<br>
+<input type="radio" disabled> Interpreted Data<br>
+<br>
+<br>
+<b>Where are you currently located?</b> (Laws governing data and databases vary from country to country. Please enter the country where you are located.) <input type="text" size="20" disabled>
+<br>
+<br>
+From which country did you get the data?</b> (Science is international, so it would help to know if you got the above data from a country different from where you are located.) <input type="text" size="20" disabled>
+</div>
+</form>
+<p><a name="prelim_stats"></a></p>
+<h3 id="preliminarystatsfromthesurveymoreanalysistocome">Preliminary stats from the survey (more analysis to come)</h3>
+<p>162 responses from 20 countries sourcing data from 30 countries.
+<img src="location_of_respondents" alt="Location of respondents" /></p>
+<p>More than half of you deal with what you view as "raw" data.</p>
+<p><img src="raw_v_interpreted" alt="Raw v. Interpreted Percentages" /></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:Intellectual Property">Intellectual Property</a></li>
+        <li><a href="/entries?q=tags:Copyright">Copyright</a></li>
+        <li><a href="/entries?q=tags:data">data</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/eInfrastructure-for-Scientific-Data">↜ eInfrastructure for Scientific Data</a></li>
+        <li class="next"><a href="/Policy-Aware-Geospatial-Data">Policy Aware Geospatial Data ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

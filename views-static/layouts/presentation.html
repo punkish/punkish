@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="punkish.org">
+    <meta name="Copyright" content="CC0 Public Domain Dedication">
+    <meta name="Author" content="Puneet Kishor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="/public/css/remark-styles.css">
+    {{#hasCss}}
+    <link rel="stylesheet" href="/entry-files/{{url}}/css/{{css}}.css">
+    {{/hasCss}}
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <!-- <div class="container"> -->
+
+{{{content}}}
+
+    <!-- </div> -->
+
+	{{#hasJs}}
+    <!-- <script src="/entry-files/{{url}}/js/{{js}}.js"></script> -->
+	{{/hasJs}}
+	
+	<script src="/public/remark/remark-latest.min.js"></script>
+    <script>
+	var slideshow;
+    window.onload = function() {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	}
+    </script>
+</body>
+</html>

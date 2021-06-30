@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Grow Up</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Grow Up</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>I met two street urchins and I asked them why<br />
+they spent their time rummaging in a pig-sty<br />
+and they said hey youve got money to blow<br />
+we make a living out of things others throw<br />
+    in landfill<br />
+and I said why dont you grow up.  </p>
+<p>It was just this morning that I decided to die<br />
+and come back reincarnated as another guy<br />
+who turned around and said hey why dont you show<br />
+them why do you like to lie low 
+    and still<br />
+and I said why dont you grow up.  </p>
+<p>Last night I dreamed of someone who was shy<br />
+who would spend all the time using a sigh<br />
+as a device to let other people know<br />
+how exasperating it was to be called Joe<br />
+    Hill<br />
+and I said why dont you grow up.  </p>
+<p>She was hungry so she ordered a pineapple pie<br />
+and offered me a spoonful so I could try<br />
+but I wrinkled my nose in order to show<br />
+that I suddenly felt like I had to go<br />
+    be ill<br />
+and she said why dont you grow up.  </p>
+<p>They sat on the roof under a pitch black sky<br />
+and smoked and drank and got a bit high<br />
+until the phone rang and she had to go<br />
+with the back seat turned down so she could stow<br />
+    a bicycle<br />
+and I said why dont you grow up.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Economic-Supply-of-Biodiversity">↜ The Economic Supply of Biodiversity in West Kalimantan</a></li>
+        <li class="next"><a href="/Measuring-Real-Benefits-of-GIS-LIS-in-Wisconsin">Measuring Real Benefits of GIS LIS in Wisconsin ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

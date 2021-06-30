@@ -1,0 +1,131 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Convex Hull</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Convex Hull</h1>
+    <div class="description"></div>
+    <div class="created">Saturday, July 28, 2018</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/stars.gif" style="border: 1px solid lightgrey;">
+    <figcaption>convex hull</figcaption>
+</figure>
+<p>The possibilities afforded by art depend upon how and what is interpreted by the viewer, and may have absolutely no connection to what its creator intended. Most of the times, we don’t even know the creator. While we may glean a bit about the origin of the artwork, for the most part, we have no idea what the artist was thinking before and during the process of its creation. The artist created the work and moved on, or not. But it doesn’t matter… for, as the work’s viewer, we can keep on going back to it, and as long as we are curious about it, we can keep on discovering new insights in it, new subtleties that matter only to us. And thereby come into existence the subsequent lives of that work, on each interpretation by each individual viewer.</p>
+<p>Two strangers meet. They’ve had different trajectories but have arrived at the same point. And yet, they are connected by history, and by the baggage of language. They talk in a language that a third person can understand. Their words have weight, and that weight gives them form. The form shifts and changes shape, but is palpable. The language of language is infinitely mutable. Starting with only a couple of dozen (or a few more) letters, we can construct zillions of words that can be strung together to convey gajillions of thoughts. A <code>convex hull</code> is the tighest enclosure for all the ideas contained in a work. And, while it has a boundary, much like the <a href="/Circle-whose-center-is-everywhere">circle whose center is everywhere</a>, it is an inadquate container of ideas. And therein lies its beauty, for with each, even the slightest of rearrangement, a new interpretation is possible. Such is the possibility of art. <a href="/What-You-Do-Says-About-You">What the artist does says about her. What I see in her work says about me.</a></p>
+<p>Using <a href="https://github.com/indy256/convexhull-js">Andrey Naumenko’s high performance JavaScript 2D Convex Hull program</a> </p>
+<pre><code>function convexHull(points) {
+
+    function removeMiddle(a, b, c) {
+        var cross = (a.x - b.x) * (c.y - b.y) - (a.y - b.y) * (c.x - b.x);
+        var dot = (a.x - b.x) * (c.x - b.x) + (a.y - b.y) * (c.y - b.y);
+        return cross &lt; 0 || cross == 0 &amp;&amp; dot &lt;= 0;
+    }
+
+    points.sort(function (a, b) {
+        return a.x != b.x ? a.x - b.x : a.y - b.y;
+    });
+
+    var n = points.length;
+    var hull = [];
+
+    for (var i = 0; i &lt; 2 * n; i++) {
+        var j = i &lt; n ? i : 2 * n - 1 - i;
+        while (hull.length &gt;= 2 &amp;&amp; removeMiddle(hull[hull.length - 2], hull[hull.length - 1], points[j]))
+            hull.pop();
+        hull.push(points[j]);
+    }
+
+    hull.pop();
+    return hull;
+}
+</code></pre>
+<p>All we need is a set of words, points in space and time, and the curiosity afforded by <code>convexHull(points)</code> to explore the world of ideas.</p>
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">The animated convex hull based on an image from the <a href="http://irahadzic.com/evacuation-of-nada" target="_blank">Evacuation of Nada</a> by Ira Hadžić.<a href="#fnref:1" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:language">language</a></li>
+        <li><a href="/entries?q=tags:Nada">Nada</a></li>
+        <li><a href="/entries?q=tags:code">code</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Water-Quality-Monitoring">↜ Water Quality Monitoring</a></li>
+        <li class="next"><a href="/Set-Operations-in-JavaScript">Set Operations in JavaScript ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

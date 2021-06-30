@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: GeoAnalytics</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">GeoAnalytics</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p><strong>Senior Analyst/Programmer</strong></p>
+<p><strong>GeoAnalytics, Inc.</strong></p>
+<p>Madison, WI, USA</p>
+<p>(1997-2006)</p>
+<p><a href="http://www.geoanalytics.com">GeoAnalytics, Inc.</a>, is a small, GIS and IT consulting firm based in Madison, WI. Since 1997, I have been working as an analyst carrying out studies in strategic information planning, best management practices, and emergency preparedness planning for enterprise GIS, emergency management, and Enhanced 911.</p>
+<ul>
+<li>Dane County, WI (emergency management plan)</li>
+<li>Dodge County, WI (GIS and emergency management integration plan)</li>
+<li>Kendall County, IL (enterprise GIS)</li>
+<li>Village of Palatine, IL (strategic plan)</li>
+<li>Palm Beach County, FL (best management practices)</li>
+<li>Florida Department of Agriculture, FL (spatial data inventory)</li>
+</ul>
+<p>For the past 8 years I have also been programming web-enabled GIS and database applications, and integrating disparate systems and application platforms with open source programming languages.</p>
+<ul>
+<li>Wisconsin Historical Preservation Database (Oracle/ColdFusion/ArcIMS)</li>
+<li>Northeastern Illinois Planning Commission Development Database (SQL Server/ColdFusion)</li>
+<li>Open Source GIS Application, Village of Palatine, IL (MySQL/PHP/MapServer)</li>
+<li>Dane County Emergency Management Resource Database (MS Access/Perl)</li>
+<li>White House Utility District, Tennessee (SQL Server/Exchange Server/Perl)</li>
+<li>City of Lakeforest, IL (SQL Server/Exchange Server/Perl)</li>
+<li>City of O'Fallon, Missouri (SQL Server/Exchange Server/Perl)</li>
+<li>City of Missouri City, TX (JavaScript/ArcIMS)</li>
+</ul></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:"></a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Indian-Institute-Of-Management">↜ Indian Institute Of Management</a></li>
+        <li class="next"><a href="/Government-Of-Trinidad-And-Tobago">Government Of Trinidad And Tobago ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

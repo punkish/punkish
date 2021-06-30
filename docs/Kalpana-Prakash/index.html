@@ -1,0 +1,99 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Kalpana Prakash</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Kalpana Prakash</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>![kpeidesis usemap]</p>
+<p><map name="kpeidesis"></p>
+<pre><code>&lt;area shape=rect coords="11,321,526,411" href="http://www.eidesis.org/kprakash/index.cgi/works/Objects/AllYears/AllWorks" target="_blank" title="Objects"&gt;
+
+&lt;area shape=rect coords="11,216,526,306" href="http://www.eidesis.org/kprakash/index.cgi/works/Prints/AllYears/AllWorks" target="_blank" title="Prints"&gt;
+
+&lt;area shape=rect coords="11,111,526,201" href="http://www.eidesis.org/kprakash/index.cgi/works/Paintings/AllYears/AllWorks" target="_blank" title="Paintings"&gt;
+
+&lt;area shape=rect coords="11,6,526,96" href="http://www.eidesis.org/kprakash/index.cgi/works/Drawings/AllYears/AllWorks" target="_blank" title="Drawings"&gt;
+</code></pre>
+<p></map></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:"></a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Joint-Forest-Management">↜ Joint Forest Management</a></li>
+        <li class="next"><a href="/Development-Alternatives">Development Alternatives ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

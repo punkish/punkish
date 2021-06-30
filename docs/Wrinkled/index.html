@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Wrinkled</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Wrinkled</h1>
+    <div class="description"></div>
+    <div class="created">Wednesday, August 21, 2013</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/wrinkled.gif">
+    <figcaption>Liliana Porter</figcaption>
+</figure>
+<p><tt>
+emm: so are they wrinkled pictures or pictures of wrinkles?<br />
+ett: well, to begin with, they're not pictures.<br />
+emm: and what would you call them?<br />
+ett: i'd call them still-lifes of action paintings.<br />
+emm: whew! they're not even paintings.<br />
+ett: don't be so picky. i mean the gesture. her attitude toward the material. yves<br />
+     klein blues it, tinguely electrifies it, soto makes it vibrate, mathieu wallows in<br />
+     it, fontana slits it, christo wraps it up, arman collects it, spoerri glues it to<br />
+     the dinner table, diter rot lets it vegetate, liliana porter wrinkles it up …<br />
+emm: … and then flattens it out again.<br />
+ett: and there you are – a still-life. a still-life of a dynamic process.<br />
+emm: but does this process have anything to do with art?<br />
+ett: who needs art?<br />
+emm: who needs wrinkes?<br />
+ett: you may not need them, but you've got them.<br />
+emm: that's what i mean. wrinkles aren't very nice. wrinkling things up is messy …<br />
+emm: … earthquakes ….<br />
+ett: or when the wind blows ….<br />
+emm: soot on my wrinkled white pants …<br />
+ett: … ripples on the water, hokusai's waves …<br />
+emm: … muddy ditches …<br />
+ett. … the mountains of the wrinkled earth, and the valleys of the moon.<br />
+emm: don't go overboard, you'll be calling her a landscape painter soon.<br />
+ett: that's the point, wrinkled paper is a landscape, no less than the man in the moon.<br />
+emm: then maybe liliana is a cartographer.<br />
+ett: good grief, i'd never thought of that!  </p>
+<pre><code>emm
+    williams
+ett
+
+
+decemnber 1968
+</code></pre>
+<p></tt></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:photos">photos</a></li>
+        <li><a href="/entries?q=tags:Argentina">Argentina</a></li>
+        <li><a href="/entries?q=tags:Buenos Aires">Buenos Aires</a></li>
+        <li><a href="/entries?q=tags:MALBA">MALBA</a></li>
+        <li><a href="/entries?q=tags:Emmett Williams">Emmett Williams</a></li>
+        <li><a href="/entries?q=tags:Liliana Porter">Liliana Porter</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Solo-un-beso">↜ Sólo un beso</a></li>
+        <li class="next"><a href="/Afternoon-Coffee-New-Delhi">Afternoon Coffee at the Coffee House ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

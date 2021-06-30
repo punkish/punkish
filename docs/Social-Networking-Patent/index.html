@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Social Networking Patent</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Social Networking Patent</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=7,069,308.PN.&OS=PN/7,069,308&RS=PN/7,069,308">United States Patent: 7,069,308</a>
+<em>System, method and apparatus for connecting users in an online computer system based on their relationships within social networks</em></p>
+<p><strong>Abstract</strong></p>
+<p>A method and apparatus for calculating, displaying and acting upon relationships in a social network is described. A computer system collects descriptive data about various individuals and allows those individuals to indicate other individuals with whom they have a personal relationship. The descriptive data and the relationship data are integrated and processed to reveal the series of social relationships connecting any two individuals within a social network. The pathways connecting any two individuals can be displayed. Further, the social network itself can be displayed to any number of degrees of separation. A user of the system can determine the optimal relationship path (i.e., contact pathway) to reach desired individuals. A communications tool allows individuals in the system to be introduced (or introduce themselves) and initiate direct communication.</p>
+<p>See <a href="http://www.redherring.com/Article.aspx?a=17498&hed=Friendster+Wins+Patent">Friendster Wins Patent</a>
+Also <a href="http://www.infoworld.com/article/06/06/19/79346_25OPopenent_1.html">Patent overload hinders open source innovation</a></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:social networking">social networking</a></li>
+        <li><a href="/entries?q=tags:patent">patent</a></li>
+        <li><a href="/entries?q=tags:Intellectual Property">Intellectual Property</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Trust-Building-Via-Risk-Taking">↜ Trust Building Via Risk Taking</a></li>
+        <li class="next"><a href="/Sort-Array-of-Hashes">Sort Array of Hashes ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

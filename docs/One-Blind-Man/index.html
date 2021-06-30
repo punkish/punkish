@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: One Blind Man</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">One Blind Man</h1>
+    <div class="description">poverty makes a noise so you can’t look away</div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/one-blind-man.jpg">
+    <figcaption>one blind man</figcaption>
+</figure>
+<p>a blind man stands<br />
+by the side of the grand<br />
+showrooms in richman town  </p>
+<p>tapping a tune<br />
+with an aluminum spoon<br />
+beating on concrete ground  </p>
+<p>stoops for a drink<br />
+that the poor man brings<br />
+on a cart with only three wheels  </p>
+<p>thinks of the stash<br />
+from the rich man's trash<br />
+that rounded his three square meals  </p>
+<p>unseeing eyes<br />
+gaze at passers by<br />
+sweating cosmetic sheen  </p>
+<p>expensive crease<br />
+does the blind man tease<br />
+with the look of faded blue jeans</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+        <li><a href="/entries?q=tags:Bangalore">Bangalore</a></li>
+        <li><a href="/entries?q=tags:New Delhi">New Delhi</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Gaps-Between-Your-Words">↜ Gaps Between Your Words</a></li>
+        <li class="next"><a href="/Take-Me-To-Jerusalem">Take Me To Jerusalem ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

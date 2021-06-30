@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Hong Kong Bay Water Quality Data</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+    <link rel="stylesheet" href="//css/.css">
+
+
+
+
+
+<link rel="stylesheet" href="/node-files/dygraphs/dist/dygraph.min.css" />
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Hong Kong Bay Water Quality Data</h1>
+    <div class="description"></div>
+    <div class="created">Monday, August 6, 2018</div>
+    
+    <div class="content"><p class="u-cf">Yim Tin Tsai Fish Culture Zone water quality data measured in August 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD. Next reading in <span id="timer"></span> <em><b>Note:</b> The chart update has been sped by by 10X to make the web page more interesting. In real-life, the chart updates every ten minutes.</em></p>
+<div id="graphContainer">
+    <div id="graph"></div>
+</div>
+<p class="u-cf"></p>
+<p>The display of monitoring data was developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface.</p>
+<!-- <p><b>Note:</b> The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.</p> --></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:open data">open data</a></li>
+        <li><a href="/entries?q=tags:water quality">water quality</a></li>
+        <li><a href="/entries?q=tags:Hong Kong">Hong Kong</a></li>
+        <li><a href="/entries?q=tags:citizen science">citizen science</a></li>
+        <li><a href="/entries?q=tags:art science">art science</a></li>
+        <li><a href="/entries?q=tags:environmental monitoring">environmental monitoring</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Saving-and-Recreating-State-via-the-URL">↜ Saving and Recreating State via the URL</a></li>
+        <li class="next"><a href="/Water-Quality-Monitoring">Water Quality Monitoring ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+        <script src="//js/.js"></script>
+    
+        <script>
+            window.onload = function() {
+                PK['hk'].init()
+            }
+        </script>
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+    <script src="/node-files/dygraphs/dist/dygraph.min.js"></script>
+    <script src="/node-files/papaparse/papaparse.min.js"></script>
+    <script src="/node-files/web-audio-daw/build/wad.min.js"></script
+</body>
+</html>

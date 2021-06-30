@@ -1,0 +1,90 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: A Modern Love Story</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">A Modern Love Story</h1>
+    <div class="description"></div>
+    <div class="created">Friday, January 15, 2016</div>
+    
+    <div class="content"><p>So, you install some highly nerdy super secure app after typing 13 commands in the console, doing <code>apt get bullshit</code> seven times, commenting a few #ifdef in a .c file and recompiling (but first you had to install <code>cmake</code>). The app lets you send only 13 characters at a time, no copy and paste, and certainly no Unicode. You feel like a king, you are on the top of the world. You even update your Twitter bio: <em>Son, boyfriend, brother, Christian, geek, likes bread, him/his. Signal user.</em></p>
+<p>Then the cute thing sitting next to you asks if you can share "your WhatsApp" so you two can message each other after the French verb conjugation class. Fissssss… that is the sound of the air going out of your ego. At that point you would happily pay someone a ¼ bitcoin to wake you up from the nightmare.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:romance">romance</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Everyone-is-a-Mentor">↜ Everyone is a Mentor</a></li>
+        <li class="next"><a href="/Whats-in-a-name">What’s in a Name ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

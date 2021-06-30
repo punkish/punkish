@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Perfect Health Repo Desiderata</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Perfect Health Repo Desiderata</h1>
+    <div class="description"></div>
+    <div class="created">Friday, April 29, 2016</div>
+    
+    <div class="content"><p><img src="/entry-files/undefined/img/repo3.png" width="455"></p>
+<p>I have been brainstorming on what a (near)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> perfect data repository and information discovery platform would be, both more generally for any discipline but also specifically for the health/medical fields. At its minimum, a repository would allow researchers to upload their content, package it appropriately, choose an appropriate license, add and useful metadata. But a repository is worthless if it only stores data; it should also allow searching for and finding data as well as researchers. Given that, below are the major functional features of a useful repo.</p>
+<p>A note on the repo: As shown in the figure above, here I am specifically considering repo 3, that is, a repository that holds primarily research data contributed by either institutional or participant-led research groups. A true <a href="Citizen-Sourced-Data-Commons">Citizen-Sourced Data Commons</a> would be made of such and a few other kinds of repos.</p>
+<p>A note on vocabulary: I use the notion of a project as being a (typically funded) investigation that initiates several studies each of which result in some data, software to analyze that data, and resulting conclusions published in a paper. But sometimes a researcher may also conduct a study that is not necessarily funded under a project. So, a researcher may be associated with zero or more projects, each of which may have zero or more “collections” of data, software and publications, both peer-reviewed and informal (slides, videos, audio files, magazine articles, book chapters, whatever). Some collections may have only data, some only software, some data and software, and so on. In fact, each combination of data, software, paper may be represented. In other words, there is a many-to-many relationship between researchers, projects, data, software, and literature.</p>
+<p>Here we go…</p>
+<ol>
+<li><strong>Allow editing a digital object until it is frozen:</strong> A collection, by definition, is made up of parts. Each collection and its parts (hereafter called an “object”) should be considered “in-flux” until they are assigned a <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">digital object identifier (DOI)</a>. Once frozen, that version of the object may be assigned a DOI. Any further changes in the object should require first spawning a new version and then repeating the cycle.</li>
+<li><strong>Allow freezing an object:</strong> Once the contributor decides that an object is ready for public consumption, she freezes the object and gets a DOI for that object. As per the <a href="https://www.doi.org/hb.html">DOI Handbook</a>, the DOI is made up of two major parts, an organizational prefix (fixed for the organization that owns the repo) and a suffix determined by the organization. The prefix and the suffix are separated by a slash. The suffix can further have versions separated by a dot and notification of a part of a collection separated by slashes as shown—doi:prefix/suffix/part.version</li>
+<li><strong>Mint DOI, ARK, LSID or some other persistent ID after a collection is frozen:</strong> The prevailing winds seem to be behind DOI, and this is as cultural a decision as any. Some platforms offer more than one IDs, but starting with DOI is a minimum price of entry.</li>
+<li><strong>Add truly OA licenses to the license chooser:</strong> Again, this is a cultural decision. The global open access community has settled on the definition of open access as defined by the <a href="http://www.budapestopenaccessinitiative.org/boai-10-recommendations">Budapest Open Access Initiative (BOAI)</a> and the <a href="http://opendefinition.org/">Open Definition</a>. Essentially, an open access resource should be free to use for any purpose whatsoever with no more than requiring credit or imposing a share-alike condition. This is equivalent to choosing <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a> or <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> licenses, or dedicating the resource to the public domain via <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a>. <a href="https://opensource.org/licenses/category">Equivalent licenses from the Open Source Initiative</a> may be chosen for software. For data, generally CC0 Public Domain Dedication is recommended. The license chooser should offer suitable OA licenses in order of increasing restrictions (most free first). One may use the <a href="https://wiki.creativecommons.org/wiki/LicenseChooser.js">Creative Commons License Chooser widget</a> as the starting point and customize it.</li>
+<li><strong>Provide object-level history:</strong> Object-level history is essential to determine when it was frozen, when a license was assigned, when and if the license was changed, etc. At the very least, provide the date, and a short description of the changes from the previous version. The versioning system should follow the <a href="http://semver.org/">semantic versioning principles</a>.</li>
+<li><strong>Allow finding information without logging in:</strong> The repository should not have any content that is 100% private. That is, if you upload your content to the repository, it is expected that you want the world to learn about it. A minimum defined set of metadata about your content should be viewable by everyone. The recommended minimum metadata are:<ul>
+<li>Name of content</li>
+<li>Short description of content</li>
+<li>Name and contact information of content owner so one may contact for additional information or permissions</li>
+<li>License under which content is offered<ul>
+<li>If not open</li>
+<li>Reason for restrictions</li>
+<li>Expected time when restrictions might be lifted</li></ul></li></ul></li>
+<li><strong>Categorize content from open to closed:</strong> Four categories of resources and the viewable and downloadable information about them can be imagined based on their level of openness:<ul>
+<li>Not open at all: everyone can view minimum metadata without logging in (see #6 above)</li>
+<li>Open only to a select group of registered users who can view and download everything</li>
+<li>Open only to all registered users who can view and download everything</li>
+<li>Completely open to everyone who can view and download everything without logging in</li></ul></li>
+<li><strong>Online viewing:</strong> Provide online viewing of common data formats (CSV, XLS, DOC, PPT, map, PDB, PDF, text, syntax colored code, common image formats, etc.)</li>
+<li><strong>Provide search filters so search may be limited to only public/OA collections:</strong> User should be able to search based on not just tags and categories but also license types and whether open or not.</li>
+<li><strong>Suggest relevant collections:</strong> Based on a registered user’s profile, contributions and click history, offer suggestions of relevant contributors and collections. In the case of non-registered users, allow them to answer a few questions, or alternatively, use their click history to provide suggestions.</li>
+<li><strong>Provide APIs to query the repo:</strong> Programmatic query of the underlying data should be possible via a RESTful interface. Whatever can be queried, viewed and downloaded via a browser should also be queryable and downloadable via the command line.</li>
+<li><strong>URI as a first-class citizen:</strong> The result of every action on the web site is a change in state, and that state change should be represented by a unique URI. This would allow a user to bookmark any state and share it or come back to it. This also means that modal dialogs should be absolutely avoided unless they can also be activated by a direct URI call.</li>
+<li><strong>Accommodate existing workflows of researchers:</strong> Any popular service that has a public API and registration/authentication mechanism, such as Github, Gitlab, Dropbox, Box, AWS, etc., should be pluggable in a collection so the content owner can include that content without physically migrating it to the repo.</li>
+<li><strong>Provide analytics for everyone, registered repo users as well as anonymous users:</strong> Object-level metrics should be available to everyone. This should include number and origin of viewers, downloads, citations, etc. Additionally, the content owners should be able to download analytics for their content in a convenient format so they can include it in their own reports. This will provide them with an incentive to share their content.</li>
+<li><strong>Provide reliable and easy protection of human-subject data:</strong> Integration with a project like <a href="http://datatags.org">Data Tags</a> via step-by-step dialog should enable the content contributor to determine whether or not the content is subject to human-subject protection, and if yes, what are the recommended de-identification and encryption standards, as applicable. A bonus feature would be if the system offers a non-formal peer-review from a set of volunteer contributors who would help the contributor determine if the content is suitably de-identified for subsequent public consumption.</li>
+<li><strong>Integrate with journals:</strong> Enable the repo to become the supplemental data repository for various journals. The journals in turns should require the contributors to provide supplemental material where applicable.</li>
+<li><strong>Direct links to FAQs, Terms of Use/Service, Privacy Policy and License Terms:</strong> In keeping with #12 above, the legal use and conditions should be reachable by unique URIs. They should not be displayed in a popup modal box that does not change the address bar in the browser. Additionally, they should be accessible from every page, for example, from the footer of the page.</li>
+<li><strong>Aesthetics:</strong> While aesthetics are a subjective criterion, there is undoubtedly a contextual look and feel in today’s websites that makes them appear modern. Muted colors, limited use of html tables, flat buttons, forms and other widgets, and prevalent use of XMLHttpRequest aka AJAX are a few of the key features of such websites. The repo should strive to portray a modern aesthetic.</li>
+<li><strong>Truly-responsive:</strong> More and more people access web resources via phones and tablets. The repository should be truly responsive. That means it shouldn’t just shrink in size depending on the screen but it should offer functionality in different, device-appropriate ways. A mix of media queries and alternative resource designs would accomplish this.</li>
+</ol>
+<p>I am interested in all manner of feedback on the above, but specifically on points 6 and 7. Please do give me a piece of your mind.</p>
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">Lest I be accused of being pompous. However, the use of the term <i>desiderata</i> was inspired by <a href="http://twitter.com/hsrher" target="blank">Erin Holve</a><a href="#fnref:1" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:data repository">data repository</a></li>
+        <li><a href="/entries?q=tags:health">health</a></li>
+        <li><a href="/entries?q=tags:health data">health data</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Governance-Model-for-Health-Repo">↜ A Governance Model for a Health Repo</a></li>
+        <li class="next"><a href="/Well-Designed-API">A Well Designed API ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

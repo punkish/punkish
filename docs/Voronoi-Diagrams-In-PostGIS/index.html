@@ -1,0 +1,283 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Voronoi Diagrams In PostGIS (with PL/R)</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Voronoi Diagrams In PostGIS (with PL/R)</h1>
+    <div class="description"></div>
+    <div class="created">Invalid Date</div>
+    
+    <div class="content"><p>A Voronoi diagram represents proximity information about a set of points. The points on the Voronoi diagram are equidistant to two or more sites. Per <a href="http://www.comp.lancs.ac.uk/~kristof/research/notes/voronoi/">Voronoi Diagrams and Delaunay Triangulation</a></p>
+<blockquote>
+  <p>Voronoi diagrams were first discussed by Peter Lejeune-Dirichlet in 1850. But it was more than a half of a century later in 1908 that these diagrams were written about in a paper by Voronoi, hence the name Voronoi Diagrams. The Voronoi cells/polygons are sometimes also called Thiessen Polytopes or Dirichlet Regions.</p>
+</blockquote>
+<figure>
+    <img src="/entry-files/undefined/img/macrostrat.jpg">
+    <figcaption>Macrostrat</figcaption>
+</figure>
+<p>Ever wanted to create a Voronoi tessellation for your points? Well, so have I, for our Macrostrat points. Fortunately for us, others already figured out how to do this. I have dusted off the original code by <a href="http://www.linkedin.com/in/mgleahy">Mike Leahy</a> ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.</p>
+<pre class="brush: sql"><code>
+    SELECT v.id, v.polygon
+    FROM r_voronoi('table', 'the_geom', 'id') As v;
+</code></pre>
+<p>or</p>
+<pre class="brush: sql"><code>
+    SELECT v.id, v.polygon
+    FROM r_voronoi(
+        '(SELECT id, the_geom FROM table LIMIT 10) AS p',
+        'p.the_geom',
+        'p.id'
+    ) As v;
+</code></pre>
+<p>The code for the function is below. All my contribution is under a <a href="http://creativecommons.org/about/cc0">CC0 License Waiver</a>. I claim no responsibility for your successes or failures.</p>
+<pre class="brush: sql"><code>
+    /*
+      This function uses the deldir library in R to generate voronoi  
+      polygons for an input set of points in a PostGIS table.
+
+      Original function by Mike Leahy mgleahy at alumni.uwaterloo.ca
+      http://postgis.refractions.net/pipermail/postgis-users/2007-June/016102.html
+
+      Mar 6, 2012
+      Cleaned up formatting, and updated a teensy bit to modern times
+      Puneet Kishor punkish@eidesis.org
+      All my contribution is released under a CC0 License Waiver
+      Effectively in the Public Domain
+
+      Requirements:
+          R-2.5.0 with deldir-0.0-5 installed
+          PostgreSQL-8.2.x with PostGIS-1.x and PL/R-8.2.0.4 installed
+
+      Usage: SELECT * FROM r_voronoi('table','point-column','id-column');
+
+      Where:
+      'table' is the table or query (see below) containing the points to 
+      be usedfor generating the voronoi polygons,
+
+      'point-column' is a single 'POINT' PostGIS geometry type
+      (each point must be unique)
+
+      'id-column' is a unique identifying integer for each of the 
+      originating points (e.g., 'gid')
+
+      Output: returns a recordset of the custom type 'voronoi', which 
+      contains the id of the originating point, and a polygon geometry
+
+      Alternative usage: Instead of the name of a table, pass a query 
+      that returns a result set. Make sure to us an ALIAS for the 
+      result set.
+
+      SELECT * FROM r_voronoi(
+          '(SELECT id, the_geom FROM table LIMIT 10) AS p',
+          'p.the_geom',
+          'p.id'
+      )
+    */
+    DROP FUNCTION r_voronoi(text, text, text);
+    DROP TYPE voronoi;
+
+    CREATE TYPE voronoi AS (id integer, polygon geometry);
+
+    CREATE OR REPLACE FUNCTION r_voronoi(text, text, text) 
+    RETURNS SETOF voronoi AS '
+</code></pre>
+<p>R code below</p>
+<pre class="brush: r"><code>
+        library(deldir)
+
+        # select the point x/y coordinates into a data frame
+        points &lt;- pg.spi.exec(
+            sprintf(
+                "SELECT ST_X(%2$s) AS x, ST_Y(%2$s) AS y FROM %1$s;",
+                arg1,
+                arg2
+            )
+        )
+
+        # calculate an approprate buffer distance (~10%):
+        buffer_distance = (
+            (
+                abs(max(points$x) - min(points$x)) +
+                abs(max(points$y) - min(points$y))
+            ) / 2
+        ) * (0.10)
+
+        # get EWKB for the overall buffer of the convex hull for all points:
+        buffer_set &lt;- pg.spi.exec(
+            sprintf(
+                "SELECT ST_Buffer(ST_Convexhull(ST_Union(%2$s)),%3$.6f) AS ewkb 
+                FROM %1$s;",
+                arg1,
+                arg2,
+                buffer_distance
+            )
+        )
+
+        # the following use of deldir uses high precision and digits to 
+        # prevent slivers between the output polygons, and uses a relatively
+        # large bounding box with four dummy points included to ensure that
+        # points in the peripheral areas of the dataset are appropriately
+        # enveloped by their corresponding polygons:
+        voro = deldir(
+            points$x,
+            points$y,
+            digits=22,
+            frac=0.00000000000000000000000001,
+            list(ndx=2,ndy=2),
+            rw=c(
+                min(points$x) - abs(min(points$x) - max(points$x)),
+                max(points$x) + abs(min(points$x) - max(points$x)),
+                min(points$y) - abs(min(points$y) - max(points$y)),
+                max(points$y) + abs(min(points$y) - max(points$y))
+            )
+        )
+
+        tiles = tile.list(voro)
+        poly = array()
+        id = array()
+        p = 1
+
+        # construct the outgoing WKT now
+        for (i in 1:length(tiles)) {
+            tile = tiles[[i]]
+
+            curpoly = "POLYGON(("
+
+            for (j in 1:length(tile$x)) {
+                 curpoly = sprintf(
+                    "%s %.6f %.6f,",
+                    curpoly,
+                    tile$x[[j]],
+                    tile$y[[j]]
+                 )
+            }
+
+            curpoly = sprintf(
+                "%s %.6f %.6f))",
+                curpoly,
+                tile$x[[1]],
+                tile$y[[1]]
+            )
+
+            # this bit will find the original point that corresponds to the 
+            # current polygon, along with its id and the SRID used for the
+            # point geometry (presumably this is the same for all points)...
+            # this will also filter out the extra polygons created for the
+            # four dummy points, as they will not return a result from
+            # this query:
+            ipoint &lt;- pg.spi.exec(
+                sprintf(
+                    "SELECT %3$s AS id, 
+                       intersection(''SRID=''||srid(%2$s)||'';%4$s'',''%5$s'') 
+                       AS polygon 
+                    FROM %1$s 
+                    WHERE intersects(%2$s,''SRID=''||srid(%2$s)||'';%4$s'');",
+                    arg1,
+                    arg2,
+                    arg3,
+                    curpoly,
+                    buffer_set$ewkb[1]
+                )
+            )
+            if (length(ipoint) &gt; 0) {
+                poly[[p]] &lt;- ipoint$polygon[1]
+                id[[p]] &lt;- ipoint$id[1]
+                p = (p + 1)
+            }
+        }
+        return(data.frame(id,poly))
+</code></pre>
+<p>Close off with SQL</p>
+<pre class="brush: sql"><code>
+    ' language 'plr';
+</code></pre></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:PL/R">PL/R</a></li>
+        <li><a href="/entries?q=tags:R">R</a></li>
+        <li><a href="/entries?q=tags:PostGIS">PostGIS</a></li>
+        <li><a href="/entries?q=tags:Perl">Perl</a></li>
+        <li><a href="/entries?q=tags:Voronoi">Voronoi</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Freedoms-Just-Another-Word">↜ Freedom’s Just Another Word for Nothin’ Left To Choose</a></li>
+        <li class="next"><a href="/A-Velt-In-Lied">A Velt In Lied (A World In Song) ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

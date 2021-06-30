@@ -9,7 +9,7 @@ gmap       :
 tags       :
     - copyright
 stars      : 
-layout     : map
+isMap      : true
 css        : styles
 js         : copyright-treaties
 ---

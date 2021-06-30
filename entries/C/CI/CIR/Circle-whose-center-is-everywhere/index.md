@@ -5,12 +5,10 @@ modified   : 2018-07-23 00:31:00
 created    : 2018-07-23 00:31:00
 viewcount  : 0
 id         : 232
-gmap       : 
 tags       :
     - language
     - Nada
-stars      : 
-layout     : map
+isMap      : true
 js         : circle
 
 ---

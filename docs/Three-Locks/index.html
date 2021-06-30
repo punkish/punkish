@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Three Locks</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The Three Locks</h1>
+    <div class="description"></div>
+    <div class="created">Wednesday, April 24, 2013</div>
+    
+    <div class="content"><p>There are two competing tensions in medical information: researchers want access to and reuse of large amounts of patient data beyond what those data were collected or in the first place. IRBs require that individual patient information is kept private and not revealed.</p>
+<p>There are three locks that can be used to keep private information private: social, technological, legal.</p>
+<p>The <strong>social lock</strong> marks information as one that should not be reverse engineered beyond the limits permitted by the donor. This lock is the default first defense.</p>
+<p>The <strong>technological lock</strong> makes it difficult to re-identify de-identified information. This lock kicks in after the social lock has been breached.</p>
+<p>The <strong>legal lock</strong> provides penalties for those who breach both the first and the second locks.</p>
+<p>A few points to keep in mind:</p>
+<ol>
+<li><p>There is no fail-safe defense against breach of privacy. If private information is collected and stored, it is only a matter of time and technology before it will be breached.</p></li>
+<li><p>The more information is collected and stored, the greater the chance of #1 above. Both the amount of information and the length of time it is kept in one place directly increase the possibility of breach by increasing the corpus of information through  which to find patterns and the time one can take to do so. Of course, it is the same amount and time of availability that make such information useful for researchers in the first place.</p></li>
+<li><p>Expectations of privacy are changing.</p></li>
+<li><p>Until that time when privacy expectations have changed so much that keeping information private is no longer worthwhile, the willingness of patients to donate their information would be proportional to the reassurance they will have for privacy.</p></li>
+<li><p>The expectation of privacy would be proportional to the potential harm from the breach </p></li>
+</ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:social contract">social contract</a></li>
+        <li><a href="/entries?q=tags:privacy">privacy</a></li>
+        <li><a href="/entries?q=tags:citizen sourced information">citizen sourced information</a></li>
+        <li><a href="/entries?q=tags:health">health</a></li>
+        <li><a href="/entries?q=tags:health data">health data</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Financial-Interoperability">↜ Financial Interoperability</a></li>
+        <li class="next"><a href="/Why Open Science Training matters">Why Open Science Training matters ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

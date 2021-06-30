@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Interoperability As A Guiding Principle For Long-Term Archives</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section class="row">
+    <h1 class="title">Interoperability As A Guiding Principle For Long-Term Archives</h1>
+    <div class="date">Sunday, May 9, 2010</div>
+    <div class="description"></div>
+
+    <div class="content">Archive '10 focused on the creation of archives of computer-based experiments – capturing and publishing entire experiments that are fully encapsulated, ready for immediate replay, and open to inspection. It brought together a few areas of the scientific community that represent fairly advanced infrastructure for archiving experiments and data (physicists and biomedical researchers) with two areas of the computer systems community for which significant progress is still needed (networks and compilers). The workshop also included experts in enabling technologies and publishing.</div>
+
+    <div class="slideContainer">
+        <div class="intro-slide" onclick="window.location='Interoperability-As-A-Guiding-Principle-For-Long-Term-Archives?presentation=true';">
+            <h2>Interoperability As A Guiding Principle For Long-Term Archives</h2>
+            <h3>Puneet Kishor</h3>
+            <div class="where">a presentation given at <b>Archive '10</b>, NSF Workshop on on Archiving Experiments to Raise Scientific Standards, May 25-26, 2010 at the <a href='http://users.emulab.net/trac/archive10/'>Dept. of Comp. Sci., University of Utah, Salt Lake City, Utah, USA</a></div>
+            <div class="when">May 2010</div>
+            <a href="/Interoperability-As-A-Guiding-Principle-For-Long-Term-Archives?presentation=true">start slideshow</a>
+        </div>
+    </div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:presentation">presentation</a></li>
+    </ul>
+
+    
+    <ul class="bottomNav">
+        <li class="prev"><a href="/PDL-Users-Worldwide">↜ PDL Users Worldwide</a></li>
+        <li class="next"><a href="/eInfrastructure-for-Scientific-Data">eInfrastructure for Scientific Data ⇝</a></li>
+    </ul></section>
+</main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

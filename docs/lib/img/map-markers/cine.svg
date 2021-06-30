@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0, 0, 32, 32">
+  <g id="Layer_1" transform="translate(-33.25, -67.25)">
+    <g>
+      <g>
+        <path d="M49.75,98.75 C41.466,98.75 34.75,92.034 34.75,83.75 C34.75,75.466 41.466,68.75 49.75,68.75 C58.034,68.75 64.75,75.466 64.75,83.75 C64.75,92.034 58.034,98.75 49.75,98.75 z" fill="#FFFFFF"/>
+        <path d="M49.75,98.75 C41.466,98.75 34.75,92.034 34.75,83.75 C34.75,75.466 41.466,68.75 49.75,68.75 C58.034,68.75 64.75,75.466 64.75,83.75 C64.75,92.034 58.034,98.75 49.75,98.75 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <text transform="matrix(1, 0, 0, 1, 49.25, 83.25)">
+        <tspan x="-11" y="6.5" font-family="AppleColorEmoji" font-size="18" fill="#000000">📽</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Line 22</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Line 22</h1>
+    <div class="description"></div>
+    <div class="created">Thursday, June 1, 2017</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/line-22.jpg">
+    <figcaption>Line 22</figcaption>
+</figure>
+<p>This morning, as the bus rolled up to the bus stop, a sweet old lady with a walker looked at me and asked, “Ist das die zweiundzwanzig?” I panicked and said, “Si !”</p>
+<p>Then two thoughts flashed immediately through my mind: one, that I replied “Yes” in Spanish, and two, that I really didn’t know what I had replied to.</p>
+<p>A few seconds later the much slower brain caught up with the faster adrenaline-powered response, and I realized that I had actually understood the question and replied correctly (the bus was indeed 22), but my language was wrong.</p>
+<p>So I vigorously nodded my head. The old lady smiled at me sweetly. We both got on the bus safely, and all was right with the world.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:Göttingen">Göttingen</a></li>
+        <li><a href="/entries?q=tags:Germany">Germany</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Leipzig">↜ Leipzig</a></li>
+        <li class="next"><a href="/Geo-v-Med">Geo vs. Medical/Health ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

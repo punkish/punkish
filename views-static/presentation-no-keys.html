@@ -1,0 +1,26 @@
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# {{title}}
+## {{description}}
+
+{{where}} • {{when}}
+
+{{authors}}
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+{{> presentationFooter }}
+
+---
+
+layout: true
+
+{{> presentationFooter }}
+
+---
+
+{{{__content}}}
+</textarea>

@@ -1,0 +1,204 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Community Ontology</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Community Ontology</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>slide:
+= Community Ontology =
+=== Puneet Kishor ^1^ and Lewis Friedland ^2^ ===
+==== University of Wisconsin-Madison ====
+===== 1. Nelson Institute for Environmental Studies =====
+===== 2. School of Journalism and Mass Communication =====
+slidecontent: 
+slidehandout:</p>
+<p>slide:
+= What is "Ontology"? =
+slidecontent:</p>
+<ul>
+<li>The terms used to describe and represent an area of knowledge</li>
+<li>Includes … definitions of basic concepts in the domain and the relationships among them</li>
+<li>Encodes knowledge <em>in</em> a domain and also knowledge that <em>spans</em> domains
+slidehandout:</li>
+</ul>
+<p>slide:
+= What is "Community"? =
+slidecontent:</p>
+<ul>
+<li>An aggregation of organizations, people, locations, and relationships between them</li>
+<li>Is usually physical, but can also be logical
+slidehandout:</li>
+</ul>
+<p>slide:
+= "Community Ontology" =
+slidecontent:</p>
+<ul>
+<li>The terms used to describe and represent knowledge of…</li>
+<li>entities and relationships among them in…</li>
+<li>an aggregation of organizations, people, locations, and relationships between them
+slidehandout:</li>
+</ul>
+<p>slide:
+= Problem =
+slidecontent:</p>
+<ul>
+<li>Lew says, "Puneet, go to the <community> website…</li>
+<li>identify all the organizations, people, and places, and…</li>
+<li>deduce the relationships between them</li>
+<li>Store it all in a repository"
+slidehandout:</li>
+</ul>
+<p>slide:
+= Solution 1 =
+slidecontent:</p>
+<ul>
+<li>Go to the <community> website</li>
+<li>Visually identify all the organizations, people, and places</li>
+<li>Visually deduce the relationships between them</li>
+<li>Store it all in a repository
+slidehandout:</li>
+</ul>
+<p>slide:
+= Solution 2 =
+slidecontent:</p>
+<ul>
+<li>Write a program to crawl the <community> website</li>
+<li>Download all the webpages and strip out the html tags</li>
+<li>Open the plain text in an named-entity-tagger (NET) program</li>
+<li>Manually tag the entities</li>
+<li>Deduce the relationships between the entities</li>
+<li>Store it all in a repository
+slidehandout:</li>
+</ul>
+<p>slide:
+= Solution 3 =
+slidecontent:</p>
+<ul>
+<li>Write a program to crawl the <community> website</li>
+<li>Download all the webpages and strip out the html tags</li>
+<li>Run the plain text through an automated named-entity-tagger (NET) program</li>
+<li>Get the results and decide where the precision and recall are satisfactory</li>
+<li>Deduce the relationships between the entities</li>
+<li>Store it all in a repository
+slidehandout:</li>
+</ul>
+<p>slide:
+= Is There A Better Solution? =
+slidecontent:</p>
+<ul>
+<li>Yes, let the community tell you its who, what, and where, and their relationships. How?</li>
+<li>By having them store their data in a format that is readable by other programs, yet</li>
+<li>Allows them to publish their information as they wish
+slidehandout:</li>
+</ul>
+<p>slide:
+= Structure Of A Web Page =
+slidecontent:</p>
+<pre>
+&lt;p&gt;Welcome to our community.&lt;/p&gt;
+&lt;b&gt;Artie MacStrawman&lt;/b&gt;
+&lt;i&gt;Mayor&lt;/i&gt;
+&lt;p&gt;Meet your city council.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Councilwoman Elena&lt;/li&gt;
+  &lt;li&gt;Councilman Joseph&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>slidehandout:</p>
+<p>slide:
+= Structure Of An Intelligent Web Page =
+slidecontent:</p>
+<pre>
+&lt;p&gt;Welcome to our community.&lt;/p&gt;
+&lt;person&gt;Artie MacStrawman&lt;/person&gt;
+&lt;title&gt;Mayor&lt;/title&gt;
+&lt;p&gt;Meet your &lt;agency&gt;city council&lt;/agency&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;title&gt;Councilwoman&lt;/title&gt; &lt;person&gt;Elena&lt;/person&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;title&gt;Councilman&lt;/title&gt; &lt;person&gt;Joseph&lt;/person&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>slidehandout:
+END</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:"></a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Dashboard-Data-Model">↜ Dashboard Data Model</a></li>
+        <li class="next"><a href="/Community-Ontology">Community Ontology ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

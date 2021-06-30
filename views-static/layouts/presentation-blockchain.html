@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>punkish: {{title}}</title>
+    <meta name="description" content="punkish.org">
+    <meta name="Copyright" content="CC0 Public Domain Dedication">
+    <meta name="Author" content="Puneet Kishor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="/public/css/remark-styles.css">
+    <link rel="stylesheet" href="/entry-files/D/DE/DEM/Demystifying-Blockchains/css/bc.css">
+
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+{{{content}}}
+
+	<script src="/public/remark/remark-no-keys.min.js"></script>
+	<script src="/node-files/crypto-js/crypto-js.js"></script>
+	<script src="/entry-files/D/DE/DEM/Demystifying-Blockchains/js/bc.js"></script>
+	<script src="/entry-files/D/DE/DEM/Demystifying-Blockchains/js/blockchain.js"></script>
+    <script>
+	var slideshow;
+    window.onload = function() {
+        
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+        
+        // hljs.initHighlighting();
+        
+		BC.initS1();
+		BC.initS2();
+		BC.validate();
+		BC.revalidate();
+		BC.oneDetailOneClick();
+		slideshow.on('showSlide', function (slide) {
+
+			// Slide is the slide being navigated to
+			//console.log(slide);
+			if (slide.properties.name === 'realtime') {
+				BC.latestBtcTxns(document.getElementById('latestBtc'));
+			}
+		});
+	}
+    </script>
+</body>
+</html>

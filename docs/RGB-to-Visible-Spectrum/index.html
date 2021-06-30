@@ -1,0 +1,164 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: RGB to Visible Spectrum</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section class="row">
+    <h1 class="title">RGB to Visible Spectrum</h1>
+    <div class="date">Thursday, January 3, 2019</div>
+    <div class="description"></div>
+    
+    <div class="content"><canvas>RGB values to wavelengths of visible light</canvas>
+<p>The spectrum is generated using approximate RGB values for visible wavelengths between 380 nm and 780 nm. The red, green and blue values are assumed to vary linearly with wavelength (for gamma = 1). Below is the original <a href="http://www.physics.sfasu.edu/astro/color/spectra.html">FORTRAN code</a> by Dan Bruton (astro@tamu.edu) converted to JavaScript by me</p>
+<pre><code class="JavaScript language-JavaScript">// given a wavelength 'i', wl(i) returns the constituent r,g,b values
+function wl(i) {
+    let [r, g, b] = [0, 0, 0];
+
+    const gamma = 0.80;
+    const depth = 255;
+
+    if (i &gt;= 380 &amp;&amp; i &lt;= 440) {
+        r = -1 * (i - 440) / (440 - 380);
+        b = 1;
+    }
+    else if (i &gt;= 440 &amp;&amp; i &lt;= 490) {
+        g = (i - 440) / (490 - 440);
+        b = 1;
+    }
+    else if (i &gt;= 490 &amp;&amp; i &lt;= 510) {
+        g = 1;
+        b = -1 * (i - 510) / (510 - 490);
+    }
+    else if (i &gt;= 510 &amp;&amp; i &lt;= 580) {
+        r = (i - 510) / (580 - 510);
+        g = 1;
+    }
+    else if (i &gt;= 580 &amp;&amp; i &lt;= 645) {
+        r = 1;
+        g = -1 * (i - 645) / (645 - 580);
+    }
+    else if (i &gt;= 645 &amp;&amp; i &lt;= 780) {
+        r = 1;
+    }
+
+    // LET THE INTENSITY SSS FALL OFF NEAR THE VISION LIMITS
+    let sss = 1;
+    if (i &gt; 700) {
+        sss = 0.3 + 0.7 * (780 - i) / (780 - 700);
+    }
+    else if (i &lt; 420) {
+        sss = 0.3 + 0.7 * (i - 380) / (420 - 380);
+    }
+
+    // Gamma adjust and return the r,g,b values
+    return [
+        Math.floor(depth * ((sss * r) ** gamma)), 
+        Math.floor(depth * ((sss * g) ** gamma)), 
+        Math.floor(depth * ((sss * b) ** gamma))
+    ]
+}
+</code></pre></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:CUBE">CUBE</a></li>
+        <li><a href="/entries?q=tags:HBCSE">HBCSE</a></li>
+        <li><a href="/entries?q=tags:open hardware">open hardware</a></li>
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:spectrophotometer">spectrophotometer</a></li>
+    </ul>
+
+    
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Open-Health-Data-and-GDPR">↜ “Open” health data and GDPR</a></li>
+        <li class="next"><a href="/Spectrophotometer">Spectrophotometer ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script>
+        window.onload = function() {
+            const canvas = document.querySelector("canvas")
+            const ctx = canvas.getContext("2d")
+            chart(ctx)
+        }
+    </script>
+    
+        <script src="//js/.js"></script>
+    
+        <script>
+            window.onload = function() {
+                PK['script'].init()
+            }
+        </script>
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

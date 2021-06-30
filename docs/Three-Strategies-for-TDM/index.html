@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Three Strategies for TDM</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Three Strategies for TDM</h1>
+    <div class="description"></div>
+    <div class="created">Sunday, May 4, 2014</div>
+    
+    <div class="content"><ol>
+<li><p><a href="TDM-Workshops">Increase awareness of text and data mining (TDM)</a> in researchers who may be curious about it and might benefit from it, but don't know enough of it.</p>
+<ul>
+<li><p>The idea here is to create an upswell of TDM demand so demand actually drives this area. With more and more researchers wanting to do TDM, there will be pressure on both their institutions and publishers to make TDM possible and easy. Researchers will drive the agenda, as I believe it should be;</p></li>
+<li><p>Explain to them the consequences of restrictive licenses and contracts and educate them on why permissive legal instruments are good for TDM (all publishers are potentially consumers as well, so if we publish our stuff under restrictive licenses, it will come back to bite us in our butts);</p></li></ul></li>
+<li><p>Develop a <a href="TDM-Friendly-Contract-Boilerplate">TDM-friendly contractual boiler</a> plate that institutions can use to negotiate favorable contracts with publishers for non-OA corpora;</p></li>
+<li><p>Develop a <a href="Pre-processed-TDM-ready-archive">pre-processed TDM-ready archive</a> with a uniform API and all open source tools and lexicons published under a completely free and open license and hosted in a distributed way at respected institutions such as the Internet Archive and CERN. Think of it like what the  Google syntactic n-gram database is to scanned books, this archive would be to scientific literature.</p></li>
+</ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:text and data mining">text and data mining</a></li>
+        <li><a href="/entries?q=tags:TDM">TDM</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/TDM-Workshops">↜ TDM Workshops</a></li>
+        <li class="next"><a href="/Citizens-Consent">Citizens Consent ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

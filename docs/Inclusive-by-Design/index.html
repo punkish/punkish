@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Inclusive by Design</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Inclusive by Design</h1>
+    <div class="description"></div>
+    <div class="created">Monday, August 10, 2015</div>
+    
+    <div class="content"><p>I saw the following notice at a makerspace (its identity has been hidden to protect the guilty)<br />
+<img class="bar" src="not-inclusive.jpg" width="100%"></p>
+<p>The sign did its best to connote that visitors to the makerspace were a problem. In fact, it even served a warning to those who might think of welcoming a stranger inside, “If YOU let someone in, they are YOUR problem.” </p>
+<p>To me, this goes against the sense of openness and inclusiveness that <a href="Learning-by-Making">informal learning academies</a> should be engendering. There are cues we provide, the way we smile (or not), greet (or not), and the language of the signs we affix to our property that indicate whether a stranger is welcome (or not). The sign on the makerspace makes it clear that visitors are not only not welcome but are actually a problem. This is affordance of a makerspace, or its lack thereof, at its ironic worst.</p>
+<p><span style="color: red; font-family: serif; font-size: 1.5em;">affordance, <i>n.</i></span><br>
+<span style="font-family: serif;">2. <i>Psychol.</i> A property of an object or an aspect of the environment, esp. relating to its potential utility, which can be inferred from visual or other perceptual signals; (more generally) a quality or utility which is readily apparent or available.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></span></p>
+<p>Maker/hackerspaces have become very popular around the world, and for good reason. They appeal to our innate sense of curiosity, and have the potential to revolutionize access to science for those otherwise outside the system. They have the potential to be the hub for exciting projects in <em>real</em> citizen science that is conducted <em>by</em> citizens and not just where citizens are recruited by  traditional scientists. To do that, however, makerspaces have to be explicitly welcoming and inclusive by design, and not just for those already a part of the club, for <em>whosoever hath not, to her should be given.</em></p>
+<div class="footnotes">
+    <ol>
+        <li class="footnote" id="fn:1"><p><a href="http://www.oed.com/view/Entry/263548?redirectedFrom=affordance" target="_blank">OED Online. June 2015. Oxford University Press.</a> (accessed August 09, 2015).<a href="#fnref:1" title="return to article"> ↩</a></p></li>
+    </ol>
+</div></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:makerspace">makerspace</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+        <li><a href="/entries?q=tags:informal academies">informal academies</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Expected-Wait-Time-Is">↜ The Expected Wait Time Is…</a></li>
+        <li class="next"><a href="/For-Someday-You-May-Be-A-Refugee">For Someday You May Be A Refugee ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

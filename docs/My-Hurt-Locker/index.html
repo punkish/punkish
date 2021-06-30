@@ -1,0 +1,98 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: My Hurt Locker</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">My Hurt Locker</h1>
+    <div class="description"></div>
+    <div class="created">Sunday, March 13, 2016</div>
+    
+    <div class="content"><p>Vickram and Jude were tinkering with a device that I was having a hard time understanding. It was a Raspberry Pi based gizmo meant to hold health information for mainly the rural poor in India, and keep the data private. As I understood, the data would be encrypted on the device, but it would then travel over the regular, unsecured wifi or 3G telephone network to the doctor’s office.</p>
+<p>But, while I didn’t fully understand the scope of that device, I kept on thinking that perhaps all that is needed is an encrypted USB-drive.</p>
+<figure>
+    <img src="/entry-files/undefined/img/usb.png">
+    <figcaption>The device</figcaption>
+</figure>
+<p>The above device could keep all the health data for an individual securely and privately, protected by an in-built biometric fingerprint sensor. Only the individual would be able to unlock this device. When she travels to her doctor’s office, the doctor would insert the device into his computer, have the patient unlock it, and the device would synchronize with a secure, distributed data-store such as that proposed by <a href="http://midata.coop">Midata.coop</a>. That way, if the device ever got lost, it could be safely recreated.</p>
+<p>to be continued…</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:health">health</a></li>
+        <li><a href="/entries?q=tags:health data">health data</a></li>
+        <li><a href="/entries?q=tags:citizen-sourced information">citizen-sourced information</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Benefits-of-opening-data">↜ Benefits of opening data</a></li>
+        <li class="next"><a href="/Citizen-vs-Science">Citizen vs. Science ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

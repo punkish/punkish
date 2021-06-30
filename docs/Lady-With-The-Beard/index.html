@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Lady With The Beard</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The Lady With The Beard</h1>
+    <div class="description"></div>
+    <div class="created">Friday, December 20, 2013</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/lady.gif">
+    <figcaption>Lady with the beard</figcaption>
+</figure>
+<p>As I got on to my flight<br />
+I saw an unforgetful sight<br />
+That in my dreams I'd always feared<br />
+I saw a lady with a beard</p>
+<p>Not a man, not a child<br />
+Not a woman wanton wild<br />
+A sight that in my mind is seared<br />
+It was a lady with a beard</p>
+<p>I dared not look but look I dared<br />
+Tried not to but yes I stared<br />
+I couldn't turn away I leered<br />
+At the lady with the beard</p>
+<p>I couldn't move like stone was I<br />
+Till I was pushed right in her eye<br />
+By other people I was steered<br />
+Right to the lady with the beard</p>
+<p>I braced myself for just in case<br />
+When face to face with face with lace<br />
+Would change to grace just as I neared<br />
+The smiling lady with the beard</p>
+<p>I looked at her straight point blank<br />
+But could not find a thing to thank<br />
+I squinted, squeezed my eyes, I peered<br />
+At the lady with the beard</p>
+<p>She smiled at me a knowing smile<br />
+Her fleeting smile lasted a while<br />
+To reciprocate I wasn't geared<br />
+To the lady with the beard</p>
+<p>I boarded on my aeroplane<br />
+And thought what I could not explain<br />
+My fears, her smile, they were mirrored<br />
+Me, the lady with the beard</p>
+<p>Her friendly gaze, my fears, oh why?<br />
+She was more a man than I<br />
+I had to learn to not be scared<br />
+Of the lady with the beard</p>
+<p>I squeezed my eyes yet once again<br />
+The dryness in me turned to rain<br />
+My eyes were wet for they had teared<br />
+For the lady with the beard</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Fiddler-of-Jackson-St,-San-Francisco,-NY">↜ Fiddler of Jackson St, San Francisco, NY</a></li>
+        <li class="next"><a href="/Gaps-Between-Your-Words">Gaps Between Your Words ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

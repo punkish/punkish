@@ -1,0 +1,92 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Data Alliances Beyond Research</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Data Alliances Beyond Research</h1>
+    <div class="description"></div>
+    <div class="created">Sunday, June 21, 2015</div>
+    
+    <div class="content"><p>The quest for making money while remaining free has bedeviled many who support the cause of open but desire to either make a successful enterprise out of or sustain the collection/generation, management, analysis, and dissemination of data. The former struggle with sharing what could potentially give them a strategic or economic advantage. The latter is particularly true of research projects that got a start with the help of a research grant, but are faced with the problem of sustaining the project as the grant runs out. In either case, it is a difficult choice with few clear answers. Advocates of open sometimes overlook these real issues as they promote an unconditional openness based primarily on the obligation of providing attribution. The bottomline is, free is expensive, and someone somewhere has to pay. </p>
+<p>We need a solution, but no one party can formulate a satisfactory solution. Any proposed solution has the best chance of viability if it arises from a conversation between business enterprises with their main business based on either data that have their source in research or could be used in research, the higher education and research sector, and the open access/science/data community. This is the only way to create a lasting and vital conversation in a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast networks.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:industry-research partnership">industry-research partnership</a></li>
+        <li><a href="/entries?q=tags:business models">business models</a></li>
+        <li><a href="/entries?q=tags:paying for free">paying for free</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Being-Humane">↜ Being Humane</a></li>
+        <li class="next"><a href="/Twin-Towers">Twin Towers ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

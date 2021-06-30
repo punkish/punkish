@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Oh What Should I Do With You</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Oh What Should I Do With You</h1>
+    <div class="description">a lament. 1993, Bangalore.</div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><p>In a big bustling city a printmaker cried<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>A new print she had made, and she could not decide<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>When asked if she'd frame it, she immediately replied<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>She didn't want to lose it, but she didn't want it tied<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>after years of hard work, the joy and the pain<br />
+the award, the book, some loss and some gain<br />
+if you listen hard you can hear her say this again<br />
+<em>Oh! what should I do with you</em></p>
+<hr />
+<p>The vagabond walked and was caught in mid-stride<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>She painted a path so he could walk by her side<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>His own expectations getting ever so wide<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>Even a touch of eraser just could not hide<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>This widening patch could leave a big stain<br />
+give rise to eddies that could drown out the main<br />
+all his wanderings then would be in vain<br />
+<em>Oh! what should I do with you</em>  </p>
+<hr />
+<p>Now if you think of the urges that cannot be denied<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>A new print that she made on the stone deep inside<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>Without asking you were engulfed in the tide<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>Isn't it enough to be satisfied?<br />
+<em>Oh! what should I do with you</em>  </p>
+<p>stunning moments would ride over boredom and pain<br />
+a brilliant stroke that would cut through mundane<br />
+and you wouldn't ever have to sing this refrain<br />
+<em>Oh! what should I do with you</em>  </p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+        <li><a href="/entries?q=tags:Bangalore">Bangalore</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Free-Software">↜ Free Software</a></li>
+        <li class="next"><a href="/On-de-daily-breadline">On de daily breadline ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

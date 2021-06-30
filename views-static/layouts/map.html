@@ -1,0 +1,25 @@
+{{> meta}}
+
+<body>
+    {{> header}}
+
+    <main>
+    
+    {{{content}}}
+    
+    </main>
+
+    {{> footer}}
+
+    <script src="/node-files/leaflet/dist/leaflet.js"></script>
+
+    <!-- <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
+    <script src="https://cdn.klokantech.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script> -->
+
+    <script src="/public/js/punkish.js"></script>
+    <script src="/entry-files/{{url}}/js/{{js}}.js"></script>
+    <script>
+    PK['{{js}}'].init();
+    </script>
+</body>
+</html>

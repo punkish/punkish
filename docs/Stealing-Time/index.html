@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Stealing Time</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Stealing Time</h1>
+    <div class="description"></div>
+    <div class="created">Thursday, May 25, 2017</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/IMG_9617.jpg">
+    <figcaption>Shiva</figcaption>
+</figure>
+<p>Of you who has walked on this path before<br>
+With rays of sun on dappled blades of grass<br>
+I cannot ask but I must ask for more<br>
+Lest flashes of life in a flash do pass<br>
+<br>
+Round as welkin orbs that hang are round<br>
+By force they spin an endless cosmic dance<br>
+Where squares are none for squares are seldom found<br>
+And edges fade and blur in prose askance<br>
+<br>
+Two steps we march in step and find a cause<br>
+For fate has played its hand in full conceit<br>
+To make what one will be from what once was<br>
+Like lines that are aligned but never meet<br>
+<br>
+So hold my hand and live this life sublime<br>
+Ere time doth steal us let us steal the time<br>
+<br></p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+        <li><a href="/entries?q=tags:Genève">Genève</a></li>
+        <li><a href="/entries?q=tags:Lugano">Lugano</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Geo-v-Med">↜ Geo vs. Medical/Health</a></li>
+        <li class="next"><a href="/Public-Good-v-Private-Goods">Public Good v. Private Goods ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

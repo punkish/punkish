@@ -1,0 +1,23 @@
+<section class="row">
+    <h1 class="title">{{{title}}}</h1>
+    <div class="date">{{created}}</div>
+
+    <div class="content">{{{__content}}}</div>
+
+    <div class="album">
+        {{#images}}
+        <figure id="{{@index}}">
+            <img src="{{.}}">
+        </figure>
+        {{/images}}
+    </div>
+
+    <ul class="tags">
+        {{#tags}}
+        <li><a href="/entries?q=tags:{{.}}">{{.}}</a></li>
+        {{/tags}}
+    </ul>
+
+    
+    {{> prevNext}}
+</section>

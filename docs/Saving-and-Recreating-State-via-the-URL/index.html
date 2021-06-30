@@ -1,0 +1,200 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Saving and Recreating State via the URL</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Saving and Recreating State via the URL</h1>
+    <div class="description"></div>
+    <div class="created">Monday, October 1, 2018</div>
+    
+    <div class="content"><p>Imagine the following scenario: The user goes to <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL</code>, enters a term in a search field and hits the <strong>go</strong> button. <span class="prompt">Go ahead, enter some text in the field below and hit the button.</span></p>
+<p><input id='s' type="search" placeholder="enter something"> <button id="go">go</button></p>
+<div id='search-result' class="step2">The results are displayed and the URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span></code>. Note that the search field shows that a search was performed for "<span class="search-term"></span>". The user then clicks on the <a href="#table">table</a> link (which is an anchor on the page). This causes the page to scroll down to the section with the table. <span class="prompt">Go ahead, click on that <code>table</code> link to the left.</span></div>
+<table id="table" class="step3">
+    <tr><td colspan="3">The URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span>#table</code>.</td></tr>
+    <tr>
+        <th id="1">one</th>
+        <th id="2">two</th>
+        <th id="3">three</th>
+    </tr>
+</table>
+<p>The user clicks on a table cell firing an event that highlights that cell in red. <span class="prompt">Go ahead, click on any of the table cells above.</span> The URL is now <code>https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=<span class="search-term"></span>#table!highlightCell:id?</code> where <code>id</code> is the <b>id</b> of the highlighted cell.</p>
+<p>Then the user bookmarks the URL or sends it to a friend. When its recipient opens that URL (or when the user clicks on the bookmark at some point in time later), the state is restored exactly as what it was for the sender. In other words, the URL is parsed and the actions performed to restore the state… <span class="prompt">You can test this right now by selecting the URL and pasting it in a new browser window. The contents in that new window should look exactly like this one.</span></p>
+<ol>
+<li>the query is performed for "bar" and the results are shown, with the search field indicating the search term.</li>
+<li>the page scrolls down to the <strong>table</strong> section, and</li>
+<li>the <code>highlightCell(id?)</code> event is fired highlighting the specified cell in the table.</li>
+</ol>
+<p>This way the state of a page is encoded in the URL which can be shared and then recreated by the recipient of the URL bookmark.</p>
+<p>So, I have three sets of params that I want to clearly identify:</p>
+<dl>
+    <dt>The queryString <code>?q=<span class="search-term"></span></code> that is processed on the server</dt>
+    <dd>The queryString is encoded as expected, a key:value pair separated by '='</dd>
+
+    <dt>The event <code>highlightCell:id?</code> that is processed in the client, and</dt>
+    <dd>The event is encoded as a key:value pair separated by ':' where the key is the function and the value is the parameter. In case of no parameter, the value is left blank (<code>fn:</code>. Since events have to fire in a particular order, they are provided as an ordered list of key:value pairs (<code>fn1:param1,param2;fn2:,fn3:param1,…</code>)</dd>
+
+    <dt>The hash fragment <code>#table</code> which specifies an anchor on the page.</dt>
+    <dd>The hash fragment encoded as expected, with a leading '#'</dd>
+</dl>
+<script>
+document.getElementById('go').addEventListener('click', function(event) {
+    const st = document.getElementById('s').value;
+
+    document.querySelectorAll('.search-term').forEach(el => { el.innerHTML = st });
+    document.querySelector('#search-result').style.marginTop = 'unset';
+
+    history.pushState(
+        {urlPath: `https://punkish.org/Saving-and-Recreating-State-via-the-URL?q=${st}`},
+        '',
+        `/Saving-and-Recreating-State-via-the-URL?q=${st}`
+    );
+
+    event.preventDefault();
+    event.stopPropagation();
+});
+
+const fn = {
+    highlightCell: function(id) {
+        document.querySelector(`th[id="${id}"]`).style.backgroundColor = 'red';
+    }
+};
+
+const parseUrl = function(href) {
+    // var parser = document.createElement('a');
+    // parser.href = "http://example.com:3000/pathname/?search=test#hash";
+
+    href.protocol; // => "http:"
+    href.host;     // => "example.com:3000"
+    href.hostname; // => "example.com"
+    href.port;     // => "3000"
+    href.pathname; // => "/pathname/"
+    href.hash;     // => "#hash"
+    href.search;   // => "?search=test"
+    href.origin;   // => "http://example.com:3000"
+
+    return href;
+}
+
+const shim = function(event) {
+    const id = this.id;
+    fn.highlightCell(id);
+    window.location.hash += `!highlightCell:${id}`;
+};
+
+const th = document.querySelectorAll('th');
+th.forEach(el => {
+    el.addEventListener('click', shim)
+});
+
+if (window.location.search) {
+    const q = window.location.search.substr(1).split('=');
+    document.getElementById('s').value = q[1];
+}
+
+if (window.location.hash) {
+    const h = window.location.hash.substr(1).split('!');
+
+    if (h.length > 0) {
+        for (let i = 1, j = h.length; i < j; i++) {
+            ha = h[i].split(':');
+            fn[ha[0]](ha[1]);
+        }
+    }
+    window.location.hash = h[0];
+    window.location.hash = h.join('!');
+
+    if (window.location.search) {
+        const st = document.getElementById('s').value;
+
+        document.querySelectorAll('.search-term').forEach(el => { el.innerHTML = st });
+        document.querySelector('#search-result').style.visibility = 'visible';
+    }
+}
+</script></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:web design">web design</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Toward-Precision-Citation">↜ Toward Precision Citation</a></li>
+        <li class="next"><a href="/Hong-Kong-Bay-Water-Quality-Data">Hong Kong Bay Water Quality Data ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

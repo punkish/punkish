@@ -1,0 +1,243 @@
+body {
+  font-family: Raleway, 'Work Sans', 'Alegreya Sans', sans-serif;
+}
+
+.author {
+  margin-top: 10em;
+  font-size: xx-large;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 4em !important;
+}
+
+h3 {
+  font-size: 1.2em !important;
+}
+
+h3:first-child {
+  padding-top: 1em;
+}
+
+/*
+h3 {
+  color: #dadada;
+}
+
+h3:last-of-type {
+  color: #dadada;
+}
+*/
+h4 {
+font-size: 1em !important;
+line-height: 1em;
+}
+
+h4:first-child {
+padding-top: 1em;
+}
+
+cite {
+font-family: serif;
+}
+
+.small {font-size: 0.7em;}
+
+.hilite {color: #ff8000;}
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+.footnote {
+font: normal 200 0.9em/1.2em sans-serif;
+position: absolute;
+bottom: 3em;
+}
+.red { color: #fa0000; }
+
+/* Two-column layout */
+.left-column {
+color: #dadada;
+width: 20%;
+height: 92%;
+float: left;
+}
+.left-column h2:last-of-type,
+.left-column h3:last-child,
+.left-column h4:last-child {
+color: #000;
+}
+.right-column {
+width: 75%;
+float: right;
+padding-top: 1em;
+}
+
+/* Two-column layout */
+.two-left-column {
+width: 48%;
+height: 92%;
+float: left;
+}
+.two-left-column h2:last-of-type,
+.two-left-column h3:last-child {
+color: #000;
+}
+.two-right-column {
+width: 48%;
+float: right;
+}
+
+/* one-third-left layout */
+.one-third-left-column {
+color: #777;
+width: 20%;
+height: 92%;
+float: left;
+}
+.one-third-left-column h2:last-of-type,
+.one-third-left-column h3:last-child {
+color: #000;
+}
+.two-thirds-right-column {
+width: 75%;
+float: right;
+padding-top: 1em;
+}
+
+/* Three-column layout */
+.three-left-column, 
+.three-mid-column, 
+.three-right-column {
+  width: 30%;
+  height: 92%;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+.three-left-column h4, 
+.three-mid-column h4, 
+.three-right-column h4 {
+  text-align: center;
+}
+
+.three-left-column, .three-mid-column {
+  float: left;
+}
+
+.three-right-column {
+  float: right;
+}
+
+/* Four-column layout */
+.four-first-column {
+width: 25%;
+height: 92%;
+float: left;
+}
+
+.four-second-column {
+width: 25%;
+height: 92%;
+float: left;
+}
+
+.four-third-column {
+width: 25%;
+height: 92%;
+float: left;
+}
+
+.four-fourth-column {
+width: 25%;
+height: 92%;
+float: right;
+}
+
+.slidefooter {
+position: absolute;
+width: 100%;
+bottom: 0;
+left: 5px;
+}
+
+a {color: blue;}
+
+blockquote {
+border-left: 2px solid grey;
+padding-left: 1em;
+margin-left: -1em;
+/* background-image: url('/img/double-quote-left.png');
+background-repeat: no-repeat;
+background-position: -1em -1em; */
+}
+
+li { line-height: 1.25em;
+margin-top: 1em;}
+
+table {border-style: collapse; }
+td {border-top: 1px #ccc solid;
+border-bottom: 0px #ccc solid;
+padding: 0; font-size: 0.8em; }
+th.center_heading {text-align: center;}
+th.left_heading {text-align: left;}
+
+table li {
+line-height: 1em;
+margin-top: 0;
+}
+
+.hilite {
+color: black;
+background-color: #ffcc00;
+}
+.byline {
+  color: grey;
+}
+h2 {
+  margin-bottom: -0.25em;
+}
+.remark-code, .remark-inline-code {
+  font-family: monospace;
+  font-size: 0.8em;
+}
+
+/*
+.inverse {
+    background: #272822;
+    color: #777872;
+    text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2 {
+  color: #f3f3f3;
+  line-height: 0.8em;
+}
+
+#slide-inverse .footnote {
+  bottom: 12px;
+  left: 20px;
+}
+*/
+.inverse {
+    background: #000;
+    color: #fff;
+    text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2 {
+  color: #f3f3f3;
+  /*line-height: 0.8em;*/
+}
+
+#slide-inverse .footnote {
+  bottom: 12px;
+  left: 20px;
+}
+
+.inverse img.bottom {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+}

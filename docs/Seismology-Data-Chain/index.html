@@ -1,0 +1,143 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Seismology Data Chain</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Seismology Data Chain</h1>
+    <div class="description"></div>
+    <div class="created">Friday, October 21, 2011</div>
+    
+    <div class="content"><p><a href="http://geoscience.wisc.edu/geoscience/people/staff/staff-member/?id=770" title="Dr. Ellen Syracuse">Dr. Ellen Syracuse</a> works with seismic data. The seismic data that Dr. Syracuse uses starts at a sensor in the ground in, say, New Zealand, and ends up as waveforms/wiggles that she can see on her computer screen. Here is the data chain:</p>
+<ul>
+<li>Usually acquired from PASSCAL,<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> a station consisting of a seismometer/sensor, GPS clock, digital recorder, power source, etc., is placed in a hole in the field.</li>
+<li>The sensor writes data to log files and data files<ul>
+<li>The log files contain information about system health, for example, possible timing problems identified when the system clock is significantly different from GPS time, power outages, sensor temperature, sensor lat, lng and elevation.</li>
+<li>The data files contain information on the voltages supplied to each sensor component, that is, either vertical alone, or vertical plus two horizontal components.</li></ul></li>
+<li>Secure Digital (SD) cards containing data are swapped manually, approximately monthly, and the data on the SD cards are copied to a computer for processing</li>
+<li>The raw RefTek<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> data are converted to <a href="http://www.iris.edu/manuals/" title="Standard for the Exchange of Earthquake Data">SEED data</a> by running <code>ref2mseed</code> or similar PASSCAL program</li>
+<li>To run <code>ref2mseed</code>, the scientist must provide the sample rate, for example, 100 samples per second, at which the data were recorded. The sample rate is defined when the station is installed.</li>
+<li>The scientist manually looks through the log files using the program <code>logpeek</code>, another  PASSCAL program, to identify any potential timing problems which can later be flagged in the finished database</li>
+<li>The scientist then runs <code>dbbuild</code>, a program that is a part of the <a href="http://www.iris.edu/manuals/antelope.htm" title="Antelope package">Antelope package</a> to build database tables that can be read using Antelope software and contain useful information about the stations such as location, station name, sample rate, experiment name, and dates of operation.</li>
+<li>Headers in SEED files are fixed using PASSCAL-written program <code>fixhdr</code><ul>
+<li>The raw data are identified by a channel name and the serial number of the SD card to which the data were written. In <code>fixhdr</code>, a SD serial number is linked to the name of the station where it was installed, and the channel names to more meaningful names such as changing <strong>1C1</strong>, which is a meaningless channel name to a seismologist, to <strong>HHZ</strong>, which to a seismologist, contains information about the sensor and channel; <strong>HH</strong> is a broadband seismometer that is sensitive to a certain range of ground motion frequencies, and <strong>Z</strong> is the vertical component of the seismometer.</li>
+<li>The scientist then runs <code>miniseed2days</code>, another Antelope program that takes the SEED files for each station and reformats them into <a href="http://www.iris.edu/manuals/SEED_appG.htm" title="miniseed"><em>miniseed</em></a> files, which are like SEED files, but do not contain any header information such as location, station name, and sample rate. This also creates an Antelope table that points to the miniseed files, and with a few mouse clicks, one can now view the waveforms from a particular station/channel/time period. This table can also be linked to those created using <code>dbbuild</code>.</li></ul></li>
+<li>These steps give the person running the experiment either continuous waveforms for each station for the entire duration of the experiment, which they can they view however they want, for example, plot and process in <a href="http://www.iris.edu/manuals/sac/SAC_Home_Main.html" title="Seismic Analysis Code">SAC</a>, Antelope, or Matlab.</li>
+</ul>
+<p>From Dr. Syracuse's hands to where the waveform data are archived, the data follow the path below:</p>
+<ul>
+<li>The data are packaged into a .tar file for each station and sent via FTP to PASSCAL</li>
+<li>Once the data pass PASSCAL's quality control, someone at PASSCAL sends the data to the IRIS DMC<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, where the data from the experiment are archived.</li>
+</ul>
+<p>From the IRIS DMC archive to a seismologist who is unaffiliated with the initial data collection, which would be any other person in the world:</p>
+<ul>
+<li>At the DMC, usually there is a two-year period during which only those involved with the experiment are allowed to access the data, but following PASSCAL's policy for experiments using their instruments, the data become publicly available after two years. Prior to this two-year deadline, the data from one station from the experiment are public.</li>
+<li>At any time after the DMC has the data, a user can go to and see <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query">the experiments/stations/time periods for which the DMC has data</a>, even if the data aren't publicly accessible at this point</li>
+<li>If data are available, there are a variety of web- or email-based request tools such as <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query"><code>breq_fast</code></a> to get data from a particular station and time period</li>
+<li>When a subset of data is ready, it is put on a FTP site, the user is notified via email, and they can download it</li>
+<li>The data can be converted to a useable format (generally either SEED or SAC) using the DMC-distributed program <code>rdseed</code><ul>
+<li>If it is converted to SEED, one can then display or process it using an Antelope program.</li>
+<li>If it is converted to SAC, one can read it into SAC, which is available only to the IRIS community.</li>
+<li>Either way, one finally ends up with data files and is able to view them as wiggles on a screen</li></ul></li>
+</ul>
+<p>So far, no real seismology has happened. There is a wide variety of analyses seismologists might want to do with the data at this point. Here are the steps that one might take to solve for an earthquake location</p>
+<ul>
+<li>Either manually or automatically pick P and S (and many other phase) arrivals from the continuous data<ul>
+<li>You may use a program that scans the data to find signal above a certain threshold to identify earthquakes that have not been previously identified, or you may start with an earthquake catalog containing the times and locations of earthquakes that have already been identified by some agency, such as the USGS.</li>
+<li>Within a small time window, let's say 1 minute, all the arrivals that have been picked from your network of stations are used to locate the earthquake in one of many possible location programs. You know the station distribution and the arrival times, and assume some velocity structure for the rocks surrounding the stations so that the raypaths from a possible earthquake location to the stations and the time that it takes P and S energy to travel along that path can be calculated.</li>
+<li>The program solves for lat/lng/depth of the earthquake, as well as the time when it occurred. This is something that can then go into an earthquake catalog or be plotted on a map.</li></ul></li>
+</ul>
+<p>There's still a lot of other work that can be done at this point. For example:</p>
+<ul>
+<li>There will be some disagreement between the calculated and observed travel times for each earthquake at each station. Maybe the earthquake location isn't very accurate. Maybe the assumed velocity model is wrong or too simple. This is the basis of velocity tomography, which can give you information about changes in rock properties in a region.</li>
+<li>You can analyze the amplitude of the P and S arrivals at each station and determine the magnitude of the earthquake, or the attenuation structure of a region, which also gives information on rock properties.</li>
+<li>Ambient noise tomography is gaining popularity. Instead of looking at residuals from earthquake locations, you look at continuous signal and ignore the earthquakes - changes and correlations in the noise between different stations can also give you information on the subsurface.</li>
+<li>You can look for tremor - it is like earthquakes, but the signal is smaller and has an unclear onset. But if you stack the waveforms of tremor recorded at a single station, you can see that there is a definite signal. This can tell us about the different types of slip behavior along a fault. For example, a tremor happens in different places and through different processes than the brittle failure that causes earthquakes.</li>
+</ul>
+<p>Also, some seismologists never actually look at or have access to waveforms. For example, Dr. Syracuse recalls requesting data from a group in Central America and they sent her a text file of earthquake locations and times, and a list of phase arrival times at Central American stations.</p>
+<!--
+A plot you can look at:
+
+* picks.tiff shows manual P and S arrivals for an earthquake in Central America displayed in Antelope. They are saved in an Antelope table, which is really a text file that's in a certain format. Each pick has the following information associated with it in the text file - absolute time, station, station channel, phase (P or S), ID number, and may have additional info, such as amplitude or uncertainty. If these were SAC files, this type of information would be stored in the header.
+-->
+<ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1"><a href='http://www.passcal.nmt.edu/'>Program for Array Seismic Studies of the Continental Lithosphere</a><a href="#fnref:1" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:2"><a href='http://www.iris.edu'>Incorporated Research Institutions for Seismology</a><a href="#fnref:2" title="return to article"> ↩</a></li>
+<li class="punkish-footnote" id="fn:3"><a href='http://www.reftek.com/'>RefTek</a> makes most of the digital recorders that PASSCAL uses<a href="#fnref:3" title="return to article"> ↩</a></li></ol></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:data chains">data chains</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Data-Chain">↜ Data Chain</a></li>
+        <li class="next"><a href="/The-Paradigm,-The-Framework,-and-The-Instantiation">The Paradigm, The Framework, and The Instantiation ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

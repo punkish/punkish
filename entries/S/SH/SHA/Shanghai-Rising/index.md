@@ -10,9 +10,7 @@ tags        :
     - photos
     - Shanghai
     - China
-stars      : 
-layout     : full-screen-image
-background : IMG_2118.JPG
+stars      :
 ---
 
 View of Shanghai from the Bund looking toward the new, financial district.

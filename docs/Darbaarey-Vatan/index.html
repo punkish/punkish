@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: दरबार-ए-वतन</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">दरबार-ए-वतन</h1>
+    <div class="description"></div>
+    <div class="created">Friday, March 11, 2016</div>
+    
+    <div class="content"><p>दरबार-ए-वतन में जब इक दिन सब जाने वाले जाएंगे<br />
+कुछ अपनी सज़ा को पहुंचेंगे, कुछ अपनी जज़ा ले जाएंगे  </p>
+<p>ऐ ख़ाक-नशीनों उठ बैठो, वो वकत करीब आ पहुंचा है<br />
+जब तख़त गिराए जाएंगे, जब ताज उछाले जाएंगे  </p>
+<p>अब टूट गिरेंगी ज़ंजीरें, अब ज़िन्दानों की ख़ैर नहीं<br />
+जो दरिया झूम के उट्ठे हैं, तिनकों से न टाले जाएंगे  </p>
+<p>कटते भी चलो,बढ़ते भी चलो, बाज़ू भी बहुत हैं सर भी बहुत<br />
+चलते भी चलो कि अब डेरे मंजिल ही पे डाले जाएंगे  </p>
+<p>ऐ ज़ुल्म के मातो, लब खोलो, चुप रहने वालो, चुप कब तक<br />
+कुछ हश्र तो इनसे उट्ठेगा, कुछ दूर तो नाले जाएंगे  </p>
+<p>(जज़ा=इनाम, ज़िन्दानों=जेलखाने, हश्र=प्रलय, नाले=शोर)</p>
+<p>—Faiz Ahmed Faiz, Pakistani Poet (1911-1984)</p>
+<p>MBE (Most Excellent Order of the British Empire)<br> 
+Nishan-e-Imtiaz (Pakistan)<br>
+Lenin Peace Prize (1962) from Soviet Union<br></p>
+<p>Thanks to Ram Rao for bringing this version to my attention.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:poem">poem</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Banking-Data">↜ Banking Data</a></li>
+        <li class="next"><a href="/Three-Faces-of-a-Cube">Three Faces of a Cube ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

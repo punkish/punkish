@@ -6,12 +6,10 @@ created    :
 viewcount  : 47
 id         : 529
 gmap       : 
-tags        :
+tags       :
     - Yi Fu Tuan
     - geography
 stars      : 
-tmpl       : 2_cols
-ui          : 
 ---
 
 Author of [Topo Philia].

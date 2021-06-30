@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: It Takes All Kinds to Make a Commons</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">It Takes All Kinds to Make a Commons</h1>
+    <div class="description"></div>
+    <div class="created">Monday, December 22, 2014</div>
+    
+    <div class="content"><p>Value <em>v</em> of any work is the sum of many kinds of values: monetary, social, cultural, strategic, etc. Value <em>V</em> of a dataset is the sum of the value of each work in the dataset:</p>
+<p><code>V = v&lt;sub&gt;1&lt;/sub&gt; + v&lt;sub&gt;2&lt;/sub&gt; … v&lt;sub&gt;n&lt;/sub&gt;</code></p>
+<p>A work can have very limited value, for example, the value of a photo of my sandwich, but a 100M such photos may arguably offer some useful value to society. Note though that once a corpus is sufficiently big, the marginal value offered by additional works added to the commons is minimal. Alternatively, a work may have a very high value, for example, the potential of my echocardiogram to help cure arrhythmia, but a few tens of thousands of echocardiograms may be invaluable to a limited set of users such as cardiologists interested in curing a specific heart problem. Both datasets are an important part of the commons, but CC is focused on only the former, mainly because the latter kind of data are usually not copyrightable, and partly because they have a limited appeal—they cannot and should not be opened up for everyone to use and redistribute.</p>
+<p>To summarize, there is digital content that is not only not copyrightable, hence, CC licenses are not relevant to it, it is also not useful to everyone equally for any purpose. Such content is useful only to <em>some</em> people for <em>some</em> uses. In spite of not being scalable and usable to the entire world, such content can be very important in science, and a valuable part of the commons.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:A Manifesto for Science">A Manifesto for Science</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/The-Deceptive-Success-of-Copyright-Licenses">↜ The Deceptive Success of Copyright Licenses</a></li>
+        <li class="next"><a href="/The-Problem-With-Copyright">The Problem With Copyright ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

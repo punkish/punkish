@@ -1,0 +1,180 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Sort Array of Hashes</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Sort Array of Hashes</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, January 1, 1980</div>
+    
+    <div class="content"><pre class="brush: Perl">
+  >  input file 
+
+  >  
+  >  something1    something2  something3  price       something4
+  >  text1        text2       text3       100     text4
+  >  text1        text2       text3       50      text4
+  >  text1        text2       text3       200     text4
+  >  text1        text2       text3       25      text4
+  >  text1        text2       text3       75      text4
+  >  text1        text2       text3       300     text4
+  >  
+
+  >  desired output
+  >  
+  >  something1    something2  something3  price       something4
+  >  text1        text2       text3       25      text4
+  >  text1        text2       text3       50      text4
+  >  text1        text2       text3       75      text4
+  >  text1        text2       text3       100     text4
+  >  text1        text2       text3       200     text4
+  >  text1        text2       text3       300     text4
+  >  
+
+  >  so rather than my data structure looking like below..
+  >  $listings[0]->{price} = 100
+  >  $listings[1]->{price} = 50
+  >  $listings[2]->{price} = 200
+  >  $listings[3]->{price} = 25......
+  >  
+
+  >  I am trying trying to change it to look like ...
+  >  
+
+  >  $listings[0]->{price} = 25
+  >  $listings[1]->{price} = 50
+  >  $listings[2]->{price} = 75
+  >  $listings[3]->{price} = 100......
+  >  
+  >  I hope I explained this so it makes sense.
+
+   use strict;
+   my $file = "somefile.txt";
+
+   # get the data into @data
+   open FILE, $file || die "can't open $file";
+   my @data = <FILE> ;
+   close FILE;
+
+   chomp @data;
+
+   # get the categories from line one
+   my @category = split / *\t+ */, shift @data;
+
+   # create an array of hashes for who knows what
+   my @listings;
+   for (my $ii = 0; $ii < @data; $ii++) {
+     my @listing = split / *\t+ */, $data[$ii];
+     next if @listing ne @category;    # make sure # flds right
+     for (my $jj = 0; $jj < @category; $jj++){
+       my $key = $category[$jj];
+       my $value = $listing[$jj];
+       $listings[$ii]-> {$key} = $value;
+     }
+   }
+
+   # sort the data on Price field (4th col)
+
+   # this one ignores the @listings array and just does it on the raw @data
+   print "\nMethod 1:\n";
+   my @slistings = map { $_-> [0] } sort { $a->[4] <=> $b->[4] } map {[$_, split / *\t+ */ ]} @data;
+   print "$_\n" foreach @slistings;
+
+   # this one sorts the array of hashes created above
+   print "\nMethod 2:\n";
+   @slistings = sort { $a-> {Price} <=> $b->{Price} } @listings;
+
+   # print sorted array (columns not sorted back to orig order)
+   for (my $ii = 0; $ii < @slistings; $ii++) {
+     foreach (keys %{$slistings[$ii]}) {
+       print "$slistings[$ii]-> {$_}\t";
+     }
+     print "\n";
+   }
+   __END__
+</pre></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Social-Networking-Patent">↜ Social Networking Patent</a></li>
+        <li class="next"><a href="/Arc-2-Earth">Arc 2 Earth ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

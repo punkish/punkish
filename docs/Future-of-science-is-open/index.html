@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Future of Science is Open</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section class="row">
+    <h1 class="title">The Future of Science is Open</h1>
+    <div class="date">Saturday, September 9, 2017</div>
+    <div class="description"></div>
+
+    <div class="content">While open sharing of scientific tools, data and findings is morally and strategically good for science, it is also strategically good for countries where resources are constrained. Being able to reuse tools and data makes economic sense, and building upon existing work accelerates the development of a world-class scientific community and of scientific knowledge itself.</div>
+
+    <div class="slideContainer">
+        <div class="intro-slide" onclick="window.location='Future-of-science-is-open?presentation=true';">
+            <h2>The Future of Science is Open</h2>
+            <h3>Puneet Kishor</h3>
+            <div class="where">a presentation given at Ulaanbaatar, Mongolia</div>
+            <div class="when">Sep 18, 2017</div>
+            <a href="/Future-of-science-is-open?presentation=true">start slideshow</a>
+        </div>
+    </div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:presentation">presentation</a></li>
+        <li><a href="/entries?q=tags:science">science</a></li>
+        <li><a href="/entries?q=tags:data sharing">data sharing</a></li>
+        <li><a href="/entries?q=tags:Mongolia">Mongolia</a></li>
+        <li><a href="/entries?q=tags:Mongolian Academy of Sciences">Mongolian Academy of Sciences</a></li>
+        <li><a href="/entries?q=tags:MULS">MULS</a></li>
+    </ul>
+
+    
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Angel-and-the-Acolytes">↜ The Angel and the Acolytes</a></li>
+        <li class="next"><a href="/Truth-has-no-bias">Truth has no bias ⇝</a></li>
+    </ul></section>
+</main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

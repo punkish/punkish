@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Version Controlled Journal</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Version Controlled Journal</h1>
+    <div class="description"></div>
+    <div class="created">Friday, May 15, 2015</div>
+    
+    <div class="content"><h2 id="proposal">Proposal</h2>
+<p><strong>Journal:</strong> A <a href="http://github.com">Github</a>-like website with a version control backend, really, <a href="http://www.git-scm.com">git</a>, that provides a place to publish scholarly papers. </p>
+<p><strong>Publishing Mechanism:</strong> The defining characteristic of this publishing mechanism, besides complete openness, would be version control which would be available at all levels. The system would be based on <code>git</code>. But, there would be a private area and a public area. So, if we follow <a href="http://semver.org">semantic versioning</a> like x.y.z, all z level versions would be private, y and x level versions would be public, but only x level would be versions of record. The author would have complete control on when to move from z → y → x but to maintain integrity, one couldn’t go from x → y → z. That is, the version bump would only be one-way.</p>
+<p>When the author starts writing her paper, she will keep it at —.—.z level until she is ready to make it public and put it up for “review.” In fact, she can even work elsewhere, in Google Docs or on her own computer locally using a word processor, until she is ready to put it up on the website. As soon as she posts the first version on the website, the paper gets a —.—.z version. z is your scratch space, or perhaps the space where you are co-writing it with your co-authors. You would have the ability to expose z to whoever you select, for a non-public, non-documented comment/review, if you choose.</p>
+<p>Once she clicks a button and makes the paper available for “review,” the paper becomes —.y.z. After a bunch of comments, revisions, and finally, a judgment from a quorum, the paper moves to x.y.z and becomes a version of record.</p>
+<p>All x.y.z papers automatically get a DOI and all that jazz that makes things appear official.</p>
+<p><strong>Review:</strong> Other registered members would review via comments, and the author could revise the paper on a continuous basis with revision numbers. This would be analogous to Google Docs, but more transparent regarding the changes made to the document. And, the official <em>version of record</em> would only be a major revision. The author would decide the version of record. The comments would be curated by the community, much like comments are curated right now on <a href="http://stackoverflow.com">Stack Overflow</a>, etc. The comments would have to  make sense, be respectful, etc., and it would be possible to comment on the comment itself. The commenters would earn (or lose) reputation points based on their activities, and thus, earn trust. The reputation/prestige would take time to build, and would be helped a lot if reputable academics participated.</p>
+<p>There would be no anonymity. Every commenter, every participant, would have to verify identify. Doesn’t have to be an affiliation, but no one would be able to hide behind anonymity. if you’ve something to say, you should not feel the need to hide and say it.</p>
+<p><strong>Subject Matter:</strong> The journal platform itself would be subject-agnostic, much like PLOS One. However, papers would be assigned to predetermined set of subjects, and would also have labels (categories) that would lump them into virtual journals. So, one could click on the <strong>paleontology</strong> tag and see all the paleontology articles.</p>
+<h2 id="challenges">Challenges</h2>
+<p><strong>Prestige:</strong> Many academics will object because there is no prestige in such a system. people get a lot of credit (tenure and promotion) for publishing in Science/Nature etc. and almost none for publishing in the Bulletin of the Kansas Geological Survey. This is not necessarily a bad thing, but it does make it a lot more difficult for people to evaluate contributions. But the current system is far from perfect and can be misleading.</p>
+<p><strong>Funding:</strong> We need funding to build a website (the server and the software) plus organize the start of a curating committee. The initial funding to put it all together and launch and run it could be from a foundation or an institution. Most of the software already exists (server side, database, commenting systems, in browser markdown and LaTeX editors), in some form or another but would have to be customized and integrated with <code>git</code> on the backend.</p>
+<h2 id="furtherpotential">Further Potential</h2>
+<p><strong>Text and Data Mining:</strong> The versions of record could be further analyzed and preprocessed for text and data mining, thereby offering their knowledge for further analysis via an API.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:code">code</a></li>
+        <li><a href="/entries?q=tags:project ideas">project ideas</a></li>
+        <li><a href="/entries?q=tags:open science">open science</a></li>
+        <li><a href="/entries?q=tags:publishing">publishing</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Young-Republic">↜ The Young Republic</a></li>
+        <li class="next"><a href="/Smart-or-Scary">Smart or Scary? ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+        hljs.initHighlighting()
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

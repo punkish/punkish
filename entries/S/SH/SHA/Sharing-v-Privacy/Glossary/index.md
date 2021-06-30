@@ -9,8 +9,7 @@ gmap       :
 tags       :
     - CC Science
     - RWJF
-stars      : 
-layout     : glossary
+isGlossary : true
 ---
 
 <div class="archive">

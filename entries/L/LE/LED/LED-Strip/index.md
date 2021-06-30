@@ -11,9 +11,11 @@ tags       :
     - Arduino
     - art
 stars      : 
-css        : led-strip
-js         : led-strip
-layout     : dygraph
+css        : 
+    - led-strip
+js         : 
+    - led-strip
+isDygraph  : true
 ---
 
 <div id="led-strip"></div>

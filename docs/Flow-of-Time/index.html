@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: वक्त रवानी</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">वक्त रवानी</h1>
+    <div class="description"></div>
+    <div class="created">Friday, December 23, 2011</div>
+    
+    <div class="content"><p>वक्ते रवां का तर्ज़े रवानी<br />
+कैसा बुढ़ापा कैसी जवानी।  </p>
+<p>लाख बयाँ और एक मयानी?<br />
+मेरी कहानी, सबकी कहानी  </p>
+<p>लाखों बचपन एक कहानी<br />
+एक था राजा, एक थी रानी।  </p>
+<p>दुनिया दुनिया दौलत दौलत<br />
+फ़ानी फ़ानी आनी जानी।  </p>
+<p>कबतक हुस्न पे नाज़ करोगे<br />
+किस बिरते पर तत्ता पानी।  </p>
+<p>दिल का कहा सब मैंने किया<br />
+पर दिल ने मेरी एक न मानी  </p>
+<p>इश्क की बातें हुस्न की घातें<br />
+कितनी नयी और कितनी पुरानी  </p>
+<p>हुस्न की सूरत इश्क की हालत<br />
+शोला शोला पानी पानी।  </p>
+<p>अहले ख़िरद की बातें बातें<br />
+क्या जिस्मानी क्या रूहानी  </p>
+<p>अहले अमल की बात मुकम्मिल<br />
+क्या इंसानी क्या यज़दानी  </p>
+<p>"का वर्षा जब कृषि सुहानी<br />
+समय चूंकि पुनि का पछतानी।"  </p>
+<p>जां के लिए बस एक ही पैकर<br />
+हम ज़िन्दा हैं या ज़िन्दानी?  </p>
+<p>रूह की ख़ातिर सैकड़ों आलम<br />
+रमता जोगी बहता पानी।  </p>
+<p>दुनिया दुनिया दरिया दरिया<br />
+आंछे इंसा छिछला पानी।  </p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:hanoz">hanoz</a></li>
+        <li><a href="/entries?q=tags:poetry">poetry</a></li>
+        <li><a href="/entries?q=tags:dad">dad</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Eid-and-Diwali">↜ ईद और दिवाली</a></li>
+        <li class="next"><a href="/Freedom-Song">आज़ादगान ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

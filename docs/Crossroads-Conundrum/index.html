@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: The Crossroads Conundrum</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">The Crossroads Conundrum</h1>
+    <div class="description"></div>
+    <div class="created">Friday, August 4, 2017</div>
+    
+    <div class="content"><figure>
+    <img src="/entry-files/undefined/img/crossroads.gif">
+    <figcaption>dumb city</figcaption>
+</figure>
+<p>Because the road A is wider and gets more traffic than road B, <code>time A &gt; time B</code> and <code>dist A &gt; dist B</code> so a person wanting to cross the road at the greater <code>dist A</code> gets less <code>time B</code> to do so while the person wanting to cross the road at the smaller <code>dist B</code> gets more <code>time A</code> to do so. What were they thinking?</p>
+<p>Turns out, people are doing something about this stupid design in a few places. Per <a href="https://www.theguardian.com/cities/2017/jul/12/dutch-app-elderly-hack-pedestrian-crossings">a report in The Guardian</a>, the city of Tilburg in The Netherlands has deployed a sensor-based solution that, upon sensing an elderly person in the zebra-crossing, delays the <em>walk</em> signal from turning back to <em>stop</em> while also delaying the corresponding traffic lights from changing. Typically this happens when the one crossing the road is an elderly person and is walking slowly. Any person requiring this facility has to install an app on their smartphone that communicates with the sensors installed at the traffic lights.</p>
+<blockquote>
+  <p>“If I stick to the rules I can only get to the island halfway across before it turns red, so I have to press the button and wait again,” 71-year-old Noud Rommen says. “But nobody wants to do that, so you try to cut between the traffic. It’s not good, but that’s what happens.”</p>
+</blockquote>
+<p>The pilot project is part of a 25-year plan to make Tilburg’s road network more pedestrian and cycle-friendly. I see this as a slender ray of sunshine amidst the dark clouds of “smartcity” hotair that might truly start thinking about <a href="City-as-an-App">the city itself as an app</a> that enables and promotes healthy and considerate living.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:dumb cities">dumb cities</a></li>
+        <li><a href="/entries?q=tags:traffic lights">traffic lights</a></li>
+        <li><a href="/entries?q=tags:Smart Cities">Smart Cities</a></li>
+        <li><a href="/entries?q=tags:city">city</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Invasion-Exiles-Wall-Nudes">↜ Invasion, Exiles, Wall, Nudes</a></li>
+        <li class="next"><a href="/Hold-on-Let-go-Be-there">Hold on, Let go, Be there ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

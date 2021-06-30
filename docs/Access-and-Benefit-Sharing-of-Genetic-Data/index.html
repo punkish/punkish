@@ -1,0 +1,99 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Access and Benefit Sharing of Genetic Data</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Access and Benefit Sharing of Genetic Data</h1>
+    <div class="description"></div>
+    <div class="created">Tuesday, February 13, 2018</div>
+    
+    <div class="content"><p>A friend of a friend asked about Access and Benefit Sharing (ABS) related to genetic resources. Apparently the regressives within the <a href="https://www.cbd.int/">Convention on Biological Diversity (CBD)</a> membership are trying to apply ABS to genetic resources at the level of the sequences. I did a litte bit of research and discovered the situation to be as clear as mud.</p>
+<p>In the US, the Myriad BRCA patent was struck down, reaffirmed, vacated, reaffirmed, and so on. After a fair bit of ping-pong judgments, the US Supreme Court did strike down Myriad’s patent on naturally occurring genetic material but also added that derivatives could be encumbered. Never a clean ending can we have.</p>
+<p>For kicks, I looked at <a href="https://www.ncbi.nlm.nih.gov/genbank/">GenBank’s data usage policy</a> and came away mystified. The policy says:</p>
+<blockquote>
+  <p>The GenBank database is designed to provide and encourage access within the scientific community to the most up-to-date and comprehensive DNA sequence information. Therefore, NCBI places no restrictions on the use or distribution of the GenBank data. However, some submitters may claim patent, copyright, or other intellectual property rights in all or a portion of the data they have submitted. NCBI is not in a position to assess the validity of such claims, and therefore cannot provide comment or unrestricted permission concerning the use, copying, or distribution of the information contained in GenBank.</p>
+</blockquote>
+<p>Huh! So, on the one hand, NCBI <em>places no restrictions on the use or distribution of the GenBank data</em> but on the other hand, NCBI <em>cannot provide comment or unrestricted permission concerning the use, copying, or distribution of the information contained in GenBank.</em> Confused much?</p>
+<p>For plant genetic resources, I saw the following literature:</p>
+<p><a href="http://digitalcommons.law.yale.edu/cgi/viewcontent.cgi?article=1021&context=yhrdlj"><em>The “Tragedy of the Commons” in Plant Genetic Resources: The Need for a New International Regime Centered Around an International Biotechnology Patent Office</em> by Chetan Gulati</a></p>
+<p><a href="https://cgspace.cgiar.org/bitstream/handle/10568/832/ILRI%20Intellectual%20Property%20Policy.pdf;sequence=1"><em>ILRI’s Policy on Intellectual Property Rights, Biosafety and Bioethics (September 1998 Revised November 2000)</em></a></p>
+<p><a href="https://biodiversity.utexas.edu/resources/collections/genetic-resources#policy-and-loan-procedures">The access and sharing policy of the biodiversity collection at University of Texas</a> </p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:Genetic Data learning">Genetic Data learning</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Eudaimonia">↜ Eudaimonia</a></li>
+        <li class="next"><a href="/Text-mining-limited-access-corpuses">Text-mining limited access corpuses ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

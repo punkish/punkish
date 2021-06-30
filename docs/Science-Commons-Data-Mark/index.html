@@ -1,0 +1,91 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Science Commons Data Mark</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/lib/css/fonts.css">
+<link rel="stylesheet" href="/lib/css/styles.css">
+<link rel="stylesheet" href="/lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/i/years/">dates</a>
+    <a href="/i/tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Science Commons Data Mark</h1>
+    <div class="description"></div>
+    <div class="created">Monday, December 17, 2007</div>
+    
+    <div class="content"><p>Finally, it is out. A result of a lengthy process of "listening," Science Commons is <a href="http://sciencecommons.org/weblog/archives/2007/12/16/announcing-protocol-for-oa-data/">Announcing the Protocol for Implementing Open Access Data</a>. One of the questions asked is, "So how is this different from just giving your data away"? The short answer is that it isn't. The value is in the <a href="http://sciencecommons.org/projects/publishing/open-access-data-protocol/">Protocol for Implementing Open Access Data</a>. Think of it as a mark of certain quality, or certain promises. Once you see this data mark on a dataset, you are absolutely clear of what that dataset stands for.</p>
+<p>See [Common Use Licensing of Scientific Data] for background on the workshop that immediately preceded the development of this protocol, and also read about [Scientific Data License] to get a gentle primer on some of the terms and issues.</p></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:CC0">CC0</a></li>
+        <li><a href="/entries?q=tags:CC">CC</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Volunteered-Geographic-Information">↜ Volunteered Geographic Information</a></li>
+        <li class="next"><a href="/Old-Gray-Aunties-No-More">Old Gray Aunties No More ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/lib/js/polyfill.js"></script>
+    <script src="/lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>
