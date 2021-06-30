@@ -18,7 +18,7 @@
     "leaflet": "^1.6.0",
     "lunr": "^2.3.9",
     "moment": "^2.24.0",
-    "papaparse": "^5.0.0",
+    "papaparse": "^5.2.0",
     "paper": "^0.12.3",
     "picolog": "^1.0.4",
     "showdown": "^1.9.1",
