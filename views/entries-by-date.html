@@ -4,7 +4,7 @@
     <div class="created">{{created}}</div>
 
     <div class="content">
-        <p>entries sorted by year and month. (also see <a href="/_tags/">entries by tag</a>.)</p>
+        <p>entries sorted by year and month. (also see <a href="{{baseUrl}}/_tags/">entries by tag</a>.)</p>
 
         {{#entries}}
         <details class="year">
@@ -15,7 +15,7 @@
                 {{#entries}}
                 <details class="entry">
                     <summary>{{title}}</summary>
-                    <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+                    <div class="notes">{{notes}} <a href="{{baseUrl}}/{{name}}">more</a></div>
                 </details>
                 {{/entries}}
             </details>

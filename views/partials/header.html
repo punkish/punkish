@@ -1,11 +1,11 @@
 <div>
     <a href="/" class="home">
         {{#isDark}}
-        <img src="/_lib/img/PunkishEidesisOrg-inverse.png">{
+        <img src="{{baseUrl}}/_lib/img/PunkishEidesisOrg-inverse.png">{
         {{/isDark}}
 
         {{^isDark}}
-        <img src="/_lib/img/PunkishEidesisOrg.gif">
+        <img src="{{baseUrl}}/_lib/img/PunkishEidesisOrg.gif">
         {{/isDark}}
     </a> 
 
@@ -14,8 +14,8 @@
     </form>
 </div>
 <nav>
-    <a href="/cv-latest/">cv</a>
-    <a href="/Where/">where</a>
-    <a href="/_dates/">dates</a>
-    <a href="/_tags/">tags</a>
+    <a href="{{baseUrl}}/cv-latest/">cv</a>
+    <a href="{{baseUrl}}/Where/">where</a>
+    <a href="{{baseUrl}}/_dates/">dates</a>
+    <a href="{{baseUrl}}/_tags/">tags</a>
 </nav>

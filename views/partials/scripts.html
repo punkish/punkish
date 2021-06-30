@@ -1,6 +1,6 @@
-<script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
-<script src="/_lib/js/polyfill.js"></script>
-<script src="/_lib/js/punkish.js"></script>
+<script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+<script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
+<script src="{{baseUrl}}/_lib/js/punkish.js"></script>
 
 {{#hasCode}}
 <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
@@ -16,13 +16,13 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 {{/isMap}}
 
 {{#isQgisMapper}}
-<script src="/_lib/qgis-mapper/js/leaflet-heat.js"></script>
-<script src="/_lib/qgis-mapper/js/leaflet.rotatedMarker.js"></script>
-<script src="/_lib/qgis-mapper/js/OSMBuildings-Leaflet.js"></script>
-<script src="/_lib/qgis-mapper/js/leaflet-hash.js"></script>
-<script src="/_lib/qgis-mapper/js/Autolinker.min.js"></script>
-<script src="/_lib/qgis-mapper/js/leaflet.markercluster.js"></script>
-<script src="/_lib/qgis-mapper/js/leaflet-search.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet-heat.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet.rotatedMarker.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/OSMBuildings-Leaflet.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet-hash.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/Autolinker.min.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet.markercluster.js"></script>
+<script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet-search.js"></script>
 {{/isQgisMapper}}
 
 {{#isCanvas}}
@@ -38,7 +38,7 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 
 {{#hasJs}}
     {{#each js}}
-    <script src="/{{url}}/js/{{js}}.js"></script>
+    <script src="{{baseUrl}}/{{dir}}/js/{{js}}.js"></script>
     {{/each}}
 
     <script>
@@ -62,7 +62,7 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 </script>
 
 {{#isDygraph}}
-<script src="/node-files/dygraphs/dist/dygraph.min.js"></script>
-<script src="/node-files/papaparse/papaparse.min.js"></script>
-<script src="/node-files/web-audio-daw/build/wad.min.js"></script
+<script src="{{baseUrl}}/dygraph/dygraph.min.js"></script>
+<script src="{{baseUrl}}/papaparse/papaparse.min.js"></script>
+<script src="{{baseUrl}}/web-audio-daw/wad.min.js"></script
 {{/isDygraph}}

@@ -12,6 +12,7 @@ const lunr = require('lunr')
 const moment = require('moment')
 const { exec } = require('child_process')
 
+const baseUrl = 'punkish'
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 const dir = {
@@ -366,10 +367,15 @@ const go = function(dir) {
             // dir  = .docs/Yi-Fu-Tuan/
             // url  = https://punkish.org/Yi-Fu-Tuan/
             if (path.basename(file) === 'index.md') {
-                const entry = {}
-                entry.file = file
-                entry.dir = path.dirname(file)
-                entry.name = entry.dir.split('/')[1]
+                const entry = {
+                    baseUrl: baseUrl,
+                    file: file,
+                    dir: path.dirname(file),
+                    name: path.dirname(file).split('/')[1]
+                }
+                // entry.file = file
+                // entry.dir = path.dirname(file)
+                // entry.name = entry.dir.split('/')[1]
                 
                 const fm = yamlFront.loadFront(fs.readFileSync(file, 'utf-8'))
 

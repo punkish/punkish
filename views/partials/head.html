@@ -12,9 +12,9 @@
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-<link rel="stylesheet" href="/_lib/css/fonts.css">
-<link rel="stylesheet" href="/_lib/css/styles.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<link rel="stylesheet" href="{{baseUrl}}/_lib/css/fonts.css">
+<link rel="stylesheet" href="{{baseUrl}}/_lib/css/styles.css">
+<link rel="stylesheet" href="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.css">
 
 {{#hasCss}}
     {{#each css}}
@@ -27,7 +27,7 @@
 {{/hasCode}}
 
 {{#isDark}}
-<link rel="stylesheet" href="/_lib/css/dark.css">
+<link rel="stylesheet" href="{{baseUrl}}/_lib/css/dark.css">
 {{/isDark}}
 
 {{#isMap}}
@@ -36,12 +36,12 @@
 {{/isMap}}
 
 {{#isQgisMapper}}
-<link rel="stylesheet" href="/_lib/qgis-mapper/css/qgis2web.css">
-<link rel="stylesheet" href="/_lib/qgis-mapper/css/MarkerCluster.css" />
-<link rel="stylesheet" href="/_lib/qgis-mapper/css/MarkerCluster.Default.css" />
-<link rel="stylesheet" href="/_lib/qgis-mapper/css/leaflet-search.css" />
+<link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/qgis2web.css">
+<link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/MarkerCluster.css" />
+<link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/leaflet-search.css" />
 {{/isQgisMapper}}
 
 {{#isDygraph}}
-<link rel="stylesheet" href="/node-files/dygraphs/dist/dygraph.min.css" />
+<link rel="stylesheet" href="{{baseUrl}}/_lib/dygraph/dygraph.min.css" />
 {{/isDygraph}}

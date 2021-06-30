@@ -10,7 +10,7 @@
     </form>
 
     <div class="content">
-        <p>entries sorted by tags. (also see <a href="/_dates/">entries by date</a>.)</p>
+        <p>entries sorted by tags. (also see <a href="{{baseUrl}}/_dates/">entries by date</a>.)</p>
 
         {{#each entries}}
         <details>
@@ -18,7 +18,7 @@
             {{#each entriesByTag}}
             <details class="entry">
                 <summary>{{title}}</summary>
-                <div class="notes">{{notes}} <a href="/{{name}}">more</a></div>
+                <div class="notes">{{notes}} <a href="{{baseUrl}}/{{name}}">more</a></div>
             </details>
             {{/each}}
         </details>
