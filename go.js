@@ -249,7 +249,8 @@ const writeByDate = function() {
     console.log('writing by dates')
     const d = {
         created: moment().format('MMM DD, YYYY'),
-        entries: data.entries.byYear
+        entries: data.entries.byYear,
+        baseUrl: baseUrl
     }
 
     const content = templates.views['entries-by-date'](d)
@@ -261,7 +262,8 @@ const writeByTags = function() {
     console.log('writing by tags')
     const d = {
         created: moment().format('MMM DD, YYYY'),
-        entries: []
+        entries: [],
+        baseUrl: baseUrl
     }
 
     const lowerCaseTags = {}
