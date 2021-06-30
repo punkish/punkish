@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: Sharing v. Privacy Glossary</title>
+
+<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<link rel="stylesheet" href="/_lib/css/fonts.css">
+<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/_lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="/entries">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv-latest/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/_dates/">dates</a>
+    <a href="/_tags/">tags</a>
+</nav></header>
+    
+    <main><section>
+    <h1 class="title">Sharing v. Privacy Glossary</h1>
+    <div class="description"></div>
+    <div class="created">Saturday, October 20, 2007</div>
+    
+    <div class="content"><div class="archive">
+    These content below constitutes a part of the work I did while working as the Manager of Science and Data Policy at Creative Commons. This content is an archive of what used to be on <u>http://science.creativecommons.org/</u> but is no longer available on the web. I have preserved the original content and added more material to them.
+</div>
+<figure>
+    <img src="img/RPLP0_90_ClustalW_aln.png">
+    <figcaption>"Sharing v. Privacy" by Puneet Kishor released under a <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>. Original "RPLP0 90 ClustalW aln" by  uploader Miguel Andrade at en.wikipedia licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 license</a> via <a href="http://commons.wikimedia.org/wiki/File:RPLP0_90_ClustalW_aln.gif#mediaviewer/File:RPLP0_90_ClustalW_aln.gif">Wikimedia Commons</a>.</figcaption>
+</figure>
+<div>back to <a href="">Sharing v Privacy</a></div>
+<div id="deflistcon">
+    <div id='container'></div>
+    <p id="deflistcaption" class="caption">Compiled from originals at <a href="http://engageuc.org" target="_blank">EngageUC</a>, <a href="http://rochesterproject.org" target="_blank">Rochester Epidemilogy Project</a>, and <a href="http://www.ncbi.nlm.nih.gov/gap" target="_blank">dbGaP</a>.</p>
+</div>
+<dl id="deflist"></dl></div>
+
+    <ul class="tags">
+        <li><a href="/entries?q=tags:CC Science">CC Science</a></li>
+        <li><a href="/entries?q=tags:RWJF">RWJF</a></li>
+    </ul>
+
+    <ul class="bottomNav">
+        <li class="prev"><a href="/CC-Science-Archive">↜ CC Science Archive</a></li>
+        <li class="next"><a href="/Press">Sensored City Press Coverage ⇝</a></li>
+    </ul></section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/js/polyfill.js"></script>
+    <script src="/_lib/js/punkish.js"></script>
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function() {
+            PK.autocomplete();
+            PK.initializeDictionary();
+    
+            const searchInPage = document.getElementById('searchInPage')
+            if (searchInPage) {
+                const inp = document.getElementsByName('tag')
+                inp[0].addEventListener('keyup', PK.searchInPage)
+            }
+        }
+    </script>
+    
+</body>
+</html>

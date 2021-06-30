@@ -1,0 +1,14 @@
+dl {
+    margin: 0;
+
+}
+dt {
+font-weight: bold;
+    margin-top: 2rem;
+}
+dd {
+    margin-left: 0;
+}
+#container {
+    border: 1px solid;
+}

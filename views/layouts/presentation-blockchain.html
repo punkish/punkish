@@ -10,8 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="/public/css/remark-styles.css">
-    <link rel="stylesheet" href="/entry-files/D/DE/DEM/Demystifying-Blockchains/css/bc.css">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+    {{#hasCss}}
+		{{#each css}}
+    	<link rel="stylesheet" href="css/{{css}}.css">
+		{{/each}}
+    {{/hasCss}}
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -20,10 +24,13 @@
 
 {{{content}}}
 
-	<script src="/public/remark/remark-no-keys.min.js"></script>
+	<script src="/_lib/remark/remark-no-keys.min.js"></script>
 	<script src="/node-files/crypto-js/crypto-js.js"></script>
-	<script src="/entry-files/D/DE/DEM/Demystifying-Blockchains/js/bc.js"></script>
-	<script src="/entry-files/D/DE/DEM/Demystifying-Blockchains/js/blockchain.js"></script>
+	{{#hasJs}}
+		{{#each js}}
+    	<link rel="stylesheet" href="js/{{js}}.css">
+		{{/each}}
+    {{/hasJs}}
     <script>
 	var slideshow;
     window.onload = function() {

@@ -1,0 +1,32 @@
+.lcol, .rcol {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 48%;
+	height: 100%;
+	border: 0px solid black;
+}
+
+.lcol {
+	left: 0;
+    float: left;
+}
+
+.rcol {
+	right: 0;
+    float: right;
+}
+
+.tl, .tr {
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	border: 0px solid red;
+	font-size: 1rem;
+}
+
+.opaque {background-image: url(/Hanoz/img/white.png);}
+
+h1 {
+	font-size: 3em !important;
+}

@@ -4,19 +4,22 @@
 <!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<title>punkish.org: {{title}}</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="punkish.org">
-    <meta name="Copyright" content="CC0 Public Domain Dedication">
-    <meta name="Author" content="Puneet Kishor">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="version" content="4.0">
+	<meta name="author" content="Puneet Kishor">
+	<meta name="copyright" content="CC0 Public Domain Dedication">
+	<meta http-equiv="Cache-Control" content="max-age=604800, public">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" href="/public/img/favicon.ico">
-	<link rel="stylesheet" href="/public/remark/remark-style.css">
-	<link rel="stylesheet" href="/public/css/remark-hanoz.css">
+	<title>punkish: {{title}}</title>
+
+	<!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	
+	<link rel="stylesheet" href="/_lib/remark/remark-style.css">
+	<link rel="stylesheet" href="/_lib/css/remark-hanoz.css">
 </head>
 
 <body class="container">
@@ -26,7 +29,7 @@
 {{{content}}}
 </textarea>
 
-	<script src="/public/remark/remark-latest.min.js"></script>
+	<script src="/_lib/remark/remark-latest.min.js"></script>
 	<script type="text/javascript">
 	window.onload = function() {
 		var slideshow = remark.create({

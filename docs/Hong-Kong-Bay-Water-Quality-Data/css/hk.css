@@ -1,0 +1,55 @@
+#graphContainer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#graphContainer:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+#graph {
+    position: absolute; 
+    left: 0px; 
+    right: 0px; 
+    top: 0px; 
+    bottom: 0px;
+    border: 1px solid silver;
+}
+#graph 
+.dygraph-title { 
+    font-family: "Helvetica Neue", sans-serif; 
+    font-weight: 200 !important;
+}
+/* .graphControl {
+	margin-right: 20px;
+    margin-left: 10px;
+}
+#controls {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#timerAdjustment {
+    width: 100px; 
+    height: 25px; 
+    border: 1px dotted black;
+} */
+#graph, 
+.dygraph-legend {
+    background-color: #f5f5f5 !important;
+}
+.dygraph-legend {
+    font-family: "Helvetica Neue", sans-serif; 
+    font-weight: 200 !important;
+    font-size: small !important;
+    padding: 10px;
+    border: 0px silver solid;
+    /* top: unset !important;
+    bottom: 0px !important; */
+}
+#timer {
+    background-color: green;
+    color: white;
+    padding: 2px 5px;
+}
