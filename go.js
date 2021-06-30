@@ -12,7 +12,7 @@ const lunr = require('lunr')
 const moment = require('moment')
 const { exec } = require('child_process')
 
-const baseUrl = 'punkish'
+const baseUrl = '/punkish'
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 const dir = {
