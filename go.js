@@ -253,8 +253,11 @@ const writeByDate = function() {
         baseUrl: baseUrl
     }
 
-    const content = templates.views['entries-by-date'](d)
-    const html = templates.layouts.main({content: content})
+    const content = {
+        content: templates.views['entries-by-date'](d),
+        baseUrl: baseUrl
+    }
+    const html = templates.layouts.main(content)
     fs.writeFileSync(`${dir.docs}/_dates/index.html`, html)
 }
 
@@ -290,8 +293,11 @@ const writeByTags = function() {
         })
     }
 
-    const content = templates.views['entries-by-tag'](d)
-    const html = templates.layouts.main({content: content})
+    const content = {
+        content: templates.views['entries-by-tag'](d),
+        baseUrl: baseUrl
+    }
+    const html = templates.layouts.main(content)
     fs.writeFileSync(`${dir.docs}/_tags/index.html`, html)
 }
 
@@ -375,9 +381,6 @@ const go = function(dir) {
                     dir: path.dirname(file),
                     name: path.dirname(file).split('/')[1]
                 }
-                // entry.file = file
-                // entry.dir = path.dirname(file)
-                // entry.name = entry.dir.split('/')[1]
                 
                 const fm = yamlFront.loadFront(fs.readFileSync(file, 'utf-8'))
 
