@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
-    <link rel="stylesheet" href="css/.css">
+    <link rel="stylesheet" href="css/led-strip.css">
 
 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
 
@@ -91,12 +91,12 @@
     
     
     
-        <script src="//js/.js"></script>
+        <script src="js/led-strip.js"></script>
     
         <script>
             window.onload = function() {
                 PK['led-strip'].init()
-            }
+            }()
         </script>
     
     <script>
@@ -109,7 +109,7 @@
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }
+        }()
     </script>
     
     <script src="/dygraph/dygraph.min.js"></script>

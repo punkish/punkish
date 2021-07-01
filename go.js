@@ -129,8 +129,8 @@ const prevNext = function() {
 }
 
 const addEntryByTags = function(entry, eIdx) {
-    if (entry.tags) {
-        entry.tags.forEach(t => {
+    if (entry.origTags) {
+        entry.origTags.forEach(t => {
             if (data.entries.byTag[t]) {
                 data.entries.byTag[t].push(eIdx)
             }
@@ -485,7 +485,6 @@ const go = function(dir) {
         })
         .on('end', function() {
             console.log('All files traversed.')
-            //console.log(data.entries.byTag)
             finish()
         })
 }

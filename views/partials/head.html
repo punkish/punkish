@@ -19,11 +19,11 @@
 <link rel="stylesheet" href="{{baseUrl}}/_lib/css/styles.css">
 <link rel="stylesheet" href="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.css">
 
-{{#hasCss}}
+{{#if hasCss}}
     {{#each css}}
-    <link rel="stylesheet" href="css/{{css}}.css">
+    <link rel="stylesheet" href="css/{{.}}.css">
     {{/each}}
-{{/hasCss}}
+{{/if}}
 
 {{#hasCode}}
 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">

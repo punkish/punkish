@@ -376,7 +376,7 @@ id          mId     tId     lat         lon         created       modified    st
         <script>
             window.onload = function() {
                 PK['dataintegrity'].init()
-            }
+            }()
         </script>
     
     <script>
@@ -389,7 +389,7 @@ id          mId     tId     lat         lon         created       modified    st
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }
+        }()
     </script>
     
 </body>

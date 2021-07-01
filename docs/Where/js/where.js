@@ -785,7 +785,8 @@ PK.where = {
         PK.$("#experiences").innerHTML = html;
     
         const hdr = PK.$("header")[0].getBoundingClientRect().bottom;
-        const rightNow = PK.$("#now").getBoundingClientRect().top;
+        const end = document.querySelectorAll('.whereNext')[0]
+        const rightNow = end.getBoundingClientRect().top;
     
         PK.smoothScroll(rightNow - hdr - 10);
     }

@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
-    <link rel="stylesheet" href="css/.css">
+    <link rel="stylesheet" href="css/where2.css">
 
 
 
@@ -73,12 +73,12 @@
     
     
     
-        <script src="//js/.js"></script>
+        <script src="js/where.js"></script>
     
         <script>
             window.onload = function() {
                 PK['where'].init()
-            }
+            }()
         </script>
     
     <script>
@@ -91,7 +91,7 @@
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }
+        }()
     </script>
     
 </body>

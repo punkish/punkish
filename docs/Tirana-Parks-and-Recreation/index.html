@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
-    <link rel="stylesheet" href="css/.css">
+    <link rel="stylesheet" href="css/map.css">
 
 
 
@@ -71,13 +71,13 @@
     
     
     
-        <script src="//js/.js"></script>
-        <script src="//js/.js"></script>
+        <script src="js/tirana.js"></script>
+        <script src="js/json_parcels0.js"></script>
     
         <script>
             window.onload = function() {
                 PK['tirana,json_parcels0'].init()
-            }
+            }()
         </script>
     
     <script>
@@ -90,7 +90,7 @@
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }
+        }()
     </script>
     
 </body>

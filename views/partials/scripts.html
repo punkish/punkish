@@ -36,17 +36,17 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 </script>
 {{/isCanvas}}
 
-{{#hasJs}}
+{{#if hasJs}}
     {{#each js}}
-    <script src="{{baseUrl}}/{{dir}}/js/{{js}}.js"></script>
+    <script src="js/{{.}}.js"></script>
     {{/each}}
 
     <script>
         window.onload = function() {
             PK['{{js}}'].init()
-        }
+        }()
     </script>
-{{/hasJs}}
+{{/if}}
 
 <script>
     window.onload = function() {
@@ -58,7 +58,7 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
             const inp = document.getElementsByName('tag')
             inp[0].addEventListener('keyup', PK.searchInPage)
         }
-    }
+    }()
 </script>
 
 {{#isDygraph}}
