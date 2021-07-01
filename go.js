@@ -10,7 +10,6 @@ const sh = new showdown.Converter({extensions: [footnotes], tables: true});
 const Handlebars = require('handlebars')
 const lunr = require('lunr')
 const moment = require('moment')
-const { exec } = require('child_process')
 
 const baseUrl = ''
 const me = 'Puneet Kishor';
@@ -189,7 +188,9 @@ const addEntryByDate = function(entry, eIdx) {
 
 const sortFunc = function(field) {
     return function(a, b) {
-        return field === 'date' ? new Date(b[field]) - new Date(a[field]) : b[field] - a[field]
+        return field === 'date' ? 
+            new Date(b[field]) - new Date(a[field]) : 
+            b[field] - a[field]
     }
 }
 
@@ -357,28 +358,6 @@ const makeDates = function(entry) {
         fakedate
 }
 
-const moveFiles = function() {
-    Walker(dir.entries)
-        .on('file', function(file, stat) {
-
-            // file = ./entries/Y/YI/YI-/Yi-Fu-Tuan/index.md
-            // name = Yi-Fu-Tuan
-            // dir  = ./entries/Y/YI/YI-/Yi-Fu-Tuan/
-            // url  = Y/YI/YI-/Yi-Fu-Tuan/
-            if (path.basename(file) === 'index.md') {
-
-                // let's copy the files from 'entries' to 'html'
-                exec(`cp -r ${path.dirname(file)} ${dir.docs}`)
-            }
-        })
-        .on('error', function(er, entry, stat) {
-            console.log('Got error ' + er + ' on entry ' + entry)
-        })
-        .on('end', function() {
-            console.log('All files moved.')
-        })
-}
-
 const go = function(dir) {
     makeTemplates()
 
@@ -422,8 +401,14 @@ const go = function(dir) {
                 makeDates(entry)
 
                 entry.hasCode = entry.origTags && entry.origTags.includes('code') ? true : false
-                entry.hasCss = entry.css ? true : false
-                entry.hasJs = entry.js   ? true : false
+                // entry.hasCss = entry.css ? true : false
+                // entry.hasJs = entry.js   ? true : false
+
+                if (entry.type) {
+                    entry.type.forEach(t => {
+                        entry[t] = true
+                    })
+                }
 
                 // presentation entry
                 if (entry.origTags && entry.origTags.indexOf('presentation') > -1) {
@@ -489,5 +474,4 @@ const go = function(dir) {
         })
 }
 
-//moveFiles()
 go(dir.docs)

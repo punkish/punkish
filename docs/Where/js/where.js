@@ -700,27 +700,6 @@ PK.where = {
             "t": "Dec 31, 2019",
             "d": "one-month"
         }
-        // {
-        //     "w": "Berlin",
-        //     "h": "return",
-        //     "f": "Nov 1, 2019",
-        //     "t": "Nov 14, 2019",
-        //     "d": "two-weeks"
-        // },
-        // {
-        //     "w": "Lucknow",
-        //     "h": "return",
-        //     "f": "Nov 15, 2019",
-        //     "t": "Nov 22, 2019",
-        //     "d": "one-week"
-        // },
-        // {
-        //     "w": "Mumbai",
-        //     "h": "return",
-        //     "f": "Nov 22, 2019",
-        //     "t": "Dec 31, 2019",
-        //     "d": "six-weeks"
-        // }
     ],
 
     foo: function(dest) {

@@ -19,32 +19,32 @@
 <link rel="stylesheet" href="{{baseUrl}}/_lib/css/styles.css">
 <link rel="stylesheet" href="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.css">
 
-{{#if hasCss}}
+{{#if css}}
     {{#each css}}
     <link rel="stylesheet" href="css/{{.}}.css">
     {{/each}}
 {{/if}}
 
-{{#hasCode}}
+{{#if hasCode}}
 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
-{{/hasCode}}
+{{/if}}
 
-{{#isDark}}
+{{#if isDark}}
 <link rel="stylesheet" href="{{baseUrl}}/_lib/css/dark.css">
-{{/isDark}}
+{{/if}}
 
-{{#isMap}}
+{{#if isMap}}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 <style>#map { width: 100%; height: 400px; padding: 0; margin: 0; }</style>
-{{/isMap}}
+{{/if}}
 
-{{#isQgisMapper}}
+{{#if isQgisMapper}}
 <link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/qgis2web.css">
 <link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/MarkerCluster.css" />
 <link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/MarkerCluster.Default.css" />
 <link rel="stylesheet" href="{{baseUrl}}/_lib/qgis-mapper/css/leaflet-search.css" />
-{{/isQgisMapper}}
+{{/if}}
 
-{{#isDygraph}}
-<link rel="stylesheet" href="{{baseUrl}}/_lib/dygraph/dygraph.min.css" />
-{{/isDygraph}}
+{{#if isDygraph}}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+{{/if}}

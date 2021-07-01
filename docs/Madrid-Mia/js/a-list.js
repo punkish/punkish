@@ -1,5 +1,5 @@
 PK['a-list'] = {
-    imgDir: 'public/img/map-markers',
+    //imgDir: 'public/img/map-markers',
 
     data: {
         center : [40.4086263, -3.7067043], 
@@ -182,7 +182,7 @@ PK['a-list'] = {
                 markers: [],
                 layerGroup: null,
                 icon: L.icon({ 
-                    iconUrl: `${img}/${g}.svg`, 
+                    iconUrl: `/_lib/img/map-markers/${g}.svg`, 
                     iconSize: [32, 32],
                     iconAnchor: [16, 16],
                     popupAnchor: [1, -3]
@@ -222,7 +222,7 @@ PK['a-list'] = {
         return layerGroups;
     },
 
-    "init": function() {
+    init: function() {
 
         // initialize the baselayer
 		const baseLayer = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -255,7 +255,7 @@ PK['a-list'] = {
             PK['a-list'].data.center,
             {
                 icon: L.icon({ 
-                    iconUrl: `${PK['a-list'].imgDir}/home.svg`, 
+                    iconUrl: '/_lib/img/map-markers/home.svg', 
                     iconSize: [32, 32],
                     iconAnchor: [16, 16],
                     popupAnchor: [1, -3]

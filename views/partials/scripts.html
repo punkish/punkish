@@ -2,20 +2,20 @@
 <script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
 <script src="{{baseUrl}}/_lib/js/punkish.js"></script>
 
-{{#hasCode}}
+{{#if hasCode}}
 <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
 <script>
     hljs.initHighlighting()
 </script>
-{{/hasCode}}
+{{/if}}
 
-{{#isMap}}
+{{#if isMap}}
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-{{/isMap}}
+{{/if}}
 
-{{#isQgisMapper}}
+{{#if isQgisMapper}}
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet-heat.js"></script>
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet.rotatedMarker.js"></script>
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/OSMBuildings-Leaflet.js"></script>
@@ -23,9 +23,9 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/Autolinker.min.js"></script>
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet.markercluster.js"></script>
 <script src="{{baseUrl}}/_lib/qgis-mapper/js/leaflet-search.js"></script>
-{{/isQgisMapper}}
+{{/if}}
 
-{{#isCanvas}}
+{{#if isCanvas}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script>
     window.onload = function() {
@@ -34,9 +34,15 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
         chart(ctx)
     }
 </script>
-{{/isCanvas}}
+{{/if}}
 
-{{#if hasJs}}
+{{#if isDygraph}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+<script src="{{baseUrl}}/_lib/papaparse/papaparse.min.js"></script>
+<script src="{{baseUrl}}/_lib/web-audio-daw/wad.min.js"></script>
+{{/if}}
+
+{{#if js}}
     {{#each js}}
     <script src="js/{{.}}.js"></script>
     {{/each}}
@@ -60,9 +66,3 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
         }
     }()
 </script>
-
-{{#isDygraph}}
-<script src="{{baseUrl}}/dygraph/dygraph.min.js"></script>
-<script src="{{baseUrl}}/papaparse/papaparse.min.js"></script>
-<script src="{{baseUrl}}/web-audio-daw/wad.min.js"></script
-{{/isDygraph}}

@@ -150,9 +150,8 @@ PK['hk'] = {
     },
 
     init: function() {
-
         const data = Papa.parse(
-            '/entry-files/H/HO/HON/Hong-Kong-Bay-Water-Quality-Data/js/Yim-Tin-Tsai-FCZ-08-2018.csv', 
+            'js/Yim-Tin-Tsai-FCZ-08-2018.csv', 
             {
                 header: true,
                 download: true,
