@@ -36,3 +36,26 @@ Thumbs.db
 # node_modules #
 ################
 node_modules/
+
+# movies and images #
+#####################
+# *.jpg
+# *.JPG
+# *.gif
+# *.GIF
+# *.png
+# *.PNG
+# *.pxm
+# *.PXM
+# *.mov
+# *.MOV
+# *.m4v
+# *.M4V
+# *.ogv
+# *.OGV
+# *.webm
+# *.WEBM
+# *.mp4
+# *.MP4
+# *.mp3
+# *.m4a

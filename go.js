@@ -64,21 +64,37 @@ const makeTemplates = function() {
 }
 
 const makeVid = function(text, url) {
+    url = url ? `${url}/img` : 'img'
+
     return text.replace(
         /<img src="(.*?)\.(mp4)(.*)/g, 
         `<video width="100%" controls poster="img/$1.jpg">
-            <source src="img/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="${url}/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
         </video>`
     )
 }
 
 const makeImg = function(text, url) {
+    url = url ? `${url}/img` : 'img'
+    
     return text.replace(
         /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-        `img src="img/$1.$2$3`
+        `img src="${url}/$1.$2$3`
     )
 }
 
+const makeAlbum = function(entry, url) {
+    url = url ? `${url}/img` : 'img'
+    entry.images = fs.readdirSync(`${entry.dir}/img`)
+        .filter(img => {
+            const imgExt = img.slice(-4)
+            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif'
+        })
+        .map(img => {
+            return `${url}/${img}`
+        });
+
+}
 const prevNext = function() {
     console.log('populating prev-next')
 
@@ -263,48 +279,47 @@ const writeByDate = function() {
 
 const writeByTags = function() {
     console.log('writing by tags')
+    const date = moment().format('MMM DD, YYYY')
     const d = {
-        created: moment().format('MMM DD, YYYY'),
-        entries: [],
-        baseUrl: baseUrl
-    }
-
-    const lowerCaseTags = {}
-
-    for (const tag in data.entries.byTag) {
-        const lct = tag.toLowerCase()
-        const entriesByTag = data.entries.byTag[tag]
-
-        if (lct in lowerCaseTags) {
-            lowerCaseTags[lct].push(entriesByTag)
-        }
-        else {
-            lowerCaseTags[lct] = entriesByTag
-        }
-    }
-
-    const tags = Object.keys(lowerCaseTags).sort()
-    
-    for (let i = 0, j = tags.length; i < j; i++) {
-        const entriesByTag = lowerCaseTags[tags[i]]
-        d.entries.push({
-            tag: tags[i], 
-            entriesByTag: entriesByTag
-        })
+        created: date,
+        baseUrl: baseUrl,
+        entries: data.entries.byTag
     }
 
     const content = {
-        content: templates.views['entries-by-tag'](d),
+        content: templates.views['entries-by-tags'](d),
         baseUrl: baseUrl
     }
     const html = templates.layouts.main(content)
     fs.writeFileSync(`${dir.docs}/_tags/index.html`, html)
+
+    for (let tag in data.entries.byTag) {
+        const d = {
+            created: date,
+            baseUrl: baseUrl,
+            entries: data.entries.byTag[tag],
+            tag: tag
+        }
+
+        const content = {
+            content: templates.views['entries-by-tag'](d),
+            baseUrl: baseUrl
+        }
+        const html = templates.layouts.main(content)
+        tag = tag.replace(/\//g, '-')
+        tag = tag.replace(/ /g, '-')
+        fs.writeFileSync(`${dir.docs}/_tags/${tag}.html`, html)
+    }
 }
 
 const writeDefault = function() {
-    const entryName = data.entries.byDate[0].name
-    const entry = data.entries.byName[entryName]
-    entry.content = templates.views[entry.template](entry)
+    const entryName = data.entries.byDate[0].name === 'cv-latest' ? 
+        data.entries.byDate[1].name : 
+        data.entries.byDate[0].name
+    const entry = data.entries.byName[entryName.toLowerCase()]
+    
+    entry.content = ''
+    entry.isIndex = true
     const html = templates.layouts[entry.layout](entry)
     fs.writeFileSync(`${dir.docs}/index.html`, html)
 }
@@ -379,23 +394,39 @@ const go = function(dir) {
                     baseUrl: baseUrl,
                     file: file,
                     dir: path.dirname(file),
-                    name: path.dirname(file).split('/')[1]
+                    name: path.dirname(file).split('/')[1],
+                    url: ''
                 }
                 
                 const fm = yamlFront.loadFront(fs.readFileSync(file, 'utf-8'))
 
                 for (let key in fm) {
-                    entry[key] = fm[key]
+                    if (key === 'tags') {
+                        entry.origTags = fm.tags
+                        entry.tags = []
+                        
+                        fm.tags.forEach(t => {
+                            if (t) {
+                                let tagUrl = t
+                                tagUrl = tagUrl.replace(/\//g, '-')
+                                tagUrl = tagUrl.replace(/ /g, '-')
+                                entry.tags.push({tag: t, tagUrl: tagUrl})
+                            }
+                        })
+                    }
+                    else {
+                        entry[key] = fm[key]
+                    }
                 }
 
                 makeDates(entry)
 
-                entry.hasCode = entry.tags && entry.tags.includes('code') ? true : false
+                entry.hasCode = entry.origTags && entry.origTags.includes('code') ? true : false
                 entry.hasCss = entry.css ? true : false
                 entry.hasJs = entry.js   ? true : false
 
                 // presentation entry
-                if (entry.tags && entry.tags.indexOf('presentation') > -1) {
+                if (entry.origTags && entry.origTags.indexOf('presentation') > -1) {
                     entry.layout = fm.layout || 'main'
                     entry.template = fm.template || 'entry-presentation'
 
@@ -415,21 +446,12 @@ const go = function(dir) {
                 }
 
                 // album entry
-                else if (entry.tags && entry.tags.indexOf('album') > -1) {
+                else if (entry.origTags && entry.origTags.indexOf('album') > -1) {
                     entry.layout = fm.layout || 'main'
                     entry.template = fm.template || 'entry'
 
-                    const imgdir = `${entry.dir}/img`
-                    entry.images = fs.readdirSync(imgdir)
-                        .filter(img => {
-                            const imgExt = img.slice(-4)
-                            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif'
-                        })
-                        .map(img => {
-                            return 'img/${img}'
-                        });
-
-                    entry.type = 'album'
+                    makeAlbum(entry, entry.url)
+                    //entry.type = 'album'
                 }
 
                 // regular entry
@@ -463,6 +485,7 @@ const go = function(dir) {
         })
         .on('end', function() {
             console.log('All files traversed.')
+            //console.log(data.entries.byTag)
             finish()
         })
 }

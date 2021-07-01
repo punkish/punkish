@@ -1,26 +1,20 @@
 <!-- entries by tags -->
 <section>
-    <h1 class="title">Entries by Tag</h1>
+    <h1 class="title">Entries by Tag <span class="tag">{{tag}}</span></h1>
     <div class="created">{{created}}</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
         <button type="submit">search</button>
-        <!-- <button type="reset">reset</button> -->
     </form>
 
     <div class="content">
         <p>entries sorted by tags. (also see <a href="{{baseUrl}}/_dates/">entries by date</a>.)</p>
 
         {{#each entries}}
-        <details>
-            <summary class="tag">{{tag}}</summary>
-            {{#each entriesByTag}}
-            <details class="entry">
-                <summary>{{title}}</summary>
-                <div class="notes">{{notes}} <a href="{{baseUrl}}/{{name}}">more</a></div>
-            </details>
-            {{/each}}
+        <details class="entry">
+            <summary>{{title}}</summary>
+            <div class="notes">{{notes}} <a href="{{baseUrl}}/{{name}}">more</a></div>
         </details>
         {{/each}}
     </div>

@@ -41,7 +41,11 @@ ul.tags li:hover { background-color: yellow; }
 ul.tags li a { text-decoration: none; }
 ul.bottomNav { clear: both; }
 ul.bottomNav li { margin-bottom: 0; float: left; margin-right: 0.75rem; }
+
+.tag { font: small sans-serif; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; text-decoration: none; }
+.tag:hover { background-color: yellow; }
 /*****************************************/
+
 
 /* tags and dates lists ******************/
 details.month > summary {margin-left: 1rem;}

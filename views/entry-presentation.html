@@ -15,12 +15,7 @@
         </div>
     </div>
 
-    <ul class="tags">
-        {{#tags}}
-        <li><a href="/entries?q=tags:{{.}}">{{.}}</a></li>
-        {{/tags}}
-    </ul>
-
+    {{> tags}}
     
     {{> prevNext}}
 </section>
