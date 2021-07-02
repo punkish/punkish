@@ -12,6 +12,7 @@
     "dygraphs": "^2.1.0",
     "handlebars": ">=4.7.7",
     "lunr": "^2.3.9",
+    "minisearch": "^3.0.4",
     "moment": "^2.24.0",
     "papaparse": ">=5.2.0",
     "paper": "^0.12.15",

@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -57,12 +57,13 @@
         <li><a href="/_tags/CV.html">CV</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Poster-Committee,-WWW-2013,-Rio-de-Janeiro,-Brazil">↜ Poster Committee, WWW 2013, Rio de Janeiro, Brazil</a></li>
-        <li class="next"><a href="/Public-Policy---Mashing-up-Technology-and-Law">Public Policy - Mashing up Technology and Law ⇝</a></li>
+        <li class="prev"><a href="/Public-Policy---bringing-technology-and-law-together-for-open-access">↜ Public Policy - bringing technology and law together for open access</a></li>
+        <li class="next"><a href="/Research-Scientist,-Development-Alternatives,-New-Delhi">Research Scientist, Development Alternatives, New Delhi ⇝</a></li>
     </ul></section></main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -74,6 +75,20 @@
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();

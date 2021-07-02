@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
 <script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.js"></script>
 <script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
 <script src="{{baseUrl}}/_lib/js/punkish.js"></script>
@@ -55,6 +56,20 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 {{/if}}
 
 <script>
+    fetch("{{baseUrl}}/_search/searchIdx.json")
+        .then(response => response.text())
+        .then(text => {
+            window.miniSearch = MiniSearch.loadJSON(text, {
+                fields: ['title', 'text'],
+                storeFields: ['title', 'name'],
+                searchOptions: {
+                    boost: { title: 2 },
+                    fuzzy: 0.2
+                }
+            })
+        })
+        .catch(err => console.log(err))
+
     window.onload = function() {
         PK.autocomplete();
         PK.initializeDictionary();

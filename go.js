@@ -10,6 +10,7 @@ const sh = new showdown.Converter({extensions: [footnotes], tables: true});
 const Handlebars = require('handlebars')
 const lunr = require('lunr')
 const moment = require('moment')
+const MiniSearch = require('minisearch')
 
 const baseUrl = ''
 const me = 'Puneet Kishor';
@@ -21,6 +22,14 @@ const dir = {
     tp: `./views/partials`,
     docs: './docs',
     hanozDir: './docs/Hanoz/hindi'
+}
+const minisearchOpts = {
+    fields: ['title', 'text'],
+    storeFields: ['title', 'name'],
+    searchOptions: {
+        boost: { title: 2 },
+        fuzzy: 0.2
+    }
 }
 
 const untaggedLabel = 'untagged'
@@ -35,7 +44,7 @@ const data = {
         hanoz: []
     },
 
-    searchIdx: {}
+    idx: {}
 }
 
 const makeTemplates = function() {
@@ -232,22 +241,50 @@ const buildHanozIndex = function() {
     }
 }
 
-const buildSearchIndex = function(entries) {
-    data.searchIdx = lunr(function () {
-        this.field('title', { boost: 10 }),
-        this.field('tags'),
-        this.field('body'), { boost: 20 },
-        this.field('created'),
-        this.ref('name'),
+const buildSearchIndex = function(type) {
+    console.log(`building **${type}** search index`)
 
-        entries.forEach(doc => { this.add(doc) }, this)
-    })
+    const docs = []
+    let id = 0
+    for (let e in data.entries.byName) {
+        const entry = data.entries.byName[e]
+        const doc = {
+            title: entry.title,
+            text: entry.__content,
+            name: entry.name
+        }
+        
+        if (type === 'mini') doc.id = id++
+        docs.push(doc)
+    }
+
+    if (type === 'lunr') {
+        data.idx = lunr(function () {
+            this.field('title', { boost: 10 }),
+            this.field('text'), { boost: 20 },
+            this.ref('name'),
+    
+            docs.forEach(doc => { this.add(doc) }, this)
+        })
+    } 
+    else if (type === 'mini') {
+        const miniSearch = new MiniSearch(minisearchOpts)
+
+        miniSearch.addAll(docs)
+        data.idx = miniSearch
+    }
+
+}
+
+const writeSearchIdx = function() {
+    fs.writeFileSync(`${dir.docs}/_search/searchIdx.json`, JSON.stringify(data.idx))
 }
 
 const writeByName = function() {
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e]
         entry.content = templates.views[entry.template](entry)
+        entry.minisearchOpts = minisearchOpts
         const html = templates.layouts[entry.layout](entry)
         fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
     }
@@ -272,7 +309,8 @@ const writeByDate = function() {
 
     const content = {
         content: templates.views['entries-by-date'](d),
-        baseUrl: baseUrl
+        baseUrl: baseUrl,
+        minisearchOpts: minisearchOpts
     }
     const html = templates.layouts.main(content)
     fs.writeFileSync(`${dir.docs}/_dates/index.html`, html)
@@ -289,7 +327,8 @@ const writeByTags = function() {
 
     const content = {
         content: templates.views['entries-by-tags'](d),
-        baseUrl: baseUrl
+        baseUrl: baseUrl,
+        minisearchOpts: minisearchOpts
     }
     const html = templates.layouts.main(content)
     fs.writeFileSync(`${dir.docs}/_tags/index.html`, html)
@@ -304,7 +343,8 @@ const writeByTags = function() {
 
         const content = {
             content: templates.views['entries-by-tag'](d),
-            baseUrl: baseUrl
+            baseUrl: baseUrl,
+            minisearchOpts: minisearchOpts
         }
         const html = templates.layouts.main(content)
         tag = tag.replace(/\//g, '-')
@@ -321,6 +361,7 @@ const writeDefault = function() {
     
     entry.content = ''
     entry.isIndex = true
+    entry.minisearchOpts = minisearchOpts
     const html = templates.layouts[entry.layout](entry)
     fs.writeFileSync(`${dir.docs}/index.html`, html)
 }
@@ -331,6 +372,7 @@ const write = function() {
     writeByDate()
     writeByTags()
     writeDefault()
+    writeSearchIdx()
 }
 
 const finish = function() {
@@ -341,7 +383,7 @@ const finish = function() {
     })
     prevNext()
     buildHanozIndex()
-    buildSearchIndex(Object.values(data.entries.byName))
+    buildSearchIndex('mini')
     write()
 }
 

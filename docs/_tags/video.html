@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -48,7 +48,7 @@
     <main><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">video</span></h1>
-    <div class="created">Jul 01, 2021</div>
+    <div class="created">Jul 02, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -58,10 +58,6 @@
     <div class="content">
         <p>entries sorted by tags. (also see <a href="/_dates/">entries by date</a>.)</p>
 
-        <details class="entry">
-            <summary>madrid – cuarenta y ocho días después</summary>
-            <div class="notes"> <a href="/48-days-later">more</a></div>
-        </details>
         <details class="entry">
             <summary>A Velt In Lied (A World In Song)</summary>
             <div class="notes"> <a href="/A-Velt-In-Lied">more</a></div>
@@ -81,6 +77,10 @@
         <details class="entry">
             <summary>Because the Night Belongs to Lovers</summary>
             <div class="notes"> <a href="/Because-the-Night">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>madrid – cuarenta y ocho días después</summary>
+            <div class="notes"> <a href="/48-days-later">more</a></div>
         </details>
         <details class="entry">
             <summary>Epistrophy by Vijay Iyer</summary>
@@ -119,12 +119,12 @@
             <div class="notes"> <a href="/Parque-de-los-Nevados">more</a></div>
         </details>
         <details class="entry">
-            <summary>So Low in the Library Mall</summary>
-            <div class="notes"> <a href="/So-Low">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Smokin&#x27; at the Hvide Lam</summary>
             <div class="notes"> <a href="/Smokin-at-Hvide-Lam">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>So Low in the Library Mall</summary>
+            <div class="notes"> <a href="/So-Low">more</a></div>
         </details>
         <details class="entry">
             <summary>Stolen Moments in Golden Gate Park</summary>
@@ -139,6 +139,7 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -150,6 +151,20 @@
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();

@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -48,7 +48,7 @@
     <main><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">presentation</span></h1>
-    <div class="created">Jul 01, 2021</div>
+    <div class="created">Jul 02, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -163,12 +163,12 @@
             <div class="notes"> <a href="/Twenty-Things-I-Care-About">more</a></div>
         </details>
         <details class="entry">
-            <summary>What Can SDI Learn From Open Source</summary>
-            <div class="notes">I gave a presentation at the GSDI9 conference in [Santiago de Chile]. The disconnect between most of the folks who think SDI and open source was very apparent. I talked about the concept of a [Spatial Data Commons] based on the presentation on [Global Information Commons] by [Paul Uhlir]. The idea of a spatial data commons was received very well by the audience. <a href="/What-Can-SDI-Learn-From-Open-Source">more</a></div>
-        </details>
-        <details class="entry">
             <summary>What Would Schumpeter Think Of Open Source</summary>
             <div class="notes"> <a href="/What-Would-Schumpeter-Think-Of-Open-Source">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>What Can SDI Learn From Open Source</summary>
+            <div class="notes">I gave a presentation at the GSDI9 conference in [Santiago de Chile]. The disconnect between most of the folks who think SDI and open source was very apparent. I talked about the concept of a [Spatial Data Commons] based on the presentation on [Global Information Commons] by [Paul Uhlir]. The idea of a spatial data commons was received very well by the audience. <a href="/What-Can-SDI-Learn-From-Open-Source">more</a></div>
         </details>
         <details class="entry">
             <summary>What’s in a Name</summary>
@@ -191,6 +191,7 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -202,6 +203,20 @@
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();

@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -48,7 +48,7 @@
     <main><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">null</span></h1>
-    <div class="created">Jul 01, 2021</div>
+    <div class="created">Jul 02, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -59,12 +59,12 @@
         <p>entries sorted by tags. (also see <a href="/_dates/">entries by date</a>.)</p>
 
         <details class="entry">
-            <summary>Boatema Boateng</summary>
-            <div class="notes"> <a href="/Boatema-Boateng">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Anthony Seeger</summary>
             <div class="notes"> <a href="/Anthony-Seeger">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Boatema Boateng</summary>
+            <div class="notes"> <a href="/Boatema-Boateng">more</a></div>
         </details>
         <details class="entry">
             <summary>CollaborativeCollectionOfCaseStudies.ss</summary>
@@ -75,24 +75,24 @@
             <div class="notes"> <a href="/CommunityOntology.ss">more</a></div>
         </details>
         <details class="entry">
-            <summary>Computing Stack</summary>
-            <div class="notes"> <a href="/Computing-Stack">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Compiling Apps On Macs</summary>
             <div class="notes"> <a href="/Compiling-Apps-On-Macs">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Computing Stack</summary>
+            <div class="notes"> <a href="/Computing-Stack">more</a></div>
         </details>
         <details class="entry">
             <summary>Corn Pudding</summary>
             <div class="notes"> <a href="/Corn-Pudding">more</a></div>
         </details>
         <details class="entry">
-            <summary>Creative Commons</summary>
-            <div class="notes"> <a href="/Creative-Commons">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Crab Cakes</summary>
             <div class="notes"> <a href="/Crab-Cakes">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Creative Commons</summary>
+            <div class="notes"> <a href="/Creative-Commons">more</a></div>
         </details>
         <details class="entry">
             <summary>Data Citation Task Group meeting</summary>
@@ -191,12 +191,12 @@
             <div class="notes"> <a href="/Intellectual-Property-Rights">more</a></div>
         </details>
         <details class="entry">
-            <summary>Kalpana Prakash</summary>
-            <div class="notes"> <a href="/Kalpana-Prakash">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Karen Cook</summary>
             <div class="notes"> <a href="/Karen-Cook">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Kalpana Prakash</summary>
+            <div class="notes"> <a href="/Kalpana-Prakash">more</a></div>
         </details>
         <details class="entry">
             <summary>Land Information And Computer Graphics Facility</summary>
@@ -219,20 +219,16 @@
             <div class="notes"> <a href="/Licensing-Regime">more</a></div>
         </details>
         <details class="entry">
-            <summary>Low Cost</summary>
-            <div class="notes"> <a href="/Low-Cost">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Lower Cost</summary>
             <div class="notes"> <a href="/Lower-Cost">more</a></div>
         </details>
         <details class="entry">
-            <summary>Mapping Ecosystem Services Citations</summary>
-            <div class="notes"> <a href="/Mapping-Ecosystem-Services-Citations">more</a></div>
+            <summary>Low Cost</summary>
+            <div class="notes"> <a href="/Low-Cost">more</a></div>
         </details>
         <details class="entry">
-            <summary>Mapping For Change</summary>
-            <div class="notes"> <a href="/Mapping-For-Change">more</a></div>
+            <summary>Mapping Ecosystem Services Citations</summary>
+            <div class="notes"> <a href="/Mapping-Ecosystem-Services-Citations">more</a></div>
         </details>
         <details class="entry">
             <summary>Market Driven</summary>
@@ -241,6 +237,10 @@
         <details class="entry">
             <summary>Master of Science</summary>
             <div class="notes"> <a href="/Master-of-Science">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Mapping For Change</summary>
+            <div class="notes"> <a href="/Mapping-For-Change">more</a></div>
         </details>
         <details class="entry">
             <summary>Michael Curry</summary>
@@ -279,6 +279,7 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -290,6 +291,20 @@
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();

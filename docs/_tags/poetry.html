@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -48,7 +48,7 @@
     <main><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">poetry</span></h1>
-    <div class="created">Jul 01, 2021</div>
+    <div class="created">Jul 02, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -111,6 +111,10 @@
             <div class="notes"> <a href="/Growing-up-of-the-Baby-God:-A-lifecycle">more</a></div>
         </details>
         <details class="entry">
+            <summary>Hanoz Shīsha-Garān</summary>
+            <div class="notes"> <a href="/Hanoz">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Kill</summary>
             <div class="notes"> <a href="/Kill">more</a></div>
         </details>
@@ -123,20 +127,12 @@
             <div class="notes"> <a href="/Lamour-Vrai-est-Impossible">more</a></div>
         </details>
         <details class="entry">
-            <summary>Light and Sound</summary>
-            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
-        </details>
-        <details class="entry">
             <summary>The Light at the Break of Dawn</summary>
             <div class="notes"> <a href="/Light-at-the-Break-of-Dawn">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
-            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Hanoz Shīsha-Garān</summary>
-            <div class="notes"> <a href="/Hanoz">more</a></div>
+            <summary>Light and Sound</summary>
+            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
         </details>
         <details class="entry">
             <summary>My Love is a Sensor</summary>
@@ -153,6 +149,10 @@
         <details class="entry">
             <summary>One Blind Man</summary>
             <div class="notes"> <a href="/One-Blind-Man">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
+            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
         </details>
         <details class="entry">
             <summary>Pido Silencio</summary>
@@ -211,6 +211,7 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -222,6 +223,20 @@
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();

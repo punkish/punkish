@@ -97,23 +97,24 @@ let PK = {
             selector: document.querySelector('input[name=q]'),
             minChars: 3,
             source: function(term, response){
-                PK.xhr(`/entries/${term}`, function(data) {
-                    response(JSON.parse(data)); 
-                });
+                const result = miniSearch.search(term)
+                response(result)
+
             },
             renderItem: function (item, search){
-                search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
-                return `<div class="autocomplete-suggestion" data-val="${item[1]}">${item[0].replace(re, "<b>$1</b>")}</div>`;
+                search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+                const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
+                return `<div class="autocomplete-suggestion" data-name="${item.name}" data-val="${item.title}">${item.title.replace(re, "<b>$1</b>")}</div>`
             },
             onSelect: function(e, term, item) {
-                location.href = `/${term}`;
+                e.preventDefault()
+                e.stopPropagation()
+                location.href = `/${item.dataset.name}`
             }
         });
     },
 
     searchInPage: function() {
-        
         const tags = document.getElementsByClassName("tag");
 
         function s(str) {

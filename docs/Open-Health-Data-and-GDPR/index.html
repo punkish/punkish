@@ -34,7 +34,7 @@
         <img src="/_lib/img/PunkishEidesisOrg.gif">
     </a> 
 
-    <form name="search" method="GET" action="/entries">
+    <form name="search" method="GET" action="">
         <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
@@ -110,12 +110,13 @@ Since EHRs are not a product of publicly funded research, my assumption is that 
         <li><a href="/_tags/GDPR.html">GDPR</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Disruptive-Technologies">↜ Open Science and Open Data</a></li>
+        <li class="prev"><a href="/Disruptive-Technologies">↜ Sensors</a></li>
         <li class="next"><a href="/RGB-to-Visible-Spectrum">RGB to Visible Spectrum ⇝</a></li>
     </ul></section></main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -127,6 +128,20 @@ Since EHRs are not a product of publicly funded research, my assumption is that 
     
     
     <script>
+        fetch("/_search/searchIdx.json")
+            .then(response => response.text())
+            .then(text => {
+                window.miniSearch = MiniSearch.loadJSON(text, {
+                    fields: ['title', 'text'],
+                    storeFields: ['title', 'name'],
+                    searchOptions: {
+                        boost: { title: 2 },
+                        fuzzy: 0.2
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    
         window.onload = function() {
             PK.autocomplete();
             PK.initializeDictionary();
