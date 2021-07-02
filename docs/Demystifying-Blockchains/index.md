@@ -176,7 +176,7 @@ The `array[]` is analagous to the entire table, and each `object{}` (aka JavaScr
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
+    <img class="remark"  src="img/linked-list-vertical.png">
 ]
 .right-column[
 
@@ -189,7 +189,7 @@ A data structure consisting of a collection of nodes which together represent a 
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
+    <img class="remark"  src="img/linked-list-vertical.png">
 ]
 .right-column[
 ```

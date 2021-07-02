@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+    	<link rel="stylesheet" href="css/bc.css">
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -205,7 +206,7 @@ The `array[]` is analagous to the entire table, and each `object{}` (aka JavaScr
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
+    <img class="remark"  src="img/linked-list-vertical.png">
 ]
 .right-column[
 
@@ -218,7 +219,7 @@ A data structure consisting of a collection of nodes which together represent a 
 A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
 
 .left-column[
-    <img class="remark"  src="/entry-files/D/DE/DEM/Demystifying-Blockchains/img/linked-list-vertical.png">
+    <img class="remark"  src="img/linked-list-vertical.png">
 ]
 .right-column[
 ```
@@ -840,8 +841,15 @@ name: realtime
 - Conversations with [Oshani Seneviratne](https://idea.tw.rpi.edu/people/oshani), Director of Health Data Research in the Health Empowerment by Analytics, Learning, and Semantics (HEALS) Project at the Institute for Data Exploration and Applications (IDEA) at the Rensselaer Polytechnic Institute (RPI).
 </textarea>
 
+	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+	<script>
+		hljs.initHighlighting()
+	</script>
 	<script src="/_lib/remark/remark-no-keys.min.js"></script>
-	<script src="/node-files/crypto-js/crypto-js.js"></script>
+	<script src="/_lib/crypto-js/crypto-js.js"></script>
+		<script src="js/bc.js"></script>
+		<script src="js/blockchain.js"></script>
     <script>
 	var slideshow;
     window.onload = function() {

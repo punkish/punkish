@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="/_lib/css/remark-styles.css">
-    {{#hasCss}}
+    {{#if css}}
 		{{#each css}}
-    	<link rel="stylesheet" href="css/{{css}}.css">
+    	<link rel="stylesheet" href="css/{{.}}.css">
 		{{/each}}
-    {{/hasCss}}
+    {{/if}}
 
     <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -24,13 +24,15 @@
 
 {{{content}}}
 
+	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
 	<script src="/_lib/remark/remark-no-keys.min.js"></script>
-	<script src="/node-files/crypto-js/crypto-js.js"></script>
-	{{#hasJs}}
+	<script src="/_lib/crypto-js/crypto-js.js"></script>
+	{{#if js}}
 		{{#each js}}
-    	<link rel="stylesheet" href="js/{{js}}.css">
+		<script src="js/{{.}}.js"></script>
 		{{/each}}
-    {{/hasJs}}
+    {{/if}}
     <script>
 	var slideshow;
     window.onload = function() {
