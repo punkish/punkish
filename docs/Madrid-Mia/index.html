@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -37,7 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -47,7 +48,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">¡ Madrid Mia !</h1>
     <div class="description"></div>
     <div class="created">Monday, March 9, 2020</div>
@@ -55,6 +56,7 @@
     <div class="content"><p>A list of crowdsourced<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> places I’ve been enjoying in Madrid.</p>
 <div id="map"></div>
 <ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">a “crowd” of mostly TH, LL, and one or two others<a href="#fnref:1" title="return to article"> ↩</a></li></ol></div>
+
 
     <ul class="tags">
         <li><a href="/_tags/Madrid.html">Madrid</a></li>
@@ -67,14 +69,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Configuration-Over-Code">↜ Configuration Over Code</a></li>
         <li class="next"><a href="/Digital-Library-Everywhere">A Digital Library Everywhere ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
@@ -84,37 +89,31 @@
     
     
         <script src="js/a-list.js"></script>
-    
         <script>
-            window.onload = function() {
-                PK['a-list'].init()
-            }()
+            if (PK['a-list'].init) {
+                window.addEventListener('load', PK['a-list'].init)
+            }
         </script>
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

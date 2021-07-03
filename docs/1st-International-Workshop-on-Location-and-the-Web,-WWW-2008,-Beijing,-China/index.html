@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,28 +46,32 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">1st International Workshop on Location and the Web, WWW 2008, Beijing, China</h1>
     <div class="description"></div>
     <div class="created">Thursday, January 1, 1970</div>
     
     <div class="content"><p>The World Wide Web has become the world's largest networked information resource, but references to geographical locations remain unstructured and typically implicit in nature. This lack of explicit spatial knowledge within the Web makes it difficult to service user needs for location-specific information. At present, spatial knowledge is hidden in many small information fragments such as addresses on Web pages, annotated photos with GPS co- ordinates, geographic mapping applications, and geotags in user- generated content. Several emerging formats that primarily or secondarily include location metadata, like GeoRSS, KML, and microformats, aim to improve this state of affairs. However, the question remains how to extract, index, mine, find, view, mashup, and exploit Web content using its location semantics. This workshop brings together researchers from academia and industry labs to discuss and present the latest results and trends in all facets of the relationships between location concepts and Web information. <a href="/entry-files/1/1S/1ST/1st_International_Workshop_on_Location_and_the_Web,_WWW_2008,_Beijing,_China/WWW_'08_2008_Location_and_the_web.pdf">download proceedings</img/a></p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/Committees.html">Committees</a></li>
         <li><a href="/_tags/CV.html">CV</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/B.-Tech.-Indian-Institute-of-Technology">↜ B. Tech. Indian Institute of Technology</a></li>
-        <li class="next"><a href="/COUNTER-2010-workshop-on-Mashing-up-Culture,-The-Rise-of-User-generated-Content,-Uppsala,-Sweden">COUNTER 2010 workshop on Mashing-up Culture ⇝</a></li>
-    </ul></section></main>
+        <li class="prev"><a href="/High-Level-Group-on-eInfrastructures-for-Scientific-Data,-European-Commission,-Brussels,-Belgium">↜ High Level Group on eInfrastructures for Scientific Data, European Commission, Brussels, Belgium.</a></li>
+        <li class="next"><a href="/Independent-Consultant,-Madison,-WI">Independent Consultant, Madison, WI ⇝</a></li>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -75,29 +80,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

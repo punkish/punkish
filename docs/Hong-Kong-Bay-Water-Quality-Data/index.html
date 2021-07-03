@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -37,7 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -47,7 +48,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Hong Kong Bay Water Quality Data</h1>
     <div class="description"></div>
     <div class="created">Monday, August 6, 2018</div>
@@ -60,6 +61,7 @@
 <p>The display of monitoring data was developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface.</p>
 <!-- <p><b>Note:</b> The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.</p> --></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/open-data.html">open data</a></li>
         <li><a href="/_tags/water-quality.html">water quality</a></li>
@@ -71,14 +73,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Saving-and-Recreating-State-via-the-URL">↜ Saving and Recreating State via the URL</a></li>
         <li class="next"><a href="/Water-Quality-Monitoring">Water Quality Monitoring ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -89,37 +94,31 @@
     <script src="/_lib/web-audio-daw/wad.min.js"></script>
     
         <script src="js/hk.js"></script>
-    
         <script>
-            window.onload = function() {
-                PK['hk'].init()
-            }()
+            if (PK['hk'].init) {
+                window.addEventListener('load', PK['hk'].init)
+            }
         </script>
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

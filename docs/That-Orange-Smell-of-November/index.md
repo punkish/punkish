@@ -22,7 +22,7 @@ color: #ccc;
 
 background-color: #000;
  */
-/* background: #fff url('/entry-files/T/TH/THA/That-Orange-Smell-of-November/orange-on-white.jpg') no-repeat center fixed; */img/
+/* background: #fff url('orange-on-white.jpg') no-repeat center fixed; */img/
 }
 /* #main {border: 1px solid black;} */
 /* a, a:visited {color: #5cb7e2;}
@@ -34,7 +34,7 @@ a:hover {background-color: yellow; color: #5cb7e2;}
 
 <!-- ![orange](IMG_6793.jpg) -->
 <div style="position: fixed; z-index: -10;">
-<img class='foo' src='/entry-files/T/TH/THA/That-Orange-Smell-of-November/img/orange-on-white.jpg'>
+<img class='foo' src='img/orange-on-white.jpg'>
 </div>
 
 

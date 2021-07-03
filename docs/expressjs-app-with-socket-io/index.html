@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -36,7 +35,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -46,7 +47,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">expressjs app with socket.io</h1>
     <div class="description"></div>
     <div class="created">Tuesday, October 11, 2016</div>
@@ -134,6 +135,7 @@ module.exports = function(io) {
 </code></pre>
 <p>The above works. When data are inserted into <code>readings.db</code> via an http <code>PUT</code> (see <code>readings.js</code>), an event is emitted by <code>io.emit('reading', data)</code> and the browser receives that event and shows it in the browser console with <code>socket.on('reading', function (data) { … });</code></p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/code.html">code</a></li>
         <li><a href="/_tags/programming.html">programming</a></li>
@@ -143,14 +145,17 @@ module.exports = function(io) {
     <ul class="bottomNav">
         <li class="prev"><a href="/Geottingen">↜ Geottingen</a></li>
         <li class="next"><a href="/As-We-May-Click">As We May Click ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
@@ -164,29 +169,24 @@ module.exports = function(io) {
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

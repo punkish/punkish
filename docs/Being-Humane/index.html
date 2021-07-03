@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Being Humane</h1>
     <div class="description"></div>
     <div class="created">Thursday, June 25, 2015</div>
@@ -65,6 +66,7 @@
 <p>Besides its more obvious implication, <strong>Being Mortal</strong> has some clues toward my own personal queries and activities in life. Gawande makes the argument over and over again that we need to listen to the patients, and help them construct and live their lives the way they want, not impose on them a standard of wellness that we think is right. I have believed that <a href="Citizen-Engagement-in-Science">citizens need to be more involved in science</a>, and not just as observers or data gatherers but also has active participants who affect the conduct of science and the policies that come out of it and impact the quality of our lives. The bottomline is, if we are not going to involve citizens, they are going to do it alone, as is evident from the rise in <a href="Learning-by-Making">informal learning</a>. So, let‘s involve the elderly in figuring out what they want instead of deciding for them what is best. Now, <em>that</em> would be humane.</p>
 <p>Goal posts are already shifting. Technology is changing our culture as well as power-relationships. Old, long standing systems are resisting, and in that resistance is heartburn. A better way is to work together, and find context-appropriate solutions. That is basically what Mike said.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/wellness.html">wellness</a></li>
         <li><a href="/_tags/quality-of-life.html">quality of life</a></li>
@@ -75,14 +77,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Did-You-See-That">↜ Did You See That ?</a></li>
         <li class="next"><a href="/Philosophical-Framework-of-Social-Contracts">The Philosophical Framework of Social Contracts ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -91,29 +96,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

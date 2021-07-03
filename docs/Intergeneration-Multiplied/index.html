@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">The Intergeneration Multiplied</h1>
     <div class="description"></div>
     <div class="created">Monday, August 7, 2017</div>
@@ -63,6 +64,7 @@ Waiting for someone to say,<br>
 <p>Getting the elderly to join makerspaces would give them an outlet for their creative energy and allow them to use their decades of experience to create things. It will also bring them in proximity of the younger members who have all the energy but little experience. Working together in teams, or also as longer-term mentor-mentee pairs, the old and the young can benefit from a synergistic relationship – the young getting the benefit of the older partner’s experience, and the old getting a charge from the younger person’s energy. Really, this is a no-brainer.</p>
 <p>Proving the adage that all good ideas have already been thought of by someone else, A-M in Montréal was of a similar view. Working as a librarian at a community library, she is close to the possile transformation of the libraries into the newage makerspaces. My dream would be to see at least one of the libraries commit itself to converting the intergenerational divide into a potential multiplied.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/makerspaces.html">makerspaces</a></li>
         <li><a href="/_tags/aging.html">aging</a></li>
@@ -71,14 +73,17 @@ Waiting for someone to say,<br>
     <ul class="bottomNav">
         <li class="prev"><a href="/Back-to-the-Future-of-Data-Sharing">↜ Back to the Future of Data Sharing</a></li>
         <li class="next"><a href="/Invasion-Exiles-Wall-Nudes">Invasion, Exiles, Wall, Nudes ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -87,29 +92,24 @@ Waiting for someone to say,<br>
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

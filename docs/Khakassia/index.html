@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Khakassia</h1>
     <div class="description">Olga Amelchenko Quartet</div>
     <div class="created">Sunday, July 30, 2017</div>
@@ -57,6 +58,7 @@
 <p>Per the Wikipedia, the Republic of Khakassia (Russian: Респу́блика Хака́сия, Respublika Khakasiya; Khakass: Хакас Республиказы, Hakas Respublikazı) or Khakasiya, aka “Warm Siberia,” is a federal subject of Russia located in the south of Eastern Siberia, part of the Siberian Federal District. Abakan is the capital of Khakassia. </p>
 <p>Home to 546,072 people, it is the 71st largest division in Russia in terms of population. One of those half-a-million plus is <a href="https://www.olga-amelchenko.com/">Olga Amelchenko</a>, saxophonist and composer, who now lives in, and studies and plays jazz in Berlin. I had the pleasure of seeing Olga and her quartet play a lovely couple of sets at the <strong>b-flat</strong> in Berlin. One of the tunes she composed and played in the set was called <em>Khakassia</em>.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/jazz.html">jazz</a></li>
         <li><a href="/_tags/b-flat.html">b-flat</a></li>
@@ -66,14 +68,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Ostalgie">↜ Ostalgie</a></li>
         <li class="next"><a href="/Even-Gods-Are-Fallible">Even Gods Are Fallible ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -82,29 +87,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

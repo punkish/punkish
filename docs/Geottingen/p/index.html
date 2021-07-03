@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>punkish: Geottingen</title>
+    
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+</head>
+<body>
+
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# Geottingen
+## 
+
+University of Göttingen • October 2016
+
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/Geottingen"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+layout: true
+
+<div class="slidefooter">
+    <a href="/Geottingen"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Geoparsing
+.byline[finding location (and optionally, time) in text]
+
+## Applications in text and data mining in both science and digital humanities
+
+---
+
+## Geoparsing
+.byline[skunkworks project]
+
+<img src="../img/pauliner.jpg" style="width: 100%; max-width: 669px; border: 1px solid black;">
+
+---
+
+## Geoparsing
+.byline[example]
+
+Frankfurt is a world class city, and Hamburgers are justifiably proud of their history, but I am from Goettingen and know that Berlin is the place for true fun
+
+---
+
+## Geoparsing
+.byline[example]
+
+<span class="hilite">Frankfurt</span> is a world class city, and <span class="hilite">Hamburgers</span> are justifiably proud of their history, but I am from <span class="hilite">Goettingen</span> and know that <span class="hilite">Berlin</span> is the place for true fun.
+
+#### tokenize-stemmer 
+
+```javascript
+[ 'frankfurt', 'world', 'class', 'citi', 'hamburg', 'justifi', 
+'proud', 'histori', 'goettingen', 'know', 'berlin', 'place', 
+'true', 'fun' ] +4ms
+```
+
+--
+
+#### POS tagger 
+
+```javascript
+[ [ 'frankfurt', 'N' ], [ 'world', 'NN' ], [ 'class', 'NN' ], 
+[ 'citi', 'N' ], [ 'hamburg', 'N' ], [ 'justifi', 'N' ], 
+[ 'proud', 'JJ' ], [ 'histori', 'N' ], [ 'goettingen', 'N' ], 
+[ 'know', 'VB' ], [ 'berlin', 'N' ], [ 'place', 'NN' ], 
+[ 'true', 'JJ' ], [ 'fun', 'NN' ] ] +3ms
+```
+
+--
+
+#### Nouns 
+
+```javascript
+[ 'frankfurt', 'citi', 'hamburg', 'justifi', 'histori', 
+'goettingen', 'berlin' ] +2ms
+```
+
+---
+
+## Geoparsing
+.byline[example]
+
+<span class="hilite">Frankfurt</span> is a world class city, and <span class="hilite">Hamburgers</span> are justifiably proud of their history, but I am from <span class="hilite">Goettingen</span> and know that <span class="hilite">Berlin</span> is the place for true fun.
+
+#### match gazetteer
+
+```javascript
+[
+    {
+        name: 'Frankfurt', 
+        latitude: 49.68333, 
+        longitude: 10.53333 }, 
+    { 
+        name: 'Hamburg', 
+        latitude: 53.57532, 
+        longitude: 10.01534 },
+    { 
+        name: 'Göttingen', 
+        latitude: 51.66768, 
+        longitude: 8.23088 }, 
+    { 
+        name: 'Berlin', 
+        latitude: 54.03573, 
+        longitude: 10.44987 } 
+]
+```
+
+---
+
+## Geotagging
+.byline[adding time and space to analog photos]
+
+**Digital Manaslu:** SUB has received a unique collection of analog photos (prints and slides) from various expeditions to Nepal undertaken over a period of time—a legacy of Professor Matthias Kuhle.
+
+--
+
+<img src="../img/geotagging-workflow.png" style="width: 100%; max-width: 544px; border: 1px solid black;">
+
+--
+
+**crowdsourcing:** Scribe, Zooniverse, Google Earth Engine, Amazon Earth
+
+**deep learning:** OpenCV, neural networks
+
+---
+
+## 3D Modeling and Visualization
+.byline[giving shape to the world]
+
+- Space-time visualization
+- Millions of points (PointClouds)
+    - Meshlab
+    - PCL
+- Online in-browser visualization
+    - Babylonjs
+    - Threejs
+- API-based data query
+- Archived data dissemination
+
+---
+
+## 3D Modeling and Visualization
+.byline[giving shape to the world]
+
+<img src="../img/3d-pipeline.png" style="width: 100%; max-width: 709px; border: 1px solid black;">
+
+---
+
+## Open Science
+.byline[the three pillars of open science]
+
+.three-left-column[
+  #### Open Access
+
+  Peer-reviewed journals and conference proceedings as well as non-peer-reviewed output such as popular articles, books, slideshows and videos
+]
+
+.three-mid-column[
+  #### Open Source
+
+  Software used in the analysis and visualization of data
+]
+
+.three-right-column[
+  #### Open Data
+
+  Data are the fuel of science
+]
+
+---
+
+## Open Science
+.byline[“If you ain't got Git then you should .hilite[Goetgit]”]
+
+.three-left-column[]
+
+.three-mid-column[
+  #### Open Source
+]
+
+.three-right-column[]
+
+<img src="../img/goetgit.jpg" style="width: 100%; max-width: 720px; border: 1px solid black;">
+
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
+    <script>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
+</html>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,10 +46,10 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><!-- entries by tags -->
+    <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">India</span></h1>
-    <div class="created">Jul 02, 2021</div>
+    <div class="created">Jul 03, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -63,20 +64,20 @@
             <div class="notes"> <a href="/28-Years-Later">more</a></div>
         </details>
         <details class="entry">
-            <summary>Badaloo</summary>
-            <div class="notes"> <a href="/Badaloo">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Afternoon Coffee at the Coffee House</summary>
             <div class="notes"> <a href="/Afternoon-Coffee-New-Delhi">more</a></div>
         </details>
         <details class="entry">
-            <summary>Barbershop Quartet</summary>
-            <div class="notes"> <a href="/Barbershop-Quartet">more</a></div>
+            <summary>Badaloo</summary>
+            <div class="notes"> <a href="/Badaloo">more</a></div>
         </details>
         <details class="entry">
             <summary>Baillie Guard</summary>
             <div class="notes"> <a href="/Baillie-Guard">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Barbershop Quartet</summary>
+            <div class="notes"> <a href="/Barbershop-Quartet">more</a></div>
         </details>
         <details class="entry">
             <summary>The Cobbler Next Door</summary>
@@ -87,20 +88,20 @@
             <div class="notes"> <a href="/Desire-to-Learn">more</a></div>
         </details>
         <details class="entry">
-            <summary>Digital Access Index India</summary>
-            <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
-        </details>
-        <details class="entry">
             <summary>A Digital Library Everywhere</summary>
             <div class="notes"> <a href="/Digital-Library-Everywhere">more</a></div>
         </details>
         <details class="entry">
-            <summary>Holy man</summary>
-            <div class="notes"> <a href="/Holy-man">more</a></div>
+            <summary>Digital Access Index India</summary>
+            <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
         </details>
         <details class="entry">
             <summary>India cranks it to 11</summary>
             <div class="notes"> <a href="/India-cranks-it-to-11">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Holy man</summary>
+            <div class="notes"> <a href="/Holy-man">more</a></div>
         </details>
         <details class="entry">
             <summary>Jantar Mantar</summary>
@@ -119,16 +120,20 @@
             <div class="notes"> <a href="/Little-girl-lost">more</a></div>
         </details>
         <details class="entry">
-            <summary>My Friend Usha</summary>
-            <div class="notes"> <a href="/My-Friend-Usha">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Mujeres en mi Vida</summary>
             <div class="notes"> <a href="/Mujeres-en-mi-Vida">more</a></div>
         </details>
         <details class="entry">
+            <summary>My Friend Usha</summary>
+            <div class="notes"> <a href="/My-Friend-Usha">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Nagesh, the Cook</summary>
             <div class="notes"> <a href="/Nagesh-the-Cook">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Royal Poinciana</summary>
+            <div class="notes"> <a href="/Royal-Poinciana">more</a></div>
         </details>
         <details class="entry">
             <summary>Savitri</summary>
@@ -143,20 +148,16 @@
             <div class="notes"> <a href="/Siesta-in-the-Doorway">more</a></div>
         </details>
         <details class="entry">
-            <summary>Royal Poinciana</summary>
-            <div class="notes"> <a href="/Royal-Poinciana">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Three Faces of a Cube</summary>
             <div class="notes"> <a href="/Three-Faces-of-a-Cube">more</a></div>
         </details>
         <details class="entry">
-            <summary>Traffic Police</summary>
-            <div class="notes"> <a href="/Traffic-Police">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Visiting Researcher, Indian Institute of Management, Bangalore</summary>
             <div class="notes"> <a href="/Visiting-Researcher,-Indian-Institute-of-Management,-Bangalore">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Traffic Police</summary>
+            <div class="notes"> <a href="/Traffic-Police">more</a></div>
         </details>
         <details class="entry">
             <summary>While We Were Looking At Our Bright Future, They Grew Up On the Side of the Road</summary>
@@ -172,9 +173,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -183,29 +185,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

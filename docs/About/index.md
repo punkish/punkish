@@ -19,8 +19,8 @@ stars      :
 
 <figure class="inline">
     <picture>
-        <source srcset="/entry-files/A/AB/ABO/About/img/right-profile-960.jpg" media="(min-width:800px)">
-        <source srcset="/entry-files/A/AB/ABO/About/img/right-profile-768.jpg" media="(min-width:600px)">
+        <source srcset="img/right-profile-960.jpg" media="(min-width:800px)">
+        <source srcset="img/right-profile-768.jpg" media="(min-width:600px)">
         <img src="right-profile-400.jpg">
     </picture>
     <figcaption></figcaption>

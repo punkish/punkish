@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">The ABCDs of Smart Cities</h1>
     <div class="description"></div>
     <div class="created">Thursday, May 3, 2018</div>
@@ -91,6 +92,7 @@
 <p>A lot about a city is about moving atoms – picking up trash, local transportation, etc. Every city has to, should do these things, for that would make it a humane city. A humane city would be one that takes care of not just the rich but also the poor and the infirm. If it can do so in a more smart fashion, well, so much the better. And typically, this smartness depends on moving bits – sensors and GPS – that give a realtime picture of what is going on and allow the system to self-correct.</p>
 <p>By recognizing specific sub-systems of a city as entitites, we can assign them to one of the ABCDs of smartness. This would provide us with a much more granular way of measuring the performance of the sub-systems and allocating the resources intelligently for the best results. The alternative is too coarse — calling a city smart without any particular distinction on what it is going to do to make the lives of its citizens better and do it in an environmentally sustainable and humane way is just dumb.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/Smart-Cities.html">Smart Cities</a></li>
         <li><a href="/_tags/city.html">city</a></li>
@@ -98,14 +100,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Where">↜ Where in the world am I?</a></li>
         <li class="next"><a href="/Lazyload">Lazyload ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -114,29 +119,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

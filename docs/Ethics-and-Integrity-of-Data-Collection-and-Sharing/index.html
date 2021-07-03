@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section class="row">
+    <main id="content"><section class="row">
     <h1 class="title">Ethics and Integrity of Data Collection and Sharing</h1>
     <div class="date">Thursday, May 14, 2015</div>
     <div class="description"></div>
@@ -53,7 +54,7 @@
     <div class="content">A lot of people talk of licensing data. That is usually not applicable (as data are not licensable, at least not on the basis of copyright), and it is also possibly misleading. There are just as much, if not more, important issues of integrity and ethics, in both gathering and sharing data that come into play, particularly if humans are involved (whether the humans are the ones gathering the data or humans are the subjects of the data gathering exercise).</div>
 
     <div class="slideContainer">
-        <div class="intro-slide" onclick="window.location='Ethics-and-Integrity-of-Data-Collection-and-Sharing?presentation=true';">
+        <div class="intro-slide" onclick="window.location='/Ethics-and-Integrity-of-Data-Collection-and-Sharing/p/';">
             <h2>Ethics and Integrity of Data Collection and Sharing</h2>
             <h3>Puneet Kishor</h3>
             <div class="where">a presentation given at Rencontres Mondiales du Logiciel Libre 2015, Beauvais, France</div>
@@ -79,9 +80,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -90,29 +92,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

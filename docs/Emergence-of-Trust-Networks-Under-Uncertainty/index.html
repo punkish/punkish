@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Emergence of Trust Networks Under Uncertainty</h1>
     <div class="description"></div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -53,19 +54,23 @@
     <div class="content"><p>Cheshire, Coye, Karen S. Cook. 2004. The Emergence of Trust Networks under Uncertainty: Implications for Internet Interactions</p>
 <p><strong>Abstract:</strong> Computer-mediated interaction on the Internet provides new opportunities to examine the links between reputation, risk, and the development of trust between individuals who engage in various types of exchange. In this article, we comment on the application of experimental sociological research to different types of computer-mediated social interactions, with particular attention to the emergence of what we call 'trust networks' (networks of those one views as trustworthy). Drawing on the existing categorization systems that have been used in experimental social psychology, we relate the various forms of computer-mediated exchange to selected findings from experimental research. We develop a simple typology based on the intersection of random versus fixed-partner social dilemma games, and repeated versus one-shot interaction situations. By crossing these two types of social dilemma games and two types of interaction situations, we show that many forms of Internet exchange can be categorized effectively into four mutually exclusive categories. The resulting classification system helps to integrate the existing research on trust in experimental social psychology with the emerging field of computer-mediated exchange.</p></div>
 
+
     <ul class="tags">
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Does-Trust-Beget-Trustworthiness">↜ Does Trust Beget Trustworthiness</a></li>
         <li class="next"><a href="/Karen-Cook">Karen Cook ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -74,29 +79,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">The Net Works Effect – Open Data Day 2013</h1>
     <div class="description"></div>
     <div class="created">Thursday, January 31, 2013</div>
@@ -54,6 +55,7 @@
 <p>There are many ways we can measure the effect of the work we do — count the number of objects licensed with CC licenses, count the number of users who have used CC licenses, count the number of works created by reuse of works licensed with CC licenses, perhaps many other ways. But the one that is most immediately visible, and most satisfying, is seeing events of spontaneous openness appear as is for <a href="http://opendataday.org/">the international celebration of Open Data Day</a> taking place tomorrow, February 23. Well, perhaps not so spontaneous, because organizing events takes planning, work, contacts, brainstorming, publicizing, and more.</p>
 <p>Our own Billy Meinke is organizing <a href="https://creativecommons.org/weblog/entry/36600">an event at the CC HQ in Mt. View</a>, and has also written more on the event here and around the world in a <a href="http://blogs.plos.org/scied/2013/02/21/guest-post-open-data-day-sprint-courses-and-hackathons/">guest blog post on PLOS</a>. Check it out, organize an event, or <a href="http://wiki.opendataday.org/2013/City_Events">attend one near you</a>. Heck, attend one far away by joining in over the web where possible. After all, that is how the net works.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/science.html">science</a></li>
         <li><a href="/_tags/cc-blog.html">cc blog</a></li>
@@ -61,14 +63,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Three-Locks">↜ The Three Locks</a></li>
         <li class="next"><a href="/PLOS-and-figshare-make-open-science-publishing-more-open">PLOS and figshare make open science publishing more open ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -77,29 +82,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

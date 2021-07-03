@@ -19,4 +19,4 @@ This workshop, held in Atibaia, Brazil, and co-organized by CODATA and Centro de
 
 <cite>CODATA. 2007. Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development. Dora A. L. Canhos, Vanderlei Perez Canhos, William Anderson, Paul Uhlir, Bonnie Carroll, Raed Sharif and Puneet Kishor, eds., Atibaia, Brazil.</cite>
 
-<a href="/entry-files/S/ST/STR/Strategies-for-Permanent-and-Open-Access-to-Scientific-Information-in-Latin-America/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">download PDF</img/a>
+<a href="Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">download PDF</img/a>

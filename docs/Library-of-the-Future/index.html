@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">The Library of the Future</h1>
     <div class="description"></div>
     <div class="created">Thursday, July 2, 2015</div>
@@ -64,6 +65,7 @@
 <p>The researcher will build into her grant the funds for computing services at an institutionally negotiated rate. Once ready to start her project, she would fire up her computer and log on to the library services where she would be presented a dashboard. She would be able to click on a few buttons, adjust sliders, choose software and specify other project parameters (most important being the use of human subjects or classified data) that would ensure the right cloud instance configured for her. All the software toolchain, source control management, data archiving, advertising and discovery services, and a basic project website will be automatically bootstrapped. Data would be appropriately de-identified and  encrypted, if required, and persistent IDs automatically generated. Free and open source versions of all software will be offered by default, and non-free/proprietary software will be installed only after proper justification. The library staff would have worked out with the computing services provider all necessary and proper protocols specific to the research project, so the researcher would not have to spend any time thinking of anything other than her research. She would be able to add other users, her staff, students and other team members to her computing resource with just a few clicks. The basic but adequate project website would serve as a gateway to all public output of the project under appropriate open licenses by default.</p>
 <p>Is the above vision likely to become real? Most likely not. I believe there are too entrenched interests both from the library and the computing services sides, as well as old-fashioned thinking in the the research institutions themselves where there is both a desire to “own” resources on-campus and a distrust of commercial providers. But, it is fun to dream on.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/project-ideas.html">project ideas</a></li>
         <li><a href="/_tags/libraries.html">libraries</a></li>
@@ -72,14 +74,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/City-as-an-App">↜ The City as an App</a></li>
         <li class="next"><a href="/Unemotional-Committer">The Unemotional Committer ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -88,29 +93,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

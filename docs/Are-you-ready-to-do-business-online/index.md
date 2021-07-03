@@ -14,6 +14,6 @@ stars      :
 
 Puneet Kishor. 2000. "Are you ready to do business online?" URISA News, Issue 177, May/June 2000.
 
-<object data="/entry-files/A/AR/ARE/Are-you-ready-to-do-business-online/are-you-ready-to-business-online.pdf" type="application/img/pdf" width="100%" style="height:80vh;">
-     <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/entry-files/A/AR/ARE/Are-you-ready-to-do-business-online/are-you-ready-to-business-online.pdf">Download PDF</a>.</img/p>
+<object data="are-you-ready-to-business-online.pdf" type="application/img/pdf" width="100%" style="height:80vh;">
+     <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="are-you-ready-to-business-online.pdf">Download PDF</a>.</img/p>
   </object>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Changing Paths, Staying The Course</h1>
     <div class="description"></div>
     <div class="created">Wednesday, August 1, 2012</div>
@@ -56,6 +57,7 @@
 <p>I also love what I do at UW-Madison. After all, scientists create the data that I want to help set free. I am tremendously  fortunate to have been working with a very smart and thoughtful geoscientist, my friend <a href="http://strata.geology.wisc.edu/Home/Home.html">Shanan Peters</a>. I will continue to work with him on <a href="http://earth-base.org">innovative data sharing projects</a> as well, albeit at a diminished level. And, since there are 168 hours in a week, I will also continue working on science data policy issues with the National Academies and CODATA. All of this makes sense to me as these are three different views of the same concern of free and open access to scientific data. But, CC will now be my primary focus.</p>
 <p>In the 27 years since my first job, I have been very fortunate to work at only what I was really passionate about. As such, I have lived in only four cities and held only four jobs. San Francisco will be my fifth city, and CC will be my fifth job, and there is little else that could make me happier. Free and open access to scientific data is what I really care about, and I finally get to devote all my waking time to it. I am going to my CC family.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/career.html">career</a></li>
         <li><a href="/_tags/job.html">job</a></li>
@@ -65,14 +67,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Remembering-Lee-Dirks">↜ Remembering Lee Dirks</a></li>
         <li class="next"><a href="/We-Do-Need-More-Programmers">We Do Need More Programmers ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -81,29 +86,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

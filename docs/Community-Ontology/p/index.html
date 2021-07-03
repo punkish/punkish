@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>punkish: Community Ontology</title>
+    
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+</head>
+<body>
+
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# Community Ontology
+## 
+
+University of Wisconsin-Madison • February 2007
+
+Puneet Kishor and Lewis Friedland, School of Journalism and Mass Communications, UW-Madison
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/Community-Ontology"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+layout: true
+
+<div class="slidefooter">
+    <a href="/Community-Ontology"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## What is "Ontology"?
+
+* The terms used to describe and represent an area of knowledge
+* Includes… definitions of basic concepts in the domain and the relationships among them
+* Encodes knowledge *in* a domain and also knowledge that *spans* domains
+slidehandout:
+
+---
+
+## What is "Community"?
+
+* An aggregation of organizations, people, locations, and relationships between them
+* Is usually physical, but can also be logical
+
+---
+
+## "Community Ontology"
+
+* The terms used to describe and represent knowledge of…
+* entities and relationships among them in…
+* an aggregation of organizations, people, locations, and relationships between them
+
+---
+
+## What is Resource Description Framework?
+
+* a framework for representing information in the Web
+* a general-purpose language for representing information in the Web
+* allows anyone to make statements about any resource
+
+---
+
+## RDF is a collection of triples
+
+In Perl
+<pre><code>
+%ball = (
+  shape => "round",
+  color => "red",
+  feels => "squishy",
+  taste => "yucky",
+);
+</code></pre>
+
+In RDF
+
+* the "ball" has a property called "shape" whose value is "round"
+* the "ball" has a property called "color" whose value is "red"
+* the "ball" has a property called "feels" whose value is "squishy"
+* the "ball" has a property called "taste" whose value is "yucky"
+
+---
+
+## RDF is a collection of triples
+
+In RDF
+
+* *subject* (the "ball") &ndash; an RDF URI reference or a blank node
+* *predicate* (the "shape," "color," or "feels" properties) &ndash; represented by RDF URI references
+* *object* ("round," "red," or "squishy," the values of the corresponding predicates) &ndash; represented by RDF URI references, literals or blank nodes
+
+---
+
+## RDF is a collection of triples
+
+[img=rdf_triple_graph]
+
+---
+
+## Describing an Entity
+
+In RDF
+
+A bundle of triples can describe an entity uniquely
+Just like in Perl a hash can
+<pre><code>
+%ball = (
+  shape => "round",
+  color => "red",
+  feels => "squishy",
+  taste => "yucky",
+);
+</code></pre>
+
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
+    <script>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
+</html>

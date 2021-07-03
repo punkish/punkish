@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Digital Manaslu</h1>
     <div class="description"></div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -100,6 +101,7 @@ Other Tools</p>
 <h4 id="gpsprune">GpsPrune</h4>
 <p><a href="http://activityworkshop.net/software/gpsprune/">GpsPrune</a> is an application for viewing, editing and converting coordinate data from GPS systems letting you play with your GPS data after you get home from your trip. It can load data from arbitrary text-based formats (for example, any tab-separated or comma-separated file) or Xml, or directly from a GPS receiver. It can display the data (as map view using openstreetmap images and as altitude profile), edit this data (for example delete points and ranges, sort waypoints, compress tracks), and save the data (in various text-based formats). It can also export data as a Gpx file, or as Kml/Kmz, or send it to a GPS receiver. Example uses of GpsPrune include cleaning up tracks by deleting wayward points - either recorded by error or by unintended detours. It can also be used to compare and combine tracks, convert to and from various formats, compress tracks, export data to Google Earth, or to analyse data to calculate distances, altitudes and so on.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/geotagging.html">geotagging</a></li>
         <li><a href="/_tags/photos.html">photos</a></li>
@@ -108,14 +110,17 @@ Other Tools</p>
     <ul class="bottomNav">
         <li class="prev"><a href="/Potimarron">↜ Potimarron</a></li>
         <li class="next"><a href="/Paris-Plage">Paris Plage ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -124,29 +129,24 @@ Other Tools</p>
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

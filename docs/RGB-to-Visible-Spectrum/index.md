@@ -13,7 +13,6 @@ tags       :
     - code
     - spectrophotometer
 isCanvas   : true
-template   : canvas
 js         : 
     - script
 ---

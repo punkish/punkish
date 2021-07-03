@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -37,7 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -47,7 +48,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Copyright Treaties With The US</h1>
     <div class="description"></div>
     <div class="created">Friday, February 11, 2011</div>
@@ -101,20 +102,24 @@
 <p>An author who wants copyright protection for his or her work in a particular country should first determine the extent of the protection available to works of foreign authors in that country. If possible, this should be done before the work is published anywhere, because protection may depend on the facts existing at the time of first publication. If the country in which protection is sought is a party to one of the international copyright conventions, the work generally can be protected by complying with the conditions of that convention. Even if the work cannot be brought under an international convention, protection under the specific provisions of the country's national laws may still be possible. There are, however, some countries that offer little or no copyright protection to any foreign works. For current information on the requirements of and protection provided by other countries, it may be advisable to consult an expert familiar with foreign copyright laws. The U.S. Copyright Office is not permitted to recommend agents or attorneys or to give legal advice on foreign laws.</p>
 <p>I came across Circular 38a during my research, and its static nature bothered me. So, I made this map application. Reading Circular 38a made me realize how dastardly complicated IP is, certainly way beyond my ken. This mess of international agreements and complicated language are all the more reason for Creative Commons licenses. For most normal human beings, CC is really the only pragmatic, feasible, practical, humane way to express, expect, enforce and be heedful of one’s rights in works globally.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/copyright.html">copyright</a></li>
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Future-of-Scientific-Knowledge-Discovery-in-Open-Networked-Environments,-National-Academies,-Washington-DC">↜ Future of Scientific Knowledge Discovery in Open Networked Environments, National Academies, Washington DC</a></li>
         <li class="next"><a href="/Member,-Association-of-American-Geographers">Member, Association of American Geographers ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
@@ -124,36 +129,25 @@
     
     
     
-        <script>
-            window.onload = function() {
-                PK['copyright-treaties'].init()
-            }()
-        </script>
-    
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

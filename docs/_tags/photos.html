@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,10 +46,10 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><!-- entries by tags -->
+    <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">photos</span></h1>
-    <div class="created">Jul 02, 2021</div>
+    <div class="created">Jul 03, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -67,6 +68,14 @@
             <div class="notes"> <a href="/A-Room-Full-of-Dingos">more</a></div>
         </details>
         <details class="entry">
+            <summary>Afternoon Coffee at the Coffee House</summary>
+            <div class="notes"> <a href="/Afternoon-Coffee-New-Delhi">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>The Angel and the Acolytes</summary>
+            <div class="notes"> <a href="/Angel-and-the-Acolytes">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Anticipation</summary>
             <div class="notes"> <a href="/Anticipation">more</a></div>
         </details>
@@ -75,24 +84,16 @@
             <div class="notes"> <a href="/Art-alley">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Angel and the Acolytes</summary>
-            <div class="notes"> <a href="/Angel-and-the-Acolytes">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Badaloo</summary>
             <div class="notes"> <a href="/Badaloo">more</a></div>
         </details>
         <details class="entry">
-            <summary>Afternoon Coffee at the Coffee House</summary>
-            <div class="notes"> <a href="/Afternoon-Coffee-New-Delhi">more</a></div>
+            <summary>Baillie Guard</summary>
+            <div class="notes"> <a href="/Baillie-Guard">more</a></div>
         </details>
         <details class="entry">
             <summary>Barbershop Quartet</summary>
             <div class="notes"> <a href="/Barbershop-Quartet">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Baillie Guard</summary>
-            <div class="notes"> <a href="/Baillie-Guard">more</a></div>
         </details>
         <details class="entry">
             <summary>Bookseller at the Sunday market</summary>
@@ -119,16 +120,20 @@
             <div class="notes"> <a href="/Chiaroscuro-of-a-Calico-Cat">more</a></div>
         </details>
         <details class="entry">
-            <summary>Christiana</summary>
-            <div class="notes"> <a href="/Christiana">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Chutei Iki</summary>
             <div class="notes"> <a href="/Chutei-Iki">more</a></div>
         </details>
         <details class="entry">
             <summary>Cigarette break</summary>
             <div class="notes"> <a href="/Cigarette-break">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Christiana</summary>
+            <div class="notes"> <a href="/Christiana">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>A City</summary>
+            <div class="notes"> <a href="/City">more</a></div>
         </details>
         <details class="entry">
             <summary>City is in the Eye of the Beholder</summary>
@@ -167,24 +172,12 @@
             <div class="notes"> <a href="/Drumming-at-Hvide-Lam">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Expected Wait Time Is…</summary>
-            <div class="notes"> <a href="/Expected-Wait-Time-Is">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Everyone is a Mentor</summary>
             <div class="notes"> <a href="/Everyone-is-a-Mentor">more</a></div>
         </details>
         <details class="entry">
-            <summary>Fanfare Ciocarlia</summary>
-            <div class="notes"> <a href="/Fanfare-Ciocarlia">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>A City</summary>
-            <div class="notes"> <a href="/City">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Flashes, of Orange</summary>
-            <div class="notes"> <a href="/Flashes-of-Orange">more</a></div>
+            <summary>The Expected Wait Time Is…</summary>
+            <div class="notes"> <a href="/Expected-Wait-Time-Is">more</a></div>
         </details>
         <details class="entry">
             <summary>Four Seasons in Alexanderplatz</summary>
@@ -211,10 +204,6 @@
             <div class="notes"> <a href="/Helsinki-Coutonou-Ensemble">more</a></div>
         </details>
         <details class="entry">
-            <summary>Holy man</summary>
-            <div class="notes"> <a href="/Holy-man">more</a></div>
-        </details>
-        <details class="entry">
             <summary>In the U-Bahn</summary>
             <div class="notes"> <a href="/In-the-U-Bahn">more</a></div>
         </details>
@@ -229,6 +218,10 @@
         <details class="entry">
             <summary>The International</summary>
             <div class="notes"> <a href="/International">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Holy man</summary>
+            <div class="notes"> <a href="/Holy-man">more</a></div>
         </details>
         <details class="entry">
             <summary>Jantar Mantar</summary>
@@ -247,10 +240,6 @@
             <div class="notes"> <a href="/Lasses-in-the-crosswalk">more</a></div>
         </details>
         <details class="entry">
-            <summary>Leipzig</summary>
-            <div class="notes"> <a href="/Leipzig">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Les Dieux Numeriques</summary>
             <div class="notes"> <a href="/Les-Dieux-Numeriques">more</a></div>
         </details>
@@ -259,24 +248,24 @@
             <div class="notes"> <a href="/Les-Ombres-de-La-Charite">more</a></div>
         </details>
         <details class="entry">
-            <summary>Light and Sound</summary>
-            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>The Light at the Break of Dawn</summary>
-            <div class="notes"> <a href="/Light-at-the-Break-of-Dawn">more</a></div>
+            <summary>Leipzig</summary>
+            <div class="notes"> <a href="/Leipzig">more</a></div>
         </details>
         <details class="entry">
             <summary>Life at the Side of the Road</summary>
             <div class="notes"> <a href="/Life-at-the-Side-of-the-Road">more</a></div>
         </details>
         <details class="entry">
+            <summary>Light and Sound</summary>
+            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
+        </details>
+        <details class="entry">
             <summary>A Little Girl Lost</summary>
             <div class="notes"> <a href="/Little-girl-lost">more</a></div>
         </details>
         <details class="entry">
-            <summary>London Cranes</summary>
-            <div class="notes"> <a href="/London-Cranes">more</a></div>
+            <summary>The Light at the Break of Dawn</summary>
+            <div class="notes"> <a href="/Light-at-the-Break-of-Dawn">more</a></div>
         </details>
         <details class="entry">
             <summary>Longmire</summary>
@@ -291,24 +280,36 @@
             <div class="notes"> <a href="/Love-art">more</a></div>
         </details>
         <details class="entry">
+            <summary>London Cranes</summary>
+            <div class="notes"> <a href="/London-Cranes">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Flashes, of Orange</summary>
+            <div class="notes"> <a href="/Flashes-of-Orange">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Luz, mediatinta y sombra</summary>
             <div class="notes"> <a href="/Luz-mediatinta-y-sombra">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
+            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
         </details>
         <details class="entry">
             <summary>Maisons de Poupées</summary>
             <div class="notes"> <a href="/Maisons-de-poupees">more</a></div>
         </details>
         <details class="entry">
-            <summary>Memories of Trini</summary>
-            <div class="notes"> <a href="/Memories-of-Trini">more</a></div>
-        </details>
-        <details class="entry">
             <summary>A Moment of Rest</summary>
             <div class="notes"> <a href="/Moment-of-Rest">more</a></div>
         </details>
         <details class="entry">
-            <summary>Montreal Jazz Festival 2016</summary>
-            <div class="notes"> <a href="/Montreal-Jazz-Festival-2016">more</a></div>
+            <summary>Memories of Trini</summary>
+            <div class="notes"> <a href="/Memories-of-Trini">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Mujeres en mi Vida</summary>
+            <div class="notes"> <a href="/Mujeres-en-mi-Vida">more</a></div>
         </details>
         <details class="entry">
             <summary>My Brother and I</summary>
@@ -319,12 +320,12 @@
             <div class="notes"> <a href="/My-Friend-Usha">more</a></div>
         </details>
         <details class="entry">
-            <summary>Mujeres en mi Vida</summary>
-            <div class="notes"> <a href="/Mujeres-en-mi-Vida">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Nagesh, the Cook</summary>
             <div class="notes"> <a href="/Nagesh-the-Cook">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Montreal Jazz Festival 2016</summary>
+            <div class="notes"> <a href="/Montreal-Jazz-Festival-2016">more</a></div>
         </details>
         <details class="entry">
             <summary>Oktopus</summary>
@@ -333,6 +334,10 @@
         <details class="entry">
             <summary>Oniryczny</summary>
             <div class="notes"> <a href="/Oniryczny">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Fanfare Ciocarlia</summary>
+            <div class="notes"> <a href="/Fanfare-Ciocarlia">more</a></div>
         </details>
         <details class="entry">
             <summary>Paris Plage</summary>
@@ -347,8 +352,8 @@
             <div class="notes"> <a href="/Protected-By-Armed-Response">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
-            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
+            <summary>Royal Poinciana</summary>
+            <div class="notes"> <a href="/Royal-Poinciana">more</a></div>
         </details>
         <details class="entry">
             <summary>Savitri</summary>
@@ -395,14 +400,6 @@
             <div class="notes"> <a href="/Summertime-in-Spring-in-Cork">more</a></div>
         </details>
         <details class="entry">
-            <summary>Take Me To Jerusalem</summary>
-            <div class="notes"> <a href="/Take-Me-To-Jerusalem">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Royal Poinciana</summary>
-            <div class="notes"> <a href="/Royal-Poinciana">more</a></div>
-        </details>
-        <details class="entry">
             <summary>There is something better than perfection</summary>
             <div class="notes"> <a href="/There-is-something-better-than-perfection">more</a></div>
         </details>
@@ -413,10 +410,6 @@
         <details class="entry">
             <summary>Toy Town</summary>
             <div class="notes"> <a href="/Toy-Town">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Traffic Police</summary>
-            <div class="notes"> <a href="/Traffic-Police">more</a></div>
         </details>
         <details class="entry">
             <summary>Trinidad, CO</summary>
@@ -435,6 +428,10 @@
             <div class="notes"> <a href="/Waiting-for-the-bus">more</a></div>
         </details>
         <details class="entry">
+            <summary>Traffic Police</summary>
+            <div class="notes"> <a href="/Traffic-Police">more</a></div>
+        </details>
+        <details class="entry">
             <summary>While We Were Looking At Our Bright Future, They Grew Up On the Side of the Road</summary>
             <div class="notes"> <a href="/While-We-Were-Looking-At-Our-Bright-Future">more</a></div>
         </details>
@@ -447,20 +444,24 @@
             <div class="notes"> <a href="/Windswept-beach-in-Ynyslas">more</a></div>
         </details>
         <details class="entry">
+            <summary>Wrinkled</summary>
+            <div class="notes"> <a href="/Wrinkled">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Yadav</summary>
             <div class="notes"> <a href="/Yadav">more</a></div>
         </details>
         <details class="entry">
-            <summary>Wrinkled</summary>
-            <div class="notes"> <a href="/Wrinkled">more</a></div>
+            <summary>The Young Republic</summary>
+            <div class="notes"> <a href="/Young-Republic">more</a></div>
         </details>
         <details class="entry">
             <summary>You don’t know Jack</summary>
             <div class="notes"> <a href="/You-dont-know-Jack">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Young Republic</summary>
-            <div class="notes"> <a href="/Young-Republic">more</a></div>
+            <summary>Take Me To Jerusalem</summary>
+            <div class="notes"> <a href="/Take-Me-To-Jerusalem">more</a></div>
         </details>
     </div>
 </section></main>
@@ -468,9 +469,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -479,29 +481,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

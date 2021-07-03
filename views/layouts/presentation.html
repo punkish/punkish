@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>punkish: {{title}}</title>
-    <meta name="description" content="punkish.org">
-    <meta name="Copyright" content="CC0 Public Domain Dedication">
-    <meta name="Author" content="Puneet Kishor">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    {{> meta}}
 
-    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+    <link rel="stylesheet" href="{{baseUrl}}/_lib/css/remark-styles.css">
     {{#if css}}
 		{{#each css}}
-    	<link rel="stylesheet" href="css/{{.}}.css">
+    	<link rel="stylesheet" href="../css/{{.}}.css">
 		{{/each}}
     {{/if}}
-
-    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
 
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
 {{{content}}}
+
+	{{#if isBlockchain}}
+	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+	<script src="{{baseUrl}}/_lib/remark/remark-no-keys.min.js"></script>
+	<script src="{{baseUrl}}/_lib/crypto-js/crypto-js.js"></script>
+	{{else}}
+	<script src="{{baseUrl}}/_lib/remark/remark-latest.min.js"></script>
+	{{/if}}
 
 	{{#if js}}
 		{{#each js}}
-    	<link rel="stylesheet" href="js/{{.}}.css">
+    	<script src="../js/{{.}}.js"></script>
 		{{/each}}
     {{/if}}
 	
-	<script src="/_lib/remark/remark-latest.min.js"></script>
     <script>
-	var slideshow;
-    window.onload = function() {
+	let slideshow
+	window.addEventListener('load', function(e) {
 		slideshow = remark.create({
 			
 			// ratio: '16:9',
@@ -75,7 +74,26 @@
 		// 	// 	term(found[0]);
 		// 	// }
 		// });
-	}
+	})
     </script>
+
+	{{#if isBlockchain}}
+	<script>
+	window.addEventListener('load', function(e) {			
+		BC.initS1();
+		BC.initS2();
+		BC.validate();
+		BC.revalidate();
+		BC.oneDetailOneClick();
+		slideshow.on('showSlide', function (slide) {
+
+			// Slide is the slide being navigated to
+			if (slide.properties.name === 'realtime') {
+				BC.latestBtcTxns(document.getElementById('latestBtc'));
+			}
+		})
+	})
+	</script>
+	{{/if}}
 </body>
 </html>

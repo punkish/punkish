@@ -28,80 +28,80 @@ notes      : The good news is that the private sector is taking over from the pu
 
 <p>.</p>
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/my-gut.jpg" width="100%" alt="my gut"></img/div>
+<div class="center"><img src="img/my-gut.jpg" width="100%" alt="my gut"></img/div>
 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c1.png" width="90%"></img/div>
+<div class="center"><img src="img/c1.png" width="90%"></img/div>
 
 **Citizen’s Data**
 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c2.png" width="90%"></img/div>
+<div class="center"><img src="img/c2.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources**
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c3.png" width="90%"></img/div>
+<div class="center"><img src="img/c3.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,**
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c4.png" width="90%"></img/div>
+<div class="center"><img src="img/c4.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent),
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c5.png" width="90%"></img/div>
+<div class="center"><img src="img/c5.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c6.png" width="90%"></img/div>
+<div class="center"><img src="img/c6.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c7.png" width="90%"></img/div>
+<div class="center"><img src="img/c7.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c8.png" width="90%"></img/div>
+<div class="center"><img src="img/c8.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c9.png" width="90%"></img/div>
+<div class="center"><img src="img/c9.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) 
 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c10.png" width="90%"></img/div>
+<div class="center"><img src="img/c10.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) enabling **Reuse** 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c11.png" width="90%"></img/div>
+<div class="center"><img src="img/c11.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) enabling **Reuse** and **Commercial and Other Services** 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c12.png" width="90%"></img/div>
+<div class="center"><img src="img/c12.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) enabling **Reuse** and **Commercial and Other Services** that along with **Foundations and the Government**,
 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c13.png" width="90%"></img/div>
+<div class="center"><img src="img/c13.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) enabling **Reuse** and **Commercial and Other Services** that along with **Foundations and the Government**, sustain this **Citizen-Sourced Data Commons**
 
 ---
 
-<div class="center"><img src="/entry-files/C/CI/CIT/Citizen-Sourced-Data-Commons/img/c14.png" width="90%"></img/div>
+<div class="center"><img src="img/c14.png" width="90%"></img/div>
 
 **Citizen’s Data** via **Different Sources** that are **Qualitatively Different,** with [**Citizens Consent**](Citizens-Consent), are stored in [**Consolidated Repos**](Perfect-Health-Repo-Desiderata) making data available at **Varying Levels of Openness** and **De-Identification** made possible by a [**Health Privacy API**](Health-Privacy-API). The repos are managed by a [**Shared Governance**](Governance-Model-for-Health-Repo) enabling **Reuse** and **Commercial and Other Services** that along with **Foundations and the Government**, sustain this **Citizen-Sourced Data Commons** and its [**Damage Mitigation Fund and Strategy**](Three-Locks).
 
@@ -389,7 +389,7 @@ December 12, 2013
 
 ### Quit Lit: The Vitae List
 
-<a href="https://docs.google.com/spreadsheets/d/1OODoiZKeAtiGiI3IAONCspryCHWo5Yw9xkQzkRntuMU/edit#gid=0" target="_blank"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/quit-lit.jpg" width="100%" alt="Quit Lit"></img/a>
+<a href="https://docs.google.com/spreadsheets/d/1OODoiZKeAtiGiI3IAONCspryCHWo5Yw9xkQzkRntuMU/edit#gid=0" target="_blank"><img src="img/quit-lit.jpg" width="100%" alt="Quit Lit"></img/a>
 
 The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.google.com/spreadsheets/d/1OODoiZKeAtiGiI3IAONCspryCHWo5Yw9xkQzkRntuMU/edit#gid=0)
 
@@ -403,7 +403,7 @@ The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.goo
 
 ### From “private by default, public by choice”
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/On-The-Internet-Nobody-Knows-You-Are-A-dog.gif" width="100%" style="max-width: 450px" alt="Nobody knows you are a dog"></img/div>
+<div class="center"><img src="img/On-The-Internet-Nobody-Knows-You-Are-A-dog.gif" width="100%" style="max-width: 450px" alt="Nobody knows you are a dog"></img/div>
 
 ---
 
@@ -411,7 +411,7 @@ The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.goo
 
 ### To “public by default, private by choice”
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/IMG_9639.jpg" width="100%" style="max-width: 450px" alt="Remember when no one knew who you were?"></img/div>
+<div class="center"><img src="img/IMG_9639.jpg" width="100%" style="max-width: 450px" alt="Remember when no one knew who you were?"></img/div>
 
 ---
 
@@ -419,7 +419,7 @@ The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.goo
 
 ### To “public by default, limited choice”
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/147-2007-06-24-cyberdog2.gif" width="100%" style="max-width: 450px" alt="Facebook knows you"></img/div>
+<div class="center"><img src="img/147-2007-06-24-cyberdog2.gif" width="100%" style="max-width: 450px" alt="Facebook knows you"></img/div>
 
 ---
 
@@ -427,7 +427,7 @@ The Chronicle Vitae’s Quit Lit has 83 entries already. [more](https://docs.goo
 
 ### To “public by default, no choice”
 
-<div class="center"><img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/1862.gif" width="100%" style="max-width: 450px" alt="Surveillance">
+<div class="center"><img src="img/1862.gif" width="100%" style="max-width: 450px" alt="Surveillance">
 
 ---
 
@@ -534,7 +534,7 @@ April 4, 2017
 
 ## The Ugly
 
-<img src="/entry-files/P/PU/PUB/Public-Good-v-Private-Goods/img/motherboard-another-day-another-hack.jpg" width="100%" alt="Another Day Another Hack">
+<img src="img/motherboard-another-day-another-hack.jpg" width="100%" alt="Another Day Another Hack">
 [more](https://motherboard.vice.com/en_us/topic/Another-Day-Another-Hack)
 
 ---

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,10 +46,10 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><!-- entries by tags -->
+    <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">code</span></h1>
-    <div class="created">Jul 02, 2021</div>
+    <div class="created">Jul 03, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -87,20 +88,20 @@
             <div class="notes"> <a href="/LED-Strip">more</a></div>
         </details>
         <details class="entry">
-            <summary>Lazyload</summary>
-            <div class="notes"> <a href="/Lazyload">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Maintaining data integrity</summary>
             <div class="notes"> <a href="/Maintaining-data-integrity">more</a></div>
         </details>
         <details class="entry">
-            <summary>PDL Functions</summary>
-            <div class="notes"> <a href="/PDL-Functions">more</a></div>
+            <summary>Lazyload</summary>
+            <div class="notes"> <a href="/Lazyload">more</a></div>
         </details>
         <details class="entry">
             <summary>PDL Users Worldwide</summary>
             <div class="notes"> <a href="/PDL-Users-Worldwide">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>PDL Functions</summary>
+            <div class="notes"> <a href="/PDL-Functions">more</a></div>
         </details>
         <details class="entry">
             <summary>Perl Ref is an Array</summary>
@@ -115,16 +116,16 @@
             <div class="notes"> <a href="/RGB-to-Visible-Spectrum">more</a></div>
         </details>
         <details class="entry">
-            <summary>SQLite</summary>
-            <div class="notes"> <a href="/SQLite">more</a></div>
+            <summary>The Reformation APIs</summary>
+            <div class="notes"> <a href="/Reformation-APIs">more</a></div>
         </details>
         <details class="entry">
             <summary>Saving and Recreating State via the URL</summary>
             <div class="notes"> <a href="/Saving-and-Recreating-State-via-the-URL">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Reformation APIs</summary>
-            <div class="notes"> <a href="/Reformation-APIs">more</a></div>
+            <summary>SQLite</summary>
+            <div class="notes"> <a href="/SQLite">more</a></div>
         </details>
         <details class="entry">
             <summary>Set Operations in JavaScript</summary>
@@ -151,12 +152,12 @@
             <div class="notes"> <a href="/Why-File-When-You-Can-Full-Text-Search">more</a></div>
         </details>
         <details class="entry">
-            <summary>expressjs app with socket.io</summary>
-            <div class="notes"> <a href="/expressjs-app-with-socket-io">more</a></div>
-        </details>
-        <details class="entry">
             <summary>sue</summary>
             <div class="notes"> <a href="/sue">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>expressjs app with socket.io</summary>
+            <div class="notes"> <a href="/expressjs-app-with-socket-io">more</a></div>
         </details>
     </div>
 </section></main>
@@ -164,9 +165,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -175,29 +177,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

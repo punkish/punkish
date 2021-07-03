@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Creative Destruction</h1>
     <div class="description">What Would Schumpeter Think Of Open Source?</div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -75,6 +76,7 @@
 <p>Economic landscape seems to undergo a trajectory of chaos, routine, and crisis which is not unlike the “paradigm shift” in science described by Kuhn (1996)<sup id="punkish-fnref:10"><a href="#punkish-fn:10" rel="footnote">10</a></sup> that occurs in three stages — pre-science (chaos), normal science (routine work), and revolutionary science (crisis). Creative Destruction could be seen as a fundamental part of the structure of economic revolutions.</p>
 <ol class="punkish-footnotes" style="border-top: 1px dotted; font-size: 0.8em"><li class="punkish-footnote" id="fn:1">Smith, D. G., & King, B. G. (2007). Contracts as Organizations. Univ. of Wisconsin Legal Studies Research Paper.<a href="#fnref:1" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:2">Coase, R. H. (1937). The Nature of the Firm. Economica, 4, 386–405.<a href="#fnref:2" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:3">Benkler, Y. (2002). Coase's Penguin, or, Linux and The Nature of the Firm. The Yale Law Journal, 112, 369–446.<a href="#fnref:3" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:4">Katz, J., & Gartner, W. B. (1988). Properties of emerging organizations. Academy of Management Review, 13, 429–441.<a href="#fnref:4" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:5">McKelvey, B. (1980). Organizational Systematics. Berkeley: University of California Press.<a href="#fnref:5" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:6">Schumpeter, J. (1950). Capitalism, Socialism and Democracy (New York, Harper Torchbooks). New York, Harper Torchbooks.<a href="#fnref:6" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:7">Weber, S. (2005). The Success of Open Source. Harvard University Press.<a href="#fnref:7" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:8">Petersen, M. A., & Rajan, R. G. (2000). Does Distance Still Matter? The Information Revolution in Small Business Lending.<a href="#fnref:8" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:9">Benkler, Y. (2007). Wealth of Networks. Yale University Press.<a href="#fnref:9" title="return to article"> ↩</a></li><li class="punkish-footnote" id="fn:1">Kuhn, T. (1996). The Structure of Scientific Revolutions. University Of Chicago Press; 3 edition.<a href="#fnref:1" title="return to article"> ↩</a></li></ol></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/change.html">change</a></li>
         <li><a href="/_tags/contracts.html">contracts</a></li>
@@ -84,14 +86,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/What-Can-SDI-Learn-From-Open-Source">↜ What Can SDI Learn From Open Source</a></li>
         <li class="next"><a href="/Pido-Silencio">Pido Silencio ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -100,29 +105,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

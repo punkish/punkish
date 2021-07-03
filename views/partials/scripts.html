@@ -1,7 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-<script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+<script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
 <script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
 <script src="{{baseUrl}}/_lib/js/punkish.js"></script>
+<script src="{{baseUrl}}/_lib/js/hilitor.js"></script>
 
 {{#if hasCode}}
 <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
@@ -46,38 +47,32 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 {{#if js}}
     {{#each js}}
     <script src="js/{{.}}.js"></script>
-    {{/each}}
-
     <script>
-        window.onload = function() {
-            PK['{{js}}'].init()
-        }()
+        if (PK['{{.}}'].init) {
+            window.addEventListener('load', PK['{{.}}'].init)
+        }
     </script>
+    {{/each}}
 {{/if}}
 
 <script>
-    fetch("{{baseUrl}}/_search/searchIdx.json")
-        .then(response => response.text())
-        .then(text => {
-            window.miniSearch = MiniSearch.loadJSON(text, {
-                fields: ['title', 'text'],
-                storeFields: ['title', 'name'],
-                searchOptions: {
-                    boost: { title: 2 },
-                    fuzzy: 0.2
-                }
-            })
-        })
-        .catch(err => console.log(err))
-
-    window.onload = function() {
-        PK.autocomplete();
-        PK.initializeDictionary();
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
 
         const searchInPage = document.getElementById('searchInPage')
         if (searchInPage) {
             const inp = document.getElementsByName('tag')
             inp[0].addEventListener('keyup', PK.searchInPage)
         }
-    }()
+
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
+
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
 </script>

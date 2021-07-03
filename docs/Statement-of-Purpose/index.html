@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Statement of Purpose</h1>
     <div class="description"></div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -60,21 +61,25 @@
 <p>There are two reasons I want a Ph.D. First, this is a subject I simply can’t stand not studying. After 14 years of work where research was important but secondary, I want to focus exclusively on research unfettered by professional imperatives. That kind of intellectual freedom is only possible in academia. In short, this is an itch that can only a Ph.D. can scratch. Second, I want to build a network of colleagues. A lot of research is being done in open source, mapping, indigenous communities, and knowledge building. Bringing these disparate subjects together requires standing on the shoulders of others. I hope to further a unique understanding in this area, built upon the works of my major adviser, my committee members, and my colleagues. While ethnographic scholarship is extensive, studies on collaborative, community-level mapping are relatively sparse. It is encouraging, however, to see an increasing interest in participatory GIS. The hope is best expressed by Ogeli Ole Makui, a Kenyan Masai, that if we “train the communities to own the knowledge, they can regenerate and modify information, and know why some information may be hidden, and in this way they can be empowered.” (MappingForChange)  My hope is to promote the adoption of GIS/ICT by indigenous communities much in the same way as it is empowering modern societies.</p>
 <p>From engineering to land resources, from rural development to GIS/ICT consulting, from policy planning to computer skills, I have prepared academically, technically, and experientially for my Ph.D. I surveyed the adoption of GIS by local governments, and studied land tenure issues and their impact on land records modernization in India. (GeographicInformationSystemsInDevelopingCountries)  I conducted applied research in economic, social, and environmental issues in Indonesia, Central Mexico, and Nepal. In all these cases I learned that while the contexts were different, the impediments were almost always non-technical. My heart lies in rural development where I started 20 years ago, and my mind is excited by the world of collaborative mapping and related computer technologies. By studying the application of the latter to the former, I hope to empower those less fortunate efficiently, effectively, and equitably manage information vital to them.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/PhD.html">PhD</a></li>
         <li><a href="/_tags/Small-is-Beautiful.html">Small is Beautiful</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Square-Pegs-In-Round-Holes">↜ Square Pegs In Round Holes</a></li>
+        <li class="prev"><a href="/Spatial-Data-and-the-End-of-Democracy">↜ Spatial Data and the End of Democracy</a></li>
         <li class="next"><a href="/Topo-Philia">Topo Philia ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -83,29 +88,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

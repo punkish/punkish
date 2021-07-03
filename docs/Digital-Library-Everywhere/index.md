@@ -31,7 +31,7 @@ She gets back images, 3D scans of the holotype, and spectrograms and even mp3s o
     <img src="ant-sound-worker.png">
 </figure>
 <figure>
-    <audio controls src="/entry-files/D/DI/DIG/Digital-Library-Everywhere/img/ant-sound-worker.mp3">
+    <audio controls src="img/ant-sound-worker.mp3">
         Your browser does not support the <code>audio</code> element.
     </audio>
     <figcaption>ant worker</figcaption>
@@ -41,7 +41,7 @@ She gets back images, 3D scans of the holotype, and spectrograms and even mp3s o
     <img src="ant-sound-soldier.png">
 </figure>
 <figure>
-    <audio controls src="/entry-files/D/DI/DIG/Digital-Library-Everywhere/img/ant-sound-soldier.mp3">
+    <audio controls src="img/ant-sound-soldier.mp3">
         Your browser does not support the <code>audio</code> element.
     </audio>
     <figcaption>ant soldier</figcaption>
@@ -51,7 +51,7 @@ She gets back images, 3D scans of the holotype, and spectrograms and even mp3s o
     <img src="ant-sound-queen.png">
 </figure>
 <figure>
-    <audio controls src="/entry-files/D/DI/DIG/Digital-Library-Everywhere/img/ant-sound-queen.mp3">
+    <audio controls src="img/ant-sound-queen.mp3">
         Your browser does not support the <code>audio</code> element.
     </audio>
     <figcaption>ant queen</figcaption>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -36,7 +35,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -46,7 +47,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Curriculum Vita</h1>
     <div class="description"></div>
     <div class="created">Saturday, May 1, 2021</div>
@@ -281,7 +282,7 @@
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Oshani Seneviratne, and Noah Giansiracusa. 2009. <a href="http://arxiv.org/abs/1304.5755" target="_blank">Policy Aware Geospatial Data.</a> In, ACM. Seattle: ACM</li>
 
-        <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/entry-files/P/PU/PUB/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</li>
+        <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2009. Public Policy—bringing technology and law together for open access. Presented at AAAS ST Global Conference, Washington DC, USA.</li>
 
@@ -289,7 +290,7 @@
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2008. Public Policy and the Geospatial Information Commons. 2008 Conference on Science and Technology for Society, AAAS, Washington DC.</li>
 
-        <li class="cv-pub">CODATA. 2007. <a href="/entry-files/S/ST/STR/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</li>
+        <li class="cv-pub">CODATA. 2007. <a href="/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2007. Open GeoSpatial Data: Difficult But Necessary. CODATA and NAS Workshop on “Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development,” Atibaia, Brazil.</li>
 
@@ -301,7 +302,7 @@
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1996. Strategies for Disseminating Large Spatial Databases. Environment Department Dissemination Notes, The World Bank, Washington, DC, 20433.</li>
 
-        <li class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</li>
+        <li class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1995. When Tools Become the Barrier: Modernizing Spatial Information Against All Odds. National Center for Geographic Information and Analysis (NCGIA), Maine.</li>
 
@@ -491,20 +492,24 @@
     <div class="cv-pub">2008. 1st International Workshop on Location and the Web, WWW 2008, Beijing, China</div>
 </section></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/cv.html">cv</a></li>
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/cv-latest">↜ Curriculum Vita</a></li>
         <li class="next"><a href="/I-Cant-Breathe">i can&#x27;t breathe ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -513,29 +518,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

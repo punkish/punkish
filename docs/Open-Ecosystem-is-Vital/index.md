@@ -108,31 +108,31 @@ INFORMAL **COMMERCE** a group of businesses or business activities that affect e
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.001.jpeg" width="600" height="480">
+<img src="img/ecosystem.001.jpeg" width="600" height="480">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.002.jpeg" width="600" height="480">
+<img src="img/ecosystem.002.jpeg" width="600" height="480">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.003.jpeg" width="600" height="480">
+<img src="img/ecosystem.003.jpeg" width="600" height="480">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.004.jpeg" width="600" height="480">
+<img src="img/ecosystem.004.jpeg" width="600" height="480">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="/entry-files/O/OP/OPE/Open-Ecosystem-is-Vital/img/ecosystem.005.jpeg" width="600" height="480">
+<img src="img/ecosystem.005.jpeg" width="600" height="480">
 
 ---
 

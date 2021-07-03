@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Open Hardware Licensing</h1>
     <div class="description">with contribution from Ari Douglas, Sonaar Luthra and Jason Schultz</div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -64,6 +65,7 @@
 <p>Finally, and probably the most novel area of this application is the matter of data integrity in the context of open distributed sensing hardware. There is a pressing need for hardware developers in this space to exercise some control over downstream hardware, even when they desire to allow the public to freely modify and reproduce the hardware. However, retaining any control is largely anathema to the FOSS community.</p>
 <p>Open hardware is a natural fit for distributed scientific or safety sensors. The fact that end-users have hardware designs ensures integrity through transparency. Additionally, social entrepreneurs wishing to deploy sensor networks want to leverage the mechanism of the free-market to reduce the cost of manufactured products. Manufactures are enticed to do this by the free nature of the OHL. End-users can buy the manufactured products from manufacturers, but the social entrepreneur, hardware developer needs to ensure that the manufacturer does not release faulty products.    </p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/open-hardware.html">open hardware</a></li>
         <li><a href="/_tags/hardware.html">hardware</a></li>
@@ -79,14 +81,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/We-Real-Cool">↜ We Real Cool</a></li>
         <li class="next"><a href="/Wary-of-Wearables">Wary of Wearables ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -95,29 +100,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

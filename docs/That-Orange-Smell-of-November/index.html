@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">That Orange Smell of November</h1>
     <div class="description">Inspired by a long walk in Berlin, and <a href="http://artlaboratory-berlin.org/html/eng-exh-28.htm">Synaesthesia/1 by Barbara Ryan and Annette Stahmer</a></div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -57,7 +58,7 @@ color: #ccc;
 
 background-color: #000;
  */
-/* background: #fff url('/entry-files/T/TH/THA/That-Orange-Smell-of-November/orange-on-white.jpg') no-repeat center fixed; */img/
+/* background: #fff url('orange-on-white.jpg') no-repeat center fixed; */img/
 }
 /* #main {border: 1px solid black;} */
 /* a, a:visited {color: #5cb7e2;}
@@ -68,7 +69,7 @@ a:hover {background-color: yellow; color: #5cb7e2;}
 </style>
 <!-- ![orange](IMG_6793.jpg) -->
 <div style="position: fixed; z-index: -10;">
-<img class='foo' src='/entry-files/T/TH/THA/That-Orange-Smell-of-November/img/orange-on-white.jpg'>
+<img class='foo' src='img/orange-on-white.jpg'>
 </div>
 <p>I have traveled far afield,<br />
 so distant from my kind<br />
@@ -163,6 +164,7 @@ that walks so well foretell<br />
 Shifting winds will end our wait<br />
 for November’s orange smell.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/poetry.html">poetry</a></li>
         <li><a href="/_tags/Paris.html">Paris</a></li>
@@ -173,14 +175,17 @@ for November’s orange smell.</p></div>
     <ul class="bottomNav">
         <li class="prev"><a href="/Learning-by-Making">↜ Learning by Making, Teaching by Doing</a></li>
         <li class="next"><a href="/Language-of-Technology">The Language of Technology vs. the Technology of Language ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -189,29 +194,24 @@ for November’s orange smell.</p></div>
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

@@ -21,7 +21,7 @@ const dir = {
     tl: `./views/layouts`,
     tp: `./views/partials`,
     docs: './docs',
-    hanozDir: './docs/Hanoz/hindi'
+    hanozDir: './docs/Hanoz'
 }
 const minisearchOpts = {
     fields: ['title', 'text'],
@@ -40,7 +40,7 @@ const data = {
         byDate: [],
         byTag: {},
         byYear: [],
-        presentations: {},
+        //presentations: {},
         hanoz: []
     },
 
@@ -283,19 +283,26 @@ const writeSearchIdx = function() {
 const writeByName = function() {
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e]
-        entry.content = templates.views[entry.template](entry)
+        try {
+            entry.content = templates.views[entry.template](entry)
+        }
+        catch(e) {
+            console.log(entry)
+        }
+
         entry.minisearchOpts = minisearchOpts
         const html = templates.layouts[entry.layout](entry)
         fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
-    }
-}
 
-const writePresentations = function() {
-    for (let e in data.entries.presentations) {
-        const entry = data.entries.presentations[e]
-        entry.content = templates.views[entry.template](entry)
-        const html = templates.layouts[entry.layout](entry)
-        fs.writeFileSync(`${dir.docs}/${entry.name}/p/index.html`, html)
+        if (entry.isPresentation) {
+            entry.content = templates.views.presentation(entry)
+            const html = templates.layouts.presentation(entry)
+            try {
+                fs.mkdirSync(`${dir.docs}/${entry.name}/p`)
+            }
+            catch(e) {}
+            fs.writeFileSync(`${dir.docs}/${entry.name}/p/index.html`, html)
+        }
     }
 }
 
@@ -357,6 +364,7 @@ const writeDefault = function() {
     const entryName = data.entries.byDate[0].name === 'cv-latest' ? 
         data.entries.byDate[1].name : 
         data.entries.byDate[0].name
+
     const entry = data.entries.byName[entryName.toLowerCase()]
     
     entry.content = ''
@@ -368,7 +376,7 @@ const writeDefault = function() {
 
 const write = function() {
     writeByName()
-    writePresentations()
+    //writePresentations()
     writeByDate()
     writeByTags()
     writeDefault()
@@ -470,15 +478,18 @@ const go = function(dir) {
                     else {
                         entry.authors = me
                     }
+
+                    entry.isPresentation = true
                 }
 
                 // album entry
                 else if (entry.origTags && entry.origTags.indexOf('album') > -1) {
                     entry.layout = fm.layout || 'main'
                     entry.template = fm.template || 'entry'
+                    entry.isAlbum = true
 
                     makeAlbum(entry, entry.url)
-                    //entry.type = 'album'
+                    entry.isAlbum = true
                 }
 
                 // regular entry

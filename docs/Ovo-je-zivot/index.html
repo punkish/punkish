@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Ovo je život</h1>
     <div class="description"></div>
     <div class="created">Monday, November 12, 2018</div>
@@ -98,7 +99,7 @@
 <h3 id="saturdaynov104pm">Saturday, Nov 10, 4 PM</h3>
 <p>I have been in Sarajevo for three days and have been to the Falafel Restoran three times. The owner and his daughters cook the food when ordered so it takes longer, but is worth the wait. Today his daughter was in-charge and she suggested I try the fried karfiol, which I did, with a bowl of foul moudamas. After that I had a cup full of fritulice from the woman with a stand on U. Ferhadija.</p>
 <h3 id="saturdaynov10430pm">Saturday, Nov 10, 4:30 PM</h3>
-<audio src="/entry-files/O/OV/OVO/Ovo-je-zivot/img/abeceda.m4a" controls="controls">
+<audio src="img/abeceda.m4a" controls="controls">
 Your browser does not support the audio element.
 </audio>
 <p>I have been talking with Dženita with the help of Google Translate. I type in the sentence in English and then I read it in Bosnian. I am trying to pronounce each word correctly, enunciating each consonant. Dženita recited the full abeceda and I recorded it. I love the rhythmic and melodic sounds of Bosnian. I love the way the ‘j’ following the ‘l’ makes it swoop up, and the way the ’ts’ sound of ‘c’ makes for a plosive drama. I am pleased with myself that I can recognize so many words because of their Persian roots, and I really want to learn this language.</p>
@@ -161,20 +162,24 @@ Your browser does not support the audio element.
 <p>I am under no illusion that it will be easy. The jump from being able to pronounce a few words correctly or identify a few musicians to actually making my way into the culture and the lives of the people, that leap is pretty big. Maybe it is not love (yet). Perhaps I am smitten, overcome with infatuation. but there is nothing wrong with infatuation as it can lead to a lifelong love. Just like fate and faith, infatuation and love too are cousins. The former shows me what is possible, but then I have to make it happen through a lifelong of nurturing, driven probably by both fate and faith. I don’t know if I will succeed but I have to try. As Krishna said in Bhagvadgita, I have to stop worrying about the results and just do what I believe is required of me. All I can do is to make my friendship and love available. The rest is not my concern. <em>Ovo je život. Čekam te na starom mjestu tamo gde prijateljstvo počinje.</em></p>
 <p>•</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/Sarajevo.html">Sarajevo</a></li>
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Demystifying-Blockchains">↜ Demystifying Blockchains</a></li>
         <li class="next"><a href="/Toward-Precision-Citation">Toward Precision Citation ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -183,29 +188,24 @@ Your browser does not support the audio element.
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Reading Writings</h1>
     <div class="description">for Nate</div>
     <div class="created">Friday, May 6, 2016</div>
@@ -58,6 +59,7 @@
 <p><a href="The-P-Words">The “P” Words</a>—policy, program and practice—are the three main points of intervention to bring about a systemic change required to solve the particularly thorny problem of reconciling the need to share data with the imperative to protect privacy. For example, contract law provides <a href="Teeth-Behind-the-Contract">The Teeth Behind the Contract</a>, but we may need different kinds of <a href="Social-Contracts-in-the-Digital-Age">Social Contracts in the Digital Age</a> where the manifestation of this tension is apparent very clearly in the medical field involving human subjects.</p>
 <p>Because of my take on <a href="Sensors-and-Sensibility">Sensors and Sensibility</a> I remain <a href="Wary-of-Wearables">Wary of Wearables</a> but, as I show in the <a href="Taxonomy-of-Sensors">Taxonomy of Sensors</a>, there is a sweet spot that can be exploited. Decreasing cost of sensors and new models of <a href="Open-Hardware-Licensing">Open Hardware Licensing</a> will continue to propel informal <a href="Learning-by-Making">Learning by Making</a>. But we will need to be more <a href="Inclusive-by-Design">Inclusive by Design</a>, more humane, and <a href="Being-Humane">Being Humane</a> would require more <a href="Citizen-Engagement-in-Science">Citizen Engagement in Science</a> with citizens  involved not just as observers or data gatherers but also has active participants who affect the conduct of science and the policies that come out of it and impact the quality of our lives. We will have to move from <a href="From-a-Culture-of-Apps-to-a-Culture-of-Health">From a Culture of Apps to a Culture of Health</a>.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/licensing.html">licensing</a></li>
         <li><a href="/_tags/science.html">science</a></li>
@@ -67,14 +69,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/All-That-Glitters-is-Not-Sold">↜ All That Glitters is Not Sold</a></li>
         <li class="next"><a href="/Governance-Model-for-Health-Repo">A Governance Model for a Health Repo ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -83,29 +88,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

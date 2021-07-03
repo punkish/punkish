@@ -241,7 +241,7 @@ css        :
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>, Oshani Seneviratne, and Noah Giansiracusa. 2009. <a href="http://arxiv.org/abs/1304.5755" target="_blank">Policy Aware Geospatial Data.</a> In, ACM. Seattle: ACM</li>
 
-        <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/entry-files/P/PU/PUB/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</li>
+        <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span> & Oshani Seneviratne. 2009. <a href="/Public-Policy---Mashing-up-Technology-and-Law/Kishor-Seneviratne-Mashing-Up.pdf" target="_blank">Public Policy: Mashing up Technology and Law</a>. COUNTER2010 Mashing-up Cultures: The Rise of User-generated Content. In the Proceedings from the COUNTER2010 workshop on Mashing-up Culture, Uppsala University, Uppsala, Sweden.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2009. Public Policy—bringing technology and law together for open access. Presented at AAAS ST Global Conference, Washington DC, USA.</li>
 
@@ -249,7 +249,7 @@ css        :
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2008. Public Policy and the Geospatial Information Commons. 2008 Conference on Science and Technology for Society, AAAS, Washington DC.</li>
 
-        <li class="cv-pub">CODATA. 2007. <a href="/entry-files/S/ST/STR/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</li>
+        <li class="cv-pub">CODATA. 2007. <a href="/Strategies-for-Permanent-and-Open-Access-to-Scientific-Data,-Atibaia,-Brazil/Strategies_for_Permanent_and_Open_Access_to_Scientific_Data,_Atibaia,_Brazil.pdf">Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development</a>. D. A. L. Canhos, V. Canhos, W. Anderson, P. Uhlir, B. Carroll, R. Sharif and <span class="cv-subdept">P. Kishor</span>, eds., Atibaia, Brazil.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 2007. Open GeoSpatial Data: Difficult But Necessary. CODATA and NAS Workshop on “Strategies for Open and Permanent Access to Scientific Information in Latin America: Focus on Health and Environmental Information for Sustainable Development,” Atibaia, Brazil.</li>
         
@@ -261,7 +261,7 @@ css        :
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1996. Strategies for Disseminating Large Spatial Databases. Environment Department Dissemination Notes, The World Bank, Washington, DC, 20433.</li>
 
-        <li class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/entry-files/E/EC/ECO/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</li>
+        <li class="cv-pub">William Magrath, Charles Peters, Nalin Kishor, and <span class="cv-subdept">Puneet Kishor</span>. 1995. <a href="/Economic-Supply-of-Biodiversity/Magrath-et-al-Economic-Supply-of-Biodiversity.pdf" target="_blank">The Economic Supply of Biodiversity in West Kalimantan</a>. Environmental and Economic Issues in Forestry: Selected Case Studies in Asia, Ed. Susan Shen and Arnoldo Contreras-Hermosilla, The World Bank, Washington, DC, 20433.</li>
 
         <li class="cv-pub"><span class="cv-subdept">Puneet Kishor</span>. 1995. When Tools Become the Barrier: Modernizing Spatial Information Against All Odds. National Center for Geographic Information and Analysis (NCGIA), Maine.</li>
 

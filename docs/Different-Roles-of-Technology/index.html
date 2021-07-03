@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Different Roles of Technology</h1>
     <div class="description"></div>
     <div class="created">Tuesday, January 1, 1980</div>
@@ -88,6 +89,7 @@
 <p>Technology can be an enabler in this. Because I have lived away from my family for a very long time now I've always depended on technology in some form of the other connect to people that I care for. I guess this is nothing new for people have always depended upon some kind of technology to be in touch with their loved ones, friends, colleagues. But it is amazing how in my own lifetime I've gone from writing and sending letters that would take a week to go across the world to now instant connection via Skype text email etc.</p>
 <p>When I meet someone who inspires me to write, to learn a language, to think, that is a person worth holding on to with all my energy. I am very happy to return to long form of writing. Yes, it takes a lot of work, and requires extended periods of concentration to form coherent thoughts that read well. But it is worth it. We exist to express ourselves, and anyone (or anything) who makes us want to express more is worth everything. And, once I have written it, I can send it instantly with a click of a button. So, here's to you who inspires me to write, for the gift of words is the best gift one can give or get.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/Ciudad-de-Mexico.html">Ciudad de Mexico</a></li>
         <li><a href="/_tags/technology.html">technology</a></li>
@@ -96,14 +98,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Language-of-Technology">↜ The Language of Technology vs. the Technology of Language</a></li>
         <li class="next"><a href="/Creative-Commons-to-Google">Creative Commons, Mt. View to Google, Mt. View, and back ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -112,29 +117,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Canidae, can I do?</h1>
     <div class="description"></div>
     <div class="created">Tuesday, April 11, 2017</div>
@@ -58,6 +59,7 @@
 <p>Just a few days of feeding them has earned me the privilege of getting jumped upon by them, getting my toes licked, and being presented with a belly to scratch. Their mom, only slightly bigger than them and just as skinny, brings them food in her gullet, regurgitates it and they wolf that down as well. Then they play with her at a breakneck speed before she tires of them and trots away. </p>
 <p>A few days of observing their simple and instinctual response to being treated nicely has made me realize a maxim about life, relationships, love and caring. Dogs respond almost immediately to gentle treatment, and we humans have this tremendously strong need to give, to take care of others. This makes for close to a flawless give-take-respond relationship, unconditional from both sides. Within each of us are both a dog and its owner. The two can indeed co-exist as long as both the ‘giver’ and the ‘givee’ realize that we are one and the same. A relationship, any relationship, is inherently a compromise  — it curtails some of our freedoms but it showers us with infinite rewards. If we just listen to the both of them within us, we can learn to enjoy a most fulfilling life: with parents, siblings, friends, cohabitants, and with lovers. Yes, we can.</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/dogs.html">dogs</a></li>
         <li><a href="/_tags/life.html">life</a></li>
@@ -67,14 +69,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/One-Thing-To-Read">↜ The One Thing To Read</a></li>
         <li class="next"><a href="/Strange-Angels">Strange Angels ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -83,29 +88,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

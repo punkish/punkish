@@ -30,9 +30,9 @@ Creative Commons works to make knowledge sharing legal, easy and scalable. We wo
 * A *small menu of appropriate licenses*
 * *Some rights reserved* vs. all rights reserved  
 
-    ![CC BY](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by.png)                ![CC BY-SA](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by-sa.png)  
-    ![CC BY-ND](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by-nd.png)          ![CC BY-NC](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by-nc.eu.png)  
-    ![CC BY-NC-SA](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by-nc-sa.eu.png) ![CC BY-NC-ND](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/by-nc-nd.png)  
+    ![CC BY](../img/by.png)                ![CC BY-SA](../img/by-sa.png)  
+    ![CC BY-ND](../img/by-nd.png)          ![CC BY-NC](../img/by-nc.eu.png)  
+    ![CC BY-NC-SA](../img/by-nc-sa.eu.png) ![CC BY-NC-ND](../img/by-nc-nd.png)  
 
 
 ???
@@ -47,7 +47,7 @@ On the one hand we have the traditional copyright system's "one size fits all," 
 *   We provide a *web-based license chooser*
 *   We have created the *CC Network* and the *CC Mixter*
 
-    ![License chooser](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/license_chooser.png)
+    ![License chooser](../img/license_chooser.png)
 
 ???
 
@@ -585,7 +585,7 @@ When data are treated as a networked, shared resource, users are encouraged to t
 
 ## Reasoning Behind CC0
 
-![Protocol for implementing open data](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/protocol_for_open_data.png)
+![Protocol for implementing open data](../img/protocol_for_open_data.png)
 
 [Open Access Data Protocol](http://sciencecommons.org/projects/publishing/open-access-data-protocol/)
 
@@ -597,7 +597,7 @@ The protocol is motivated by interoperability of scientific data. The volume of 
 
 ## Why a new protocol?
 
-![Database protocol](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/db_protocol.png)
+![Database protocol](../img/db_protocol.png)
 
 [Database protocol](http://sciencecommons.org/resources/faq/database-protocol/)
 
@@ -695,7 +695,7 @@ $(document).ready(function() {
 
 Find landlocked countries with population more than 15 million, sorted by population. !392,000 results!.
 
-![Google search query](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/google_query.png)
+![Google search query](../img/google_query.png)
 
 
 ???
@@ -773,7 +773,7 @@ The cost of semantically structuring data will drop so that it will become possi
 
 ## Visionary data: Proteome Commons
 
-![Proteome Commons CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/proteomecommons.png)
+![Proteome Commons CC0 waiver](../img/proteomecommons.png)
 
 [Proteome Commons](https://proteomecommons.org/tranche/examples/sciencecommons/choose.jsp)
 
@@ -785,7 +785,7 @@ ProteomeCommons is a public proteomics database for annotations and other inform
 
 ## Visionary data: Tropical Disease Initiative
 
-![Tropical Disease Initiative CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/tropicaldisease.png)
+![Tropical Disease Initiative CC0 waiver](../img/tropicaldisease.png)
 
 [Tropical Disease Initiative](http://tropicaldisease.org/kernel/advanced-search/)
 
@@ -797,7 +797,7 @@ The Tropical Disease Initiative aims to provide a "kernel" for open source drug 
 
 ## Visionary data: SIDER
 
-![SIDER CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/sider.png)
+![SIDER CC0 waiver](../img/sider.png)
 
 [SIDER Side Effect Resource](http://sideeffects.embl.de/download/)
 
@@ -809,7 +809,7 @@ The SIDER Side Effect Resource represents an effort to aggregate dispersed publi
 
 ## Visionary data: Personal Genome Project
 
-![Personal Genome Project CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/personalgenomes.png)
+![Personal Genome Project CC0 waiver](../img/personalgenomes.png)
 
 [Personal Genome Project](http://www.personalgenomes.org/)
 
@@ -821,7 +821,7 @@ The mission of the Personal Genome Project is to encourage the development of pe
 
 ## Visionary data: WisconsinView
 
-![WisconsinView CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/wisconsinview.png)
+![WisconsinView CC0 waiver](../img/wisconsinview.png)
 
 [WisconsinView](http://www.wisconsinview.org/)
 
@@ -833,7 +833,7 @@ Since 2004, WisconsinView has made aerial photography and satellite imagery of W
 
 ## Visionary data: MichiganView
 
-![MichiganView CC0 waiver](/entry-files/E/EI/EIN/eInfrastructure-for-Scientific-Data/img/michiganview.png)
+![MichiganView CC0 waiver](../img/michiganview.png)
 
 [MichiganView](http://www.michiganview.org/)
 

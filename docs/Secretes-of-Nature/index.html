@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Secretes of Nature</h1>
     <div class="description"></div>
     <div class="created">Saturday, September 6, 2008</div>
@@ -53,20 +54,24 @@
     <div class="content"><p>"First of all, I consider that the <strong>secrets</strong> of Nature … are not spoken of, least every man should understand the…. <em>As Socrates and Aristotle willeth</em>, for he affirmeth in his book of <strong>Secrets</strong>, that hee is a breaker of the celestiall seale that maketh the <strong>secrets</strong> of Art and Nature common; adding moreover that many evils betide him that revealteth <strong>secretes</strong>…. <em>In things proper</em>, therefore, and in <strong>secretes</strong>, the common people do erre, and in this respect they are opposite to the learned…. <em>Now the cause of this concealement</em> among all wise men is the contempt and neglect of the <strong>secretes</strong> of wisedome by the vulgar sort, that knoweth not how to use those things which are most excellent. <em>And if they do conceive any worthy thing</em>, it is altogither by chance and fortune, &amp; they do exceedingly abuse that their knowledge, to the great damage and hurt of many men, yea even of whole societies, so that he is worse than mad that publisheth any <strong>secret</strong>, unlesse he conceale it from the multitude, and in such wise deliver it, that even the studious and learned shall hardly understand it. <em>This hath beene the course</em> which wise men have observed from the beginning, who by many meanes have hidden the <strong>secrets</strong> of wisedome from the common people."</p>
 <p>—Roger Bacon (c. 1212-94)</p></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/Roger-Bacon.html">Roger Bacon</a></li>
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/A-Room-Full-of-Dingos">↜ A Room Full of Dingos</a></li>
         <li class="next"><a href="/Atlas-Gerardi-Mercatoris">Atlas Gerardi Mercatoris ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -75,29 +80,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

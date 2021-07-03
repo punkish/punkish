@@ -22,7 +22,7 @@ header nav {clear: both;}
 header nav, footer {border-top: 1px solid grey;}
 header nav a {margin-right: 0.5rem;}
 header div a { float: left;}
-header div form input {width: calc(100% - 50px); border: none;}
+header div form input {width: calc(100% - 50px); height: 40px; border: none;}
 
 /* images *********************************/
 figure { width: 100%; margin: 0; margin-bottom: 1em; }

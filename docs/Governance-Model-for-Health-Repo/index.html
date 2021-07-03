@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">A Governance Model for a Health Repo</h1>
     <div class="description"></div>
     <div class="created">Sunday, May 1, 2016</div>
@@ -60,6 +61,7 @@
 <li class="punkish-footnote" id="fn:2">Barbara Evans has a vision of citizen data commons where the patients and research subjects control access to their personal health data through democratic data self-governance processes. See <cite>Evans, Barbara J., <b>Barbarians at the Gate: Consumer-Driven Health Data Commons and the Transformation of Citizen Science</b> (May 12, 2016). <i>American Journal of Law and Medicine</i>, Vol. 42, No. 4, 2016. Available at SSRN: <a href="http://ssrn.com/abstract=2750347" target="_blank">http://ssrn.com/abstract=2750347</a></cite><a href="#fnref:2" title="return to article"> ↩</a></li>
 <li class="punkish-footnote" id="fn:3">Along with shared governance, we would need a damage-mitigation strategy that would be a <a href="/Three-Locks">combination of sociocultural norms, security, and law</a>, supported by a fund for financial compensation in case of harm caused by data-breach. This idea of a damage-mitigation fund has been mentioned by a few folks, but the most clear vision I have encountered comes from Barbara Prainsack who has also been instrumental in the development of most of my ideas about resolving the tension between the need to protect the privacy of individuals and the desire to access, reuse and share their health data.<a href="#fnref:3" title="return to article"> ↩</a></li></ol></div>
 
+
     <ul class="tags">
         <li><a href="/_tags/data-repository.html">data repository</a></li>
         <li><a href="/_tags/health.html">health</a></li>
@@ -69,14 +71,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Reading-Writings">↜ Reading Writings</a></li>
         <li class="next"><a href="/Perfect-Health-Repo-Desiderata">Perfect Health Repo Desiderata ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -85,29 +90,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

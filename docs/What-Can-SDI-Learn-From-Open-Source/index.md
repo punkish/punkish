@@ -44,11 +44,11 @@ notes      : I gave a presentation at the GSDI9 conference in [Santiago de Chile
 
 ## Growth of Clearinghouses
 
-![Growth of clearinghouses](/entry-files/W/WH/WHA/What-Can-SDI-Learn-From-Open-Source/img/growth_of_clearinghouses.png)
+![Growth of clearinghouses](img/growth_of_clearinghouses.png)
 
 --
 
-![Liberar](/entry-files/W/WH/WHA/What-Can-SDI-Learn-From-Open-Source/img/growth_of_clearinghouses_y_que.png)
+![Liberar](img/growth_of_clearinghouses_y_que.png)
 
 --
 
@@ -231,4 +231,4 @@ notes      : I gave a presentation at the GSDI9 conference in [Santiago de Chile
 
 ## Final Thought
 
-![Liberar](/entry-files/W/WH/WHA/What-Can-SDI-Learn-From-Open-Source/img/liberar.png)
+![Liberar](img/liberar.png)

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>punkish: Dashboard Data Model</title>
+    
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+</head>
+<body>
+
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# Dashboard Data Model
+## 
+
+Seagrant Institute, University of Wisconsin-Madison • February 2007
+
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/Dashboard-Data-Model"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+layout: true
+
+<div class="slidefooter">
+    <a href="/Dashboard-Data-Model"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Our Data Flow
+
+*   Our data model
+    * USGS raw data → webservice → our db → events analysis → dashboard
+*   If someone else, were doing the bit shown above already, I could imagine 
+    something like
+    * USGS raw data → webservice → other db for a bunch of different things 
+      including events analysis → webservice → dashboard
+*   Or, if we were supporting a whole bunch of other applications
+    * I could imagine utilizing the common data model so other applications 
+      could also benefit
+
+???
+
+some notes
+
+---
+
+## Data Storage
+
+*   Our storage is rather simple
+*   At its core it is very much what the USGS gives us
+*   We just tack on a few additional bits of info such as whether or not a given 
+    reading is a part of an event, if yes, then which event, and so forth
+
+---
+   
+## Simple Process
+
+*   USGS gives us only so much data, so we ask them one-off to fill the well, 
+    and then we keep on topping off the well as time goes by.
+*   We are just grabbing the raw, fixed width gage data through a standard http 
+    query ("web service" call it if you will), not a web scrape.
+*   We have standardized on a published web service: it is called "USGS NWIS 
+    data feed"
+*   The USGS feed we are using is not XML
+    * It is just plain, vanilla, fixed width ASCII text. As long as they don't 
+      change anything about it, it is the best, fastest, simplest to work with
+
+---
+   
+## Non-USGS gages
+
+*   There probably no standards for these non-USGS gages to follow.
+*   If these gage operators are smart, they have adopted the USGS standards, but 
+    in all probability "not."
+
+---
+
+## Events Analysis
+
+*   MATLAB program is now a Perl program. Anyone is welcome to take that and do 
+    what they want with it.
+
+---
+   
+## Model, View, Controller
+
+When thinking of computer programs, it is best to think in terms of the Model, View, Controller (MVC) approach. The data are the "model," the "view" can be a web-based application as in our case, or a desktop application, and the "controller" is used to describe the hooks between the view and the model. In our case, using the following legend: \[model in square brackets\] -> {view in curly brackets} -> (controller in parens), it would look like so
+
+---
+
+## Our MVC
+
+*   [data] → {web programs} → (web pages)
+*   The data model itself is really a succession of models, each using a view 
+    and a controller to create a new model
+    * [USGS raw data] → {program that grabs the feed} → (our 
+      SQLite/PostGres repository)
+    * [our SQLite/PostGres repository] → {program that analyzes for events} 
+      → (data fit for visualization)
+    * [data fit for visualization] → {program that extracts event data 
+      based on user request} → (web page or Java applet or whatever)
+    * There are other parallel MVC manifestations for us as well, for example, 
+      Batzli's image repository, but the concept is the same.
+
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
+    <script>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
+</html>

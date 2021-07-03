@@ -93,25 +93,41 @@ let PK = {
     },
 
     autocomplete: function() {
+        const q = document.querySelector('input[name=q]')
         new autoComplete({
-            selector: document.querySelector('input[name=q]'),
+            selector: q,
             minChars: 3,
-            source: function(term, response){
-                const result = miniSearch.search(term)
-                response(result)
 
+            // 'term' is the value in the input field
+            source: function(term, response) {
+                fetch("/_search/searchIdx.json")
+                    .then(response => response.text())
+                    .then(text => {
+                        window.miniSearch = MiniSearch.loadJSON(text, {
+                            fields: ['title', 'text'],
+                            storeFields: ['title', 'name']
+                        })
+
+                        const result = miniSearch.search(term)
+                        response(result)
+                    })
+                    .catch(err => console.log(err))
             },
+
+            // custom rendering function for the items in the dropdown
             renderItem: function (item, search){
                 search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
                 const re = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
-                return `<div class="autocomplete-suggestion" data-name="${item.name}" data-val="${item.title}">${item.title.replace(re, "<b>$1</b>")}</div>`
+                return `<div class="autocomplete-suggestion" data-search="${search}" data-name="${item.name}" data-val="${item.title}">${item.title.replace(re, "<b>$1</b>")}</div>`
             },
+
+            // 'term' is the term selected in the drop-down list
             onSelect: function(e, term, item) {
                 e.preventDefault()
                 e.stopPropagation()
-                location.href = `/${item.dataset.name}`
+                location.href = `/${item.dataset.name}/#${item.dataset.search}`
             }
-        });
+        })
     },
 
     searchInPage: function() {

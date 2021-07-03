@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,7 +46,7 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Norms Instead of Intellectual Property Laws</h1>
     <div class="description"></div>
     <div class="created">Friday, September 11, 2015</div>
@@ -53,6 +54,7 @@
     <div class="content"><p>Science has been practiced for hundreds of years increasingly and primarily in institutions. An academy, literally a place of study or training in a special field, or a society or institution of distinguished scholars, by definition makes a distinction between those who are a part of it and those who are not. You get admitted to an academy, you study with your peers under a mentor, you learn through structured lessons and do experiments in a lab, get tested and publish whereby you are evaluated. And in that process, you progress through successively higher levels of distinction, garnering degrees that are a symbol of your learning and bestow on you accompanying honor and privilege not available to those outside the academy. </p>
 <p>Humans, however, are born curious, and are tinkers and experimenters by nature. While they have fiddled with and made new things forever, recent advancements in computing and networks have transformed this making. Unbounded by physical walls but held together by computer networks, making not just physical things but software as well as software-driven and networked hardware, the act of knowledge-discovery and knowledge-making has developed non-institutional analogs to almost every aspect of institutional science. From DIY-articles, <a href="http://instructables.com">Instructables</a>, <a href="http://www.thingiverse.com">Thingiverse</a> to how-to videos and massively open online courses (MOOCs), we have instruction covered. Cheap computers and mobile devices connected to powerful backend servers can be used as just about any device for which one can make an app. And, co-working spaces as well as hacker/makerspaces provide the alternative to physical spaces in which both camaraderie and co-learning can take place. Collectively, these developments make for informal learning academies that are redefining the boundaries of the academy as well as who can participate in them. </p>
 <p>But even as the academies have become informal, they are still governed by mostly traditional IP models of either “all rights reserved” or some form of “some rights reserved” licensing as made popular by Creative Commons, but still dependent on copyright law as its legal basis. What we really need is a new model of IP, or better yet, perhaps no IP at all, that still allows for attribution and credit to those who come first, a recognition to the giants whose shoulders we stand on to see further. Whether this is done with a complete renunciation of intellectual output as property or by creating contractually constructed commons where the rules of the informal academy are nurtured and upheld is something that remains to be seen.</p></div>
+
 
     <ul class="tags">
         <li><a href="/_tags/citizen-science.html">citizen science</a></li>
@@ -62,14 +64,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Les-Ombres-de-La-Charite">↜ Les Ombres de La Charité</a></li>
         <li class="next"><a href="/Anticipation">Anticipation ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -78,29 +83,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

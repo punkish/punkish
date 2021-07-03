@@ -16,7 +16,6 @@
 
 <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
 <link rel="stylesheet" href="/_lib/css/styles.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
@@ -35,7 +34,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
+        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <datalist id="minisearch"></datalist>
     </form>
 </div>
 <nav>
@@ -45,13 +46,14 @@
     <a href="/_tags/">tags</a>
 </nav></header>
     
-    <main><section>
+    <main id="content"><section>
     <h1 class="title">Data Alliances Beyond Research</h1>
     <div class="description"></div>
     <div class="created">Sunday, June 21, 2015</div>
     
     <div class="content"><p>The quest for making money while remaining free has bedeviled many who support the cause of open but desire to either make a successful enterprise out of or sustain the collection/generation, management, analysis, and dissemination of data. The former struggle with sharing what could potentially give them a strategic or economic advantage. The latter is particularly true of research projects that got a start with the help of a research grant, but are faced with the problem of sustaining the project as the grant runs out. In either case, it is a difficult choice with few clear answers. Advocates of open sometimes overlook these real issues as they promote an unconditional openness based primarily on the obligation of providing attribution. The bottomline is, free is expensive, and someone somewhere has to pay. </p>
 <p>We need a solution, but no one party can formulate a satisfactory solution. Any proposed solution has the best chance of viability if it arises from a conversation between business enterprises with their main business based on either data that have their source in research or could be used in research, the higher education and research sector, and the open access/science/data community. This is the only way to create a lasting and vital conversation in a world where the barriers between enterprise, research and community are dissolving fast aided by digital technology, ubiquitous computing and fast networks.</p></div>
+
 
     <ul class="tags">
         <li><a href="/_tags/industry-research-partnership.html">industry-research partnership</a></li>
@@ -61,14 +63,17 @@
     <ul class="bottomNav">
         <li class="prev"><a href="/Teeth-Behind-the-Contract">↜ The Teeth Behind the Contract</a></li>
         <li class="next"><a href="/Twin-Towers">Twin Towers ⇝</a></li>
-    </ul></section></main>
+    </ul>
+</section>
+</main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    <script src="/_lib/js/hilitor.js"></script>
     
     
     
@@ -77,29 +82,24 @@
     
     
     <script>
-        fetch("/_search/searchIdx.json")
-            .then(response => response.text())
-            .then(text => {
-                window.miniSearch = MiniSearch.loadJSON(text, {
-                    fields: ['title', 'text'],
-                    storeFields: ['title', 'name'],
-                    searchOptions: {
-                        boost: { title: 2 },
-                        fuzzy: 0.2
-                    }
-                })
-            })
-            .catch(err => console.log(err))
-    
-        window.onload = function() {
-            PK.autocomplete();
-            PK.initializeDictionary();
+        window.addEventListener('load', function(e) {
+            PK.autocomplete()
+            PK.initializeDictionary()
     
             const searchInPage = document.getElementById('searchInPage')
             if (searchInPage) {
                 const inp = document.getElementsByName('tag')
                 inp[0].addEventListener('keyup', PK.searchInPage)
             }
-        }()
+    
+            const loc = window.location
+            if (loc.hash) {
+                const term = loc.hash.substring(1)
+    
+                // id of the element to parse
+                const myHilitor = new Hilitor("content")
+                myHilitor.apply(term)
+            }
+        })
     </script></body>
 </html>

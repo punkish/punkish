@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>punkish: Citizens Consent</title>
+    
+    <!-- see https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+</head>
+<body>
+
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
+
+# Citizens Consent
+## Based on work done at the Data Privacy Legal Hackathon
+
+Mozilla offices, San Francisco • May 2014
+
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/Citizens-Consent"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+layout: true
+
+<div class="slidefooter">
+    <a href="/Citizens-Consent"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
+
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Citizens Consent
+
+An idea for more informed citizens based on work done by
+
+* Dan Garon
+* Puneet Kishor
+* Lysle
+* Herrick
+* Beth McCarthy
+
+---
+
+## The Problem
+
+* Citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used.
+
+* It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and perhaps even intentionally obfuscating.
+
+---
+
+## Citizens Consent
+
+* Analogy to *Informed Consent*
+* Consent is not good unless the user understands the facts, implications, and  consequences.
+* A well-understood and given consent is the right of the citizen and the responsibility of the data collector.
+
+---
+
+## Prior Attempts
+
+* Many attempts at standardizing privacy policies
+* Few have gained traction
+
+---
+
+## Solution
+
+* Simple, attractive, visual display of a company's data sharing policiy
+* Targeted at average user, and focused on data sharing
+* Informative instead of over-whelming
+* Backed by a legally-binding policy
+
+---
+
+## Shields of Consent
+
+<img src="../img/consent1.gif" width="90%">
+
+---
+
+## How we share data…
+
+<img src="../img/consent2.gif" height="400px">
+
+---
+
+## How we share data
+
+<img src="../img/consent3.gif" height="400px">
+
+---
+
+## Additional features
+
+* Staged decision-tree to allow web sites and apps to generate the citizens consent report
+* Citizen can subscribe and receive notifications when the policy changes
+* Auto-generate legally binding data privacy and sharing policies
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
+    <script>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
+</html>

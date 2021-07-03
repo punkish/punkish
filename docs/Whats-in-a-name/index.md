@@ -80,7 +80,7 @@ Sixty new dragonflies from Africa were named, increasing the number known by alm
 
 ## Odonatologica 44(4)
 
-<img src="/entry-files/W/WH/WHA/Whats-in-a-name/img/odonatologica-44-download-page.jpg" width="70%">
+<img src="img/odonatologica-44-download-page.jpg" width="70%">
 
 <span class="hilite">A free, low resolution PDF !!</span>
 
@@ -109,7 +109,7 @@ Surely we need to think about the best way to make all this hard work as widely 
 
 ## Not Open, Not Good for Science
 
-<img src="/entry-files/W/WH/WHA/Whats-in-a-name/img/odonatologica-44.jpg">
+<img src="img/odonatologica-44.jpg">
 
 ---
 
@@ -173,7 +173,7 @@ Create a knowledge graph where we focus on a set of elements that are linked thr
 
 ## Plazi Makes a Publication Flower
 
-<img src="/entry-files/W/WH/WHA/Whats-in-a-name/img/flower.png" height="400">
+<img src="img/flower.png" height="400">
 
 ---
 
