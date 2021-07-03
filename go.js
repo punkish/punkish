@@ -8,7 +8,6 @@ const showdown = require('showdown');
 const footnotes = require('./public/js/footnotes.js');
 const sh = new showdown.Converter({extensions: [footnotes], tables: true});
 const Handlebars = require('handlebars')
-const lunr = require('lunr')
 const moment = require('moment')
 const MiniSearch = require('minisearch')
 
