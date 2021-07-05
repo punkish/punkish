@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Invalid Date</div>
     
     <div class="content"><figure>
-    <img src="img/freq-and-volume.jpg">
+    <img src="freq-and-volume.jpg">
     <figcaption>Frequency and Volume</figcaption>
 </figure>
 <p><a href="https://witness.org/portfolio_page/yvette-alberdingk-thijm/">Yvette Thijm</a> and I spent a lovely afternoon at SFMOMA, and I took the photo above at <a href="http://www.lozano-hemmer.com">Rafael Lozano-Hemmer</a>'s interactive exhibit titled <a href="http://www.sfmoma.org/exhib_events/exhibitions/459">Frequency and Volume</a>. Basically, Rafael has a big antenna installed at the museum that picks up all manner of radio waves. A shape detection algorithm identifies the silhouette outline of viewers and chooses a frequency from all those streaming in, and plays it on the radio. A nice coincident that I caused the jazz station to kick in.</p>
@@ -79,6 +77,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -88,24 +88,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

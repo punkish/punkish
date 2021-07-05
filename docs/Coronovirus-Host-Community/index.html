@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -62,12 +60,12 @@
 </blockquote>
 <p>The way Plazi’s pipeline is setup, soon as we extract data from a publication, all data elements automatically make their way to Zenodo where they get assigned a DOI for permanent archival and retreival. </p>
 <figure>
-    <img src="img/coviho-zenodo.jpg">
+    <img src="coviho-zenodo.jpg">
     <figcaption><a href="https://zenodo.org/communities/coviho/?page=1&size=20" target="_blank" title="Chiroptera on the Coronavirus Host Community on Zenodo">The Coronavirus Host Community on Zenodo</a></figcaption>
 </figure>
 <p>Since we also extract the images and charts from the articles and store them too on Zenodo, <a href="https://ocellus.punkish.org">Ocellus</a>, a simple image-finding app, can retrieve the images easily and quickly</p>
 <figure>
-    <img src="img/coviho-ocellus.jpg">
+    <img src="coviho-ocellus.jpg">
     <figcaption><a href="https://ocellus.punkish.org/images.html?q=Chiroptera&size=30&page=2&communities=biosyslit" target="_blank" title="Chiroptera on Ocellus">Chiroptera on Ocellus</a></figcaption>
 </figure>
 <p>The data also feed automatically into the <a href="https://gbif.org">Global Biodiversity Information Facility</a> (GBIF) and can be reused through various APIs, both on Zenodo as well as Zenodeo, a specialized-API for all the data we extract. The following data are returned when querying Zenodeo with a URI such as <a href="https://zenodeo.punkish.org/v2/images?q=Chiroptera&page=2&size=30">https://zenodeo.punkish.org/v2/images?q=Chiroptera&page=2&size=30</a> (which also powers <a href="https://ocellus.punkish.org/images.html?q=Chiroptera&size=30&page=2&communities=biosyslit">Ocellus</a>)</p>
@@ -192,12 +190,16 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -206,24 +208,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

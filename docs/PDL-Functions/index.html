@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -78,7 +76,7 @@ Ccmp            Complex comparison operator (spaceship). It orders by real
                 first, then by imaginary. Hm, but it is mathematical nonsense! 
                 Complex numbers cannot be ordered.
 Cconj           complex conjugation
-Ccos             cos (a) = 1/2 * (exp (a<em>i) + exp (-a</em>i))
+Ccos             cos (a) = 1/2 * (exp (a*i) + exp (-a*i))
 Ccosh            cosh (a) = (exp (a) + exp (-a)) / 2
 Cdiv            complex division
 Cexp            exp (a) = exp (real (a)) * (cos (imag (a)) + i * sin(imag (a)))
@@ -418,18 +416,18 @@ PDL::Transform::Proj4 …
 PDL::Tutorials  Manual: A guide to PDL's tutorial documentation.
 PDL::Types      Module: define fundamental PDL Datatypes
 PDL::Ufunc      Module: primitive ufunc operations for pdl
-PDL::get<em>datatype …
+PDL::get_datatype …
                 Internal: Return the numeric value identifying the
                 piddle datatype
-PDL::hdr</em>copy   Return an explicit copy of the header of a PDL.
+PDL::hdr_copy   Return an explicit copy of the header of a PDL.
 PDL::info       Return formatted information about a piddle.
-PDL::make<em>physical …
+PDL::make_physical …
                 Make sure the data portion of a piddle can be accessed
                 from XS code.
 PDL::match      Resample a scientific image to the same coordinate
                 system as another.
 PDL::new        new piddle constructor method
-PDL::new</em>from<em>specification …
+PDL::new_from_specification …
                 Internal method: create piddle by specification
 PDL::thread     Use explicit threading over specified dimensions (see
                 also the PDL::Indexing manpage)
@@ -479,34 +477,34 @@ WARNING:        [No reference available]
 Window          [No reference available]
 XPending        [No reference available]
 XResizeWindow   [No reference available]
-[$window</em>type]) [No reference available]
-<em>FITS</em>tr        [No reference available]
-<em>advance</em>panel  [No reference available]
-<em>check</em>move<em>or</em>erase …
+[$window_type]) [No reference available]
+<em>FITS_tr        [No reference available]
+_advance_panel  [No reference available]
+_check_move_or_erase …
                 [No reference available]
 _checkarg       [No reference available]
 _extract_hash   [No reference available]
 _get_windownumber …
                 [No reference available]
 _image_xyrange  [No reference available]
-_open<em>new</em>window …
+_open_new_window …
                 [No reference available]
-<em>parse</em>options  [No reference available]
-<em>parse</em>unit     [No reference available]
-<em>prep</em>table     Accept a hash ref containing a table, and return a
+_parse_options  [No reference available]
+_parse_unit     [No reference available]
+_prep_table     Accept a hash ref containing a table, and return a
                 header describing the table and a string to be written
                 out as the table, or barf.
-<em>read</em>flexhdr   [No reference available]
+_read_flexhdr   [No reference available]
 _reopen         [No reference available]
 _restore_status [No reference available]
 _rows           Return the number of rows in a variable for table entry
-<em>save</em>status    [No reference available]
-<em>set</em>colour     [No reference available]
-<em>setup</em>window   [No reference available]
-<em>standard</em>options_parser …
+_save_status    [No reference available]
+_set_colour     [No reference available]
+_setup_window   [No reference available]
+_standard_options_parser …
                 [No reference available]
 _status         [No reference available]
-<em>thread</em>options [No reference available]
+_thread_options [No reference available]
 abs             elementwise absolute value
 acos            The usual trigonometric function. Works inplace.
 acosh           The standard hyperbolic function. Works inplace.
@@ -518,13 +516,13 @@ allaxisvals     Synonym for ndcoords - enumerates all coordinates in a
                 expected by indexND, range, and interpND). See ndcoords
                 for more detail.
 and             Return the logical and of all elements in a piddle
-and2            binary *and* of two piddles
+and2            binary <em>and</em> of two piddles
 andover         Project via and to N-1 dimensions
 any             Return true if any element in piddle set
 append          append two or more piddles by concatenating along their
                 first dimensions
 apply           Apply a transformation to some input coordinates.
-apply<em>lut       [No reference available]
+apply_lut       [No reference available]
 applywarp2d     Transform a set of points using a 2-D polynomial
                 mapping
 approx          test for approximately equal values (relaxed <code>==')
@@ -558,7 +556,7 @@ badmask         Clears all <code>infs' and</code>nans' in <code>$a' to the
 badvalue        returns the value used to indicate a missing (or bad)
                 element for the given piddle type. You can give it a
                 piddle, a PDL::Type object, or one of <code>$PDL_B',
-</code>$PDL</em>S', etc.
+</code>$PDL_S', etc.
 band            Return the bitwise and of all elements in a piddle
 bandover        Project via bitwise and to N-1 dimensions
 barf            Standard error reporting routine for PDL.
@@ -569,18 +567,18 @@ bargraph        Simple utility to plot a bar chart with labels on the X
                 this value is exceeded, then every other label is
                 plotted. If twice MAXBARLABELS is exceeded, then only
                 every third label is printed, and so on.
-bessj0          The regular Bessel function of the first kind, J<em>n
+bessj0          The regular Bessel function of the first kind, J_n
                 Works inplace.
-bessj1          The regular Bessel function of the first kind, J</em>n
+bessj1          The regular Bessel function of the first kind, J_n
                 Works inplace.
-bessjn          The regular Bessel function of the first kind, J<em>n .
+bessjn          The regular Bessel function of the first kind, J_n .
                 This takes a second int argument which gives the order
                 of the function required. Works inplace.
-bessy0          The regular Bessel function of the second kind, Y</em>n.
+bessy0          The regular Bessel function of the second kind, Y_n.
                 Works inplace.
-bessy1          The regular Bessel function of the second kind, Y<em>n.
+bessy1          The regular Bessel function of the second kind, Y_n.
                 Works inplace.
-bessyn          The regular Bessel function of the first kind, Y</em>n .
+bessyn          The regular Bessel function of the first kind, Y_n .
                 This takes a second int argument which gives the order
                 of the function required. Works inplace.
 bilin2d         Bilinearly maps the first piddle in the second. The
@@ -702,40 +700,40 @@ diagonalI       Returns the multidimensional diagonal over the
                 specified dimensions.
 dice            Dice rows/columns/planes out of a PDL using indexes for
                 each dimension.
-dice<em>axis       Dice rows/columns/planes from a single PDL axis
+dice_axis       Dice rows/columns/planes from a single PDL axis
                 (dimension) using index along a specified axis
-diff</em>backward   info not available
-diff<em>central    info not available
-diff</em>forward    info not available
+diff_backward   info not available
+diff_central    info not available
+diff_forward    info not available
 dim             Returns the size of the given dimension of a piddle.
                 Alias for getdim.
 dims            Return piddle dimensions as a perl list
 diskcache       [No reference available]
 divide          divide two piddles
-do<em>print        [No reference available]
+do_print        [No reference available]
 doflow          Turn on/off dataflow
 dog             Opposite of 'cat' :). Split N dim piddle to list of N-1
                 dim piddles
-double          Convert to double datatype - see 'Datatype</em>conversions'
+double          Convert to double datatype - see 'Datatype_conversions'
 dprod           Return the product (in double precision) of all
                 elements in a piddle
 dprodover       Project via product to N-1 dimensions
-draw<em>wedge      Add a wedge (colour bar) to an image.
+draw_wedge      Add a wedge (colour bar) to an image.
 dsum            Return the sum (in double precision) of all elements in
                 a piddle
 dsumover        Project via sum to N-1 dimensions
 dummy           Insert a 'dummy dimension' of given length (defaults to
                 1)
-earth</em>coast     (Cartography) PDL constructor - coastline map of Earth
-earth<em>image     (Cartography) PDL constructor - RGB pixel map of Earth
+earth_coast     (Cartography) PDL constructor - coastline map of Earth
+earth_image     (Cartography) PDL constructor - RGB pixel map of Earth
 eigens          Real eigenvalues and -vectors of a real square matrix.
-eigens</em>sym      Eigenvalues and -vectors of a symmetric square matrix.
+eigens_sym      Eigenvalues and -vectors of a symmetric square matrix.
                 If passed an asymmetric matrix, the routine will warn
                 and symmetrize it, by taking the average value. That
                 is, it will solve for 0.5*($a+$a-&gt;mv(0,1)).
 ellipse         Plot an ellipse, optionally using fill style.
 env             Define a plot window, and put graphics on 'hold'
-eq              binary *equal to* operation (<code>==')
+eq              binary <em>equal to</em> operation (<code>==')
 erase           Erase plot
 erf             The error function. Works inplace.
 erfc            The complement of the error function. Works inplace.
@@ -754,7 +752,7 @@ fftconvolve     N-dimensional convolution with periodic boundaries (FFT
 fftnd           N-dimensional FFT (inplace)
 fhdr            Retrieve or set FITS header information from a piddle
 fibonacci       Constructor - a vector with Fibonacci's sequence
-find<em>autodoc    Internal helper routine that finds and returns
+find_autodoc    Internal helper routine that finds and returns
                 documentation in the autoloader path, if it exists. You
                 feed in a topic and it searches for the file
                 "${topic}.pdl". If that exists, then the filename gets
@@ -764,12 +762,12 @@ fitgauss1d      Fit 1D Gassian to data piddle
 fitgauss1dr     Fit 1D Gassian to radial data piddle
 fitpoly1d       Fit 1D polynomials to data using min chi^2 (least
                 squares)
-fits</em>cont       Draw contours of an image, labelling the axes using the
+fits_cont       Draw contours of an image, labelling the axes using the
                 WCS information in the FITS header of the image.
-fits<em>field</em>cmp  fits<em>field</em>cmp
-fits<em>imag       Display a FITS image with correct axes
-fits</em>rgbi       Display an RGB FITS image with correct axes
-fits<em>vect       Display a pair of 2-D piddles as vectors, with FITS
+fits_field_cmp  fits_field_cmp
+fits_imag       Display a FITS image with correct axes
+fits_rgbi       Display an RGB FITS image with correct axes
+fits_vect       Display a pair of 2-D piddles as vectors, with FITS
                 header interpretation
 fitwarp2d       Find the best-fit 2D polynomial to describe a
                 coordinate transformation.
@@ -942,14 +940,14 @@ gsl_sf_Si       Si(x) := Integrate[ Sin[t]/t, {t,0,x}]
 gsl_sf_airy_Ai  Airy Function Ai(x).
 gsl_sf_airy_Ai_deriv ...
                 Derivative Airy Function Ai</code>(x).
-gsl</em>sf<em>airy</em>Ai<em>deriv</em>scaled …
+gsl_sf_airy_Ai_deriv_scaled …
                 Derivative Scaled Airy Function Ai(x). Ai<code>(x) for x &lt; 0
                 and exp(+2/3 x^{3/2}) Ai</code>(x) for x &gt; 0.
-gsl<em>sf</em>airy<em>Ai</em>scaled …
+gsl_sf_airy_Ai_scaled …
                 Scaled Airy Function Ai(x). Ai(x) for x < 0 and
                 exp(+2/3 x^{3/2}) Ai(x) for x > 0.
-gsl<em>sf</em>airy<em>Bi  Airy Function Bi(x).
-gsl</em>sf<em>airy</em>Bi<em>deriv …
+gsl_sf_airy_Bi  Airy Function Bi(x).
+gsl_sf_airy_Bi_deriv …
                 Derivative Airy Function Bi<code>(x).
 gsl_sf_airy_Bi_deriv_scaled ...
                 Derivative Scaled Airy Function Bi(x). Bi</code>(x) for x < 0
@@ -1342,7 +1340,7 @@ identity        Return an identity matrix of the specified size. If you
                 hand in a scalar, its value is the size of the identity
                 matrix; if you hand in a dimensioned PDL, the 0th
                 dimension is the size of the matrix.
-identvaff       A vaffine identity transformation (includes thread</em>id
+identvaff       A vaffine identity transformation (includes thread_id
                 copying).
 ifft            Complex inverse FFT of the "real" and "imag" arrays
                 [inplace].
@@ -1383,7 +1381,7 @@ init_pltr       FIXME: documentation here!
 inner           Inner product over one dimension
 inner2          Inner product of two vectors and a matrix
 inner2d         Inner product over 2 dimensions.
-inner2t         Efficient Triple matrix product</code>a<em>b</em>c'
+inner2t         Efficient Triple matrix product</code>a*b*c'
 innerwt         Weighted (i.e. triple) inner product
 inplace         Flag a piddle so that the next operation is done 'in
                 place'
@@ -1391,7 +1389,7 @@ integ           The integ function returns the integral of the
                 interpolating function between two points. By default
                 it will barf if you try to extrapolate, to comply
                 silently if one of the integration limits is out of
-                range pass the option {Extrapolate =&gt; 1}
+                range pass the option {Extrapolate => 1}
 interlrgb       Make an RGB image from a palette image and its lookup
                 table.
 interpND        Interpolate values from an N-D piddle, with switchable
@@ -1403,7 +1401,7 @@ intover         Project via integral to N-1 dimensions
 inv             Invert a square matrix.
 invert          Apply an inverse transformation to some input
                 coordinates.
-is<em>inplace      Test the in-place flag on a piddle
+is_inplace      Test the in-place flag on a piddle
 isbad           Is a value bad?
 isbigendian      Determine endianness of machine - returns 0 or 1
                 accordingly
@@ -1453,22 +1451,22 @@ list            Convert piddle to perl list
 listindices     Convert piddle indices to perl list
 lmfit           Levenberg-Marquardt fitting of a user supplied model
                 function
-load</em>lut        [No reference available]
+load_lut        [No reference available]
 log             the natural logarithm
 log10           the base 10 logarithm
-long            Convert to long datatype - see 'Datatype<em>conversions'
+long            Convert to long datatype - see 'Datatype_conversions'
 longlong        Convert to longlong datatype - see
-                'Datatype</em>conversions'
+                'Datatype_conversions'
 lt              the binary < (less than) operation
-lu<em>backsub      solve a x = b for matrix a, by back substitution into
+lu_backsub      solve a x = b for matrix a, by back substitution into
                 a's lu decomposition.
-lu</em>decomp       LU decompose a matrix, with row permutation
-lu<em>decomp2      LU decompose a matrix, with no row permutation
+lu_decomp       LU decompose a matrix, with row permutation
+lu_decomp2      LU decompose a matrix, with no row permutation
                 (threadable!)
-lut</em>data        Load in the requested colour table and intensity ramp.
-lut<em>names       Return, as a list, the names of the available colour
+lut_data        Load in the requested colour table and intensity ramp.
+lut_names       Return, as a list, the names of the available colour
                 tables.
-lut</em>ramps       Return, as a list, the names of the available intensity
+lut_ramps       Return, as a list, the names of the available intensity
                 ramps.
 map             Resample an image or N-D dataset using a coordinate
                 transform.
@@ -1479,11 +1477,11 @@ mapfraw         Memory map a raw format binary file (see the module
 maptextfraw     Memory map a text file (see the module docs also).
 matmult         Matrix multiplication
 max             Return the maximum value generable by the RNG.
-max2d<em>ind       Return value/position of maximum value in 2D image
+max2d_ind       Return value/position of maximum value in 2D image
 maximum         Project via maximum to N-1 dimensions
-maximum</em>ind     Like maximum but returns the index rather than the
+maximum_ind     Like maximum but returns the index rather than the
                 value
-maximum<em>n</em>ind   Returns the index of <code>m' maximum elements
+maximum_n_ind   Returns the index of <code>m' maximum elements
 med2d           2D median-convolution of an array with a kernel
                 (smoothing)
 med2df          2D median-convolution of an array in a pxq window
@@ -1529,10 +1527,10 @@ ndtri           The value for which the area under the Gaussian
 ne              binary *not equal to* operation (</code>!=')
 nelem           Return the number of elements in a piddle
 new             [No reference available]
-new<em>or</em>inplace  Return back either the argument pdl or a copy of it
+new_or_inplace  Return back either the argument pdl or a copy of it
                 depending on whether it be flagged in-place or no.
                 Handy for building inplace-aware functions.
-new<em>window      Open a PGPLOT graphics device
+new_window      Open a PGPLOT graphics device
 ngoodover       Find the number of good elements along the 1st
                 dimension.
 ninterpol       N-dimensional interpolation routine
@@ -1558,7 +1556,7 @@ oneslice        experimental function - not for public use
 options         [No reference available]
 or              Return the logical or of all elements in a piddle
 or2             binary <em>or</em> of two piddles
-orig</em>badvalue   returns the original value used to represent bad values
+orig_badvalue   returns the original value used to represent bad values
                 for a given type.
 orover          Project via or to N-1 dimensions
 outer           outer product over one dimension
@@ -1581,11 +1579,11 @@ plAllocGrid     FIXME: documentation here!
 plGetCursor     plGetCursor waits for graphics input event and
                 translate to world coordinates and returns a hash with
                 the following keys:
-plP<em>gpixmm      info not available
+plP_gpixmm      info not available
 plParseOpts     FIXME: documentation here!
-pl</em>setcontlabelformat …
+pl_setcontlabelformat …
                 info not available
-pl<em>setcontlabelparam …
+pl_setcontlabelparam …
                 info not available
 pladv           info not available
 plarrows        info not available
@@ -1593,7 +1591,7 @@ plaxes          info not available
 plbin           info not available
 plbox           info not available
 plbox3          info not available
-plcalc</em>world    info not available
+plcalc_world    info not available
 plcol0          info not available
 plcol1          info not available
 plcolorpoints   PDL-specific: Implements what amounts to a threaded
@@ -1642,7 +1640,7 @@ plimagefr       info not available
 pljoin          info not available
 pllightsource   info not available
 plline          Draws line segments along
-                (x1,y1)-&gt;(x2,y2)-&gt;(x3,y3)-&gt;…
+                (x1,y1)->(x2,y2)-&gt;(x3,y3)-&gt;…
 plline3         info not available
 pllsty          info not available
 plmap           info not available
@@ -1769,39 +1767,39 @@ r2C             convert real to complex, assuming an imaginary part of
 rCpolynomial    evaluate the polynomial with (real) coefficients
 </code>coeffs' at the (complex) position(s) <code>x'.</code>coeffs[0]'
                 is the constant term.
-ran<em>additive</em>gaussian …
+ran_additive_gaussian …
                 Add Gaussian noise of given sigma to a piddle.
-ran<em>additive</em>poisson …
+ran_additive_poisson …
                 Add Poisson noise of given sigma to a piddle.
-ran<em>bivariate</em>gaussian …
+ran_bivariate_gaussian …
                 Generates $n bivariate gaussian random deviates.
-ran<em>caos        Returns values from Verhuls map with $r=4.0 and
+ran_caos        Returns values from Verhuls map with $r=4.0 and
                 randomly choosen $x0. The values are scaled by $m.
-ran</em>choose      Chooses values from $inpiddle to $outpiddle.
-ran<em>choose</em>vec  Chooses $n values from @vec.
-ran<em>dir         Returns <code>$n' random vectors in</code>$ndim' dimensions.
-ran</em>discrete    Is used to get the desired samples once a proper handle
-                has been enstablished (see ran<em>discrete</em>preproc()).
-ran<em>discrete</em>preproc …
+ran_choose      Chooses values from $inpiddle to $outpiddle.
+ran_choose_vec  Chooses $n values from @vec.
+ran_dir         Returns <code>$n' random vectors in</code>$ndim' dimensions.
+ran_discrete    Is used to get the desired samples once a proper handle
+                has been enstablished (see ran_discrete_preproc()).
+ran_discrete_preproc …
                 This method returns a handle that must be used when
-                calling ran<em>discrete(). You specify the probability of
-                the integer number that are returned by ran</em>discrete().
-ran<em>feed</em>poisson …
+                calling ran_discrete(). You specify the probability of
+                the integer number that are returned by ran_discrete().
+ran_feed_poisson …
                 This method simulates shot noise, taking the values of
                 piddle as values for mu to be fed in the poissonian
                 RNG.
-ran<em>gaussian    These functions return random deviates from given
+ran_gaussian    These functions return random deviates from given
                 distribution.
-ran</em>gaussian<em>var …
+ran_gaussian_var …
                 This method is similar to ran</em>[distrib]() except that
                 it takes the parameters of the distribution as a piddle
                 and returns a piddle of equal dimensions. Of course,
                 you can use the same set of distributions as in the
-                previous method (see also the ran<em>gaussian entry
+                previous method (see also the ran_gaussian entry
                 above).
-ran</em>shuffle     Shuffles values in piddle
-ran<em>shuffle</em>vec Shuffles values in piddle
-ran<em>ver         Returns a piddle with $n values generated by the
+ran_shuffle     Shuffles values in piddle
+ran_shuffle_vec Shuffles values in piddle
+ran_ver         Returns a piddle with $n values generated by the
                 Verhulst map from $x0 and paramater $r.
 random          Constructor which returns piddle of random numbers
 randsym         Constructor which returns piddle of random numbers
@@ -1818,8 +1816,8 @@ rcube            Read list of files directly into a large data cube
                 (for efficiency)
 rdsa             Read a FIGARO/NDF format file.
 re              [No reference available]
-read</em>png        [No reference available]
-read<em>png</em>true   [No reference available]
+read_png        [No reference available]
+read_png_true   [No reference available]
 readflex        Read a binary file with flexible format specification
 readfraw        Read a raw format binary file
 real            [No reference available]
@@ -1836,7 +1834,7 @@ refresh         refresh() causes a display event to be put at the top
 release         Release a plot window.
 release3d       Keep / don't keep the previous objects when plotting
                 new 3D objects
-release<em>signals To prevent pgplot from doing a fandango on core, we
+release_signals To prevent pgplot from doing a fandango on core, we
                 have to block interrupts during PGPLOT calls.
                 Specifically, INT needs to get caught. These internal
                 routines provide a mechanism for that.
@@ -1856,12 +1854,12 @@ rgbtogr         Converts an RGB image to a grey scale using standard
                 transform
 rgrep            Read columns into piddles using full regexp pattern
                 matching.
-rice</em>compress   Squishes an input PDL along the 0 dimension by Rice
+rice_compress   Squishes an input PDL along the 0 dimension by Rice
                 compression. In scalar context, you get back only the
                 compressed PDL; in list context, you also get back
                 ancillary information that is required to uncompress
-                the data with rice<em>uncompress.
-rice</em>expand     Unsquishes a PDL that has been squished by rice<em>expand.
+                the data with rice_uncompress.
+rice_expand     Unsquishes a PDL that has been squished by rice_expand.
 rim             Read images in most formats, with improved RGB
                 handling.
 rint            Round to integer values in floating-point format.
@@ -2172,7 +2170,7 @@ uniqvec         Return all unique vectors out of a collection
 unmap           Map an image or N-D dataset using the inverse as a
                 coordinate transform.
 unthread        All threaded dimensions are made real again.
-upd</em>data        Update the data pointer in a piddle to match its perl
+upd_data        Update the data pointer in a piddle to match its perl
                 SV.
 usage           Prints usage information for a PDL function
 ushort          Convert to ushort datatype - see 'Datatype_conversions'
@@ -2303,12 +2301,16 @@ zvals           Fills a piddle with Z index values. See the CAVEAT for
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -2317,24 +2319,24 @@ zvals           Fills a piddle with Z index values. See the CAVEAT for
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

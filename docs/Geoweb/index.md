@@ -3,12 +3,8 @@ title      : Law and the GeoWeb
 description: 
 modified   : 2011-04-12 21:53:00
 created    : 2018-04-12 21:53:00
-viewcount  : 0
-id         : 232
-gmap       : 
 tags       :
     - geographic data, IP
-stars      : 
 ---
 
 ## Intellectual Property Issues and Geographic Data in the Internet Era

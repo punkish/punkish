@@ -14,7 +14,4 @@ tags       :
 stars      : 
 ---
 
-<figure>
-    <img src="IMG_7412.jpg">
-    <figcaption>Once or twice a month he does gardening in my mom's garden</figcaption>
-</figure>
+![old man, gardener](IMG_7412.jpg "my mom's gardener")

@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,7 +50,7 @@
     
     <div class="content"><p>There he was, sitting by the circle, on <a href="http://bit.ly/1NBt6wu">rue Levert</a>, bent over a small stool writing in small but neat handwriting. The hand-written sign above him said, “<span class='punkish-pair' data-key='' data-val='give me a theme, and I will write a poem… free'>donnez-moi un thème, et j’ecris un poeme… prix libre</span>.” Sounded like a deal.</p>
 <figure>
-    <img src="img/laurent-hili.jpg">
+    <img src="laurent-hili.jpg">
     <figcaption>Laurent Hili</figcaption>
 </figure>
 <p>He didn’t know much English, and to be fair, I don’t know much French, so I tasked him with “Impossible Love.” He asked “Why?” and I glibly replied, “Because true love is impossible,” and I continued on my walk. Thirty minutes later I returned and he had produced the following:</p>
@@ -83,7 +81,7 @@ il est le recipient du monde
 &nbsp;&nbsp;&nbsp;&nbsp; 02/07/15
 </p>
 <figure>
-    <img src="img/amour-impossible.jpg">
+    <img src="amour-impossible.jpg">
     <figcaption>L’amour est Impossible</figcaption>
 </figure>
 <p>What a deal, <span class='punkish-pair' data-key='' data-val='lovingly true'><em>amoureusement vrai</em></span></p>
@@ -109,6 +107,8 @@ il est le recipient du monde
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -118,24 +118,24 @@ il est le recipient du monde
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

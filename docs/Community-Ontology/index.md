@@ -3,9 +3,6 @@ title      : Community Ontology
 description: 
 modified   : 2007-02-14 00:00:00
 created    : 2007-02-14 00:00:00
-viewcount  : 1
-id         : 46
-gmap       : 
 where      : University of Wisconsin-Madison
 when       : February 2007
 authors    : 
@@ -13,7 +10,6 @@ authors    :
 tags       :
     - presentation
     - citizen journalism
-stars      : 
 notes      : exploring ontology relevant in the context of a community.
 ---
 
@@ -82,7 +78,7 @@ In RDF
 
 ## RDF is a collection of triples
 
-[img=rdf_triple_graph]
+![RDF Triple Graph](rdf_triple_graph.png)
 
 ---
 

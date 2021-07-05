@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,7 +50,7 @@
     <div class="created">Tuesday, October 24, 2017</div>
     
     <div class="content"><figure>
-    <img src="img/luther_95_thesen.jpg" width="100%">
+    <img src="luther_95_thesen.jpg" width="100%">
 </figure>
 <p>If five hundred years ago, almost to the day, a monk can hang his theses to change the course of religion, I can, rather more modestly, create a few APIs to experiment with changing how information is accessed or processed. I call these, my adventures in programming, the Reformation APIs.</p>
 <h2 id="zenodeo">Zenodeo</h2>
@@ -87,12 +85,16 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -101,24 +103,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

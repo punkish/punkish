@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -53,7 +51,7 @@
     <div class="content"><p>As research communities worldwide look for new ways to make the scientific process and its data and results more open and participatory, New Zealand is showing us how it is done.</p>
 <p>In July 2010, <a href="http://ict.govt.nz/guidance-and-resources/information-and-data/nzgoal">The New Zealand Government Open Access and Licensing framework</a> (NZGOAL) approved by the Cabinet provided guidance for agencies to follow when releasing copyright works and non-copyright material for re-use by others. NZGOAL seeks to standardise the licensing of government copyright works for re-use via Creative Commons New Zealand law licences and recommends the use of ‘no-known rights’ statements for non-copyrighted material.</p>
 <p>Then in August 2011, the <a href="http://ict.govt.nz/programme/opening-government-data-and-information/declaration-open-and-transparent-government">Declaration on Open and Transparent Government</a> was also approved by the Cabinet whereby the government committed to actively release high value public data “to enable the private and community sectors to use it to grow the economy, strengthen the social and cultural fabric, and sustain the environment… to encourage business and community involvement in government decision-making.”</p>
-<p>And earlier this month in December 2012, a report of the Education and Science Committee presented to the House of Representatives of the 50th Parliament an [Inquiry into 21st century learning environments and digital literacy](http://www.parliament.nz/NR/rdonlyres/FD34151C-744B-4B49-86F2-6FE5850123AE/256992/DBSCH<em>SCR</em>5695_Inquiryinto21stcenturylearningenvir.pdf. Among its recommendations were that the Government:</p>
+<p>And earlier this month in December 2012, a report of the Education and Science Committee presented to the House of Representatives of the 50th Parliament an [Inquiry into 21st century learning environments and digital literacy](http://www.parliament.nz/NR/rdonlyres/FD34151C-744B-4B49-86F2-6FE5850123AE/256992/DBSCH_SCR_5695_Inquiryinto21stcenturylearningenvir.pdf. Among its recommendations were that the Government:</p>
 <blockquote>
     <ul>
         <li>review the intellectual property framework for (NZ) education system to resolve copyright issues that have been raised, including considering Creative Commons policy.</li>
@@ -84,6 +82,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -93,24 +93,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

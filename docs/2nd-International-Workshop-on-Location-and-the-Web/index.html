@@ -1,0 +1,103 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>punkish: 2nd International Workshop on Location and the Web</title>
+
+<link rel="icon" href="/_lib/favicon/favicon.ico">
+<!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
+<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/_lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv-latest/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/_dates/">dates</a>
+    <a href="/_tags/">tags</a>
+</nav></header>
+    
+    <main id="content"><section>
+    <h1 class="title">2nd International Workshop on Location and the Web</h1>
+    <div class="description"></div>
+    <div class="created">Thursday, January 1, 1970</div>
+    
+    <div class="content"><p>The second edition of the LocWeb workshop at CHI 2009, Boston, MA.</p></div>
+
+
+    <ul class="tags">
+        <li><a href="/_tags/Committees.html">Committees</a></li>
+        <li><a href="/_tags/CV.html">CV</a></li>
+        <li><a href="/_tags/Computer-Human-Interface-(CHI).html">Computer Human Interface (CHI)</a></li>
+    </ul>
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Measuring-Real-Benefits-of-GIS-LIS-in-Wisconsin">↜ Measuring Real Benefits of GIS LIS in Wisconsin</a></li>
+        <li class="next"><a href="/1st-International-Workshop-on-Location-and-the-Web">1st International Workshop on Location and the Web ⇝</a></li>
+    </ul>
+</section>
+</main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <script src="/_lib/js/polyfill.js"></script>
+    <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
+    <script src="/_lib/js/hilitor.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
+    
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
+    
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
+    
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
+    </script></body>
+</html>

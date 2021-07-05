@@ -9,7 +9,6 @@ tags       :
     - presentation
     - geospatial
     - GIS
-stars      : 
 notes      : I gave the following "lecture" to a bunch of IIT students visiting University of Waterloo under a program organized by <a href="http://www.cs.uwaterloo.ca/~keshav/">Srinivasan Keshav</a>.
 ---
 

@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -53,7 +51,7 @@
     <div class="content"><p>Vickram and Jude were tinkering with a device that I was having a hard time understanding. It was a Raspberry Pi based gizmo meant to hold health information for mainly the rural poor in India, and keep the data private. As I understood, the data would be encrypted on the device, but it would then travel over the regular, unsecured wifi or 3G telephone network to the doctor’s office.</p>
 <p>But, while I didn’t fully understand the scope of that device, I kept on thinking that perhaps all that is needed is an encrypted USB-drive.</p>
 <figure>
-    <img src="img/usb.png">
+    <img src="usb.png">
     <figcaption>The device</figcaption>
 </figure>
 <p>The above device could keep all the health data for an individual securely and privately, protected by an in-built biometric fingerprint sensor. Only the individual would be able to unlock this device. When she travels to her doctor’s office, the doctor would insert the device into his computer, have the patient unlock it, and the device would synchronize with a secure, distributed data-store such as that proposed by <a href="http://midata.coop">Midata.coop</a>. That way, if the device ever got lost, it could be safely recreated.</p>
@@ -78,6 +76,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -87,24 +87,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

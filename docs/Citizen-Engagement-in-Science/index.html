@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,11 +50,11 @@
     
     <div class="content"><p>Below are a few ways to engage citizens in science:</p>
 <h3 id="layers">Layers</h3>
-<p><img src="img/onion.png" width="139" align="left"> This classification describes the physical space within which each citizen participates—within the body, on the body, personal space such as room, personal space such as home, neighborhood, city block, municipality, town, city, state, country, continental, global. An analog of this would be conceptual space, that is, physical space not defined by politics but by other factors such as environment, for example, biomes.</p>
+<p><img src="onion.png" width="139" align="left"> This classification describes the physical space within which each citizen participates—within the body, on the body, personal space such as room, personal space such as home, neighborhood, city block, municipality, town, city, state, country, continental, global. An analog of this would be conceptual space, that is, physical space not defined by politics but by other factors such as environment, for example, biomes.</p>
 <h3 id="zones">Zones</h3>
-<p><img src="img/zones.png" width="139" align="left"> This classification describes the level of involvement. Instead of radiating outward from the citizen, each level has progressively more power, responsibility and accountability—providing data without any say, collecting data, analyzing and categorizing data, interpreting results, commenting or critiquing the works of other participants, mentoring other participants, authoring (name on masthead), setting intent and direction of research (policy).</p>
+<p><img src="zones.png" width="139" align="left"> This classification describes the level of involvement. Instead of radiating outward from the citizen, each level has progressively more power, responsibility and accountability—providing data without any say, collecting data, analyzing and categorizing data, interpreting results, commenting or critiquing the works of other participants, mentoring other participants, authoring (name on masthead), setting intent and direction of research (policy).</p>
 <h3 id="agency">Agency</h3>
-<p><img src="img/squares.png" width="139" align="left"> This classification describes the manner in which the citizens are employed and the extent to which they are aware of their involvement: Involuntary and unknowing (surveillance by spy agencies), involuntary but knowing (some search engines, email), voluntary but unknowing (some search engines, email), and voluntary and knowing (electronic swipe cards, online transactions, behavioral health trackers).</p></div>
+<p><img src="squares.png" width="139" align="left"> This classification describes the manner in which the citizens are employed and the extent to which they are aware of their involvement: Involuntary and unknowing (surveillance by spy agencies), involuntary but knowing (some search engines, email), voluntary but unknowing (some search engines, email), and voluntary and knowing (electronic swipe cards, online transactions, behavioral health trackers).</p></div>
 
 
     <ul class="tags">
@@ -78,6 +76,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -87,24 +87,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

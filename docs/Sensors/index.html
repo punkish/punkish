@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Sunday, May 26, 2019</div>
     
     <div class="content"><figure>
-    <img src="img/water-quality-sensor.png">
+    <img src="water-quality-sensor.png">
     <figcaption>Portable water quality sensor developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/" target="_blank">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com" target="_blank">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com" target="_blank">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores <a href="http://web.v-a.pt/planetary-sensing/" target="_blank">planetary sensing navigations</a> below the surface. The device is based on a design by <a href="https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter" target="_blank">Shan He of Public Lab</a> in cooperation with the folks at <a href="https://www.dfrobot.com" target="_blank">DF Robot</a>. Original design mods and photo released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 <h2 id="introduction">Introduction</h2>
@@ -63,7 +61,7 @@
 <h2 id="caveats">Caveats</h2>
 <p>The regional-scale sensors such as airborne or satellites will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool’s errand unless we change the conversation around privacy and sharing. Local sensors have a better chance to not just scale, but also change the way we collect data about ourselves and our local environments with high temporal and spatial resolutions. By not collecting individual info, we sidestep the issues of privacy and security. These local sensors occupy a sweet spot providing useful local detail without getting tied up in privacy issues. Additionally, we can power them however we want,&nbsp;and&nbsp;we already know their position because they are static, so there is no need for battery-consumptive GPS.</p>
 <figure>
-    <img src="img/sensors.png">
+    <img src="sensors.png">
     <figcaption> sweet spot&nbsp;for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown above. Original illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 <h2 id="resources">Resources</h2>
@@ -98,7 +96,7 @@
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Open-Science-Open-Data">↜ Open Science and Open Data</a></li>
-        <li class="next"><a href="/Disruptive-Technologies">Artificial Intelligence ⇝</a></li>
+        <li class="next"><a href="/Disruptive-Technologies">3D Printing ⇝</a></li>
     </ul>
 </section>
 </main>
@@ -109,6 +107,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -118,24 +118,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

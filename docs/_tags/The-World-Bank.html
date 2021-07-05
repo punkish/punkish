@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -48,7 +46,7 @@
     <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">The World Bank</span></h1>
-    <div class="created">Jul 03, 2021</div>
+    <div class="created">Jul 05, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -99,11 +97,11 @@
             <div class="notes"> <a href="/The-World-Bank">more</a></div>
         </details>
         <details class="entry">
-            <summary>Workshop on Indigenous Peoples Profiles, The World Bank, Washington DC., USA.</summary>
-            <div class="notes"> <a href="/Workshop-on-Indigenous-Peoples-Profiles,-The-World-Bank,-Washington-DC,-USA">more</a></div>
+            <summary>Workshop on Indigenous Peoples Profiles</summary>
+            <div class="notes"> <a href="/Workshop-on-Indigenous-Peoples-Profiles">more</a></div>
         </details>
         <details class="entry">
-            <summary>Artificial Intelligence</summary>
+            <summary>3D Printing</summary>
             <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
         </details>
         <details class="entry">
@@ -115,11 +113,11 @@
             <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
         </details>
         <details class="entry">
-            <summary>3D Printing</summary>
+            <summary>Open Science and Open Data</summary>
             <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
         </details>
         <details class="entry">
-            <summary>Open Science and Open Data</summary>
+            <summary>Artificial Intelligence</summary>
             <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
         </details>
     </div>
@@ -131,6 +129,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -140,24 +140,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

@@ -1,6 +1,6 @@
 ---
 title      : Wrinkled
-description: 
+description: Wrinkled, by Liliana Porter, text by Emmett Williams
 modified   : 2013-08-21 17:26:00
 created    : 2013-08-21 17:26:00
 viewcount  : 0
@@ -18,8 +18,9 @@ stars      :
 
 <figure>
     <img src="wrinkled.gif">
-    <figcaption>Liliana Porter</figcaption>
+    <figcaption></figcaption>
 </figure>
+![wrinkled paper](wrinkled.gif "Wrinkled, by Liliana Porter")
 
 <tt>
 emm: so are they wrinkled pictures or pictures of wrinkles?  

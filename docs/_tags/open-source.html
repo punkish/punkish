@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -48,7 +46,7 @@
     <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">open source</span></h1>
-    <div class="created">Jul 03, 2021</div>
+    <div class="created">Jul 05, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -83,10 +81,6 @@
             <div class="notes">All intellectual output of science can be categorized into literature, software and data. This presentation examines these three pillars, and explores what it means to be &quot;open&quot; as a commitment to practicing open science. <a href="/Open-Access-Open-Source-Open-Data">more</a></div>
         </details>
         <details class="entry">
-            <summary>Open Document Format</summary>
-            <div class="notes"> <a href="/Open-Document-Format">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Open Document Gains Ground</summary>
             <div class="notes"> <a href="/Open-Document-Gains-Ground">more</a></div>
         </details>
@@ -101,6 +95,10 @@
         <details class="entry">
             <summary>Open Source Open Wallet</summary>
             <div class="notes"> <a href="/Open-Source-Open-Wallet">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Open Document Format</summary>
+            <div class="notes"> <a href="/Open-Document-Format">more</a></div>
         </details>
         <details class="entry">
             <summary>Simple Economics of Open Source</summary>
@@ -119,6 +117,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -128,24 +128,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

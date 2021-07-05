@@ -3,17 +3,13 @@ title      : A lawyer, a scientist, and a kid walk into a makerspace
 description: only one makes something
 modified   : 2015-08-19 00:00:00
 created    : 2015-08-19 00:00:00
-viewcount  : 0
-id         : 232
 where      : iKNOW Conference, TU Graz
 when       : October 2015
-gmap       : 
 tags       :
     - presentation
     - science
     - informal academies
     - informal learning
-stars      : 
 notes      : Exploring the power of informal learning academies.
 ---
 
@@ -192,7 +188,7 @@ Part of the reason we tend to think about copyright so much is that the formal a
 
 ---
 
-<img src="/entries-files/O/OP/OPE/Open-But-Unequal/img/makerspace-restricted.jpg" width="100%" class="bar">
+<img src="/Open-But-Unequal/img/makerspace-restricted.jpg" width="100%" class="bar">
 
 Members - if you answer the door and let someone in, YOU ARE RESPONSIBLE FOR THEM! … if YOU let someone in, they are YOUR problem
 

@@ -1,14 +1,10 @@
 ---
 title      : Yummy Recipes
-description: 
-modified   : 2005-08-07
-created    : 
-viewcount  : 48
-id         : 531
-gmap       : 
-tags        :
+description: recipes I have tried and enjoyed
+modified   : 2005-08-07 00:00:00
+created    : 2005-08-07 00:00:00
+tags       :
     - recipe
-stars      : 
 ---
 
 All of the following have been tried and enjoyed.
@@ -35,6 +31,3 @@ All of the following have been tried and enjoyed.
 * [Stir Fried String Beans Shanghai Style]
 * [Lemon Pound Cake]
 * Pat's [Vegetable Medley]
-
-
-

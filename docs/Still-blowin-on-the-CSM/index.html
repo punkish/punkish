@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Wednesday, November 18, 2015</div>
     
     <div class="content"><figure>
-    <img src="img/blowin.jpg">
+    <img src="blowin.jpg">
     <figcaption>blowin’</figcaption>
 </figure>
 <p>On July 17 evening I met with D and Bene for apéro at Café Bonne Biere at Faubourg du Temple/Fontaine Au Roi, and a few days later D took me to Le Petit Cambodge for lunch—last week both those places were sites of attacks with five and eight dead respectively. The randomness that took the lives of others while saving my own is shocking, but it also hits my heart. That neighborhood was so close to where I was staying all summer in Paris (Belleville). I used to go there all the time to walk along the lovely Canal Saint-Martin and watch the diverse crowd, like the trumpet player above—musicians, artists, writers, lovers, young, old, every color of skin, every length of beard imaginable.</p>
@@ -80,6 +78,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -89,24 +89,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

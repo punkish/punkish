@@ -105,7 +105,11 @@ let PK = {
                     .then(text => {
                         window.miniSearch = MiniSearch.loadJSON(text, {
                             fields: ['title', 'text'],
-                            storeFields: ['title', 'name']
+                            storeFields: ['title', 'name'],
+                            searchOptions: {
+                                boost: { title: 2 },
+                                fuzzy: 0.2
+                            }
                         })
 
                         const result = miniSearch.search(term)

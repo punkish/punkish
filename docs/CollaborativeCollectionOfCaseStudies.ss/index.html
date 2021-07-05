@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -68,17 +66,17 @@ slidehandout:</p>
 <p>slide:
 = Viewing A Case Study =
 slidecontent: 
-[img=es<em>1 incremental] [img=es</em>2 incremental]
+[img=es_1 incremental] [img=es_2 incremental]
 slidehandout:</p>
 <p>slide:
 = Themes and Layers =
 slidecontent: 
-[img=es<em>3] [img=es</em>4 incremental]
+[img=es_3] [img=es_4 incremental]
 slidehandout:</p>
 <p>slide:
 = Sources =
 slidecontent: 
-[img=es<em>5] [img=es</em>6 incremental]
+[img=es_5] [img=es_6 incremental]
 slidehandout:</p>
 <p>slide:
 = Login =
@@ -88,12 +86,12 @@ slidehandout:</p>
 <p>slide:
 = Editing A Case Study =
 slidecontent: 
-[img=es<em>8] [img=es</em>9 incremental] [img=es_9a incremental]
+[img=es_8] [img=es_9 incremental] [img=es_9a incremental]
 slidehandout:</p>
 <p>slide:
 = Adding A Case Study =
 slidecontent: 
-[img=es<em>10] [img=es</em>11 incremental]
+[img=es_10] [img=es_11 incremental]
 slidehandout:</p>
 <p>slide:
 = Discovery =
@@ -146,6 +144,8 @@ END</li>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -155,24 +155,24 @@ END</li>
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

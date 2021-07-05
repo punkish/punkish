@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -66,7 +64,7 @@
         <li><a href="/_tags/presentation.html">presentation</a></li>
     </ul>    
     <ul class="bottomNav">
-        <li class="prev"><a href="/Access-to-and-Reuse-of-Public-Sector-Information,-CODATA2010,-Cape-Town,-South-Africa">↜ Access to and Reuse of Public Sector Information, CODATA2010, Cape Town, South Africa</a></li>
+        <li class="prev"><a href="/Access-to-and-Reuse-of-Public-Sector-Information">↜ Access to and Reuse of Public Sector Information</a></li>
         <li class="next"><a href="/Role-of-Volunteered-Geographic-Information-in-Advancing-Science,-GIScience-2010,-Zurich,-Switzerland">Role of Volunteered Geographic Information in Advancing Science, GIScience 2010, Zurich, Switzerland ⇝</a></li>
     </ul></section>
 </main>
@@ -77,6 +75,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -86,24 +86,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

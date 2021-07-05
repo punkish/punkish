@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -69,7 +67,7 @@
 <p>— Walter Benjamin - Selected Writings, 1927-1930</p>
 <p>Benjamin realized that, Jeffries realizes that, and I realize the same. The ugliness on surface hides lessons on how we can live together in peace while the normalized, santized and homogenized malls populated with stores of global chains offer a sameness that may seem pretty on surface but is dehumanizing in its lack of purpose. After all, if I can get the same thing in one place, devoid of the local color or passion, why even go to another.</p>
 <p>Strangely, I didn’t know about Walter Benjamin until a few weeks ago. Here is how that story goes—</p>
-<p><img src="img/strange-angels.jpg" width="174" height="173" align="left" style="margin-right: 10px;"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album <strong>Strange Angels</strong>.</p>
+<p><img src="strange-angels.jpg" width="174" height="173" align="left" style="margin-right: 10px;"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album <strong>Strange Angels</strong>.</p>
 <aside>(I saw Laurie Anderson during her promo tour for that album. I had arrived in the US in 1987 and discovered Anderson, and had a chance to see her live just a couple years later when she performed in Madison, Wisconsin.)</aside>
 <p><br></p>
 <p>The lyrics of the songs are:</p>
@@ -96,7 +94,7 @@ And this storm, this storm is called Progress
 </blockquote>
 <p>As much as I enjoyed that song, I never really understood the words until recently when I happened to read about Walter Benjamin and his <a href="https://en.wikipedia.org/wiki/Theses_on_the_Philosophy_of_History">Theses on the Philosophy of History</a>:</p>
 <figure>
-    <img src="img/paul-klee-angelus-novus.jpg">
+    <img src="paul-klee-angelus-novus.jpg">
     <figcaption>Paul Klee Angelus Novus</figcaption>
 </figure>
 <blockquote>
@@ -138,6 +136,8 @@ And this storm, this storm is called Progress
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -147,24 +147,24 @@ And this storm, this storm is called Progress
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

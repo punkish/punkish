@@ -3,11 +3,6 @@ title      : Citizen-Sourced Data Commons
 description: 
 modified   : 2016-05-31 12:14:00
 created    : 2000-12-24 00:00:00
-viewcount  : 0
-id         : 232
-gmap       : 
-where      :
-when       :
 tags       :
     - presentation
     - governance
@@ -16,7 +11,6 @@ tags       :
     - citizens consent
     - health
     - health data
-stars      : 
 notes      : governance implications for <b>Open Science</b>
 ---
 

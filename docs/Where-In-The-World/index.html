@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -137,7 +135,7 @@
     });
     &lt;/script>
 </pre>
-<p><strong>NOTE:</strong> The plugin is hard-coded to fire when 6 characters are typed in the search field. This works well mostly. You can still search for a place name shorter than 6 characters by typing a period '.'. For example, no query will be triggered for 'elgin', however, 'elgin<strong>.</strong>' will trigger a query.</p>
+<p><strong>NOTE:</strong> The plugin is hard-coded to fire when 6 characters are typed in the search field. This works well mostly. You can still search for a place name shorter than 6 characters by typing a period '.'. For example, no query will be triggered for 'elgin', however, 'elgin**.**' will trigger a query.</p>
 <p><strong>Acknowledgment:</strong> This code utilizes a couple of excellent plugins modified for my use, namely the <a href="http://www.devbridge.com/projects/autocomplete/jquery/">autocomplete plugin from Devbridge</a>, and the <a href="http://onehackoranother.com/projects/jquery/tipsy/">tipsy plugin from Jason Frame</a>.</p>
 <script type="text/javascript">
 /*
@@ -177,12 +175,16 @@ EB.autofill.init({
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -191,24 +193,24 @@ EB.autofill.init({
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

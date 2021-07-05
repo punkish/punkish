@@ -5,8 +5,20 @@ const path = require('path')
 const fs = require('fs')
 const yamlFront = require('yaml-front-matter')
 const showdown = require('showdown');
-const footnotes = require('./public/js/footnotes.js');
-const sh = new showdown.Converter({extensions: [footnotes], tables: true});
+const footnotes = require('./docs/_lib/js/footnotes.js');
+
+const sh = new showdown.Converter({
+    extensions: [footnotes], 
+    tables: true,
+
+    // ![foo](foo.jpg =100x80)     simple, assumes units are in px
+    // ![bar](bar.jpg =100x*)      sets the height to "auto"
+    // ![baz](baz.jpg =80%x5em)    Image with width of 80% and height of 5em
+    parseImgDimensions: true,
+    literalMidWordUnderscores: true,
+    literalMidWordAsterisks: true,
+    strikethrough: true
+});
 const Handlebars = require('handlebars')
 const moment = require('moment')
 const MiniSearch = require('minisearch')
@@ -39,7 +51,6 @@ const data = {
         byDate: [],
         byTag: {},
         byYear: [],
-        //presentations: {},
         hanoz: []
     },
 
@@ -85,8 +96,9 @@ const makeImg = function(text, url) {
     url = url ? `${url}/img` : 'img'
     
     return text.replace(
-        /img src="(.*?)\.(png|gif|jpg)(.*)/g, 
-        `img src="${url}/$1.$2$3`
+        /<img src=(.*?)\.(png|gif|jpg)(.*?)title="(.*?)" \/>/g, 
+        `<figure>\n\t<img src=${url}/$1.$2$3>\n\t<figcaption>$4</figcaption>\n</figure>`
+        //`<img src="${url}/$1.$2$3>`
     )
 }
 

@@ -3,14 +3,10 @@ title      : eInfrastructure for Scientific Data
 description: Long-term data interoperability
 modified   : 2010-02-17 12:00:00
 created    : 2010-02-06 06:45:48
-viewcount  : 0
-id         : 649
-gmap       :
 where      : High Level Experts Group Meeting on *e-Infrastructure for Scientific Data* at the European Commission, Brussels, Belgium
 when       : February 2010
 tags       :
     - presentation
-stars      :
 notes      : 
 ---
 

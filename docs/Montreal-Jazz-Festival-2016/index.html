@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,31 +49,31 @@
     <div class="created">Saturday, July 9, 2016</div>
     
     <div class="content"><figure>
-    <img src="img/jazz_anim.gif">
+    <img src="jazz_anim.gif">
     <figcaption>ten days of music</figcaption>
 </figure>
 <figure>
-    <img src="img/kid.jpg">
+    <img src="kid.jpg">
     <figcaption>young listener</figcaption>
 </figure>
 <figure>
-    <img src="img/tia-brazda.jpg">
+    <img src="tia-brazda.jpg">
     <figcaption>Tia Brazda</figcaption>
 </figure>
 <figure>
-    <img src="img/IMG_5973.jpg">
+    <img src="IMG_5973.jpg">
     <figcaption>the crowds</figcaption>
 </figure>
 <figure>
-    <img src="img/IMG_6022.jpg">
+    <img src="IMG_6022.jpg">
     <figcaption>getting ready</figcaption>
 </figure>
 <figure>
-    <img src="img/IMG_6076.jpg">
+    <img src="IMG_6076.jpg">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/style.jpg">
+    <img src="style.jpg">
     <figcaption></figcaption>
 </figure></div>
 
@@ -97,6 +95,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -106,24 +106,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

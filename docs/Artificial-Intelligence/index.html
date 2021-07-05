@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Sunday, May 26, 2019</div>
     
     <div class="content"><figure>
-    <img src="img/garp.jpg">
+    <img src="garp.jpg">
     <figcaption>Shading represents the predicted distribution of the Common Bush Tanagers Chlorospingus ophthalmicus in Mexico modeled in Genetic Algorithm for Rule-Set Production (GARP) using an artificial intelligence approach (the genetic algorithm) to produce an abstraction of the ecological niche of a species. <a href="https://archive.org/stream/bulletinofbrit1232003brit/#page/217/mode/1up" target="_blank">Image from page 218</a> of “Why Museums Matter: Avian Archives in an Age of Extinction,” Papers from a conference of this title held at Green Park, Aston Clinton, and workshops at the Natural History Museum, Tring, 12-15 November 1999. Ed. Nigel J. Collar, Clemency T. Fisher and Chris J. Feare. vol. 123A, Bulletin of the British Ornithologists’ Club. No known copyright restrictions.</figcaption>
 </figure>
 <h2 id="introduction">Introduction</h2>
@@ -159,6 +157,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -168,24 +168,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

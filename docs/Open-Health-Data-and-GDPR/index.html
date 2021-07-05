@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Friday, March 15, 2019</div>
     
     <div class="content"><figure>
-    <img src="img/3-constituencies.png">
+    <img src="3-constituencies.png">
     <figcaption>Three constituencies at odds</figcaption>
 </figure>
 <h2 id="axioms">Axioms</h2>
@@ -111,7 +109,7 @@ Since EHRs are not a product of publicly funded research, my assumption is that 
         <li><a href="/_tags/GDPR.html">GDPR</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Disruptive-Technologies">↜ Open Science and Open Data</a></li>
+        <li class="prev"><a href="/Disruptive-Technologies">↜ Artificial Intelligence</a></li>
         <li class="next"><a href="/RGB-to-Visible-Spectrum">RGB to Visible Spectrum ⇝</a></li>
     </ul>
 </section>
@@ -123,6 +121,8 @@ Since EHRs are not a product of publicly funded research, my assumption is that 
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -132,24 +132,24 @@ Since EHRs are not a product of publicly funded research, my assumption is that 
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,7 +49,7 @@
     <div class="created">Tuesday, January 1, 1980</div>
     
     <div class="content"><figure>
-    <img src="img/beastmaster.jpg">
+    <img src="beastmaster.jpg">
     <figcaption>the beast master</figcaption>
 </figure>
 <h2 id="thebeastmastersevening">the beast master’s evening</h2>
@@ -112,8 +110,8 @@ a thousand violins  </p>
         <li><a href="/_tags/Bangalore.html">Bangalore</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Caribbean-Nights">↜ Caribbean Nights</a></li>
-        <li class="next"><a href="/Fanfare-For-The-Silent-Man">Fanfare For The Silent Man - 1 ⇝</a></li>
+        <li class="prev"><a href="/Fanfare-For-The-Silent-Man">↜ Fanfare For The Silent Man - 1</a></li>
+        <li class="next"><a href="/Fanfare-For-The-Silent-Man-3">Fanfare For The Silent Man - 3 ⇝</a></li>
     </ul>
 </section>
 </main>
@@ -124,6 +122,8 @@ a thousand violins  </p>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -133,24 +133,24 @@ a thousand violins  </p>
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

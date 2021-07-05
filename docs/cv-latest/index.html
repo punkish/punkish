@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -56,11 +54,11 @@
         <picture>
             <!-- <source srcset="img/right-profile-960.jpg" media="(min-width:800px)">
             <source srcset="img/right-profile-768.jpg" media="(min-width:600px)"> -->
-            <img src="img/right-profile-400.jpg">
+            <img src="right-profile-400.jpg">
         </picture>
         <figcaption></figcaption>
     </figure>
-    <!-- <img src="img/punkish-2.jpg" width="150" align="left" style="margin-right: 15px; margin-bottom: 5px;">  --> 
+    <!-- <img src="punkish-2.jpg" width="150" align="left" style="margin-right: 15px; margin-bottom: 5px;">  --> 
     <p> Since 1985, my career has spanned rural appropriate technology design, international development, academia, research, and science information policy. I help domain scientists make sense of their data by adopting, adapting and creating novel data acquisition, analysis and visualization techniques. I advise several scientific projects, and advocate for a more participatory way of working in a world where information and analytics are embedded in every aspect of our lives. As such, I have expertise in both ‘science for policy’ as well as ‘policy for science.’ I believe that not only is it possible to be both a practitioner and a policy-person at the same time, in today’s day and age it is the only way to ensure that publicly funded scientific information is open by default and our work has the highest possibility of making an impact.</p>
 </section>
 <section id="Experience">
@@ -508,6 +506,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -517,24 +517,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

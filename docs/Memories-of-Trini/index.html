@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,43 +50,43 @@
     
     <div class="content"><p>In 1991 Fall I spent three glorious months living in St. Augustine and working in Port of Spain. The few photos below don’t do justice to my experience. <!-- from the [Caribbean Nights]() to the [Sunlight of My Mind](). --></p>
 <figure>
-    <img src="img/renegades.jpg">
+    <img src="renegades.jpg">
     <figcaption>The steel drum band Renegades in their pan yard</figcaption>
 </figure>
 <figure>
-    <img src="img/the_other_pandrum_band.jpg">
+    <img src="the_other_pandrum_band.jpg">
     <figcaption>Another steel drum band, another pan yard, a night of dancing</figcaption>
 </figure>
 <figure>
-    <img src="img/pan_drums.jpg">
+    <img src="pan_drums.jpg">
     <figcaption>Pan drums just waiting to be played</figcaption>
 </figure>
 <figure>
-    <img src="img/steve_and_I.jpg">
+    <img src="steve_and_I.jpg">
     <figcaption>Steve and I</figcaption>
 </figure>
 <figure>
-    <img src="img/me.jpg">
+    <img src="me.jpg">
     <figcaption>Portrait of the author as a young man</figcaption>
 </figure>
 <figure>
-    <img src="img/frederick.jpg">
+    <img src="frederick.jpg">
     <figcaption>Frederick, the pineapple farmer</figcaption>
 </figure>
 <figure>
-    <img src="img/farmer.jpg">
+    <img src="farmer.jpg">
     <figcaption>An Indian farmer</figcaption>
 </figure>
 <figure>
-    <img src="img/faces.jpg">
+    <img src="faces.jpg">
     <figcaption>Faces of Trinidad</figcaption>
 </figure>
 <figure>
-    <img src="img/faces2.jpg">
+    <img src="faces2.jpg">
     <figcaption>More faces of Trinidad</figcaption>
 </figure>
 <figure>
-    <img src="img/bicycle_and_bystander.jpg">
+    <img src="bicycle_and_bystander.jpg">
     <figcaption>Limin’ by the roadside</figcaption>
 </figure></div>
 
@@ -110,6 +108,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -119,24 +119,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

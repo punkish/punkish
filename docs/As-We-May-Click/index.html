@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -64,11 +62,11 @@
 <li>Leiner, et. al. Brief History of the Internet. http://www.internetsociety.org/internet/what-internet/history-internet/brief-history-internet</li>
 <li>Saltzer, J. H., Reed, D. P., &amp; Clark, D. D. (1984). End-to-End Arguments in System Design. ACM Transactions in Computer Systems, 2, 277–288.</li>
 <li>Sterling, Bruce. 1993. Short History of the Internet. http://www.internetsociety.org/internet/what-internet/history-internet/short-history-internet</li>
-<li>Wikipedia. History of the Internet. https://en.wikipedia.org/wiki/History<em>of</em>the_Internet</li>
-<li>Wikipedia. History of free and open-source software. https://en.wikipedia.org/wiki/History<em>of</em>free<em>and</em>open-source_software</li>
-<li>Wikipedia. Free and open-source software. https://en.wikipedia.org/wiki/Free<em>and</em>open-source_software</li>
-<li>Wikipedia. History of Unix. https://en.wikipedia.org/wiki/History<em>of</em>Unix</li>
-<li>Wikipedia. History of the World Wide Web. https://en.wikipedia.org/wiki/History<em>of</em>the<em>World</em>Wide_Web</li>
+<li>Wikipedia. History of the Internet. https://en.wikipedia.org/wiki/History_of_the_Internet</li>
+<li>Wikipedia. History of free and open-source software. https://en.wikipedia.org/wiki/History_of_free_and_open-source_software</li>
+<li>Wikipedia. Free and open-source software. https://en.wikipedia.org/wiki/Free_and_open-source_software</li>
+<li>Wikipedia. History of Unix. https://en.wikipedia.org/wiki/History_of_Unix</li>
+<li>Wikipedia. History of the World Wide Web. https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web</li>
 <li>Wikipedia. Open Data. https://en.wikipedia.org/wiki/Open_data</li>
 <li>Wikipedia. Open Science. https://en.wikipedia.org/wiki/Open_science</li>
 <li>WWW Foundation. History of the Web. http://webfoundation.org/about/vision/history-of-the-web/</li>
@@ -128,6 +126,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -137,24 +137,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

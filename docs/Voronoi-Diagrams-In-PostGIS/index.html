@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -56,7 +54,7 @@
   <p>Voronoi diagrams were first discussed by Peter Lejeune-Dirichlet in 1850. But it was more than a half of a century later in 1908 that these diagrams were written about in a paper by Voronoi, hence the name Voronoi Diagrams. The Voronoi cells/polygons are sometimes also called Thiessen Polytopes or Dirichlet Regions.</p>
 </blockquote>
 <figure>
-    <img src="img/macrostrat.jpg">
+    <img src="macrostrat.jpg">
     <figcaption>Macrostrat</figcaption>
 </figure>
 <p>Ever wanted to create a Voronoi tessellation for your points? Well, so have I, for our Macrostrat points. Fortunately for us, others already figured out how to do this. I have dusted off the original code by <a href="http://www.linkedin.com/in/mgleahy">Mike Leahy</a> ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.</p>
@@ -247,7 +245,7 @@
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Freedoms-Just-Another-Word">↜ Freedom’s Just Another Word for Nothin’ Left To Choose</a></li>
-        <li class="next"><a href="/A-Velt-In-Lied">A Velt In Lied (A World In Song) ⇝</a></li>
+        <li class="next"><a href="/Ba-Lue-Bolivar">Ba-Lue Bolivar Ba-Lues Are ⇝</a></li>
     </ul>
 </section>
 </main>
@@ -258,12 +256,16 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -272,24 +274,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

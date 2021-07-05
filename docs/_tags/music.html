@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -48,7 +46,7 @@
     <main id="content"><!-- entries by tags -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">music</span></h1>
-    <div class="created">Jul 03, 2021</div>
+    <div class="created">Jul 05, 2021</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -58,10 +56,6 @@
     <div class="content">
         <p>entries sorted by tags. (also see <a href="/_dates/">entries by date</a>.)</p>
 
-        <details class="entry">
-            <summary>A Velt In Lied (A World In Song)</summary>
-            <div class="notes"> <a href="/A-Velt-In-Lied">more</a></div>
-        </details>
         <details class="entry">
             <summary>Amnesia... dink, dink, dink</summary>
             <div class="notes"> <a href="/Amnesia">more</a></div>
@@ -85,6 +79,10 @@
         <details class="entry">
             <summary>Four Seasons in Alexanderplatz</summary>
             <div class="notes"> <a href="/Four-Seasons">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>A Velt In Lied (A World In Song)</summary>
+            <div class="notes"> <a href="/A-Velt-In-Lied">more</a></div>
         </details>
         <details class="entry">
             <summary>The International</summary>
@@ -119,16 +117,16 @@
             <div class="notes"> <a href="/Smokin-at-Hvide-Lam">more</a></div>
         </details>
         <details class="entry">
-            <summary>So Low in the Library Mall</summary>
-            <div class="notes"> <a href="/So-Low">more</a></div>
+            <summary>Summertime in Spring in Cork</summary>
+            <div class="notes"> <a href="/Summertime-in-Spring-in-Cork">more</a></div>
         </details>
         <details class="entry">
             <summary>Stolen Moments in Golden Gate Park</summary>
             <div class="notes"> <a href="/Stolen-Moments">more</a></div>
         </details>
         <details class="entry">
-            <summary>Summertime in Spring in Cork</summary>
-            <div class="notes"> <a href="/Summertime-in-Spring-in-Cork">more</a></div>
+            <summary>So Low in the Library Mall</summary>
+            <div class="notes"> <a href="/So-Low">more</a></div>
         </details>
     </div>
 </section></main>
@@ -139,6 +137,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -148,24 +148,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

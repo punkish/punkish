@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -55,35 +53,35 @@ figcaption {clear: both;}
 </style>
 <p>I got this beautiful <em>Hokkaido Kürbis</em> in Göttingen and couldn’t resist. The sweetness of the vegetable (known as <em>potimarron</em> in French, a word I love the sound of, and that always reminds me of Daniele), was countered with a liberal dose of cayenne and paprika. The coconut milk made it Thai-ish, and a tablespoon or so of cumin made it Indian-ish.</p>
 <figure>
-<img src="img/IMG_7275.jpg">
+<img src="IMG_7275.jpg">
 <figcaption>potimarron</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7276.jpg">
+<img src="IMG_7276.jpg">
 <figcaption>28 minutes later</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7280.jpg">
+<img src="IMG_7280.jpg">
 <figcaption>garlic and ginger</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7278.jpg">
+<img src="IMG_7278.jpg">
 <figcaption>sizzling in olive oil</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7279.jpg">
+<img src="IMG_7279.jpg">
 <figcaption>toss and turn</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7281.jpg">
+<img src="IMG_7281.jpg">
 <figcaption>28 minutes later</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7283.jpg">
+<img src="IMG_7283.jpg">
 <figcaption>lait de coco</figcaption>
 </figure>
 <figure>
-<img src="img/IMG_7284.jpg">
+<img src="IMG_7284.jpg">
 <figcaption>ready to eat, with basmati rice and brown lentils</figcaption>
 </figure></div>
 
@@ -107,6 +105,8 @@ figcaption {clear: both;}
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -116,24 +116,24 @@ figcaption {clear: both;}
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

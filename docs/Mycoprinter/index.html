@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -51,17 +49,17 @@
     <div class="created">Saturday, March 31, 2018</div>
     
     <div class="content"><figure>
-    <img src="img/artsy-hero.jpg">
+    <img src="artsy-hero.jpg">
     <figcaption>Mycoprinter</figcaption>
 </figure>
 <p>MycoPrinter is an open source 3D bioprinter that prints mycelium substrate ready for inoculation with various types of fungi. It combines additive manufacturing with plant biological tissue to mimic living organisms sculpted into artistic shapes. As such, it aims to bring together engineering, biological sciences, and art together under the umbrella of open citizen science. The printer would allow printing relatively fine details that otherwise would be difficult to sculpt using regular mycelium growing techniques of mold-making. Any artist wanting to work with mycelium would be able to use the MycoPrinter.</p>
 <figure>
-    <img src="img/postcard.jpg">
+    <img src="postcard.jpg">
     <figcaption>Art+science residency</figcaption>
 </figure>
 <p>This project is part of an <a href="http://khojworkshop.org/announcing-art-science-grantees/">art+science residency</a> awarded to <a href="http://www.daryawarner.com">Darya Warner</a> and <a href="https://punkish.org">Puneet Kishor</a> by the <a href="http://khojworkshop.org">Khoj International Artists Association, New Delhi</a>. </p> More information at <a href="https://mycoprinter.punkish.org">Mycoprinter</a>.</p>
 <figure>
-    <a href="https://mycoprinter.punkish.org" target="_blank"><img src="img/puneet-printer.jpg"></a>
+    <a href="https://mycoprinter.punkish.org" target="_blank"><img src="puneet-printer.jpg"></a>
 </figure></div>
 
 
@@ -83,6 +81,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -92,24 +92,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

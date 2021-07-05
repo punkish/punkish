@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -53,7 +51,7 @@
     <div class="content"><p>The <a href="http://science.conservation.org/portal/server.pt?open=512&objID=432&mode=2&in_hi_userid=124186&cached=true">Human Dimensions Program</a> of <a href="http://www.conservation.org/">Conservation International</a> had been conducting a literature review of economic valuation of ecosystem services and their contribution to human livelihood from over 100 reports covering 40 countries released since the year 2000. </p>
 <p>I helped CI create an Google Maps/WMS based <a href="http://ecoservices.eidesis.org/">Ecosystem Services</a> application and put all that data on the web. Our intent is to generate discussion among practitioners, researchers, policy-makers, and the general public about the value of ecosystem services, the cost of environmental degradation, and innovative payments for ecosystem services programs. CI hopes this will lead to further research into the intricate relationship of ecosystem services to human welfare.</p>
 <figure>
-    <img src="img/ecoservices.png">
+    <img src="ecoservices.png">
     <figcaption>ecosystem services</figcaption>
 </figure></div>
 
@@ -73,6 +71,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -82,24 +82,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

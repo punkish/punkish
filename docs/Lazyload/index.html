@@ -34,9 +34,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,39 +50,39 @@
     <div class="created">Friday, April 6, 2018</div>
     
     <div class="content"><figure>
-    <img src="img/oo_41617.png" data-frz-src="https://zenodo.org/record/909894/files/oo_41617.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="oo_41617.png" data-frz-src="https://zenodo.org/record/909894/files/oo_41617.png" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure.png" data-frz-src="https://zenodo.org/record/1212324/files/figure.png"  onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="figure.png" data-frz-src="https://zenodo.org/record/1212324/files/figure.png"  onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure2.png" data-frz-src="https://zenodo.org/record/1212252/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="figure2.png" data-frz-src="https://zenodo.org/record/1212252/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure3.png" data-frz-src="https://zenodo.org/record/1212089/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="figure3.png" data-frz-src="https://zenodo.org/record/1212089/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Telika-plan.jpg" data-frz-src="https://zenodo.org/record/1211712/files/Telika%20plan.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="Telika-plan.jpg" data-frz-src="https://zenodo.org/record/1211712/files/Telika%20plan.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/ukraynada-egitim.jpg" data-frz-src="https://zenodo.org/record/1211361/files/ukraynada-egitim.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="ukraynada-egitim.jpg" data-frz-src="https://zenodo.org/record/1211361/files/ukraynada-egitim.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Bavikonda-reliquary.jpg" data-frz-src="https://zenodo.org/record/1203669/files/Bavikonda%20reliquary.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="Bavikonda-reliquary.jpg" data-frz-src="https://zenodo.org/record/1203669/files/Bavikonda%20reliquary.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Figure8.png" data-frz-src="https://zenodo.org/record/1095872/files/Figure8.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="Figure8.png" data-frz-src="https://zenodo.org/record/1095872/files/Figure8.png" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure-(1).png" data-frz-src="https://zenodo.org/record/1213001/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="figure-(1).png" data-frz-src="https://zenodo.org/record/1213001/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
     <figcaption></figcaption>
 </figure></div>
 
@@ -106,12 +104,16 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
+    window.addEventListener('load', function(e) {
         hljs.initHighlighting()
+    })
     </script>
     
     
@@ -120,24 +122,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

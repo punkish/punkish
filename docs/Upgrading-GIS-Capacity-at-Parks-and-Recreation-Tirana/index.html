@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -54,7 +52,7 @@
 <p>Currently a map of parcels of land managed by APR is maintained as a layer in AutoCAD. There are 46 parcels in the layer right now. Each parcel has trees planted already, however, there is no geolocation information for the trees. There is, however, information about the number and species of trees, and other information about each tree.</p>
 <p>All this information is maintained in a MS-Excel spreadsheet with one sheet for every parcel. The 46 sheets containing the parcel-level information are names “Parcel 1,” “Parcel 2,” and so on. There are other sheets in the spreadsheet containing other related information about the trees. Other than the naming convention, there is no link between the parcels in AutoCAD and the sheets in Excel.</p>
 <figure>
-    <img src="img/parcels-tables.jpg">
+    <img src="parcels-tables.jpg">
     <figcaption>park parcels stored in a spreadsheet</figcaption>
 </figure>
 <p>First, the parcels layer was exported from AutoCAD to <a href="http://esri.com/">ESRI</a> <a href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a> format as polygons. This ensured that closed polylines were treated as polygons in the GIS. And the 46 individual sheets in the Excel spreadsheet were combined into a single sheet, and a column was added to the sheet for the parcel number of each sheet. This resulted in a table with more than 900 rows that was then exported to a comma separated value (CSV) format:</p>
@@ -127,7 +125,7 @@ apr=# COPY trees FROM '~/apr-tirana/trees.csv' DELIMITER ',' CSV HEADER;
 </code></pre>
 <p>Now that all our data are imported into Postgres, we can connect to the database from QGIS and work with it in a real, world class, modern GIS environment.</p>
 <figure>
-    <img src="img/qgis.jpg">
+    <img src="qgis.jpg">
     <figcaption>parks coverage</figcaption>
 </figure>
 <p>From here, the next major step would be to hook a web server to serve data to the browser directly from PostGIS. But that is for another day…</p></div>
@@ -150,6 +148,8 @@ apr=# COPY trees FROM '~/apr-tirana/trees.csv' DELIMITER ',' CSV HEADER;
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -159,24 +159,24 @@ apr=# COPY trees FROM '~/apr-tirana/trees.csv' DELIMITER ',' CSV HEADER;
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

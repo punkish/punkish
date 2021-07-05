@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -59,7 +57,7 @@
         <li><a href="/_tags/The-World-Bank.html">The World Bank</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Specialist-Meeting-on-Volunteered-Geographic-Information,-NCGIA-and-LANL,-Santa-Barbara,-CA,-USA">↜ Specialist Meeting on Volunteered Geographic Information, NCGIA and LANL, Santa Barbara, CA, USA.</a></li>
+        <li class="prev"><a href="/Specialist-Meeting-on-Ontology-for-the-National-Map,-USGS-and-UCGIS,-Washington-DC,-USA">↜ Specialist Meeting on Ontology for the National Map, USGS and UCGIS, Washington DC, USA.</a></li>
         <li class="next"><a href="/Summer-Doctoral-Program-on-Web-Science,-Oxford-Internet-Institute,-Oxford-University,-UK">Summer Doctoral Program on Web Science, Oxford Internet Institute, Oxford University, UK. ⇝</a></li>
     </ul>
 </section>
@@ -71,6 +69,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -80,24 +80,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

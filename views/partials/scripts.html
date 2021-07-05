@@ -2,13 +2,17 @@
 <script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
 <script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
 <script src="{{baseUrl}}/_lib/js/punkish.js"></script>
+
+<!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
 <script src="{{baseUrl}}/_lib/js/hilitor.js"></script>
 
 {{#if hasCode}}
 <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
 <script>
+window.addEventListener('load', function(e) {
     hljs.initHighlighting()
+})
 </script>
 {{/if}}
 
@@ -30,11 +34,11 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 {{#if isCanvas}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script>
-    window.onload = function() {
-        const canvas = document.querySelector("canvas")
-        const ctx = canvas.getContext("2d")
-        chart(ctx)
-    }
+window.addEventListener('load', function(e) {
+    const canvas = document.querySelector("canvas")
+    const ctx = canvas.getContext("2d")
+    chart(ctx)
+})
 </script>
 {{/if}}
 
@@ -48,31 +52,31 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
     {{#each js}}
     <script src="js/{{.}}.js"></script>
     <script>
-        if (PK['{{.}}'].init) {
-            window.addEventListener('load', PK['{{.}}'].init)
-        }
+    if (PK['{{.}}'].init) {
+        window.addEventListener('load', PK['{{.}}'].init)
+    }
     </script>
     {{/each}}
 {{/if}}
 
 <script>
-    window.addEventListener('load', function(e) {
-        PK.autocomplete()
-        PK.initializeDictionary()
+window.addEventListener('load', function(e) {
+    PK.autocomplete()
+    PK.initializeDictionary()
 
-        const searchInPage = document.getElementById('searchInPage')
-        if (searchInPage) {
-            const inp = document.getElementsByName('tag')
-            inp[0].addEventListener('keyup', PK.searchInPage)
-        }
+    const searchInPage = document.getElementById('searchInPage')
+    if (searchInPage) {
+        const inp = document.getElementsByName('tag')
+        inp[0].addEventListener('keyup', PK.searchInPage)
+    }
 
-        const loc = window.location
-        if (loc.hash) {
-            const term = loc.hash.substring(1)
+    const loc = window.location
+    if (loc.hash) {
+        const term = loc.hash.substring(1)
 
-            // id of the element to parse
-            const myHilitor = new Hilitor("content")
-            myHilitor.apply(term)
-        }
-    })
+        // id of the element to parse
+        const myHilitor = new Hilitor("content")
+        myHilitor.apply(term)
+    }
+})
 </script>

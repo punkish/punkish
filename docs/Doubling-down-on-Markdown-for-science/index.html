@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -50,11 +48,11 @@
     <div class="description"></div>
     <div class="created">Tuesday, January 1, 1980</div>
     
-    <div class="content"><p>Scientific authoring workflow is a beast. You keep notes on paper (hopefully, a notebook, and not just loose pages), in word-processing documents unhelpfully named “notes” followed by “notes1,” “notes2” or worse, “notes<em>old,” “notes</em>old1.” You manage your bibliography on your desktop or on the web, you have a directory folder full of images, charts, photos and other media, and you collaborate with your co-authors by emailing attachments back and forth.</p>
+    <div class="content"><p>Scientific authoring workflow is a beast. You keep notes on paper (hopefully, a notebook, and not just loose pages), in word-processing documents unhelpfully named “notes” followed by “notes1,” “notes2” or worse, “notes_old,” “notes_old1.” You manage your bibliography on your desktop or on the web, you have a directory folder full of images, charts, photos and other media, and you collaborate with your co-authors by emailing attachments back and forth.</p>
 <p>Sooner or later you start doubting your sanity but you soldier on. Finally you publish your paper, heave a sigh of relief, and move on, thereby ensuring your data can’t be reused and your work can’t be reproduced easily.</p>
 <p>Several <a href="https://github.com/scholmd/markdown_science/wiki/people-attending">coders, designers, scientists, and publishers</a> met at PLOS to brainstorm toward a better, more modern way. The <a href="https://github.com/scholmd/markdown_science/wiki">Markdown for Science workshop</a> was organized by <a href="http://blogs.plos.org/mfenner/2012/12/13/a-call-for-scholarly-markdown/">Martin Fenner</a> and <a href="http://reganmian.net/wiki/researchr:start">Stian Håklev</a> and supported by a <a href="http://www.force11.org/node/4358">1K Challenge Grant from FORCE11</a>.</p>
 <figure>
-    <img src="img/ideas.jpg">
+    <img src="ideas.jpg">
     <figcaption>Photos by Puneet Kishor, CC0 PD Dedication</figcaption>
 </figure>
 <p>While a lot of good ideas were generated, we have a long way to go. <a href="https://github.com/scholmd/markdown_science/wiki">Keep an eye on this project</a>, and better yet, pitch in with your ideas and code. Together we can tame this beast.</p></div>
@@ -78,6 +76,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -87,24 +87,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

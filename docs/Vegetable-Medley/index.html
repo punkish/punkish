@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -48,7 +46,7 @@
     <main id="content"><section>
     <h1 class="title">Vegetable Medley</h1>
     <div class="description"></div>
-    <div class="created">Tuesday, January 1, 1980</div>
+    <div class="created">Friday, August 26, 2005</div>
     
     <div class="content"><ul>
 <li>1 large eggplant</li>
@@ -62,11 +60,11 @@
 <li>fresh parsley, scallions, oregano, and mint</li>
 </ul>
 <ol>
-<li><p>Cube eggplant and toss w salt to sweat.</p></li>
-<li><p>Prepare the beans and peppers.</p></li>
-<li><p>Rinse eggplant, toss with oil, grill on charcoal (or open flame) for 15 minutes.</p></li>
-<li><p>Add beans and pepper, and grill for five more minutes.</p></li>
-<li><p>Toss in a bowl with olives, herbs, and salt and pepper.</p></li>
+<li>Cube eggplant and toss w salt to sweat.</li>
+<li>Prepare the beans and peppers.</li>
+<li>Rinse eggplant, toss with oil, grill on charcoal (or open flame) for 15 minutes.</li>
+<li>Add beans and pepper, and grill for five more minutes.</li>
+<li>Toss in a bowl with olives, herbs, and salt and pepper.</li>
 </ol></div>
 
 
@@ -86,6 +84,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -95,24 +95,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -59,7 +57,7 @@
 <li><p>Return license info for every row in the result set;</p>
 <p>A query can return rows entered by many contributors. As such, the license information should be returned for every row. To reduce bulk in the returned result set, we return only a URI with the license_id.</p></li>
 <li><p>Track query count for the root resource in every result set;</p>
-<p>For every result set, we track how many times each row has been queried. This opens up possibilities of all kinds of analytics, not just from the perpesctive of who entered the record, but also criteria such as spatial distribution of more popular queries. A point to note: we track only queryable resources, not dependent resources. For example, given a resource called "collection" that has a "collection<em>type," only collections are tracked, not collection</em>types. Another way to look at it -- if you want to track it, it should be worth tracking, and should have an "entered_by" assigned to it.</p></li>
+<p>For every result set, we track how many times each row has been queried. This opens up possibilities of all kinds of analytics, not just from the perpesctive of who entered the record, but also criteria such as spatial distribution of more popular queries. A point to note: we track only queryable resources, not dependent resources. For example, given a resource called "collection" that has a "collection_type," only collections are tracked, not collection_types. Another way to look at it -- if you want to track it, it should be worth tracking, and should have an "entered_by" assigned to it.</p></li>
 <li><p>Provide a mechanism to cite a result set with a permanent URI.</p>
 <p>Since every query is unique, we can return a URI, if requested, that may be used to cite the queried record set. The permanent URI can easily be resolved back to the original result set. If the URI returns results from a single contributor, that contributor can be cited. If the URI returns results from more than one contributor, the entire data collection team can be cited.</p>
 <p>Other initiatives have chosen different mechanisms for identification. For example, <a href="http://datacite.org">DataCite</a> uses digital object identifiers or DOIs. However, this seems to prefer centralization as I can't just create a DOI. I have to first find a DataCite member who will then facilitate my getting the ability to generate my own DOIs. This also seems to violate timbl's <a href="http://www.w3.org/DesignIssues/LinkedData">second rule of linked data</a>:</p>
@@ -339,6 +337,8 @@ sub masticate {
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -348,24 +348,24 @@ sub masticate {
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

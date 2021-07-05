@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -52,7 +50,7 @@
     
     <div class="content"><p>In spite of my <a href="Wary-of-Wearables">wariness with QS sensors</a>, <strong>a sweet spot</strong> for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown below.</p>
 <figure>
-    <img src="img/sensors.png">
+    <img src="sensors.png">
     <figcaption>A Taxonomy of Sensors</figcaption>
 </figure>
 <p>The regional-scale sensors such as airborne or satellites (I recently gave a talk at Planet Labs; they are doing exhilarating work) will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices such as Nest, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool's errand unless we change the conversation around <a href="Information-Lifecycle">privacy and sharing</a>. </p>
@@ -79,6 +77,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -88,24 +88,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>

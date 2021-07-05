@@ -33,9 +33,7 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <!-- <input name="q" type="text" placeholder="there are none so blind as those who don’t see"> -->
-        <input class="awesomplete" list="minisearch" name="q" type="text" placeholder="there are none so blind as those who don’t see">
-        <datalist id="minisearch"></datalist>
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
 </div>
 <nav>
@@ -50,10 +48,10 @@
     <div class="description"></div>
     <div class="created">Tuesday, September 10, 2013</div>
     
-    <div class="content"><figure>
-    <img src="img/jack.jpg">
-    <figcaption>Jack</figcaption>
-</figure>
+    <div class="content"><p><figure>
+	<img src=img/"jack.jpg" alt="young man, Jack" >
+	<figcaption>This is Jack</figcaption>
+</figure></p>
 <p>Jack is from Malawi. He makes Rand 14 per hour (that is $1.40) working 180 hours a month. Of the R2500 he makes per month, Jack spends R600 on a small room, R600-R1000 on food, and R12 every day to and from work. He visits his family in Malawi once a year. It is a 2 day journey by bus from Cape Town to Malawi (actually, several buses are involved). The trip costs him R1500-1700. Jack would like to save and send some money back home to his parents. Jack misses Malawi. He wants me to visit because although Malawi is very poor, it is very beautiful. </p>
 <p>Jack was tired and yawning. He said, “Life is a journey,” but seems like young Jack has been traveling for a long time. Then Jack made me a double espresso.</p></div>
 
@@ -77,6 +75,8 @@
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
     
@@ -86,24 +86,24 @@
     
     
     <script>
-        window.addEventListener('load', function(e) {
-            PK.autocomplete()
-            PK.initializeDictionary()
+    window.addEventListener('load', function(e) {
+        PK.autocomplete()
+        PK.initializeDictionary()
     
-            const searchInPage = document.getElementById('searchInPage')
-            if (searchInPage) {
-                const inp = document.getElementsByName('tag')
-                inp[0].addEventListener('keyup', PK.searchInPage)
-            }
+        const searchInPage = document.getElementById('searchInPage')
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag')
+            inp[0].addEventListener('keyup', PK.searchInPage)
+        }
     
-            const loc = window.location
-            if (loc.hash) {
-                const term = loc.hash.substring(1)
+        const loc = window.location
+        if (loc.hash) {
+            const term = loc.hash.substring(1)
     
-                // id of the element to parse
-                const myHilitor = new Hilitor("content")
-                myHilitor.apply(term)
-            }
-        })
+            // id of the element to parse
+            const myHilitor = new Hilitor("content")
+            myHilitor.apply(term)
+        }
+    })
     </script></body>
 </html>
