@@ -25,7 +25,7 @@ notes      : Present and future geo activities at Göttingen
 ## Geoparsing
 .byline[skunkworks project]
 
-<img src="../img/pauliner.jpg" style="width: 100%; max-width: 669px; border: 1px solid black;">
+<img src="img/../img/pauliner.jpg" style="width: 100%; max-width: 669px; border: 1px solid black;">
 
 ---
 
@@ -109,7 +109,7 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 
 --
 
-<img src="../img/geotagging-workflow.png" style="width: 100%; max-width: 544px; border: 1px solid black;">
+<img src="img/../img/geotagging-workflow.png" style="width: 100%; max-width: 544px; border: 1px solid black;">
 
 --
 
@@ -137,7 +137,7 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 ## 3D Modeling and Visualization
 .byline[giving shape to the world]
 
-<img src="../img/3d-pipeline.png" style="width: 100%; max-width: 709px; border: 1px solid black;">
+<img src="img/../img/3d-pipeline.png" style="width: 100%; max-width: 709px; border: 1px solid black;">
 
 ---
 
@@ -175,4 +175,4 @@ Frankfurt is a world class city, and Hamburgers are justifiably proud of their h
 
 .three-right-column[]
 
-<img src="../img/goetgit.jpg" style="width: 100%; max-width: 720px; border: 1px solid black;">
+<img src="img/../img/goetgit.jpg" style="width: 100%; max-width: 720px; border: 1px solid black;">

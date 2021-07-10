@@ -17,7 +17,7 @@ css        : ../../css/disruptive
 ---
 
 <figure>
-    <img src="ossi.jpg">
+    <img src="img/ossi.jpg">
     <figcaption>Posterized rendering of photo of Open Source Seed Initiative packaging released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 

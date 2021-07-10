@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="dawn.jpg">
+    <img src="img/dawn.jpg">
     <figcaption>dawn</figcaption>
 </figure>
 

@@ -18,7 +18,7 @@ Vickram and Jude were tinkering with a device that I was having a hard time unde
 But, while I didn’t fully understand the scope of that device, I kept on thinking that perhaps all that is needed is an encrypted USB-drive.
 
 <figure>
-    <img src="usb.png">
+    <img src="img/usb.png">
     <figcaption>The device</figcaption>
 </figure>
 

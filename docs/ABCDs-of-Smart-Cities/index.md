@@ -37,7 +37,7 @@ The important thing to note is that a city can display decision-making character
 An example that always comes to the forefront of my mind whenever I am in a big city is described in my post about the <a href="/Crossroads-Conundrum">Crossroads Conundrum</a>. 
 
 <figure>
-    <img src="25th-penn.jpg">
+    <img src="img/25th-penn.jpg">
     <figcaption>25th and Penn and L</figcaption>
 </figure>
 
@@ -48,21 +48,21 @@ However, I also see a bike-sharing stand that is built on a framework of open da
 The thing to keep in mind: real things are highly inefficient. They can’t be moved easily. But we do need them to make our lives, esp. our cities, possible. The “smart bikes” (bike sharing bikes are smarter than regular bikes) are expensive, around $1000 each, because they have a tracker of some sort, a chip, a battery, need to be more robust because of the rough handling by their users who are not their owners, etc. The Chinese companies are trying to disrupt this by dumping really cheap hardware because, well, China. This is not smart because it does create a nuisance, but it is smart because it is pushing the envelope. The citizenry is split into two – the users of these bikes who appreciate the ease of picking up and dropping them off because they can do that anywhere, and the rest of us who are pissed that these scooters and bicycles being left in the middle of the sidewalks are nuisance. Of course, this is a perfect impetus for policy changes that learn from both sides – make transportation easier and more affordable but do so without inconveniencing others.
 
 <figure>
-    <img src="sensor1.jpg">
+    <img src="img/sensor1.jpg">
     <figcaption>AQ monitor parts</figcaption>
 </figure>
 
 A couple of years ago I led a <a href="https://punkish.org/science/sensoredcity/">project on air-quality monitoring</a> in Louisville, KY. We designed and manufactured AQ monitoring stations that could measure PM2.5, CO, temperature, humidity and solar radiation. 
 
 <figure>
-    <img src="sensor2.jpg">
+    <img src="img/sensor2.jpg">
     <figcaption>AQ monitor installed in downtown Louisville</figcaption>
 </figure>
 
 We installed these monitors in downtown Louisville. The monitors transmitted the data wirelessly to a central server from where we downloaded the data in realtime to drive a data-drive sculpture installed on the sidewalk.
 
 <figure>
-    <img src="sculpture.gif" style="width: 480px !important;">
+    <img src="img/sculpture.gif" style="width: 480px !important;">
     <figcaption>data-driven sculpture</figcaption>
 </figure>
 

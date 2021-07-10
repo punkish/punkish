@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="royal.jpg">
+    <img src="img/royal.jpg">
     <figcaption><b>Royal Poinciana</b> or <i>Delonix regia</i> aka <a href="https://en.wikipedia.org/wiki/Delonix_regia" target="_blank">Gulmohar</a> (गुलमोहर) is a flowering tree with a flamboyant display of flowers</figcaption>
 </figure>

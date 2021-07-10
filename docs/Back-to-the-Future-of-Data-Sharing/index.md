@@ -104,7 +104,7 @@ class: center, middle
 
 ## Data, What Data?
 
-<img src="../img/my-gut.jpg" width="100%" alt="my gut">
+<img src="img/../img/my-gut.jpg" width="100%" alt="my gut">
 
 ---
 
@@ -115,7 +115,7 @@ class: center, middle
 
 ## Open Humans
 
-<img src="../img/openhumans.jpg" width="100%" alt="OpenHumans">
+<img src="img/../img/openhumans.jpg" width="100%" alt="OpenHumans">
 
 ---
 class: center, middle
@@ -165,13 +165,13 @@ Data are aggregated from multiple published and online sources, including those 
 
 ### Scientific norms *and* legal requirement
 
-<img src="../img/macrostrat-credits.jpg" width="90%">
+<img src="img/../img/macrostrat-credits.jpg" width="90%">
 
 ---
 
 ## Data are CC BY 4.0
 
-<img src="/Scalable-Data-Sharing/img/cc-by-4.jpg" width="90%">
+<img src="img/Scalable-Data-Sharing/img/cc-by-4.jpg" width="90%">
 
 ---
 
@@ -179,7 +179,7 @@ Data are aggregated from multiple published and online sources, including those 
 
 ### [What is at a point lat 51.5115, lng 10.2242?](https://macrostrat.org/burwell/#11/51.5115/10.2242)
 
-<img src="/Scalable-Data-Sharing/img/burwell-point.jpg" width="80%">
+<img src="img/Scalable-Data-Sharing/img/burwell-point.jpg" width="80%">
 
 ---
 
@@ -252,7 +252,7 @@ Query data
 
 ### [elevation profile between two points lat 51.5113, lng 10.1256](https://macrostrat.org/burwell/#11/51.5113/10.1256)
 
-<img src="/Scalable-Data-Sharing/img/img/burwell-elevation.jpg" width="80%">
+<img src="img/Scalable-Data-Sharing/img/img/burwell-elevation.jpg" width="80%">
 
 ---
 
@@ -501,7 +501,7 @@ Elevation profile data
 
 https://zenodo.org/search?page=1&size=20&q=pelagic
 
-<img src="../img/zenodo-1.jpg" width="90%">
+<img src="img/../img/zenodo-1.jpg" width="90%">
 
 ---
 
@@ -509,7 +509,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic
 
 https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=png&keywords=animalia&type=image&subtype=figure
 
-<img src="../img/zenodo-2.jpg" width="90%">
+<img src="img/../img/zenodo-2.jpg" width="90%">
 
 ---
 
@@ -517,7 +517,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=p
 
 [https://zenodo.org/record/273847]()
 
-<img src="../img/zenodo-3.jpg" width="90%">
+<img src="img/../img/zenodo-3.jpg" width="90%">
 
 ---
 
@@ -621,7 +621,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=p
 
 ## TreatmentBank
 
-<img src="../img/tb-0.jpg" width="90%">
+<img src="img/../img/tb-0.jpg" width="90%">
 
 ---
 
@@ -629,7 +629,7 @@ https://zenodo.org/search?page=1&size=20&q=pelagic&access_right=open&file_type=p
 
 [http://treatment.plazi.org/id/03EB260EFFE89157FF4A096AFA2EFC26]()
 
-<img src="../img/tb-1.jpg" width="90%">
+<img src="img/../img/tb-1.jpg" width="90%">
 
 ---
 

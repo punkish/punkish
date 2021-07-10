@@ -16,6 +16,6 @@ stars      :
 ---
 
 <figure>
-    <img src="3-cubists.jpg">
+    <img src="img/3-cubists.jpg">
     <figcaption>Shivani, Sneha and Likita</figcaption>
 </figure>

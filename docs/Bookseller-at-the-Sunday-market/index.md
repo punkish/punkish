@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3903.JPG">
+    <img src="img/IMG_3903.JPG">
     <figcaption>Bookseller at the Sunday market in Buenos Aires</figcaption>
 </figure>
 

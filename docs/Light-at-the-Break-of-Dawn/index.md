@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="light.jpg">
+    <img src="img/light.jpg">
     <figcaption>The light at the break of dawn</figcaption>
 </figure>
 

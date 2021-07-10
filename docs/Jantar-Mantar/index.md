@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_1413.JPG">
+    <img src="img/IMG_1413.JPG">
     <figcaption>One of the many astronomical instruments at Jantar Mantar in New Delhi</figcaption>
 </figure>

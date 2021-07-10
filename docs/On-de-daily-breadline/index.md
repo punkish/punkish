@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="pans.jpg">
+    <img src="img/pans.jpg">
     <figcaption>Syncopated steely tenor sound</figcaption>
 </figure>
 

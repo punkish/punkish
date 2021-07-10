@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="KBAC2128.jpg">
+    <img src="img/KBAC2128.jpg">
     <figcaption>A Little Girl Lost</figcaption>
 </figure>
 

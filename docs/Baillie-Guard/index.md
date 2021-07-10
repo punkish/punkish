@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="baillie-guard.jpg">
+    <img src="img/baillie-guard.jpg">
     <figcaption>Baillie Guard</figcaption>
 </figure>
 

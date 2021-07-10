@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="in-panik.jpg">
+    <img src="img/in-panik.jpg">
     <figcaption>In Panik</figcaption>
 </figure>

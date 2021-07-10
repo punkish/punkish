@@ -16,7 +16,7 @@ css        : ../../css/disruptive
 ---
 
 <figure>
-    <img src="water-quality-sensor.png">
+    <img src="img/water-quality-sensor.png">
     <figcaption>Portable water quality sensor developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/" target="_blank">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com" target="_blank">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com" target="_blank">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores <a href="http://web.v-a.pt/planetary-sensing/" target="_blank">planetary sensing navigations</a> below the surface. The device is based on a design by <a href="https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter" target="_blank">Shan He of Public Lab</a> in cooperation with the folks at <a href="https://www.dfrobot.com" target="_blank">DF Robot</a>. Original design mods and photo released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Sensor-based delivery systems for plant nutrition can make agriculture more prod
 The regional-scale sensors such as airborne or satellites will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool’s errand unless we change the conversation around privacy and sharing. Local sensors have a better chance to not just scale, but also change the way we collect data about ourselves and our local environments with high temporal and spatial resolutions. By not collecting individual info, we sidestep the issues of privacy and security. These local sensors occupy a sweet spot providing useful local detail without getting tied up in privacy issues. Additionally, we can power them however we want, and we already know their position because they are static, so there is no need for battery-consumptive GPS.
 
 <figure>
-    <img src="sensors.png">
+    <img src="img/sensors.png">
     <figcaption> sweet spot for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown above. Original illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 

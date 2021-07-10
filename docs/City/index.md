@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="city.jpg">
+    <img src="img/city.jpg">
     <figcaption>Marseille</figcaption>
 </figure>
 

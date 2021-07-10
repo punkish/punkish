@@ -12,7 +12,7 @@ stars      :
 ---
 
 <figure>
-    <img src="traffic.gif">
+    <img src="img/traffic.gif">
     <figcaption>nonstop</figcaption>
 </figure>
 

@@ -13,7 +13,7 @@ tags        :
 stars      :
 ---
 
-<img src="repo3.png" width="455">
+<img src="img/repo3.png" width="455">
 
 I have been brainstorming on what a (near)[^1] perfect data repository and information discovery platform would be, both more generally for any discipline but also specifically for the health/medical fields. At its minimum, a repository would allow researchers to upload their content, package it appropriately, choose an appropriate license, add and useful metadata. But a repository is worthless if it only stores data; it should also allow searching for and finding data as well as researchers. Given that, below are the major functional features of a useful repo.
 

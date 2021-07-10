@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3392.jpg">
+    <img src="img/IMG_3392.jpg">
     <figcaption>Pensive in Venice Beach</figcaption>
 </figure>
 

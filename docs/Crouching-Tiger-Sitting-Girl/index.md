@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_2066.JPG">
+    <img src="img/IMG_2066.JPG">
     <figcaption>The pensive looking young girl was sitting away from her friends who were all out on a day class trip in old Tainan.</figcaption>
 </figure>

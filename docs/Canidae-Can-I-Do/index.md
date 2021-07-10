@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_9387.jpg">
+    <img src="img/IMG_9387.jpg">
     <figcaption>puppies</figcaption>
 </figure>
 

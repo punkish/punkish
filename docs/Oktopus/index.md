@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="oktopus.jpg">
+    <img src="img/oktopus.jpg">
     <figcaption>Eight musicians doing their own “Québécois classico-Balkan klezmer” at the Montreal Jazz Festival</figcaption>
 </figure>
 

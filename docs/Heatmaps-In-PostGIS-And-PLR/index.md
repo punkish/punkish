@@ -17,7 +17,7 @@ stars      :
 ---
 
 <figure>
-    <img src="heatmap.jpg">
+    <img src="img/heatmap.jpg">
     <figcaption>heatmap</figcaption>
 </figure>
 

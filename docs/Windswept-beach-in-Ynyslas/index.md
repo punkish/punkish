@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="beach.jpg">
+    <img src="img/beach.jpg">
     <figcaption>Ynyslas</figcaption>
 </figure>
 

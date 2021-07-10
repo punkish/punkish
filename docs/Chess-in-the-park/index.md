@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3902.JPG">
+    <img src="img/IMG_3902.JPG">
     <figcaption>Chess in the park in Buenos Aires</figcaption>
 </figure>
 

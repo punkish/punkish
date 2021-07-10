@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="twin-towers.jpg">
+    <img src="img/twin-towers.jpg">
     <figcaption>La tour Eiffel et une grue marquer le ciel Parisien</figcaption>
 </figure>
 

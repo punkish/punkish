@@ -15,16 +15,16 @@ stars      :
 An unlikely but highly effective collaboration between Iceland and Benin.
 
 <figure>
-    <img src="IMG_6264.jpg">
+    <img src="img/IMG_6264.jpg">
     <figcaption>The Helsinki-Coutonou Ensemble</figcaption>
 </figure>
 
 <figure>
-    <img src="IMG_6262.jpg">
+    <img src="img/IMG_6262.jpg">
     <figcaption>The Helsinki-Coutonou Ensemble</figcaption>
 </figure>
 
 <figure>
-    <img src="IMG_6274.jpg">
+    <img src="img/IMG_6274.jpg">
     <figcaption>The Helsinki-Coutonou Ensemble</figcaption>
 </figure>

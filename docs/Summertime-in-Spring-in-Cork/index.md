@@ -16,7 +16,7 @@ tmpl       :
 ---
 
 <figure>
-    <img src="sm.jpg">
+    <img src="img/sm.jpg">
     <figcaption>Sello Moeketsti</figcaption>
 </figure>
 

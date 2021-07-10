@@ -21,7 +21,7 @@ me: “I don’t know, no one can see the future. I may think I am over that, bu
 eh: “The chance of problems increases as both parents age. The risks to the new born are there, though they can be mitigated.”
 
 <figure>
-    <img src="moon.jpg">
+    <img src="img/moon.jpg">
     <figcaption></figcaption>
 </figure>
 

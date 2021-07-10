@@ -17,7 +17,7 @@ stars      :
 ---
 
 <figure>
-    <img src="wrinkled.gif">
+    <img src="img/wrinkled.gif">
     <figcaption></figcaption>
 </figure>
 ![wrinkled paper](wrinkled.gif "Wrinkled, by Liliana Porter")

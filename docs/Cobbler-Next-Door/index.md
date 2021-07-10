@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="cobbler.jpg">
+    <img src="img/cobbler.jpg">
     <figcaption>the Mankhurd cobbler</figcaption>
 </figure>
 

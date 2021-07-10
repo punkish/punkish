@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_2262.jpg">
+    <img src="img/IMG_2262.jpg">
     <figcaption>at Istanbul Modern</figcaption>
 </figure>
  

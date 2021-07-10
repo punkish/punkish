@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="luther_95_thesen.jpg" width="100%">
+    <img src="img/luther_95_thesen.jpg" width="100%">
 </figure>
 
 If five hundred years ago, almost to the day, a monk can hang his theses to change the course of religion, I can, rather more modestly, create a few APIs to experiment with changing how information is accessed or processed. I call these, my adventures in programming, the Reformation APIs.

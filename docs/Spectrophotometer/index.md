@@ -19,26 +19,26 @@ Spectrophotometry is the quantitative measurement of the reflection or transmiss
 <i><b>Note:</b> The first version of the spectrophotometer was made by Ashish and Ravi with help from GN and I. Shirish, Praveen and Ankush provided valuable advice.</i>
 
 <figure>
-    <img src="spectro.png">
+    <img src="img/spectro.png">
     <figcaption>spectrophotometer</figcaption>
 </figure>
 
 <figure>
-    <img src="spectro.jpg">
+    <img src="img/spectro.jpg">
     <figcaption>side views with stepper motor control buttons</figcaption>
 </figure>
 
 <figure>
-    <img src="spectro-front.jpg">
+    <img src="img/spectro-front.jpg">
     <figcaption>view from top, front-to-back and back-to-front</figcaption>
 </figure>
 
 <figure>
-    <img src="solutions.jpg">
+    <img src="img/solutions.jpg">
     <figcaption>solutions</figcaption>
 </figure>
 
 <figure>
-    <img src="waveforms.jpg">
+    <img src="img/waveforms.jpg">
     <figcaption>waveforms</figcaption>
 </figure>

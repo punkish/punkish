@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="there-is-something.jpg">
+    <img src="img/there-is-something.jpg">
     <figcaption>There is something better than perfection</figcaption>
 </figure>

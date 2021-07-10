@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0037.jpg">
+    <img src="img/IMG_0037.jpg">
     <figcaption>These young women at Sultanahmet Čamii were doing what any young woman with a smartphone will do after finishing her prayers… take a selfie</figcaption>
 </figure>

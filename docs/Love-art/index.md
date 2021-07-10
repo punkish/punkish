@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="love_art.jpg">
+    <img src="img/love_art.jpg">
     <figcaption>and leave it at that</figcaption>
 </figure>
 

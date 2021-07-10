@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3979.JPG">
+    <img src="img/IMG_3979.JPG">
     <figcaption>Confab</figcaption>
 </figure>
 

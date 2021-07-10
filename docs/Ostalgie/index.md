@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="ostalgie.jpg">
+    <img src="img/ostalgie.jpg">
     <figcaption></figcaption>
 </figure>
 

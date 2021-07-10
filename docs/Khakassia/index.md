@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="olga-q.jpg">
+    <img src="img/olga-q.jpg">
     <figcaption>Olga Amelchenko Quartet</figcaption>
 </figure>
 

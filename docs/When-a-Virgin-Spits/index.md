@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="in-out.jpg">
+    <img src="img/in-out.jpg">
     <figcaption>within, without</figcaption>
 </figure>
 

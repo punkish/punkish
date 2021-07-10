@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0539.JPG">
+    <img src="img/IMG_0539.JPG">
     <figcaption>This view in Copenhagen came with a room that I stayed in for a week</figcaption>
 </figure>

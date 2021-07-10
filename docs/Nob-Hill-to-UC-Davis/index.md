@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img054.jpg">
+    <img src="img/054.jpg">
     <figcaption>Nob Hill (San Francisco) to UC-Davis (Davis)</figcaption>
 </figure>
 

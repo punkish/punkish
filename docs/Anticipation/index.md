@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="anticipation.jpg">
+    <img src="img/anticipation.jpg">
     <figcaption>Waiting… at Aǧa Sofya</figcaption>
 </figure>
 

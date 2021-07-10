@@ -36,7 +36,7 @@ While it may be difficult to define citizen science, and doing so is also fraugh
 <cite><a href="http://www.astronomy.com/news/2016/12/a-stellar-discovery-about-pulsars" target="_blank">K.N. Smith  |  Published: Thursday, December 8, 2016. Astronomy.com.</a></cite>
 
 <figure>
-    <img src="apjl489829f3_lr.jpg">
+    <img src="img/apjl489829f3_lr.jpg">
     <figcaption></figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ This is citizen science.
 <cite><a href="https://wellcome.ac.uk/news/public-invited-help-tackle-antibiotic-resistance" target="_blank">News / Published: 7 April 2017. Wellcome.ac.uk</a></cite>
 
 <figure>
-    <img src="BashTheBug.jpg">
+    <img src="img/BashTheBug.jpg">
     <figcaption></figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ This is *not* citizen science.
 <cite><a href="https://www.propublica.org/article/muscular-dystrophy-patient-olympic-medalist-same-genetic-mutation" target="_blank">David Epstein, ProPublica. January 15, 2016. Propublic.org</a></cite>
 
 <figure>
-    <img src="IMG_2715.jpg">
+    <img src="img/IMG_2715.jpg">
     <figcaption></figcaption>
 </figure>
 

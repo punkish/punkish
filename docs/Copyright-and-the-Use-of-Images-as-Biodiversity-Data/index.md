@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="oo_122740.png" width="100%">
+    <img src="img/oo_122740.png" width="100%">
     <figcaption>Time series of taxonomic illustrations depicting <i>Sigmoilina</i> (Chromista: Foraminifera: Miliolida: Hauerinidae) in standard views. <i>Sigmoilina sigmoidea</i>, from <i>Brady (1884)</i> (1a, 2, lateral view; 1b, aperture view; 3 axial cross section). Modified from image available on the World Register of Marine Species (<i>WoRMS Editorial Board 2017</i>).</figcaption>
 </figure>
 

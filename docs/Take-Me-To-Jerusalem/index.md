@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0384_2.jpg">
+    <img src="img/IMG_0384_2.jpg">
     <figcaption>Take me to Jerusalem</figcaption>
 </figure>
 

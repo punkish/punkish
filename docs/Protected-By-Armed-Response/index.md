@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_4336.jpg">
+    <img src="img/IMG_4336.jpg">
     <figcaption>Foreboding storm after calm</figcaption>
 </figure>
 

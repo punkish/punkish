@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="P0005222.jpg">
+    <img src="img/P0005222.jpg">
     <figcaption>He was the cook on the plantation</figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="P8062370.jpg">
+    <img src="img/P8062370.jpg">
     <figcaption>Afternoon nap</figcaption>
 </figure>
 

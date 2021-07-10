@@ -16,7 +16,7 @@ css        : ../../css/disruptive
 ---
 
 <figure>
-    <img src="garp.jpg">
+    <img src="img/garp.jpg">
     <figcaption>Shading represents the predicted distribution of the Common Bush Tanagers Chlorospingus ophthalmicus in Mexico modeled in Genetic Algorithm for Rule-Set Production (GARP) using an artificial intelligence approach (the genetic algorithm) to produce an abstraction of the ecological niche of a species. <a href="https://archive.org/stream/bulletinofbrit1232003brit/#page/217/mode/1up" target="_blank">Image from page 218</a> of “Why Museums Matter: Avian Archives in an Age of Extinction,” Papers from a conference of this title held at Green Park, Aston Clinton, and workshops at the Natural History Museum, Tring, 12-15 November 1999. Ed. Nigel J. Collar, Clemency T. Fisher and Chris J. Feare. vol. 123A, Bulletin of the British Ornithologists’ Club. No known copyright restrictions.</figcaption>
 </figure>
 

@@ -16,16 +16,16 @@ stars      :
 
 
 <figure>
-    <img src="very-young-cubeist-0.jpg">
+    <img src="img/very-young-cubeist-0.jpg">
     <figcaption>this one</figcaption>
 </figure>
 
 <figure>
-    <img src="very-young-cubeist-1.jpg">
+    <img src="img/very-young-cubeist-1.jpg">
     <figcaption>and this one</figcaption>
 </figure>
 
 <figure>
-    <img src="ten-year-old-cubeist.jpg">
+    <img src="img/ten-year-old-cubeist.jpg">
     <figcaption>and even this one</figcaption>
 </figure>

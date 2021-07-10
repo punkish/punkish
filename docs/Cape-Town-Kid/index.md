@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="cape_town_kid.jpg">
+    <img src="img/cape_town_kid.jpg">
     <figcaption>Hanging out at the market in Cape Town</figcaption>
 </figure>
 

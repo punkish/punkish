@@ -17,7 +17,7 @@ stars      :
 There he was, sitting by the circle, on [rue Levert](http://bit.ly/1NBt6wu), bent over a small stool writing in small but neat handwriting. The hand-written sign above him said, “<span class='punkish-pair' data-key='' data-val='give me a theme, and I will write a poem… free'>donnez-moi un thème, et j’ecris un poeme… prix libre</span>.” Sounded like a deal.
 
 <figure>
-    <img src="laurent-hili.jpg">
+    <img src="img/laurent-hili.jpg">
     <figcaption>Laurent Hili</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ il est le recipient du monde
 </p>
 
 <figure>
-    <img src="amour-impossible.jpg">
+    <img src="img/amour-impossible.jpg">
     <figcaption>L’amour est Impossible</figcaption>
 </figure>
 

@@ -24,7 +24,7 @@ The dogs bark at cars or the twinkling stars,
 getting high on a barking trip.  
 
 <figure>
-    <img src="tree.jpg">
+    <img src="img/tree.jpg">
     <figcaption>dashboard of the future</figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ served as a good steed, for the local “weed”
 or for Tony’s ice nuts to sleep.  
 
 <figure>
-    <img src="tonys_nuts.jpg">
+    <img src="img/tonys_nuts.jpg">
     <figcaption>Tony’s nuts</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ that is falling apart, in the heat of this heart
 of Trinidad’s loud calypso throb.  
 
 <figure>
-    <img src="renegades.jpg">
+    <img src="img/renegades.jpg">
     <figcaption>Renegades</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ I am thankful for the fire of restless desire
 that burns in my heart always.  
 
 <figure>
-    <img src="faces.jpg">
+    <img src="img/faces.jpg">
     <figcaption>faces</figcaption>
 </figure>
 

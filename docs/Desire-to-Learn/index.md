@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="kids_in_classroom.jpg">
+    <img src="img/kids_in_classroom.jpg">
     <figcaption></figcaption>
 </figure>
 

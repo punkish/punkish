@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="deichtorhallen.jpg">
+    <img src="img/deichtorhallen.jpg">
     <figcaption>At the Kunsthalle in Hamburg</figcaption>
 </figure>
 

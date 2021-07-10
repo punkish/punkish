@@ -20,7 +20,7 @@ Sooner or later you start doubting your sanity but you soldier on. Finally you p
 Several [coders, designers, scientists, and publishers](https://github.com/scholmd/markdown_science/wiki/people-attending) met at PLOS to brainstorm toward a better, more modern way. The [Markdown for Science workshop](https://github.com/scholmd/markdown_science/wiki) was organized by [Martin Fenner](http://blogs.plos.org/mfenner/2012/12/13/a-call-for-scholarly-markdown/) and [Stian Håklev](http://reganmian.net/wiki/researchr:start) and supported by a [1K Challenge Grant from FORCE11](http://www.force11.org/node/4358).
 
 <figure>
-    <img src="ideas.jpg">
+    <img src="img/ideas.jpg">
     <figcaption>Photos by Puneet Kishor, CC0 PD Dedication</figcaption>
 </figure>
 

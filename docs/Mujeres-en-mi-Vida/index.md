@@ -20,17 +20,17 @@ stars      :
 ---
 
 <figure>
-    <img src="ma.jpg">
+    <img src="img/ma.jpg">
     <figcaption>मां</figcaption>
 </figure>
 
 <figure>
-    <img src="nesara.jpg">
+    <img src="img/nesara.jpg">
     <figcaption>नेसरा</figcaption>
 </figure>
 
 <figure>
-    <img src="mewmew.jpg">
+    <img src="img/mewmew.jpg">
     <figcaption>Mew Mew</figcaption>
 </figure>
 

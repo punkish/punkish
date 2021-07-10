@@ -17,22 +17,22 @@ stars      :
 Any one of these could be my child, but is not. Much in life is just a crapshoot.
 
 <figure>
-    <img src="P8202430.jpg">
+    <img src="img/P8202430.jpg">
     <figcaption></figcaption>
 </figure>
 
 <figure>
-    <img src="P8202433.jpg">
+    <img src="img/P8202433.jpg">
     <figcaption></figcaption>
 </figure>
 
 <figure>
-    <img src="P8202443.jpg">
+    <img src="img/P8202443.jpg">
     <figcaption></figcaption>
 </figure>
 
 <figure>
-    <img src="P8062369.jpg">
+    <img src="img/P8062369.jpg">
     <figcaption></figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="christiana.JPG">
+    <img src="img/christiana.JPG">
     <figcaption>Christiana</figcaption>
 </figure>
 

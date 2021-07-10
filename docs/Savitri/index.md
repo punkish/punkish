@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="P0005118.jpg">
+    <img src="img/P0005118.jpg">
     <figcaption>Savitri, all dressed up</figcaption>
 </figure>

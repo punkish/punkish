@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_4198.jpg">
+    <img src="img/IMG_4198.jpg">
     <figcaption>Light, halftone and shadow. Contrast and passage. My love, how I love you.
 </figcaption>
 </figure>

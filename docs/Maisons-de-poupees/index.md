@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3018.jpg">
+    <img src="img/IMG_3018.jpg">
     <figcaption>View of Paris from the top floor of Le tour Jussieu</figcaption>
 </figure>
 

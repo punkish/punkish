@@ -14,7 +14,7 @@ js         : circle
 ---
 
 <figure>
-    <img src="lancaster-rd.jpg">
+    <img src="img/lancaster-rd.jpg">
     <figcaption>Lancaster Rd</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Lancaster Rd (34°45'52.50" N 118°43'31.78" W)
 I am particularly well-unread. It is not that I don’t read, but it is that I seldom find content intriguing enough to get lost in. Such stuff is hard to come by not because it doesn’t exist but because it like grabbing a needle in a “haystorm” (if there is such thing) as they whiz by. It is as if my mind is the LHC with a zillion exploding particles, but only a few hold the mystery of the universe.
 
 <figure>
-    <img src="train.gif">
+    <img src="img/train.gif">
 </figure>
 
 But just when you are not looking for it, you are fortunate enough to find something unlike anything you’ve seen before, surreal, as if Milorad Pavić wrote the screenplay for **Inception** to be directed by Terry Gilliam, a vernacular dream-within-a-dream, folding upon itself like an infinite Möbius strip, but showing you a different scene like from the window of a moving train.

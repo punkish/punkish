@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="sotto_by_night.jpg">
+    <img src="img/sotto_by_night.jpg">
     <figcaption>Sotto by night</figcaption>
 </figure>
 

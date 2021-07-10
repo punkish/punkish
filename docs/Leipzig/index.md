@@ -15,7 +15,7 @@ tags        :
 ---
 
 <figure>
-    <img src="IMG_0111.jpg">
+    <img src="img/IMG_0111.jpg">
     <figcaption>World Goth Festival</figcaption>
 </figure>
 

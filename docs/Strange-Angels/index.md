@@ -37,7 +37,7 @@ Benjamin realized that, Jeffries realizes that, and I realize the same. The ugli
 
 Strangely, I didn’t know about Walter Benjamin until a few weeks ago. Here is how that story goes—
 
-<img src="strange-angels.jpg" width="174" height="173" align="left" style="margin-right: 10px;"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album **Strange Angels**.
+<img src="img/strange-angels.jpg" width="174" height="173" align="left" style="margin-right: 10px;"> One of my favorite musicians is Laurie Anderson. She has a song called “The Dream Before” in her 1989 album **Strange Angels**.
 
 <aside>(I saw Laurie Anderson during her promo tour for that album. I had arrived in the US in 1987 and discovered Anderson, and had a chance to see her live just a couple years later when she performed in Madison, Wisconsin.)</aside>
 
@@ -70,7 +70,7 @@ And this storm, this storm is called Progress
 As much as I enjoyed that song, I never really understood the words until recently when I happened to read about Walter Benjamin and his [Theses on the Philosophy of History](https://en.wikipedia.org/wiki/Theses_on_the_Philosophy_of_History):
 
 <figure>
-    <img src="paul-klee-angelus-novus.jpg">
+    <img src="img/paul-klee-angelus-novus.jpg">
     <figcaption>Paul Klee Angelus Novus</figcaption>
 </figure>
 

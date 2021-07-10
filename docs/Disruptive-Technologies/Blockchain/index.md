@@ -16,7 +16,7 @@ css        : ../../css/disruptive
 ---
 
 <figure>
-    <img src="blockchain.png">
+    <img src="img/blockchain.png">
     <figcaption>Blockchain illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 

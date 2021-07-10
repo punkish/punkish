@@ -17,7 +17,7 @@ isGlossary : true
 </div>
 
 <figure>
-    <img src="RPLP0_90_ClustalW_aln.png">
+    <img src="img/RPLP0_90_ClustalW_aln.png">
     <figcaption>"Sharing v. Privacy" by Puneet Kishor released under a <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>. Original "RPLP0 90 ClustalW aln" by  uploader Miguel Andrade at en.wikipedia licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 license</a> via <a href="http://commons.wikimedia.org/wiki/File:RPLP0_90_ClustalW_aln.gif#mediaviewer/File:RPLP0_90_ClustalW_aln.gif">Wikimedia Commons</a>.</figcaption>
 </figure>
 

@@ -30,7 +30,7 @@ Two scenes are stuck in my head: One, when she is raped and has to suffer it sil
 [8:01 PM, 6/25/2017] Mr. Puneet Kishor: And, of course, the role of forgiveness and compassion in healing
 
 <figure>
-    <img src="us-them.jpg" width="480">
+    <img src="img/us-them.jpg" width="480">
     <figcaption>us and them</figcaption>
 </figure>
 

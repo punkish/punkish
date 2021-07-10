@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="one-blind-man.jpg">
+    <img src="img/one-blind-man.jpg">
     <figcaption>one blind man</figcaption>
 </figure>
 

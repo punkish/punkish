@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0018.jpg">
+    <img src="img/IMG_0018.jpg">
     <figcaption>All that praying is tiring</figcaption>
 </figure>
 

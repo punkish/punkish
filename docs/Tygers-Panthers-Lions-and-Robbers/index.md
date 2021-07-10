@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="24a.jpg">
+    <img src="img/24a.jpg">
 </figure>
 
 <div class="oldstyle">

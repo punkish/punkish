@@ -30,7 +30,7 @@ figure img {
 <h2><span class='punkish-pair' data-key='' data-val='Unrest after the storm'>Unruhe nach dem Sturm</span></h2>
 
 <figure>
-    <img src="storm.jpg">
+    <img src="img/storm.jpg">
     <figcaption>storm</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Borit fidgeted once again in sand. Others were resting, recovering from the stor
 <h2>Strange creatures and where to find them</h2>
 
 <figure>
-    <img src="woman-in-ear.gif">
+    <img src="img/woman-in-ear.gif">
     <figcaption>woman in ear</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ They came in thousands, and all of them were well-dressed. The city had put up a
 <h2><span class='punkish-pair' data-key='' data-val='True art is always a serious animal'>Wahre Kunst ist immer ein tierischer ernstfall</span></h2>
 
 <figure>
-    <img src="meow.gif">
+    <img src="img/meow.gif">
     <figcaption>meow</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Strangely, the beautiful woman that everyone was looking at was actually very ti
 <h2><span class='punkish-pair' data-key='' data-val='Seldom heard music'>Selten gehörte Musik</span></h2>
 
 <figure>
-    <img src="dance.gif">
+    <img src="img/dance.gif">
     <figcaption>dance</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ The sorceress had been busy separating the individual leaves she had collected f
 <h2><span class='punkish-pair' data-key='' data-val='The broken is always honest, you can understand it better'>Das Kaputte ist immer ehrlicher, man kann es besser verstehen</span></h2>
 
 <figure>
-    <img src="abar.gif">
+    <img src="img/abar.gif">
     <figcaption>abarabarabarabar</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ I am made up of parts, and some of them don’t fit well together. But I don’t
 <h2><span class='punkish-pair' data-key='' data-val='Draw me a sheep!'>Dessine-moi un mouton!</span></h2>
 
 <figure>
-    <img src="baa.gif">
+    <img src="img/baa.gif">
     <figcaption>baaaa !</figcaption>
 </figure>
 
@@ -88,14 +88,14 @@ I am made up of parts, and some of them don’t fit well together. But I don’t
 <h2><span class='punkish-pair' data-key='' data-val='The most important impulse is the impulse to imitate'>Der wichtigste trieb ist der nachahmungstrieb</span></h2>
 
 <figure>
-    <img src="imitation.gif">
+    <img src="img/imitation.gif">
     <figcaption>tap toe</figcaption>
 </figure>
 
 The prince jumped up from his bed of reeds and let out a shriek startling the birds that had been dozing in the late evening sun. It seems he had finally been successful in clearly figuring out the shape he had been imagining in his head. The most important impulse was the impulse to imitate. Borit rushed to the edge of the lake and grabbed a handful of shwabe and started patting it into the shape of the half moon. When the ball was as big as his hand fully open from edge to edge, he put some pieces of the balsi fruit in it, and sprinkled a few pieces of crackling crandilia he had dug out from under his bed of reeds. Sir Mica chuckled and poured some more coffee.
 
 <figure>
-    <img src="IMG_3418.jpg">
+    <img src="img/IMG_3418.jpg">
     <figcaption>time to go</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ Well, it was time to go. The vagabond had to get dressed again for the cold outs
 <h2><span class='punkish-pair' data-key='' data-val='I’ll never forget what you did to me'>Das vergesse Ich dir nie, was du mir angetan hast</span></h2>
 
 <figure>
-    <img src="time-to-go.gif">
+    <img src="img/time-to-go.gif">
     <figcaption>now forever</figcaption>
 </figure>
 
@@ -113,7 +113,7 @@ You couldn’t tell if the time had stopped or a lot of time had passed—it all
 <h2><span class='punkish-pair' data-key='' data-val='Searching for the lost happiness'>Auf der suche nach dem verloren Glück</span></h2>
 
 <figure>
-    <img src="birds.gif">
+    <img src="img/birds.gif">
     <figcaption>Searching for the lost happiness</figcaption>
 </figure>
 
@@ -122,7 +122,7 @@ It had been a long and fidgety journey. Buffeted by winds, rocking and rolling, 
 <h2>There is something better than perfection</h2>
 
 <figure>
-    <img src="perfection.gif">
+    <img src="img/perfection.gif">
     <figcaption>❤️</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ He carefully opened the precious bundle he had been clutching the entire journey
 <h2>Just one bite, and you are home</h2>
 
 <figure>
-    <img src="pie.gif">
+    <img src="img/pie.gif">
     <figcaption>one… gone</figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="procession.jpg">
+    <img src="img/procession.jpg">
     <figcaption>a procession</figcaption>
 </figure>
 

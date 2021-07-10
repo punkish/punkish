@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="antoinette.jpg">
+    <img src="img/antoinette.jpg">
     <figcaption>Antoinette</figcaption>
 </figure>
 

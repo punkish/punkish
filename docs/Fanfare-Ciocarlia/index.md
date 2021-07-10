@@ -15,13 +15,13 @@ stars      :
 The legendary Fanfare Ciocarlia, one of the last gypsy brass bands in Romania. This was truly the most fun I had at the festival.
 
 <figure>
-    <img src="IMG_6304.jpg">
+    <img src="img/IMG_6304.jpg">
 </figure>
 
 <figure>
-    <img src="IMG_6319.jpg">
+    <img src="img/IMG_6319.jpg">
 </figure>
 
 <figure>
-    <img src="IMG_6324.jpg">
+    <img src="img/IMG_6324.jpg">
 </figure>

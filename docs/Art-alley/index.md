@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="art_alley.jpg">
+    <img src="img/art_alley.jpg">
     <figcaption>Berlin walls</figcaption>
 </figure>
 

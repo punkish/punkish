@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_6379.jpg">
+    <img src="img/IMG_6379.jpg">
     <figcaption>Sebastien</figcaption>
 </figure>

@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="cruel-things.jpg">
+    <img src="img/cruel-things.jpg">
     <figcaption>I have seen cruel things, right in the shadow of our gods.</figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="crosswalk.JPG">
+    <img src="img/crosswalk.JPG">
     <figcaption>Lasses in the crosswalk, that's all</figcaption>
 </figure>
 

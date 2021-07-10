@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="1.jpg">
+    <img src="img/1.jpg">
     <figcaption>At the Oxford Internet Institute Summer Program in 2008</figcaption>
 </figure>

@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="marseille.jpg">
+    <img src="img/marseille.jpg">
     <figcaption>The Marseille vieux port, as seen from the ramparts of the Fort Saint-Jean</figcaption>
 </figure>

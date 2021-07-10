@@ -20,7 +20,7 @@ stars      :
 So, RDA/US launched a [new website](http://us.rd-alliance.org) "blending modern design, streamlined navigation and a user-friendly experience." Congratulations for entering the modern era, something that the [main RDA website](http://rd-alliance.org) still can’t claim to have done. But once I scrolled passed the blinking lights, what do I see?
 
 <figure>
-    <img src="rda-arr.png">
+    <img src="img/rda-arr.png">
     <figcaption>All Rights Reserved</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ Hmmm… curious that I am, I click on [Terms of Services](http://us.rd-alliance.
 Fair enough. Moving on…
 
 <figure>
-    <img src="rda-tos.png">
+    <img src="img/rda-tos.png">
     <figcaption>Terms of Service</figcaption>
 </figure>
 

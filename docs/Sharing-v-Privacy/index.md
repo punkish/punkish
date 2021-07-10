@@ -17,7 +17,7 @@ stars      :
 </div>
 
 <figure>
-    <img src="sharingvprivacyclips.jpg">
+    <img src="img/sharingvprivacyclips.jpg">
     <figcaption>
         “Privacy v. Sharing” by Puneet Kishor released under a <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.
     </figcaption>

@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="fire.gif">
+    <img src="img/fire.gif">
     <figcaption><i>courages courages one must be</i></figcaption>
 </figure>
 

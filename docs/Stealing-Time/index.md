@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_9617.jpg">
+    <img src="img/IMG_9617.jpg">
     <figcaption>Shiva</figcaption>
 </figure>
 

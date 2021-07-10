@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="beastmaster.jpg">
+    <img src="img/beastmaster.jpg">
     <figcaption>the beast master</figcaption>
 </figure>
 

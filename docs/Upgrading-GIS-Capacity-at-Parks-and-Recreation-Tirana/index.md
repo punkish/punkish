@@ -19,7 +19,7 @@ Currently a map of parcels of land managed by APR is maintained as a layer in Au
 All this information is maintained in a MS-Excel spreadsheet with one sheet for every parcel. The 46 sheets containing the parcel-level information are names “Parcel 1,” “Parcel 2,” and so on. There are other sheets in the spreadsheet containing other related information about the trees. Other than the naming convention, there is no link between the parcels in AutoCAD and the sheets in Excel.
 
 <figure>
-    <img src="parcels-tables.jpg">
+    <img src="img/parcels-tables.jpg">
     <figcaption>park parcels stored in a spreadsheet</figcaption>
 </figure>
 
@@ -103,7 +103,7 @@ Finally, we create a table in Postgres to hold our **trees.csv** and import the 
 Now that all our data are imported into Postgres, we can connect to the database from QGIS and work with it in a real, world class, modern GIS environment.
 
 <figure>
-    <img src="qgis.jpg">
+    <img src="img/qgis.jpg">
     <figcaption>parks coverage</figcaption>
 </figure>
 

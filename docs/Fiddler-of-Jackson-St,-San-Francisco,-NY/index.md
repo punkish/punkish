@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="mark.gif">
+    <img src="img/mark.gif">
     <figcaption>The fiddler</figcaption>
 </figure>
 

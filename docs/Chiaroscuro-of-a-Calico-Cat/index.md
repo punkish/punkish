@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="miumiu.jpg">
+    <img src="img/miumiu.jpg">
     <figcaption>mew mew</figcaption>
 </figure>
 

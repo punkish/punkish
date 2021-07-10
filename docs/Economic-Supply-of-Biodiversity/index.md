@@ -22,7 +22,7 @@ William Magrath, Charles Peters, Nalin Kishor, and Puneet Kishor. 1995. "The Eco
 Many sustainable agricultural and forestry landuses such as annual cropping, industrial tree crops, and pasture have been identified on West Kalimantan, the third largest province on the island of Borneo, Indonesia. The highly diverse ecosystems of West Kalimantan are disappearing rapidly, because these landuses are being pursued aggressively for their attractive financial returns. Since foregoing these landuses to preserve land in its natural state implies incurring an opportunity cost, preserving biodiversity becomes an economic proposition. Natural areas contain differing levels of biodiversity, hence an efficient landuse policy needs to recognize trade-offs between commercial values and overall biodiversity value.
 
 <figure>
-    <img src="locator.png">
+    <img src="img/locator.png">
     <figcaption>West Kalimantan, Borneo, Indonesia</figcaption>
 </figure> 
 
@@ -56,7 +56,7 @@ CPI, calculated using the following three formulae, is the product of rarity, ex
 3. PS = log (Original Area / Protected Area)
 
 <figure>
-    <img src="biovalue.png">
+    <img src="img/biovalue.png">
     <figcaption>Biovalue</figcaption>
 </figure> 
 
@@ -65,21 +65,21 @@ CPI, calculated using the following three formulae, is the product of rarity, ex
 Landuse and land suitability maps of West Kalimantan were digitized and developed into a geographic information system (GIS) database. The GIS was then used to overlay these maps spatially.
 
 <figure>
-    <img src="overlay2.png">
+    <img src="img/overlay2.png">
     <figcaption>map overlays</figcaption>
 </figure> 
 
 The resulting composite map was used to generate an area matrix used for calculating the Biovalue.
 
 <figure>
-    <img src="cost.png">
+    <img src="img/cost.png">
     <figcaption>cost</figcaption>
 </figure> 
 
 The biovalue array was utilized to calculate the opportunity cost of conserving biodiversity.
 
 <figure>
-    <img src="oppcost.png">
+    <img src="img/oppcost.png">
     <figcaption>Opportunity Cost</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ The biovalue array was utilized to calculate the opportunity cost of conserving 
 The supply curve suggests that for a large part of West Kalimantan there is little trade off between economic development of land and protection of biodiversity. Nearly 3.7m ha of land in the province could be set aside for biodiversity conservation purposes at a cost of less than Rp 400/ha/yr. This is consistent with the aggregate results of the Indonesian Forest Land Use by Consensus planning process which allocated 3.71m ha to conservation. The curve also suggests that given a market for the biodiversity, a relatively small increase in the current willingness to pay for biodiversity could attract a significant amount of land away from alternative uses.
 
 <figure>
-    <img src="avecost.png">
+    <img src="img/avecost.png">
     <figcaption>Average Cost</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ The supply curve suggests that for a large part of West Kalimantan there is litt
 With an explicit estimate of biodiversity supply, it is possible to quantitatively explore a number of biodiversity policy issues. The graph below shows results of a sensitivity analysis to illustrate the impacts of relative prices and economy-wide policies (factors such as interest rates, wages and foreign exchange rates) on environmental concerns.
 
 <figure>
-    <img src="scencurv.png">
+    <img src="img/scencurv.png">
     <figcaption>Sensitivity Analysis</figcaption>
 </figure>
 

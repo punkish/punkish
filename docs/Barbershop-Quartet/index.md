@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3965.jpg">
+    <img src="img/IMG_3965.jpg">
     <figcaption>Sidewalk shaves in Mumbai</figcaption>
 </figure>

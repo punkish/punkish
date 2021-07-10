@@ -83,7 +83,7 @@ The one thing all these technologies have in common is that they depend on compu
 Information is the raw material for more information. And in that continuous cycle are the two main participants, the data collector and the one on whom the data are being collected.
 
 <figure>
-    <img src="privacy-information-lifecycle.png">
+    <img src="img/privacy-information-lifecycle.png">
     <figcaption>The citizen who is the source of data and the collector of that data, interface at the five points, namely, Ⓐ, Ⓑ, Ⓒ, Ⓓ and Ⓔ as shown in the information lifecycle diagram above. Original illustration by Puneet Kishor released under the CC0 Public Domain Dedication.</figcaption>
 </figure>
 

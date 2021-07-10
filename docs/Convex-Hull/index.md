@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="stars.gif" style="border: 1px solid lightgrey;">
+    <img src="img/stars.gif" style="border: 1px solid lightgrey;">
     <figcaption>convex hull</figcaption>
 </figure>
 

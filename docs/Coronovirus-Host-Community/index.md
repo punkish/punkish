@@ -34,14 +34,14 @@ This is a classic case of the need for a rapid response that may be hampered by 
 The way Plazi’s pipeline is setup, soon as we extract data from a publication, all data elements automatically make their way to Zenodo where they get assigned a DOI for permanent archival and retreival. 
 
 <figure>
-    <img src="coviho-zenodo.jpg">
+    <img src="img/coviho-zenodo.jpg">
     <figcaption><a href="https://zenodo.org/communities/coviho/?page=1&size=20" target="_blank" title="Chiroptera on the Coronavirus Host Community on Zenodo">The Coronavirus Host Community on Zenodo</a></figcaption>
 </figure>
 
 Since we also extract the images and charts from the articles and store them too on Zenodo, [Ocellus](https://ocellus.punkish.org), a simple image-finding app, can retrieve the images easily and quickly
 
 <figure>
-    <img src="coviho-ocellus.jpg">
+    <img src="img/coviho-ocellus.jpg">
     <figcaption><a href="https://ocellus.punkish.org/images.html?q=Chiroptera&size=30&page=2&communities=biosyslit" target="_blank" title="Chiroptera on Ocellus">Chiroptera on Ocellus</a></figcaption>
 </figure>
 

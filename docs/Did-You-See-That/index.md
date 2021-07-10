@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_1364.jpg">
+    <img src="img/IMG_1364.jpg">
     <figcaption>What sparked the little guy's curiosity?</figcaption>
 </figure>

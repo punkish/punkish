@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0176.jpg">
+    <img src="img/IMG_0176.jpg">
     <figcaption>Trinidad, Colorado</figcaption>
 </figure>
 

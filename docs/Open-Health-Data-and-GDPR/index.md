@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="3-constituencies.png">
+    <img src="img/3-constituencies.png">
     <figcaption>Three constituencies at odds</figcaption>
 </figure>
 

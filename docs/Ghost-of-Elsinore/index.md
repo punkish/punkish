@@ -15,6 +15,6 @@ stars      :
 ---
 
 <figure>
-    <img src="castle.jpg">
+    <img src="img/castle.jpg">
     <figcaption>This gorgeous lady was touring Hamlet’s Castle at Elsinore. Everything about her was just perfect.</figcaption>
 </figure>

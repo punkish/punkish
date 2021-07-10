@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="line-22.jpg">
+    <img src="img/line-22.jpg">
     <figcaption>Line 22</figcaption>
 </figure>
 

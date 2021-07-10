@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0037.jpg">
+    <img src="img/IMG_0037.jpg">
     <figcaption>Les ombres dans la cour de Vielle Charité, Marseille, France</figcaption>
 </figure>
 

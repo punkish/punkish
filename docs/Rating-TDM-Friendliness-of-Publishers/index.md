@@ -21,7 +21,7 @@ On the ContentMine Slack channel, Chris Hartgerink made an off-hand comment wish
 ★ There are no throttling limits
 
 <figure>
-    <img src="badge.png">
+    <img src="img/badge.png">
     <figcaption></figcaption>
 </figure>
 

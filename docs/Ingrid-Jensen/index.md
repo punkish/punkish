@@ -15,11 +15,11 @@ stars      :
 Ingrid Jensen, who played with the Marianne Trudel Trio, was a great revelation.
 
 <figure>
-    <img src="ingrid-jensen.jpg">
+    <img src="img/ingrid-jensen.jpg">
     <figcaption>Ingrid Jensen</figcaption>
 </figure>
 
 <figure>
-    <img src="IMG_6044.jpg">
+    <img src="img/IMG_6044.jpg">
     <figcaption>Ingrid Jensen</figcaption>
 </figure>

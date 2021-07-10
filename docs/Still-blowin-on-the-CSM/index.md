@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="blowin.jpg">
+    <img src="img/blowin.jpg">
     <figcaption>blowin’</figcaption>
 </figure>
 

@@ -13,7 +13,7 @@ stars      :
 ---
 
 <!-- <figure>
-    <img src="punkish-2.jpg">
+    <img src="img/punkish-2.jpg">
     <figcaption></figcaption> 
 </figure> -->
 
@@ -21,7 +21,7 @@ stars      :
     <picture>
         <source srcset="img/right-profile-960.jpg" media="(min-width:800px)">
         <source srcset="img/right-profile-768.jpg" media="(min-width:600px)">
-        <img src="right-profile-400.jpg">
+        <img src="img/right-profile-400.jpg">
     </picture>
     <figcaption></figcaption>
 </figure>

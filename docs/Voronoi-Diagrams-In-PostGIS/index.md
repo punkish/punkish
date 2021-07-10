@@ -22,7 +22,7 @@ A Voronoi diagram represents proximity information about a set of points. The po
 > Voronoi diagrams were first discussed by Peter Lejeune-Dirichlet in 1850. But it was more than a half of a century later in 1908 that these diagrams were written about in a paper by Voronoi, hence the name Voronoi Diagrams. The Voronoi cells/polygons are sometimes also called Thiessen Polytopes or Dirichlet Regions.
 
 <figure>
-	<img src="macrostrat.jpg">
+	<img src="img/macrostrat.jpg">
 	<figcaption>Macrostrat</figcaption>
 </figure>
 

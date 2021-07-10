@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="top-to-home.jpg">
+    <img src="img/top-to-home.jpg">
     <figcaption>via Volkspark and Restaurant ammAmma</figcaption>
 </figure>
 

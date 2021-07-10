@@ -28,7 +28,7 @@ Actual computing services will be best provided by commercial cloud computing co
 The library of the future will have specialist staff who will have skills and experience in both librarian functions as well computing functions, and they may come from today’s library and computing center along with those from the offices of IP and IT. These experts will negotiate with the backend computing services providers on behalf of the researchers, and make it possible for the latter to get the services needed for their work. This will be the most important function of the library of the future: to serve as brokers for computing services on behalf of the researchers, ensuring that *all* locally pertinent legal, ethical and technical requirements of the project are met by the service providers at the best cost possible. The “cloud” will not be monolithic. It will be adaptive and responsive to local conditions. Researchers in Germany will follow German privacy/security laws and data standards, and the cloud computing service providers will offer services that hew to those local laws. If a particular dataset should not leave the boundaries of the country, the service provider will ensure that. On the other hand, if there is no such requirement, the service provider may be free to move the data around for the best possible price and performance.
 
 <figure>
-    <img src="dashboard.png">
+    <img src="img/dashboard.png">
     <figcaption>dashboard of the future</figcaption>
 </figure>
 

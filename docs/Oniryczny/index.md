@@ -14,6 +14,6 @@ stars      :
 ---
 
 <figure>
-    <img src="oniryczny.jpg">
+    <img src="img/oniryczny.jpg">
     <figcaption><i>adj.</i> Of, characteristic of, or relating to dreams; dreamlike</figcaption>
 </figure>

@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="holy-man.jpg">
+    <img src="img/holy-man.jpg">
     <figcaption>Who takes care of you, holy man?</figcaption>
 </figure>
 

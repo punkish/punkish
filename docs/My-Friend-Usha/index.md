@@ -16,6 +16,6 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_4446.jpg">
+    <img src="img/IMG_4446.jpg">
     <figcaption>At the 14th Mumbai International Film Festival</figcaption>
 </figure>

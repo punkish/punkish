@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0021.jpg">
+    <img src="img/IMG_0021.jpg">
     <figcaption>Under the spotlight</figcaption>
 </figure>
 

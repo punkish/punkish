@@ -18,7 +18,7 @@ For me, fate, and its close cousin faith, are similar. Possibly wholly human con
 ### Thursday, Nov 8, 2:30 PM
 
 <figure>
-    <img src="taxi-to-town.jpg">
+    <img src="img/taxi-to-town.jpg">
     <figcaption>Taxi to Sarajevo old town</figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ My taxi driver’s name is Adnan. He is impressed that I can say 'Stari Grad' wh
 ### Thursday, Nov 8, 6:30 PM
 
 <figure>
-    <img src="kunafa.jpg">
+    <img src="img/kunafa.jpg">
     <figcaption>The sweetest desert (sic) in town</figcaption>
 </figure>
 
@@ -40,14 +40,14 @@ This morning Valida and I talked for three hours. By now I know quite a bit abou
 ### Friday, Nov 9, 12:30 PM
 
 <figure>
-    <img src="cemetery.jpg">
+    <img src="img/cemetery.jpg">
     <figcaption>Sehidsko mezarje</figcaption>
 </figure>
 
 The walk up Ulica Kovači, past the Sehidsko mezarje was a revelation. Mumo told me to check out the cemetery where Bosnia’s first president is buried. But I couldn’t really recover from the field of gravestones as far as the eye could see, each marked with a date between 1992 and 1995. The visual and emotional impact of that was a double whammy. 
 
 <figure>
-    <img src="zuta-tabija.jpg">
+    <img src="img/zuta-tabija.jpg">
     <figcaption>View from the Yellow Fortress</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ The view from Žuta Tabija helped me recover.
 ### Friday, Nov 9, 10 PM
 
 <figure>
-    <img src="house-band.jpg">
+    <img src="img/house-band.jpg">
     <figcaption>The house band at the Sarajevska Pivara</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ The house band at the Sarajevska Pivara is playing mainly pop songs. The crowd l
 ### Saturday, Nov 10, 2 PM
 
 <figure>
-    <img src="green-grass.jpg">
+    <img src="img/green-grass.jpg">
     <figcaption><i>Green, Green, Grass of Home</i> by Maja Bajević</figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ The old gentleman at the National Gallery can’t speak any English. For some re
 ### Saturday, Nov 10, 3 PM
 
 <figure>
-    <img src="chess-men.jpg">
+    <img src="img/chess-men.jpg">
     <figcaption>The chess men</figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ I have been talking with Dženita with the help of Google Translate. I type in t
 ### Saturday, Nov 10, 9:30 PM
 
 <figure>
-    <img src="okovani-prometej.jpg">
+    <img src="img/okovani-prometej.jpg">
     <figcaption>Okovani Prometej</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ Just got out of Narodno Pozorište having seen the premiere of the ballet “Oko
 ### Saturday, Nov 10, 10 PM
 
 <figure>
-    <img src="pink-houdini.jpg">
+    <img src="img/pink-houdini.jpg">
     <figcaption>Pink Houdini</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ Kiss Kiss Home Food is open. The young kid inside is eager to get me in and buy 
 ### Sunday, Nov 11, 12:30 PM
 
 <figure>
-    <img src="ministry-of-cejf.jpg">
+    <img src="img/ministry-of-cejf.jpg">
     <figcaption>Ministry of Ćejf</figcaption>
 </figure>
 
@@ -126,7 +126,7 @@ The young guy at the Ministry of Ćejf makes me a great Americano. Then he expla
 ### Sunday, Nov 11, 1 PM
 
 <figure>
-    <img src="ascending.jpg">
+    <img src="img/ascending.jpg">
     <figcaption>Ascending by Amira Medunjanin</figcaption>
 </figure>
 
@@ -147,7 +147,7 @@ Afternoon coffee with Dženita is becoming a ritual. I walk into the living room
 ### Sunday, Nov 11, 7:50 PM
 
 <figure>
-    <img src="sac-bakery.jpg">
+    <img src="img/sac-bakery.jpg">
     <figcaption>Buregdžinica Sač</figcaption>
 </figure>
 
@@ -156,7 +156,7 @@ My last evening out on the Kasima ef. Dobrače, the cold air slaps my face. The 
 ### Monday, Nov 12, 11 AM
 
 <figure>
-    <img src="berber.jpg">
+    <img src="img/berber.jpg">
     <figcaption>Berber</figcaption>
 </figure>
 
@@ -169,14 +169,14 @@ Dženi brought me a gift, a box of Bosanski Lokum sa orahom. The inherent warmth
 ## Epilogue
 
 <figure>
-    <img src="skyline.jpg">
+    <img src="img/skyline.jpg">
     <figcaption>Sarajevo “skyline“</figcaption>
 </figure>
 
 I came to Bosnia with no intention of judging anything, and I am leaving with a heavy heart. But it is not heavy with sorrow. It is heavy with the joy of having experienced the warmth of the people I met, heavy with the beauty of the city nestled in the green hills that look as beautiful as any in Switzerland, heavy with the melody of the language with its swoops and lilts, and heavy with sadness at leaving. I am not enthusiastic about going back to Vienna. I want to spend more time in Sarajevo, I want to come back here, I want to spend extended periods of time, to learn more about the music, to see more concerts, to walk in its nature. I want to get involved with the local people, perhaps open a community space where young (and not so young) people can do creative things. I am in love with this city.
 
 <figure>
-    <img src="cultures.jpg">
+    <img src="img/cultures.jpg">
     <figcaption>Bosnia, at the crossroads of the past and the future</figcaption>
 </figure>
 

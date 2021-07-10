@@ -13,7 +13,7 @@ tags        :
 ---
 
  <figure>
-    <img src="IMG_9759.jpg">
+    <img src="img/IMG_9759.jpg">
     <figcaption>Original photo by valeria cavazos. Adaptation released under cc0</figcaption>
 </figure>
 

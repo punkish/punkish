@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="badaloo.jpg">
+    <img src="img/badaloo.jpg">
     <figcaption>Badaloo</figcaption>
 </figure>
 

@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_3425.jpg">
+    <img src="img/IMG_3425.jpg">
     <figcaption>Eudaimonia by <a href="https://luisevolkmann.jimdo.com/été-large/" target="_blank">Été Large</a></figcaption>
 </figure>
 

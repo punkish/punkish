@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="lhq.jpg">
+    <img src="img/lhq.jpg">
     <figcaption>Linley Hamilton Quintet</figcaption>
 </figure>
 

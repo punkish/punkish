@@ -13,6 +13,6 @@ stars      :
 ---
 
 <figure>
-    <img src="chutei-iki.jpg">
+    <img src="img/chutei-iki.jpg">
     <figcaption>What could be better than thirteen Japanese saxophonists… at the Montreal Jazz Festival!</figcaption>
 </figure>

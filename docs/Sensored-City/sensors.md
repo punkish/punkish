@@ -51,7 +51,7 @@
             <div class="main">
                 <h1><a href="/science/">CC Science</a> &rarr; <a href="/sensoredcity">Sensored City</a> &rarr; Sensors</h1>
                 <nav>
-                    <a href="http://creativecommons.org" target="_blank"><img src="../img/cc.large.png" width="30" height="30" alt="Creative Commons"></a>
+                    <a href="http://creativecommons.org" target="_blank"><img src="img/../img/cc.large.png" width="30" height="30" alt="Creative Commons"></a>
                 </nav>
             </div>
         </header>
@@ -59,7 +59,7 @@
         <div id="map"></div>
         
         <footer>
-            <p class="main" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" align="left"></a> To the extent possible under law, <a rel="dct:publisher" href="http://science.creativecommons.org"><span property="dct:title">Puneet Kishor</span></a> has waived all copyright and related or neighboring rights to <span property="dct:title">CC Science</span>. This work is published from: <span property="vcard:Country" datatype="dct:ISO3166" content="US" about="http://science.creativecommons.org">United States</span>.</p>
+            <p class="main" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="img/http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" align="left"></a> To the extent possible under law, <a rel="dct:publisher" href="http://science.creativecommons.org"><span property="dct:title">Puneet Kishor</span></a> has waived all copyright and related or neighboring rights to <span property="dct:title">CC Science</span>. This work is published from: <span property="vcard:Country" datatype="dct:ISO3166" content="US" about="http://science.creativecommons.org">United States</span>.</p>
         </footer>
         
         <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>

@@ -16,7 +16,7 @@ css        : ../../css/disruptive
 ---
 
 <figure>
-    <img src="3axis-robot.png">
+    <img src="img/3axis-robot.png">
     <figcaption>Rendering of a cartesian robot by Puneet Kishor, based on a modular, hackable biology lab automation system by Modular Science released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 

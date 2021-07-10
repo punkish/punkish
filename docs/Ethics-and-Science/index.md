@@ -19,7 +19,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img_2211.jpg">
+    <img src="img/IMG_2211.jpg">
     <figcaption><a href="/Back-to-the-Future-of-Data-Sharing">Ethics and Science</a></figcaption>
 </figure>
 

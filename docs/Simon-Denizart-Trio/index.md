@@ -13,13 +13,13 @@ stars      :
 ---
 
 <figure>
-    <img src="simon-denizart.jpg">
+    <img src="img/simon-denizart.jpg">
     <figcaption>Simon Denizart</figcaption>
 </figure>
 
 [Simon Denizart Trio](http://www.simondenizart.com) were both introspective and driving with echoes of the late Esbjörn Svensson Trio.
 
 <figure>
-    <img src="jeanne-corpataux.jpg">
+    <img src="img/jeanne-corpataux.jpg">
     <figcaption>Jeanne Corpataux</figcaption>
 </figure>

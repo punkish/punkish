@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="little_girl.jpg">
+    <img src="img/little_girl.jpg">
     <figcaption>little girl</figcaption>
 </figure>
 

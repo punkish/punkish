@@ -14,7 +14,7 @@ stars      :
 During the past few years, I have now sat through several presentations on precision/personalized medicine where the speakers have referred to a health information commons as being analagous to Google Maps. No fault of the presenters for they are citing a National Academies report titled [Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease](https://www.nap.edu/resource/13284/precision-med-final.pdf) (link is to a report brief) that contains the following diagram (the red box added by me to the left panel):
 
 <figure>
-    <img src="Google-maps-info-commons.jpg">
+    <img src="img/Google-maps-info-commons.jpg">
     <figcaption>Google Maps / Information Commons</figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ To be fair to the report writers, the figure caption says, <q>“The proposed in
 In 1988, a year after I started my Masters’s at the University of Wisconsin-Madison, I joined the Land Information and Computer Graphics Facility (LICGF) as research assistant. Stuck on the wall of my office was the following figure
 
 <figure class="not100">
-    <img src="mplis.jpg" width="451" height="600">
+    <img src="img/mplis.jpg" width="451" height="600">
     <figcaption>Concept for a Multipurpose Land Information System</figcaption>
 </figure>
 

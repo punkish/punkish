@@ -16,12 +16,12 @@ stars      :
 ---
 
 <figure>
-    <img src="img051.png">
+    <img src="img/051.png">
     <figcaption>Creative Commons (Mt. View) to Google (Mt. View)</figcaption>
 </figure>
 
 <figure>
-    <img src="img052.png">
+    <img src="img/052.png">
     <figcaption>Google (Mt. View) to Creative Commons (Mt. View)</figcaption>
 </figure>
 

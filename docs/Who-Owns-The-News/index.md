@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="IMG_0035.jpg">
+    <img src="img/IMG_0035.jpg">
     <figcaption>Who owns the news?</figcaption>
 </figure>
 

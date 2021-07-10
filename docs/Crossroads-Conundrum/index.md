@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="crossroads.gif">
+    <img src="img/crossroads.gif">
     <figcaption>dumb city</figcaption>
 </figure>
 

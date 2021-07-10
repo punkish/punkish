@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="night.jpg">
+    <img src="img/night.jpg">
     <figcaption>night</figcaption>
 </figure>
 

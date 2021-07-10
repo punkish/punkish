@@ -17,6 +17,6 @@ stars      :
 “The time you feel lonely is the time you most need to be by yourself. Life's cruelest irony”—Douglas Coupland
 
 <figure>
-    <img src="23.jpg">
+    <img src="img/23.jpg">
     <figcaption>Museum of Contemporary Art, Chicago, avec Léön</figcaption>
 </figure>

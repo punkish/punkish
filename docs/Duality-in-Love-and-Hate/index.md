@@ -26,7 +26,7 @@ Moi: “Perhaps we have to decouple the action from its object”
 The idea of not being wanted, of being a part of a group that is not liked, that is so heartbreaking. Why we hate? There is always a reason, no matter how unreasonable. Why we love? There is no explainable reason. The illogical is such a better state than the logical.
 
 <figure>
-    <img src="IMG_9821.jpg">
+    <img src="img/IMG_9821.jpg">
     <figcaption>A Manifesto</figcaption>
 </figure>
 

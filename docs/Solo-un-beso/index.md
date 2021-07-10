@@ -15,7 +15,7 @@ stars      :
 ---
 
 <figure>
-    <img src="photo.jpg">
+    <img src="img/photo.jpg">
     <figcaption>jazz and pop in Buenos Aires</figcaption>
 </figure>
 
@@ -41,24 +41,24 @@ Y está en su hogar*
 
 <!--
 <figure>
-    <img src="IMG_4017.jpg">
+    <img src="img/IMG_4017.jpg">
     <figcaption>jazz and pop in Buenos Aires</figcaption>
 </figure>
 
 
 
 <figure>
-    <img src="IMG_4021.jpg">
+    <img src="img/IMG_4021.jpg">
     <figcaption>jazz and pop in Buenos Aires</figcaption>
 </figure>
 
 <figure>
-    <img src="IMG_4022.jpg">
+    <img src="img/IMG_4022.jpg">
     <figcaption>jazz and pop in Buenos Aires</figcaption>
 </figure>
 
 <figure>
-    <img src="IMG_4025.jpg">
+    <img src="img/IMG_4025.jpg">
     <figcaption>jazz and pop in Buenos Aires</figcaption>
 </figure>
 -->

@@ -13,6 +13,6 @@ stars      :
 ---
 
 <figure>
-    <img src="pavan_and_I.jpg">
+    <img src="img/pavan_and_I.jpg">
     <figcaption>Just what it says on the tin</figcaption>
 </figure>

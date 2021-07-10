@@ -17,7 +17,7 @@ stars      :
 ---
 
 <figure>
-    <img src="i-e-w-n.jpg">
+    <img src="img/i-e-w-n.jpg">
     <figcaption>I, E, W, N</figcaption>
 </figure>
 

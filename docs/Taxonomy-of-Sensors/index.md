@@ -17,7 +17,7 @@ tags        :
 In spite of my [wariness with QS sensors](Wary-of-Wearables), **a sweet spot** for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown below.
 
 <figure>
-    <img src="sensors.png">
+    <img src="img/sensors.png">
     <figcaption>A Taxonomy of Sensors</figcaption>
 </figure>
 

@@ -13,7 +13,7 @@ stars      :
 ---
 
 <figure>
-    <img src="freq-and-volume.jpg">
+    <img src="img/freq-and-volume.jpg">
     <figcaption>Frequency and Volume</figcaption>
 </figure>
 

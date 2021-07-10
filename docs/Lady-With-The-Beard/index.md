@@ -12,7 +12,7 @@ stars      :
 ---
 
 <figure>
-    <img src="lady.gif">
+    <img src="img/lady.gif">
     <figcaption>Lady with the beard</figcaption>
 </figure>
 
