@@ -104,7 +104,7 @@ for the past 30 years, I have been a member of what I would call the formal acad
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.001.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.001.png" width="100%" class="bar">
 
 ???
 
@@ -114,7 +114,7 @@ We can start this cycle anywhere, which is why it is called a "cycle." But let's
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.002.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.002.png" width="100%" class="bar">
 
 ???
 
@@ -124,7 +124,7 @@ In the course of that experiment, we create new information. We measure and coll
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.003.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.003.png" width="100%" class="bar">
 
 ???
 
@@ -134,7 +134,7 @@ Publish. This act requires us to document, archive, and advertise our results wh
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.004.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.004.png" width="100%" class="bar">
 
 ???
 
@@ -144,7 +144,7 @@ Discovered by another researcher, and the cycle continues.
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.005.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.005.png" width="100%" class="bar">
 
 ???
 
@@ -154,7 +154,7 @@ We have all heard of Open Access (OA). The focus of OA is on this part. My probl
 
 ## Scientific Information Lifecycle
 
-<img src="img/../img/info-lifecycle.006.png" width="100%" class="bar">
+<img src="../img/info-lifecycle.006.png" width="100%" class="bar">
 
 ???
 
@@ -188,7 +188,7 @@ Part of the reason we tend to think about copyright so much is that the formal a
 
 ---
 
-<img src="img/Open-But-Unequal/img/makerspace-restricted.jpg" width="100%" class="bar">
+<img src="../../Open-But-Unequal/img/makerspace-restricted.jpg" width="100%" class="bar">
 
 Members - if you answer the door and let someone in, YOU ARE RESPONSIBLE FOR THEM! … if YOU let someone in, they are YOUR problem
 

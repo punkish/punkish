@@ -19,6 +19,7 @@ const sh = new showdown.Converter({
     literalMidWordAsterisks: true,
     strikethrough: true
 });
+
 const Handlebars = require('handlebars')
 const moment = require('moment')
 const MiniSearch = require('minisearch')
@@ -26,6 +27,7 @@ const MiniSearch = require('minisearch')
 const baseUrl = ''
 const me = 'Puneet Kishor';
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+
 const dir = {
     entries: './entries',
     t: './views',
@@ -34,6 +36,7 @@ const dir = {
     docs: './docs',
     hanozDir: './docs/Hanoz'
 }
+
 const minisearchOpts = {
     fields: ['title', 'text'],
     storeFields: ['title', 'name'],
@@ -45,11 +48,13 @@ const minisearchOpts = {
 
 const untaggedLabel = 'untagged'
 const templates = { layouts: {}, views: {} }
+
 const data = {
     entries: {
         byName: {},
         byDate: [],
         byTag: {},
+        byTag2: [],
         byYear: [],
         hanoz: []
     },
@@ -86,9 +91,9 @@ const makeVid = function(text, url) {
 
     return text.replace(
         /<img src="(.*?)\.(mp4)(.*)/g, 
-        `<video width="100%" controls poster="img/$1.jpg">
-            <source src="${url}/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
-        </video>`
+`<video width="100%" controls poster="img/$1.jpg">
+    <source src="${url}/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
+</video>`
     )
 }
 
@@ -114,6 +119,7 @@ const makeAlbum = function(entry, url) {
         });
 
 }
+
 const prevNext = function() {
     console.log('populating prev-next')
 
@@ -461,9 +467,9 @@ const go = function(dir) {
 
                 makeDates(entry)
 
-                entry.hasCode = entry.origTags && entry.origTags.includes('code') ? true : false
-                // entry.hasCss = entry.css ? true : false
-                // entry.hasJs = entry.js   ? true : false
+                entry.hasCode = entry.origTags && entry.origTags.includes('code') ? 
+                    true : 
+                    false
 
                 if (entry.type) {
                     entry.type.forEach(t => {

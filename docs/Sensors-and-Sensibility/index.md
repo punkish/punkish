@@ -25,4 +25,3 @@ Perhaps a phone-based tracker might have more life, and this is where Apple will
 Now, to be clear, the importance of individual info is not going to diminish. But in order to realize full potential from it, we will have to drastically rethink our notions of [privacy and security](Information-Lifecycle).
 
 Open hardware and data certification are intrinsic parts of this ecosystem of sensors. Open hardware both consumes and spits out information, hopefully all open, and allows a grounds-up action to take place harnessing the global innovation potential without being dependent on what catches the fancy of Silicon Valley entrepreneurs. The world is very big, and to make a change that affects billions, we have to think really outside these polygons.
-

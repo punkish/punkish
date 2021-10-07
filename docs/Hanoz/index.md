@@ -12,7 +12,7 @@ tags       :
 stars      : 
 ---
 
-￼![Hanoz Shīsha-Garān](hanoz-couplet.png)
+￼![Hanoz Shīsha-Garān](img/hanoz-couplet.png)
 
 ज़ी वहम बर सर-ए-मीना खुद श’ह मी लरज़ी  
 हनोज़ शीश’ह गराँ दर शिकस्तन संग अन्द  
@@ -26,6 +26,6 @@ My dad, Dr. Kesri Kishor, was a teacher, a professor of pharmacology at King Geo
 
 Since I didn’t understand the meaning of the couplet that inspired the title of the book, I turned to Hajnalka Kovács<sup><a href="#punkish-fn:1">[^1]</a></sup>, a scholar of “Bedil” at the University of Chicago, who very kindly translated the above couplet.
 
-Now, 34 years after the book was published, I have made available the [entire content of the book, along with Hindi transliteration of the poems where available](/Hanoz?presentation=true). This is a long-term project, and as I, with the help of a few dear friends, am able to transliterate more poems, I will add them to the web site.
+Now, 34 years after the book was published, I have made available the [entire content of the book, along with Hindi transliteration of the poems where available](/Hanoz/p/). This is a long-term project, and as I, with the help of a few dear friends, am able to transliterate more poems, I will add them to the web site.
 
 [^1]: Hajnalka Kovács was completing her Ph.D. at the University of Chicago when I contacted her in 2011. <a href="https://sas.fas.harvard.edu/people/catherine-warner" target="_blank">She is now a preceptor</a> at the Dept. of South Asian Studies at Harvard University.

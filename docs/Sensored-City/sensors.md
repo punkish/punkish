@@ -51,7 +51,7 @@
             <div class="main">
                 <h1><a href="/science/">CC Science</a> &rarr; <a href="/sensoredcity">Sensored City</a> &rarr; Sensors</h1>
                 <nav>
-                    <a href="http://creativecommons.org" target="_blank"><img src="img/../img/cc.large.png" width="30" height="30" alt="Creative Commons"></a>
+                    <a href="http://creativecommons.org" target="_blank"><img src="../img/cc.large.png" width="30" height="30" alt="Creative Commons"></a>
                 </nav>
             </div>
         </header>

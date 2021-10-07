@@ -12,11 +12,11 @@
         <p>entries sorted by tags. (also see <a href="{{baseUrl}}/_dates/">entries by date</a>.)</p>
 
         {{#each entries}}
-        <details>
-            <summary class="tag">{{@key}}</summary>
+        <details class="tags">
+            <summary>{{@key}}</summary>
             {{#each .}}
             <details class="entry">
-                <summary>{{title}}</summary>
+                <summary>{{{title}}}</summary>
                 <div class="notes">{{notes}} <a href="{{baseUrl}}/{{name}}">more</a></div>
             </details>
             {{/each}}

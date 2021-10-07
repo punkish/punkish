@@ -11,8 +11,10 @@ html {
 /* punkish customization **************/
 /* body { font-family: myFont; font-size: 18px; background-color: #fff; } */
 blockquote {font-size: 100%; padding: 0; padding-left: 1rem;}
-h1.title {margin-bottom: -3px; font-family: serif; font-size: 180%;}
+h1.title {margin-bottom: -3px; font-family: serif; font-size: 24pt; font-weight: 200; }
 a { color: blue !important; }
+strong { font-weight: 600; }
+p { line-height: 150%; }
 /**************************************/
 
 small, .description, .created, figcaption { font-family: serif; }

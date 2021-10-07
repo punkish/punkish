@@ -305,31 +305,31 @@ other parts of the scientific information lifecycle are neglected. As you can se
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="img/../img/ecosystem.001.jpeg" width="100%">
+<img src="../img/ecosystem.001.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="img/../img/ecosystem.002.jpeg" width="100%">
+<img src="../img/ecosystem.002.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="img/../img/ecosystem.003.jpeg" width="100%">
+<img src="../img/ecosystem.003.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="img/../img/ecosystem.004.jpeg" width="100%">
+<img src="../img/ecosystem.004.jpeg" width="100%">
 
 ---
 
 <h2>Ecosystem <span class="punkish-dim">of Science</h2>
 
-<img src="img/../img/ecosystem.005.jpeg" width="100%">
+<img src="../img/ecosystem.005.jpeg" width="100%">
 
 ---
 
@@ -427,7 +427,7 @@ class: middle, center
 ]
 .right-column[
 <figure>
-    <img src="img/../img/parcels-tables.jpg" width="100%">
+    <img src="../img/parcels-tables.jpg" width="100%">
     <figcaption>park parcels stored in a spreadsheet</figcaption>
 </figure>
 ]
@@ -443,7 +443,7 @@ class: middle, center
 ]
 .right-column[
 <figure>
-    <img src="img/../img/qgis.jpg" width="100%">
+    <img src="../img/qgis.jpg" width="100%">
     <figcaption>parks coverage in QGIS</figcaption>
 </figure>
 ]
