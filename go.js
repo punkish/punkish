@@ -18,14 +18,14 @@ const sh = new showdown.Converter({
     literalMidWordUnderscores: true,
     literalMidWordAsterisks: true,
     strikethrough: true
-});
+})
 
 const Handlebars = require('handlebars')
 const moment = require('moment')
 const MiniSearch = require('minisearch')
 
 const baseUrl = ''
-const me = 'Puneet Kishor';
+const me = 'Puneet Kishor'
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 const dir = {
@@ -62,8 +62,8 @@ const data = {
     idx: {}
 }
 
-const makeTemplates = function() {
-    console.log('making templates')
+const compileTemplates = function() {
+    console.log('compiling templates')
 
     const layouts = fs.readdirSync(dir.tl)
     layouts.forEach(l => {
@@ -103,7 +103,6 @@ const makeImg = function(text, url) {
     return text.replace(
         /<img src=(.*?)\.(png|gif|jpg)(.*?)title="(.*?)" \/>/g, 
         `<figure>\n\t<img src=${url}/$1.$2$3>\n\t<figcaption>$4</figcaption>\n</figure>`
-        //`<img src="${url}/$1.$2$3>`
     )
 }
 
@@ -114,9 +113,7 @@ const makeAlbum = function(entry, url) {
             const imgExt = img.slice(-4)
             return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif'
         })
-        .map(img => {
-            return `${url}/${img}`
-        });
+        .map(img => `${url}/${img}`);
 
 }
 
@@ -222,14 +219,16 @@ const sortFunc = function(field) {
 
 const buildHanozIndex = function() {
     console.log('building hanoz index')
-    const files = fs.readdirSync(dir.hanozDir).filter(function(file, index) {
-        const path_to_file = path.join(dir.hanozDir, file)
 
-        // remove entries that start with "."
-        if (file.substr(0, 1) !== ".") {
-            return fs.lstatSync(path_to_file).isFile()
-        }
-    })
+    const files = fs.readdirSync(dir.hanozDir)
+        .filter(function(file, index) {
+            const path_to_file = path.join(dir.hanozDir, file)
+
+            // remove entries that start with "."
+            if (file.substr(0, 1) !== ".") {
+                return fs.lstatSync(path_to_file).isFile()
+            }
+        })
     
     for (let i = 0, j = files.length; i < j; i++) {
         const filename = dir.hanozDir + '/' + files[i]
@@ -403,9 +402,7 @@ const write = function() {
 const finish = function() {
     data.entries.byDate.sort(sortFunc('date'))
     data.entries.byYear.sort((a, b) => b['year'] - a['year'])
-    data.entries.byYear.forEach(x => {
-        x.months.sort((a, b) => b['month'] - a['month'])
-    })
+    data.entries.byYear.forEach(x => x.months.sort((a, b) => b['month'] - a['month']))
     prevNext()
     buildHanozIndex()
     buildSearchIndex('mini')
@@ -426,7 +423,7 @@ const makeDates = function(entry) {
 }
 
 const go = function(dir) {
-    makeTemplates()
+    compileTemplates()
 
     Walker(dir)
         .on('file', function(file, stat) {
