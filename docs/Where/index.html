@@ -82,7 +82,7 @@
         <script src="js/where.js"></script>
         <script>
         if (PK['where'].init) {
-            window.addEventListener('load', PK['where'].init)
+            window.addEventListener('load', (e) => PK['where'].init())
         }
         </script>
     

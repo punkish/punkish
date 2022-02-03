@@ -98,7 +98,7 @@
         <script src="js/tirana.js"></script>
         <script>
         if (PK['tirana'].init) {
-            window.addEventListener('load', PK['tirana'].init)
+            window.addEventListener('load', (e) => PK['tirana'].init())
         }
         </script>
     

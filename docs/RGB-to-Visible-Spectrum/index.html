@@ -148,7 +148,7 @@ function wl(i) {
         <script src="js/script.js"></script>
         <script>
         if (PK['script'].init) {
-            window.addEventListener('load', PK['script'].init)
+            window.addEventListener('load', (e) => PK['script'].init())
         }
         </script>
     

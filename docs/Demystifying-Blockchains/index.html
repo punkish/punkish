@@ -93,13 +93,13 @@
         <script src="js/bc.js"></script>
         <script>
         if (PK['bc'].init) {
-            window.addEventListener('load', PK['bc'].init)
+            window.addEventListener('load', (e) => PK['bc'].init())
         }
         </script>
         <script src="js/blockchain.js"></script>
         <script>
         if (PK['blockchain'].init) {
-            window.addEventListener('load', PK['blockchain'].init)
+            window.addEventListener('load', (e) => PK['blockchain'].init())
         }
         </script>
     

@@ -90,7 +90,7 @@
         <script src="js/a-list.js"></script>
         <script>
         if (PK['a-list'].init) {
-            window.addEventListener('load', PK['a-list'].init)
+            window.addEventListener('load', (e) => PK['a-list'].init())
         }
         </script>
     

@@ -53,7 +53,7 @@ window.addEventListener('load', function(e) {
     <script src="js/{{.}}.js"></script>
     <script>
     if (PK['{{.}}'].init) {
-        window.addEventListener('load', PK['{{.}}'].init)
+        window.addEventListener('load', (e) => PK['{{.}}'].init())
     }
     </script>
     {{/each}}
