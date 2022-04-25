@@ -541,4 +541,32 @@ const go = function(dir) {
         })
 }
 
-go(dir.docs)
+const go2 = (dir) => {
+    const list = [];
+
+    Walker(dir)
+        .on('file', function(file, stat) {
+
+            // file = .docs/Yi-Fu-Tuan/index.md
+            // name = Yi-Fu-Tuan
+            // dir  = .docs/Yi-Fu-Tuan/
+            // url  = https://punkish.org/Yi-Fu-Tuan/
+            
+            if (path.basename(file) === 'index.md') {
+                fs.stat((file), (err, stats) => {
+                    list.push([path.dirname(file).split('/')[1], stats.mtime]);
+                })
+            }
+        })
+        .on('error', function(er, entry, stat) {
+            console.log('Got error ' + er + ' on entry ' + entry)
+        })
+        .on('end', function() {
+            //console.log('All files traversed.')
+            //finish()
+            console.table(list);
+        })
+}
+
+go2(dir.docs)
+//go(dir.docs)

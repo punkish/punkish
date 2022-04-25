@@ -40,7 +40,7 @@ I was reading a depressing article about [Turkish schools going to stop teaching
 
 That sounded familiar to me from the US-context as well, especially given our recent election. That seems to be a recurring theme – we get educated, secular, better informed (?), tolerant (?), multicultural, etc. etc., in other words, completely buzzword-compliant. But in the process, we also become much of the opposite toward those who are not like us, disdainful, condescending, intolerant, and so on.
 
-This lead me to this interesting read http://nautil.us/issue/49/the-absurd/why-your-brain-hates-other-people
+This lead me to this interesting read [Why Your Brain Hates Other People](http://nautil.us/issue/49/the-absurd/why-your-brain-hates-other-people)
 
 <blockquote>
 Us and them<br>
