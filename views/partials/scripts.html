@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/minisearch@4.0.3/dist/umd/index.min.js"></script>
 <script src="{{baseUrl}}/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
 <script src="{{baseUrl}}/_lib/js/polyfill.js"></script>
 <script src="{{baseUrl}}/_lib/js/punkish.js"></script>
@@ -61,22 +61,23 @@ window.addEventListener('load', function(e) {
 
 <script>
 window.addEventListener('load', function(e) {
-    PK.autocomplete()
-    PK.initializeDictionary()
+    PK.autocomplete();
+    PK.initializeDictionary();
 
-    const searchInPage = document.getElementById('searchInPage')
+    const searchInPage = document.getElementById('searchInPage');
     if (searchInPage) {
-        const inp = document.getElementsByName('tag')
-        inp[0].addEventListener('keyup', PK.searchInPage)
+        const inp = document.getElementsByName('tag');
+        console.log(inp)
+        inp[0].addEventListener('keyup', PK.searchInPage);
     }
 
-    const loc = window.location
+    const loc = window.location;
     if (loc.hash) {
-        const term = loc.hash.substring(1)
+        const term = loc.hash.substring(1);
 
         // id of the element to parse
-        const myHilitor = new Hilitor("content")
-        myHilitor.apply(term)
+        const myHilitor = new Hilitor("content");
+        myHilitor.apply(term);
     }
 })
 </script>
