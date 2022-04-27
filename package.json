@@ -16,7 +16,7 @@
     "papaparse": ">=5.3.2",
     "paper": "^0.12.15",
     "picolog": "^1.0.4",
-    "showdown": "^2.0.0",
+    "showdown": "^2.1.0",
     "smoothie": "^1.36.0",
     "walker": "^1.0.8",
     "web-audio-daw": "^4.12.0",
