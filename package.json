@@ -13,7 +13,7 @@
     "handlebars": ">=4.7.7",
     "minisearch": "^4.0.3",
     "moment": "^2.29.2",
-    "papaparse": ">=5.2.0",
+    "papaparse": ">=5.3.2",
     "paper": "^0.12.15",
     "picolog": "^1.0.4",
     "showdown": "^2.0.0",
