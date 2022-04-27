@@ -11,7 +11,7 @@
     "crypto-js": "^4.1.1",
     "dygraphs": "^2.1.0",
     "handlebars": ">=4.7.7",
-    "minisearch": "^4.0.2",
+    "minisearch": "^4.0.3",
     "moment": "^2.29.2",
     "papaparse": ">=5.2.0",
     "paper": "^0.12.15",
