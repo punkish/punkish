@@ -68,11 +68,11 @@ https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ra
 .slideContainer { border: 1px solid silver; width: 100%; padding-bottom: 56.25%; position: relative; margin-top: 2em; font-family: "et-book", serif; background: #555; box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); display: flex; box-sizing: border-box; border: 10px solid #cecece; }
 .intro-slide { padding: 1em 1em 3em 1em; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; color: white; font-size: 1rem; font-family: sans-serif; overflow-y: auto; cursor: pointer; }
 .intro-slide:hover { background-color: #f5f5f5; color: #444; }
+.intro-slide:hover a { color: blue !important; }
 .intro-slide h2 { font-size: 2em; }
 .intro-slide h3 { font-size: 1.5em; }
 .intro-slide .where { font-size: 1.3em; }
 .intro-slide .notes { font-size: 1.2em; overflow: auto; margin-top: 2em; }
-.intro-slide a { font-size: 1.2em; color: lightgrey; }
-.intro-slide a:hover { color: yellow; }
-.intro-slide .when { margin-bottom: 2em; }
+.intro-slide a { font-size: 1.2em; color: lightblue !important; }
+.intro-slide .when { margin-bottom: 1.5em; }
 /*****************************************/
