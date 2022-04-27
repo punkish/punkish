@@ -67,7 +67,7 @@
   <p>Many in the religiously conservative element of the president’s support base admire his piety and see his ascension as a defeat of the elite “White Turks” – a westernised elite that used to dominate the upper echelons of society and was accused of looking down with disdain on poorer, more religiously inclined citizens. </p>
 </blockquote>
 <p>That sounded familiar to me from the US-context as well, especially given our recent election. That seems to be a recurring theme – we get educated, secular, better informed (?), tolerant (?), multicultural, etc. etc., in other words, completely buzzword-compliant. But in the process, we also become much of the opposite toward those who are not like us, disdainful, condescending, intolerant, and so on.</p>
-<p>This lead me to this interesting read http://nautil.us/issue/49/the-absurd/why-your-brain-hates-other-people</p>
+<p>This lead me to this interesting read <a href="http://nautil.us/issue/49/the-absurd/why-your-brain-hates-other-people">Why Your Brain Hates Other People</a></p>
 <blockquote>
 Us and them<br>
 And after all we’re only ordinary men<br>
@@ -101,7 +101,7 @@ The old man died
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@4.0.3/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -117,22 +117,23 @@ The old man died
     
     <script>
     window.addEventListener('load', function(e) {
-        PK.autocomplete()
-        PK.initializeDictionary()
+        PK.autocomplete();
+        PK.initializeDictionary();
     
-        const searchInPage = document.getElementById('searchInPage')
+        const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
-            const inp = document.getElementsByName('tag')
-            inp[0].addEventListener('keyup', PK.searchInPage)
+            const inp = document.getElementsByName('tag');
+            console.log(inp)
+            inp[0].addEventListener('keyup', PK.searchInPage);
         }
     
-        const loc = window.location
+        const loc = window.location;
         if (loc.hash) {
-            const term = loc.hash.substring(1)
+            const term = loc.hash.substring(1);
     
             // id of the element to parse
-            const myHilitor = new Hilitor("content")
-            myHilitor.apply(term)
+            const myHilitor = new Hilitor("content");
+            myHilitor.apply(term);
         }
     })
     </script></body>

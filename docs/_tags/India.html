@@ -46,7 +46,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">India</span></h1>
-    <div class="created">Feb 03, 2022</div>
+    <div class="created">Apr 27, 2022</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -85,12 +85,12 @@
             <div class="notes"> <a href="/Desire-to-Learn">more</a></div>
         </details>
         <details class="entry">
-            <summary>Digital Access Index India</summary>
-            <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
-        </details>
-        <details class="entry">
             <summary>A Digital Library Everywhere</summary>
             <div class="notes"> <a href="/Digital-Library-Everywhere">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Digital Access Index India</summary>
+            <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
         </details>
         <details class="entry">
             <summary>Holy man</summary>
@@ -101,12 +101,12 @@
             <div class="notes"> <a href="/India-cranks-it-to-11">more</a></div>
         </details>
         <details class="entry">
-            <summary>Jantar Mantar</summary>
-            <div class="notes"> <a href="/Jantar-Mantar">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Joint Forest Management</summary>
             <div class="notes"> <a href="/Joint-Forest-Management">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Jantar Mantar</summary>
+            <div class="notes"> <a href="/Jantar-Mantar">more</a></div>
         </details>
         <details class="entry">
             <summary>Life at the Side of the Road</summary>
@@ -137,12 +137,12 @@
             <div class="notes"> <a href="/Savitri">more</a></div>
         </details>
         <details class="entry">
-            <summary>Siesta in the Alcove</summary>
-            <div class="notes"> <a href="/Siesta-in-the-Alcove">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Siesta in the Doorway</summary>
             <div class="notes"> <a href="/Siesta-in-the-Doorway">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Siesta in the Alcove</summary>
+            <div class="notes"> <a href="/Siesta-in-the-Alcove">more</a></div>
         </details>
         <details class="entry">
             <summary>Three Faces of a Cube</summary>
@@ -169,7 +169,7 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@3.0.4/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@4.0.3/dist/umd/index.min.js"></script>
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
@@ -185,22 +185,23 @@
     
     <script>
     window.addEventListener('load', function(e) {
-        PK.autocomplete()
-        PK.initializeDictionary()
+        PK.autocomplete();
+        PK.initializeDictionary();
     
-        const searchInPage = document.getElementById('searchInPage')
+        const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
-            const inp = document.getElementsByName('tag')
-            inp[0].addEventListener('keyup', PK.searchInPage)
+            const inp = document.getElementsByName('tag');
+            console.log(inp)
+            inp[0].addEventListener('keyup', PK.searchInPage);
         }
     
-        const loc = window.location
+        const loc = window.location;
         if (loc.hash) {
-            const term = loc.hash.substring(1)
+            const term = loc.hash.substring(1);
     
             // id of the element to parse
-            const myHilitor = new Hilitor("content")
-            myHilitor.apply(term)
+            const myHilitor = new Hilitor("content");
+            myHilitor.apply(term);
         }
     })
     </script></body>

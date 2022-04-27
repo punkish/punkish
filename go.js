@@ -568,5 +568,5 @@ const go2 = (dir) => {
         })
 }
 
-go2(dir.docs)
-//go(dir.docs)
+//go2(dir.docs)
+go(dir.docs)
