@@ -7,18 +7,16 @@
 <script src="{{baseUrl}}/_lib/js/hilitor.js"></script>
 
 {{#if hasCode}}
-<script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+<script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
 <script>
-window.addEventListener('load', function(e) {
-    hljs.initHighlighting()
-})
+window.addEventListener('load', (e) => hljs.highlightAll())
 </script>
 {{/if}}
 
 {{#if isMap}}
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 {{/if}}
 
 {{#if isQgisMapper}}
@@ -34,7 +32,7 @@ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0v
 {{#if isCanvas}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script>
-window.addEventListener('load', function(e) {
+window.addEventListener('load', (e) => {
     const canvas = document.querySelector("canvas")
     const ctx = canvas.getContext("2d")
     chart(ctx)
@@ -60,14 +58,14 @@ window.addEventListener('load', function(e) {
 {{/if}}
 
 <script>
-window.addEventListener('load', function(e) {
+window.addEventListener('load', (e) => {
     PK.autocomplete();
     PK.initializeDictionary();
 
     const searchInPage = document.getElementById('searchInPage');
     if (searchInPage) {
         const inp = document.getElementsByName('tag');
-        console.log(inp)
+        // console.log(inp)
         inp[0].addEventListener('keyup', PK.searchInPage);
     }
 

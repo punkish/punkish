@@ -8,15 +8,16 @@
 <meta name="version" content="4.0">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: </title>
-
-<link rel="icon" href="/_lib/favicon/favicon.ico">
-<!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
-<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
 
@@ -46,7 +47,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">health</span></h1>
-    <div class="created">Apr 27, 2022</div>
+    <div class="created">Jun 15, 2022</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -65,12 +66,12 @@
             <div class="notes">governance implications for &lt;b&gt;Open Science&lt;/b&gt; <a href="/Citizen-Sourced-Data-Commons">more</a></div>
         </details>
         <details class="entry">
-            <summary>Citizens Consent</summary>
-            <div class="notes">An idea for more informed citizens based <a href="/Citizens-Consent">more</a></div>
-        </details>
-        <details class="entry">
             <summary>The City as an App</summary>
             <div class="notes"> <a href="/City-as-an-App">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Citizens Consent</summary>
+            <div class="notes">An idea for more informed citizens based <a href="/Citizens-Consent">more</a></div>
         </details>
         <details class="entry">
             <summary>Demystifying Blockchains</summary>
@@ -101,12 +102,12 @@
             <div class="notes"> <a href="/Perfect-Health-Repo-Desiderata">more</a></div>
         </details>
         <details class="entry">
-            <summary>Public Good v. Private Goods</summary>
-            <div class="notes">The good news is that the private sector is taking over from the public agencies when it comes to innovation and investment in the medical/health domains. As such, the difficult but crucial technological advancements, especially when it comes to balancing the desire for sharing with the need for privacy, are going to come from the private sector. The bad thing is that we are already witnessing unintended side-effects to this. And the ugly part is that there will be many more undesirable consequences in the future. The necessary checks and balances—consent, governance, and reparations from harm—will have to come from the public sector, that is, both the government and the common people. <a href="/Public-Good-v-Private-Goods">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Reading Writings</summary>
             <div class="notes"> <a href="/Reading-Writings">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Public Good v. Private Goods</summary>
+            <div class="notes">The good news is that the private sector is taking over from the public agencies when it comes to innovation and investment in the medical/health domains. As such, the difficult but crucial technological advancements, especially when it comes to balancing the desire for sharing with the need for privacy, are going to come from the private sector. The bad thing is that we are already witnessing unintended side-effects to this. And the ugly part is that there will be many more undesirable consequences in the future. The necessary checks and balances—consent, governance, and reparations from harm—will have to come from the public sector, that is, both the government and the common people. <a href="/Public-Good-v-Private-Goods">more</a></div>
         </details>
         <details class="entry">
             <summary>Sharing v. Privacy</summary>
@@ -140,14 +141,14 @@
     
     
     <script>
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', (e) => {
         PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
-            console.log(inp)
+            // console.log(inp)
             inp[0].addEventListener('keyup', PK.searchInPage);
         }
     

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="89" height="32.25" viewBox="0, 0, 89, 32.25">
+  <g id="Layer_2" transform="translate(-265.5, -262.5)">
+    <path d="M267,264 L354,264 L354,294.25 L267,294.25 L267,264 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+  </g>
+  <g id="Layer_3" transform="translate(-265.5, -262.5)">
+    <g>
+      <path d="M354,267.75 L354,290 L291,290 L291,289.185 C294.125,286.446 295.526,282.705 295.731,278.625 C295.676,274.211 294.038,271.114 291,268.065 L291,267.75 L354,267.75 z" fill="#000000"/>
+      <path d="M354,267.75 L354,290 L291,290 L291,289.185 C294.125,286.446 295.526,282.705 295.731,278.625 C295.676,274.211 294.038,271.114 291,268.065 L291,267.75 L354,267.75 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <path d="M280.75,289.625 C274.675,289.625 269.75,284.7 269.75,278.625 C269.75,272.55 274.675,267.625 280.75,267.625 C286.825,267.625 291.75,272.55 291.75,278.625 C291.75,284.7 286.825,289.625 280.75,289.625 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+  </g>
+  <g id="Layer_4" transform="translate(-265.5, -262.5)">
+    <text transform="matrix(1, 0, 0, 1, 279.755, 279)">
+      <tspan x="-5.005" y="5.5" font-family="Menlo-Regular" font-size="17" fill="#000000">0</tspan>
+    </text>
+  </g>
+  <g id="Layer_5" transform="translate(-265.5, -262.5)">
+    <text transform="matrix(1, 0, 0, 1, 315.838, 278.5)">
+      <tspan x="-17.838" y="-2.5" font-family="HelveticaNeue" font-size="9" fill="#FFFFFF">PUBLIC</tspan>
+      <tspan x="-17.838" y="8.5" font-family="HelveticaNeue" font-size="9" fill="#FFFFFF">DOMAIN</tspan>
+    </text>
+  </g>
+</svg>

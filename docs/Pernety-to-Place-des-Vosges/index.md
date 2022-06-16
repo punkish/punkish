@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img/048.jpg">
+    <img src="img/pernety-place-des-vosges.jpg">
     <figcaption>Pernety to Place des Vosges</figcaption>
 </figure>
 

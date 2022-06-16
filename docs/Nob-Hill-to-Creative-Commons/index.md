@@ -16,7 +16,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img/050.jpg">
+    <img src="img/img050.jpg">
     <figcaption>Nob Hill (San Francisco) to Creative Commons (Mt. View)</figcaption>
 </figure>
 

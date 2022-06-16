@@ -311,12 +311,19 @@ const writeByName = function() {
         fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
 
         if (entry.isPresentation) {
-            entry.content = templates.views.presentation(entry)
-            const html = templates.layouts.presentation(entry)
+            let tmpl = 'presentation';
+            if (entry.name === 'Biodiversity-Literature-Repository') {
+                tmpl = 'presentationPlazi';
+            }
+            
+            entry.content = templates.views[tmpl](entry);
+            const html = templates.layouts[tmpl](entry);
+
             try {
                 fs.mkdirSync(`${dir.docs}/${entry.name}/p`)
             }
             catch(e) {}
+
             fs.writeFileSync(`${dir.docs}/${entry.name}/p/index.html`, html)
         }
     }

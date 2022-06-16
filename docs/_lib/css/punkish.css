@@ -1,0 +1,155 @@
+html {
+    font-family: atkinson;
+}
+
+/* punkish customization **************/
+body { 
+    font-family: atkinson; 
+    font-size: 18px; 
+    background-color: #fff; 
+    width: 66ch;
+}
+blockquote {
+    font-size: 100%; 
+    padding: 0; 
+    padding-left: 1rem;
+}
+h1.title {
+    margin-bottom: -3px; 
+    font-family: serif; 
+    font-size: 24pt; 
+    font-weight: 200; 
+}
+a { 
+    color: blue !important; 
+}
+strong { 
+    font-weight: 600; 
+}
+p { line-height: 150%; }
+/**************************************/
+
+small, .description, .created, figcaption { font-family: serif; }
+small a, small b { margin-right: 10px; }
+code {
+    font-family: Hack;
+    color:orangered;
+    display:inline-block;
+}
+pre code {
+    font-family: Hack;
+    font-size: small;
+}
+nav, footer, .description, .created { font-size: small; }
+header nav {clear: both;}
+header nav, footer {border-top: 1px solid grey;}
+header nav a {margin-right: 0.5rem;}
+header div a { float: left;}
+header div form input {width: calc(100% - 50px); height: 40px; border: none;}
+
+/* images *********************************/
+figure { width: 100%; margin: 0; margin-bottom: 1em; }
+figure img { width: 100%; }
+figure.not100 img { width: unset; max-width: 100%; }
+figcaption {font-size: small;}
+figure.inline { width: 100%; margin-left: 0; margin-bottom: 1em; float: left; max-width: 400px; margin-right: 1em; }
+/*****************************************/
+
+/* tags and bottom navigation bar *******/
+ul.tags, ul.bottomNav { font: small sans-serif; list-style: none; min-height: 20px; }
+ul.tags { margin-top: 3em; }
+ul.tags:after { clear: both; margin-bottom: 2em; }
+ul.tags li { float: left; margin-right: 0.75em; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; }
+ul.tags li:hover { background-color: yellow; }
+ul.tags li a { text-decoration: none; }
+ul.bottomNav { clear: both; }
+ul.bottomNav li { margin-bottom: 0; float: left; margin-right: 0.75rem; }
+
+.tag { font: small sans-serif; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; text-decoration: none; }
+.tag:hover { background-color: yellow; }
+/*****************************************/
+
+
+/* tags and dates lists ******************/
+details.month > summary {margin-left: 1rem;}
+details.entry > summary {margin-left: 2rem;}
+details.entry > div.notes {margin-left: 3rem;}
+/*****************************************/
+
+li.prev:before {content: '\2190 ';}
+li.next:after {content: ' \2192';}
+
+/* a slide entry *************************/
+
+/* 
+Fitting a div to the screen size AND an aspect ratio.
+https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ratio
+*/
+
+.slideContainer { 
+    width: 100%; 
+    padding-bottom: 56.25%; 
+    position: relative; margin-top: 2em; 
+    font-family: "et-book", serif; 
+    background: #555; 
+    box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); 
+    display: flex; 
+    box-sizing: border-box; 
+    border: 5px solid #cecece; 
+}
+.intro-slide { 
+    padding: 1em 1em 3em 1em; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    overflow: auto; 
+    color: white; 
+    font-size: 1rem; 
+    font-family: sans-serif; 
+    overflow-y: 
+    auto; 
+    cursor: pointer; 
+}
+.intro-slide:hover { 
+    background-color: #f5f5f5; 
+    color: #444; 
+}
+.intro-slide:hover a { 
+    color: blue !important; 
+}
+.intro-slide h2 { 
+    font-size: 8pt; 
+    margin: 0;
+}
+.intro-slide h3 { 
+    font-size: 8pt; 
+    margin-top: 1rem;
+}
+
+.intro-slide .notes { font-size: 8pt; overflow: auto; margin-top: 10pt; }
+.intro-slide a { 
+    font-size: 7pt; 
+    color: lightblue !important; 
+}
+.intro-slide .where,
+.intro-slide .when { 
+    font-size: 7pt;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+    .slideContainer { border: 1px solid silver; width: 100%; padding-bottom: 56.25%; position: relative; margin-top: 2em; font-family: "et-book", serif; background: #555; box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); display: flex; box-sizing: border-box; border: 10px solid #cecece; }
+    .intro-slide { padding: 1em 1em 3em 1em; position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; color: white; font-size: 1rem; font-family: sans-serif; overflow-y: auto; cursor: pointer; }
+    .intro-slide:hover { background-color: #f5f5f5; color: #444; }
+    .intro-slide:hover a { color: blue !important; }
+    .intro-slide h2 { font-size: 1.5rem; }
+    .intro-slide h3 { font-size: 1.25rem; }
+    .intro-slide .where { font-size: 1.25rem; }
+    .intro-slide .notes { font-size: 1.25rem; overflow: auto; margin-top: 2em; }
+    .intro-slide a { font-size: 1.2em; color: lightblue !important; }
+    .intro-slide .when { font-size: 1.25rem; margin-bottom: 1.5em; }
+}
+
+/*****************************************/

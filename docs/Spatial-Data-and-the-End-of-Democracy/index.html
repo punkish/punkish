@@ -8,15 +8,16 @@
 <meta name="version" content="4.0">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Spatial Data and the End of Democracy</title>
-
-<link rel="icon" href="/_lib/favicon/favicon.ico">
-<!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
-<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
 
@@ -55,7 +56,7 @@
         <li><a href="/_tags/geospatial.html">geospatial</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Situated-Student-Learning-and-Spatial-Informational-Analysis">↜ Situated Student Learning and Spatial Informational Analysis</a></li>
+        <li class="prev"><a href="/Small-Is-Beautiful">↜ Small Is Beautiful</a></li>
         <li class="next"><a href="/Square-Pegs-In-Round-Holes">Square Pegs In Round Holes ⇝</a></li>
     </ul>
 </section>
@@ -78,14 +79,14 @@
     
     
     <script>
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', (e) => {
         PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
-            console.log(inp)
+            // console.log(inp)
             inp[0].addEventListener('keyup', PK.searchInPage);
         }
     

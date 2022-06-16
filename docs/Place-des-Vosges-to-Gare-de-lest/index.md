@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img/053.png">
+    <img src="img/img053.png">
     <figcaption>Place des Vosges to Gare de l’Est</figcaption>
 </figure>
 

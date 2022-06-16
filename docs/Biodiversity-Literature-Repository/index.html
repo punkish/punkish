@@ -1,0 +1,114 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+
+<title>punkish: The Biodiversity Literature Repository</title>
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
+<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/_lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv-latest/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/_dates/">dates</a>
+    <a href="/_tags/">tags</a>
+</nav></header>
+    
+    <main id="content"><section class="row">
+    <h1 class="title">The Biodiversity Literature Repository</h1>
+    <div class="date">Tuesday, June 21, 2022</div>
+    <div class="description">it takes more than just a license to be open by design</div>
+
+    <div class="content"><p>The Biodiversity Literature Repository (BLR) is a research infrastructure developed by <a href="http://plazi.org" target="_blank">Plazi</a> and its partners. It comprises the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> hosted at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</p> <p>BLR’s focus is on biodiversity data liberated from scholarly publications, and it uses custom metadata linking to external vocabularies covering the needs of the biodiversity community. BLR is the single largest community in Zenodo. Its data is widely reused, for example by the <a href="https://gbif.org" target="_blank">Global Biodiversity Information Facility (GBIF)</a>.</p> <p>BLR is also conceived, built and managed to be open at every stage of data extraction/creation, production, and dissemination. In other words, it is <em>open by design</em>.</p>
+</div>
+
+    <div class="slideContainer">
+        <div class="intro-slide" onclick="window.location='/Biodiversity-Literature-Repository/p/';">
+            <h2>The Biodiversity Literature Repository</h2>
+            <h3>Puneet Kishor</h3>
+            <div class="where">a presentation given at IDW-SciDataCon 2022</div>
+            <div class="when">June 2022</div>
+            <a href="/Biodiversity-Literature-Repository/p/">start slideshow</a>
+        </div>
+    </div>
+
+    <ul class="tags">
+        <li><a href="/_tags/presentation.html">presentation</a></li>
+        <li><a href="/_tags/open-data.html">open data</a></li>
+        <li><a href="/_tags/open-knowledge.html">open knowledge</a></li>
+    </ul>    
+    <ul class="bottomNav">
+        <li class="prev"><a href="/Biodiversity-Literature-Repository">↜ The Biodiversity Literature Repository</a></li>
+        <li class="next"><a href="/cv-latest">Curriculum Vita ⇝</a></li>
+    </ul></section>
+</main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@4.0.3/dist/umd/index.min.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <script src="/_lib/js/polyfill.js"></script>
+    <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
+    <script src="/_lib/js/hilitor.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    window.addEventListener('load', (e) => {
+        PK.autocomplete();
+        PK.initializeDictionary();
+    
+        const searchInPage = document.getElementById('searchInPage');
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag');
+            // console.log(inp)
+            inp[0].addEventListener('keyup', PK.searchInPage);
+        }
+    
+        const loc = window.location;
+        if (loc.hash) {
+            const term = loc.hash.substring(1);
+    
+            // id of the element to parse
+            const myHilitor = new Hilitor("content");
+            myHilitor.apply(term);
+        }
+    })
+    </script></body>
+</html>

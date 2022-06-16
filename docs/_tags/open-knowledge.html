@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="version" content="4.0">
+<meta name="author" content="Puneet Kishor">
+<meta name="copyright" content="CC0 Public Domain Dedication">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
+
+<title>punkish: </title>
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
+<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+
+
+
+
+
+
+</head>
+<body>
+    <header class="row"><div>
+    <a href="/" class="home">
+
+        <img src="/_lib/img/PunkishEidesisOrg.gif">
+    </a> 
+
+    <form name="search" method="GET" action="">
+        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+    </form>
+</div>
+<nav>
+    <a href="/cv-latest/">cv</a>
+    <a href="/Where/">where</a>
+    <a href="/_dates/">dates</a>
+    <a href="/_tags/">tags</a>
+</nav></header>
+    
+    <main id="content"><!-- entries by one tag -->
+<section>
+    <h1 class="title">Entries by Tag <span class="tag">open knowledge</span></h1>
+    <div class="created">Jun 15, 2022</div>
+
+    <form id="searchInPage">
+        <input name="tag" type="text"> 
+        <button type="submit">search</button>
+    </form>
+
+    <div class="content">
+        <p>entries sorted by tags. (also see <a href="/_dates/">entries by date</a>.)</p>
+
+        <details class="entry">
+            <summary>The Biodiversity Literature Repository</summary>
+            <div class="notes">&lt;p&gt;The Biodiversity Literature Repository (BLR) is a research infrastructure developed by &lt;a href&#x3D;&quot;http://plazi.org&quot; target&#x3D;&quot;_blank&quot;&gt;Plazi&lt;/a&gt; and its partners. It comprises the &lt;a href&#x3D;&quot;https://zenodo.org/communities/biosyslit/?page&#x3D;1&amp;size&#x3D;20&quot; target&#x3D;&quot;_blank&quot;&gt;BLR Community on Zenodo&lt;/a&gt; hosted at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as &lt;a href&#x3D;&quot;https://ocellus.info&quot; target&#x3D;&quot;_blank&quot;&gt;Ocellus&lt;/a&gt;, the &lt;a href&#x3D;&quot;https://test.zenodeo.org&quot; target&#x3D;&quot;_blank&quot;&gt;Zenodeo API&lt;/a&gt;, and the &lt;a href&#x3D;&quot;https://biolitrepo.org&quot; target&#x3D;&quot;_blank&quot;&gt;BLR website&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;BLR’s focus is on biodiversity data liberated from scholarly publications, and it uses custom metadata linking to external vocabularies covering the needs of the biodiversity community. BLR is the single largest community in Zenodo. Its data is widely reused, for example by the &lt;a href&#x3D;&quot;https://gbif.org&quot; target&#x3D;&quot;_blank&quot;&gt;Global Biodiversity Information Facility (GBIF)&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;BLR is also conceived, built and managed to be open at every stage of data extraction/creation, production, and dissemination. In other words, it is &lt;em&gt;open by design&lt;/em&gt;.&lt;/p&gt;
+ <a href="/Biodiversity-Literature-Repository">more</a></div>
+        </details>
+    </div>
+</section></main>
+
+    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@4.0.3/dist/umd/index.min.js"></script>
+    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <script src="/_lib/js/polyfill.js"></script>
+    <script src="/_lib/js/punkish.js"></script>
+    
+    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
+    <script src="/_lib/js/hilitor.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    window.addEventListener('load', (e) => {
+        PK.autocomplete();
+        PK.initializeDictionary();
+    
+        const searchInPage = document.getElementById('searchInPage');
+        if (searchInPage) {
+            const inp = document.getElementsByName('tag');
+            // console.log(inp)
+            inp[0].addEventListener('keyup', PK.searchInPage);
+        }
+    
+        const loc = window.location;
+        if (loc.hash) {
+            const term = loc.hash.substring(1);
+    
+            // id of the element to parse
+            const myHilitor = new Hilitor("content");
+            myHilitor.apply(term);
+        }
+    })
+    </script></body>
+</html>

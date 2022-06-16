@@ -8,15 +8,16 @@
 <meta name="version" content="4.0">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Corn Pudding</title>
-
-<link rel="icon" href="/_lib/favicon/favicon.ico">
-<!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
-<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
 
@@ -75,8 +76,8 @@
     <ul class="tags">
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/The-World-Bank">↜ The World Bank</a></li>
-        <li class="next"><a href="/Crab-Cakes">Crab Cakes ⇝</a></li>
+        <li class="prev"><a href="/Crab-Cakes">↜ Crab Cakes</a></li>
+        <li class="next"><a href="/Free-Software">Free Software ⇝</a></li>
     </ul>
 </section>
 </main>
@@ -98,14 +99,14 @@
     
     
     <script>
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', (e) => {
         PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
-            console.log(inp)
+            // console.log(inp)
             inp[0].addEventListener('keyup', PK.searchInPage);
         }
     

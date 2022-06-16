@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> meta}}
+
+	<link rel="stylesheet" href="{{baseUrl}}/_lib/fonts/et-book/et-book.css">
+	<link rel="stylesheet" href="{{baseUrl}}/_lib/fonts/hack/hack-subset.css">
+	<link rel="stylesheet" href="{{baseUrl}}/_lib/fonts/Atkinson/atkinson.css">
+	<link rel="stylesheet" href="{{baseUrl}}/_lib/css/uglyduck.css">
+    <link rel="stylesheet" href="{{baseUrl}}/_lib/css/remark-styles.css">
+    {{#if css}}
+		{{#each css}}
+    	<link rel="stylesheet" href="../css/{{.}}.css">
+		{{/each}}
+    {{/if}}
+</head>
+<body>
+
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+{{{content}}}
+
+	<script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+	<script src="{{baseUrl}}/_lib/remark/remark-latest.min.js"></script>
+	
+    <script>
+    let slideshow;
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+	})
+    </script>
+</body>
+</html>

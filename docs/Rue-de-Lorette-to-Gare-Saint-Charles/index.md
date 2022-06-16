@@ -14,7 +14,7 @@ stars      :
 ---
 
 <figure>
-    <img src="img/057.png">
+    <img src="img/img057.png">
     <figcaption>Rue de Lorette to Gare Saint-Charles</figcaption>
 </figure>
 

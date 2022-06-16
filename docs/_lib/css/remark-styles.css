@@ -1,9 +1,9 @@
-/* uglyduck.ca */
-*{box-sizing:border-box;}body{font:16px/1.5 "Georgia",serif;margin:0 auto;padding:1rem;}h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue","Helvetica","Arial",sans-serif;margin:2.5rem 0 1rem;}ul li, ol li{margin-top:0.5rem;}a,a:visited{color:black;}a:hover{color:dodgerblue;}img{height:auto;max-width:100%;}pre{border: 1px solid lightgrey;overflow:auto;}code{color:orangered;display:inline-block;}pre code{padding:1rem;}blockquote{border-left:5px solid lightgrey;font-size:120%;font-style:italic;margin:2rem 0;padding:1rem;}table{border-collapse:collapse;margin:2rem 0;text-align:left;width:100%;}tr{border-bottom:1px solid lightgrey;}th,td{padding:0.5rem;}hr{background:lightgrey;border:0;height:1px;margin:2rem 0;}
-
-
 /* punkish customization **************/
-body { font-size: 18px; background-color: #fff; }
+body { 
+  font-family: atkinson; 
+  font-size: 18px; 
+  background-color: #fff; 
+}
 blockquote {font-size: 100%; padding: 0; padding-left: 1rem;}
 h1.title {margin-bottom: -3px; font-family: serif; font-size: 180%;}
 a { color: blue !important; }
@@ -74,15 +74,16 @@ font-size: xx-large;
 .hilite {color: #ff8000;}
 
 .remark-code { 
-  font-family: 'Ubuntu Mono'; 
-  font-size: 0.8em;
+  font-family: Hack, monospace;
+  font-size: 7pt;
 }
 
 .remark-inline-code { 
-  font-family: 'Ubuntu Mono'; 
+  font-family: Hack, monospace;
   font-size: 1em;
   background-color: #f0f0f0;
 }
+
 .footnote {
 font: normal 200 0.9em/1.2em sans-serif;
 position: absolute;
@@ -436,4 +437,41 @@ iframe {
     height: 53vw;
     border: none;
     position: relative;
+}
+
+h2.subtitle {
+  margin-top: -2rem;
+  color: gray;
+  font-weight: 400;
+}
+
+table.background {
+  background-color: #f5f5f5;
+  color: lightgray;
+}
+div.watermark {
+  position: absolute;
+  top: 250px;
+  left: 150px;
+  transform: rotate(-20deg);
+  width: 500px;
+  text-align: center;
+  font-size: 2rem;
+  border: 4px double #444;
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  opacity: 0.55;
+  padding: 1.25rem;
+}
+ul.incremental li {
+  color: lightgray;
+}
+ul.incremental li:last-of-type {
+  color: black;
+}
+span.fair {
+  font-weight: 800;
+  color: green;
+  text-decoration: underline;
 }

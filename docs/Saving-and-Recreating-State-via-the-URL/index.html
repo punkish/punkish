@@ -8,19 +8,20 @@
 <meta name="version" content="4.0">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Saving and Recreating State via the URL</title>
-
-<link rel="icon" href="/_lib/favicon/favicon.ico">
-<!-- <link rel="stylesheet" href="/_lib/css/fonts.css"> -->
-<link rel="stylesheet" href="/_lib/css/styles.css">
+<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+<link rel="stylesheet" href="/_lib/css/punkish.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
 
 
-<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/default.min.css">
+<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -177,12 +178,10 @@ if (window.location.hash) {
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js"></script>
+    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
     <script>
-    window.addEventListener('load', function(e) {
-        hljs.initHighlighting()
-    })
+    window.addEventListener('load', (e) => hljs.highlightAll())
     </script>
     
     
@@ -191,14 +190,14 @@ if (window.location.hash) {
     
     
     <script>
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', (e) => {
         PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
-            console.log(inp)
+            // console.log(inp)
             inp[0].addEventListener('keyup', PK.searchInPage);
         }
     
