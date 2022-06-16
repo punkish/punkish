@@ -941,7 +941,8 @@ Great, but is it FAIR? Let’s see…
     <li>BLR
         <ul>
             <li>TaxPub</li>
-            <li>LOD</li>
+            <li>DarwinCore</li>
+            <li>JSON</li>
         </ul>
     </li>
 </ul>
@@ -962,9 +963,8 @@ Great, but is it FAIR? Let’s see…
     <li>BLR <span class="fair">is Interoperable &#10003;</span>
         <ul>
             <li>TaxPub</li>
-            <li>JSON</li>
-            <li>Linked Open Data</li>
             <li>DarwinCore</li>
+            <li>JSON</li>
         </ul>
     </li>
 </ul>
