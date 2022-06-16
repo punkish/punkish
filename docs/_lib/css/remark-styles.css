@@ -477,14 +477,14 @@ span.fair {
 }
 ul.horizontal li {
   list-style: none;
-  margin-right: 1rem;
+  margin-right: 2rem;
   float: left;
 }
 div.nofloat {
   clear: both;
 }
 pre.code {
-  height: 400px;
+  height: 350px;
 }
 pre.diagram {
   font-size: small;
