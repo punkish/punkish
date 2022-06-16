@@ -223,10 +223,11 @@ But is it really open? Let’s see…
 </ul>
 
 <div class="nofloat">
-<pre class="code"><code class="bash">
+```json
 % curl -X 'GET' 'https://test.zenodeo.org/v3/treatments?q=Monomorium%20dryhimi' \
        -H 'accept: application/json'
-</code><code class="json">{
+
+{
     "item": {
         "search": {
             "q": "Hemacroneuria mengyuanae",
@@ -275,8 +276,8 @@ But is it really open? Let’s see…
     },
     "stored": 1655381053077,
     "ttl": 604800000
-}</code></pre>
-</div>
+}
+```
 
 ---
 
