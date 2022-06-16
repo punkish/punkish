@@ -25,7 +25,7 @@ const moment = require('moment')
 const MiniSearch = require('minisearch')
 
 const baseUrl = ''
-const me = 'Puneet Kishor'
+let me = 'Puneet Kishor'
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 const dir = {
@@ -483,8 +483,12 @@ const go = function(dir) {
 
                 // presentation entry
                 if (entry.origTags && entry.origTags.indexOf('presentation') > -1) {
-                    entry.layout = fm.layout || 'main'
-                    entry.template = fm.template || 'entry-presentation'
+                    entry.layout = fm.layout || 'main';
+                    entry.template = fm.template || 'entry-presentation';
+
+                    if (entry.name === 'Biodiversity-Literature-Repository') {
+                        me = me + ' (Plazi)';
+                    }
 
                     if (entry.authors) {
                         if (entry.authors.length > 1) {
