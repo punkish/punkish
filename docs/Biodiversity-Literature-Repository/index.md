@@ -11,7 +11,7 @@ tags       :
     - open data
     - open knowledge
 notes      : >
-    <p>The Biodiversity Literature Repository (BLR) is a research infrastructure developed by <a href="http://plazi.org" target="_blank">Plazi</a> and its partners. It comprises the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> hosted at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</p>
+    <p>The Biodiversity Literature Repository (BLR) is a research infrastructure developed by <a href="http://plazi.org" target="_blank">Plazi</a> and its partners. It comprises the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> hosted at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, <a href="https://synospecies.plazi.org" target="_blank">Synospecies</a> and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</p>
     <p>BLR’s focus is on biodiversity data liberated from scholarly publications, and it uses custom metadata linking to external vocabularies covering the needs of the biodiversity community.
     BLR is the single largest community in Zenodo. Its data is widely reused, for example by the <a href="https://gbif.org" target="_blank">Global Biodiversity Information Facility (GBIF)</a>.</p>
     <p>BLR is also conceived, built and managed to be open at every stage of data extraction/creation, production, and dissemination. In other words, it is <em>open by design</em>.</p>
@@ -22,7 +22,7 @@ notes      : >
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the BLR Community on Zenodo at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as Ocellus, the Zenodeo API, and the BLR website.</li>
+    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, <a href="https://synospecies.plazi.org" target="_blank">Synospecies</a> and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</li>
 </ul>
 
 ---
@@ -32,7 +32,7 @@ notes      : >
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the BLR Community on Zenodo at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as Ocellus, the Zenodeo API, and the BLR website.</li>
+    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, <a href="https://synospecies.plazi.org" target="_blank">Synospecies</a> and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</li>
     <li>BLR’s focus is on biodiversity data liberated from scholarly publications, and it uses custom metadata linking to external vocabularies covering the needs of the biodiversity community.</li>
 </ul>
 
@@ -43,9 +43,9 @@ notes      : >
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the BLR Community on Zenodo at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as Ocellus, the Zenodeo API, and the BLR website.</li>
+    <li>The Biodiversity Literature Repository (BLR) is a research infrastructure (RI) comprising the <a href="https://zenodo.org/communities/biosyslit/?page=1&size=20" target="_blank">BLR Community on Zenodo</a> at the European Center for Nuclear Research (CERN), and services to search and retrieve the data such as <a href="https://ocellus.info" target="_blank">Ocellus</a>, the <a href="https://test.zenodeo.org" target="_blank">Zenodeo API</a>, <a href="https://synospecies.plazi.org" target="_blank">Synospecies</a> and the <a href="https://biolitrepo.org" target="_blank">BLR website</a>.</li>
     <li>BLR’s focus is on biodiversity data liberated from scholarly publications, and it uses custom metadata linking to external vocabularies covering the needs of the biodiversity community.</li>
-    <li>BLR is the single largest community in Zenodo. Its data is widely reused, for example by the Global Biodiversity Information Facility (GBIF).</li>
+    <li>BLR is the single largest community in Zenodo. Its data is widely reused, for example by the <a href="https://gbif.org" target="_blank">Global Biodiversity Information Facility (GBIF)</a>.</li>
 </ul>
 
 ---
@@ -55,7 +55,7 @@ notes      : >
 
 <table>
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
     </tbody>
 </table>
 
@@ -66,7 +66,7 @@ notes      : >
 
 <table>
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
         <tr><th>treatments</th><td> > 750000</td></tr>
     </tbody>
 </table>
@@ -78,7 +78,7 @@ notes      : >
 
 <table>
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
         <tr><th>treatments</th><td> > 750000</td></tr>
         <tr><th>occurrences</th><td>~ 250000</td></tr>
     </tbody>
@@ -91,7 +91,7 @@ notes      : >
 
 <table>
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
         <tr><th>treatments</th><td> > 750000</td></tr>
         <tr><th>occurrences</th><td>~ 250000</td></tr>
         <tr><th>figures</th><td> > 450000</td></tr>
@@ -105,7 +105,7 @@ notes      : >
 
 <table>
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
         <tr><th>treatments</th><td> > 750000</td></tr>
         <tr><th>occurrences</th><td>~ 250000</td></tr>
         <tr><th>figures</th><td> > 450000</td></tr>
@@ -126,7 +126,7 @@ notes      : >
 
 <table class="background">
     <tbody>
-        <tr><th width="50%">articles</th><td> > 50000</td></tr>
+        <tr><th width="50%">articles</th><td> > 70000</td></tr>
         <tr><th>treatments</th><td> > 750000</td></tr>
         <tr><th>occurrences</th><td>~ 250000</td></tr>
         <tr><th>figures</th><td> > 450000</td></tr>
@@ -140,7 +140,9 @@ notes      : >
     </tbody>
 </table>
 
-<div class="watermark">Everything published under CC0 Public Domain Dedication</div>
+<div class="watermark">Everything published under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a></div>
+
+<p style="font-size: small;"><i><b>Note:</b> Figures are made available under <a href="http://plazi.org/posts/agreement-between-plazi-and-prolitteris/" target="_blank">an extended collective license with ProLitteris</a>, the Swiss collecting society dealing with rights in photographic works.</i></p>
 
 ---
 
@@ -158,7 +160,7 @@ But is it really open? Let’s see…
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>All data in BLR are published under the CC0 Public Domain Dedication. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
+    <li>All data in BLR are published under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
 </ul>
 
 ---
@@ -173,25 +175,28 @@ But is it really open? Let’s see…
     <li>There is no legal obligation even to give us any credit. But, as is customary in science, it would be nice if BLR were cited if its data were used.</li>
 </ul>
 
+<p style="font-size: small;"><i><b>Note:</b> As mentioned earlier, images are made available under an extended collective license that authorizes Plazi to re-use all published photos and other images for the purpose of indexing and making available the worldwide biodiversity literature in the context of BLR. The re-use of these data by third persons is ruled by the copyright regulation applicable to the re-user. In most cases, there is no copyright protection at all as data and standardised images are not copyrightable (see <a href="https://doi.org/10.3897/rio.3.e12502" target="_blank">Egloff et al.</a>)</i></p>
+
 ---
 
 <h2>The Biodiversity Literature Repository</h2>
 <h2 class="subtitle">open – by availability</h2>
 
-<pre>
-┌──────────────┐    ┌───────┐
-│biolitrepo.org│    │Zenodo │
-└──────────────┘    └───────┘
-        ▲               ▲
-        │               │
-    ┌───────┐   ┌───────────────┐   ┌───────┐
-    │Zenodeo│◀──│ TreatmentBank │──▶│ GBIF  │
-    └───────┘   └───────────────┘   └───────┘
-        │               │
-        ▼               ▼
-   ┌─────────┐    ┌───────────┐
-   │ Ocellus │    │Synospecies│
-   └─────────┘    └───────────┘
+<pre class="diagram">
+                 ┌─────────────┐
+┌────────────┐   │BLR Community│
+│BLR Website │   │  on Zenodo  │
+└────────────┘   └─────────────┘
+       ▲                ▲       
+       │                │       
+   ┌───────┐     ┌─────────────┐   ┌────┐
+   │Zenodeo│◀────│TreatmentBank│──▶│GBIF│
+   └───────┘     └─────────────┘   └────┘
+       │                │      
+       ▼                ▼      
+  ┌─────────┐     ┌───────────┐
+  │ Ocellus │     │Synospecies│
+  └─────────┘     └───────────┘
 </pre>
 
 ---
@@ -199,111 +204,130 @@ But is it really open? Let’s see…
 <h2>The Biodiversity Literature Repository</h2>
 <h2 class="subtitle">open – by availability</h2>
 
-.left-column[
-<ul class="incremental">
+<ul class="incremental horizontal">
     <li>via the web</li>
 </ul>
-]
-.right-column[
-<img src="../img/data-via-web.jpg" style="width: 100%; max-width: 400px;">
-]
+
+<div class="nofloat">
+    <img src="../img/data-via-web.jpg" style="width: 100%; max-width: 900px;">
+</div>
 
 ---
 
 <h2>The Biodiversity Literature Repository</h2>
 <h2 class="subtitle">open – by availability</h2>
 
-.left-column[
-<ul class="incremental">
+<ul class="incremental horizontal">
     <li>via the web</li>
     <li>via RESTful APIs</li>
 </ul>
-]
-.right-column[
-```
-curl -X 'GET' \
-  'https://test.zenodeo.org/v3/treatments?q=Monomorium%20dryhimi' \
-  -H 'accept: application/json'
 
-{
-    "item":{
-        "search":{
-            "q":"Monomorium dryhimi",
+<div class="nofloat">
+<pre class="code"><code class="bash">
+% curl -X 'GET' 'https://test.zenodeo.org/v3/treatments?q=Monomorium%20dryhimi' \
+       -H 'accept: application/json'
+</code><code class="json">{
+    "item": {
+        "search": {
+            "q": "Hemacroneuria mengyuanae",
         },
-        "result":{
-            "count":2,
-            "records":[
-                {
-                    "treatmentId":"B5596AA1CDF9DDA3D5CDD922E1723751",
-                    "treatmentTitle":"Monomorium dryhimi Aldawood & Sharaf, sp. n.",
-                    "treatmentDOI":"",
-                    "treatmentLSID":"urn:lsid:zoobank.org:act:4C171A6D-B1F5-4D4D-BBAD-CE2250167E5B",
-                    "zenodoDep":"",
-                    "zoobankId":"",
-                    "articleId":"C87FFFDC477D0E76FF84C46544158736",
-                    "articleTitle":"Monomorium dryhimi sp. n., a new ant species (Hymenoptera, Formicidae) of the M. monomorium group from Saudi Arabia, with a key to the Arabian Monomorium monomorium-group",
-                    "articleAuthor":"Aldawood, Abdulrahman S. & Sharaf, Mostafa R.",
-                    "articleDOI":"http://dx.doi.org/10.3897/zookeys.106.1390",
-                    "publicationDate":"",
-                    "journalTitle":"ZooKeys",
-                    "journalYear":"2011",
-                    "journalVolume":"106",
-                    …
-                },
-                …
-            ],
+        "result": {
+            "count": 1,
+            "records": [{
+                "treatmentId": "3D6DA32CFFA1B65524F7FDAA5C4F8EC3",
+                "treatmentTitle": "Hemacroneuria mengyuanae Huo & Zhu & Du 2021, sp. nov.",
+                "treatmentDOI": "http://doi.org/10.5281/zenodo.5500037",
+                "treatmentLSID": "urn:lsid:plazi:treatment:3D6DA32CFFA1B65524F7FDAA5C4F8EC3",
+                "zenodoDep": "5500037",
+                "zoobankId": "8EF3E3ED-E060-4D9C-9B5E-E880F6A4F863",
+                "articleId": "C154DB54FFA9B65D2460FFED5F578933",
+                "articleTitle": "New illustrations, new species and new combination of Hemacroneuria Enderlein (Plecoptera: Perlidae) from China",
+                "articleAuthor": "Huo, Qing-bo, Zhu, Bin-Qing & Du, Yu-Zhou",
+                "articleDOI": "10.11646/zootaxa.5032.4.6",
+                "publicationDate": "2021-09-09",
+                "journalTitle": "Zootaxa",
+                "journalYear": "2021",
+                "journalVolume": "5032",
+                "journalIssue": "4",
+                "pages": "563–576",
+                "authorityName": "Huo & Zhu & Du",
+                "authorityYear": "2021",
+                "kingdom": "Animalia",
+                "phylum": "Arthropoda",
+                "order": "Plecoptera",
+                "family": "Perlidae",
+                "genus": "Hemacroneuria",
+                "species": "mengyuanae",
+                "status": "sp. nov.",
+                "taxonomicNameLabel": "Hemacroneuria mengyuanae Huo & Du",
+                "rank": "species",
+                "updateTime": 1632005567104,
+                "checkinTime": 1631274862605,
+            }],
+            "related-records": {},
+            "facets": {}
+        },
+        "_links": {
+            "_self": "http://test.zenodeo.org/v3/treatments?cols=treatmentId%2CtreatmentTitle%2CtreatmentDOI%2CtreatmentLSID%2CzenodoDep%2CzoobankId%2CarticleId%2CarticleTitle%2CarticleAuthor%2CarticleDOI%2CpublicationDate%2CjournalTitle%2CjournalYear%2CjournalVolume%2CjournalIssue%2Cpages%2CauthorityName%2CauthorityYear%2Ckingdom%2Cphylum%2Corder%2Cfamily%2Cgenus%2Cspecies%2Cstatus%2CtaxonomicNameLabel%2Crank%2CupdateTime%2CcheckinTime&page=1&q=Hemacroneuria+mengyuanae&relatedRecords=false&size=30&sortby=treatments.treatmentId%3AASC",
+            "_prev": "http://test.zenodeo.org/v3/treatments?cols=treatmentId%2CtreatmentTitle%2CtreatmentDOI%2CtreatmentLSID%2CzenodoDep%2CzoobankId%2CarticleId%2CarticleTitle%2CarticleAuthor%2CarticleDOI%2CpublicationDate%2CjournalTitle%2CjournalYear%2CjournalVolume%2CjournalIssue%2Cpages%2CauthorityName%2CauthorityYear%2Ckingdom%2Cphylum%2Corder%2Cfamily%2Cgenus%2Cspecies%2Cstatus%2CtaxonomicNameLabel%2Crank%2CupdateTime%2CcheckinTime&page=1&q=Hemacroneuria+mengyuanae&relatedRecords=false&size=30&sortby=treatments.treatmentId%3AASC",
+            "_next": "http://test.zenodeo.org/v3/treatments?cols=treatmentId%2CtreatmentTitle%2CtreatmentDOI%2CtreatmentLSID%2CzenodoDep%2CzoobankId%2CarticleId%2CarticleTitle%2CarticleAuthor%2CarticleDOI%2CpublicationDate%2CjournalTitle%2CjournalYear%2CjournalVolume%2CjournalIssue%2Cpages%2CauthorityName%2CauthorityYear%2Ckingdom%2Cphylum%2Corder%2Cfamily%2Cgenus%2Cspecies%2Cstatus%2CtaxonomicNameLabel%2Crank%2CupdateTime%2CcheckinTime&page=2&q=Hemacroneuria+mengyuanae&relatedRecords=false&size=30&sortby=treatments.treatmentId%3AASC",
         }
-    }
-}
-```
-]
+    },
+    "stored": 1655381053077,
+    "ttl": 604800000
+}</code></pre>
+</div>
 
 ---
 
 <h2>The Biodiversity Literature Repository</h2>
 <h2 class="subtitle">open – by availability</h2>
 
-.left-column[
-<ul class="incremental">
+<ul class="incremental horizontal">
     <li>via the web</li>
     <li>via RESTful APIs</li>
     <li>via SPARQL queries</li>
 </ul>
-]
-.right-column[
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX treat: <http://plazi.org/vocab/treatment#>
-SELECT DISTINCT * WHERE {
-  <http://taxon-concept.plazi.org/id/Animalia/Tyrannosaurus_rex_Osborn_1905> ((^treat:deprecates/(treat:augmentsTaxonConcept|treat:definesTaxonConcept))|((^treat:augmentsTaxonConcept|^treat:definesTaxonConcept)/treat:deprecates))* ?tc .
-}
 
-{
-  "head": {
-    "vars": [
-      "tc"
-    ]
-  },
+<div class="nofloat">
+<pre class="code"><code class="sql">PREFIX treat: &lt; http://plazi.org/vocab/treatment# &gt;
+PREFIX dwc: &lt; http://rs.tdwg.org/dwc/terms/ &gt;
+PREFIX rdf: &lt; http://www.w3.org/1999/02/22-rdf-syntax-ns# &gt;
+PREFIX fabio: &lt; http://purl.org/spar/fabio/ &gt;
+PREFIX dc: &lt; http://purl.org/dc/elements/1.1/ &gt;
+SELECT 
+    DISTINCT ?url ?description 
+WHERE 
+    { 
+        ?treatment (treat:augmentsTaxonConcept|treat:definesTaxonConcept) &lt; http://taxon-concept.plazi.org/id/Animalia/Hemacroneuria_mengyuanae_Huo_2021 &gt; . 
+        ?treatment &lt; http://purl.org/spar/cito/cites &gt; 
+        ?cites. 
+        ?cites rdf:type fabio:Figure. 
+        ?cites fabio:hasRepresentation 
+        ?url. ?cites dc:description ?description. 
+}</code><code class="json">{
+  …
   "results": {
     "bindings": [
       {
-        "tc": {
-          "type": "uri",
-          "value": "http://taxon-concept.plazi.org/id/Animalia/Aublysodon_molnaris_Paul_1988"
+        "description": {
+          "type": "literal",
+          "value": "FIGURE 14. Hemacroneuria mengyuanae. Male, A: habitus (dorsal and ventral); B: head and pronotum."
+        },
+        "url": {
+          "type": "literal",
+          "value": "https://zenodo.org/record/5500069/files/figure.png"
         }
       },
       {
-        "tc": {
-          "type": "uri",
-          "value": "http://taxon-concept.plazi.org/id/Animalia/Dynamosaurus_imperiosus_Osborn_1905"
+        "description": {
+          "type": "literal",
+            …
         }
-      },
-      …
-    ]
-  }
+    …
 }
-```
-]
+</code></pre>
+</div>
 
 ---
 
@@ -311,50 +335,28 @@ SELECT DISTINCT * WHERE {
 <h2 class="subtitle">open – by semantics</h2>
 
 <ul class="incremental">
-    <li>conforms to standards</li>
-</ul>
-
----
-
-<h2>The Biodiversity Literature Repository</h2>
-<h2 class="subtitle">open – by semantics</h2>
-
-<ul class="incremental">
-    <li>conforms to standards,</li>
-    <li>using TaxPub, an Extension of the Journal Publishing Tag Set NISO JATS Version 1.1 (ANSI/NISO Z39.96-2015)</li>
-</ul>
-
----
-
-<h2>The Biodiversity Literature Repository</h2>
-<h2 class="subtitle">open – by semantics</h2>
-
-<ul class="incremental">
-    <li>conforms to standards,</li>
-    <li>using TaxPub, an Extension of the Journal Publishing Tag Set NISO JATS Version 1.1 (ANSI/NISO Z39.96-2015)</li>
+    <li>
+        conforms to standards: DarwinCore<br>
+        DarwinCore is …
+    </li>
 </ul>
 
 ```xml
-<tp:taxon-treatment>
-    <tp:nomenclature>
-        <tp:taxon-name>
-            <tp:taxon-name-part taxon-name-part-type="genus">Monomorium</tp:taxon-name-part>
-            <tp:taxon-name-part taxon-name-part-type="species">dryhimi</tp:taxon-name-part>
-            <object-id xlink:type="simple">urn:lsid:zoobank.org:act:4C171A6D-B1F5-4D4D-BBAD-CE2250167E5B</object-id>
-            <object-id xlink:type="simple">http://species-id.net/wiki/Monomorium_dryhimi</object-id>
-        </tp:taxon-name>
-        <tp:taxon-authority>Aldawood &amp; Sharaf</tp:taxon-authority>
-        <tp:taxon-status xlink:type="simple">sp. n.</tp:taxon-status>
-        <xref ref-type="fig" rid="F1">Figs 1–7</xref>
-    </tp:nomenclature>
-    <tp:treatment-sec sec-type="description">  
-        <title>Holotype worker.</title>
-            <p>TL1.84, HL 0.48, HW 0.34, SL 0.31, ML 0.46, EL 0.08, PRW 0.22, PL 0.14, PW 0.11, 
-            PPL 0.08, PPW 0.11, SI 91, CI 71.</p>
-    </tp:treatment-sec>
-    ...   
-</tp:taxon-treatment>
+
 ```
+
+---
+
+<h2>The Biodiversity Literature Repository</h2>
+<h2 class="subtitle">open – by semantics</h2>
+
+<ul class="incremental">
+    <li>conforms to standards: DarwinCore</li>
+    <li>
+        conforms to standards: JSON<br>
+        JSON is a <i>de facto</i> standard for data exchange
+    </li>
+</ul>
 
 ---
 
@@ -491,7 +493,7 @@ The Open Definition version 2.1 prescribes four conditions for openness of a wor
         <tr>
             <td>available in an open format</td>
 			<td>&#10003;</td>
-            <td>TaxPub</td>
+            <td>TaxPub, JSON, Linked Open Data, DarwinCore</td>
         </tr>
     </tbody>
 </table>
@@ -635,7 +637,9 @@ Great, but is it FAIR? Let’s see…
     <li>BLR <span class="fair">is Interoperable &#10003;</span>
         <ul>
             <li>TaxPub</li>
-            <li>LOD</li>
+            <li>JSON</li>
+            <li>Linked Open Data</li>
+            <li>DarwinCore</li>
         </ul>
     </li>
 </ul>
@@ -692,3 +696,14 @@ Great, but is it FAIR? Let’s see…
 <h2 class="subtitle">FAIR – by design</h2>
 
 not as an afterthought, but from the moment of inception, and every step of the way.
+
+---
+
+<h2>Acknowledgements</h2>
+
+BLR is made possible in part by the generous support of the following:
+
+<ul>
+    <li>Arcadia Fund<br><img src="../img/arcadia-logo.svg" width="200px"></li>
+    <li>BiCIKL<br><img src="../img/bicikl-logo.jpg" width="200px"></li>
+</ul>

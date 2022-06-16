@@ -475,3 +475,17 @@ span.fair {
   color: green;
   text-decoration: underline;
 }
+ul.horizontal li {
+  list-style: none;
+  margin-right: 1rem;
+  float: left;
+}
+div.nofloat {
+  clear: both;
+}
+pre.code {
+  height: 400px;
+}
+pre.diagram {
+  font-size: small;
+}
