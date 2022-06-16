@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
 	<link rel="stylesheet" href="/_lib/css/uglyduck.css">
     <link rel="stylesheet" href="/_lib/css/remark-styles.css">
+	<link rel="stylesheet" href="/_lib/css/tooltips.css">
 </head>
 <body>
 
@@ -163,7 +164,7 @@ notes here
         <tr><th>occurrences</th><td>~ 250000</td></tr>
         <tr><th>figures</th><td> > 450000</td></tr>
         <tr>
-            <th>observation records</th>
+            <th>material citations</th>
             <td>
                 ~ 2 million<br> 
                 > 350000 are geo-referenced
@@ -184,7 +185,7 @@ notes here
         <tr><th>occurrences</th><td>~ 250000</td></tr>
         <tr><th>figures</th><td> > 450000</td></tr>
         <tr>
-            <th>observation records</th>
+            <th>material citations</th>
             <td>
                 ~ 2 million<br> 
                 > 350000 are geo-referenced
@@ -193,7 +194,7 @@ notes here
     </tbody>
 </table>
 
-<div class="watermark">Everything published under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a></div>
+<div class="watermark">Everything released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a></div>
 
 <p style="font-size: small;"><i><b>Note:</b> Figures are made available under <a href="http://plazi.org/posts/agreement-between-plazi-and-prolitteris/" target="_blank">an extended collective license with ProLitteris</a>, the Swiss collecting society dealing with rights in photographic works.</i></p>
 
@@ -213,7 +214,7 @@ But is it really open? Let’s see…
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>All data in BLR are published under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
+    <li>All data in BLR are released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a><sup><a href="#" class="tooltip" data-tooltip="As mentioned earlier, images are made available under an extended collective license that authorizes Plazi to re-use all published photos and other images for the purpose of indexing and making available the worldwide biodiversity literature in the context of BLR. The re-use of these data by third persons is ruled by the copyright regulation applicable to the re-user.">•••</a></sup>. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
 </ul>
 
 ---
@@ -224,11 +225,9 @@ But is it really open? Let’s see…
 <img src="../img/biolitrepo.png" alt="The Biodiversity Literature Repository">
 
 <ul class="incremental">
-    <li>All data in BLR are published under the CC0 Public Domain Dedication. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
+    <li>All data in BLR are released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a><sup><a href="#" class="tooltip" data-tooltip="As mentioned earlier, images are made available under an extended collective license that authorizes Plazi to re-use all published photos and other images for the purpose of indexing and making available the worldwide biodiversity literature in the context of BLR. The re-use of these data by third persons is ruled by the copyright regulation applicable to the re-user.">•••</a></sup>. In simple words, all data are free for anyone to use, anywhere, for any purpose. There are no restrictions imposed by Plazi. There is no need to ask permission.</li>
     <li>There is no legal obligation even to give us any credit. But, as is customary in science, it would be nice if BLR were cited if its data were used.</li>
 </ul>
-
-<p style="font-size: small;"><i><b>Note:</b> As mentioned earlier, images are made available under an extended collective license that authorizes Plazi to re-use all published photos and other images for the purpose of indexing and making available the worldwide biodiversity literature in the context of BLR. The re-use of these data by third persons is ruled by the copyright regulation applicable to the re-user. In most cases, there is no copyright protection at all as data and standardised images are not copyrightable (see <a href="https://doi.org/10.3897/rio.3.e12502" target="_blank">Egloff et al.</a>)</i></p>
 
 ---
 
@@ -239,14 +238,14 @@ But is it really open? Let’s see…
                  ┌─────────────┐
 ┌────────────┐   │BLR Community│
 │BLR Website │   │  on Zenodo  │
-└────────────┘   └─────────────┘
-       ▲                ▲       
-       │                │       
-   ┌───────┐     ┌─────────────┐   ┌────┐
-   │Zenodeo│◀────│TreatmentBank│──▶│GBIF│
-   └───────┘     └─────────────┘   └────┘
-       │                │      
-       ▼                ▼      
+└────────────┘   └─────────────┘    ┌────────┐
+       ▲                ▲        ┌─▶│Wikidata│
+       │                │        │  └────────┘
+   ┌───────┐     ┌─────────────┐ │        
+   │Zenodeo│◀────│TreatmentBank│─┤        
+   └───────┘     └─────────────┘ │  ┌────┐
+       │                │        └─▶│GBIF│
+       ▼                ▼           └────┘
   ┌─────────┐     ┌───────────┐
   │ Ocellus │     │Synospecies│
   └─────────┘     └───────────┘
@@ -258,7 +257,13 @@ But is it really open? Let’s see…
 <h2 class="subtitle">open – by availability</h2>
 
 <ul class="incremental horizontal">
-    <li>via the web</li>
+    <li>
+        via the web: 
+        <a href="https://www.gbif.org/species/11177147/treatments" target="blank">GBIF</a>, 
+        <a href="https://ocellus.info/?source=all&q=Hemacroneuria+mengyuanae&page=1&size=30" target="blank">Ocellus</a>, 
+        <a href="https://synospecies.plazi.org/#Hemacroneuria+mengyuanae" target="blank">Synospecies</a>
+        <a href="https://query.wikidata.org/embed.html#%23title%3A%20Taxa%2C%20their%20publications%20and%20their%20treatments%0ASELECT%20%3Ftaxon%20%3FtaxonLabel%20%3Ftreatment%20%3FtreatmentLabel%20%3Fpublication%20%3FpublicationLabel%20WHERE%20%7B%0A%20%20%20%3Ftaxon%20wdt%3AP10594%20%3Ftreatment%20%3B%0A%20%20%20%20%20%20%20%20%20%20p%3AP31%20%5B%20prov%3AwasDerivedFrom%20%5B%20pr%3AP248%20%3Fpublication%20%3B%5D%5D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D" target="blank">Wikidata</a>
+    </li>
 </ul>
 
 <div class="nofloat">
@@ -275,10 +280,11 @@ But is it really open? Let’s see…
     <li>via RESTful APIs</li>
 </ul>
 
-<div class="nofloat">
+<br style="clear: both;">
+
 ```json
 % curl -X 'GET' 'https://test.zenodeo.org/v3/treatments?q=Monomorium%20dryhimi' \
-       -H 'accept: application/json'
+    -H 'accept: application/json'
 
 {
     "item": {
@@ -343,8 +349,10 @@ But is it really open? Let’s see…
     <li>via SPARQL queries</li>
 </ul>
 
-<div class="nofloat">
-<pre class="code"><code class="sql">PREFIX treat: &lt; http://plazi.org/vocab/treatment# &gt;
+<br style="clear: both;">
+
+```rdf
+PREFIX treat: &lt; http://plazi.org/vocab/treatment# &gt;
 PREFIX dwc: &lt; http://rs.tdwg.org/dwc/terms/ &gt;
 PREFIX rdf: &lt; http://www.w3.org/1999/02/22-rdf-syntax-ns# &gt;
 PREFIX fabio: &lt; http://purl.org/spar/fabio/ &gt;
@@ -359,29 +367,129 @@ WHERE
         ?cites rdf:type fabio:Figure. 
         ?cites fabio:hasRepresentation 
         ?url. ?cites dc:description ?description. 
-}</code><code class="json">{
-  …
-  "results": {
-    "bindings": [
-      {
-        "description": {
-          "type": "literal",
-          "value": "FIGURE 14. Hemacroneuria mengyuanae. Male, A: habitus (dorsal and ventral); B: head and pronotum."
-        },
-        "url": {
-          "type": "literal",
-          "value": "https://zenodo.org/record/5500069/files/figure.png"
-        }
-      },
-      {
-        "description": {
-          "type": "literal",
-            …
-        }
-    …
 }
-</code></pre>
-</div>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mods: <http://www.loc.gov/mods/v3> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+
+<http://doi.org/10.5281/zenodo.5500037>
+    dc:creator "Du, Yu-Zhou", "Huo, Qing-bo", "Zhu, Bin-Qing" ;
+    dc:date "2021" ;
+    dc:title "New illustrations, new species and new combination of Hemacroneuria Enderlein (Plecoptera: Perlidae) from China" ;
+    bibo:endPage "576" ;
+    bibo:issue "4" ;
+    bibo:journal "Zootaxa" ;
+    bibo:pubDate "2021-09-09" ;
+    bibo:startPage "563" ;
+    bibo:volume "5032" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5500069>, <http://dx.doi.org/10.5281/zenodo.5500071>, <http://dx.doi.org/10.5281/zenodo.5500073> ;
+    a fabio:JournalArticle .
+
+<http://dx.doi.org/10.5281/zenodo.5500069>
+    dc:description "FIGURE 14. Hemacroneuria mengyuanae. Male, A: habitus (dorsal and ventral); B: head and pronotum." ;
+    fabio:hasRepresentation "https://zenodo.org/record/5500069/files/figure.png" ;
+    a fabio:Figure .
+
+<http://dx.doi.org/10.5281/zenodo.5500071>
+    dc:description "FIGURE 15. Hemacroneuria mengyuanae. Male abdomen, A: dorsal; B: ventral." ;
+    fabio:hasRepresentation "https://zenodo.org/record/5500071/files/figure.png" ;
+    a fabio:Figure .
+
+<http://dx.doi.org/10.5281/zenodo.5500073>
+    dc:description "FIGURE 16. Hemacroneuria mengyuanae. Male, A: terminalia, dorsal; B: hammer; C. aedeagus, dorsal; D. aedeagus, ventral." ;
+    fabio:hasRepresentation "https://zenodo.org/record/5500073/files/figure.png" ;
+    a fabio:Figure .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hemacroneuria_mengyuanae_Huo_2021>
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemacroneuria_mengyuanae> ;
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Hemacroneuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Huo & Du" ;
+    dwc:species "mengyuanae" ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemacroneuria>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlidae> ;
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Hemacroneuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemacroneuria_mengyuanae>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemacroneuria> ;
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Hemacroneuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mengyuanae" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Perlidae>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Plecoptera>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    a dwcFP:TaxonName .
+
+<http://treatment.plazi.org/id/3D6DA32CFFA1B65524F7FDAA5C4F8EC3>
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hemacroneuria_mengyuanae_Huo_2021> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5500037> ;
+    dc:creator "Du, Yu-Zhou", "Huo, Qing-bo", "Zhu, Bin-Qing" ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5500069>, <http://dx.doi.org/10.5281/zenodo.5500071>, <http://dx.doi.org/10.5281/zenodo.5500073> ;
+    a trt:Treatment .
+```
 
 ---
 
@@ -414,16 +522,13 @@ WHERE
         <p>(Figs. 14–16)</p>
         <p>Male: Forewing length ca. 21 mm, hindwing length 19 mm, body length 17 mm. Color dark black, with green and indigo blue metallic luster. Triocellate, anterior ocellus much smaller. Antennae and palpi black. Pronotum rectangular, width about 2X of its length, corners obtuse and lateral margins rounded. Wide black stripe in middle 40% of pronotum containing prominent rugosities, lateral margins bright orange, a narrow white stripe at posterior of black stripe. Wing membranes and vein dark, costal area hyaline (Fig. 14).</p>
         <p>
-
             Abdomen dark brown with slight blue luster (Fig. 15). Tergum 10 with a pair of posterolateral bumps bearing sensilla basiconica patches; anterior margin separated by a pale, longitudinal median notch. Paraprocts bright orange, triangular and wide, curved anteriorly. Hammer large, transversely rounded, and covered by distinct dark granules, slightly elevated in lateral view; surrounded by a large yellowish, axe shape area. Aedeagus membranous, shape similar to
             <tp:taxon-name>H. violacea</tp:taxon-name>
-
             , but most of surface with a few visible ventral spinules (Fig. 16).
         </p>
     </tp:treatment-sec>
     <tp:treatment-sec sec-type="materials_examined">
         <p>
-
             Type material:
             <tp:material-citation>Holotype: 1♂ (ICYZU), China, Guangdong Province, Shaoguan City, Nanling National Forest Park, 840 m, 24°54'60" N, 113°2'3" E, 2021-IV-20, leg. Zhao Meng-Yuan.</tp:material-citation>
         </p>
@@ -436,10 +541,8 @@ WHERE
     </tp:treatment-sec>
     <tp:treatment-sec sec-type="discussion">
         <p>
-
             Remark: The new species is similar to
             <tp:taxon-name>H. violacea</tp:taxon-name>
-
             but can be distinguished by the orange lateral margins of pronotum, orange paraprocts, and the large pale area around the hammer. Specimen was collected by a small river (width: 5~ 10m) surrounded by dense riparian vegetation.
         </p>
     </tp:treatment-sec>
@@ -536,27 +639,20 @@ WHERE
         </subSubSection>
         <subSubSection id="FDDE41B1FFA1B65524F7FD865BFB8FC6" pageId="8" pageNumber="571" type="description">
             <paragraph id="B57B123AFFA1B65524F7FD865E798BB5" blockId="8.[151,752,582,646]" box="[151,302,619,646]" pageId="8" pageNumber="571">
-
                 (
                 <figureCitation id="2DFF0EBFFFA1B65524FFFD865E728BB5" box="[159,293,619,646]" captionStart-0="FIGURE 14" captionStart-1="FIGURE 15" captionStart-2="FIGURE 16" captionStartId-0="8.[151,250,1540,1564]" captionStartId-1="9.[151,250,1706,1730]" captionStartId-2="10.[151,250,1169,1193]" captionTargetBox-0="[157,1436,885,1517]" captionTargetBox-1="[154,1434,181,1681]" captionTargetBox-2="[151,1436,181,1145]" captionTargetId-0="figure-264@8.[151,1436,885,1517]" captionTargetId-1="figure-17@9.[154,1434,181,1682]" captionTargetId-2="figure-21@10.[151,1436,181,1145]" captionTargetPageId-0="8" captionTargetPageId-1="9" captionTargetPageId-2="10" captionText-0="FIGURE 14. Hemacroneuria mengyuanae. Male, A: habitus (dorsal and ventral); B: head and pronotum." captionText-1="FIGURE 15. Hemacroneuria mengyuanae. Male abdomen, A: dorsal; B: ventral." captionText-2="FIGURE 16. Hemacroneuria mengyuanae. Male, A: terminalia, dorsal; B: hammer; C. aedeagus, dorsal; D. aedeagus, ventral." figureDoi-0="http://doi.org/10.5281/zenodo.5500069" figureDoi-1="http://doi.org/10.5281/zenodo.5500071" figureDoi-2="http://doi.org/10.5281/zenodo.5500073" httpUri-0="https://zenodo.org/record/5500069/files/figure.png" httpUri-1="https://zenodo.org/record/5500071/files/figure.png" httpUri-2="https://zenodo.org/record/5500073/files/figure.png" pageId="8" pageNumber="571">Figs. 14–16</figureCitation>
-
                 )
             </paragraph>
             <paragraph id="B57B123AFFA1B65524F7FD5E5CC18A6E" blockId="8.[151,1437,691,861]" pageId="8" pageNumber="571">
                 <emphasis id="87B0CE28FFA1B65524F7FD5E5F8A8BFE" bold="true" box="[151,221,691,717]" pageId="8" pageNumber="571">Male:</emphasis>
-
                 Forewing length ca. 
                 <quantity id="723CBFDFFFA1B65525ABFD5E5D4B8BFE" box="[459,540,691,717]" metricMagnitude="-2" metricUnit="m" metricValue="2.1" pageId="8" pageNumber="571" unit="mm" value="21.0">21 mm</quantity>
-
                 , hindwing length 
                 <quantity id="723CBFDFFFA1B6552685FD5E5C608BFE" box="[741,823,691,717]" metricMagnitude="-2" metricUnit="m" metricValue="1.9" pageId="8" pageNumber="571" unit="mm" value="19.0">19 mm</quantity>
-
                 , body length 
                 <quantity id="723CBFDFFFA1B65527AEFD5E5B778BFE" box="[974,1056,691,717]" metricMagnitude="-2" metricUnit="m" metricValue="1.7" pageId="8" pageNumber="571" unit="mm" value="17.0">17 mm</quantity>
-
                 . Color dark black, with green and indigo blue metallic luster. Triocellate, anterior ocellus much smaller. Antennae and palpi black. Pronotum rectangular, width about 2X of its length, corners obtuse and lateral margins rounded. Wide black stripe in middle 40% of pronotum containing prominent rugosities, lateral margins bright orange, a narrow white stripe at posterior of black stripe. Wing membranes and vein dark, costal area hyaline (
                 <figureCitation id="2DFF0EBFFFA1B6552755FCAE5CDE8A6E" box="[821,905,835,861]" captionStart="FIGURE 14" captionStartId="8.[151,250,1540,1564]" captionTargetBox="[157,1436,885,1517]" captionTargetId="figure-264@8.[151,1436,885,1517]" captionTargetPageId="8" captionText="FIGURE 14. Hemacroneuria mengyuanae. Male, A: habitus (dorsal and ventral); B: head and pronotum." figureDoi="http://doi.org/10.5281/zenodo.5500069" httpUri="https://zenodo.org/record/5500069/files/figure.png" pageId="8" pageNumber="571">Fig. 14</figureCitation>
-
                 ).
             </paragraph>
             <caption id="E1BB42B2FFA1B65524F7F9E95B938F2F" ID-DOI="http://doi.org/10.5281/zenodo.5500069" ID-Zenodo-Dep="5500069" box="[151,1220,1540,1564]" httpUri="https://zenodo.org/record/5500069/files/figure.png" pageId="8" pageNumber="571" startId="8.[151,250,1540,1564]" targetBox="[157,1436,885,1517]" targetPageId="8">
@@ -565,23 +661,18 @@ WHERE
                     <taxonomicName id="72C469B9FFA1B6552546F9E85D1B8F2F" authorityName="Huo &amp; Zhu &amp; Du" authorityYear="2021" box="[294,588,1541,1564]" class="Insecta" family="Perlidae" genus="Hemacroneuria" kingdom="Animalia" order="Plecoptera" pageId="8" pageNumber="571" phylum="Arthropoda" rank="species" species="mengyuanae">
                         <emphasis id="87B0CE28FFA1B6552546F9E85D1B8F2F" box="[294,588,1541,1564]" italics="true" pageId="8" pageNumber="571">Hemacroneuria mengyuanae</emphasis>
                     </taxonomicName>
-
                     . Male, A: habitus (dorsal and ventral); B: head and pronotum.
                 </paragraph>
             </caption>
             <paragraph id="B57B123AFFA1B65524A7F9A75BFB8FC6" blockId="8.[151,1436,1610,2033]" pageId="8" pageNumber="571">
-
                 Abdomen dark brown with slight blue luster (
                 <figureCitation id="2DFF0EBFFFA1B65526B7F9A75C7B8F56" box="[727,812,1610,1637]" captionStart="FIGURE 15" captionStartId="9.[151,250,1706,1730]" captionTargetBox="[154,1434,181,1681]" captionTargetId="figure-17@9.[154,1434,181,1682]" captionTargetPageId="9" captionText="FIGURE 15. Hemacroneuria mengyuanae. Male abdomen, A: dorsal; B: ventral." figureDoi="http://doi.org/10.5281/zenodo.5500071" httpUri="https://zenodo.org/record/5500071/files/figure.png" pageId="8" pageNumber="571">Fig. 15</figureCitation>
-
                 ). Tergum 10 with a pair of posterolateral bumps bearing sensilla basiconica patches; anterior margin separated by a pale, longitudinal median notch. Paraprocts bright orange, triangular and wide, curved anteriorly. Hammer large, transversely rounded, and covered by distinct dark granules, slightly elevated in lateral view; surrounded by a large yellowish, axe shape area. Aedeagus membranous, shape similar to 
                 <taxonomicName id="72C469B9FFA1B655252FF9365E868FC7" authorityName=": Enderlein" authorityYear="1909" box="[335,465,1754,1780]" class="Insecta" family="Perlidae" genus="Hemacroneuria" kingdom="Animalia" order="Plecoptera" pageId="8" pageNumber="571" phylum="Arthropoda" rank="species" species="violacea">
                     <emphasis id="87B0CE28FFA1B655252FF9365E868FC7" box="[335,465,1754,1780]" italics="true" pageId="8" pageNumber="571">H. violacea</emphasis>
                 </taxonomicName>
-
                 , but most of surface with a few visible ventral spinules (
                 <figureCitation id="2DFF0EBFFFA1B655202CF9375BC88FC6" box="[1100,1183,1754,1781]" captionStart="FIGURE 16" captionStartId="10.[151,250,1169,1193]" captionTargetBox="[151,1436,181,1145]" captionTargetId="figure-21@10.[151,1436,181,1145]" captionTargetPageId="10" captionText="FIGURE 16. Hemacroneuria mengyuanae. Male, A: terminalia, dorsal; B: hammer; C. aedeagus, dorsal; D. aedeagus, ventral." figureDoi="http://doi.org/10.5281/zenodo.5500073" httpUri="https://zenodo.org/record/5500073/files/figure.png" pageId="8" pageNumber="571">Fig. 16</figureCitation>
-
                 ).
             </paragraph>
         </subSubSection>
@@ -590,45 +681,33 @@ WHERE
                 <emphasis id="87B0CE28FFA1B65524A7F9125E208E2B" bold="true" box="[199,375,1790,1817]" pageId="8" pageNumber="571">Type material:</emphasis>
                 <materialsCitation id="05AC1867FFA1B655251DF9135C8E8E0E" ID-GBIF-Occurrence="3345255301" collectingDate="2021-04-20" collectionCode="ICYZU" collectorName="Zhao Meng-Yuan." country="China" county="Shaoguan City" elevation="840" latitude="24.916666" location="Nanling National Forest" longLatPrecision="21" longitude="113.034164" municipality="Nanling National Forest Park" pageId="8" pageNumber="571" specimenCount="1" specimenCount-male="1" stateProvince="Guangdong" typeStatus="holotype">
                     <typeStatus id="6A7FAC98FFA1B655251DF9135EBD8E2B" box="[381,490,1790,1816]" pageId="8" pageNumber="571">Holotype</typeStatus>
-
                     : 
                     <specimenCount id="A3C2D9B3FFA1B6552594F9125D408E2A" box="[500,535,1791,1817]" pageId="8" pageNumber="571" type="male">1♂</specimenCount>
-
                     (
                     <collectionCode id="D3D58AFFFFA1B6552645F9125DD78E2A" box="[549,640,1791,1817]" pageId="8" pageNumber="571">ICYZU</collectionCode>
-
                     ), 
                     <collectingCountry id="CDD352AAFFA1B65526F3F9135D8E8E2B" box="[659,729,1790,1816]" name="China" pageId="8" pageNumber="571">China</collectingCountry>
-
                     , 
                     <collectingRegion id="7700DCD8FFA1B6552683F9135C848E2B" box="[739,979,1790,1816]" country="China" name="Guangdong" pageId="8" pageNumber="571">Guangdong Province</collectingRegion>
-
                     , 
                     <collectingCounty id="5C1A6AB6FFA1B65527BEF9135BD38E2B" box="[990,1156,1790,1816]" pageId="8" pageNumber="571">Shaoguan City</collectingCounty>
-
                     , 
                     <collectingMunicipality id="551F8840FFA1B65520EFF9135F9A8E0F" pageId="8" pageNumber="571">
                         <location id="B01B44E1FFA1B65520EFF9135ACB8E2A" LSID="urn:lsid:plazi:treatment:3D6DA32CFFA1B65524F7FDAA5C4F8EC3:B01B44E1FFA1B65520EFF9135ACB8E2A" box="[1167,1436,1790,1817]" country="China" county="Shaoguan City" latitude="24.916666" longLatPrecision="21" longitude="113.034164" municipality="Nanling National Forest Park" name="Nanling National Forest" pageId="8" pageNumber="571" stateProvince="Guangdong">Nanling National Forest</location>
-
                         Park
                     </collectingMunicipality>
-
                     , 
                     <quantity id="723CBFDFFFA1B65524B9F8CE5E758E0E" box="[217,290,1827,1853]" metricMagnitude="2" metricUnit="m" metricValue="8.4" pageId="8" pageNumber="571" unit="m" value="840.0">
                         <elevation id="3EE9F509FFA1B65524B9F8CE5E758E0E" box="[217,290,1827,1853]" metricMagnitude="2" metricUnit="m" metricValue="8.4" pageId="8" pageNumber="571" unit="m" value="840.0">840 m</elevation>
                     </quantity>
-
                     , 
                     <geoCoordinate id="D0F074FDFFA1B655254DF8CF5EEC8E0E" box="[301,443,1826,1853]" degrees="24" direction="north" minutes="54" orientation="latitude" pageId="8" pageNumber="571" precision="15" seconds="60" value="24.916666">24°54'60&quot; N</geoCoordinate>
-
                     , 
                     <geoCoordinate id="D0F074FDFFA1B65525A6F8CE5D168E0E" box="[454,577,1827,1853]" degrees="113" direction="east" minutes="2" orientation="longitude" pageId="8" pageNumber="571" precision="15" seconds="3" value="113.034164">113°2'3&quot; E</geoCoordinate>
-
                     , 
                     <date id="C17A34FAFFA1B655262DF8CE5D858E0E" box="[589,722,1827,1853]" pageId="8" pageNumber="571" value="2021-04-20">
                         <collectingDate id="D13ECD12FFA1B655262DF8CE5D858E0E" box="[589,722,1827,1853]" pageId="8" pageNumber="571" value="2021-04-20">2021-IV-20</collectingDate>
                     </date>
-
                     , leg. 
                     <collectorName id="183177ECFFA1B655276DF8CF5C8E8E0E" box="[781,985,1826,1853]" pageId="8" pageNumber="571">Zhao Meng-Yuan.</collectorName>
                 </materialsCitation>
@@ -637,7 +716,6 @@ WHERE
         <subSubSection id="FDDE41B1FFA1B65524A7F8AA5B2D8E53" box="[199,1146,1862,1889]" pageId="8" pageNumber="571" type="etymology">
             <paragraph id="B57B123AFFA1B65524A7F8AA5B2D8E53" blockId="8.[151,1436,1610,2033]" box="[199,1146,1862,1889]" pageId="8" pageNumber="571">
                 <emphasis id="87B0CE28FFA1B65524A7F8AA5E058E52" bold="true" box="[199,338,1863,1889]" pageId="8" pageNumber="571">Etymology:</emphasis>
-
                 The species is named in honor of Miss. Zhao Meng-Yuan, the collector.
             </paragraph>
         </subSubSection>
@@ -645,25 +723,20 @@ WHERE
             <paragraph id="B57B123AFFA1B65524A7F8875DEC8EB6" blockId="8.[151,1436,1610,2033]" box="[199,699,1898,1925]" pageId="8" pageNumber="571">
                 <emphasis id="87B0CE28FFA1B65524A7F8875E348EB7" bold="true" box="[199,355,1898,1924]" pageId="8" pageNumber="571">Distribution:</emphasis>
                 <collectingCountry id="CDD352AAFFA1B655250AF8875EFA8EB7" box="[362,429,1898,1924]" name="China" pageId="8" pageNumber="571">China</collectingCountry>
-
                 (
                 <collectingRegion id="7700DCD8FFA1B65525DBF8875DE78EB6" box="[443,688,1898,1925]" country="China" name="Guangdong" pageId="8" pageNumber="571">Guangdong Province</collectingRegion>
-
                 ).
             </paragraph>
         </subSubSection>
         <subSubSection id="FDDE41B1FFA1B65524A7F8625C4F8EC3" pageId="8" pageNumber="571" type="discussion">
             <paragraph id="B57B123AFFA1B65524A7F8625C4F8EC3" blockId="8.[151,1436,1610,2033]" pageId="8" pageNumber="571">
                 <emphasis id="87B0CE28FFA1B65524A7F8625E658E9A" bold="true" box="[199,306,1935,1961]" pageId="8" pageNumber="571">Remark:</emphasis>
-
                 The new species is similar to 
                 <taxonomicName id="72C469B9FFA1B65526EDF8625C588E9B" authorityName=": Enderlein" authorityYear="1909" box="[653,783,1934,1960]" class="Insecta" family="Perlidae" genus="Hemacroneuria" kingdom="Animalia" order="Plecoptera" pageId="8" pageNumber="571" phylum="Arthropoda" rank="species" species="violacea">
                     <emphasis id="87B0CE28FFA1B65526EDF8625C588E9B" box="[653,783,1934,1960]" italics="true" pageId="8" pageNumber="571">H. violacea</emphasis>
                 </taxonomicName>
-
                 but can be distinguished by the orange lateral margins of pronotum, orange paraprocts, and the large pale area around the hammer. Specimen was collected by a small river (width: 5~ 
                 <quantity id="723CBFDFFFA1B655256BF83B5E688EC2" box="[267,319,2006,2033]" metricMagnitude="1" metricUnit="m" metricValue="1.0" pageId="8" pageNumber="571" unit="m" value="10.0">10m</quantity>
-
                 ) surrounded by dense riparian vegetation.
             </paragraph>
         </subSubSection>
@@ -678,7 +751,7 @@ WHERE
 
 <ul class="incremental">
     <li>
-        conforms to standards: <span class="dim">TaxPub; DarwinCore,</span> JSON<br>
+        conforms to standards: <span class="dim">TaxPub; DarwinCore;</span> JSON<br>
         JavaScript Object Notation is a <i>de facto</i> standard for data exchange
     </li>
 </ul>
@@ -739,6 +812,23 @@ WHERE
 ---
 
 <h2>The Biodiversity Literature Repository</h2>
+<h2 class="subtitle">open – by semantics</h2>
+
+<ul class="incremental">
+    <li>
+        conforms to standards: <span class="dim">TaxPub; DarwinCore; JSON;</span> LOD
+    </li>
+</ul>
+
+<br style="clear: both;">
+
+<div class="big-img-container">
+<img src="../img/lod.png">
+</div>
+
+---
+
+<h2>The Biodiversity Literature Repository</h2>
 <h2 class="subtitle">open – by longevity</h2>
 
 <ul class="incremental">
@@ -752,7 +842,7 @@ WHERE
 
 <ul class="incremental">
     <li>designed for long-term archival,</li>
-    <li> published on Zenodo</li>
+    <li>published on Zenodo</li>
 </ul>
 
 ---
