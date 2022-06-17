@@ -226,9 +226,7 @@ But is it really open? Let’s see…
     <li>via RESTful APIs</li>
 </ul>
 
-<br style="clear: both;">
-
-```json
+<pre><code class="json hljs dts remark-code">
 % curl -X 'GET' 'https://test.zenodeo.org/v3/treatments?q=Monomorium%20dryhimi' \
     -H 'accept: application/json'
 
@@ -282,7 +280,7 @@ But is it really open? Let’s see…
     "stored": 1655381053077,
     "ttl": 604800000
 }
-```
+</code></pre>
 
 ---
 
@@ -295,20 +293,18 @@ But is it really open? Let’s see…
     <li>via SPARQL queries</li>
 </ul>
 
-<br style="clear: both;">
-
 ```rdf
-PREFIX treat: &lt; http://plazi.org/vocab/treatment# &gt;
-PREFIX dwc: &lt; http://rs.tdwg.org/dwc/terms/ &gt;
-PREFIX rdf: &lt; http://www.w3.org/1999/02/22-rdf-syntax-ns# &gt;
-PREFIX fabio: &lt; http://purl.org/spar/fabio/ &gt;
-PREFIX dc: &lt; http://purl.org/dc/elements/1.1/ &gt;
+PREFIX treat: <http://plazi.org/vocab/treatment#>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fabio:<http://purl.org/spar/fabio/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 SELECT 
     DISTINCT ?url ?description 
 WHERE 
     { 
-        ?treatment (treat:augmentsTaxonConcept|treat:definesTaxonConcept) &lt; http://taxon-concept.plazi.org/id/Animalia/Hemacroneuria_mengyuanae_Huo_2021 &gt; . 
-        ?treatment &lt; http://purl.org/spar/cito/cites &gt; 
+        ?treatment (treat:augmentsTaxonConcept|treat:definesTaxonConcept) <http://taxon-concept.plazi.org/id/Animalia/Hemacroneuria_mengyuanae_Huo_2021> . 
+        ?treatment <http://purl.org/spar/cito/cites> 
         ?cites. 
         ?cites rdf:type fabio:Figure. 
         ?cites fabio:hasRepresentation 
@@ -876,7 +872,7 @@ The [Open Definition version 2.1](https://opendefinition.org/od/2.1/en/) prescri
         <tr>
             <td>readily readable by a computer</td>
             <td>&#10003;</td>
-            <td>APIs</td>
+            <td>open APIs</td>
         </tr>
     </tbody>
 </table>
@@ -1118,16 +1114,16 @@ not as an afterthought, but from the moment of inception, and every step of the 
 
 <h2>Acknowledgements</h2>
 
-BLR is made possible in part by the generous support from the following:
+BLR is made possible in part by generous support from:
 
 <ul>
     <li>
-        Arcadia Fund<br>
+        The Arcadia Fund<br>
         <a href="https://www.arcadiafund.org.uk" target="_blank">
             <img src="../img/arcadia-logo.svg" width="200px"></a>
     </li>
     <li>
-        BiCIKL<br>
+        Biodiversity Community Integrated Knowledge Library (BiCIKL)<br>
         <a href="https://bicikl-project.eu" target="_blank">
             <img src="../img/bicikl-logo.jpg" width="200px"></a>
         </li>

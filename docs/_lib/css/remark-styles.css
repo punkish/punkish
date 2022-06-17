@@ -476,10 +476,22 @@ span.fair {
   color: green;
   text-decoration: underline;
 }
+ul.horizontal {
+  border-bottom: 1px solid;
+  margin: 0;
+  display: inline-block;
+}
 ul.horizontal li {
+  padding: 5px;
   list-style: none;
   margin-right: 2rem;
   float: left;
+}
+ul.horizontal.incremental li:last-of-type {
+  border: 1px solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
 }
 div.nofloat {
   clear: both;
