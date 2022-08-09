@@ -88,9 +88,11 @@ Satoshi’s Nakamoto’s [paper on the subject](https://bitcoin.org/bitcoin.pdf)
 
 ---
 
-## A data table
+<div class="two-col-header">
+    <h2 class="compact">A data table</h2>
 
-An ordered collection of rows with columns of fields.
+    <p class="compact">An ordered collection of rows with columns of fields.</p>
+</div>
 
 --
 
@@ -119,9 +121,11 @@ Each row is a record, and the columns are fields in every record.
 
 ---
 
-## A data table
+<div class="two-col-header">
+    <h2 class="compact">A data table</h2>
 
-An ordered collection of rows with columns of fields.
+    <p class="compact">An ordered collection of rows with columns of fields.</p>
+</div>
 
 .left-column[
 
@@ -146,7 +150,7 @@ Each row is a record, and the columns are fields in every record.
 
 ### An array of hashes
 
-```
+```js
 let bloodpressure = [{
     index: 0,
     timestamp: "2018-10-20 10:09:00",
@@ -171,9 +175,11 @@ The `array[]` is analagous to the entire table, and each `object{}` (aka JavaScr
 
 ---
 
-## Linked List
+<div class="two-col-header">
+    <h2 class="compact">Linked List</h2>
 
-A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
+    <p class="compact">A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.</p>
+</div>
 
 .left-column[
     <img class="remark"  src="../img/linked-list-vertical.png">
@@ -184,15 +190,17 @@ A data structure consisting of a collection of nodes which together represent a 
 
 ---
 
-## Linked List
+<div class="two-col-header">
+    <h2 class="compact">Linked List</h2>
 
-A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.
+    <p class="compact">A data structure consisting of a collection of nodes which together represent a sequence. Each node contains: data, and a reference to the previous node in the sequence.</p>
+</div>
 
 .left-column[
     <img class="remark"  src="../img/linked-list-vertical.png">
 ]
 .right-column[
-```
+```js
 let bloodpressure = [{
     index: 0,
     timestamp: "2018-10-20 10:09:00",
@@ -218,7 +226,7 @@ let bloodpressure = [{
 
 A linked list in which every record (except the first one) is linked to the previous link via a « cryptographic hash »
 
-```
+```js
 let bloodpressure = [{
     index: 0,
     timestamp: "2018-10-20 10:09:00",
@@ -263,9 +271,8 @@ We are going to use SHA-256 for our demo (this is also what Bitcoin uses for its
 
 ---
 
-## Cryptographic Hash
+<h2>Cryptographic Hash</h2>
 
- 
 &lt;textarea name="textString" placeholder="enter something and click the button"&gt;&lt;/textarea&gt;
 <button id="createHash">create hash</button>
 <div id="hashPrompt"></div>
@@ -376,7 +383,7 @@ class BlockChain {
 
 ## Blockchain demo
 
-Enter some values below and click [add]
+Enter some blood pressure values below and click [add]
 
 <table>
     <thead>

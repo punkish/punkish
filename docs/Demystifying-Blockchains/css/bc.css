@@ -39,5 +39,10 @@ td {
     font-size: 0.8em;
 }
 .remark-code { 
-  max-height: 45vh !important;
+    height: 30vh;
+    max-height: 40vh !important;
+}
+div.two-col-header .compact {
+    margin: 0;
+    margin-bottom: -0.5rem !important;
 }
