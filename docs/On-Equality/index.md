@@ -15,7 +15,7 @@ Tu: “About equality: equal does not mean the same. For example, women and men 
 
 Moi: “Perhaps, solidarity?”
 
-***note:** about [Tu et Moi](Ce-que-tu-demandes)*
+***note:** about [Tu et Moi](/Ce-que-tu-demandes)*
 
 ----
 
