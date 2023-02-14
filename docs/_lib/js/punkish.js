@@ -93,29 +93,38 @@ let PK = {
     },
 
     autocomplete: function() {
-        const q = document.querySelector('input[name=q]')
+        const q = document.querySelector('input[name=q]');
+
         new autoComplete({
             selector: q,
             minChars: 3,
 
             // 'term' is the value in the input field
             source: function(term, response) {
-                fetch("/_search/searchIdx.json")
-                    .then(response => response.text())
-                    .then(text => {
-                        window.miniSearch = MiniSearch.loadJSON(text, {
-                            fields: ['title', 'text'],
-                            storeFields: ['title', 'name'],
-                            searchOptions: {
-                                boost: { title: 2 },
-                                fuzzy: 0.2
-                            }
-                        })
 
-                        const result = miniSearch.search(term)
-                        response(result)
-                    })
-                    .catch(err => console.log(err))
+                if (window.miniSearch) {
+                    const result = miniSearch.search(term);
+                    response(result);
+                }
+                else {
+                    fetch("/_search/searchIdx.json")
+                        .then(response => response.text())
+                        .then(text => {
+                            window.miniSearch = MiniSearch.loadJSON(text, {
+                                fields: ['title', 'text'],
+                                storeFields: ['title', 'name'],
+                                searchOptions: {
+                                    boost: { title: 2 },
+                                    fuzzy: 0.2
+                                }
+                            });
+
+                            const result = miniSearch.search(term);
+                            response(result);
+                        })
+                        .catch(err => console.log(err))
+                }
+                
             },
 
             // custom rendering function for the items in the dropdown

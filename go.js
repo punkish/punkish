@@ -274,8 +274,8 @@ const buildHanozIndex = function() {
 const buildSearchIndex = function(type) {
     console.log(`building **${type}** search index`)
 
-    const docs = []
-    let id = 0
+    const docs = [];
+    let id = 0;
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e]
         const doc = {
@@ -284,8 +284,8 @@ const buildSearchIndex = function(type) {
             name: entry.name
         }
         
-        if (type === 'mini') doc.id = id++
-        docs.push(doc)
+        if (type === 'mini') doc.id = id++;
+        docs.push(doc);
     }
 
     if (type === 'lunr') {

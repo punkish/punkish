@@ -9,17 +9,17 @@
   "private": true,
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "dygraphs": "^2.1.0",
+    "dygraphs": "^2.2.0",
     "handlebars": ">=4.7.7",
-    "minisearch": "^4.0.3",
-    "moment": "^2.29.2",
+    "minisearch": "^6.0.1",
+    "moment": "^2.29.4",
     "papaparse": ">=5.3.2",
-    "paper": "^0.12.15",
+    "paper": "^0.12.17",
     "picolog": "^1.0.4",
     "showdown": "^2.1.0",
-    "smoothie": "^1.36.0",
+    "smoothie": "^1.36.1",
     "walker": "^1.0.8",
-    "web-audio-daw": "^4.12.0",
+    "web-audio-daw": "^4.13.2",
     "y18n": ">=5.0.8",
     "yaml-front-matter": "^4.1.1"
   }
