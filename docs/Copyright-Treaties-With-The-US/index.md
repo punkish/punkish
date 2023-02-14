@@ -11,7 +11,8 @@ tags       :
 stars      : 
 isMap      : true
 css        : styles
-js         : copyright-treaties
+js         : 
+    - copyright-treaties
 ---
 
 There is no such thing as an “international copyright” that will automatically protect an author's writings throughout the world. Protection against unauthorized use in a particular country depends on the national laws of that country. However, most countries offer protection to foreign works under certain conditions that have been greatly simplified by international copyright treaties and conventions. There are several such treaties and conventions affecting copyright. Click on the map to learn more about the treaties.

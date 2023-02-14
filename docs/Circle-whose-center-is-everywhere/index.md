@@ -9,7 +9,8 @@ tags       :
     - language
     - Nada
 isMap      : true
-js         : circle
+js         : 
+    - circle
 
 ---
 

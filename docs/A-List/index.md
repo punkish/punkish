@@ -12,7 +12,8 @@ tags       :
     - bars
 stars      : 
 isMap      : true
-js         : a-list
+js         : 
+    - a-list
 ---
 
 A crowd-sourced[^1] list of restaurants and bars in Paris that I am making my way through slowly.

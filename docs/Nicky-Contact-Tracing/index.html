@@ -6,6 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
+<meta name="date" content="Tue Feb 14 2023 20:10:34 GMT+0100 (Central European Standard Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,46 +51,54 @@
     <div class="created">Saturday, April 11, 2020</div>
     
     <div class="content"><p>There is not much to add to <a href="https://ncase.me/contact-tracing/">Nicky’s most excellent explanation</a> of a privacy-protecting yet effective contact-tracing app. That said, I find the following diagram to add to the original, wonderful illustrations and text.</p>
-<pre><code>             Alice                   Bob                      
+<pre><code>            Alice                  Bob                             
 
-═══╦══════╦════════════════════════════════════════════════   
-   │day 0 │  - gets infected
-   │      │  - doesn't know
-   |      |  - doesn't show any
-   |      |    symptoms
-───┼──────┼────────────────────────────────────────────────   
-   │day 1 │                                                   
-───┼──────┼────────────────────────────────────────────────   
-   │day 2 │                                                   
-───┼──────┼────────────────────────────────────────────────   
-   │day 3 │  becomes contagious  - comes in contact w Alice    
-   │      │                      - possibly gets infected
-   │      │                      - doesn't know
-   |      |                      - doesn't show any
-   |      |                        symptoms
-   |      |                      - phone records random 
-   |      |                        codes sent by everyone 
-   |      |                        nearby, including Alice
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 4 │                                                   
- ──┼──────┼─────────────────────────────────────────────────  
-   │      │  - shows symptoms   - phone automatically         
-   │      │  - gets tested        determines he came in         
-   │day 5 │  - confirmed pos.     contact with someone          
-   │      │  - uploads data       who was infected              
-   │      │                     - self-quarantines            
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 6 │                     X chain is broken             
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 7 │                                                   
- ──┼──────┼─────────────────────────────────────────────────  
-   │      │                     - shows symptoms              
-   │day 8 │                     - gets tested                 
-   │      │                     - confirmed neg.              
-   │      │                     - no need to upload data      
- ──┴──────┴─────────────────────────────────────────────────  
+───────────────────────────────────────────────────────────────────
+            - gets infected                                        
+   day 0    - doesn't know                                         
+            - doesn't show any                                     
+              symptoms                                             
+───────────────────────────────────────────────────────────────────
+
+   day 1                                                           
+
+
+   day 2                                                           
+
+ ──────────────────────────────────────────────────────────────────
+   day 3    - becomes contagious   - comes in contact w/Alice      
+                                   - possibly gets infected        
+                                   - doesn't know                  
+                                   - doesn't show any              
+                                     symptoms                      
+                                   - phone records random          
+                                     codes sent by everyone        
+                                     nearby, including Alice       
+────────────────────────────────────────────────────────────────── 
+
+   day 4                                                           
+
+────────────────────────────────────────────────────────────────── 
+            - shows symptoms       - phone automatically           
+   day 5    - gets tested            determines he came in         
+            - confirmed +ve          contact with someone          
+            - uploads data           who was infected              
+                                   - self-quarantines              
+────────────────────────────────────────────────────────────────── 
+                                   - X chain is broken             
+   day 6                                                           
+
+────────────────────────────────────────────────────────────────── 
+
+   day 7                                                           
+
+────────────────────────────────────────────────────────────────── 
+                                   - shows symptoms                
+   day 8                           - gets tested                   
+                                   - confirmed -ve                 
+                                   - no need to upload data        
 </code></pre>
-<p>Note that the above depeneds on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:</p>
+<p>Note that the above depends on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:</p>
 <ul>
 <li>Is there any voluntary action anywhere?</li>
 </ul>

@@ -15,7 +15,7 @@ Tu: “Which one book or article would you recommend that I read? Or lecture tha
 
 Moi: “uh ummmm, here are <strike>five</strike> six”
 
-***note:** about [Tu et Moi](Ce-que-tu-demandes)*
+***note:** about [Tu et Moi](/Ce-que-tu-demandes)*
 
 ----
 

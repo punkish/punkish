@@ -337,7 +337,7 @@ PK['a-list'] = {
 
     // create custom icons for each layerGroup
     classifyPoints: function() {
-        const imgDir = 'entry-files/A/A-/A-L/A-List/img';
+        const imgDir = 'img';
 
         let layerGroups = {
             'restaurant': {
@@ -407,9 +407,9 @@ PK['a-list'] = {
     "init": function() {
 
         // initialize the baselayer
-		const baseLayer = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+		const baseLayer = L.tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=ffda15d18da34a2ba07f2745b1ca7ce6', {
 			maxZoom: this.data.maxZoom,
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			attribution: 'Maps © <a href="https://www.thunderforest.com/">Thunderforest</a>, Data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
 		});
 
         let layers = [baseLayer];

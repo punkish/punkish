@@ -17,4 +17,4 @@ Moi: “I wonder that as well”
 
 ----
 
-I am writing down my conversations with a kindred spirit, [exploring issues](entries?q=tags:Tu%20et%20Moi) that we all wonder about.
+I am writing down my conversations with a kindred spirit, [exploring issues](/_tags/Tu-et-Moi) that we all wonder about.

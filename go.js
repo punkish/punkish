@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-const Walker = require('walker')
-const path = require('path')
-const fs = require('fs')
-const yamlFront = require('yaml-front-matter')
-const showdown = require('showdown');
+const Walker = require('walker');
+const path = require('path');
+const fs = require('fs');
+const yamlFront = require('yaml-front-matter');
+const showdown = require('showdown');;
 const footnotes = require('./docs/_lib/js/footnotes.js');
 
 const sh = new showdown.Converter({
@@ -20,13 +20,18 @@ const sh = new showdown.Converter({
     strikethrough: true
 })
 
-const Handlebars = require('handlebars')
-const moment = require('moment')
-const MiniSearch = require('minisearch')
+const Handlebars = require('handlebars');
+const moment = require('moment');
+const MiniSearch = require('minisearch');
 
-const baseUrl = ''
-let me = 'Puneet Kishor'
-const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+const baseUrl = '';
+let me = 'Puneet Kishor';
+const dateOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+}
 
 const dir = {
     entries: './entries',
@@ -46,8 +51,11 @@ const minisearchOpts = {
     }
 }
 
-const untaggedLabel = 'untagged'
-const templates = { layouts: {}, views: {} }
+const untaggedLabel = 'untagged';
+const templates = { 
+    layouts: {}, 
+    views: {} 
+}
 
 const data = {
     entries: {
@@ -63,25 +71,31 @@ const data = {
 }
 
 const compileTemplates = function() {
-    console.log('compiling templates')
+    console.log('compiling templates');
 
-    const layouts = fs.readdirSync(dir.tl)
+    const layouts = fs.readdirSync(dir.tl);
+
     layouts.forEach(l => {
-        const layout = l.split('.')[0]
-        templates.layouts[layout] = Handlebars.compile(fs.readFileSync(`${dir.tl}/${l}`, 'utf-8'))
+        const layout = l.split('.')[0];
+        const fileContent = fs.readFileSync(`${dir.tl}/${l}`, 'utf-8');
+        templates.layouts[layout] = Handlebars.compile(fileContent);
     })
     
-    const partials = fs.readdirSync(dir.tp)
+    const partials = fs.readdirSync(dir.tp);
+
     partials.forEach(p => {
-        const partial = p.split('.')[0]
-        Handlebars.registerPartial(partial, fs.readFileSync(`${dir.tp}/${p}`, 'utf-8'))
+        const partial = p.split('.')[0];
+        const fileContent = fs.readFileSync(`${dir.tp}/${p}`, 'utf-8');
+        Handlebars.registerPartial(partial, fileContent);
     })
     
-    const views = fs.readdirSync(dir.t)
+    const views = fs.readdirSync(dir.t);
+
     views.forEach(v => {
         if (fs.statSync(`${dir.t}/${v}`).isFile()) {
-            const view = v.split('.')[0]
-            templates.views[view] = Handlebars.compile(fs.readFileSync(`${dir.t}/${v}`, 'utf-8'))
+            const view = v.split('.')[0];
+            const fileContent = fs.readFileSync(`${dir.t}/${v}`, 'utf-8');
+            templates.views[view] = Handlebars.compile(fileContent);
         }
     })
 }
@@ -298,7 +312,8 @@ const writeSearchIdx = function() {
 
 const writeByName = function() {
     for (let e in data.entries.byName) {
-        const entry = data.entries.byName[e]
+        const entry = data.entries.byName[e];
+
         try {
             entry.content = templates.views[entry.template](entry)
         }
@@ -307,7 +322,7 @@ const writeByName = function() {
         }
 
         entry.minisearchOpts = minisearchOpts
-        const html = templates.layouts[entry.layout](entry)
+        const html = templates.layouts[entry.layout](entry);
         fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
 
         if (entry.isPresentation) {
@@ -330,7 +345,7 @@ const writeByName = function() {
 }
 
 const writeByDate = function() {
-    console.log('writing by dates')
+    console.log('writing by dates');
     const d = {
         created: moment().format('MMM DD, YYYY'),
         entries: data.entries.byYear,
@@ -342,13 +357,14 @@ const writeByDate = function() {
         baseUrl: baseUrl,
         minisearchOpts: minisearchOpts
     }
-    const html = templates.layouts.main(content)
-    fs.writeFileSync(`${dir.docs}/_dates/index.html`, html)
+
+    const html = templates.layouts.main(content);
+    fs.writeFileSync(`${dir.docs}/_dates/index.html`, html);
 }
 
 const writeByTags = function() {
-    console.log('writing by tags')
-    const date = moment().format('MMM DD, YYYY')
+    console.log('writing by tags');
+    const date = moment().format('MMM DD, YYYY');
     const d = {
         created: date,
         baseUrl: baseUrl,
@@ -360,8 +376,9 @@ const writeByTags = function() {
         baseUrl: baseUrl,
         minisearchOpts: minisearchOpts
     }
-    const html = templates.layouts.main(content)
-    fs.writeFileSync(`${dir.docs}/_tags/index.html`, html)
+
+    const html = templates.layouts.main(content);
+    fs.writeFileSync(`${dir.docs}/_tags/index.html`, html);
 
     for (let tag in data.entries.byTag) {
         const d = {
@@ -376,61 +393,62 @@ const writeByTags = function() {
             baseUrl: baseUrl,
             minisearchOpts: minisearchOpts
         }
-        const html = templates.layouts.main(content)
-        tag = tag.replace(/\//g, '-')
-        tag = tag.replace(/ /g, '-')
-        fs.writeFileSync(`${dir.docs}/_tags/${tag}.html`, html)
+
+        const html = templates.layouts.main(content);
+        tag = tag.replace(/\//g, '-');
+        tag = tag.replace(/ /g, '-');
+        fs.writeFileSync(`${dir.docs}/_tags/${tag}.html`, html);
     }
 }
 
 const writeDefault = function() {
-    const entryName = data.entries.byDate[0].name === 'cv-latest' ? 
-        data.entries.byDate[1].name : 
-        data.entries.byDate[0].name
+    const entryName = data.entries.byDate[0].name === 'cv-latest' 
+        ? data.entries.byDate[1].name 
+        : data.entries.byDate[0].name;
 
-    const entry = data.entries.byName[entryName.toLowerCase()]
+    const entry = data.entries.byName[ entryName.toLowerCase() ];
     
-    entry.content = ''
-    entry.isIndex = true
-    entry.minisearchOpts = minisearchOpts
-    const html = templates.layouts[entry.layout](entry)
-    fs.writeFileSync(`${dir.docs}/index.html`, html)
+    entry.content = '';
+    entry.isIndex = true;
+    entry.minisearchOpts = minisearchOpts;
+    const html = templates.layouts[entry.layout](entry);
+    fs.writeFileSync(`${dir.docs}/index.html`, html);
 }
 
 const write = function() {
-    writeByName()
+    writeByName();
     //writePresentations()
-    writeByDate()
-    writeByTags()
-    writeDefault()
-    writeSearchIdx()
+    writeByDate();
+    writeByTags();
+    writeDefault();
+    writeSearchIdx();
 }
 
 const finish = function() {
-    data.entries.byDate.sort(sortFunc('date'))
-    data.entries.byYear.sort((a, b) => b['year'] - a['year'])
-    data.entries.byYear.forEach(x => x.months.sort((a, b) => b['month'] - a['month']))
-    prevNext()
-    buildHanozIndex()
-    buildSearchIndex('mini')
-    write()
+    data.entries.byDate.sort(sortFunc('date'));
+    data.entries.byYear.sort((a, b) => b['year'] - a['year']);
+    data.entries.byYear.forEach(x => x.months.sort((a, b) => b['month'] - a['month']));
+    prevNext();
+    buildHanozIndex();
+    buildSearchIndex('mini');
+    write();
 }
 
 const makeDates = function(entry) {
     const fakedate = new Date('1980-01-01 00:00:00')
-        .toLocaleDateString("en-US", dateOptions)
+        .toLocaleDateString("en-US", dateOptions);
 
-    entry.modified = entry.modified ? 
-        new Date(entry.modified).toLocaleDateString("en-US", dateOptions) : 
-        fakedate
+    entry.modified = entry.modified 
+        ? new Date(entry.modified).toLocaleDateString("en-US", dateOptions) 
+        : fakedate
 
-    entry.created = entry.created  ? 
-        new Date(entry.created).toLocaleDateString("en-US", dateOptions) :
-        fakedate
+    entry.created = entry.created  
+        ? new Date(entry.created).toLocaleDateString("en-US", dateOptions) 
+        : fakedate;
 }
 
 const go = function(dir) {
-    compileTemplates()
+    compileTemplates();
 
     Walker(dir)
         .on('file', function(file, stat) {
@@ -441,45 +459,52 @@ const go = function(dir) {
             // url  = https://punkish.org/Yi-Fu-Tuan/
             if (path.basename(file) === 'index.md') {
                 const entry = {
-                    baseUrl: baseUrl,
-                    file: file,
+                    baseUrl,
+                    file,
                     dir: path.dirname(file),
                     name: path.dirname(file).split('/')[1],
-                    url: ''
+                    url: '',
+                    dateGenerated: new Date()
                 }
                 
-                const fm = yamlFront.loadFront(fs.readFileSync(file, 'utf-8'))
+                const fileContent = fs.readFileSync(file, 'utf-8');
+                const fm = yamlFront.loadFront(fileContent);
 
                 for (let key in fm) {
                     if (key === 'tags') {
-                        entry.origTags = fm.tags
-                        entry.tags = []
+                        entry.origTags = fm.tags;
+                        entry.tags = [];
                         
-                        fm.tags.forEach(t => {
-                            if (t) {
-                                let tagUrl = t
-                                tagUrl = tagUrl.replace(/\//g, '-')
-                                tagUrl = tagUrl.replace(/ /g, '-')
-                                entry.tags.push({tag: t, tagUrl: tagUrl})
+                        fm.tags.forEach(tag => {
+                            if (tag) {
+                                let tagUrl = tag;
+                                tagUrl = tagUrl.replace(/\//g, '-');
+                                tagUrl = tagUrl.replace(/ /g, '-');
+                                entry.tags.push({ tag, tagUrl });
                             }
                         })
                     }
                     else {
-                        entry[key] = fm[key]
+                        entry[key] = fm[key];
                     }
                 }
 
-                makeDates(entry)
+                makeDates(entry);
 
-                entry.hasCode = entry.origTags && entry.origTags.includes('code') ? 
-                    true : 
-                    false
+                const code = entry.origTags && entry.origTags.includes('code');
+                entry.hasCode = code 
+                    ? true 
+                    : false;
 
                 if (entry.type) {
                     entry.type.forEach(t => {
-                        entry[t] = true
+                        entry[t] = true;
                     })
                 }
+
+                // if (entry.js) {
+                //     console.log(entry.name, entry.js)
+                // }
 
                 // presentation entry
                 if (entry.origTags && entry.origTags.indexOf('presentation') > -1) {
@@ -487,50 +512,51 @@ const go = function(dir) {
                     entry.template = fm.template || 'entry-presentation';
 
                     if (entry.name === 'Biodiversity-Literature-Repository') {
-                        me = me + ' (Plazi)';
+                        me = `${me} (Plazi)`;
                     }
 
                     if (entry.authors) {
-                        if (entry.authors.length > 1) {
-                            entry.authors[entry.authors.length - 1] = 'and ' + entry.authors[entry.authors.length - 1]
-                            entry.authors.unshift(me)
-                            entry.authors = entry.authors.join(', ')
+                        const len = entry.authors.length;
+                        if (len > 1) {
+                            entry.authors[len - 1] = 'and ' + entry.authors[len - 1];
+                            entry.authors.unshift(me);
+                            entry.authors = entry.authors.join(', ');
                         }
                         else {
-                            entry.authors = me + ' and ' + entry.authors[0]
+                            entry.authors = me + ' and ' + entry.authors[0];
                         }
                     }
                     else {
-                        entry.authors = me
+                        entry.authors = me;
                     }
 
-                    entry.isPresentation = true
+                    entry.isPresentation = true;
                 }
 
                 // album entry
                 else if (entry.origTags && entry.origTags.indexOf('album') > -1) {
-                    entry.layout = fm.layout || 'main'
-                    entry.template = fm.template || 'entry'
-                    entry.isAlbum = true
+                    entry.layout = fm.layout || 'main';
+                    entry.template = fm.template || 'entry';
+                    entry.isAlbum = true;
 
-                    makeAlbum(entry, entry.url)
-                    entry.isAlbum = true
+                    makeAlbum(entry, entry.url);
+                    entry.isAlbum = true;
                 }
 
                 // regular entry
                 else {
-                    entry.layout = fm.layout || 'main'
-                    entry.template = fm.template || 'entry'
+                    entry.layout = fm.layout || 'main';
+                    entry.template = fm.template || 'entry';
 
                     // convert Markdown to html *only* if entry is 
                     // regular kind. Don't convert for a presentation 
                     // because that conversion is done by remarkjs
                     entry.__content = sh.makeHtml(entry.__content);
-                    entry.__content = makeImg(entry.__content, entry.url)
-                    entry.__content = makeVid(entry.__content, entry.url)
+                    entry.__content = makeImg(entry.__content, entry.url);
+                    entry.__content = makeVid(entry.__content, entry.url);
                 }
             
-                data.entries.byName[ entry.name.toLowerCase() ] = entry
+                data.entries.byName[ entry.name.toLowerCase() ] = entry;
                 
                 const eIdx = {
                     name: entry.name,
@@ -539,45 +565,45 @@ const go = function(dir) {
                     notes: entry.notes
                 }
 
-                addEntryByTags(entry, eIdx)
-                addEntryByDate(entry, eIdx)
+                addEntryByTags(entry, eIdx);
+                addEntryByDate(entry, eIdx);
             }
         })
         .on('error', function(er, entry, stat) {
-            console.log('Got error ' + er + ' on entry ' + entry)
+            console.log('Got error ' + er + ' on entry ' + entry);
         })
         .on('end', function() {
-            console.log('All files traversed.')
-            finish()
+            console.log('All files traversed.');
+            finish();
         })
 }
 
-const go2 = (dir) => {
-    const list = [];
+// const go2 = (dir) => {
+//     const list = [];
 
-    Walker(dir)
-        .on('file', function(file, stat) {
+//     Walker(dir)
+//         .on('file', function(file, stat) {
 
-            // file = .docs/Yi-Fu-Tuan/index.md
-            // name = Yi-Fu-Tuan
-            // dir  = .docs/Yi-Fu-Tuan/
-            // url  = https://punkish.org/Yi-Fu-Tuan/
+//             // file = .docs/Yi-Fu-Tuan/index.md
+//             // name = Yi-Fu-Tuan
+//             // dir  = .docs/Yi-Fu-Tuan/
+//             // url  = https://punkish.org/Yi-Fu-Tuan/
             
-            if (path.basename(file) === 'index.md') {
-                fs.stat((file), (err, stats) => {
-                    list.push([path.dirname(file).split('/')[1], stats.mtime]);
-                })
-            }
-        })
-        .on('error', function(er, entry, stat) {
-            console.log('Got error ' + er + ' on entry ' + entry)
-        })
-        .on('end', function() {
-            //console.log('All files traversed.')
-            //finish()
-            console.table(list);
-        })
-}
+//             if (path.basename(file) === 'index.md') {
+//                 fs.stat((file), (err, stats) => {
+//                     list.push([path.dirname(file).split('/')[1], stats.mtime]);
+//                 })
+//             }
+//         })
+//         .on('error', function(er, entry, stat) {
+//             console.log('Got error ' + er + ' on entry ' + entry)
+//         })
+//         .on('end', function() {
+//             //console.log('All files traversed.')
+//             //finish()
+//             console.table(list);
+//         })
+// }
 
 //go2(dir.docs)
 go(dir.docs)

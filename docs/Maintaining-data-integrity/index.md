@@ -13,10 +13,11 @@ tags       :
     - Plazi
     - taxonomy
 stars      : 
-js         : dataintegrity
+js         : 
+    - dataintegrity
 ---
 
-In a rapidly evolving data extraction environment, we need the ability to edit data already recorded while also offering a permanence of record. But these two roces are in opposing tension, so how to offer both? Fortunately, timestamps and the ability to **INSERT … ON CONFLICT** provde a way. Consider the following tables (all code using `nodejs`, but the underlying data principles would be the same for any programming language)
+In a rapidly evolving data extraction environment, we need the ability to edit data already recorded while also offering a permanence of record. But these two roces are in opposing tension, so how to offer both? Fortunately, timestamps and the ability to **INSERT … ON CONFLICT** provide a way. Consider the following tables (all code using `nodejs`, but the underlying data principles would be the same for any programming language)
 
 ```js
 const createTable = function() {

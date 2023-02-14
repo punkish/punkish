@@ -6,6 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
+<meta name="date" content="Tue Feb 14 2023 20:10:34 GMT+0100 (Central European Standard Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,38 +51,38 @@
     <div class="description">iow The Importance of a Data Dictionary</div>
     <div class="created">Sunday, March 29, 2020</div>
     
-    <div class="content"><p>Data are central to everything we do at <a href="https://plazi.org">Plazi</a>, and the main focus of (almost) everything I do at Plazi — the <a href="https://zenodeo.punkish.org">Zenodeo API</a> and <a href="https://ocellus.punkish.org">Ocellus</a>, a sample application that uses that API. Both applications are written in JavaScript. While I stay away from frameworks and libraries as much as I can help it, I do use the wonderful <a href="https://hapi.dev">Hapijs</a> for all the REST infrastructure. Hapi‘s tagline is <em>configuration over code</em>, and I’ve really come to appreciate that.</p>
+    <div class="content"><p>Data are central to everything we do at <a href="https://plazi.org">Plazi</a>, and the main focus of (almost) everything I do at Plazi — the <a href="https://test.zenodeo.org">Zenodeo API</a> and <a href="https://ocellus.info">Ocellus</a>, a sample application that uses that API. Both applications are written in JavaScript. While I stay away from frameworks and libraries as much as I can help it, I use <a href="https://fastify.io">Fastify</a>. <del>do use the wonderful <a href="https://hapi.dev">Hapijs</a> for all the REST infrastructure. Hapi‘s tagline</del> Fastify’s emulates both Hapijs and Express, and also emphasized <em>configuration over code</em>, and I’ve really come to appreciate that.</p>
 <p>In the data pipeline I have setup, the data dictionary plays <em>the</em> central role. In fact, it plays many roles.</p>
-<pre><code>                   ┌──────────┐                                        
-                   │Treatment │                                        
-                   │ Bank XML │──────────┐                             
-                   │   Dump   │          │                             
-                   └──────────┘          ▼                             
-                                  ┌────────────┐                       
-                                  │  SQL ETL   │                       
-                         ┌───────▶│  Queries   │─────────┐             
-                         │        │            │         │             
-                         │        └────────────┘         ▼             
-┌──────────────┐   ╔══════════╗   ┌────────────┐   ┌──────────┐        
-│ Zenodeo API  │   ║ the data ║   │SQL Queries │   │ Zenodeo  │        
-│Documentation │◀──║dictionary║──▶│Optimization│──▶│   SQL    │◀─┐     
-│              │   ║          ║   │            │   │datastore │  │     
-└──────────────┘   ╚══════════╝   └────────────┘   └──────────┘  │     
-                         │        ┌────────────┐         ▲       │     
-                         │        │  SQL Data  │         │       │     
-                         ├───────▶│ Retrieval  │─────────┘       │     
-                         │        │            │           ┌──────────┐
-                         │        └────────────┘           │Parameter │
-                         └────────────────────────────────▶│Validation│
-                                                           │          │
-                                                           └──────────┘
-                                                                 ▲     
-                                                                 │     
-                                                           ┌──────────┐
-                                                           │   REST   │
-                                                           │ Queries  │
-                                                           │          │
-                                                           └──────────┘
+<pre><code>                                   +-----------+                             
+                                   | Treatment |                             
+                                   | Bank XML  |                             
+                                   |   dump    |                             
+                                   +-----------+                             
+                                         |                                   
+                                         |                                   
+                                         v                                   
+                                   +-----------+                             
+                                   |  SQL ETL  |                             
+                        +---------&gt;|  queries  |------------+                
+                        |          +-----------+            |                
+                        |                                   v                
++-----------+     +-----------+    +------------+    +------------+          
+|Zenodeo API|     | the data  |    |SQL queries |    |Zenodeo SQL |          
+|documentati|&lt;----|dictionary |---&gt;|optimization|---&gt;| datastore  |&lt;--+      
++-----------+     +-----------+    +------------+    +------------+   |      
+                        |                                   ^         |      
+                        |                                   |         |      
+                        |          +------------+           |  +------------+
+                        |          |  SQL data  |           |  | parameter  |
+                        +---------&gt;| retrieval  |-----------+  | validation |
+                        |          +------------+              +------------+
+                        |                                             ^      
+                        |                                             |      
+                        |                                             |      
+                        |                                      +------------+
+                        |                                      |REST queries|
+                        +-------------------------------------&gt;|            |
+                                                               +------------+
 </code></pre>
 <p>As the diagram above shows, the queries that do the Extract-Transform-Load (ETL) between the XML dump and the Zenodeo store, are generated by code using the configuration in the data dictonary. So are the SQL queries for making indexes to optimize the db as well as the SQL queries for the subsequent data retrieval for the API. On the side of the AP, the incoming REST queries are validated using the data dictionary to ensure there is no hanky-panky going on with bad or mal-intentioned query parameters. And, the web-based API documentation automatically generated in an OpenAPI-compatible format is also automatically generated from the data dictionary.</p>
 <p>By having all the configuration information in the data dictionary, the code is a lot simpler. And, if there are any errors, only the configuration has to be adjusted. All of this is still under development, but it should be done and ready for testing soon.</p>

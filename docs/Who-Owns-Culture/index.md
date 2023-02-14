@@ -16,7 +16,7 @@ Tu: “To think that a house or land is yours is a mistake we all make.”
 
 Moi: “Mmmmm”
 
-***note:** about [Tu et Moi](Ce-que-tu-demandes)*
+***note:** about [Tu et Moi](/Ce-que-tu-demandes)*
 
 ----
 
@@ -34,4 +34,4 @@ So, who am I? I have lived longer in the US than anywhere else in the world, I h
 
 And yet, if a white German or Finn were to go live in the US, for the first few years she might be seen as being of her original nationality. But after a while, when the accent fades away, she might get not only as absorbed in the American milieu, other than her name, people may not even have a clue where she came from… for all they know, she could be from Indiana or Texas. And, even more so, if and when she were to have kids there, they would be fully American, no? But, what if they were born outside the US and she moved to the US soon after? How long does it take for a person to become assimilated in a land in the eyes of those who are there from before? How much of it depends on one’s skin color, accent, etc.? And, how much of it is in our own minds?
 
-So, who owns culture? I don’t know, but certainly not me. By the way, here is what [Andy Warhol has to say](Who-Owns-The-News) in a similar vein.
+So, who owns culture? I don’t know, but certainly not me. By the way, here is what [Andy Warhol has to say](/Who-Owns-The-News) in a similar vein.

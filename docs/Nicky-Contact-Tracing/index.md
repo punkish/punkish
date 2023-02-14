@@ -17,48 +17,56 @@ stars      :
 There is not much to add to [Nicky’s most excellent explanation](https://ncase.me/contact-tracing/) of a privacy-protecting yet effective contact-tracing app. That said, I find the following diagram to add to the original, wonderful illustrations and text.
 
 ```
-                                                              
-             Alice                   Bob                      
-                                                              
-═══╦══════╦════════════════════════════════════════════════   
-   │day 0 │  - gets infected
-   │      │  - doesn't know
-   |      |  - doesn't show any
-   |      |    symptoms
-───┼──────┼────────────────────────────────────────────────   
-   │day 1 │                                                   
-───┼──────┼────────────────────────────────────────────────   
-   │day 2 │                                                   
-───┼──────┼────────────────────────────────────────────────   
-   │day 3 │  becomes contagious  - comes in contact w Alice    
-   │      │                      - possibly gets infected
-   │      │                      - doesn't know
-   |      |                      - doesn't show any
-   |      |                        symptoms
-   |      |                      - phone records random 
-   |      |                        codes sent by everyone 
-   |      |                        nearby, including Alice
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 4 │                                                   
- ──┼──────┼─────────────────────────────────────────────────  
-   │      │  - shows symptoms   - phone automatically         
-   │      │  - gets tested        determines he came in         
-   │day 5 │  - confirmed pos.     contact with someone          
-   │      │  - uploads data       who was infected              
-   │      │                     - self-quarantines            
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 6 │                     X chain is broken             
- ──┼──────┼─────────────────────────────────────────────────  
-   │day 7 │                                                   
- ──┼──────┼─────────────────────────────────────────────────  
-   │      │                     - shows symptoms              
-   │day 8 │                     - gets tested                 
-   │      │                     - confirmed neg.              
-   │      │                     - no need to upload data      
- ──┴──────┴─────────────────────────────────────────────────  
+                                                                   
+            Alice                  Bob                             
+                                                                   
+───────────────────────────────────────────────────────────────────
+            - gets infected                                        
+   day 0    - doesn't know                                         
+            - doesn't show any                                     
+              symptoms                                             
+───────────────────────────────────────────────────────────────────
+                                                                   
+   day 1                                                           
+                                                                   
+                                                                   
+   day 2                                                           
+                                                                   
+ ──────────────────────────────────────────────────────────────────
+   day 3    - becomes contagious   - comes in contact w/Alice      
+                                   - possibly gets infected        
+                                   - doesn't know                  
+                                   - doesn't show any              
+                                     symptoms                      
+                                   - phone records random          
+                                     codes sent by everyone        
+                                     nearby, including Alice       
+────────────────────────────────────────────────────────────────── 
+                                                                   
+   day 4                                                           
+                                                                   
+────────────────────────────────────────────────────────────────── 
+            - shows symptoms       - phone automatically           
+   day 5    - gets tested            determines he came in         
+            - confirmed +ve          contact with someone          
+            - uploads data           who was infected              
+                                   - self-quarantines              
+────────────────────────────────────────────────────────────────── 
+                                   - X chain is broken             
+   day 6                                                           
+                                                                   
+────────────────────────────────────────────────────────────────── 
+                                                                   
+   day 7                                                           
+                                                                   
+────────────────────────────────────────────────────────────────── 
+                                   - shows symptoms                
+   day 8                           - gets tested                   
+                                   - confirmed -ve                 
+                                   - no need to upload data        
  ```
 
- Note that the above depeneds on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:
+ Note that the above depends on a few assumptions and a lot of voluntary actions (thanks @gnowgi). Here are a few I can think of:
 
 - Is there any voluntary action anywhere?
 1. yes, on the part of Alice and Bob, to install that app allow it to do its job, which is to send out the random codes every 5 mins, and to poll the central db for matching codes (this becomes useful in step four below
