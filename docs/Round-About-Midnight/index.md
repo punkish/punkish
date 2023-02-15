@@ -17,4 +17,4 @@ stars      :
 
 Monk by Les Thimmig (soprano sax) with Jessica Johnson (piano) at the UW-Madison Music School.
 
-![Round About Midnight](thimmig1.mov w=640 h=360)
+![Round About Midnight](thimmig1.mp4)

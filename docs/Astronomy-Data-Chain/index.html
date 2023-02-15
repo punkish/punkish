@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Feb 14 2023 21:24:45 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="Wed Feb 15 2023 20:57:28 GMT+0100 (Central European Standard Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -52,7 +52,7 @@
     
     <div class="content"><p>Raw astronomical data obtained from a telescope looks quite different from the pretty images shown in, for example, the <a href="http://apod.nasa.gov/apod/">Astronomy Picture of the Day</a>. The data chain from the sensor to what we see utilizes different procedures based on the technologies used to observe different parts of the electromagnetic spectrum, and every instrument has its own little quirks. <a href="http://www.astro.wisc.edu/our-people/graduate-students/schechtman-rook/">Andrew Schechtman-Rook</a> details a basic process that converts raw data to science quality infrared images is as follows:</p>
 <ul>
-<li><p>Readings from an array of sensors holding data about the number of photon strikes is read and stored on the hard drive of a computer in the form of a 2D array (see below for a snipped of such data):</p>
+<li><p>Readings from an array of sensors holding data about the number of photon strikes is read and stored on the hard drive of a computer in the form of a 2D array (see below for a snippet of such data):</p>
 <pre><code>2.5980e+03 2.4610e+03 2.7280e+03 2.6290e+03 2.4250e+03 2.5750e+03 
 2.4310e+03 2.5510e+03 2.6230e+03 2.6660e+03 2.5190e+03 2.5170e+03 
 2.4480e+03 2.4300e+03 2.6680e+03 2.5940e+03 2.5410e+03 2.6320e+03 
@@ -75,24 +75,33 @@
 2.6910e+03 2.6930e+03 2.7900e+03 2.7220e+03 2.6350e+03 2.7100e+03 
 </code></pre>
 <p>A matching header file describing the conditions of the observation (exposure time, date of observation, filter used, etc) is also written to disk.</p></li>
-<li><p>The raw data, in the form of integers in this array, does not match up exactly with the number of photons measured by the detector. The difference is known and corrected for.</p>
-<p>![raw image](NGC4565_J_top_raw.jpg w=640 h=400)  </p></li>
+<li><p>The raw data, in the form of integers in this array, does not match up exactly with the number of photons measured by the detector. The difference is known and corrected for.</p></li>
 </ul>
-<p><br clear="both"></p>
+<figure>
+    <img src="img/NGC4565_J_top_raw.jpg">
+    <figcaption>raw image</figcaption>
+</figure>
 <ul>
-<li><p>The response (sensitivity to light) of the detector is non-uniform in other ways as well. To correct for this the detector is exposed to a uniform ('flat') source of light several times during the day either before or after the observations are taken. These images are averaged together, and the science images are then divided out by this 'flat field' to correct the detector response.</p>
-<p>![combined flat field](NGC4565_J_top_flat.jpg w=680 h=484)  </p></li>
+<li>The response (sensitivity to light) of the detector is non-uniform in other ways as well. To correct for this the detector is exposed to a uniform ('flat') source of light several times during the day either before or after the observations are taken. These images are averaged together, and the science images are then divided out by this 'flat field' to correct the detector response.</li>
 </ul>
-<p><br clear="both"></p>
+<figure>
+    <img src="img/NGC4565_J_top_flat.jpg">
+    <figcaption>combined flat field</figcaption>
+</figure>
 <ul>
-<li><p>In the infrared the amount of background light from the sky can change on very short timescales (on the order of minutes). Additionally, most current infrared detectors suffer from significant amount of faulty detector elements. Both of these reasons mean that many exposures are taken at different positions around an object (or in some cases, a fraction of the exposures are in a dedicated 'sky' field away from the object). Medianing these images together removes any contribution from astronomical sources leaving an image of just the sky background, which is then subtracted from the object images.</p>
-<p>![sky background image](NGC4565_J_top_skyimg.jpg w=680 h=484)  </p></li>
+<li>In the infrared the amount of background light from the sky can change on very short timescales (on the order of minutes). Additionally, most current infrared detectors suffer from significant amount of faulty detector elements. Both of these reasons mean that many exposures are taken at different positions around an object (or in some cases, a fraction of the exposures are in a dedicated 'sky' field away from the object). Medianing these images together removes any contribution from astronomical sources leaving an image of just the sky background, which is then subtracted from the object images.</li>
 </ul>
-<p><br clear="both"></p>
+<figure>
+    <img src="img/NGC4565_J_top_skyimg.jpg">
+    <figcaption>sky background image</figcaption>
+</figure>
 <ul>
-<li><p>Finally, all images of a single object in a given filter are combined together. This process, which can frequently involve 100+ individual images, removes detector defects, increases the field-of-view, and reduces the noise level in the final 'mosaicked' image. These images are now ready to be analyzed (and/or shown to the public).</p>
-<p>![combined stacked image](NGC4565_J_top_mosaicked.jpg w=680 h=433)  </p></li>
-</ul></div>
+<li>Finally, all images of a single object in a given filter are combined together. This process, which can frequently involve 100+ individual images, removes detector defects, increases the field-of-view, and reduces the noise level in the final 'mosaicked' image. These images are now ready to be analyzed (and/or shown to the public).</li>
+</ul>
+<figure>
+    <img src="img/NGC4565_J_top_mosaicked.jpg">
+    <figcaption>combined stacked image</figcaption>
+</figure></div>
 
 
     <ul class="tags">

@@ -19,20 +19,26 @@ ui			:
 
 * visit potential field sites and decide on which one is going to be our research site based on certain criteria such as plantation quality and distance to site 
 
-	![map of study site](map.png w=673 h=347)  
-    image courtesy D. Delgerjargal under a CC-BY 3.0 License
+<figure>
+    <img src="img/map.png">
+    <figcaption>map of study site courtesy D. Delgerjargal under a CC-BY 3.0 License</figcaption>
+</figure>
 
 * go to the field and measure trees for *diameter at breast height* (dbh) and enter plot size, plot number, tree number, and dbh in MS-Excel spreadsheet
 
 * selectively cut some of the trees for "destructive analysis" on-site and weigh the biomass components of trees for wet mass and take sample branches and stem discs for further analysis to the lab
 
-	![tree stem disc](stem_disc.jpg w=400 h=453)  
-    image courtesy Delgerjargal Dugarjav under a CC-BY 3.0 License
+<figure>
+    <img src="img/stem_disc.jpg">
+    <figcaption>tree stem disc courtesy D. Delgerjargal under a CC-BY 3.0 License</figcaption>
+</figure>
 
 * categorize biomass samples into tissue types (stem, branch and foliage) and weigh them for wet mass and then dry them in the oven to obtain dry-mass
 
-	![stem dry mass](stem_dry_mass.png w=400 h=326)  
-    image courtesy Delgerjargal Dugarjav under a CC-BY 3.0 License
+<figure>
+    <img src="img/stem_dry_mass.png">
+    <figcaption>stem dry mass image courtesy D. Delgerjargal under a CC-BY 3.0 License</figcaption>
+</figure>
 
 * take foliage sub-samples and measure for leaf area 
 
