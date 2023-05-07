@@ -13,7 +13,7 @@ tags       :
 stars      :
 ---
 
-SQLite offers [**R\*Tree** module](https://www.sqlite.org/rtree.html) for working with range queries useful when dealing with geodata. An additional [**Geopoly** interface](https://www.sqlite.org/geopoly.html), built on top of **R\*Tree** further facilitates geospatial analysis. While the common usecase for R*Tree and Geopoly is with poly data, I needed to maintain and analyze point-data. Here is what I learned.
+SQLite offers the [**R\*Tree** module](https://www.sqlite.org/rtree.html) for working with range queries useful when dealing with geodata. An additional [**Geopoly** interface](https://www.sqlite.org/geopoly.html), built on top of **R\*Tree** further facilitates geospatial analysis. While the common usecase for R*Tree and Geopoly is with poly data, I needed to maintain and analyze point-data. Here is what I learned.
 
 ```js
 import Database from 'better-sqlite3';
@@ -58,8 +58,8 @@ A basic, rectangular poly looks like so (note that longitude is `x` and latitude
 
 <figure>
     <picture>
-        <source srcset="/docs/Geodata-with-SQLite/img/poly.png" media="(min-width:400px)">
-        <img src="/docs/Geodata-with-SQLite/img/poly.png">
+        <source srcset="img/poly.png" media="(min-width:400px)">
+        <img src="img/poly.png">
     </picture>
     <figcaption>Poly</figcaption>
 </figure>
@@ -224,6 +224,67 @@ loadTable();
 selectData();
 ```
 
-Running the above script gives me the exact same answer for both **R\*Tree** and **Geopoly** tables. I am free to choose whichever approach for my implementation. I like the **Geopoly** interface more as it gives me the advantage of providing irregular polygons for selection even though internally Geopoly converts them to bboxes since it is really built on top of **R\*Tree**.
+Running the above script gives me the exact same answer for both **R\*Tree** and **Geopoly** tables. 
+
+```js
+// output of `selectData()`
+rtree
+ [
+  {
+    id: 150,
+    longitude: 0.47599,
+    latitude: 0.23464,
+    desc: 'Ge uc irejiphe se meluin.'
+  },
+  {
+    id: 772,
+    longitude: 0.90166,
+    latitude: -0.80421,
+    desc: 'Gibet wefo wad bip vowutzoz.'
+  },
+  {
+    id: 813,
+    longitude: 0.22911,
+    latitude: 0.39079,
+    desc: 'Mewu sekjutfir fe kez vehpo.'
+  },
+  {
+    id: 986,
+    longitude: -0.48092,
+    latitude: 0.72125,
+    desc: 'Lahsun li odagaku ap fi.'
+  }
+] 
+geopoly
+ [
+  {
+    id: 150,
+    longitude: 0.47599,
+    latitude: 0.23464,
+    desc: 'Ge uc irejiphe se meluin.'
+  },
+  {
+    id: 772,
+    longitude: 0.90166,
+    latitude: -0.80421,
+    desc: 'Gibet wefo wad bip vowutzoz.'
+  },
+  {
+    id: 813,
+    longitude: 0.22911,
+    latitude: 0.39079,
+    desc: 'Mewu sekjutfir fe kez vehpo.'
+  },
+  {
+    id: 986,
+    longitude: -0.48092,
+    latitude: 0.72125,
+    desc: 'Lahsun li odagaku ap fi.'
+  }
+]
+
+```
+
+I am free to choose whichever approach for my implementation. I like the **Geopoly** interface more as it gives me the advantage of providing irregular polygons for selection even though internally Geopoly converts them to bboxes since it is really built on top of **R\*Tree**.
 
 Note that if I have different points with the same coordinates (entirely possible in real world data, for example, residents in a multistory building), then it would be possible to save some space by storing only unique pairs in the virtual tables and joining them with the main table via a FK. This increases the complexity of the tables and data-insertion, but may save some space if the number of points is very large.
