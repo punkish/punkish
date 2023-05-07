@@ -1,4 +1,4 @@
-### Hi there 👋
+### There are none so blind as those who don't see
 
 <!--
 **punkish/punkish** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
