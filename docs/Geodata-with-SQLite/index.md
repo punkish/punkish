@@ -179,8 +179,8 @@ const jsonExt = (pos, longitude, latitude, R, N) => {
 
 <figure>
     <picture>
-        <source srcset="/docs/Geodata-with-SQLite/img/points-in-poly.png" media="(min-width:400px)">
-        <img src="/docs/Geodata-with-SQLite/img/points-in-poly.png">
+        <source srcset="img/points-in-poly.png" media="(min-width:400px)">
+        <img src="img/points-in-poly.png">
     </picture>
     <figcaption>Points in Poly</figcaption>
 </figure>

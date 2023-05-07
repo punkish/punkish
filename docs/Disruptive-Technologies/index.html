@@ -6,14 +6,14 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Sun May 07 2023 23:24:05 GMT+0200 (Central European Summer Time)">
+<meta name="date" content="Sun May 07 2023 23:32:00 GMT+0200 (Central European Summer Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
-<title>punkish: Blockchain</title>
+<title>punkish: Sensors</title>
 <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
 <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
@@ -46,82 +46,45 @@
 </nav></header>
     
     <main id="content"><section>
-    <h1 class="title">Blockchain</h1>
+    <h1 class="title">Sensors</h1>
     <div class="description">Disruptive Technologies for International Development</div>
     <div class="created">Sunday, May 26, 2019</div>
     
     <div class="content"><figure>
-    <img src="img/blockchain.png">
-    <figcaption>Blockchain illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+    <img src="img/water-quality-sensor.png">
+    <figcaption>Portable water quality sensor developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/" target="_blank">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com" target="_blank">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com" target="_blank">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores <a href="http://web.v-a.pt/planetary-sensing/" target="_blank">planetary sensing navigations</a> below the surface. The device is based on a design by <a href="https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter" target="_blank">Shan He of Public Lab</a> in cooperation with the folks at <a href="https://www.dfrobot.com" target="_blank">DF Robot</a>. Original design mods and photo released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
 </figure>
 <h2 id="introduction">Introduction</h2>
-<p>A blockchain is a distributed digital ledger technology (DLT) with transactions (or blocks thereof) linked by timestamped, cryptographic hashes. A blockchain may be private (permissioned) or public (permissionless), with a mechanism, typically “proof of work,” for coming to a consensus about the valid state of the chain determined by a majority of the participants all of whom have equal access to all of the chain.</p>
-<h3 id="permissionedvspermissionless">Permissioned vs. Permission-less</h3>
-<ul>
-<li>A <em>permissioned</em> blockchain has preapproved members who can contribute to it and have the rights to validate the block transactions. A permissioned blockchain may also restrict access to approved actors who can create smart contracts.</li>
-<li>A <em>permissionless</em> blockchain is public. Anyone can join and participate in the process of block verification to create consensus and also create smart contracts.</li>
-</ul>
-<h3 id="cryptographyandconsensusmechanisms">Cryptography and Consensus Mechanisms</h3>
-<p>A blockchain is made possible by the dual application of cryptography and some kind of a consensus mechanism. Anyone participating in the blockchain network can create a transaction, but to insert that transaction into the chain of blocks, one requires to show some evidence of deserving to do so. This is usually done by solving some complex problem, typically involving cryptography, and getting a majority of the network members (at least 51%) to approve of it. This kind of a consensus mechanism is called Proof of Work (PoW). There are many other consensus mechanisms, but PoW is the most widely implemented on.</p>
-<h3 id="wellknownblockchainimplementations">Well-Known Blockchain Implementations</h3>
-<ul>
-<li><a href="https://bitcoin.org/en/" target="_blank">Bitcoin</a>: Bitcoin is a consensus network that enables a new payment system and a completely digital money. It is the first decentralized peer-to-peer payment network that is powered by its users with no central authority or middlemen.</li>
-<li><a href="https://www.ethereum.org" target="_blank">Ethereum</a>: Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference.</li>
-<li><a href="https://www.hyperledger.org" target="_blank">Hyperledger</a>: Hyperledger is an open source collaborative effort created to advance cross-industry blockchain technologies. It is a global collaboration, hosted by The Linux Foundation, including leaders in finance, banking, Internet of Things, supply chains, manufacturing and Technology.</li>
-<li>Smart Contracts: A smart contract is a software-based agreement between two parties that runs on a blockchain network, and triggers an outcome based on a previously agreed upon event. For example, when a certain condition is met, the smart contract can be validated and it can discharge a sum of money from one of the contracting parties to another. Imagine a factory that automatically orders supplies when it is about to run out of them.</li>
-</ul>
+<p>Sensors is a generic term for devices, both atomic and composite, that are capable of sensing various external stimuli and acting upon those readings from simply recording them to even reacting to them when a pre-determined threshold is crossed. Typically sensors convert external stimuli to electrical current and then either transmit the data or store it locally. Any device that senses, captures, and reports information can be called a sensor. Sensors can range from nano– to micro–size devices that can be implanted on or even inside the subject (human or non-human) all the way to regional scale sensors such as those installed in satellites.</p>
 <h2 id="disruptivepower">Disruptive Power</h2>
-<p>The most obvious and well-known disruption attributed to blockchain is, of course, the financial system, so much so that blockchain is almost synonymous with Bitcoin, the cryptocurrency that utilizes blockchain for recording its transactions. But blockchain can be quite disruptive to any established services that are generally opaque to common citizens and, in places, rife with corruption.</p>
+<p>By being constantly on and providing a continuous stream of real– or near realtime data, sensors disrupt traditional observation systems. By combining sensors with services, more responsive systems can be developed for commercial, humanitarian or environmental uses. For example, cell phones can “sense” and report their locations using global positioning systems (GPS), and businesses can use that information in location-based services to deliver more services. Retailers are experimenting with radio frequency identification (RFID) sensors and other solutions to track the location of customers within stores so they can target promotions and gauge response to merchandising initiatives. The healthcare industry seeks to improve and extend care and reduce cost through remote patient monitoring. The automotive industry is embedding sensors in vehicles and insurance companies are creating usage-based insurance models based on that sensor data. Utilities are deploying smart meters to identify usage trends for things like water and electricity, and helping consumers reduce their utility costs by consuming these commodities during low-demand periods. McKinsey Global Institute reports that more than 30 million networked sensors are in use in the transportation, automotive, industrial, utilities, and retail sectors, and the number is growing by 30 percent annually.</p>
 <h2 id="potentialfordevelopment">Potential for Development</h2>
-<p>Having an open but tamperproof ledger of activities can be useful for ensuring transparency in government and social services. As such, blockchain can be used in any system that requires keeping a ledger of transactions of any kind – interaction with health providers, service delivery of benefits, and civic services.</p>
+<p>Sensor-based delivery systems for plant nutrition can make agriculture more productive and responsive to local conditions. Local-scale sensors form the basis for smart-cities—canopies of PV leaves that generate enough power for local lighting, traffic lights that adjust to traffic volumes reducing idling, pollution monitors that indicate problem spots, drains that phone the public work department when they get clogged, cars that sense potholes and phone the roads dept. with location and depth of the hole, parking meters and spaces that signal availability to a parking map app, windows that become darker like sunglasses when the sun is shining really bright, and conductive paint that can embed circuits in the wall.</p>
 <h2 id="caveats">Caveats</h2>
-<p>Like any new technology, or perhaps even more so, blockchain is hyped beyond its potential. Its use in cryptocurrency has potential for massive financial frauds, and many countries around the world are still figuring out how to allow, if at all, such currencies to coexist with the established financial system. Also, since transparency of blockchain is important in that it allows everyone to look at it, it may not be the desired platform where privacy is important. It’s impossible to correct errors without reversing a transaction, and it is the irreversibility that makes a blockchain special in the first place. Finally, smart contracts that seem to hold so much potential remain to be tested in the real world because it is not clear whether or not they are legally enforceable.</p>
-<h3 id="definitionssetexpectationsthatmaynotbemet">Definitions set expectations that may not be met</h3>
-<p>The bulk of the discourse around blockchain technology states simply that “immutability is a characteristic of blockchain technology.” While it is possible that any variety of the technology could yield the emergent property of immutability, this seems highly unlikely, and is definitely not yet firmly established. For example, legislation is being proposed based on definitions, but stating that “the data on the ledger is… immutable” in a statute does not mean that the data is immutable (i.e., unchangeable) in reality.</p>
-<h3 id="clashwithexistinglegislationandvalues">Clash With Existing Legislation and Values</h3>
-<p>How do we implement the right to be forgotten in a technology that is designed to not forget?</p>
+<p>The regional-scale sensors such as airborne or satellites will continue to be important, but they are too far away from the humans to provide local detail. Implanted or worn sensors, or even smart-home devices, provide great local detail, but are so fraught with privacy issues that getting that data into a single, global pool is possibly a fool’s errand unless we change the conversation around privacy and sharing. Local sensors have a better chance to not just scale, but also change the way we collect data about ourselves and our local environments with high temporal and spatial resolutions. By not collecting individual info, we sidestep the issues of privacy and security. These local sensors occupy a sweet spot providing useful local detail without getting tied up in privacy issues. Additionally, we can power them however we want,&nbsp;and&nbsp;we already know their position because they are static, so there is no need for battery-consumptive GPS.</p>
+<figure>
+    <img src="img/sensors.png">
+    <figcaption> sweet spot&nbsp;for large-scale sensors use is possible with large geographic scale, short temporal cycles, non-personally identifiable, public health, group behavior as shown above. Original illustration by Puneet Kishor released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 Public Domain Dedication</a>.</figcaption>
+</figure>
 <h2 id="resources">Resources</h2>
 <p><details class="video" open>
-    <summary>How does a blockchain work - Simply Explained</summary> 
-    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/SSo_EIwHSd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-    <p>What is a blockchain and how do they work? Explained in simple and plain English!</p>
+    <summary>Smart sensors will detect environmental pollution at the speed of light</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/8NiVUzKFlzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    <p>Environmental pollutants won’t be able to hide thanks to new sensing technologies that accurately pinpoint and monitor the quality of our environment. Together with physical analytics combined with artificial intelligence, these technologies will unlock insights to help us prevent pollution and fully harness the promise of cleaner fuels like natural gas.</p>
 </details></p>
 <p><details class="video" open>
-    <summary>How Blockchain can transform India</summary>
-    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/8fbhI1qVj0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-    <p>Blockchain is currently at the peak of the Hype Cycle. It is a simple concept, yet difficult to understand and comprehend. It is also in the same place as the Internet was in 1995 – very early, with its major applications yet to be built. Blockchain is a much a philosophy as a technology, and has the potential to change the world as the Internet did. It promises to radically transform identity, agriculture, money, energy, governance, and pretty much everything else, especially in the emerging countries. This TEDx talk demystifies blockchain as never before, and explains how it can change the world around you.</p>
+    <summary>Real-time Air Quality Monitoring Network Using Low-Cost Devices</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/82Cw7gi6hF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    <p>India has the dubious distinction of having 10 out of the 20 most polluted cities in the world. The number of government air quality monitoring stations in these cities, barring New Delhi (which has 12), are between 1 or 2 stations for a population of 1 to 2 million people. This is woefully inadequate. A new wave of low-cost particulate matter sensors (PM2.5 and PM10 being the most harmful of the air pollutants) enabled with IoT technologies is empowering citizens and communities to participate in their own governance and policy making. IndiaSpend has built India's first independent, real-time air quality monitoring network using indigenously built low-cost IoT devices. The project was launched in December 2015 and is currently active in 6 cities of India (with 10 more cities coming online in the near future). The talk will cover lessons learned from the IoT architecture perspective and the current Fast Time-Series based APIs developed which has enabled a significant enhancement in the accuracy and scalability of the air quality data analysis.</p>
+</details></p>
+<p><details class="video" open>
+    <summary>Water Quality Sensors</summary>
+    <div class="videowrapper"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/F1DK3IhyZao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    <p>Junhong Chen, Ph.D., Mechanical Engineering, shows new sensor technology that helps identify contaminants in water. Learn how Milwaukee Engineers' partnerships with industry leaders such as A.O. Smith and Badger Meter acellerates the process of bringing innovative technology from lab to market.</p>
 </details></p>
 <p><details class="text" open>
-    <summary><a href="https://punkish.org/Demystifying-Blockchains" target="_blank">Demystifying Blockchains</a></summary>
-    <p>A blockchain primer and demo.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Stuart Haber and Scott Stornetta. 1991. <a href="https://www.anf.es/pdf/Haber_Stornetta.pdf" target="_blank">How to Time-Stamp a Digital Document.</a>&nbsp;Journal of Cryptology, Vol. 3, No. 2, pp. 99-111</summary>
-    <p>The prospect of a world in which all text, audio, picture, and video documents are in digital form on easily modifiable media raises the issue of how to certify when a document was created or last changed. The problem is to time-stamp the data, not the medium. We propose computationally practical procedures for digital time-stamping of such documents so that it is infeasible for a user either to back-date or to forward-date his document, even with the collusion of a time-stamping service. Our procedures maintain complete privacy of the documents themselves, and require no record-keeping by the time-stamping service.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Satoshi Nakamoto. 2009. <a href="https://bitcoin.org" target="_blank">Bitcoin: A Peer-to-Peer Electronic Cash System</a></summary>
-    <p>A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Giuseppe Ateniese, Bernardo Magri, Daniele Venturi, and Ewerton Andrade. 2016. <a href="https://eprint.iacr.org/2016/757.pdf" target="_blank">Redactable Blockchain – or – Rewriting History in Bitcoin and Friends.</a> Eprints</summary>
-    <p>We put forward a new framework that makes it possible to re-write or compress the content of any number of blocks in decentralized services exploiting the blockchain technol- ogy. As we argue, there are several reasons to prefer an editable blockchain, spanning from the necessity to remove inappropriate content and the possibility to support applications requiring re-writable storage, to “the right to be forgotten.”</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Angela Walch. 2017. <a href="https://ssrn.com/abstract=2940335" target="_blank">The Path of the Blockchain Lexicon (and the Law).</a>&nbsp;36 Review of Banking & Financial Law 713. SSRN</summary>
-    <p>The terminology around blockchain technology is notoriously confusing, with disputes over whether a blockchain is the same as a distributed ledger, or whether an appcoin is the same as a protocol token. In this article, I examine the difficulties the rapidly shifting, contested vocabulary poses for regulators seeking to understand, govern, and potentially use blockchain technology, and offer suggestions for how to fight through the haze of unclear language.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>James Hazard and Helena Haapio. 2017. <a href="https://ssrn.com/abstract=2925871" target="_blank">Wise Contracts: Smart Contracts that Work for People and Machines (February 23, 2017). In Trends and Communities of Legal Informatics.</a>&nbsp;Proceedings of the 20th International Legal Informatics Symposium IRIS 2017. Österreichische Computer Gesellschaft, Wien 2017, pp. 425–432; Jusletter IT.</summary>
-    <p>Modern economies are held together by innumerable contracts. However, current contracts are neither machine-readable nor easily human-readable. The Ricardian Contract paradigm of parameters, prose and code posits a hybrid model of automation and conventional legal text. This paper connects recent work on design criteria for 'Smart Contract Templates' with prose objects and prototype inheritance demonstrated at CommonAccord. Templates authored and shared as prose objects can become the basis for automation, codification, big data analysis and graphic presentations.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Wikipedia contributors. (2018, November 19). <a href="https://en.wikipedia.org/w/index.php?title=Smart_contract&oldid=869532500" target="_blank">Smart contract. In Wikipedia, The Free Encyclopedia.</a>&nbsp;Retrieved 11:18, November 21, 2018</summary>
-    <p>A smart contract is a computer protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties. These transactions are trackable and irreversible.</p>
-</details></p>
-<p><details class="text" open>
-    <summary>Primavera de Filippi. <a href="https://wiki.p2pfoundation.net/Legal_Framework_For_Crypto-Ledger_Transactions" target="_blank">Legal Framework For Crypto-Ledger Transactions.</a> P2P Foundation.</summary>
-    <p>This article describes a hybrid model that combines legal contracts with software code via smart contract templates.</p>
+    <summary><a href="https://distap.mit.edu/research-novel-sensors/" target="_blank">Research: Novel Sensors</a></summary>
+    <p>Plant hormones play a significant role in controlling plant growth and plants’ response to environmental stimuli. The development of nanosensors with high sensitivity would deepen our understanding of the complex plant signaling pathways. Our goal is to generate a library of polymers and discover an optimal CoPhMoRe (Corona Phase Molecular Recognition) sensor for specific plant hormone. Corona phase of SWCNT refers to the phase of the polymer adsorbed around its surface. The recognition takes place by the lateral interactions of the analytes of our interest with the polymer in this corona phase. Depending on the structure of amphiphilic polymers, various kinds of corona phases can be created. Using this property, SWCNT-based sensors can be developed to measure the targeting molecules within the small range of concentration. We aim to study the spatial and temporal distribution of the plants’ signaling pathways in real time and non-destructive manner with high sensitivity.</p>
 </details></p>
 <hr />
 <p><a href="/Disruptive-Technologies">Back to Disruptive Technologies</a></p></div>
@@ -131,7 +94,7 @@
         <li><a href="/_tags/The-World-Bank.html">The World Bank</a></li>
         <li><a href="/_tags/tech-primer.html">tech primer</a></li>
         <li><a href="/_tags/international-development.html">international development</a></li>
-        <li><a href="/_tags/Blockchain.html">Blockchain</a></li>
+        <li><a href="/_tags/Sensors.html">Sensors</a></li>
     </ul>
     <ul class="bottomNav">
         <li class="prev"><a href="/Blockchain">↜ Blockchain</a></li>
