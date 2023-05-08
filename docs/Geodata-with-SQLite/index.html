@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Sun May 07 2023 23:32:00 GMT+0200 (Central European Summer Time)">
+<meta name="date" content="Mon May 08 2023 12:18:16 GMT+0200 (Central European Summer Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,7 +51,8 @@
     <div class="description"></div>
     <div class="created">Friday, April 14, 2023</div>
     
-    <div class="content"><p>SQLite offers the <a href="https://www.sqlite.org/rtree.html"><strong>R*Tree</strong> module</a> for working with range queries useful when dealing with geodata. An additional <a href="https://www.sqlite.org/geopoly.html"><strong>Geopoly</strong> interface</a>, built on top of <strong>R*Tree</strong> further facilitates geospatial analysis. While the common usecase for R*Tree and Geopoly is with poly data, I needed to maintain and analyze point-data. Here is what I learned.</p>
+    <div class="content"><p>SQLite offers the <a href="https://www.sqlite.org/rtree.html"><strong>R*Tree</strong> module</a> for working with range queries useful when dealing with geodata. An additional <a href="https://www.sqlite.org/geopoly.html"><strong>Geopoly</strong> interface</a>, built on top of <strong>R*Tree</strong> further facilitates geospatial analysis. While the common usecase for <strong>R*Tree</strong> and <strong>Geopoly</strong> is with poly data, I needed to maintain and analyze point-data. Here is what I learned.</p>
+<p><strong><em>Note:</em></strong> <em>I am using <code>nodejs</code> for scripting all this, but the SQL can be used directly or within any programming language. All formulas are approximate (the meters-to-latitude conversion approximates the radius of a spherical earth, and the lng/lat checks in the SQL below are increasingly meaningless above 85-87 degrees of latitude; but the concept still remains the same, so change the values as appropriate).</em></p>
 <pre><code class="js language-js">import Database from 'better-sqlite3';
 const db = new Database('geo.sqlite');
 
@@ -72,7 +73,7 @@ const createTables = () =&gt; {
             typeof(longitude) = 'real' AND 
             abs(longitude) &lt;= 180 AND 
             typeof(latitude) = 'real' AND 
-            abs(latitude) &lt;= 90
+            abs(latitude) &lt; 90
         ) STORED
     )`).run();
 
@@ -80,13 +81,15 @@ const createTables = () =&gt; {
     // via the id PRIMARY KEY
     db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tr USING rtree (
         id,
-        minX, maxX,
-        minY, maxY,
-        +t_id
+        minX, minY,    -- bottom-left corner of the bounding box
+        maxX, maxY,    -- top-right corner of the bounding box
+        +t_id          -- references t(id)
     )`).run();
 
-    db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tg USING geopoly (t_id)`)
-        .run();
+    db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tg USING geopoly (
+        t_id           -- references t(id)
+    )`)
+    .run();
 }
 </code></pre>
 <p>A basic, rectangular poly looks like so (note that longitude is <code>x</code> and latitude is <code>y</code>)</p>
@@ -97,9 +100,9 @@ const createTables = () =&gt; {
     </picture>
     <figcaption>Poly</figcaption>
 </figure>
-<p>It is possible to store points in an <strong>R*Tree</strong> virtual table by making the bottom-left and top-right corners of a box the same, that is, a square of side = 0. However, while I was able to store the same in a <strong>Geopoly</strong> table as well, the <code>geopoly_within()</code> function didn't return any result. So I decided to make a tiny box of 5 meters around every point and store those polys in the virtual tables. The only problem is that the length of each degree of latitude in meters varies with the latitude (it gets smaller as one moves away from the equator toward the poles). The formula <code>abs(1/(40075017*cos(latitude)/360))</code> returns meters for any given latitude (40075017 is the radius of the earth in meters).</p>
+<p>It is possible to store points in an <strong>R*Tree</strong> virtual table by making the bottom-left and top-right corners of a box the same, that is, a square of side = 0. However, while I was able to store the same in a <strong>Geopoly</strong> table as well, the <code>geopoly_within()</code> function didn't return any result. So I decided to make a tiny box of 5 meters around every point and store those polys in the virtual tables. The only problem is that the length of each degree of latitude in meters varies with the latitude (it gets smaller as one moves away from the equator toward the poles). The formula <code>abs(1/(40075017*cos(latitude)/360))</code> returns meters for any given latitude (40075017 is the radius in meters of a perfectly spherical earth). Note that the "square" of 5m side is increasingly distorted trapezoidally as one moves away from the equator.</p>
+<p><strong><em>Note:</em></strong> <em>I am mixing meters and lng/lat because that is how we tend to use them in real life -- when talking of points, we refer to them with their lng/lat coords (actually, in spoken English we tend to say lat/lng even though we refer to cartesian coords as x/y), and when talking of distances, we speak in meters. I want to be able to answer queries such as, "Find all the points within x meters of (this) longitude/latitude."</em></p>
 <p>Triggers populate the virtual tables as the main table gets loaded with data. The <code>geopoly_regular()</code> function below makes a <code>4</code> sided poly of <code>abs(5/(40075017*cos(latitude)/360))</code> meters centered at <code>[longitude, latitude]</code>. The function <code>geopoly_bbox()</code> returns the bounding box of the poly, and <code>geopoly_json()</code> converts the bbox into json. Then <code>json_extract()</code> pulls out the bottom-left and top-right corners.</p>
-<p><em>Note: I am mixing meters and lng/lat because that is how we tend to use them in real life -- when talking of points, we refer to them with their lng/lat coords (actually, in spoken English we tend to say lat/lng even though we refer to cartesian coords as x/y), and when talking of distances, we speak in meters. I want to be able to answer queries such as, "Find all the points within x meters of (this) longitude/latitude."</em></p>
 <pre><code class="js language-js">const createTriggers = () =&gt; {
     db.prepare(`CREATE TRIGGER IF NOT EXISTS aftInsT
     AFTER INSERT ON t
@@ -303,12 +306,17 @@ geopoly
 ]
 </code></pre>
 <p>I am free to choose whichever approach for my implementation. I like the <strong>Geopoly</strong> interface more as it gives me the advantage of providing irregular polygons for selection even though internally Geopoly converts them to bboxes since it is really built on top of <strong>R*Tree</strong>.</p>
-<p>Note that if I have different points with the same coordinates (entirely possible in real world data, for example, residents in a multistory building), then it would be possible to save some space by storing only unique pairs in the virtual tables and joining them with the main table via a FK. This increases the complexity of the tables and data-insertion, but may save some space if the number of points is very large.</p></div>
+<p>Note that if I have different points with the same coordinates (entirely possible in real world data, for example, residents in a multistory building), then it would be possible to save some space by storing only unique pairs in the virtual tables and joining them with the main table via a FK. This increases the complexity of the tables and data-insertion, but may save some space if the number of points is very large.</p>
+<hr />
+<p>Acknowledgements: With help from</p>
+<ul>
+<li><a href="https://sqlite.org/forum/forumpost/102a81f7a1fd1f54">Ryan Smith</a></li>
+</ul></div>
 
 
     <ul class="tags">
         <li><a href="/_tags/code.html">code</a></li>
-        <li><a href="/_tags/SQLite.html">SQLite</a></li>
+        <li><a href="/_tags/sqlite.html">sqlite</a></li>
         <li><a href="/_tags/nodejs.html">nodejs</a></li>
     </ul>
     <ul class="bottomNav">

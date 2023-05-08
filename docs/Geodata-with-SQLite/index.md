@@ -8,12 +8,14 @@ id         : 232
 gmap       : 
 tags       :
     - code
-    - SQLite
+    - sqlite
     - nodejs
 stars      :
 ---
 
-SQLite offers the [**R\*Tree** module](https://www.sqlite.org/rtree.html) for working with range queries useful when dealing with geodata. An additional [**Geopoly** interface](https://www.sqlite.org/geopoly.html), built on top of **R\*Tree** further facilitates geospatial analysis. While the common usecase for R*Tree and Geopoly is with poly data, I needed to maintain and analyze point-data. Here is what I learned.
+SQLite offers the [**R\*Tree** module](https://www.sqlite.org/rtree.html) for working with range queries useful when dealing with geodata. An additional [**Geopoly** interface](https://www.sqlite.org/geopoly.html), built on top of **R\*Tree** further facilitates geospatial analysis. While the common usecase for **R\*Tree** and **Geopoly** is with poly data, I needed to maintain and analyze point-data. Here is what I learned.
+
+***Note:*** *I am using `nodejs` for scripting all this, but the SQL can be used directly or within any programming language. All formulas are approximate (the meters-to-latitude conversion approximates the radius of a spherical earth, and the lng/lat checks in the SQL below are increasingly meaningless above 85-87 degrees of latitude; but the concept still remains the same, so change the values as appropriate).*
 
 ```js
 import Database from 'better-sqlite3';
@@ -36,7 +38,7 @@ const createTables = () => {
             typeof(longitude) = 'real' AND 
             abs(longitude) <= 180 AND 
             typeof(latitude) = 'real' AND 
-            abs(latitude) <= 90
+            abs(latitude) < 90
         ) STORED
     )`).run();
 
@@ -44,13 +46,15 @@ const createTables = () => {
     // via the id PRIMARY KEY
     db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tr USING rtree (
         id,
-        minX, maxX,
-        minY, maxY,
-        +t_id
+        minX, minY,    -- bottom-left corner of the bounding box
+        maxX, maxY,    -- top-right corner of the bounding box
+        +t_id          -- references t(id)
     )`).run();
 
-    db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tg USING geopoly (t_id)`)
-        .run();
+    db.prepare(`CREATE VIRTUAL TABLE IF NOT EXISTS tg USING geopoly (
+        t_id           -- references t(id)
+    )`)
+    .run();
 }
 ```
 
@@ -64,11 +68,11 @@ A basic, rectangular poly looks like so (note that longitude is `x` and latitude
     <figcaption>Poly</figcaption>
 </figure>
 
-It is possible to store points in an **R\*Tree** virtual table by making the bottom-left and top-right corners of a box the same, that is, a square of side = 0. However, while I was able to store the same in a **Geopoly** table as well, the `geopoly_within()` function didn't return any result. So I decided to make a tiny box of 5 meters around every point and store those polys in the virtual tables. The only problem is that the length of each degree of latitude in meters varies with the latitude (it gets smaller as one moves away from the equator toward the poles). The formula `abs(1/(40075017*cos(latitude)/360))` returns meters for any given latitude (40075017 is the radius of the earth in meters).
+It is possible to store points in an **R\*Tree** virtual table by making the bottom-left and top-right corners of a box the same, that is, a square of side = 0. However, while I was able to store the same in a **Geopoly** table as well, the `geopoly_within()` function didn't return any result. So I decided to make a tiny box of 5 meters around every point and store those polys in the virtual tables. The only problem is that the length of each degree of latitude in meters varies with the latitude (it gets smaller as one moves away from the equator toward the poles). The formula `abs(1/(40075017*cos(latitude)/360))` returns meters for any given latitude (40075017 is the radius in meters of a perfectly spherical earth). Note that the "square" of 5m side is increasingly distorted trapezoidally as one moves away from the equator.
+
+***Note:*** *I am mixing meters and lng/lat because that is how we tend to use them in real life -- when talking of points, we refer to them with their lng/lat coords (actually, in spoken English we tend to say lat/lng even though we refer to cartesian coords as x/y), and when talking of distances, we speak in meters. I want to be able to answer queries such as, "Find all the points within x meters of (this) longitude/latitude."*
 
 Triggers populate the virtual tables as the main table gets loaded with data. The `geopoly_regular()` function below makes a `4` sided poly of `abs(5/(40075017*cos(latitude)/360))` meters centered at `[longitude, latitude]`. The function `geopoly_bbox()` returns the bounding box of the poly, and `geopoly_json()` converts the bbox into json. Then `json_extract()` pulls out the bottom-left and top-right corners.
-
-*Note: I am mixing meters and lng/lat because that is how we tend to use them in real life -- when talking of points, we refer to them with their lng/lat coords (actually, in spoken English we tend to say lat/lng even though we refer to cartesian coords as x/y), and when talking of distances, we speak in meters. I want to be able to answer queries such as, "Find all the points within x meters of (this) longitude/latitude."*
 
 ```js
 const createTriggers = () => {
@@ -288,3 +292,8 @@ geopoly
 I am free to choose whichever approach for my implementation. I like the **Geopoly** interface more as it gives me the advantage of providing irregular polygons for selection even though internally Geopoly converts them to bboxes since it is really built on top of **R\*Tree**.
 
 Note that if I have different points with the same coordinates (entirely possible in real world data, for example, residents in a multistory building), then it would be possible to save some space by storing only unique pairs in the virtual tables and joining them with the main table via a FK. This increases the complexity of the tables and data-insertion, but may save some space if the number of points is very large.
+
+---
+Acknowledgements: With help from
+
+- [Ryan Smith](https://sqlite.org/forum/forumpost/102a81f7a1fd1f54)
