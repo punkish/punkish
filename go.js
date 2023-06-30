@@ -1,14 +1,35 @@
+//@ts-check
+
 'use strict';
 
-const Walker = require('walker');
-const path = require('path');
-const fs = require('fs');
-const yamlFront = require('yaml-front-matter');
-const showdown = require('showdown');;
-const footnotes = require('./docs/_lib/js/footnotes.js');
+import Walker from 'walker';
+import path from 'path';
+import fs from 'fs';
+import yamlFront from 'yaml-front-matter';
+import showdown from 'showdown';
+import moment from 'moment';
+import MiniSearch from 'minisearch';
+import lunr from 'lunr';
+
+import { footnotes } from './lib/showdown-footnotes.js';
+
+import { 
+    dir,
+    dateOptions,
+    baseUrl,
+    minisearchOpts,
+    untaggedLabel
+} from './lib/settings.js';
+
+import { 
+    templates,
+    makeVid,
+    makeImg,
+    makeAlbum
+} from './lib/index.js';
 
 const sh = new showdown.Converter({
-    extensions: [footnotes], 
+    extensions: [ footnotes ], 
     tables: true,
 
     // ![foo](foo.jpg =100x80)     simple, assumes units are in px
@@ -20,142 +41,38 @@ const sh = new showdown.Converter({
     strikethrough: true
 })
 
-const Handlebars = require('handlebars');
-const moment = require('moment');
-const MiniSearch = require('minisearch');
 
-const baseUrl = '';
 let me = 'Puneet Kishor';
-const dateOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-}
 
-const dir = {
-    entries: './entries',
-    t: './views',
-    tl: `./views/layouts`,
-    tp: `./views/partials`,
-    docs: './docs',
-    hanozDir: './docs/Hanoz'
-}
-
-const minisearchOpts = {
-    fields: ['title', 'text'],
-    storeFields: ['title', 'name'],
-    searchOptions: {
-        boost: { title: 2 },
-        fuzzy: 0.2
-    }
-}
-
-const untaggedLabel = 'untagged';
-const templates = { 
-    layouts: {}, 
-    views: {} 
-}
-
-const data = {
-    entries: {
-        byName: {},
-        byDate: [],
-        byTag: {},
-        byTag2: [],
-        byYear: [],
-        hanoz: []
-    },
-
-    idx: {}
-}
-
-const compileTemplates = function() {
-    console.log('compiling templates');
-
-    const layouts = fs.readdirSync(dir.tl);
-
-    layouts.forEach(l => {
-        const layout = l.split('.')[0];
-        const fileContent = fs.readFileSync(`${dir.tl}/${l}`, 'utf-8');
-        templates.layouts[layout] = Handlebars.compile(fileContent);
-    })
-    
-    const partials = fs.readdirSync(dir.tp);
-
-    partials.forEach(p => {
-        const partial = p.split('.')[0];
-        const fileContent = fs.readFileSync(`${dir.tp}/${p}`, 'utf-8');
-        Handlebars.registerPartial(partial, fileContent);
-    })
-    
-    const views = fs.readdirSync(dir.t);
-
-    views.forEach(v => {
-        if (fs.statSync(`${dir.t}/${v}`).isFile()) {
-            const view = v.split('.')[0];
-            const fileContent = fs.readFileSync(`${dir.t}/${v}`, 'utf-8');
-            templates.views[view] = Handlebars.compile(fileContent);
-        }
-    })
-}
-
-const makeVid = function(text, url) {
-    url = url ? `${url}/img` : 'img'
-
-    return text.replace(
-        /<img src="(.*?)\.(mp4)(.*)/g, 
-`<video width="100%" controls poster="img/$1.jpg">
-    <source src="${url}/$1.$2" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
-</video>`
-    )
-}
-
-const makeImg = function(text, url) {
-    url = url ? `${url}/img` : 'img'
-    
-    return text.replace(
-        /<img src=(.*?)\.(png|gif|jpg)(.*?)title="(.*?)" \/>/g, 
-        `<figure>\n\t<img src=${url}/$1.$2$3>\n\t<figcaption>$4</figcaption>\n</figure>`
-    )
-}
-
-const makeAlbum = function(entry, url) {
-    url = url ? `${url}/img` : 'img'
-    entry.images = fs.readdirSync(`${entry.dir}/img`)
-        .filter(img => {
-            const imgExt = img.slice(-4)
-            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif'
-        })
-        .map(img => `${url}/${img}`);
-
-}
-
-const prevNext = function() {
+const prevNext = function(data) {
     console.log('populating prev-next')
 
-    const j = data.entries.byDate.length
+    const byDate = data.entries.byDate;
+    const j = byDate.length;
+
     for (let name in data.entries.byName) {
     
-        let prev
-        let next
+        let prev;
+        let next;
 
         for (let i = 0; i < j; i++) {
-            if (name.toLowerCase() === data.entries.byDate[i].name.toLowerCase()) {
+            if (name.toLowerCase() === byDate[i].name.toLowerCase()) {
 
-                const x = i > 0 ? i - 1 : 0
+                const x = i > 0 ? i - 1 : 0;
+
                 prev = {
-                    name: data.entries.byDate[x].name, 
-                    title: data.entries.byDate[x].title
+                    name: byDate[x].name, 
+                    title: byDate[x].title
                 }
                 
                 const y = i + 1 < j ? i + 1 : i;
+
                 next = {
-                    name: data.entries.byDate[y].name, 
-                    title: data.entries.byDate[y].title
+                    name: byDate[y].name, 
+                    title: byDate[y].title
                 }
                 
-                break
+                break;
             }
         }
 
@@ -164,7 +81,8 @@ const prevNext = function() {
     }   
 }
 
-const addEntryByTags = function(entry, eIdx) {
+const addEntryByTags = function(entry, eIdx, data) {
+
     if (entry.origTags) {
         entry.origTags.forEach(t => {
             if (data.entries.byTag[t]) {
@@ -183,37 +101,40 @@ const addEntryByTags = function(entry, eIdx) {
             data.entries.byTag[ untaggedLabel ] = [ eIdx ]
         }    
     }
+
 }
 
-const addEntryByDate = function(entry, eIdx) {
-    data.entries.byDate.push(eIdx)
+const addEntryByDate = function(entry, eIdx, data) {
+    data.entries.byDate.push(eIdx);
 
-    const date = new Date(entry.created)
-    const entryYear = date.getFullYear() || '9999'
-    const entryMonth = date.toLocaleDateString('en-US', {month: 'long'}) || 'January'
-    const indexOfYear = data.entries.byYear.map(x => { return x.year }).indexOf(entryYear)
+    const date = new Date(entry.created);
+    const entryYear = date.getFullYear() || '9999';
+    const entryMonth = date.toLocaleDateString('en-US', {month: 'long'}) || 'January';
+
+    const byYear = data.entries.byYear;
+    const indexOfYear = byYear.map(x => { return x.year }).indexOf(entryYear);
 
     if (indexOfYear > -1) {
-        const indexOfMonth = data.entries.byYear[indexOfYear]
-            .months.map(x => { return x.month }).indexOf(entryMonth)
+        const indexOfMonth = byYear[indexOfYear]
+            .months.map(x => { return x.month }).indexOf(entryMonth);
 
         if (indexOfMonth > -1) {
-            if (data.entries.byYear[indexOfYear].months[indexOfMonth].entries.length) {
-                data.entries.byYear[indexOfYear].months[indexOfMonth].entries.push(eIdx)
+            if (byYear[indexOfYear].months[indexOfMonth].entries.length) {
+                byYear[indexOfYear].months[indexOfMonth].entries.push(eIdx)
             }
             else {
-                data.entries.byYear[indexOfYear].months[indexOfMonth].entries = [ eIdx ]
+                byYear[indexOfYear].months[indexOfMonth].entries = [ eIdx ]
             }
         }
         else {
-            data.entries.byYear[indexOfYear].months.push({
+            byYear[indexOfYear].months.push({
                 month: entryMonth,
                 entries: [ eIdx ]
             })
         }
     }
     else {
-        data.entries.byYear.push({
+        byYear.push({
             year: entryYear,
             months: [{
                 month: entryMonth,
@@ -225,13 +146,13 @@ const addEntryByDate = function(entry, eIdx) {
 
 const sortFunc = function(field) {
     return function(a, b) {
-        return field === 'date' ? 
-            new Date(b[field]) - new Date(a[field]) : 
-            b[field] - a[field]
+        return field === 'date' 
+            ? new Date(b[field]) - new Date(a[field]) 
+            : b[field] - a[field]
     }
 }
 
-const buildHanozIndex = function() {
+const buildHanozIndex = function(data) {
     console.log('building hanoz index')
 
     const files = fs.readdirSync(dir.hanozDir)
@@ -239,15 +160,18 @@ const buildHanozIndex = function() {
             const path_to_file = path.join(dir.hanozDir, file)
 
             // remove entries that start with "."
-            if (file.substr(0, 1) !== ".") {
+            if (file.substring(0, 1) !== ".") {
                 return fs.lstatSync(path_to_file).isFile()
             }
         })
     
-    for (let i = 0, j = files.length; i < j; i++) {
-        const filename = dir.hanozDir + '/' + files[i]
-        const fileContents = fs.readFileSync(filename, 'utf8')
-        const metadata = yamlFront.loadFront(fileContents)
+    let i = 0;
+    let j = files.length;
+
+    for (; i < j; i++) {
+        const filename = dir.hanozDir + '/' + files[i];
+        const fileContents = fs.readFileSync(filename, 'utf8');
+        const metadata = yamlFront.loadFront(fileContents);
 
         let page = {}
 
@@ -271,11 +195,18 @@ const buildHanozIndex = function() {
     }
 }
 
-const buildSearchIndex = function(type) {
+const writeHanoz = function(data) {
+    const content = templates.views.hanoz({ pages: data.entries.hanoz });
+    const html = templates.layouts.hanoz({ content });
+    fs.writeFileSync(`${dir.docs}/Hanoz/p/index.html`, html);
+}
+
+const buildSearchIndex = function(type, data) {
     console.log(`building **${type}** search index`)
 
     const docs = [];
     let id = 0;
+
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e]
         const doc = {
@@ -306,11 +237,14 @@ const buildSearchIndex = function(type) {
 
 }
 
-const writeSearchIdx = function() {
-    fs.writeFileSync(`${dir.docs}/_search/searchIdx.json`, JSON.stringify(data.idx))
+const writeSearchIdx = function(data) {
+    fs.writeFileSync(
+        `${dir.docs}/_search/searchIdx.json`, 
+        JSON.stringify(data.idx)
+    )
 }
 
-const writeByName = function() {
+const writeByName = function(data) {
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e];
 
@@ -334,17 +268,19 @@ const writeByName = function() {
             entry.content = templates.views[tmpl](entry);
             const html = templates.layouts[tmpl](entry);
 
-            try {
-                fs.mkdirSync(`${dir.docs}/${entry.name}/p`)
-            }
-            catch(e) {}
+            const entryDir = `${dir.docs}/${entry.name}/p`;
+            const dirExists = fs.existsSync(entryDir);
 
-            fs.writeFileSync(`${dir.docs}/${entry.name}/p/index.html`, html)
+            if (!dirExists) {
+                fs.mkdirSync(entryDir);
+            }
+
+            fs.writeFileSync(`${entryDir}/index.html`, html)
         }
     }
 }
 
-const writeByDate = function() {
+const writeByDate = function(data) {
     console.log('writing by dates');
     const d = {
         created: moment().format('MMM DD, YYYY'),
@@ -362,7 +298,7 @@ const writeByDate = function() {
     fs.writeFileSync(`${dir.docs}/_dates/index.html`, html);
 }
 
-const writeByTags = function() {
+const writeByTags = function(data) {
     console.log('writing by tags');
     const date = moment().format('MMM DD, YYYY');
     const d = {
@@ -401,7 +337,7 @@ const writeByTags = function() {
     }
 }
 
-const writeDefault = function() {
+const writeDefault = function(data) {
     const entryName = data.entries.byDate[0].name === 'cv-latest' 
         ? data.entries.byDate[1].name 
         : data.entries.byDate[0].name;
@@ -415,23 +351,23 @@ const writeDefault = function() {
     fs.writeFileSync(`${dir.docs}/index.html`, html);
 }
 
-const write = function() {
-    writeByName();
-    //writePresentations()
-    writeByDate();
-    writeByTags();
-    writeDefault();
-    writeSearchIdx();
+const write = function(data) {
+    writeByName(data);
+    writeByDate(data);
+    writeByTags(data);
+    writeDefault(data);
+    writeSearchIdx(data);
+    writeHanoz(data);
 }
 
-const finish = function() {
+const finish = function(data) {
     data.entries.byDate.sort(sortFunc('date'));
     data.entries.byYear.sort((a, b) => b['year'] - a['year']);
     data.entries.byYear.forEach(x => x.months.sort((a, b) => b['month'] - a['month']));
-    prevNext();
-    buildHanozIndex();
-    buildSearchIndex('mini');
-    write();
+    prevNext(data);
+    buildHanozIndex(data);
+    buildSearchIndex('mini', data);
+    write(data);
 }
 
 const makeDates = function(entry) {
@@ -448,9 +384,21 @@ const makeDates = function(entry) {
 }
 
 const go = function(dir) {
-    compileTemplates();
+    const data = {
+        entries: {
+            byName: {},
+            byDate: [],
+            byTag: {},
+            byTag2: [],
+            byYear: [],
+            hanoz: []
+        },
+    
+        idx: {}
+    };
 
     Walker(dir)
+        // @ts-ignore
         .on('file', function(file, stat) {
 
             // file = .docs/Yi-Fu-Tuan/index.md
@@ -491,23 +439,25 @@ const go = function(dir) {
 
                 makeDates(entry);
 
-                const code = entry.origTags && entry.origTags.includes('code');
-                entry.hasCode = code 
-                    ? true 
-                    : false;
+                let hasCode = false;
+                let isPresentation = false;
+                let isAlbum = false;
 
-                if (entry.type) {
-                    entry.type.forEach(t => {
-                        entry[t] = true;
-                    })
+                if (entry.origTags) {
+                    const origTags = entry.origTags;
+
+                    hasCode = origTags.includes('code');
+                    isPresentation = origTags.indexOf('presentation') > -1;
+                    isAlbum = origTags.indexOf('album') > -1
                 }
 
-                // if (entry.js) {
-                //     console.log(entry.name, entry.js)
-                // }
+                entry.hasCode = hasCode ? true : false;
 
-                // presentation entry
-                if (entry.origTags && entry.origTags.indexOf('presentation') > -1) {
+                if (entry.type) {
+                    entry.type.forEach(t => entry[t] = true)
+                }
+
+                if (isPresentation) {
                     entry.layout = fm.layout || 'main';
                     entry.template = fm.template || 'entry-presentation';
 
@@ -517,6 +467,7 @@ const go = function(dir) {
 
                     if (entry.authors) {
                         const len = entry.authors.length;
+
                         if (len > 1) {
                             entry.authors[len - 1] = 'and ' + entry.authors[len - 1];
                             entry.authors.unshift(me);
@@ -534,7 +485,7 @@ const go = function(dir) {
                 }
 
                 // album entry
-                else if (entry.origTags && entry.origTags.indexOf('album') > -1) {
+                else if (isAlbum) {
                     entry.layout = fm.layout || 'main';
                     entry.template = fm.template || 'entry';
                     entry.isAlbum = true;
@@ -565,8 +516,8 @@ const go = function(dir) {
                     notes: entry.notes
                 }
 
-                addEntryByTags(entry, eIdx);
-                addEntryByDate(entry, eIdx);
+                addEntryByTags(entry, eIdx, data);
+                addEntryByDate(entry, eIdx, data);
             }
         })
         .on('error', function(er, entry, stat) {
@@ -574,36 +525,8 @@ const go = function(dir) {
         })
         .on('end', function() {
             console.log('All files traversed.');
-            finish();
+            finish(data);
         })
 }
 
-// const go2 = (dir) => {
-//     const list = [];
-
-//     Walker(dir)
-//         .on('file', function(file, stat) {
-
-//             // file = .docs/Yi-Fu-Tuan/index.md
-//             // name = Yi-Fu-Tuan
-//             // dir  = .docs/Yi-Fu-Tuan/
-//             // url  = https://punkish.org/Yi-Fu-Tuan/
-            
-//             if (path.basename(file) === 'index.md') {
-//                 fs.stat((file), (err, stats) => {
-//                     list.push([path.dirname(file).split('/')[1], stats.mtime]);
-//                 })
-//             }
-//         })
-//         .on('error', function(er, entry, stat) {
-//             console.log('Got error ' + er + ' on entry ' + entry)
-//         })
-//         .on('end', function() {
-//             //console.log('All files traversed.')
-//             //finish()
-//             console.table(list);
-//         })
-// }
-
-//go2(dir.docs)
 go(dir.docs)

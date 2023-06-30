@@ -71,6 +71,6 @@
     }                                                                           
     // Server-side export                                                       
     if (typeof module !== 'undefined') {                                        
-        module.exports = footnotes;                                             
+        module.exports = footnotes;
     }                                                                           
 }());
