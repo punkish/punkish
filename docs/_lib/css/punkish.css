@@ -138,6 +138,13 @@ https://codepen.io/EightArmsHQ/post/fitting-a-div-to-the-screen-and-an-aspect-ra
     font-size: 7pt;
 }
 
+/* for text translation back and forth */
+.punkish-pair {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: help;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {
     .slideContainer { border: 1px solid silver; width: 100%; padding-bottom: 56.25%; position: relative; margin-top: 2em; font-family: "et-book", serif; background: #555; box-shadow: inset 1vh 1vh 10vh 0 rgba(0, 0, 0, 0.5); display: flex; box-sizing: border-box; border: 10px solid #cecece; }
