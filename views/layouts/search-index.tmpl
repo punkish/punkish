@@ -1,0 +1,20 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range $elem_index, $elem_val := .Site.RegularPages -}}
+    {{- $.Scratch.Add "index" (dict "id" $elem_index "title" .Title "tags" .Params.tags "categories" .Params.categories "contents" .Plain "permalink" .Permalink) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}
+
+[
+    {
+        "categories": [
+            ""
+        ],
+        "contents": "eBioDiv is a Swissuniversities funded project by a consortium of HES-SO/SIB (Swiss Institute of Bioinformatics), Plazi, and the Natural History Museum of Bern (NMBE) with the goal to build a knowledge infrastructure to bring data in taxonomic literature together with physical specimens digitalized through projects funded by SwissCollNet. The linking is based on that fact that specimen, the basis of taxonomic works, are cited formally in the publications as material citations. They can be made FAIR (Findable, accessible, interoperable and reusable). The eBioDiv matching service allows to discover the cited specimen, especially if the natural history institution uploaded them to the Global Biodiversity Information Facility GBIF. The link furthermore allows to follow-up from a specimen to what is known about it in the published literature. The complementing Horizon Europe funded project Biodiversity Community Integrated Knowledge Library BiCIKL allows further linking of a specimen to taxonomic names or gene sequences.\n",
+        "permalink": "http://localhost:1313/posts/2023/03/linking-specimens-with-literature/",
+        "tags": [
+            "Events",
+            "Lecture",
+            "eBioDiv"
+        ],
+        "title": "eBioDiv: linking specimens with literature, or to what is known about a specimen"
+    }

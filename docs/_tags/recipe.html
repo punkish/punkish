@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
 
@@ -48,7 +49,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">recipe</span></h1>
-    <div class="created">Oct 11, 2023</div>
+    <div class="created">Apr 28, 2024</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -119,12 +120,12 @@
             <div class="notes"> <a href="/Red-Lentil-Soup">more</a></div>
         </details>
         <details class="entry">
-            <summary>Roasted Parsnips with Orange Zest</summary>
-            <div class="notes"> <a href="/Roasted-Parsnips-with-Orange-Zest">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Roasted Maple Glazed Baby Carrots with Dried Grapes</summary>
             <div class="notes"> <a href="/Roasted-Maple-Glazed-Baby-Carrots-with-Dried-Grapes">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Roasted Parsnips with Orange Zest</summary>
+            <div class="notes"> <a href="/Roasted-Parsnips-with-Orange-Zest">more</a></div>
         </details>
         <details class="entry">
             <summary>Salmon With Ginger Salsa</summary>
@@ -171,7 +172,10 @@
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.0.1/dist/umd/index.min.js"></script>
+    <!-- minisearch -->
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="/_lib/js/search-mini.js"></script>
+    
     <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>

@@ -12,6 +12,7 @@ tags        :
     - desire
 stars      : 
 css        : black
+comment    : in memoriam, Eliana Hechter
 ---
 
 eh: “Would you have a child now?”
@@ -27,4 +28,4 @@ eh: “The chance of problems increases as both parents age. The risks to the ne
 
 I could barely see her face in the fading sunlight, but she made sense, much beyond her years. I remembered what she said, and I thought I would get back in touch with her eventually.
 
-The sun set, and I couldn’t see her anymore. I wish I had contacted her while there was still light, such is the [inevitable futility of eventually](Inevitable-Futility-of-Eventually).
+The sun set, and I couldn’t see her anymore. I wish I had contacted her while there was still light, such is the [inevitable futility of eventually](/Inevitable-Futility-of-Eventually).

@@ -1,5 +1,3 @@
-//@ts-check
-
 'use strict';
 
 import Walker from 'walker';
@@ -202,8 +200,6 @@ const writeHanoz = function(data) {
 }
 
 const buildSearchIndex = function(type, data) {
-    console.log(`building **${type}** search index`)
-
     const docs = [];
     let id = 0;
 
@@ -220,6 +216,8 @@ const buildSearchIndex = function(type, data) {
     }
 
     if (type === 'lunr') {
+        console.log(`building _lunr_ search index`);
+
         data.idx = lunr(function () {
             this.field('title', { boost: 10 }),
             this.field('text'), { boost: 20 },
@@ -229,6 +227,8 @@ const buildSearchIndex = function(type, data) {
         })
     } 
     else if (type === 'mini') {
+        console.log(`building _mini_ search index`)
+
         const miniSearch = new MiniSearch(minisearchOpts)
 
         miniSearch.addAll(docs)
@@ -238,6 +238,7 @@ const buildSearchIndex = function(type, data) {
 }
 
 const writeSearchIdx = function(data) {
+    console.log('writing search index');
     fs.writeFileSync(
         `${dir.docs}/_search/searchIdx.json`, 
         JSON.stringify(data.idx)
