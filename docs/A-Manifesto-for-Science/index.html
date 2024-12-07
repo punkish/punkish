@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Fri Nov 29 2024 15:37:57 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="Sat Dec 07 2024 23:26:34 GMT+0100 (Central European Standard Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,12 +14,12 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: A Manifesto for Science</title>
-<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
@@ -36,8 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
+    <ul id="searchResults"></ul>
 </div>
 <nav>
     <a href="/cv-latest/">cv</a>
@@ -52,17 +53,17 @@
     <div class="created">Wednesday, December 24, 2014</div>
     
     <div class="content"><h2 id="thedeceptivesuccessofcopyrightlicenses">The Deceptive Success of Copyright Licenses</h2>
-<p>In the 12 years of its existence, Creative Commons has achieved remarkable success, and among the most basic of metrics of its success is the number of CC-licensed works on the web. <a href="The-Deceptive-Success-of-Copyright-Licenses">more</a></p>
+<p>In the 12 years of its existence, Creative Commons has achieved remarkable success, and among the most basic of metrics of its success is the number of CC-licensed works on the web. <a href="/The-Deceptive-Success-of-Copyright-Licenses">more</a></p>
 <h2 id="ittakesallkindstomakeacommons">It Takes All Kinds to Make a Commons</h2>
-<p>Value <em>v</em> of any work is the sum of many kinds of values: monetary, social, cultural, strategic, etc. Value <em>V</em> of a dataset is the sum of the value of each work in the dataset: <code>V = v&lt;sub&gt;1&lt;/sub&gt; + v&lt;sub&gt;2&lt;/sub&gt; … v&lt;sub&gt;n&lt;/sub&gt;</code> <a href="It-Takes-All-Kinds-to-Make-a-Commons">more</a></p>
+<p>Value <em>v</em> of any work is the sum of many kinds of values: monetary, social, cultural, strategic, etc. Value <em>V</em> of a dataset is the sum of the value of each work in the dataset: <code>V = v&lt;sub&gt;1&lt;/sub&gt; + v&lt;sub&gt;2&lt;/sub&gt; … v&lt;sub&gt;n&lt;/sub&gt;</code> <a href="/It-Takes-All-Kinds-to-Make-a-Commons">more</a></p>
 <h2 id="theproblemwithcopyright">The Problem With Copyright</h2>
-<p>Copyright has a limited relevance to science. It applies only to copyrightable information that includes working and peer-reviewed papers, books and articles, and presentations, videos, photos, and other such creative works. <a href="The-Problem-With-Copyright">more</a></p>
+<p>Copyright has a limited relevance to science. It applies only to copyrightable information that includes working and peer-reviewed papers, books and articles, and presentations, videos, photos, and other such creative works. <a href="/The-Problem-With-Copyright">more</a></p>
 <h2 id="thepwords">The “P” Words</h2>
-<p>A particularly thorny problem is reconciling the need to share data with the imperative to protect privacy. <a href="The-P-Words">more</a></p>
+<p>A particularly thorny problem is reconciling the need to share data with the imperative to protect privacy. <a href="/The-P-Words">more</a></p>
 <h2 id="changingtheculture">Changing the Culture</h2>
-<p>Creative Commons contribution has not been as much a development of its licenses as it has been in creating a global community of people who are keen to share their creations around a certain ethic. <a href="Changing-the-Culture">more</a></p>
+<p>Creative Commons contribution has not been as much a development of its licenses as it has been in creating a global community of people who are keen to share their creations around a certain ethic. <a href="/Changing-the-Culture">more</a></p>
 <h2 id="fromayetosi">From Aye to Si</h2>
-<p>To change the culture of science and education we have to encourage risk taking, experimentation, questioning conventional wisdom, unorthodox methods—we have to learn to say “yes” in many domains, in many languages. <a href="From-Aye-to-Si">more</a></p>
+<p>To change the culture of science and education we have to encourage risk taking, experimentation, questioning conventional wisdom, unorthodox methods—we have to learn to say “yes” in many domains, in many languages. <a href="/From-Aye-to-Si">more</a></p>
 <h2 id="beyondlaw">Beyond Law</h2>
 <p>Creative Commons, in spite of its reluctance toward non-copyright focused projects, has undertaken a few novel experiments. <a href="Beyond-Law">more</a></p>
 <h2 id="learningbymakingteachingbydoing">Learning by Making, Teaching by Doing</h2>
@@ -84,10 +85,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
     
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
     
@@ -102,10 +103,11 @@
     
     <script>
     window.addEventListener('load', (e) => {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
+    
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
             // console.log(inp)
@@ -113,6 +115,7 @@
         }
     
         const loc = window.location;
+    
         if (loc.hash) {
             const term = loc.hash.substring(1);
     

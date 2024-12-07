@@ -1,4 +1,4 @@
-let searchVisible = true; 
+//let searchVisible = true; 
 
 // allow us to delay loading json data unless search activated
 let firstRun = true;
@@ -12,30 +12,21 @@ let first = list.firstChild;
 // last child of search list
 let last = list.lastChild; 
 
-// input box for search
-const maininput = document.getElementById('searchInput'); 
-
 // Did we get any search results?
 let resultsAvailable = false; 
 
-if(firstRun) {
+const stopWords = new Set([
+    'and', 'or', 'to', 'in', 'a', 'the', /* ...and more */ 
+]);
 
-    // loads our json data and builds the search index
-    loadSearch(); 
-
-    // let's never do this again
-    firstRun = false; 
-}
-
-const stopWords = new Set(['and', 'or', 'to', 'in', 'a', 'the', /* ...and more */ ]);
-
-// Perform custom term processing (here discarding stop words and downcasing)
-let miniSearch = new MiniSearch({
+const minisearchOpts = {
 
     // fields to index for full-text search
-    fields: ['contents'],
+    fields: ['title', 'name', 'text'],
 
-    processTerm: (term, _fieldName) => stopWords.has(term) ? null : term.toLowerCase(),
+    processTerm: (term, _fieldName) => stopWords.has(term) 
+        ? null 
+        : term.toLowerCase(),
 
     searchOptions: {
         boost: { title: 2 },
@@ -43,35 +34,44 @@ let miniSearch = new MiniSearch({
     },
 
     // fields to return with search results
-    storeFields: ['title', 'contents', 'permalink'] 
-});
+    storeFields: ['title', 'name', 'text']
+}
+
+let miniSearch;
 
 // ==========================================
 // execute search as each character is typed
 //
-document.getElementById("searchInput").onkeyup = function(e) { 
+// input box for search
+const maininput = document.getElementById('q'); 
+
+maininput.onkeyup = function(e) {
+    if(firstRun) {
+
+        // loads our json data and builds the search index
+        loadSearch(); 
+    
+        // let's never do this again
+        firstRun = false; 
+    }
+
     executeSearch(this.value);
 }
 
-function fetchJSONFile(path, callback) {
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
-                const data = JSON.parse(httpRequest.responseText);
-                if (callback) callback(data);
-            }
+async function loadSearch() {
+    try {
+        const response = await fetch('/_search/searchIdx.json');
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
         }
-    };
-
-    httpRequest.open('GET', path);
-    httpRequest.send(); 
-  }
-
-function loadSearch() {
-    fetchJSONFile('/index.json', function(data){
-        miniSearch.addAll(data);
-    });
+    
+        const text = await response.text();
+        miniSearch = MiniSearch.loadJSON(text, minisearchOpts);
+    } 
+    catch (error) {
+        console.error(error.message);
+    }
 }
 
 function executeSearch(term) {
@@ -104,40 +104,48 @@ function executeSearch(term) {
         const side = snippetLength / 2;
 
         results.forEach(item => {
+            //console.log(item)
+            // item
+            // {
+            //     "id": 3,
+            //     "score": 6.515940421862562,
+            //     "terms": ["ge"],
+            //     "queryTerms": ["ge"],
+            //     "match": {"ge": ["text"]},
+            //     "title": "3D Printing",
+            //     "name": "3D-Printing",
+            //     "text": "\n\n<figure>\n    <img src=\"img/3axis-…"
+            //   }
 
-//         contents: "…"
-//         id: 32
-//         match: Object { digitize: (1) […] }
-//         permalink: "http://localhost:1313/posts/bhl-and-plazi-partnership/"
-//         score: 1.7846304978818683
-//         terms: Array [ "digitize" ]
-//         title: "BHL and Plazi partnership"
-
-        //const item = i.item;
         const terms = item.terms;
-        const permalink = item.permalink;
+        const name = item.name;
         const title = item.title;
-        //let content = item.contents.substring(0, 200);
-        let content = item.contents;
+        // let text = item.text;
 
-        terms.forEach(term => {
-            const re = new RegExp(`(${term})`, 'i');
-            const matchInfo = content.match(re);
-            const left = matchInfo.index - side;
-            const right = matchInfo.index + term.length + side;
-            content = content.substring(left, right);
-            //content = content.replace(re, '<span class="hilite">$1</span>');
-            content = content.replace(re, '<mark>$1</mark>');
-        })
+        // terms.forEach(term => {
+        //     const re = new RegExp(`(${term})`, 'i');
+
+        //     if (text) {
+        //         const matchInfo = text.match(re);
+        //         const left = matchInfo.index - side;
+        //         const right = matchInfo.index + term.length + side;
+        //         text = text.substring(left, right);
+        //         text = text.replace(re, '<mark>$1</mark>');
+        //     }
+            
+        // })
         
   
+        // searchitems = searchitems + 
+        //     `<li>
+        //     <a href="/${name}/" tabindex="0">
+        //         <h2 class="title">${title}</h2>
+        //         <p>${text}…</p>
+        //     </a>
+        //     </li>`
+        // });
         searchitems = searchitems + 
-            `<li>
-            <a href="${permalink}" tabindex="0">
-                <h2 class="title">${title}</h2>
-                <p>${content}…</p>
-            </a>
-            </li>`
+            `<li><a href="/${name}/" tabindex="0">${title}</a></li>`
         });
   
         resultsAvailable = true;
@@ -146,10 +154,12 @@ function executeSearch(term) {
     document.getElementById("searchResults").innerHTML = searchitems;
     if (results.length > 0) {
 
-        // first result container — used for checking against keyboard up/down location
+        // first result container — used for checking against keyboard up/down 
+        // location
         first = list.firstChild.firstElementChild; 
 
-        // last result container — used for checking against keyboard up/down location
+        // last result container — used for checking against keyboard up/down 
+        // location
         last = list.lastChild.firstElementChild; 
     }
 }

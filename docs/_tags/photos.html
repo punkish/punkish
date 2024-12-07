@@ -14,12 +14,12 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: </title>
-<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
@@ -36,8 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
+    <ul id="searchResults"></ul>
 </div>
 <nav>
     <a href="/cv-latest/">cv</a>
@@ -49,7 +50,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">photos</span></h1>
-    <div class="created">Nov 29, 2024</div>
+    <div class="created">Dec 07, 2024</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -72,12 +73,12 @@
             <div class="notes"> <a href="/Afternoon-Coffee-New-Delhi">more</a></div>
         </details>
         <details class="entry">
-            <summary>Anticipation</summary>
-            <div class="notes"> <a href="/Anticipation">more</a></div>
-        </details>
-        <details class="entry">
             <summary>The Angel and the Acolytes</summary>
             <div class="notes"> <a href="/Angel-and-the-Acolytes">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Anticipation</summary>
+            <div class="notes"> <a href="/Anticipation">more</a></div>
         </details>
         <details class="entry">
             <summary>Art Alley</summary>
@@ -104,24 +105,20 @@
             <div class="notes"> <a href="/CUBE-Critters">more</a></div>
         </details>
         <details class="entry">
-            <summary>Cape Town Kid</summary>
-            <div class="notes"> <a href="/Cape-Town-Kid">more</a></div>
+            <summary>Caribbean Nights</summary>
+            <div class="notes"> <a href="/Caribbean-Nights">more</a></div>
         </details>
         <details class="entry">
-            <summary>Chiaroscuro of a Calico Cat</summary>
-            <div class="notes"> <a href="/Chiaroscuro-of-a-Calico-Cat">more</a></div>
+            <summary>Cape Town Kid</summary>
+            <div class="notes"> <a href="/Cape-Town-Kid">more</a></div>
         </details>
         <details class="entry">
             <summary>Chess in the park</summary>
             <div class="notes"> <a href="/Chess-in-the-park">more</a></div>
         </details>
         <details class="entry">
-            <summary>Caribbean Nights</summary>
-            <div class="notes"> <a href="/Caribbean-Nights">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Cigarette break</summary>
-            <div class="notes"> <a href="/Cigarette-break">more</a></div>
+            <summary>Chiaroscuro of a Calico Cat</summary>
+            <div class="notes"> <a href="/Chiaroscuro-of-a-Calico-Cat">more</a></div>
         </details>
         <details class="entry">
             <summary>Christiana</summary>
@@ -132,12 +129,16 @@
             <div class="notes"> <a href="/Chutei-Iki">more</a></div>
         </details>
         <details class="entry">
-            <summary>A City</summary>
-            <div class="notes"> <a href="/City">more</a></div>
+            <summary>Cigarette break</summary>
+            <div class="notes"> <a href="/Cigarette-break">more</a></div>
         </details>
         <details class="entry">
             <summary>City is in the Eye of the Beholder</summary>
             <div class="notes"> <a href="/City-is-in-the-Eye-of-the-Beholder">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>A City</summary>
+            <div class="notes"> <a href="/City">more</a></div>
         </details>
         <details class="entry">
             <summary>The Cobbler Next Door</summary>
@@ -152,12 +153,12 @@
             <div class="notes"> <a href="/Cruel-Things">more</a></div>
         </details>
         <details class="entry">
-            <summary>Desire to Learn</summary>
-            <div class="notes"> <a href="/Desire-to-Learn">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Deichtorhallen</summary>
             <div class="notes"> <a href="/Deichtorhallen">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Desire to Learn</summary>
+            <div class="notes"> <a href="/Desire-to-Learn">more</a></div>
         </details>
         <details class="entry">
             <summary>Did You See That ?</summary>
@@ -208,12 +209,12 @@
             <div class="notes"> <a href="/Ghost-of-Elsinore">more</a></div>
         </details>
         <details class="entry">
-            <summary>Holy man</summary>
-            <div class="notes"> <a href="/Holy-man">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Helsinki-Coutonou Ensemble</summary>
             <div class="notes"> <a href="/Helsinki-Coutonou-Ensemble">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Holy man</summary>
+            <div class="notes"> <a href="/Holy-man">more</a></div>
         </details>
         <details class="entry">
             <summary>In the U-Bahn</summary>
@@ -260,52 +261,56 @@
             <div class="notes"> <a href="/Les-Ombres-de-La-Charite">more</a></div>
         </details>
         <details class="entry">
-            <summary>Light and Sound</summary>
-            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>The Light at the Break of Dawn</summary>
-            <div class="notes"> <a href="/Light-at-the-Break-of-Dawn">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Life at the Side of the Road</summary>
             <div class="notes"> <a href="/Life-at-the-Side-of-the-Road">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Light and Sound</summary>
+            <div class="notes"> <a href="/Light-and-Sound">more</a></div>
         </details>
         <details class="entry">
             <summary>A Little Girl Lost</summary>
             <div class="notes"> <a href="/Little-girl-lost">more</a></div>
         </details>
         <details class="entry">
+            <summary>The Light at the Break of Dawn</summary>
+            <div class="notes"> <a href="/Light-at-the-Break-of-Dawn">more</a></div>
+        </details>
+        <details class="entry">
             <summary>London Cranes</summary>
             <div class="notes"> <a href="/London-Cranes">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Looking In, Looking Out</summary>
-            <div class="notes"> <a href="/Looking-In-Looking-Out">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Love art</summary>
-            <div class="notes"> <a href="/Love-art">more</a></div>
         </details>
         <details class="entry">
             <summary>Longmire</summary>
             <div class="notes"> <a href="/Longmire">more</a></div>
         </details>
         <details class="entry">
-            <summary>Luz, mediatinta y sombra</summary>
-            <div class="notes"> <a href="/Luz-mediatinta-y-sombra">more</a></div>
+            <summary>Love art</summary>
+            <div class="notes"> <a href="/Love-art">more</a></div>
         </details>
         <details class="entry">
-            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
-            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
+            <summary>Looking In, Looking Out</summary>
+            <div class="notes"> <a href="/Looking-In-Looking-Out">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Luz, mediatinta y sombra</summary>
+            <div class="notes"> <a href="/Luz-mediatinta-y-sombra">more</a></div>
         </details>
         <details class="entry">
             <summary>Maisons de Poupées</summary>
             <div class="notes"> <a href="/Maisons-de-poupees">more</a></div>
         </details>
         <details class="entry">
+            <summary>The Mahogany Room (and a girl called Antoinette)</summary>
+            <div class="notes"> <a href="/Mahogany-Room">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Memories of Trini</summary>
             <div class="notes"> <a href="/Memories-of-Trini">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>A Moment of Rest</summary>
+            <div class="notes"> <a href="/Moment-of-Rest">more</a></div>
         </details>
         <details class="entry">
             <summary>Montreal Jazz Festival 2016</summary>
@@ -316,16 +321,12 @@
             <div class="notes"> <a href="/Mujeres-en-mi-Vida">more</a></div>
         </details>
         <details class="entry">
-            <summary>A Moment of Rest</summary>
-            <div class="notes"> <a href="/Moment-of-Rest">more</a></div>
+            <summary>My Friend Usha</summary>
+            <div class="notes"> <a href="/My-Friend-Usha">more</a></div>
         </details>
         <details class="entry">
             <summary>My Brother and I</summary>
             <div class="notes"> <a href="/My-Brother-and-I">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>My Friend Usha</summary>
-            <div class="notes"> <a href="/My-Friend-Usha">more</a></div>
         </details>
         <details class="entry">
             <summary>Nagesh, the Cook</summary>
@@ -412,6 +413,10 @@
             <div class="notes"> <a href="/Three-Faces-of-a-Cube">more</a></div>
         </details>
         <details class="entry">
+            <summary>Toy Town</summary>
+            <div class="notes"> <a href="/Toy-Town">more</a></div>
+        </details>
+        <details class="entry">
             <summary>Traffic Police</summary>
             <div class="notes"> <a href="/Traffic-Police">more</a></div>
         </details>
@@ -422,10 +427,6 @@
         <details class="entry">
             <summary>Twin Towers</summary>
             <div class="notes"> <a href="/Twin-Towers">more</a></div>
-        </details>
-        <details class="entry">
-            <summary>Toy Town</summary>
-            <div class="notes"> <a href="/Toy-Town">more</a></div>
         </details>
         <details class="entry">
             <summary>View With A Room</summary>
@@ -469,10 +470,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
     
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
     
@@ -487,10 +488,11 @@
     
     <script>
     window.addEventListener('load', (e) => {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
+    
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
             // console.log(inp)
@@ -498,6 +500,7 @@
         }
     
         const loc = window.location;
+    
         if (loc.hash) {
             const term = loc.hash.substring(1);
     

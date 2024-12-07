@@ -14,12 +14,12 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: </title>
-<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
@@ -36,8 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
+    <ul id="searchResults"></ul>
 </div>
 <nav>
     <a href="/cv-latest/">cv</a>
@@ -49,7 +50,7 @@
     <main id="content"><!-- entries by dates -->
 <section>
     <h1 class="title">Entries by Date</h1>
-    <div class="created">Nov 29, 2024</div>
+    <div class="created">Dec 07, 2024</div>
 
     <div class="content">
         <p>entries sorted by year and month. (also see <a href="/_tags/">entries by tag</a>.)</p>
@@ -326,11 +327,11 @@
                     <div class="notes"> <a href="/Sensors">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>3D Printing</summary>
+                    <summary>Artificial Intelligence</summary>
                     <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Open Science and Open Data</summary>
+                    <summary>3D Printing</summary>
                     <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
                 </details>
                 <details class="entry">
@@ -342,7 +343,7 @@
                     <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Artificial Intelligence</summary>
+                    <summary>Open Science and Open Data</summary>
                     <div class="notes"> <a href="/Disruptive-Technologies">more</a></div>
                 </details>
             </details>
@@ -529,6 +530,17 @@
                 </details>
             </details>
             <details class="month">
+                <summary>April</summary>
+                <details class="entry">
+                    <summary>Canidae, can I do?</summary>
+                    <div class="notes"> <a href="/Canidae-Can-I-Do">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Strange Angels</summary>
+                    <div class="notes"> <a href="/Strange-Angels">more</a></div>
+                </details>
+            </details>
+            <details class="month">
                 <summary>June</summary>
                 <details class="entry">
                     <summary>Ce que tu demandes, je me demande aussi</summary>
@@ -569,17 +581,6 @@
                 <details class="entry">
                     <summary>Who Owns Culture</summary>
                     <div class="notes"> <a href="/Who-Owns-Culture">more</a></div>
-                </details>
-            </details>
-            <details class="month">
-                <summary>April</summary>
-                <details class="entry">
-                    <summary>Canidae, can I do?</summary>
-                    <div class="notes"> <a href="/Canidae-Can-I-Do">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Strange Angels</summary>
-                    <div class="notes"> <a href="/Strange-Angels">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -680,6 +681,37 @@
         <details class="year">
             <summary>2016</summary>
             <details class="month">
+                <summary>January</summary>
+                <details class="entry">
+                    <summary>A Modern Love Story</summary>
+                    <div class="notes"> <a href="/A-Modern-Love-Story">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Blessed are the Swordsmen</summary>
+                    <div class="notes"> <a href="/Blessed-are-the-swordsmen">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>CUBE Critters</summary>
+                    <div class="notes"> <a href="/CUBE-Critters">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Everyone is a Mentor</summary>
+                    <div class="notes"> <a href="/Everyone-is-a-Mentor">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Inexorable Inevitability</summary>
+                    <div class="notes"> <a href="/Inexorable-inevitability">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>The Turtle and the Rabbit</summary>
+                    <div class="notes"> <a href="/Turtle-and-the-Rabbit">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>What’s in a Name</summary>
+                    <div class="notes">why names matter in taxonomy, and how technology can help. <a href="/Whats-in-a-name">more</a></div>
+                </details>
+            </details>
+            <details class="month">
                 <summary>July</summary>
                 <details class="entry">
                     <summary>The “A” List</summary>
@@ -719,37 +751,6 @@
                 </details>
             </details>
             <details class="month">
-                <summary>January</summary>
-                <details class="entry">
-                    <summary>A Modern Love Story</summary>
-                    <div class="notes"> <a href="/A-Modern-Love-Story">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Blessed are the Swordsmen</summary>
-                    <div class="notes"> <a href="/Blessed-are-the-swordsmen">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>CUBE Critters</summary>
-                    <div class="notes"> <a href="/CUBE-Critters">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Everyone is a Mentor</summary>
-                    <div class="notes"> <a href="/Everyone-is-a-Mentor">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Inexorable Inevitability</summary>
-                    <div class="notes"> <a href="/Inexorable-inevitability">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>The Turtle and the Rabbit</summary>
-                    <div class="notes"> <a href="/Turtle-and-the-Rabbit">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>What’s in a Name</summary>
-                    <div class="notes">why names matter in taxonomy, and how technology can help. <a href="/Whats-in-a-name">more</a></div>
-                </details>
-            </details>
-            <details class="month">
                 <summary>May</summary>
                 <details class="entry">
                     <summary>All That Glitters is Not Sold</summary>
@@ -766,6 +767,33 @@
                 <details class="entry">
                     <summary>Reading Writings</summary>
                     <div class="notes"> <a href="/Reading-Writings">more</a></div>
+                </details>
+            </details>
+            <details class="month">
+                <summary>October</summary>
+                <details class="entry">
+                    <summary>Baillie Guard</summary>
+                    <div class="notes"> <a href="/Baillie-Guard">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Data Apps</summary>
+                    <div class="notes">Don&#x27;t make web apps, make data apps. <a href="/Data-Apps">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Geottingen</summary>
+                    <div class="notes">Present and future geo activities at Göttingen <a href="/Geottingen">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Maker Faire Berlin 2016</summary>
+                    <div class="notes"> <a href="/Maker-Faire-Berlin-2016">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Yadav</summary>
+                    <div class="notes"> <a href="/Yadav">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>expressjs app with socket.io</summary>
+                    <div class="notes"> <a href="/expressjs-app-with-socket-io">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -797,33 +825,6 @@
                 <details class="entry">
                     <summary>My Hurt Locker</summary>
                     <div class="notes"> <a href="/My-Hurt-Locker">more</a></div>
-                </details>
-            </details>
-            <details class="month">
-                <summary>October</summary>
-                <details class="entry">
-                    <summary>Baillie Guard</summary>
-                    <div class="notes"> <a href="/Baillie-Guard">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Data Apps</summary>
-                    <div class="notes">Don&#x27;t make web apps, make data apps. <a href="/Data-Apps">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Geottingen</summary>
-                    <div class="notes">Present and future geo activities at Göttingen <a href="/Geottingen">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Maker Faire Berlin 2016</summary>
-                    <div class="notes"> <a href="/Maker-Faire-Berlin-2016">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Yadav</summary>
-                    <div class="notes"> <a href="/Yadav">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>expressjs app with socket.io</summary>
-                    <div class="notes"> <a href="/expressjs-app-with-socket-io">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -876,6 +877,13 @@
                 </details>
             </details>
             <details class="month">
+                <summary>August</summary>
+                <details class="entry">
+                    <summary>Paris Plage</summary>
+                    <div class="notes"> <a href="/Paris-Plage">more</a></div>
+                </details>
+            </details>
+            <details class="month">
                 <summary>April</summary>
                 <details class="entry">
                     <summary>Perfect Health Repo Desiderata</summary>
@@ -888,13 +896,6 @@
                 <details class="entry">
                     <summary>What You Do Says About You</summary>
                     <div class="notes"> <a href="/What-You-Do-Says-About-You">more</a></div>
-                </details>
-            </details>
-            <details class="month">
-                <summary>August</summary>
-                <details class="entry">
-                    <summary>Paris Plage</summary>
-                    <div class="notes"> <a href="/Paris-Plage">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -1004,12 +1005,12 @@
                     <div class="notes"> <a href="/Still-blowin-on-the-CSM">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Things that confound me</summary>
-                    <div class="notes"> <a href="/Things-that-confound-me">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>There is something better than perfection</summary>
                     <div class="notes"> <a href="/There-is-something-better-than-perfection">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Things that confound me</summary>
+                    <div class="notes"> <a href="/Things-that-confound-me">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -1248,6 +1249,13 @@
                 </details>
             </details>
             <details class="month">
+                <summary>July</summary>
+                <details class="entry">
+                    <summary>Chutney</summary>
+                    <div class="notes"> <a href="/Chutney">more</a></div>
+                </details>
+            </details>
+            <details class="month">
                 <summary>May</summary>
                 <details class="entry">
                     <summary>Citizens Consent</summary>
@@ -1262,23 +1270,16 @@
                     <div class="notes"> <a href="/Pre-processed-TDM-ready-archive">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>TDM Workshops</summary>
-                    <div class="notes"> <a href="/TDM-Workshops">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>TDM Friendly Contract Boilerplate</summary>
                     <div class="notes"> <a href="/TDM-Friendly-Contract-Boilerplate">more</a></div>
                 </details>
                 <details class="entry">
+                    <summary>TDM Workshops</summary>
+                    <div class="notes"> <a href="/TDM-Workshops">more</a></div>
+                </details>
+                <details class="entry">
                     <summary>Three Strategies for TDM</summary>
                     <div class="notes"> <a href="/Three-Strategies-for-TDM">more</a></div>
-                </details>
-            </details>
-            <details class="month">
-                <summary>July</summary>
-                <details class="entry">
-                    <summary>Chutney</summary>
-                    <div class="notes"> <a href="/Chutney">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -1587,12 +1588,12 @@
             <details class="month">
                 <summary>October</summary>
                 <details class="entry">
-                    <summary>Designing URIs</summary>
-                    <div class="notes"> <a href="/Designing-URIs">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Data Chain</summary>
                     <div class="notes"> <a href="/Data-Chain">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Designing URIs</summary>
+                    <div class="notes"> <a href="/Designing-URIs">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Licensing FAQ</summary>
@@ -1647,13 +1648,6 @@
                 </details>
             </details>
             <details class="month">
-                <summary>March</summary>
-                <details class="entry">
-                    <summary>Future of Scientific Knowledge Discovery in Open Networked Environments</summary>
-                    <div class="notes"> <a href="/Future-of-Scientific-Knowledge-Discovery-in-Open-Networked-Environments">more</a></div>
-                </details>
-            </details>
-            <details class="month">
                 <summary>January</summary>
                 <details class="entry">
                     <summary>GEOSS Data Sharing Task Force</summary>
@@ -1662,6 +1656,13 @@
                 <details class="entry">
                     <summary>WG on Research, Data and Knowledge Sharing, UN Foundation</summary>
                     <div class="notes"> <a href="/WG-on-Research,-Data-and-Knowledge-Sharing,-UN-Foundation">more</a></div>
+                </details>
+            </details>
+            <details class="month">
+                <summary>March</summary>
+                <details class="entry">
+                    <summary>Future of Scientific Knowledge Discovery in Open Networked Environments</summary>
+                    <div class="notes"> <a href="/Future-of-Scientific-Knowledge-Discovery-in-Open-Networked-Environments">more</a></div>
                 </details>
             </details>
             <details class="month">
@@ -2001,12 +2002,12 @@
             <details class="month">
                 <summary>October</summary>
                 <details class="entry">
-                    <summary>CODATA Task Group on Data-Citation, Copenhagen, Denmark</summary>
-                    <div class="notes"> <a href="/CODATA-Task-Group-on-Data-Citation,-Copenhagen,-Denmark">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>CODATA Task Group on Data-Citation, Taipei, Taiwan</summary>
                     <div class="notes"> <a href="/CODATA-Task-Group-on-Data-Citation,-Taipei,-Taiwan">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>CODATA Task Group on Data-Citation, Copenhagen, Denmark</summary>
+                    <div class="notes"> <a href="/CODATA-Task-Group-on-Data-Citation,-Copenhagen,-Denmark">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Information Commons of Science</summary>
@@ -2181,24 +2182,24 @@
                     <div class="notes"> <a href="/About">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Anthony Seeger</summary>
-                    <div class="notes"> <a href="/Anthony-Seeger">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Appropriate Scale</summary>
                     <div class="notes"> <a href="/Appropriate-Scale">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Anthony Seeger</summary>
+                    <div class="notes"> <a href="/Anthony-Seeger">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Arc 2 Earth</summary>
                     <div class="notes"> <a href="/Arc-2-Earth">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>As We May Think</summary>
-                    <div class="notes"> <a href="/As-We-May-Think">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>As We May Click</summary>
                     <div class="notes"> <a href="/As-We-May-Click">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>As We May Think</summary>
+                    <div class="notes"> <a href="/As-We-May-Think">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>BINGOs</summary>
@@ -2249,16 +2250,16 @@
                     <div class="notes"> <a href="/Computing-Stack">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Creative Commons</summary>
-                    <div class="notes"> <a href="/Creative-Commons">more</a></div>
+                    <summary>Corn Pudding</summary>
+                    <div class="notes"> <a href="/Corn-Pudding">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Crab Cakes</summary>
                     <div class="notes"> <a href="/Crab-Cakes">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Corn Pudding</summary>
-                    <div class="notes"> <a href="/Corn-Pudding">more</a></div>
+                    <summary>Creative Commons</summary>
+                    <div class="notes"> <a href="/Creative-Commons">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Creative Destruction</summary>
@@ -2277,44 +2278,44 @@
                     <div class="notes"> <a href="/Data-Citation-Task-Group-meeting">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Developing Markets Anti Americanism</summary>
-                    <div class="notes"> <a href="/Developing-Markets-Anti-Americanism">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Different Roles of Technology</summary>
-                    <div class="notes"> <a href="/Different-Roles-of-Technology">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Development Alternatives</summary>
                     <div class="notes"> <a href="/Development-Alternatives">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Digital Access Index India</summary>
-                    <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Does Trust Beget Trustworthiness</summary>
-                    <div class="notes"> <a href="/Does-Trust-Beget-Trustworthiness">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Digital Manaslu</summary>
-                    <div class="notes"> <a href="/Digital-Manaslu">more</a></div>
+                    <summary>Developing Markets Anti Americanism</summary>
+                    <div class="notes"> <a href="/Developing-Markets-Anti-Americanism">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Digital Access Index</summary>
                     <div class="notes"> <a href="/Digital-Access-Index">more</a></div>
                 </details>
                 <details class="entry">
+                    <summary>Different Roles of Technology</summary>
+                    <div class="notes"> <a href="/Different-Roles-of-Technology">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Digital Access Index India</summary>
+                    <div class="notes"> <a href="/Digital-Access-Index-India">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Digital Manaslu</summary>
+                    <div class="notes"> <a href="/Digital-Manaslu">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Does Trust Beget Trustworthiness</summary>
+                    <div class="notes"> <a href="/Does-Trust-Beget-Trustworthiness">more</a></div>
+                </details>
+                <details class="entry">
                     <summary>Doubling down on Markdown for science</summary>
                     <div class="notes"> <a href="/Doubling-down-on-Markdown-for-science">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>ESRI Projections to Proj4 Text</summary>
-                    <div class="notes"> <a href="/ESRI-Projections-to-Proj4-Text">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>E F Schumacher</summary>
                     <div class="notes"> <a href="/E-F-Schumacher">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>ESRI Projections to Proj4 Text</summary>
+                    <div class="notes"> <a href="/ESRI-Projections-to-Proj4-Text">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Eliza on Emacs</summary>
@@ -2325,14 +2326,6 @@
                     <div class="notes"> <a href="/Emergence-of-Trust-Networks-Under-Uncertainty">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Fanfare For The Silent Man - 1</summary>
-                    <div class="notes"> <a href="/Fanfare-For-The-Silent-Man">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Fanfare For The Silent Man - 2</summary>
-                    <div class="notes"> <a href="/Fanfare-For-The-Silent-Man-2">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Fanfare For The Silent Man - 4</summary>
                     <div class="notes"> <a href="/Fanfare-For-The-Silent-Man-4">more</a></div>
                 </details>
@@ -2341,12 +2334,20 @@
                     <div class="notes"> <a href="/Fanfare-For-The-Silent-Man-3">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Free Software</summary>
-                    <div class="notes"> <a href="/Free-Software">more</a></div>
+                    <summary>Fanfare For The Silent Man - 2</summary>
+                    <div class="notes"> <a href="/Fanfare-For-The-Silent-Man-2">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Fanfare For The Silent Man - 1</summary>
+                    <div class="notes"> <a href="/Fanfare-For-The-Silent-Man">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Free and Open Source</summary>
                     <div class="notes"> <a href="/Free-and-Open-Source">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Free Software</summary>
+                    <div class="notes"> <a href="/Free-Software">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Freedom to Innovate</summary>
@@ -2393,12 +2394,12 @@
                     <div class="notes"> <a href="/Hardware-Layer">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Heini Vihemki</summary>
-                    <div class="notes"> <a href="/Heini-Vihemki">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Help is Here</summary>
                     <div class="notes"> <a href="/Help-is-Here">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Heini Vihemki</summary>
+                    <div class="notes"> <a href="/Heini-Vihemki">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Herb Braised Chanterelles</summary>
@@ -2413,20 +2414,16 @@
                     <div class="notes"> <a href="/How-Many-Licenses-Is-Too-Many">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>I hardly knew you, eh</summary>
-                    <div class="notes"> <a href="/I-hardly-knew-you-eh">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>I Have A Dream</summary>
                     <div class="notes"> <a href="/I-Have-A-Dream">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Indian Institute Of Management</summary>
-                    <div class="notes"> <a href="/Indian-Institute-Of-Management">more</a></div>
+                    <summary>I hardly knew you, eh</summary>
+                    <div class="notes"> <a href="/I-hardly-knew-you-eh">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Ivan Illich</summary>
-                    <div class="notes"> <a href="/Ivan-Illich">more</a></div>
+                    <summary>Indian Institute Of Management</summary>
+                    <div class="notes"> <a href="/Indian-Institute-Of-Management">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Introducing the CC Science Advisory Board</summary>
@@ -2437,12 +2434,12 @@
                     <div class="notes"> <a href="/Jerusalem-Artichoke-Pancakes">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Joint Forest Management</summary>
-                    <div class="notes"> <a href="/Joint-Forest-Management">more</a></div>
+                    <summary>Ivan Illich</summary>
+                    <div class="notes"> <a href="/Ivan-Illich">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Kalpana Prakash</summary>
-                    <div class="notes"> <a href="/Kalpana-Prakash">more</a></div>
+                    <summary>Joint Forest Management</summary>
+                    <div class="notes"> <a href="/Joint-Forest-Management">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Karen Cook</summary>
@@ -2451,6 +2448,10 @@
                 <details class="entry">
                     <summary>Kill</summary>
                     <div class="notes"> <a href="/Kill">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Kalpana Prakash</summary>
+                    <div class="notes"> <a href="/Kalpana-Prakash">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Land Information And Computer Graphics Facility</summary>
@@ -2473,28 +2474,28 @@
                     <div class="notes"> <a href="/Licensing-Regime">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Lower Cost</summary>
-                    <div class="notes"> <a href="/Lower-Cost">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Low Cost</summary>
                     <div class="notes"> <a href="/Low-Cost">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Mapping For Change</summary>
-                    <div class="notes"> <a href="/Mapping-For-Change">more</a></div>
+                    <summary>Lower Cost</summary>
+                    <div class="notes"> <a href="/Lower-Cost">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Market Driven</summary>
                     <div class="notes"> <a href="/Market-Driven">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Master of Science</summary>
-                    <div class="notes"> <a href="/Master-of-Science">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Mashed Sweet Potatoes</summary>
                     <div class="notes"> <a href="/Mashed-Sweet-Potatoes">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Mapping For Change</summary>
+                    <div class="notes"> <a href="/Mapping-For-Change">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Master of Science</summary>
+                    <div class="notes"> <a href="/Master-of-Science">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Mixed Mushroom Sweet Potato Stuffing</summary>
@@ -2537,20 +2538,16 @@
                     <div class="notes"> <a href="/Open,-But-Not-as-Usual">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Open Document Format</summary>
-                    <div class="notes"> <a href="/Open-Document-Format">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Open Document Gains Ground</summary>
                     <div class="notes"> <a href="/Open-Document-Gains-Ground">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Open GIS for Developing Countries</summary>
-                    <div class="notes"> <a href="/Open-GIS-for-Developing-Countries">more</a></div>
+                    <summary>Open Document Format</summary>
+                    <div class="notes"> <a href="/Open-Document-Format">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Open Hardware Licensing</summary>
-                    <div class="notes"> <a href="/Open-Hardware-Licensing">more</a></div>
+                    <summary>Open GIS for Developing Countries</summary>
+                    <div class="notes"> <a href="/Open-GIS-for-Developing-Countries">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Open Knowledge Festival, Helsinki, Finland</summary>
@@ -2561,12 +2558,20 @@
                     <div class="notes"> <a href="/Open-Source-Open-Wallet">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>PLOS and figshare make open science publishing more open</summary>
-                    <div class="notes"> <a href="/PLOS-and-figshare-make-open-science-publishing-more-open">more</a></div>
+                    <summary>Open Hardware Licensing</summary>
+                    <div class="notes"> <a href="/Open-Hardware-Licensing">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Pamela Samuelson</summary>
                     <div class="notes"> <a href="/Pamela-Samuelson">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>PLOS and figshare make open science publishing more open</summary>
+                    <div class="notes"> <a href="/PLOS-and-figshare-make-open-science-publishing-more-open">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Papaya Jicama Salad</summary>
+                    <div class="notes"> <a href="/Papaya-Jicama-Salad">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Perl Ref is an Array</summary>
@@ -2581,10 +2586,6 @@
                     <div class="notes"> <a href="/Pitfalls-of-JFM">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Papaya Jicama Salad</summary>
-                    <div class="notes"> <a href="/Papaya-Jicama-Salad">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Politics of Participatory Forest Conservation</summary>
                     <div class="notes"> <a href="/Politics-of-Participatory-Forest-Conservation">more</a></div>
                 </details>
@@ -2593,40 +2594,40 @@
                     <div class="notes"> <a href="/ReadLine">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Remembering Lee Dirks</summary>
-                    <div class="notes"> <a href="/Remembering-Lee-Dirks">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Red Lentil Soup</summary>
                     <div class="notes"> <a href="/Red-Lentil-Soup">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Restrictive Software</summary>
-                    <div class="notes"> <a href="/Restrictive-Software">more</a></div>
+                    <summary>Remembering Lee Dirks</summary>
+                    <div class="notes"> <a href="/Remembering-Lee-Dirks">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Restrictive Licensing</summary>
                     <div class="notes"> <a href="/Restrictive-Licensing">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Roasted Maple Glazed Baby Carrots with Dried Grapes</summary>
-                    <div class="notes"> <a href="/Roasted-Maple-Glazed-Baby-Carrots-with-Dried-Grapes">more</a></div>
+                    <summary>Restrictive Software</summary>
+                    <div class="notes"> <a href="/Restrictive-Software">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Roasted Parsnips with Orange Zest</summary>
                     <div class="notes"> <a href="/Roasted-Parsnips-with-Orange-Zest">more</a></div>
                 </details>
                 <details class="entry">
+                    <summary>Roasted Maple Glazed Baby Carrots with Dried Grapes</summary>
+                    <div class="notes"> <a href="/Roasted-Maple-Glazed-Baby-Carrots-with-Dried-Grapes">more</a></div>
+                </details>
+                <details class="entry">
                     <summary>Rubbish for Nesara</summary>
                     <div class="notes"> <a href="/Rubbish-for-Nesara">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Ruggedized Intel PC</summary>
-                    <div class="notes"> <a href="/Ruggedized-Intel-PC">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>SQLite</summary>
                     <div class="notes"> <a href="/SQLite">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Ruggedized Intel PC</summary>
+                    <div class="notes"> <a href="/Ruggedized-Intel-PC">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Salmon With Ginger Salsa</summary>
@@ -2641,12 +2642,12 @@
                     <div class="notes"> <a href="/Simon-Denizart-Trio">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Situated Student Learning and Spatial Informational Analysis</summary>
-                    <div class="notes"> <a href="/Situated-Student-Learning-and-Spatial-Informational-Analysis">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Small Is Beautiful</summary>
                     <div class="notes"> <a href="/Small-Is-Beautiful">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Situated Student Learning and Spatial Informational Analysis</summary>
+                    <div class="notes"> <a href="/Situated-Student-Learning-and-Spatial-Informational-Analysis">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>So Let It Be Written So Let It Be Done</summary>
@@ -2705,24 +2706,20 @@
                     <div class="notes"> <a href="/Teaching-Young-Kids">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Test to Destruction</summary>
-                    <div class="notes"> <a href="/Test-to-Destruction">more</a></div>
+                    <summary>Tequila Steamed Grouper</summary>
+                    <div class="notes"> <a href="/Tequila-Steamed-Grouper">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Text-mining limited access corpuses</summary>
-                    <div class="notes"> <a href="/Text-mining-limited-access-corpuses">more</a></div>
+                    <summary>Test to Destruction</summary>
+                    <div class="notes"> <a href="/Test-to-Destruction">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Thai Curry Penne</summary>
                     <div class="notes"> <a href="/Thai-Curry-Penne">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>That Orange Smell of November</summary>
-                    <div class="notes"> <a href="/That-Orange-Smell-of-November">more</a></div>
-                </details>
-                <details class="entry">
-                    <summary>Tequila Steamed Grouper</summary>
-                    <div class="notes"> <a href="/Tequila-Steamed-Grouper">more</a></div>
+                    <summary>Text-mining limited access corpuses</summary>
+                    <div class="notes"> <a href="/Text-mining-limited-access-corpuses">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>The World Bank</summary>
@@ -2731,6 +2728,10 @@
                 <details class="entry">
                     <summary>Three Axioms of Copyright Licenses (and a Conclusion)</summary>
                     <div class="notes"> <a href="/Three-Axioms-of-Copyright-Licenses">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>That Orange Smell of November</summary>
+                    <div class="notes"> <a href="/That-Orange-Smell-of-November">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Tofu And Bok Choy Stir Fry</summary>
@@ -2753,12 +2754,12 @@
                     <div class="notes"> <a href="/Trust-Building-Via-Risk-Taking">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Vietnamese Shrimp Curry</summary>
-                    <div class="notes"> <a href="/Vietnamese-Shrimp-Curry">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Viability of Ideas</summary>
                     <div class="notes"> <a href="/Viability-of-Ideas">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Vietnamese Shrimp Curry</summary>
+                    <div class="notes"> <a href="/Vietnamese-Shrimp-Curry">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>What Can SDI Learn From Open Source</summary>
@@ -2769,12 +2770,12 @@
                     <div class="notes"> <a href="/Who-Conserves-the-Worlds-Forests">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Why Ideas Propagate</summary>
-                    <div class="notes"> <a href="/Why-Ideas-Propagate">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Who Got Left Out of the Property Grab Again</summary>
                     <div class="notes"> <a href="/Who-Got-Left-Out-of-the-Property-Grab-Again">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Why Ideas Propagate</summary>
+                    <div class="notes"> <a href="/Why-Ideas-Propagate">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Yi Fu Tuan</summary>
@@ -2863,10 +2864,6 @@
                     <div class="notes"> <a href="/Poster-Committee,-WWW-2013,-Rio-de-Janeiro,-Brazil">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Public Policy - Mashing up Technology and Law</summary>
-                    <div class="notes"> <a href="/Public-Policy---Mashing-up-Technology-and-Law">more</a></div>
-                </details>
-                <details class="entry">
                     <summary>Public Policy - bringing technology and law together for open access</summary>
                     <div class="notes"> <a href="/Public-Policy---bringing-technology-and-law-together-for-open-access">more</a></div>
                 </details>
@@ -2875,12 +2872,16 @@
                     <div class="notes"> <a href="/Public-Policy-and-the-Geospatial-Information-Commons">more</a></div>
                 </details>
                 <details class="entry">
-                    <summary>Researcher, Forest Ecology, University of Wisconsin, Madison, WI</summary>
-                    <div class="notes"> <a href="/Researcher,-Forest-Ecology,-University-of-Wisconsin,-Madison,-WI">more</a></div>
+                    <summary>Public Policy - Mashing up Technology and Law</summary>
+                    <div class="notes"> <a href="/Public-Policy---Mashing-up-Technology-and-Law">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>Research Scientist, Development Alternatives, New Delhi</summary>
                     <div class="notes"> <a href="/Research-Scientist,-Development-Alternatives,-New-Delhi">more</a></div>
+                </details>
+                <details class="entry">
+                    <summary>Researcher, Forest Ecology, University of Wisconsin, Madison, WI</summary>
+                    <div class="notes"> <a href="/Researcher,-Forest-Ecology,-University-of-Wisconsin,-Madison,-WI">more</a></div>
                 </details>
                 <details class="entry">
                     <summary>SDSS/GIS for Service Planning, Indian Institute of Management, Bangalore, India.</summary>
@@ -2946,10 +2947,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
     
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
     
@@ -2964,10 +2965,11 @@
     
     <script>
     window.addEventListener('load', (e) => {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
+    
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
             // console.log(inp)
@@ -2975,6 +2977,7 @@
         }
     
         const loc = window.location;
+    
         if (loc.hash) {
             const term = loc.hash.substring(1);
     

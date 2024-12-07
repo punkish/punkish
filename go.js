@@ -207,7 +207,7 @@ const buildSearchIndex = function(type, data) {
         const entry = data.entries.byName[e]
         const doc = {
             title: entry.title,
-            text: entry.__content,
+            text: entry.text,
             name: entry.name
         }
         
@@ -225,12 +225,11 @@ const buildSearchIndex = function(type, data) {
     
             docs.forEach(doc => { this.add(doc) }, this)
         })
-    } 
+    }
     else if (type === 'mini') {
         console.log(`building _mini_ search index`)
 
         const miniSearch = new MiniSearch(minisearchOpts)
-
         miniSearch.addAll(docs)
         data.idx = miniSearch
     }
@@ -499,6 +498,7 @@ const go = function(dir) {
                 else {
                     entry.layout = fm.layout || 'main';
                     entry.template = fm.template || 'entry';
+                    entry.text = entry.__content;
 
                     // convert Markdown to html *only* if entry is 
                     // regular kind. Don't convert for a presentation 

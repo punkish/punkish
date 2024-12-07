@@ -12,4 +12,4 @@ tags        :
 stars      : 
 ---
 
-To be written. In the meantime, see [the crossroads conundrum](Crossroads-Conundrum).
+To be written. In the meantime, see [the crossroads conundrum](/Crossroads-Conundrum).

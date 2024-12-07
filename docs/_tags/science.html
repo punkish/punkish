@@ -14,12 +14,12 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: </title>
-<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
@@ -36,8 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
+    <ul id="searchResults"></ul>
 </div>
 <nav>
     <a href="/cv-latest/">cv</a>
@@ -49,7 +50,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">science</span></h1>
-    <div class="created">Nov 29, 2024</div>
+    <div class="created">Dec 07, 2024</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -76,20 +77,20 @@
             <div class="notes"> <a href="/Beyond-Law">more</a></div>
         </details>
         <details class="entry">
-            <summary>CC0 for Data</summary>
-            <div class="notes"> <a href="/CC0-for-data">more</a></div>
-        </details>
-        <details class="entry">
             <summary>CUBE Critters</summary>
             <div class="notes"> <a href="/CUBE-Critters">more</a></div>
         </details>
         <details class="entry">
-            <summary>Changing Paths, Staying The Course</summary>
-            <div class="notes"> <a href="/Changing-Paths,-Staying-The-Course">more</a></div>
+            <summary>CC0 for Data</summary>
+            <div class="notes"> <a href="/CC0-for-data">more</a></div>
         </details>
         <details class="entry">
             <summary>Changing the Culture</summary>
             <div class="notes"> <a href="/Changing-the-Culture">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Changing Paths, Staying The Course</summary>
+            <div class="notes"> <a href="/Changing-Paths,-Staying-The-Course">more</a></div>
         </details>
         <details class="entry">
             <summary>Citizen Engagement in Science</summary>
@@ -108,12 +109,12 @@
             <div class="notes"> <a href="/Ethics-and-Science">more</a></div>
         </details>
         <details class="entry">
-            <summary>Evil communications</summary>
-            <div class="notes"> <a href="/Evil-communications">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Everyone is a Mentor</summary>
             <div class="notes"> <a href="/Everyone-is-a-Mentor">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Evil communications</summary>
+            <div class="notes"> <a href="/Evil-communications">more</a></div>
         </details>
         <details class="entry">
             <summary>Financial Interoperability</summary>
@@ -132,20 +133,20 @@
             <div class="notes"> <a href="/Inclusive-by-Design">more</a></div>
         </details>
         <details class="entry">
-            <summary>It Takes All Kinds to Make a Commons</summary>
-            <div class="notes"> <a href="/It-Takes-All-Kinds-to-Make-a-Commons">more</a></div>
-        </details>
-        <details class="entry">
             <summary>Introducing the CC Science Advisory Board</summary>
             <div class="notes"> <a href="/Introducing-the-CC-Science-Advisory-Board">more</a></div>
         </details>
         <details class="entry">
-            <summary>Learning how to teach</summary>
-            <div class="notes"> <a href="/Learning-how-to-teach">more</a></div>
+            <summary>It Takes All Kinds to Make a Commons</summary>
+            <div class="notes"> <a href="/It-Takes-All-Kinds-to-Make-a-Commons">more</a></div>
         </details>
         <details class="entry">
             <summary>Learning by Making, Teaching by Doing</summary>
             <div class="notes"> <a href="/Learning-by-Making">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>Learning how to teach</summary>
+            <div class="notes"> <a href="/Learning-how-to-teach">more</a></div>
         </details>
         <details class="entry">
             <summary>Licensing Scientific Data</summary>
@@ -216,12 +217,12 @@
             <div class="notes"> <a href="/The-Deceptive-Success-of-Copyright-Licenses">more</a></div>
         </details>
         <details class="entry">
-            <summary>The “P” Words</summary>
-            <div class="notes"> <a href="/The-P-Words">more</a></div>
-        </details>
-        <details class="entry">
             <summary>The Next Big Thing</summary>
             <div class="notes"> <a href="/The-Next-Big-Thing">more</a></div>
+        </details>
+        <details class="entry">
+            <summary>The “P” Words</summary>
+            <div class="notes"> <a href="/The-P-Words">more</a></div>
         </details>
         <details class="entry">
             <summary>The Problem With Copyright</summary>
@@ -245,10 +246,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
     
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
     
@@ -263,10 +264,11 @@
     
     <script>
     window.addEventListener('load', (e) => {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
+    
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
             // console.log(inp)
@@ -274,6 +276,7 @@
         }
     
         const loc = window.location;
+    
         if (loc.hash) {
             const term = loc.hash.substring(1);
     

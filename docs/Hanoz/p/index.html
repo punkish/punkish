@@ -610,7 +610,7 @@ background-image: url(img/urdu/.gif)
 &lt;head&gt;&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
 &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0, maximum-scale&#x3D;1.0, user-scalable&#x3D;no&quot;&gt;
 &lt;meta name&#x3D;&quot;version&quot; content&#x3D;&quot;4.0&quot;&gt;
-&lt;meta name&#x3D;&quot;date&quot; content&#x3D;&quot;Sun Apr 28 2024 15:59:47 GMT+0200 (Central European Summer Time)&quot;&gt;
+&lt;meta name&#x3D;&quot;date&quot; content&#x3D;&quot;Sat Dec 07 2024 23:17:35 GMT+0100 (Central European Standard Time)&quot;&gt;
 &lt;meta name&#x3D;&quot;author&quot; content&#x3D;&quot;Puneet Kishor&quot;&gt;
 &lt;meta name&#x3D;&quot;copyright&quot; content&#x3D;&quot;CC0 Public Domain Dedication&quot;&gt;
 &lt;meta name&#x3D;&quot;apple-mobile-web-app-capable&quot; content&#x3D;&quot;yes&quot;&gt;
@@ -623,7 +623,7 @@ background-image: url(img/urdu/.gif)
 &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/fonts/Atkinson/atkinson.css&quot;&gt;
 &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/css/uglyduck.css&quot;&gt;
 &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/css/punkish.css&quot;&gt;
-&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/JavaScript-autoComplete/auto-complete.css&quot;&gt;
+&lt;!-- &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/JavaScript-autoComplete/auto-complete.css&quot;&gt; --&gt;
 &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;/_lib/css/expanding-search.css&quot;&gt;
 
 
@@ -640,8 +640,9 @@ background-image: url(img/urdu/.gif)
     &lt;/a&gt; 
 
     &lt;form name&#x3D;&quot;search&quot; method&#x3D;&quot;GET&quot; action&#x3D;&quot;&quot;&gt;
-        &lt;input name&#x3D;&quot;q&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;there are none so blind as those who don’t see&quot;&gt;
+        &lt;input id&#x3D;&quot;q&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;there are none so blind as those who don’t see&quot;&gt;
     &lt;/form&gt;
+    &lt;ul id&#x3D;&quot;searchResults&quot;&gt;&lt;/ul&gt;
 &lt;/div&gt;
 &lt;nav&gt;
     &lt;a href&#x3D;&quot;/cv-latest/&quot;&gt;cv&lt;/a&gt;
@@ -682,10 +683,10 @@ The glass-blowers are the ones who created it, and they are still the only ones 
     &lt;footer&gt;&lt;p&gt;Dedicated to the public domain under the &lt;a href&#x3D;&quot;https://creativecommons.org/publicdomain/zero/1.0/legalcode&quot; target&#x3D;&quot;_blank&quot;&gt;CC0 Public Domain Dedication&lt;/a&gt;&lt;/p&gt;&lt;/footer&gt;
 
     &lt;!-- minisearch --&gt;
-    &lt;script src&#x3D;&quot;https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src&#x3D;&quot;https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src&#x3D;&quot;/_lib/js/search-mini.js&quot;&gt;&lt;/script&gt;
     
-    &lt;script src&#x3D;&quot;/_lib/JavaScript-autoComplete/auto-complete.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- &lt;script src&#x3D;&quot;/_lib/JavaScript-autoComplete/auto-complete.min.js&quot;&gt;&lt;/script&gt; --&gt;
     &lt;script src&#x3D;&quot;/_lib/js/polyfill.js&quot;&gt;&lt;/script&gt;
     &lt;script src&#x3D;&quot;/_lib/js/punkish.js&quot;&gt;&lt;/script&gt;
     
@@ -700,10 +701,11 @@ The glass-blowers are the ones who created it, and they are still the only ones 
     
     &lt;script&gt;
     window.addEventListener(&#x27;load&#x27;, (e) &#x3D;&gt; {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage &#x3D; document.getElementById(&#x27;searchInPage&#x27;);
+    
         if (searchInPage) {
             const inp &#x3D; document.getElementsByName(&#x27;tag&#x27;);
             // console.log(inp)
@@ -711,6 +713,7 @@ The glass-blowers are the ones who created it, and they are still the only ones 
         }
     
         const loc &#x3D; window.location;
+    
         if (loc.hash) {
             const term &#x3D; loc.hash.substring(1);
     

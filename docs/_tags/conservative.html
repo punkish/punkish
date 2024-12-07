@@ -14,12 +14,12 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: </title>
-<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
-<link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css">
+<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
@@ -36,8 +36,9 @@
     </a> 
 
     <form name="search" method="GET" action="">
-        <input name="q" type="text" placeholder="there are none so blind as those who don’t see">
+        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
     </form>
+    <ul id="searchResults"></ul>
 </div>
 <nav>
     <a href="/cv-latest/">cv</a>
@@ -49,7 +50,7 @@
     <main id="content"><!-- entries by one tag -->
 <section>
     <h1 class="title">Entries by Tag <span class="tag">conservative</span></h1>
-    <div class="created">Nov 29, 2024</div>
+    <div class="created">Dec 07, 2024</div>
 
     <form id="searchInPage">
         <input name="tag" type="text"> 
@@ -69,10 +70,10 @@
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
     <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
     
-    <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script>
+    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
     <script src="/_lib/js/polyfill.js"></script>
     <script src="/_lib/js/punkish.js"></script>
     
@@ -87,10 +88,11 @@
     
     <script>
     window.addEventListener('load', (e) => {
-        PK.autocomplete();
+        //PK.autocomplete();
         PK.initializeDictionary();
     
         const searchInPage = document.getElementById('searchInPage');
+    
         if (searchInPage) {
             const inp = document.getElementsByName('tag');
             // console.log(inp)
@@ -98,6 +100,7 @@
         }
     
         const loc = window.location;
+    
         if (loc.hash) {
             const term = loc.hash.substring(1);
     
