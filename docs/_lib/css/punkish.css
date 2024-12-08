@@ -32,12 +32,12 @@ p { line-height: 150%; }
 small, .description, .created, figcaption { font-family: serif; }
 small a, small b { margin-right: 10px; }
 code {
-    font-family: Hack;
+    font-family: monospace;
     color:orangered;
     display:inline-block;
 }
 pre code {
-    font-family: Hack;
+    font-family: monospace;
     font-size: small;
 }
 nav, footer, .description, .created { font-size: small; }
