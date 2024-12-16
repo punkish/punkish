@@ -567,8 +567,6 @@ const go = function(dir) {
         .on('end', function() {
             console.log('All files traversed.');
             finish(data);
-            //console.log(published)
-
             fs.writeFileSync(publishedFile, JSON.stringify(published));
         })
 }
