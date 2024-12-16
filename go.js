@@ -247,34 +247,36 @@ const writeByName = function(data) {
     for (let e in data.entries.byName) {
         const entry = data.entries.byName[e];
 
-        try {
-            entry.content = templates.views[entry.template](entry)
-        }
-        catch(e) {
-            console.log(entry)
-        }
-
-        entry.minisearchOpts = minisearchOpts
-        const html = templates.layouts[entry.layout](entry);
-        fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
-
-        if (entry.isPresentation) {
-            let tmpl = 'presentation';
-            if (entry.name === 'Biodiversity-Literature-Repository') {
-                tmpl = 'presentationPlazi';
+        if (entry.changed) {
+            try {
+                entry.content = templates.views[entry.template](entry)
             }
-            
-            entry.content = templates.views[tmpl](entry);
-            const html = templates.layouts[tmpl](entry);
-
-            const entryDir = `${dir.docs}/${entry.name}/p`;
-            const dirExists = fs.existsSync(entryDir);
-
-            if (!dirExists) {
-                fs.mkdirSync(entryDir);
+            catch(e) {
+                console.log(entry)
             }
-
-            fs.writeFileSync(`${entryDir}/index.html`, html)
+    
+            entry.minisearchOpts = minisearchOpts
+            const html = templates.layouts[entry.layout](entry);
+            fs.writeFileSync(`${dir.docs}/${entry.name}/index.html`, html)
+    
+            if (entry.isPresentation) {
+                let tmpl = 'presentation';
+                if (entry.name === 'Biodiversity-Literature-Repository') {
+                    tmpl = 'presentationPlazi';
+                }
+                
+                entry.content = templates.views[tmpl](entry);
+                const html = templates.layouts[tmpl](entry);
+    
+                const entryDir = `${dir.docs}/${entry.name}/p`;
+                const dirExists = fs.existsSync(entryDir);
+    
+                if (!dirExists) {
+                    fs.mkdirSync(entryDir);
+                }
+    
+                fs.writeFileSync(`${entryDir}/index.html`, html)
+            }
         }
     }
 }
@@ -484,6 +486,7 @@ function processFile(file, name, mtime, published, data) {
         entry.__content = makeVid(entry.__content, entry.url);
     }
 
+    entry.changed = true;
     data.entries.byName[ entry.name.toLowerCase() ] = entry;
     
     const eIdx = {
@@ -538,25 +541,30 @@ const go = function(dir) {
                 const name = path.dirname(file).split('/')[1];
                 const stat = fs.statSync(file);
                 const mtime = new Date(stat.mtime);
+                let changed = false;
 
                 if (name in published.entries) {
-                    
                     const lastPublished = new Date(published.entries[name]);
-
+                    
                     if (mtime > lastPublished) {
-                        
+
                         // The file has been modified since it was last 
-                        // published so we process it now
-                        processFile(file, name, mtime, published, data);
+                        // published so we flag it as changed
+                        changed = true;
                     }
+
+                    
                     
                 }
                 else {
+                    changed = true;
 
                     // The file has not been processed before, so we process 
                     // it now
-                    processFile(file, name, mtime, published, data);
+                    //processFile(file, name, mtime, published, data);
                 }
+
+                processFile(file, name, mtime, published, data, changed);
 
                 
             }
