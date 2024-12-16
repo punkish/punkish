@@ -8,7 +8,6 @@ import showdown from 'showdown';
 import moment from 'moment';
 import MiniSearch from 'minisearch';
 import lunr from 'lunr';
-
 import { footnotes } from './lib/showdown-footnotes.js';
 
 import { 
@@ -351,15 +350,6 @@ const writeDefault = function(data) {
     fs.writeFileSync(`${dir.docs}/index.html`, html);
 }
 
-const write = function(data) {
-    writeByName(data);
-    writeByDate(data);
-    writeByTags(data);
-    writeDefault(data);
-    writeSearchIdx(data);
-    writeHanoz(data);
-}
-
 const finish = function(data) {
     data.entries.byDate.sort(sortFunc('date'));
     data.entries.byYear.sort((a, b) => b['year'] - a['year']);
@@ -367,7 +357,12 @@ const finish = function(data) {
     prevNext(data);
     buildHanozIndex(data);
     buildSearchIndex('mini', data);
-    write(data);
+    writeByName(data);
+    writeByDate(data);
+    writeByTags(data);
+    writeDefault(data);
+    writeSearchIdx(data);
+    writeHanoz(data);
 }
 
 const makeDates = function(entry) {
@@ -383,7 +378,142 @@ const makeDates = function(entry) {
         : fakedate;
 }
 
+function processFile(file, name, mtime, published, data) {
+    console.log(`- ${name}`);
+    const entry = {
+        baseUrl,
+        file,
+        dir: path.dirname(file),
+        name,
+        url: '',
+        dateGenerated: new Date(),
+        dateModified: mtime
+    }
+
+    published.entries[entry.name] = mtime;
+    
+    const fileContent = fs.readFileSync(file, 'utf-8');
+    const fm = yamlFront.loadFront(fileContent);
+
+    for (let key in fm) {
+        if (key === 'tags') {
+            entry.origTags = fm.tags;
+            entry.tags = [];
+            
+            fm.tags.forEach(tag => {
+                if (tag) {
+                    let tagUrl = tag;
+                    tagUrl = tagUrl.replace(/\//g, '-');
+                    tagUrl = tagUrl.replace(/ /g, '-');
+                    entry.tags.push({ tag, tagUrl });
+                }
+            })
+        }
+        else {
+            entry[key] = fm[key];
+        }
+    }
+
+    makeDates(entry);
+
+    let hasCode = false;
+    let isPresentation = false;
+    let isAlbum = false;
+
+    if (entry.origTags) {
+        const origTags = entry.origTags;
+        hasCode = origTags.includes('code');
+        isPresentation = origTags.indexOf('presentation') > -1;
+        isAlbum = origTags.indexOf('album') > -1
+    }
+
+    entry.hasCode = hasCode ? true : false;
+
+    if (entry.type) {
+        entry.type.forEach(t => entry[t] = true)
+    }
+
+    if (isPresentation) {
+        entry.layout = fm.layout || 'main';
+        entry.template = fm.template || 'entry-presentation';
+
+        if (entry.name === 'Biodiversity-Literature-Repository') {
+            me = `${me} (Plazi)`;
+        }
+
+        if (entry.authors) {
+            const len = entry.authors.length;
+
+            if (len > 1) {
+                entry.authors[len - 1] = `and ${entry.authors[len - 1]}`;
+                entry.authors.unshift(me);
+                entry.authors = entry.authors.join(', ');
+            }
+            else {
+                entry.authors = `${me} and ${entry.authors[0]}`;
+            }
+        }
+        else {
+            entry.authors = me;
+        }
+
+        entry.isPresentation = true;
+    }
+
+    // album entry
+    else if (isAlbum) {
+        entry.layout = fm.layout || 'main';
+        entry.template = fm.template || 'entry';
+        entry.isAlbum = true;
+
+        makeAlbum(entry, entry.url);
+        entry.isAlbum = true;
+    }
+
+    // regular entry
+    else {
+        entry.layout = fm.layout || 'main';
+        entry.template = fm.template || 'entry';
+        entry.text = entry.__content;
+
+        // convert Markdown to html *only* if entry is 
+        // regular kind. Don't convert for a presentation 
+        // because that conversion is done by remarkjs
+        entry.__content = sh.makeHtml(entry.__content);
+        entry.__content = makeImg(entry.__content, entry.url);
+        entry.__content = makeVid(entry.__content, entry.url);
+    }
+
+    data.entries.byName[ entry.name.toLowerCase() ] = entry;
+    
+    const eIdx = {
+        name: entry.name,
+        title: entry.title,
+        date: entry.modified,
+        notes: entry.notes
+    }
+
+    addEntryByTags(entry, eIdx, data);
+    addEntryByDate(entry, eIdx, data);
+}
+
 const go = function(dir) {
+    const publishedFile = './published.json';
+    let published;
+
+    if (fs.existsSync(publishedFile)) {
+        published = JSON.parse(
+            fs.readFileSync(publishedFile, 'utf8')
+        );
+    }
+
+    if (!published) {
+        published = {
+            datePublished: new Date(),
+            entries: {}
+        };
+    }
+    
     const data = {
         entries: {
             byName: {},
@@ -398,7 +528,6 @@ const go = function(dir) {
     };
 
     Walker(dir)
-        // @ts-ignore
         .on('file', function(file, stat) {
 
             // file = .docs/Yi-Fu-Tuan/index.md
@@ -406,127 +535,41 @@ const go = function(dir) {
             // dir  = .docs/Yi-Fu-Tuan/
             // url  = https://punkish.org/Yi-Fu-Tuan/
             if (path.basename(file) === 'index.md') {
-                const entry = {
-                    baseUrl,
-                    file,
-                    dir: path.dirname(file),
-                    name: path.dirname(file).split('/')[1],
-                    url: '',
-                    dateGenerated: new Date()
-                }
-                
-                const fileContent = fs.readFileSync(file, 'utf-8');
-                const fm = yamlFront.loadFront(fileContent);
+                const name = path.dirname(file).split('/')[1];
+                const stat = fs.statSync(file);
+                const mtime = new Date(stat.mtime);
 
-                for (let key in fm) {
-                    if (key === 'tags') {
-                        entry.origTags = fm.tags;
-                        entry.tags = [];
+                if (name in published.entries) {
+                    
+                    const lastPublished = new Date(published.entries[name]);
+
+                    if (mtime > lastPublished) {
                         
-                        fm.tags.forEach(tag => {
-                            if (tag) {
-                                let tagUrl = tag;
-                                tagUrl = tagUrl.replace(/\//g, '-');
-                                tagUrl = tagUrl.replace(/ /g, '-');
-                                entry.tags.push({ tag, tagUrl });
-                            }
-                        })
+                        // The file has been modified since it was last 
+                        // published so we process it now
+                        processFile(file, name, mtime, published, data);
                     }
-                    else {
-                        entry[key] = fm[key];
-                    }
+                    
                 }
-
-                makeDates(entry);
-
-                let hasCode = false;
-                let isPresentation = false;
-                let isAlbum = false;
-
-                if (entry.origTags) {
-                    const origTags = entry.origTags;
-
-                    hasCode = origTags.includes('code');
-                    isPresentation = origTags.indexOf('presentation') > -1;
-                    isAlbum = origTags.indexOf('album') > -1
-                }
-
-                entry.hasCode = hasCode ? true : false;
-
-                if (entry.type) {
-                    entry.type.forEach(t => entry[t] = true)
-                }
-
-                if (isPresentation) {
-                    entry.layout = fm.layout || 'main';
-                    entry.template = fm.template || 'entry-presentation';
-
-                    if (entry.name === 'Biodiversity-Literature-Repository') {
-                        me = `${me} (Plazi)`;
-                    }
-
-                    if (entry.authors) {
-                        const len = entry.authors.length;
-
-                        if (len > 1) {
-                            entry.authors[len - 1] = 'and ' + entry.authors[len - 1];
-                            entry.authors.unshift(me);
-                            entry.authors = entry.authors.join(', ');
-                        }
-                        else {
-                            entry.authors = me + ' and ' + entry.authors[0];
-                        }
-                    }
-                    else {
-                        entry.authors = me;
-                    }
-
-                    entry.isPresentation = true;
-                }
-
-                // album entry
-                else if (isAlbum) {
-                    entry.layout = fm.layout || 'main';
-                    entry.template = fm.template || 'entry';
-                    entry.isAlbum = true;
-
-                    makeAlbum(entry, entry.url);
-                    entry.isAlbum = true;
-                }
-
-                // regular entry
                 else {
-                    entry.layout = fm.layout || 'main';
-                    entry.template = fm.template || 'entry';
-                    entry.text = entry.__content;
 
-                    // convert Markdown to html *only* if entry is 
-                    // regular kind. Don't convert for a presentation 
-                    // because that conversion is done by remarkjs
-                    entry.__content = sh.makeHtml(entry.__content);
-                    entry.__content = makeImg(entry.__content, entry.url);
-                    entry.__content = makeVid(entry.__content, entry.url);
+                    // The file has not been processed before, so we process 
+                    // it now
+                    processFile(file, name, mtime, published, data);
                 }
-            
-                data.entries.byName[ entry.name.toLowerCase() ] = entry;
+
                 
-                const eIdx = {
-                    name: entry.name,
-                    title: entry.title,
-                    date: entry.modified,
-                    notes: entry.notes
-                }
-
-                addEntryByTags(entry, eIdx, data);
-                addEntryByDate(entry, eIdx, data);
             }
         })
         .on('error', function(er, entry, stat) {
-            console.log('Got error ' + er + ' on entry ' + entry);
+            console.log(`${er} on entry ${entry}`);
         })
         .on('end', function() {
             console.log('All files traversed.');
             finish(data);
+            //console.log(published)
+
+            fs.writeFileSync(publishedFile, JSON.stringify(published));
         })
 }
 
