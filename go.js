@@ -9,21 +9,15 @@ import moment from 'moment';
 import MiniSearch from 'minisearch';
 import lunr from 'lunr';
 import { footnotes } from './lib/showdown-footnotes.js';
-
+import { templates, makeVid, makeImg, makeAlbum } from './lib/index.js';
 import { 
-    dir,
-    dateOptions,
-    baseUrl,
-    minisearchOpts,
-    untaggedLabel
+    dir, 
+    dateOptions, 
+    baseUrl, 
+    minisearchOpts, 
+    untaggedLabel,
+    publishedFile
 } from './lib/settings.js';
-
-import { 
-    templates,
-    makeVid,
-    makeImg,
-    makeAlbum
-} from './lib/index.js';
 
 const sh = new showdown.Converter({
     extensions: [ footnotes ], 
@@ -38,10 +32,9 @@ const sh = new showdown.Converter({
     strikethrough: true
 })
 
-
 let me = 'Puneet Kishor';
 
-const prevNext = function(data) {
+function prevNext(data) {
     console.log('populating prev-next')
 
     const byDate = data.entries.byDate;
@@ -78,7 +71,7 @@ const prevNext = function(data) {
     }   
 }
 
-const addEntryByTags = function(entry, eIdx, data) {
+function addEntryByTags(entry, eIdx, data) {
 
     if (entry.origTags) {
         entry.origTags.forEach(t => {
@@ -101,7 +94,7 @@ const addEntryByTags = function(entry, eIdx, data) {
 
 }
 
-const addEntryByDate = function(entry, eIdx, data) {
+function addEntryByDate(entry, eIdx, data) {
     data.entries.byDate.push(eIdx);
 
     const date = new Date(entry.created);
@@ -141,7 +134,7 @@ const addEntryByDate = function(entry, eIdx, data) {
     }
 }
 
-const sortFunc = function(field) {
+function sortFunc(field) {
     return function(a, b) {
         return field === 'date' 
             ? new Date(b[field]) - new Date(a[field]) 
@@ -149,7 +142,7 @@ const sortFunc = function(field) {
     }
 }
 
-const buildHanozIndex = function(data) {
+function buildHanozIndex(data) {
     console.log('building hanoz index')
 
     const files = fs.readdirSync(dir.hanozDir)
@@ -192,13 +185,13 @@ const buildHanozIndex = function(data) {
     }
 }
 
-const writeHanoz = function(data) {
+function writeHanoz(data) {
     const content = templates.views.hanoz({ pages: data.entries.hanoz });
     const html = templates.layouts.hanoz({ content });
     fs.writeFileSync(`${dir.docs}/Hanoz/p/index.html`, html);
 }
 
-const buildSearchIndex = function(type, data) {
+function buildSearchIndex(type, data) {
     const docs = [];
     let id = 0;
 
@@ -235,7 +228,7 @@ const buildSearchIndex = function(type, data) {
 
 }
 
-const writeSearchIdx = function(data) {
+function writeSearchIdx(data) {
     console.log('writing search index');
     fs.writeFileSync(
         `${dir.docs}/_search/searchIdx.json`, 
@@ -243,11 +236,16 @@ const writeSearchIdx = function(data) {
     )
 }
 
-const writeByName = function(data) {
-    for (let e in data.entries.byName) {
-        const entry = data.entries.byName[e];
+function writeByName(data) {
+    let count = 0;
+    let unchanged = 0;
 
+    for (let name in data.entries.byName) {
+        const entry = data.entries.byName[name];
+        
         if (entry.changed) {
+            count++;
+
             try {
                 entry.content = templates.views[entry.template](entry)
             }
@@ -278,10 +276,16 @@ const writeByName = function(data) {
                 fs.writeFileSync(`${entryDir}/index.html`, html)
             }
         }
+        else {
+            unchanged++;
+        }
     }
+
+    console.log(`wrote ${count} files`);
+    console.log(`${unchanged} files were unchanged`);
 }
 
-const writeByDate = function(data) {
+function writeByDate(data) {
     console.log('writing by dates');
     const d = {
         created: moment().format('MMM DD, YYYY'),
@@ -299,7 +303,7 @@ const writeByDate = function(data) {
     fs.writeFileSync(`${dir.docs}/_dates/index.html`, html);
 }
 
-const writeByTags = function(data) {
+function writeByTags(data) {
     console.log('writing by tags');
     const date = moment().format('MMM DD, YYYY');
     const d = {
@@ -338,7 +342,7 @@ const writeByTags = function(data) {
     }
 }
 
-const writeDefault = function(data) {
+function writeDefault(data) {
     const entryName = data.entries.byDate[0].name === 'cv-latest' 
         ? data.entries.byDate[1].name 
         : data.entries.byDate[0].name;
@@ -352,7 +356,7 @@ const writeDefault = function(data) {
     fs.writeFileSync(`${dir.docs}/index.html`, html);
 }
 
-const finish = function(data) {
+function finish(data) {
     data.entries.byDate.sort(sortFunc('date'));
     data.entries.byYear.sort((a, b) => b['year'] - a['year']);
     data.entries.byYear.forEach(x => x.months.sort((a, b) => b['month'] - a['month']));
@@ -367,7 +371,7 @@ const finish = function(data) {
     writeHanoz(data);
 }
 
-const makeDates = function(entry) {
+function makeDates(entry) {
     const fakedate = new Date('1980-01-01 00:00:00')
         .toLocaleDateString("en-US", dateOptions);
 
@@ -380,8 +384,7 @@ const makeDates = function(entry) {
         : fakedate;
 }
 
-function processFile(file, name, mtime, published, data) {
-    console.log(`- ${name}`);
+function processFile(file, name, mtime, published, data, changed) {
     const entry = {
         baseUrl,
         file,
@@ -389,7 +392,8 @@ function processFile(file, name, mtime, published, data) {
         name,
         url: '',
         dateGenerated: new Date(),
-        dateModified: mtime
+        dateModified: mtime,
+        changed
     }
 
     published.entries[entry.name] = mtime;
@@ -486,7 +490,6 @@ function processFile(file, name, mtime, published, data) {
         entry.__content = makeVid(entry.__content, entry.url);
     }
 
-    entry.changed = true;
     data.entries.byName[ entry.name.toLowerCase() ] = entry;
     
     const eIdx = {
@@ -500,14 +503,11 @@ function processFile(file, name, mtime, published, data) {
     addEntryByDate(entry, eIdx, data);
 }
 
-const go = function(dir) {
-    const publishedFile = './published.json';
+function go(dir) {
     let published;
 
     if (fs.existsSync(publishedFile)) {
-        published = JSON.parse(
-            fs.readFileSync(publishedFile, 'utf8')
-        );
+        published = JSON.parse(fs.readFileSync(publishedFile, 'utf8'));
     }
 
     if (!published) {
@@ -522,7 +522,7 @@ const go = function(dir) {
             byName: {},
             byDate: [],
             byTag: {},
-            byTag2: [],
+            //byTag2: [],
             byYear: [],
             hanoz: []
         },
@@ -539,11 +539,14 @@ const go = function(dir) {
             // url  = https://punkish.org/Yi-Fu-Tuan/
             if (path.basename(file) === 'index.md') {
                 const name = path.dirname(file).split('/')[1];
-                const stat = fs.statSync(file);
                 const mtime = new Date(stat.mtime);
                 let changed = false;
 
                 if (name in published.entries) {
+
+                    // The file has been processed and published before, so 
+                    // we check if it has been modified since, and thus, 
+                    // needs to be processed again
                     const lastPublished = new Date(published.entries[name]);
                     
                     if (mtime > lastPublished) {
@@ -551,22 +554,17 @@ const go = function(dir) {
                         // The file has been modified since it was last 
                         // published so we flag it as changed
                         changed = true;
-                    }
-
-                    
-                    
+                    }  
                 }
                 else {
-                    changed = true;
 
                     // The file has not been processed before, so we process 
                     // it now
-                    //processFile(file, name, mtime, published, data);
+                    changed = true;
                 }
 
+                // console.log(`${name}: ${changed}`);
                 processFile(file, name, mtime, published, data, changed);
-
-                
             }
         })
         .on('error', function(er, entry, stat) {
