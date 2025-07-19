@@ -384,7 +384,7 @@ function makeDates(entry) {
         : fakedate;
 }
 
-function processFile(file, name, mtime, published, data, changed) {
+function processFile(file, name, mtime, data, changed) {
     const entry = {
         baseUrl,
         file,
@@ -396,7 +396,7 @@ function processFile(file, name, mtime, published, data, changed) {
         changed
     }
 
-    published.entries[entry.name] = mtime;
+    data.published.entries[entry.name] = mtime;
     
     const fileContent = fs.readFileSync(file, 'utf-8');
     const fm = yamlFront.loadFront(fileContent);
@@ -504,32 +504,31 @@ function processFile(file, name, mtime, published, data, changed) {
 }
 
 function go(dir) {
-    let published;
-
-    if (fs.existsSync(publishedFile)) {
-        published = JSON.parse(fs.readFileSync(publishedFile, 'utf8'));
-    }
-
-    if (!published) {
-        published = {
-            datePublished: new Date(),
-            entries: {}
-        };
-    }
-    
     const data = {
         entries: {
             byName: {},
             byDate: [],
             byTag: {},
-            //byTag2: [],
             byYear: [],
             hanoz: []
         },
     
-        idx: {}
+        idx: {},
+
+        published: undefined
     };
 
+    if (fs.existsSync(publishedFile)) {
+        data.published = JSON.parse(fs.readFileSync(publishedFile, 'utf8'));
+    }
+
+    if (!data.published) {
+        data.published = {
+            datePublished: new Date(),
+            entries: {}
+        };
+    }
+    
     Walker(dir)
         .on('file', function(file, stat) {
 
@@ -542,29 +541,30 @@ function go(dir) {
                 const mtime = new Date(stat.mtime);
                 let changed = false;
 
-                if (name in published.entries) {
+                if (name in data.published.entries) {
 
                     // The file has been processed and published before, so 
                     // we check if it has been modified since, and thus, 
                     // needs to be processed again
-                    const lastPublished = new Date(published.entries[name]);
+                    const lastPublished = new Date(data.published.entries[name]);
                     
+                    // compare dates
+                    // https://stackoverflow.com/a/493018
                     if (mtime > lastPublished) {
 
                         // The file has been modified since it was last 
                         // published so we flag it as changed
                         changed = true;
-                    }  
+                    }
                 }
                 else {
 
-                    // The file has not been processed before, so we process 
-                    // it now
+                    // The file has not been processed before, 
+                    // so we process it now
                     changed = true;
                 }
 
-                // console.log(`${name}: ${changed}`);
-                processFile(file, name, mtime, published, data, changed);
+                processFile(file, name, mtime, data, changed);
             }
         })
         .on('error', function(er, entry, stat) {
@@ -573,7 +573,7 @@ function go(dir) {
         .on('end', function() {
             console.log('All files traversed.');
             finish(data);
-            fs.writeFileSync(publishedFile, JSON.stringify(published));
+            fs.writeFileSync(publishedFile, JSON.stringify(data.published));
         })
 }
 
