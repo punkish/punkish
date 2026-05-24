@@ -85,16 +85,18 @@ class SiteGenerator {
      */
     makeImgVid(html, entryUrl) {
         if (!html) return '';
-        // entryUrl is like "/jammin-at-the-b-flat"
+        // Ensure entryUrl is a clean path like "/my-post"
+        const prefix = entryUrl.startsWith('/') ? entryUrl : `/${entryUrl}`;
+        
         const re = /<img\s+src="(?<path>img)\/(?<basename>[^"]+?)\.(?<ext>[^".]+)"(?<after>[^>]*)>/g;
         
         return html.replace(re, (match, p, basename, ext, after) => {
-            // Result: /jammin-at-the-b-flat/img/photo.jpg
-            // This works whether the page is at / or /jammin-at-the-b-flat/
-            const mediaPath = `${entryUrl}/${p}/${basename}.${ext.toLowerCase()}`;
+            const cleanExt = ext.toLowerCase();
+            // Result: /my-post/img/image.jpg
+            const mediaPath = `${prefix}/${p}/${basename}.${cleanExt}`;
             
-            if (ext.toLowerCase() === 'mp4') {
-                return `<video width="100%" controls poster="${entryUrl}/${p}/${basename}.jpg">
+            if (cleanExt === 'mp4') {
+                return `<video width="100%" controls poster="${prefix}/${p}/${basename}.jpg">
                     <source src="${mediaPath}" type="video/mp4">
                 </video>`;
             }
@@ -195,11 +197,14 @@ class SiteGenerator {
         /**
      * PRODUCTION ONLY: Writes changed files and the default index.html
      */
+        /**
+     * PRODUCTION ONLY: Writes changed files and the default index.html
+     */
     async writeProductionFiles() {
         const jobs = [];
         let count = 0;
 
-        // 1. Sort entries to find the latest one
+        // 1. Get entries sorted by date
         const entries = Object.values(this.data.entries.byName)
             .sort((a, b) => new Date(b.mtime) - new Date(a.mtime));
 
@@ -207,35 +212,45 @@ class SiteGenerator {
 
         // 2. Write individual changed entries
         for (const entry of entries) {
-            if (!entry.changed || !entry.template) continue;
+            // We only write if the .md changed, OR if it's the latest entry 
+            // (to ensure the root index.html is always fresh)
+            if (!entry.changed && entry !== latestEntry) continue;
+            if (!entry.template) continue;
 
             const html = this.renderEntry(entry);
             const outPath = path.join(settings.dir.docs, entry.slug, 'index.html');
             
-            // Ensure the directory exists (liberal check)
-            if (!existsSync(path.dirname(outPath))) {
-                await fs.mkdir(path.dirname(outPath), { recursive: true });
+            // Liberal directory creation
+            const dirPath = path.dirname(outPath);
+            if (!existsSync(dirPath)) {
+                await fs.mkdir(dirPath, { recursive: true });
             }
 
             jobs.push(fs.writeFile(outPath, html));
+            
+            // Update cache only for real files
             this.data.published.entries[entry.slug] = entry.mtime;
             count++;
         }
 
-        // 3. THE MISSING PIECE: Write the default index.html (root)
+        // 3. Write the default index.html (root)
         if (latestEntry) {
-            console.log(`Setting ${latestEntry.slug} as the default index.html`);
-            const defaultHtml = this.renderEntry(latestEntry);
-            jobs.push(fs.writeFile(path.join(settings.dir.docs, 'index.html'), defaultHtml));
+            console.log(`Setting [${latestEntry.slug}] as the root index.html`);
+            
+            // Because latestEntry.__content was already processed by makeImgVid 
+            // with its slug (e.g. /slug/img/...), it will work perfectly 
+            // from the root directory. No need to move images.
+            const rootHtml = this.renderEntry(latestEntry);
+            jobs.push(fs.writeFile(path.join(settings.dir.docs, 'index.html'), rootHtml));
         }
 
         // 4. Update the published cache
-        if (count > 0 || latestEntry) {
+        if (count > 0) {
             jobs.push(fs.writeFile(settings.publishedFile, JSON.stringify(this.data.published, null, 2)));
-            await Promise.all(jobs);
         }
         
-        console.log(`✅ Done. Updated ${count} files + root index.html.`);
+        await Promise.all(jobs);
+        console.log(`✅ Production build complete. Updated ${count} entries.`);
     }
 
     renderEntry(entry) {
