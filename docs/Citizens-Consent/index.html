@@ -1,125 +1,198 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
-<meta name="author" content="Puneet Kishor">
-<meta name="copyright" content="CC0 Public Domain Dedication">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
-
-<title>punkish: Citizens Consent</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
-<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
-<link rel="stylesheet" href="/_lib/css/uglyduck.css">
-<link rel="stylesheet" href="/_lib/css/punkish.css">
-<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
-<link rel="stylesheet" href="/_lib/css/expanding-search.css">
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="date" content="">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    
+    <title>punkish: Citizens Consent</title>
+	<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+	<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+	<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+	<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
 </head>
 <body>
-    <header class="row"><div>
-    <a href="/" class="home">
 
-        <img src="/_lib/img/PunkishEidesisOrg.gif">
-    </a> 
+<!-- 
+	it is very important that the 'content' partial is flush left because 
+	`remark` will apply markdown-to-html conversion and will get misled by 
+	left space padding, thinking it is code 
+-->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
 
-    <form name="search" method="GET" action="">
-        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
-    </form>
-    <ul id="searchResults"></ul>
-</div>
-<nav>
-    <a href="/cv-latest/">cv</a>
-    <a href="/Where/">where</a>
-    <a href="/_dates/">dates</a>
-    <a href="/_tags/">tags</a>
-</nav></header>
-    
-    <main id="content"><section class="row">
-    <h1 class="title">Citizens Consent</h1>
-    <div class="date">Thursday, May 1, 2014</div>
-    <div class="description">Based on work done at the Data Privacy Legal Hackathon</div>
+# Citizens Consent
+## Based on work done at the Data Privacy Legal Hackathon
 
-    <div class="content">An idea for more informed citizens based</div>
+Mozilla offices, San Francisco • May 2014
 
-    <div class="slideContainer">
-        <div class="intro-slide" onclick="window.location='/Citizens-Consent/p/';">
-            <h2>Citizens Consent</h2>
-            <h3>Puneet Kishor (Plazi)</h3>
-            <div class="where">a presentation given at Mozilla offices, San Francisco</div>
-            <div class="when">May 2014</div>
-            <a href="/Citizens-Consent/p/">start slideshow</a>
-        </div>
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/citizens-consent"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
     </div>
+</div>
+---
 
-    <ul class="tags">
-        <li><a href="/_tags/presentation.html">presentation</a></li>
-        <li><a href="/_tags/governance.html">governance</a></li>
-        <li><a href="/_tags/sensors.html">sensors</a></li>
-        <li><a href="/_tags/hardware.html">hardware</a></li>
-        <li><a href="/_tags/citizens-consent.html">citizens consent</a></li>
-        <li><a href="/_tags/health.html">health</a></li>
-        <li><a href="/_tags/health-data.html">health data</a></li>
-    </ul>    
-    <ul class="bottomNav">
-        <li class="prev"><a href="/Three-Strategies-for-TDM">↜ Three Strategies for TDM</a></li>
-        <li class="next"><a href="/Test-to-Destruction">Test to Destruction ⇝</a></li>
-    </ul></section>
-</main>
+layout: true
 
-    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+<div class="slidefooter">
+    <a href="/citizens-consent"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
 
-    <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
-    <script src="/_lib/js/search-mini.js"></script>
-    
-    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
-    <script src="/_lib/js/polyfill.js"></script>
-    <script src="/_lib/js/punkish.js"></script>
-    
-    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
-    <script src="/_lib/js/hilitor.js"></script>
-    
-    
-    
-    
-    
-    
-    
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Citizens Consent
+
+An idea for more informed citizens based on work done by
+
+* Dan Garon
+* Puneet Kishor
+* Lysle
+* Herrick
+* Beth McCarthy
+
+---
+
+## The Problem
+
+* Citizens give up their personal information without fully understanding what will be collected, where it will go, and how it will be used.
+
+* It is hard to understand policies around privacy, sharing and access because they are complicated, non-standard, and perhaps even intentionally obfuscating.
+
+---
+
+## Citizens Consent
+
+* Analogy to *Informed Consent*
+* Consent is not good unless the user understands the facts, implications, and  consequences.
+* A well-understood and given consent is the right of the citizen and the responsibility of the data collector.
+
+---
+
+## Prior Attempts
+
+* Many attempts at standardizing privacy policies
+* Few have gained traction
+
+---
+
+## Solution
+
+* Simple, attractive, visual display of a company's data sharing policiy
+* Targeted at average user, and focused on data sharing
+* Informative instead of over-whelming
+* Backed by a legally-binding policy
+
+---
+
+## Shields of Consent
+
+<img src="../img/consent1.gif" width="90%">
+
+---
+
+## How we share data…
+
+<img src="../img/consent2.gif" height="400px">
+
+---
+
+## How we share data
+
+<img src="../img/consent3.gif" height="400px">
+
+---
+
+## Additional features
+
+* Staged decision-tree to allow web sites and apps to generate the citizens consent report
+* Citizen can subscribe and receive notifications when the policy changes
+* Auto-generate legally binding data privacy and sharing policies
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
     <script>
-    window.addEventListener('load', (e) => {
-        //PK.autocomplete();
-        PK.initializeDictionary();
-    
-        const searchInPage = document.getElementById('searchInPage');
-    
-        if (searchInPage) {
-            const inp = document.getElementsByName('tag');
-            // console.log(inp)
-            inp[0].addEventListener('keyup', PK.searchInPage);
-        }
-    
-        const loc = window.location;
-    
-        if (loc.hash) {
-            const term = loc.hash.substring(1);
-    
-            // id of the element to parse
-            const myHilitor = new Hilitor("content");
-            myHilitor.apply(term);
-        }
-    })
-    </script></body>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
 </html>

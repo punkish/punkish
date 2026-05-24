@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: RGB to Visible Spectrum</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,10 +50,10 @@
     <main id="content"><section>
     <h1 class="title">RGB to Visible Spectrum</h1>
     <div class="description"></div>
-    <div class="created">Thursday, January 3, 2019</div>
+    <div class="created">Thu Jan 03 2019 11:09:00 GMT+0100 (Central European Standard Time)</div>
     
     <div class="content"><canvas>RGB values to wavelengths of visible light</canvas>
-<p>The spectrum is generated using approximate RGB values for visible wavelengths between 380 nm and 780 nm. The red, green and blue values are assumed to vary linearly with wavelength (for gamma = 1). Below is the original <a href="http://www.physics.sfasu.edu/astro/color/spectra.html">FORTRAN code</a> by Dan Bruton (astro@tamu.edu) converted to JavaScript by me</p>
+<p>The spectrum is generated using approximate RGB values for visible wavelengths between 380 nm and 780 nm. The red, green and blue values are assumed to vary linearly with wavelength (for gamma = 1). Below is the original <a href="http://www.physics.sfasu.edu/astro/color/spectra.html" rel="noopener noreferrer" target="_blank">FORTRAN code</a> by Dan Bruton (astro@tamu.edu) converted to JavaScript by me</p>
 <pre><code class="JavaScript language-JavaScript">// given a wavelength 'i', wl(i) returns the constituent r,g,b values
 function wl(i) {
     let [r, g, b] = [0, 0, 0];
@@ -101,8 +100,7 @@ function wl(i) {
         Math.floor(depth * ((sss * g) ** gamma)), 
         Math.floor(depth * ((sss * b) ** gamma))
     ]
-}
-</code></pre></div>
+}</code></pre></div>
 
 
     <ul class="tags">
@@ -113,14 +111,16 @@ function wl(i) {
         <li><a href="/_tags/spectrophotometer.html">spectrophotometer</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Open-Health-Data-and-GDPR">↜ “Open” health data and GDPR</a></li>
-        <li class="next"><a href="/Spectrophotometer">Spectrophotometer ⇝</a></li>
+        <li class="prev"><a href="/tirana-parks-and-recreation">Tirana Parks and Recreation</a></li>
+        <li class="next"><a href="/jacquards">Jacquards</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -132,11 +132,6 @@ function wl(i) {
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     

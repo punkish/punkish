@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Serving Data, Licenses, Citations, and Tracking Use</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -50,7 +50,7 @@
     <main id="content"><section>
     <h1 class="title">Serving Data, Licenses, Citations, and Tracking Use</h1>
     <div class="description">a proposal on closing the loop</div>
-    <div class="created">Invalid Date</div>
+    <div class="created">2012-03-29 12-21-49</div>
     
     <div class="content"><p>We have <strike>four</strike> five objectives</p>
 <ol>
@@ -64,7 +64,7 @@
 <p>For every result set, we track how many times each row has been queried. This opens up possibilities of all kinds of analytics, not just from the perpesctive of who entered the record, but also criteria such as spatial distribution of more popular queries. A point to note: we track only queryable resources, not dependent resources. For example, given a resource called "collection" that has a "collection_type," only collections are tracked, not collection_types. Another way to look at it -- if you want to track it, it should be worth tracking, and should have an "entered_by" assigned to it.</p></li>
 <li><p>Provide a mechanism to cite a result set with a permanent URI.</p>
 <p>Since every query is unique, we can return a URI, if requested, that may be used to cite the queried record set. The permanent URI can easily be resolved back to the original result set. If the URI returns results from a single contributor, that contributor can be cited. If the URI returns results from more than one contributor, the entire data collection team can be cited.</p>
-<p>Other initiatives have chosen different mechanisms for identification. For example, <a href="http://datacite.org">DataCite</a> uses digital object identifiers or DOIs. However, this seems to prefer centralization as I can't just create a DOI. I have to first find a DataCite member who will then facilitate my getting the ability to generate my own DOIs. This also seems to violate timbl's <a href="http://www.w3.org/DesignIssues/LinkedData">second rule of linked data</a>:</p>
+<p>Other initiatives have chosen different mechanisms for identification. For example, <a href="http://datacite.org" rel="noopener noreferrer" target="_blank">DataCite</a> uses digital object identifiers or DOIs. However, this seems to prefer centralization as I can't just create a DOI. I have to first find a DataCite member who will then facilitate my getting the ability to generate my own DOIs. This also seems to violate timbl's <a href="http://www.w3.org/DesignIssues/LinkedData" rel="noopener noreferrer" target="_blank">second rule of linked data</a>:</p>
 <blockquote>
   <p>The second rule, to use HTTP URIs, is also widely understood. The only deviation has been, since the web started, a constant tendency for people to invent new URI schemes (and sub-schemes within the urn: scheme) such as LSIDs and handles and XRIs and DOIs and so on, for various reasons. Typically, these involve not wanting to commit to the established Domain Name System (DNS) for delegation of authority but to construct something under separate control. Sometimes it has to do with not understanding that HTTP URIs are names (not addresses) and that HTTP name lookup is a complex, powerful and evolving set of standards.</p>
 </blockquote>
@@ -74,7 +74,7 @@
 <p>A URI is a unique way to reach a resource. However, even a unique and persistent URI may not return exactly the same resource everytime. For example a URI to "today's weather" always does return "today's" weather, except, the data returned are different from yesterday. To solve this problem we attach a timestamp to each resource, and return the most recent representation of the resource relative to the URI timestamp. If a URI doesn't have an explicit timestamp, it defaults to the implicit timestamp <code>now()</code>.</p>
 <p>Further, to preserve history, no resource is every deleted. It is simply marked as "inactive" but is still queryable. If a resource is modified, the data enterer/modifier can make a decision as to whether the modification is "substantive" or "trivial." In case of a substantive modification, the copy of the resource is made and modified while the original resource is archived as "inactive."</p></li>
 <li><p>Validate returned dataset.</p>
-<p>Along with providing timestamps to ensure data from correct time are being returned, a scheme such as the Dataverse Network's <a href="http://thedata.org/book/unf-version-5">Universal Numerical Fingerprint</a> created by Micah Altman, or PGP, MD5 or SHA1 digests as employed by most open source software downloads may be utilized to ensure that the data retrieved sometime in the future from an existing URI are the same as the original dataset returned when the URI was first used. The short Perl program below creates my implementation of UNF that I call the <strong>EarthBase Fingerprint</strong> (EBF) that deals with JSON-ified data.</p></li>
+<p>Along with providing timestamps to ensure data from correct time are being returned, a scheme such as the Dataverse Network's <a href="http://thedata.org/book/unf-version-5" rel="noopener noreferrer" target="_blank">Universal Numerical Fingerprint</a> created by Micah Altman, or PGP, MD5 or SHA1 digests as employed by most open source software downloads may be utilized to ensure that the data retrieved sometime in the future from an existing URI are the same as the original dataset returned when the URI was first used. The short Perl program below creates my implementation of UNF that I call the <strong>EarthBase Fingerprint</strong> (EBF) that deals with JSON-ified data.</p></li>
 </ol>
 <blockquote>
   <p>Micah Altman. 2008. "A Fingerprint Method for Verification of Scientific Data", in Advances in Systems, Computing Sciences and Software Engineering (Proceedings of the International Conference on Systems, Computing Sciences and Software Engineering 2007), Springer Verlag.</p>
@@ -329,14 +329,16 @@ sub masticate {
         <li><a href="/_tags/Intellectual-Property.html">Intellectual Property</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Trinidad,-CO">↜ Trinidad, CO</a></li>
-        <li class="next"><a href="/Heatmaps-In-PostGIS-And-PLR">Heatmaps In PostGIS (with PL/R) ⇝</a></li>
+        <li class="prev"><a href="/senior-analyst-programmer,-geoanalytics,-madison,-wi">Senior Analyst/Programmer, GeoAnalytics, Madison, WI</a></li>
+        <li class="next"><a href="/volunteered-geographic-information">Volunteered Geographic Information</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>

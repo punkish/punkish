@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Emulating Enumerated Data Types in PostgreSQL</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -50,7 +50,7 @@
     <main id="content"><section>
     <h1 class="title">Emulating Enumerated Data Types in PostgreSQL</h1>
     <div class="description"></div>
-    <div class="created">Monday, June 11, 2012</div>
+    <div class="created">Mon Jun 11 2012 17:16:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p>There are three ways to restrict entries in a Postgres database table column. Consider a table to store "colors" where you want only 'red', 'green', or 'blue' as valid entries.</p>
 <ol>
@@ -59,8 +59,7 @@
 
 CREATE TABLE t (
     color VALID_COLORS
-);
-</code></pre>
+);</code></pre>
 <p>Advantages are that the type can be defined once and then reused in as many tables as needed. A standard query can list all the values for an ENUM type, and can be used to make application form widgets.</p>
 <pre><code>SELECT  n.nspname AS enum_schema,  
         t.typname AS enum_name,  
@@ -74,16 +73,13 @@ WHERE   t.typname = 'valid_colors'
 -------------+---------------+------------
  public      | valid_colors  | red
  public      | valid_colors  | green
- public      | valid_colors  | blue
-</code></pre>
+ public      | valid_colors  | blue</code></pre>
 <p>Disadvantages are, the ENUM type is stored in system catalogs, so a query as above is required to view its definition. These values are not apparent when viewing the table definition. And, since an ENUM type is actually a data type separate from the built in NUMERIC and TEXT data types, the regular numeric and string operators and functions don't work on it. So, one can't do a query like</p>
-<pre><code>SELECT FROM t WHERE color LIKE 'bl%'; 
-</code></pre></li>
+<pre><code>SELECT FROM t WHERE color LIKE 'bl%'; </code></pre></li>
 <li><p>Check constraints</p>
 <pre><code>CREATE TABLE t (
     colors TEXT CHECK (colors IN ('red', 'green', 'blue'))
-);
-</code></pre>
+);</code></pre>
 <p>Two advantage are that, one, "what you see is what you get," that is, the valid values for the column are recorded right in the table definition, and two, all native string or numeric operators work.</p></li>
 <li><p>Foreign keys</p>
 <pre><code>CREATE TABLE valid_colors (
@@ -98,8 +94,7 @@ INSERT INTO valid_colors (colors) VALUES
 
 CREATE TABLE t (
     color_id INTEGER REFERENCES valid_colors (id)
-);
-</code></pre>
+);</code></pre>
 <p>Essentially the same as creating an ENUM type, except, the native numeric or string operators work, and one doesn't have to query system catalogs to discover the valid values. Oh, and like #1 above, this too is form-widget-friendly.</p></li>
 </ol></div>
 
@@ -109,14 +104,16 @@ CREATE TABLE t (
         <li><a href="/_tags/programming.html">programming</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/We-Do-Need-More-Programmers">↜ We Do Need More Programmers</a></li>
-        <li class="next"><a href="/Astronomy-Data-Chain">Astronomy Data Chain ⇝</a></li>
+        <li class="prev"><a href="/modernizing-historical-records">Modernizing Historical Records</a></li>
+        <li class="next"><a href="/most-datasets-are-encumbered">Most Datasets are Encumbered</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>

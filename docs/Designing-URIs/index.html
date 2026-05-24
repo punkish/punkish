@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Designing URIs</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -50,11 +50,11 @@
     <main id="content"><section>
     <h1 class="title">Designing URIs</h1>
     <div class="description"></div>
-    <div class="created">Sunday, October 9, 2011</div>
+    <div class="created">Sun Oct 09 2011 21:35:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p>A uniform resource identifier (URIs) identifies a resource on the web, and, as such, is the primary way to reach it. While URIs are used in web sites, human users with web browsers are not the only clients of URIs. The URIs are also used by web crawlers as they go about indexing the web, are used by users to email and share information with others, and can also be used in programs as a primary means of getting direct access to data.</p>
 <ul>
-<li><p>URIs should be permanent, because <a href="http://www.w3.org/Provider/Style/URI.html" title="Cool URIs don&quot;t change">Cool URIs don't change</a>. Any changes should be handled by letting the server provide <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" title="HTTP/1.1 Status Code Definitions">HTTP/1.1 Status Code Definitions</a> such as 301 (permanent redirect) or 307 (temporary redirect).</p></li>
+<li><p>URIs should be permanent, because <a href="http://www.w3.org/Provider/Style/URI.html" title="Cool URIs don&quot;t change" rel="noopener noreferrer" target="_blank">Cool URIs don't change</a>. Any changes should be handled by letting the server provide <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" title="HTTP/1.1 Status Code Definitions" rel="noopener noreferrer" target="_blank">HTTP/1.1 Status Code Definitions</a> such as 301 (permanent redirect) or 307 (temporary redirect).</p></li>
 <li><p>all URIs should point to nouns.</p>
 <pre name='code' class='brush: xml'>
 &lt;a href="http://example.com/employees"&gt;Employees&lt;/a&gt;
@@ -166,14 +166,16 @@ $ curl -O http://example.com/employees.tgz?gender=male&status=active
         <li><a href="/_tags/REST.html">REST</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/US-China-Roundtable-on-Data-Intensive-Science,-Shanghai,-China">↜ US-China Roundtable on Data-Intensive Science, Shanghai, China</a></li>
-        <li class="next"><a href="/Licensing-FAQ">Licensing FAQ ⇝</a></li>
+        <li class="prev"><a href="/development-alternatives">Development Alternatives</a></li>
+        <li class="next"><a href="/dictionary-in-a-webpage">Dictionary in a Webpage</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>

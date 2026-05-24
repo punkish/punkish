@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Maintaining data integrity</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,7 +50,7 @@
     <main id="content"><section>
     <h1 class="title">Maintaining data integrity</h1>
     <div class="description">a data structure to ensure integrity through edits and updates</div>
-    <div class="created">Friday, June 21, 2019</div>
+    <div class="created">Fri Jun 21 2019 14:58:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p>In a rapidly evolving data extraction environment, we need the ability to edit data already recorded while also offering a permanence of record. But these two roces are in opposing tension, so how to offer both? Fortunately, timestamps and the ability to <strong>INSERT … ON CONFLICT</strong> provide a way. Consider the following tables (all code using <code>nodejs</code>, but the underlying data principles would be the same for any programming language)</p>
 <pre><code class="js language-js">const createTable = function() {
@@ -85,8 +84,7 @@
     `).run();
 };
 
-createTable();
-</code></pre>
+createTable();</code></pre>
 <p>We get our database called <strong>test.sqlite</strong>.</p>
 <pre><code class="sql language-sql">$ sqlite3 test.sqlite 
 SQLite version 3.28.0 2019-04-16 19:49:53
@@ -111,8 +109,7 @@ CREATE TABLE materialsCitations (
             modified INTEGER,          -- modified data unixtime ms
             state INTEGER,             -- 0 deleted | 1 modified
             UNIQUE (mId, tId)
-        );
-</code></pre>
+        );</code></pre>
 <p>This how the entity relationship diagram (ERD) looks like</p>
 <pre><code>┌──────────────────────────────┐             ┌──────────────────────────────┐
 │██████████treatments██████████│             │██████materialsCitations██████│
@@ -134,8 +131,7 @@ CREATE TABLE materialsCitations (
                                              │        state INTEGER         │
                                              ├──────────────────────────────┤
                                              │      UNIQUE (mId, tId)       │
-                                             └──────────────────────────────┘
-</code></pre>
+                                             └──────────────────────────────┘</code></pre>
 <p>We start with the following data. <code>data_t0</code> is an array of <strong>treatments</strong> (think, a table of <strong>treatments</strong>) whose every element is a record (a row in a table representing a single <strong>treatment</strong>). The fourth element in every record is actually a reference to a another array of <strong>materialsCitations</strong> for this <strong>treatment</strong>.</p>
 <pre><code class="js language-js">const data_t0 = [
     {
@@ -189,8 +185,7 @@ CREATE TABLE materialsCitations (
                 created: 819174720000 },
         ]
     }
-];
-</code></pre>
+];</code></pre>
 <p>Given the following program</p>
 <pre><code class="js language-js">const createInsertStatements = function() {
 
@@ -246,8 +241,7 @@ const insertRows = function(data) {
     });
 };
 
-insertRows(data_t0);
-</code></pre>
+insertRows(data_t0);</code></pre>
 <p>We get the initial snapshot of our data in the the database</p>
 <pre><code class="sql language-sql">sqlite&gt; .headers on
 sqlite&gt; .mode col
@@ -264,8 +258,7 @@ id          mId     tId     lat         lon         created       modified    st
 2           283B67  7E9081  81.432      -17.532     819167400000                        
 3           B59511  7E9081  22.442      21.687      819174600000                        
 4           07D267  2F2B15  123.542     12.522      819174660000                        
-5           b4b2fb  0c74f1  -56.967     67.376      819174720000 
-</code></pre>
+5           b4b2fb  0c74f1  -56.967     67.376      819174720000 </code></pre>
 <p>A few days later, we have some changes. One <strong>treatment</strong> has a few edits, and its related <strong>materialsCitations</strong> too have edits. In fact, a new one has been added as well, and one of them has been deleted. Also, another <strong>treatment</strong> has been completely deleted.</p>
 <pre><code class="js language-js">const data_t1 = [
     {
@@ -327,8 +320,7 @@ id          mId     tId     lat         lon         created       modified    st
                 created: 819174720000 },
         ]
     }
-];
-</code></pre>
+];</code></pre>
 <p>We run the program again with new data <code>insertRows(data_t1)</code> and we get the following</p>
 <pre><code class="sql language-sql">sqlite&gt; SELECT * FROM treatments;
 id          tId     tTitle                            author          created       modified      state     
@@ -344,8 +336,7 @@ id          mId     tId     lat         lon         created       modified    st
 3           B59511  7E9081  22.442      21.687      819174600000  8208343200  0 &lt;- deleted        
 4           07D267  2F2B15  123.542     12.522      819174660000                        
 5           b4b2fb  0c74f1  -56.967     67.376      819174720000  8216983200  0 &lt;- deleted        
-6           677E25  7E9081  -45.348     -121.998    821698320000                &lt;- added
-</code></pre></div>
+6           677E25  7E9081  -45.348     -121.998    821698320000                &lt;- added</code></pre></div>
 
 
     <ul class="tags">
@@ -356,14 +347,16 @@ id          mId     tId     lat         lon         created       modified    st
         <li><a href="/_tags/taxonomy.html">taxonomy</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Under-Noise">↜ Under_Noise</a></li>
-        <li class="next"><a href="/3D-Printing">3D Printing ⇝</a></li>
+        <li class="prev"><a href="/configuration-over-code">Configuration Over Code</a></li>
+        <li class="next"><a href="/astronomy-data-chain">Astronomy Data Chain</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -375,11 +368,6 @@ id          mId     tId     lat         lon         created       modified    st
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     

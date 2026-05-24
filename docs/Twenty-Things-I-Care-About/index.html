@@ -1,122 +1,239 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
-<meta name="author" content="Puneet Kishor">
-<meta name="copyright" content="CC0 Public Domain Dedication">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
-
-<title>punkish: Twenty Things I Care About</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
-<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
-<link rel="stylesheet" href="/_lib/css/uglyduck.css">
-<link rel="stylesheet" href="/_lib/css/punkish.css">
-<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
-<link rel="stylesheet" href="/_lib/css/expanding-search.css">
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="date" content="">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    
+    <title>punkish: Twenty Things I Care About</title>
+	<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+	<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+	<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+	<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
 </head>
 <body>
-    <header class="row"><div>
-    <a href="/" class="home">
 
-        <img src="/_lib/img/PunkishEidesisOrg.gif">
-    </a> 
+<!-- 
+	it is very important that the 'content' partial is flush left because 
+	`remark` will apply markdown-to-html conversion and will get misled by 
+	left space padding, thinking it is code 
+-->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
 
-    <form name="search" method="GET" action="">
-        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
-    </form>
-    <ul id="searchResults"></ul>
-</div>
-<nav>
-    <a href="/cv-latest/">cv</a>
-    <a href="/Where/">where</a>
-    <a href="/_dates/">dates</a>
-    <a href="/_tags/">tags</a>
-</nav></header>
-    
-    <main id="content"><section class="row">
-    <h1 class="title">Twenty Things I Care About</h1>
-    <div class="date">Monday, January 9, 2017</div>
-    <div class="description">and one I don’t</div>
+# Twenty Things I Care About
+## and one I don’t
 
-    <div class="content"></div>
+Digital Humanities Seminar, University of Göttingen • June 2017
 
-    <div class="slideContainer">
-        <div class="intro-slide" onclick="window.location='/Twenty-Things-I-Care-About/p/';">
-            <h2>Twenty Things I Care About</h2>
-            <h3>Puneet Kishor (Plazi)</h3>
-            <div class="where">a presentation given at Digital Humanities Seminar, University of Göttingen</div>
-            <div class="when">June 2017</div>
-            <a href="/Twenty-Things-I-Care-About/p/">start slideshow</a>
-        </div>
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/twenty-things-i-care-about"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
     </div>
+</div>
+---
 
-    <ul class="tags">
-        <li><a href="/_tags/presentation.html">presentation</a></li>
-        <li><a href="/_tags/Göttingen.html">Göttingen</a></li>
-        <li><a href="/_tags/science.html">science</a></li>
-        <li><a href="/_tags/Public-Domain.html">Public Domain</a></li>
-    </ul>    
-    <ul class="bottomNav">
-        <li class="prev"><a href="/Enchanted-Reptile-Palace">↜ The Enchanted Reptile Palace</a></li>
-        <li class="next"><a href="/Upgrading-GIS-Capacity-at-Parks-and-Recreation-Tirana">Upgrading GIS Capacity at Parks and Recreation, Tirana ⇝</a></li>
-    </ul></section>
-</main>
+layout: true
 
-    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+<div class="slidefooter">
+    <a href="/twenty-things-i-care-about"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
 
-    <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
-    <script src="/_lib/js/search-mini.js"></script>
-    
-    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
-    <script src="/_lib/js/polyfill.js"></script>
-    <script src="/_lib/js/punkish.js"></script>
-    
-    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
-    <script src="/_lib/js/hilitor.js"></script>
-    
-    
-    
-    
-    
-    
-    
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Twenty Things I Care About
+
+???
+
+Life is too short to focus on the negatives.
+
+--
+
+### and one I don’t
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+Göttingen, Germany
+
+<hr>
+
+**Help:** Notes are hidden, but may be seen or hidden by pressing 'p'. Swipe on touch devices or use ← and → keys on your keyboard to change slides.
+
+---
+
+## Twenty Things I Care About
+### and one I don’t
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+by Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/).
+
+<hr>
+
+**Help:** Notes are hidden, but may be seen or hidden by pressing 'p'. Swipe on touch devices or use ← and → keys on your keyboard to change slides.
+
+---
+
+.two-left-column[
+### Twenty things I care about
+
+- [geospatial](http://www.openstreetmap.org/) [data](http://www.naturalearthdata.com/)
+- [Postgres](https://www.postgresql.org/)/[PostGIS](http://postgis.net/)/[QGIS](http://qgis.org/en/site/)/[GDAL and OGR](http://www.gdal.org/)
+- [Natural](http://nlp.stanford.edu/) [Language](http://www.nltk.org/) [Processing](https://github.com/NaturalNode/natural)
+- [Text](http://punkish.org/Legal-Implications-of-TDM?a=show#1) and [Data](http://biorxiv.org/content/early/2016/11/11/087015) [Mining](http://thehaguedeclaration.com/)
+- [RESTful APIs](https://hapijs.com/)
+- [nodejs](https://nodejs.org/en/)/[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)/[Version Control](https://git-scm.com/)
+- [Public Domain](https://creativecommons.org/share-your-work/public-domain/cc0/)
+- [open hardware](http://openhardware.science/)
+- [citizen science](http://punkish.org/Citizen-vs-Science)
+- [city planning](https://en.wikipedia.org/wiki/The_Death_and_Life_of_Great_American_Cities)
+- [sensors](https://en.wikipedia.org/wiki/Sensor_journalism)
+- https://metastudio.org/cube/
+- [key-value datastore](https://en.wikipedia.org/wiki/Key-value_database)
+- [CSV](https://csvconf.com/)/[Markdown](http://daringfireball.net/projects/markdown/)
+- [JSON](http://json.org/)/[GeoJSON](http://geojson.org/)/[TopoJSON](https://github.com/topojson/topojson)
+- [satellite imagery](http://www.goes.noaa.gov/)
+- [public policy](http://punkish.org/Beyond-Law)
+- [ownership of health data](https://ori.hhs.gov/education/products/n_illinois_u/datamanagement/dotopic.html)
+- [public good from private data](http://www.rwjf.org/en/library/research/2014/03/personal-data-for-the-public-good.html)
+- [consent](http://punkish.org/Citizens-Consent?a=show#1) and [credit](http://punkish.org/What-You-Do-Says-About-You)
+]
+.two-right-column[
+
+]
+
+---
+
+.two-left-column[
+### Twenty things I care about
+
+- [geospatial](http://www.openstreetmap.org/) [data](http://www.naturalearthdata.com/)
+- [Postgres](https://www.postgresql.org/)/[PostGIS](http://postgis.net/)/[QGIS](http://qgis.org/en/site/)/[GDAL and OGR](http://www.gdal.org/)
+- [Natural](http://nlp.stanford.edu/) [Language](http://www.nltk.org/) [Processing](https://github.com/NaturalNode/natural)
+- [Text](http://punkish.org/Legal-Implications-of-TDM?a=show#1) and [Data](http://biorxiv.org/content/early/2016/11/11/087015) [Mining](http://thehaguedeclaration.com/)
+- [RESTful APIs](https://hapijs.com/)
+- [nodejs](https://nodejs.org/en/)/[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)/[Version Control](https://git-scm.com/)
+- [Public Domain](https://creativecommons.org/share-your-work/public-domain/cc0/)
+- [open hardware](http://openhardware.science/)
+- [citizen science](http://punkish.org/Citizen-vs-Science)
+- [city planning](https://en.wikipedia.org/wiki/The_Death_and_Life_of_Great_American_Cities)
+- [sensors](https://en.wikipedia.org/wiki/Sensor_journalism)
+- [learning by making](https://metastudio.org/cube/)
+- [key-value datastore](https://en.wikipedia.org/wiki/Key-value_database)
+- [CSV](https://csvconf.com/)/[Markdown](http://daringfireball.net/projects/markdown/)
+- [JSON](http://json.org/)/[GeoJSON](http://geojson.org/)/[TopoJSON](https://github.com/topojson/topojson)
+- [satellite imagery](http://www.goes.noaa.gov/)
+- [public policy](http://punkish.org/Beyond-Law)
+- [ownership of health data](https://ori.hhs.gov/education/products/n_illinois_u/datamanagement/dotopic.html)
+- [public good from private data](http://www.rwjf.org/en/library/research/2014/03/personal-data-for-the-public-good.html)
+- [consent](http://punkish.org/Citizens-Consent?a=show#1) and [credit](http://punkish.org/What-You-Do-Says-About-You)
+]
+.two-right-column[
+### and one I don’t
+
+- [copyright](http://punkish.org/The-Problem-With-Copyright)
+]
+
+---
+
+## gracias a 
+# Pablo Neruda [→](http://www.nobelprize.org/nobel_prizes/literature/laureates/1971/neruda-bio.html)
+  
+### Veinte poemas de amor y una canción desesperada [→](http://ciudadseva.com/category/libros-completos-poemas/veinte-poemas-de-amor-y-una-cancion-desesperada/)
+
+---
+
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
     <script>
-    window.addEventListener('load', (e) => {
-        //PK.autocomplete();
-        PK.initializeDictionary();
-    
-        const searchInPage = document.getElementById('searchInPage');
-    
-        if (searchInPage) {
-            const inp = document.getElementsByName('tag');
-            // console.log(inp)
-            inp[0].addEventListener('keyup', PK.searchInPage);
-        }
-    
-        const loc = window.location;
-    
-        if (loc.hash) {
-            const term = loc.hash.substring(1);
-    
-            // id of the element to parse
-            const myHilitor = new Hilitor("content");
-            myHilitor.apply(term);
-        }
-    })
-    </script></body>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
 </html>

@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Version Controlled Journal</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,15 +50,15 @@
     <main id="content"><section>
     <h1 class="title">Version Controlled Journal</h1>
     <div class="description"></div>
-    <div class="created">Friday, May 15, 2015</div>
+    <div class="created">Fri May 15 2015 21:48:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><h2 id="proposal">Proposal</h2>
-<p><strong>Journal:</strong> A <a href="http://github.com">Github</a>-like website with a version control backend, really, <a href="http://www.git-scm.com">git</a>, that provides a place to publish scholarly papers. </p>
-<p><strong>Publishing Mechanism:</strong> The defining characteristic of this publishing mechanism, besides complete openness, would be version control which would be available at all levels. The system would be based on <code>git</code>. But, there would be a private area and a public area. So, if we follow <a href="http://semver.org">semantic versioning</a> like x.y.z, all z level versions would be private, y and x level versions would be public, but only x level would be versions of record. The author would have complete control on when to move from z → y → x but to maintain integrity, one couldn’t go from x → y → z. That is, the version bump would only be one-way.</p>
+<p><strong>Journal:</strong> A <a href="http://github.com" rel="noopener noreferrer" target="_blank">Github</a>-like website with a version control backend, really, <a href="http://www.git-scm.com" rel="noopener noreferrer" target="_blank">git</a>, that provides a place to publish scholarly papers. </p>
+<p><strong>Publishing Mechanism:</strong> The defining characteristic of this publishing mechanism, besides complete openness, would be version control which would be available at all levels. The system would be based on <code>git</code>. But, there would be a private area and a public area. So, if we follow <a href="http://semver.org" rel="noopener noreferrer" target="_blank">semantic versioning</a> like x.y.z, all z level versions would be private, y and x level versions would be public, but only x level would be versions of record. The author would have complete control on when to move from z → y → x but to maintain integrity, one couldn’t go from x → y → z. That is, the version bump would only be one-way.</p>
 <p>When the author starts writing her paper, she will keep it at —.—.z level until she is ready to make it public and put it up for “review.” In fact, she can even work elsewhere, in Google Docs or on her own computer locally using a word processor, until she is ready to put it up on the website. As soon as she posts the first version on the website, the paper gets a —.—.z version. z is your scratch space, or perhaps the space where you are co-writing it with your co-authors. You would have the ability to expose z to whoever you select, for a non-public, non-documented comment/review, if you choose.</p>
 <p>Once she clicks a button and makes the paper available for “review,” the paper becomes —.y.z. After a bunch of comments, revisions, and finally, a judgment from a quorum, the paper moves to x.y.z and becomes a version of record.</p>
 <p>All x.y.z papers automatically get a DOI and all that jazz that makes things appear official.</p>
-<p><strong>Review:</strong> Other registered members would review via comments, and the author could revise the paper on a continuous basis with revision numbers. This would be analogous to Google Docs, but more transparent regarding the changes made to the document. And, the official <em>version of record</em> would only be a major revision. The author would decide the version of record. The comments would be curated by the community, much like comments are curated right now on <a href="http://stackoverflow.com">Stack Overflow</a>, etc. The comments would have to  make sense, be respectful, etc., and it would be possible to comment on the comment itself. The commenters would earn (or lose) reputation points based on their activities, and thus, earn trust. The reputation/prestige would take time to build, and would be helped a lot if reputable academics participated.</p>
+<p><strong>Review:</strong> Other registered members would review via comments, and the author could revise the paper on a continuous basis with revision numbers. This would be analogous to Google Docs, but more transparent regarding the changes made to the document. And, the official <em>version of record</em> would only be a major revision. The author would decide the version of record. The comments would be curated by the community, much like comments are curated right now on <a href="http://stackoverflow.com" rel="noopener noreferrer" target="_blank">Stack Overflow</a>, etc. The comments would have to  make sense, be respectful, etc., and it would be possible to comment on the comment itself. The commenters would earn (or lose) reputation points based on their activities, and thus, earn trust. The reputation/prestige would take time to build, and would be helped a lot if reputable academics participated.</p>
 <p>There would be no anonymity. Every commenter, every participant, would have to verify identify. Doesn’t have to be an affiliation, but no one would be able to hide behind anonymity. if you’ve something to say, you should not feel the need to hide and say it.</p>
 <p><strong>Subject Matter:</strong> The journal platform itself would be subject-agnostic, much like PLOS One. However, papers would be assigned to predetermined set of subjects, and would also have labels (categories) that would lump them into virtual journals. So, one could click on the <strong>paleontology</strong> tag and see all the paleontology articles.</p>
 <h2 id="challenges">Challenges</h2>
@@ -76,14 +75,16 @@
         <li><a href="/_tags/publishing.html">publishing</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Young-Republic">↜ The Young Republic</a></li>
-        <li class="next"><a href="/Smart-or-Scary">Smart or Scary? ⇝</a></li>
+        <li class="prev"><a href="/yi-fu-tuan">Yi Fu Tuan</a></li>
+        <li class="next"><a href="/vespucci-workshop-on-inspire-eu-spatial-data-directive-and-sdis,-fiesole,-italy">Vespucci Workshop on INSPIRE EU Spatial Data Directive and SDIs, Fiesole, Italy.</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -95,11 +96,6 @@
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     

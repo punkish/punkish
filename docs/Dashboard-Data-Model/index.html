@@ -1,119 +1,207 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
-<meta name="author" content="Puneet Kishor">
-<meta name="copyright" content="CC0 Public Domain Dedication">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
-
-<title>punkish: Dashboard Data Model</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
-<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
-<link rel="stylesheet" href="/_lib/css/uglyduck.css">
-<link rel="stylesheet" href="/_lib/css/punkish.css">
-<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
-<link rel="stylesheet" href="/_lib/css/expanding-search.css">
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="version" content="4.0">
+    <meta name="date" content="">
+    <meta name="author" content="Puneet Kishor">
+    <meta name="copyright" content="CC0 Public Domain Dedication">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    
+    <title>punkish: Dashboard Data Model</title>
+	<link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+	<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
+	<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css">
+	<link rel="stylesheet" href="/_lib/css/uglyduck.css">
+    <link rel="stylesheet" href="/_lib/css/remark-styles.css">
 </head>
 <body>
-    <header class="row"><div>
-    <a href="/" class="home">
 
-        <img src="/_lib/img/PunkishEidesisOrg.gif">
-    </a> 
+<!-- 
+	it is very important that the 'content' partial is flush left because 
+	`remark` will apply markdown-to-html conversion and will get misled by 
+	left space padding, thinking it is code 
+-->
+<!-- it is very important that the 'content' partial is flush left because `remark` will apply markdown-to-html conversion and will get misled by left space padding, thinking it is code -->
+<textarea id="source">
+name: intro
+class: center, middle
 
-    <form name="search" method="GET" action="">
-        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
-    </form>
-    <ul id="searchResults"></ul>
-</div>
-<nav>
-    <a href="/cv-latest/">cv</a>
-    <a href="/Where/">where</a>
-    <a href="/_dates/">dates</a>
-    <a href="/_tags/">tags</a>
-</nav></header>
-    
-    <main id="content"><section class="row">
-    <h1 class="title">Dashboard Data Model</h1>
-    <div class="date">Saturday, February 17, 2007</div>
-    <div class="description"></div>
+# Dashboard Data Model
+## 
 
-    <div class="content">A small presentation on data models that can be repurposed for many different end-uses.</div>
+Seagrant Institute, University of Wisconsin-Madison • February 2007
 
-    <div class="slideContainer">
-        <div class="intro-slide" onclick="window.location='/Dashboard-Data-Model/p/';">
-            <h2>Dashboard Data Model</h2>
-            <h3>Puneet Kishor (Plazi)</h3>
-            <div class="where">a presentation given at Seagrant Institute, University of Wisconsin-Madison</div>
-            <div class="when">February 2007</div>
-            <a href="/Dashboard-Data-Model/p/">start slideshow</a>
-        </div>
+Puneet Kishor
+
+Released under a [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+<div class="slidefooter">
+    <a href="/dashboard-data-model"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
     </div>
+</div>
+---
 
-    <ul class="tags">
-        <li><a href="/_tags/presentation.html">presentation</a></li>
-    </ul>    
-    <ul class="bottomNav">
-        <li class="prev"><a href="/CollaborativeCollectionOfCaseStudies.ss">↜ CollaborativeCollectionOfCaseStudies.ss</a></li>
-        <li class="next"><a href="/CommunityOntology.ss">Community Ontology ⇝</a></li>
-    </ul></section>
-</main>
+layout: true
 
-    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
+<div class="slidefooter">
+    <a href="/dashboard-data-model"><img src="/_lib/img/PunkishEidesisOrg-small.gif"></a> 
+    <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/_lib/img/zero.png" alt="CC0" width="30" height="30"></a>
+    <div class="navlinks">
+        <a href="javascript:slideshow.gotoPreviousSlide()">prev</a> 
+        <a href="javascript:slideshow.gotoNextSlide()">next</a>
+    </div>
+</div>
+---
 
-    <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
-    <script src="/_lib/js/search-mini.js"></script>
-    
-    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
-    <script src="/_lib/js/polyfill.js"></script>
-    <script src="/_lib/js/punkish.js"></script>
-    
-    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
-    <script src="/_lib/js/hilitor.js"></script>
-    
-    
-    
-    
-    
-    
-    
+## Help
+
+* Notes are hidden, but may be seen by pressing **P** on your keyboard.
+* Press **C** to clone a show.
+* Press **H** for other keyboard shortcuts.
+
+???
+
+notes here
+
+---
+
+
+
+## Our Data Flow
+
+*   Our data model
+    * USGS raw data → webservice → our db → events analysis → dashboard
+*   If someone else, were doing the bit shown above already, I could imagine 
+    something like
+    * USGS raw data → webservice → other db for a bunch of different things 
+      including events analysis → webservice → dashboard
+*   Or, if we were supporting a whole bunch of other applications
+    * I could imagine utilizing the common data model so other applications 
+      could also benefit
+
+???
+
+some notes
+
+---
+
+## Data Storage
+
+*   Our storage is rather simple
+*   At its core it is very much what the USGS gives us
+*   We just tack on a few additional bits of info such as whether or not a given 
+    reading is a part of an event, if yes, then which event, and so forth
+
+---
+   
+## Simple Process
+
+*   USGS gives us only so much data, so we ask them one-off to fill the well, 
+    and then we keep on topping off the well as time goes by.
+*   We are just grabbing the raw, fixed width gage data through a standard http 
+    query ("web service" call it if you will), not a web scrape.
+*   We have standardized on a published web service: it is called "USGS NWIS 
+    data feed"
+*   The USGS feed we are using is not XML
+    * It is just plain, vanilla, fixed width ASCII text. As long as they don't 
+      change anything about it, it is the best, fastest, simplest to work with
+
+---
+   
+## Non-USGS gages
+
+*   There probably no standards for these non-USGS gages to follow.
+*   If these gage operators are smart, they have adopted the USGS standards, but 
+    in all probability "not."
+
+---
+
+## Events Analysis
+
+*   MATLAB program is now a Perl program. Anyone is welcome to take that and do 
+    what they want with it.
+
+---
+   
+## Model, View, Controller
+
+When thinking of computer programs, it is best to think in terms of the Model, View, Controller (MVC) approach. The data are the "model," the "view" can be a web-based application as in our case, or a desktop application, and the "controller" is used to describe the hooks between the view and the model. In our case, using the following legend: \[model in square brackets\] -> {view in curly brackets} -> (controller in parens), it would look like so
+
+---
+
+## Our MVC
+
+*   [data] → {web programs} → (web pages)
+*   The data model itself is really a succession of models, each using a view 
+    and a controller to create a new model
+    * [USGS raw data] → {program that grabs the feed} → (our 
+      SQLite/PostGres repository)
+    * [our SQLite/PostGres repository] → {program that analyzes for events} 
+      → (data fit for visualization)
+    * [data fit for visualization] → {program that extracts event data 
+      based on user request} → (web page or Java applet or whatever)
+    * There are other parallel MVC manifestations for us as well, for example, 
+      Batzli's image repository, but the concept is the same.
+
+</textarea>
+
+	<script src="/_lib/remark/remark-latest.min.js"></script>
+
+	
     <script>
-    window.addEventListener('load', (e) => {
-        //PK.autocomplete();
-        PK.initializeDictionary();
-    
-        const searchInPage = document.getElementById('searchInPage');
-    
-        if (searchInPage) {
-            const inp = document.getElementsByName('tag');
-            // console.log(inp)
-            inp[0].addEventListener('keyup', PK.searchInPage);
-        }
-    
-        const loc = window.location;
-    
-        if (loc.hash) {
-            const term = loc.hash.substring(1);
-    
-            // id of the element to parse
-            const myHilitor = new Hilitor("content");
-            myHilitor.apply(term);
-        }
-    })
-    </script></body>
+	let slideshow
+	window.addEventListener('load', function(e) {
+		slideshow = remark.create({
+			
+			// ratio: '16:9',
+			ratio: '4:3',
+			navigation: {
+				click: false,
+				scroll: false,
+				touch: true
+			},
+			slideNumberFormat: '%current% / %total%',
+			
+			// Enable or disable counting of incremental slides 
+			countIncrementalSlides: true,
+
+			highlightStyle: 'monokai',
+			highlightLanguage: 'remark',
+			highlightLines: true
+		});
+
+		// var maps = {};
+		// var mapUrl = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
+		// var mapAttrib = "&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors";
+
+		// slideshow.on('showSlide', function (slide) {
+		// 	//PK.initializeDictionary();
+
+		// 	if (slide.properties.mapfn1) {
+		// 		eval(slide.properties.mapfn1);
+		// 	}
+		// });
+
+		// slideshow.on('afterShowSlide', function (slide) {
+		// 	if (slide.properties.mapfn2) {	
+		// 		eval(slide.properties.mapfn2);
+		// 	}
+
+		// 	// var found = slide.properties.name.match(/term\d/);
+		// 	// if (found[0]) {
+		// 	// 	term(found[0]);
+		// 	// }
+		// });
+	})
+    </script>
+
+</body>
 </html>

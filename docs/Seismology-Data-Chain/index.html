@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Seismology Data Chain</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -50,23 +50,23 @@
     <main id="content"><section>
     <h1 class="title">Seismology Data Chain</h1>
     <div class="description"></div>
-    <div class="created">Friday, October 21, 2011</div>
+    <div class="created">Fri Oct 21 2011 11:22:00 GMT+0200 (Central European Summer Time)</div>
     
-    <div class="content"><p><a href="http://geoscience.wisc.edu/geoscience/people/staff/staff-member/?id=770" title="Dr. Ellen Syracuse">Dr. Ellen Syracuse</a> works with seismic data. The seismic data that Dr. Syracuse uses starts at a sensor in the ground in, say, New Zealand, and ends up as waveforms/wiggles that she can see on her computer screen. Here is the data chain:</p>
+    <div class="content"><p><a href="http://geoscience.wisc.edu/geoscience/people/staff/staff-member/?id=770" title="Dr. Ellen Syracuse" rel="noopener noreferrer" target="_blank">Dr. Ellen Syracuse</a> works with seismic data. The seismic data that Dr. Syracuse uses starts at a sensor in the ground in, say, New Zealand, and ends up as waveforms/wiggles that she can see on her computer screen. Here is the data chain:</p>
 <ul>
 <li>Usually acquired from PASSCAL,<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> a station consisting of a seismometer/sensor, GPS clock, digital recorder, power source, etc., is placed in a hole in the field.</li>
 <li>The sensor writes data to log files and data files<ul>
 <li>The log files contain information about system health, for example, possible timing problems identified when the system clock is significantly different from GPS time, power outages, sensor temperature, sensor lat, lng and elevation.</li>
 <li>The data files contain information on the voltages supplied to each sensor component, that is, either vertical alone, or vertical plus two horizontal components.</li></ul></li>
 <li>Secure Digital (SD) cards containing data are swapped manually, approximately monthly, and the data on the SD cards are copied to a computer for processing</li>
-<li>The raw RefTek<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> data are converted to <a href="http://www.iris.edu/manuals/" title="Standard for the Exchange of Earthquake Data">SEED data</a> by running <code>ref2mseed</code> or similar PASSCAL program</li>
+<li>The raw RefTek<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> data are converted to <a href="http://www.iris.edu/manuals/" title="Standard for the Exchange of Earthquake Data" rel="noopener noreferrer" target="_blank">SEED data</a> by running <code>ref2mseed</code> or similar PASSCAL program</li>
 <li>To run <code>ref2mseed</code>, the scientist must provide the sample rate, for example, 100 samples per second, at which the data were recorded. The sample rate is defined when the station is installed.</li>
 <li>The scientist manually looks through the log files using the program <code>logpeek</code>, another  PASSCAL program, to identify any potential timing problems which can later be flagged in the finished database</li>
-<li>The scientist then runs <code>dbbuild</code>, a program that is a part of the <a href="http://www.iris.edu/manuals/antelope.htm" title="Antelope package">Antelope package</a> to build database tables that can be read using Antelope software and contain useful information about the stations such as location, station name, sample rate, experiment name, and dates of operation.</li>
+<li>The scientist then runs <code>dbbuild</code>, a program that is a part of the <a href="http://www.iris.edu/manuals/antelope.htm" title="Antelope package" rel="noopener noreferrer" target="_blank">Antelope package</a> to build database tables that can be read using Antelope software and contain useful information about the stations such as location, station name, sample rate, experiment name, and dates of operation.</li>
 <li>Headers in SEED files are fixed using PASSCAL-written program <code>fixhdr</code><ul>
 <li>The raw data are identified by a channel name and the serial number of the SD card to which the data were written. In <code>fixhdr</code>, a SD serial number is linked to the name of the station where it was installed, and the channel names to more meaningful names such as changing <strong>1C1</strong>, which is a meaningless channel name to a seismologist, to <strong>HHZ</strong>, which to a seismologist, contains information about the sensor and channel; <strong>HH</strong> is a broadband seismometer that is sensitive to a certain range of ground motion frequencies, and <strong>Z</strong> is the vertical component of the seismometer.</li>
-<li>The scientist then runs <code>miniseed2days</code>, another Antelope program that takes the SEED files for each station and reformats them into <a href="http://www.iris.edu/manuals/SEED_appG.htm" title="miniseed"><em>miniseed</em></a> files, which are like SEED files, but do not contain any header information such as location, station name, and sample rate. This also creates an Antelope table that points to the miniseed files, and with a few mouse clicks, one can now view the waveforms from a particular station/channel/time period. This table can also be linked to those created using <code>dbbuild</code>.</li></ul></li>
-<li>These steps give the person running the experiment either continuous waveforms for each station for the entire duration of the experiment, which they can they view however they want, for example, plot and process in <a href="http://www.iris.edu/manuals/sac/SAC_Home_Main.html" title="Seismic Analysis Code">SAC</a>, Antelope, or Matlab.</li>
+<li>The scientist then runs <code>miniseed2days</code>, another Antelope program that takes the SEED files for each station and reformats them into <a href="http://www.iris.edu/manuals/SEED_appG.htm" title="miniseed" rel="noopener noreferrer" target="_blank"><em>miniseed</em></a> files, which are like SEED files, but do not contain any header information such as location, station name, and sample rate. This also creates an Antelope table that points to the miniseed files, and with a few mouse clicks, one can now view the waveforms from a particular station/channel/time period. This table can also be linked to those created using <code>dbbuild</code>.</li></ul></li>
+<li>These steps give the person running the experiment either continuous waveforms for each station for the entire duration of the experiment, which they can they view however they want, for example, plot and process in <a href="http://www.iris.edu/manuals/sac/SAC_Home_Main.html" title="Seismic Analysis Code" rel="noopener noreferrer" target="_blank">SAC</a>, Antelope, or Matlab.</li>
 </ul>
 <p>From Dr. Syracuse's hands to where the waveform data are archived, the data follow the path below:</p>
 <ul>
@@ -76,8 +76,8 @@
 <p>From the IRIS DMC archive to a seismologist who is unaffiliated with the initial data collection, which would be any other person in the world:</p>
 <ul>
 <li>At the DMC, usually there is a two-year period during which only those involved with the experiment are allowed to access the data, but following PASSCAL's policy for experiments using their instruments, the data become publicly available after two years. Prior to this two-year deadline, the data from one station from the experiment are public.</li>
-<li>At any time after the DMC has the data, a user can go to and see <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query">the experiments/stations/time periods for which the DMC has data</a>, even if the data aren't publicly accessible at this point</li>
-<li>If data are available, there are a variety of web- or email-based request tools such as <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query"><code>breq_fast</code></a> to get data from a particular station and time period</li>
+<li>At any time after the DMC has the data, a user can go to and see <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query" rel="noopener noreferrer" target="_blank">the experiments/stations/time periods for which the DMC has data</a>, even if the data aren't publicly accessible at this point</li>
+<li>If data are available, there are a variety of web- or email-based request tools such as <a href="http://www.iris.edu/SeismiQuery/day_f.html" title="Data Holdings by Station Query" rel="noopener noreferrer" target="_blank"><code>breq_fast</code></a> to get data from a particular station and time period</li>
 <li>When a subset of data is ready, it is put on a FTP site, the user is notified via email, and they can download it</li>
 <li>The data can be converted to a useable format (generally either SEED or SAC) using the DMC-distributed program <code>rdseed</code><ul>
 <li>If it is converted to SEED, one can then display or process it using an Antelope program.</li>
@@ -113,14 +113,16 @@ A plot you can look at:
         <li><a href="/_tags/data-chains.html">data chains</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Data-Chain">↜ Data Chain</a></li>
-        <li class="next"><a href="/The-Paradigm,-The-Framework,-and-The-Instantiation">The Paradigm, The Framework, and The Instantiation ⇝</a></li>
+        <li class="prev"><a href="/she">She</a></li>
+        <li class="next"><a href="/secretes-of-nature">Secretes of Nature</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>

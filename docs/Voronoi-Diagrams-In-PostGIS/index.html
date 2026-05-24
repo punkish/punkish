@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Voronoi Diagrams In PostGIS (with PL/R)</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,17 +50,17 @@
     <main id="content"><section>
     <h1 class="title">Voronoi Diagrams In PostGIS (with PL/R)</h1>
     <div class="description"></div>
-    <div class="created">Invalid Date</div>
+    <div class="created">2012-03-06 11-23-00</div>
     
-    <div class="content"><p>A Voronoi diagram represents proximity information about a set of points. The points on the Voronoi diagram are equidistant to two or more sites. Per <a href="http://www.comp.lancs.ac.uk/~kristof/research/notes/voronoi/">Voronoi Diagrams and Delaunay Triangulation</a></p>
+    <div class="content"><p>A Voronoi diagram represents proximity information about a set of points. The points on the Voronoi diagram are equidistant to two or more sites. Per <a href="http://www.comp.lancs.ac.uk/~kristof/research/notes/voronoi/" rel="noopener noreferrer" target="_blank">Voronoi Diagrams and Delaunay Triangulation</a></p>
 <blockquote>
   <p>Voronoi diagrams were first discussed by Peter Lejeune-Dirichlet in 1850. But it was more than a half of a century later in 1908 that these diagrams were written about in a paper by Voronoi, hence the name Voronoi Diagrams. The Voronoi cells/polygons are sometimes also called Thiessen Polytopes or Dirichlet Regions.</p>
 </blockquote>
 <figure>
-    <img src="img/macrostrat.jpg">
+    <img src="/voronoi-diagrams-in-postgis/img/macrostrat.jpg" >
     <figcaption>Macrostrat</figcaption>
 </figure>
-<p>Ever wanted to create a Voronoi tessellation for your points? Well, so have I, for our Macrostrat points. Fortunately for us, others already figured out how to do this. I have dusted off the original code by <a href="http://www.linkedin.com/in/mgleahy">Mike Leahy</a> ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.</p>
+<p>Ever wanted to create a Voronoi tessellation for your points? Well, so have I, for our Macrostrat points. Fortunately for us, others already figured out how to do this. I have dusted off the original code by <a href="http://www.linkedin.com/in/mgleahy" rel="noopener noreferrer" target="_blank">Mike Leahy</a> ever so slightly, and added a little bit more explanation, but it is good to go. It does require Postgres/PostGIS with PL/R. I am using Pg 9.0.x, PostGIS 1.5.3, and the latest PL/R as installed with help of MacPorts. Here is how to use the function once it is installed.</p>
 <pre class="brush: sql"><code>
     SELECT v.id, v.polygon
     FROM r_voronoi('table', 'the_geom', 'id') As v;
@@ -75,7 +74,7 @@
         'p.id'
     ) As v;
 </code></pre>
-<p>The code for the function is below. All my contribution is under a <a href="http://creativecommons.org/about/cc0">CC0 License Waiver</a>. I claim no responsibility for your successes or failures.</p>
+<p>The code for the function is below. All my contribution is under a <a href="http://creativecommons.org/about/cc0" rel="noopener noreferrer" target="_blank">CC0 License Waiver</a>. I claim no responsibility for your successes or failures.</p>
 <pre class="brush: sql"><code>
     /*
       This function uses the deldir library in R to generate voronoi  
@@ -248,14 +247,16 @@
         <li><a href="/_tags/Voronoi.html">Voronoi</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Freedoms-Just-Another-Word">↜ Freedom’s Just Another Word for Nothin’ Left To Choose</a></li>
-        <li class="next"><a href="/A-Velt-In-Lied">A Velt In Lied (A World In Song) ⇝</a></li>
+        <li class="prev"><a href="/while-we-were-looking-at-our-bright-future">While We Were Looking At Our Bright Future, They Grew Up On the Side of the Road</a></li>
+        <li class="next"><a href="/tygers-panthers-lions-and-robbers">Tygers, Panthers, Lions and Robbers</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -267,11 +268,6 @@
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     

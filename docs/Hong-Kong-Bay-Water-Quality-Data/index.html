@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Hong Kong Bay Water Quality Data</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -28,7 +28,6 @@
 
 
 
-<link rel="stylesheet" href="/_lib/dygraph/dygraph.min.css" />
 </head>
 <body>
     <header class="row"><div>
@@ -52,14 +51,14 @@
     <main id="content"><section>
     <h1 class="title">Hong Kong Bay Water Quality Data</h1>
     <div class="description"></div>
-    <div class="created">Monday, August 6, 2018</div>
+    <div class="created">Mon Aug 06 2018 23:53:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p class="u-cf">Yim Tin Tsai Fish Culture Zone water quality data measured in August 2018 by real-time water quality monitoring system of the Hong Kong Agriculture, Fisheries and Conservation Department (AFCD). Data provided by AFCD. Next reading in <span id="timer"></span> <em><b>Note:</b> The chart update has been sped by by 20X to make the web page more interesting. In real-life, the chart updates every ten minutes.</em></p>
 <div id="graphContainer">
     <div id="graph"></div>
 </div>
 <p class="u-cf"></p>
-<p>The display of monitoring data was developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface.</p>
+<p>The display of monitoring data was developed for the <a href="https://emptygallery.com/exhibitions/eg12_gravitational-currents-the-life-magic/" rel="noopener noreferrer" target="_blank">gravitational currents and the life magic</a> exhibition at the <a href="https://emptygallery.com" rel="noopener noreferrer" target="_blank">Empty Gallery Hong Kong</a> an exhibition of works by <a href="http://www.susannewinterling.com" rel="noopener noreferrer" target="_blank">Susanne Winterling</a>. It is a part of an artistic research project by Susanne that explores planetary sensing navigations below the surface.</p>
 <!-- <p><b>Note:</b> The readings are recorded at 10 min intervals. While that may be fine for real life, it is too long a time period to do any meaningful visualization over short periods. So we divide the emissionPeriod by the timerAdjustment to get a fake but more visualizable emissionPeriod. A timerAdjustment of 1 will keep the emissionPeriod to 10 mins. A timerAdjustment of 2 will halve the emissionPeriod to 5 mins, and so on. A default timerAdjusment of 60 is being used in the example above which sets the emissionPeriod to 10 seconds.</p> --></div>
 
 
@@ -72,14 +71,16 @@
         <li><a href="/_tags/environmental-monitoring.html">environmental monitoring</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Saving-and-Recreating-State-via-the-URL">↜ Saving and Recreating State via the URL</a></li>
-        <li class="next"><a href="/Water-Quality-Monitoring">Water Quality Monitoring ⇝</a></li>
+        <li class="prev"><a href="/yadav">Yadav</a></li>
+        <li class="next"><a href="/us-and-them">Us and Them</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -95,9 +96,6 @@
     
     
     
-    <script src="/_lib/dygraph/dygraph.min.js"></script>
-    <script src="/_lib/papaparse/papaparse.min.js"></script>
-    <script src="/_lib/web-audio-daw/wad.min.js"></script>
     
         <script src="js/hk.js"></script>
         <script>

@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Set Operations in JavaScript</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,7 +50,7 @@
     <main id="content"><section>
     <h1 class="title">Set Operations in JavaScript</h1>
     <div class="description"></div>
-    <div class="created">Tuesday, July 24, 2018</div>
+    <div class="created">Tue Jul 24 2018 21:17:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p>Using only vanilla JavaScript</p>
 <pre><code>&gt; A = 'antonio'
@@ -73,22 +72,23 @@
 &gt; symmetricDifferenceAB = A.split('')
     .filter(x =&gt; !B.split('').includes(x))
     .concat(B.split('').filter(x =&gt; !A.split('').includes(x)))
-[ 'a', 'b', 'e' ]
-</code></pre></div>
+[ 'a', 'b', 'e' ]</code></pre></div>
 
 
     <ul class="tags">
         <li><a href="/_tags/code.html">code</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Convex-Hull">↜ Convex Hull</a></li>
-        <li class="next"><a href="/Circle-whose-center-is-everywhere">A Circle Whose Center is Everywhere ⇝</a></li>
+        <li class="prev"><a href="/rue-de-lorette-to-gare-saint-charles">Rue de Lorette to Gare Saint-Charles</a></li>
+        <li class="next"><a href="/biodiversity-literature-repository">The Biodiversity Literature Repository</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -100,11 +100,6 @@
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     

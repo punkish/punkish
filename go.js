@@ -1,5 +1,3 @@
-'use strict';
-
 import Walker from 'walker';
 import path from 'path';
 import fs from 'fs';
@@ -9,16 +7,18 @@ import moment from 'moment';
 import MiniSearch from 'minisearch';
 import lunr from 'lunr';
 import { footnotes } from './lib/showdown-footnotes.js';
-import { templates, makeVid, makeImg, makeAlbum } from './lib/index.js';
+import { compileTemplates, makeImgVid, makeAlbum } from './lib/index.js';
 import { 
     dir, 
     dateOptions, 
     baseUrl, 
     minisearchOpts, 
     untaggedLabel,
-    publishedFile
+    publishedFile,
+    me
 } from './lib/settings.js';
 
+// const templates = compileTemplates(dir.templates);
 const sh = new showdown.Converter({
     extensions: [ footnotes ], 
     tables: true,
@@ -30,9 +30,7 @@ const sh = new showdown.Converter({
     literalMidWordUnderscores: true,
     literalMidWordAsterisks: true,
     strikethrough: true
-})
-
-let me = 'Puneet Kishor';
+});
 
 function prevNext(data) {
     console.log('populating prev-next')
@@ -371,7 +369,7 @@ function finish(data) {
     writeHanoz(data);
 }
 
-function makeDates(entry) {
+function makeDates(entry) {z
     const fakedate = new Date('1980-01-01 00:00:00')
         .toLocaleDateString("en-US", dateOptions);
 
@@ -390,7 +388,7 @@ function processFile(file, name, mtime, data, changed) {
         file,
         dir: path.dirname(file),
         name,
-        url: '',
+        url: name,
         dateGenerated: new Date(),
         dateModified: mtime,
         changed
@@ -442,9 +440,10 @@ function processFile(file, name, mtime, data, changed) {
     if (isPresentation) {
         entry.layout = fm.layout || 'main';
         entry.template = fm.template || 'entry-presentation';
+        let authors = me;
 
         if (entry.name === 'Biodiversity-Literature-Repository') {
-            me = `${me} (Plazi)`;
+            authors = `${authors} (Plazi)`;
         }
 
         if (entry.authors) {
@@ -452,15 +451,15 @@ function processFile(file, name, mtime, data, changed) {
 
             if (len > 1) {
                 entry.authors[len - 1] = `and ${entry.authors[len - 1]}`;
-                entry.authors.unshift(me);
+                entry.authors.unshift(authors);
                 entry.authors = entry.authors.join(', ');
             }
             else {
-                entry.authors = `${me} and ${entry.authors[0]}`;
+                entry.authors = `${authors} and ${entry.authors[0]}`;
             }
         }
         else {
-            entry.authors = me;
+            entry.authors = authors;
         }
 
         entry.isPresentation = true;
@@ -486,8 +485,7 @@ function processFile(file, name, mtime, data, changed) {
         // regular kind. Don't convert for a presentation 
         // because that conversion is done by remarkjs
         entry.__content = sh.makeHtml(entry.__content);
-        entry.__content = makeImg(entry.__content, entry.url);
-        entry.__content = makeVid(entry.__content, entry.url);
+        entry.__content = makeImgVid(entry.__content, `/${entry.name}`);
     }
 
     data.entries.byName[ entry.name.toLowerCase() ] = entry;
@@ -503,78 +501,87 @@ function processFile(file, name, mtime, data, changed) {
     addEntryByDate(entry, eIdx, data);
 }
 
-function go(dir) {
-    const data = {
-        entries: {
-            byName: {},
-            byDate: [],
-            byTag: {},
-            byYear: [],
-            hanoz: []
-        },
-    
-        idx: {},
+async function go(dir) {
+    process.stdout.write(`walking "${dir}"… `);
 
-        published: undefined
-    };
-
-    if (fs.existsSync(publishedFile)) {
-        data.published = JSON.parse(fs.readFileSync(publishedFile, 'utf8'));
-    }
-
-    if (!data.published) {
-        data.published = {
-            datePublished: new Date(),
-            entries: {}
+    // because Walker(dir) is not a Promise, the file traversal would run
+    // asynchronously after the rest of the program continues. 
+    // So we wrap the walker in a Promise and resolve it on end
+    return new Promise((resolve, reject) => {
+        const data = {
+            entries: {
+                byName: {},
+                byDate: [],
+                byTag: {},
+                byYear: [],
+                hanoz: []
+            },
+        
+            idx: {},
+            published: undefined
         };
-    }
-    
-    Walker(dir)
-        .on('file', function(file, stat) {
 
-            // file = .docs/Yi-Fu-Tuan/index.md
-            // name = Yi-Fu-Tuan
-            // dir  = .docs/Yi-Fu-Tuan/
-            // url  = https://punkish.org/Yi-Fu-Tuan/
-            if (path.basename(file) === 'index.md') {
-                const name = path.dirname(file).split('/')[1];
-                const mtime = new Date(stat.mtime);
-                let changed = false;
+        if (fs.existsSync(publishedFile)) {
+            data.published = JSON.parse(fs.readFileSync(publishedFile, 'utf8'));
+        }
 
-                if (name in data.published.entries) {
+        if (!data.published) {
+            data.published = {
+                datePublished: new Date(),
+                entries: {}
+            };
+        }
+        
+        Walker(dir)
+            .on('file', function(file, stat) {
 
-                    // The file has been processed and published before, so 
-                    // we check if it has been modified since, and thus, 
-                    // needs to be processed again
-                    const lastPublished = new Date(data.published.entries[name]);
-                    
-                    // compare dates
-                    // https://stackoverflow.com/a/493018
-                    if (mtime > lastPublished) {
+                // file = .docs/Yi-Fu-Tuan/index.md
+                // name = Yi-Fu-Tuan
+                // dir  = .docs/Yi-Fu-Tuan/
+                // url  = https://punkish.org/Yi-Fu-Tuan/
+                if (path.basename(file) === 'index.md') {
+                    const name = path.dirname(file).split('/')[1];
+                    const mtime = new Date(stat.mtime);
+                    let changed = false;
 
-                        // The file has been modified since it was last 
-                        // published so we flag it as changed
+                    if (name in data.published.entries) {
+
+                        // The file has been processed and published before, so 
+                        // we check if it has been modified since, and thus, 
+                        // needs to be processed again
+                        const lastPublished = new Date(data.published.entries[name]);
+                        
+                        // compare dates
+                        // https://stackoverflow.com/a/493018
+                        if (mtime > lastPublished) {
+
+                            // The file has been modified since it was last 
+                            // published so we flag it as changed
+                            changed = true;
+                        }
+                    }
+                    else {
+
+                        // The file has not been processed before, 
+                        // so we process it now
                         changed = true;
                     }
-                }
-                else {
 
-                    // The file has not been processed before, 
-                    // so we process it now
-                    changed = true;
+                    processFile(file, name, mtime, data, changed);
                 }
+            })
+            .on('error', function(er, entry, stat) {
+                console.log(`${er} on entry ${entry}`);
+            })
+            .on('end', function() {
+                console.log('all files traversed');
+                resolve(data);
+            });
 
-                processFile(file, name, mtime, data, changed);
-            }
-        })
-        .on('error', function(er, entry, stat) {
-            console.log(`${er} on entry ${entry}`);
-        })
-        .on('end', function() {
-            console.log('All files traversed.');
-            finish(data);
-            fs.writeFileSync(publishedFile, JSON.stringify(data.published));
-        })
+    });
+
+    
 }
 
-go(dir.docs)
+//go(dir.docs);
+export { prevNext, go, buildSearchIndex, finish }

@@ -1,6 +1,6 @@
 {
   "name": "punkish.org",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "there are none so blind as those who don't see",
   "main": "index.js",
   "repository": "https://github.com/punkish/pk3",
@@ -9,6 +9,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "browser-sync": "^3.0.4",
     "crypto-js": "^4.2.0",
     "dygraphs": "^2.2.1",
     "handlebars": ">=4.7.8",

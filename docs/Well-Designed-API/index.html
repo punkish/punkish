@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:02 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +14,9 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: A Well Designed API</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
@@ -50,7 +50,7 @@
     <main id="content"><section>
     <h1 class="title">A Well Designed API</h1>
     <div class="description"></div>
-    <div class="created">Friday, April 29, 2016</div>
+    <div class="created">Fri Apr 29 2016 16:53:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><p>An Application Programming Interface (API) is built on the premise that every query is a Uniform Resource Identifier (URI) and every answer is a standard HTTP Status Code and, where applicable, structured dataset in text format, preferably JavaScript Object Notation (JSON).<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> Fortunately, there are not many preset rules to build an API. However, at the very basic, the API should conform to REpresentational State Transfer (REST) principles, be literate, discoverable, and keep its promises.</p>
 <h2 id="restfulapi">RESTful API</h2>
@@ -102,7 +102,7 @@ curl -i -H "Accept: application/json" \
 </pre>
 <p><p></p>
 <h2 id="trustworthy">Trustworthy</h2>
-<p>An API is a promise to the developers depending on it that things are not only what they claim to be, they will also remain that way. Of course, any dynamic system will change. A system that doesn't change is a dead system. To reconcile these opposing tensions, an API should offer a versioning system that follows the practices of <a href="http://semver.org">semantic versioning</a>.</p>
+<p>An API is a promise to the developers depending on it that things are not only what they claim to be, they will also remain that way. Of course, any dynamic system will change. A system that doesn't change is a dead system. To reconcile these opposing tensions, an API should offer a versioning system that follows the practices of <a href="http://semver.org" rel="noopener noreferrer" target="_blank">semantic versioning</a>.</p>
 <pre class="js">
 // if no version defined then the latest version is presumed
 curl -i -H "Accept: application/json" \
@@ -145,14 +145,16 @@ Ample warnings and documentation should be provided for upcoming version changes
         <li><a href="/_tags/REST.html">REST</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Perfect-Health-Repo-Desiderata">↜ Perfect Health Repo Desiderata</a></li>
-        <li class="next"><a href="/What-You-Do-Says-About-You">What You Do Says About You ⇝</a></li>
+        <li class="prev"><a href="/we-real-cool">We Real Cool</a></li>
+        <li class="next"><a href="/wg-on-research,-data-and-knowledge-sharing,-un-foundation">WG on Research, Data and Knowledge Sharing, UN Foundation</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>

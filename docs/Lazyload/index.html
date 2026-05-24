@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="Tue Dec 17 2024 10:55:01 GMT+0100 (Central European Standard Time)">
+<meta name="date" content="">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,16 +14,15 @@
 <meta http-equiv="Cache-Control" content="max-age=604800, public">
 
 <title>punkish: Lazyload</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css">
+<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
 <link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
+<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
 <link rel="stylesheet" href="/_lib/css/uglyduck.css">
 <link rel="stylesheet" href="/_lib/css/punkish.css">
 <!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
-<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -51,42 +50,42 @@
     <main id="content"><section>
     <h1 class="title">Lazyload</h1>
     <div class="description"></div>
-    <div class="created">Friday, April 6, 2018</div>
+    <div class="created">Fri Apr 06 2018 08:12:00 GMT+0200 (Central European Summer Time)</div>
     
     <div class="content"><figure>
-    <img src="img/oo_41617.png" data-frz-src="https://zenodo.org/record/909894/files/oo_41617.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/oo_41617.png"  data-src="https://zenodo.org/record/909894/files/oo_41617.png" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure.png" data-frz-src="https://zenodo.org/record/1212324/files/figure.png"  onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/figure.png"  data-src="https://zenodo.org/record/1212324/files/figure.png"  class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure2.png" data-frz-src="https://zenodo.org/record/1212252/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/figure2.png"  data-src="https://zenodo.org/record/1212252/files/figure.png" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure3.png" data-frz-src="https://zenodo.org/record/1212089/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/figure3.png"  data-src="https://zenodo.org/record/1212089/files/figure.png" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Telika-plan.jpg" data-frz-src="https://zenodo.org/record/1211712/files/Telika%20plan.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/Telika-plan.jpg"  data-src="https://zenodo.org/record/1211712/files/Telika%20plan.jpg" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/ukraynada-egitim.jpg" data-frz-src="https://zenodo.org/record/1211361/files/ukraynada-egitim.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/ukraynada-egitim.jpg"  data-src="https://zenodo.org/record/1211361/files/ukraynada-egitim.jpg" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Bavikonda-reliquary.jpg" data-frz-src="https://zenodo.org/record/1203669/files/Bavikonda%20reliquary.jpg" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/Bavikonda-reliquary.jpg"  data-src="https://zenodo.org/record/1203669/files/Bavikonda%20reliquary.jpg" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/Figure8.png" data-frz-src="https://zenodo.org/record/1095872/files/Figure8.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/Figure8.png"  data-src="https://zenodo.org/record/1095872/files/Figure8.png" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure>
 <figure>
-    <img src="img/figure-(1).png" data-frz-src="https://zenodo.org/record/1213001/files/figure.png" onload=lzld(this) onerror=lzld(this) width="250px">
+    <img src="/lazyload/img/figure-(1).png"  data-src="https://zenodo.org/record/1213001/files/figure.png" class="lazyload" width="250px">
     <figcaption></figcaption>
 </figure></div>
 
@@ -96,14 +95,16 @@
         <li><a href="/_tags/JavaScript.html">JavaScript</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/ABCDs-of-Smart-Cities">↜ The ABCDs of Smart Cities</a></li>
-        <li class="next"><a href="/Mycoprinter">Mycoprinter ⇝</a></li>
+        <li class="prev"><a href="/ivan-illich">Ivan Illich</a></li>
+        <li class="next"><a href="/igbo-story">Igbo Story</a></li>
     </ul>
 </section>
 </main>
 
     <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
 
+    <script src="/_lib/js/lazysizes.min.js"></script>
+    
     <!-- minisearch -->
     <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
     <script src="/_lib/js/search-mini.js"></script>
@@ -115,11 +116,6 @@
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
-    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
-    <script>
-    window.addEventListener('load', (e) => hljs.highlightAll())
-    </script>
     
     
     
