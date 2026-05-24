@@ -1,5 +1,5 @@
 ---
-title      : Na Na Na to naYana
+title      : NaNaNa to naYana
 description: 
 modified   : 2026-05-24 07:45:00
 created    : 2026-05-24 07:45:00
@@ -14,6 +14,9 @@ stars      :
 ---
 
 ![God hath spoken](img/god-hath-spoken.jpg)
+
+<!-- https://pdimagearchive.org/images/a2669bbd-fbe8-441c-9c71-5d6d61cae2c7/ -->
+
 <cite>“Once you really know how to diagram a sentence really know it, you know practically all you have to know about English grammar”, Gertrude Stein once claimed. While one student’s lexical excitement is surely another’s slow death by gerund, Stein cuts to the heart of the grammatical pull. — James Brown, The American Grammar (Philadelphia, PA: Clark and Raser, 1831).</cite>
 
 **Note:** This is a response to [the naYana proposal](https://www.gnowledge.org/nayana/manifesto.html) by my friends at the Gnowledge lab. The title of my response is just to poke some good-hearted fun, not to be taken seriously. As much as I disagree with their thesis, I want to see more progress on this by them (not by me) because re-inventing the wheel is often the point—even if, in this case, the re-invented wheel is pointed rather than round.
