@@ -136,26 +136,24 @@ class SiteGenerator {
     async processFile(file, stat) {
         if (path.basename(file) !== 'index.md') return;
 
-        const slug = path.dirname(file).split(path.sep).pop().toLowerCase();
+        // REMOVED .toLowerCase() - We preserve the case of the folder exactly
+        const slug = path.dirname(file).split(path.sep).pop(); 
         const mtime = stat.mtime;
 
         let changed = true;
-
         if (this.mode === 'production' && this.data.published.entries[slug]) {
-
+            // Note: published.json will now store case-sensitive keys
             if (new Date(this.data.published.entries[slug]) >= mtime) {
                 changed = false;
             }
-
         }
 
         try {
-            const raw = await fs.readFile(file, 'utf-8');
+            const raw = await fs.readFile(file, 'utf8');
             const meta = yamlFront.loadFront(raw);
             const content = meta.__content || '';
 
-            // In Dev, the path should be root-relative: /slug
-            // In Prod, it respects the settings.baseUrl
+            // entryUrl now preserves case for both Dev and Prod
             const entryUrl = this.mode === 'development' ? `/${slug}` : `${settings.baseUrl}/${slug}`;
 
             const entry = {
@@ -178,18 +176,15 @@ class SiteGenerator {
                 entry.template = entry.name === 'Biodiversity-Literature-Repository' ? 'presentationPlazi' : 'presentation';
                 entry.layout = entry.template;
                 entry.authors = entry.authors ? `${settings.me} and ${entry.authors.join(', ')}` : settings.me;
-            } 
-            else {
+            } else {
                 entry.template = 'entry';
                 entry.layout = 'main';
+                // Passing the case-preserved entryUrl
                 entry.__content = this.makeImgVid(this.converter.makeHtml(content), entryUrl);
-                // entry.__content = this.converter.makeHtml(content);
-                // entry.__content = this.makeImgVid(entry.__content, `/${entry.name}`);
             }
 
             this.data.entries.byName[slug] = entry;
-        } 
-        catch (err) {
+        } catch (err) {
             console.error(`⚠️ Skipping [${slug}] due to error:`, err.message);
         }
     }
@@ -270,33 +265,25 @@ class SiteGenerator {
         this.build().then(() => {
             this.bs.init({
                 server: {
-                    baseDir: settings.dir.docs, // This allows BS to serve images/css from disk
+                    baseDir: settings.dir.docs,
                     routes: { "/_lib": "./docs/_lib" }
                 },
                 middleware: [(req, res, next) => {
                     const url = req.url.split('?')[0];
                     const parts = url.split('/').filter(Boolean);
                     
-                    // 1. Skip middleware for files that actually exist on disk (images, css, js)
-                    // This is the most important part!
-                    const localPath = path.join(settings.dir.docs, url);
-                    if (existsSync(localPath) && !statSync(localPath).isDirectory()) {
-                        return next(); 
-                    }
-
-                    // 2. Route: Home
                     if (url === '/' || url === '/index.html') {
                         const latest = this.data.entries.byDate[0];
                         return latest ? res.end(this.renderEntry(latest)) : next();
                     }
 
-                    // 3. Route: Dynamic Entry HTML
-                    const slug = parts[0]?.toLowerCase();
+                    // We no longer lowercase the slug from the incoming URL
+                    const slug = parts[0]; 
+                    
                     if (slug && this.data.entries.byName[slug]) {
                         res.setHeader('Content-Type', 'text/html');
                         return res.end(this.renderEntry(this.data.entries.byName[slug]));
                     }
-                    
                     next();
                 }],
                 port: 3000,
