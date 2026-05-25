@@ -4,7 +4,7 @@ body {
     font-size: 25px; 
     background-color: #f5f7fd;
     color: #444;
-    width: 66ch;
+    max-width: 66ch;
 }
 blockquote {
     font-size: 100%; 
