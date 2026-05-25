@@ -29,11 +29,11 @@ That is it. That is the extent of my agreement.
 
 ## The “Lost Time” Fallacy
 
-The naYana proposal is clever and seems humane, yet it rests on a foundational error: treating the time spent acquiring literacy as “stolen” hours. This assumes orthographic difficulty and intellectual vitality are inversely related. History suggests the opposite. The “tax” that the proposal laments is actually a front-loaded investment. While a Finnish child decodes faster at age seven, the English reader spends adulthood reaping the morphophonemic dividend.
+The naYana proposal is clever and seems humane, yet it rests on a foundational error: treating the time spent acquiring literacy as “stolen” hours. This assumes orthographic difficulty and intellectual vitality are inversely related. History suggests the opposite. The “tax” that the proposal laments is actually a front-loaded investment. While a Finnish child may decode faster at age seven, the English reader spends her adulthood reaping the morphophonemic dividend.
 
-Most of the thesis rests on the apparent hours lost by young English learners (such as myself, 50 years ago) as opposed to, say, the Finns or the Españoles. My counter to that are the countless hours saved later in life when interfacing with the English speaking world through my education and work. *Imajin me riting a letur to mi employer and getting laffed aaoot of the rum.*
+Most of the naYana thesis rests on the apparent hours lost by young English learners (such as myself, 55 years ago) as opposed to, say, the Finns or the Españoles. My counter to that are the countless hours saved later in life when interfacing with the English speaking world through my education and work. *Imajin me riting a letur to mi employer and getting laffed aaoot of the rum.*
 
-By preserving the *sign* in *signature* or the *photo* in *photograph*, English prioritizes the mind over the ear. It allows us to leap directly to the semantic root. A phonetic script would shatter these “meaning families,” forcing readers to reconstruct relationships that our “messy” spelling provides for free. naYana is not returning time; it is charging admission to a richer language that the child must pay back later, with compounded interest.
+By preserving the *sign* in *signature* or the *photo* in *photograph*, English prioritizes the mind over the ear. It allows us to leap directly to the semantic root. A phonetic script would shatter these “meaning families,” forcing readers to reconstruct relationships that our “messy” spelling provides for free. A child trained on a rationalized phonetic script is not simply an English reader with a toggle switched off. She is a reader whose entire formation — whose intuitions about words, whose feel for the connection between sign and signal, nation and native, philosophy and philosopher — was shaped differently. naYana is not returning time; it is charging admission now to a rich language that the child must pay back later, with compounded interest.
 
 ## The Success of the “Broken” System
 
@@ -63,4 +63,4 @@ Regarding the IPA: Using a linguist’s tools for a child’s script is like giv
 
 The “Manifesto” Irony: If your URL is `manifesto.html`, please don’t say, “This is not a manifesto.”
 
-The Palindrome Problem: I admire the ambition, though I must gently object that naYana is not, strictly speaking, a palindrome unless pronounced by a very obedient robot. In the Roman alphabet, *A != N*. In reality, the first ‘a’ is a full vowel and the last is a dying schwa. You realize that if you swallow a sound to save a slogan, the sounds you swallow always come back to haunt the syntax.
+The Palindrome Problem: I admire the ambition, though I must gently object that naYana is not a palindrome. Even phonetically, unless pronounced by a very obedient robot, it fails the test. In the Roman alphabet, *A != N*. In reality, the first ‘a’ is a full vowel and the last is a dying schwa. You realize that if you swallow a sound to save a slogan, the sounds you swallow always come back to haunt the syntax.
