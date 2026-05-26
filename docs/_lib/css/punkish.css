@@ -4,7 +4,13 @@ body {
     font-size: 25px; 
     background-color: #f5f7fd;
     color: #444;
+    width: 90%;
+    margin: 0 auto;
     max-width: 66ch;
+
+    /* 3. Prevent text-overflow and long URLs from breaking the layout */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 blockquote {
     font-size: 100%; 
@@ -65,8 +71,20 @@ figcaption {font-size: small;}
 figure.inline { width: 100%; margin-left: 0; margin-bottom: 1em; float: left; max-width: 400px; margin-right: 1em; }
 /*****************************************/
 
+/* 4. Ensure media is truly responsive */
+img, video, iframe {
+    max-width: 100%;      /* Scale down to fit parent */
+    height: auto;         /* Maintain aspect ratio */
+    display: block;
+}
+
 /* tags and bottom navigation bar *******/
-ul.tags, ul.bottomNav { font: small sans-serif; list-style: none; min-height: 20px; }
+ul.tags, 
+ul.bottomNav { 
+    font: small sans-serif; 
+    list-style: none; 
+    min-height: 20px; 
+}
 ul.tags { margin-top: 3em; }
 ul.tags:after { clear: both; margin-bottom: 2em; }
 ul.tags li { float: left; margin-right: 0.75em; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; }
@@ -77,6 +95,14 @@ ul.bottomNav li { margin-bottom: 0; float: left; margin-right: 0.75rem; }
 
 .tag { font: small sans-serif; border: solid 1px grey; padding: 0 5px 0 5px; border-radius: 5px; text-decoration: none; }
 .tag:hover { background-color: yellow; }
+
+.bottomNav, .tags {
+    display: flex;
+    flex-wrap: wrap;       /* Allow items to drop to next line on small screens */
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
 /*****************************************/
 
 

@@ -32,3 +32,20 @@
 h1 {
 	font-size: 3em !important;
 }
+
+/* Default: Stacked (Mobile) */
+.hanoz-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Desktop: Side-by-Side (Screens larger than 800px) */
+@media (min-width: 800px) {
+    .hanoz-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .lcol, .rcol {
+        flex: 1;
+    }
+}
