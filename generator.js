@@ -1,3 +1,10 @@
+// node generator.js
+// 👉 Development mode (starts server & watches files)
+// node generator.js development (or --development)
+// 👉 Development mode (starts server & watches files)
+// node generator.js production (or --production / -p)
+// 👉 Production mode (runs a single build and writes static files to disk)
+
 import { promises as fs, readdirSync, readFileSync, existsSync, statSync } from 'fs';
 import path from 'path';
 import Walker from 'walker';
@@ -57,7 +64,7 @@ class SiteGenerator {
 
             // ![foo](foo.jpg =100x80)     simple, assumes units are in px
             // ![bar](bar.jpg =100x*)      sets the height to "auto"
-            // ![baz](baz.jpg =80%x5em)    Image with width of 80% and height of 5em
+            // ![baz](baz.jpg =80%x5em)    Image with w of 80% and h of 5em
             parseImgDimensions: true,
             literalMidWordUnderscores: true,
             literalMidWordAsterisks: true,
@@ -107,12 +114,12 @@ class SiteGenerator {
      * Cleans up the messy if/else logic into a single mutation point
      */
     postProcess(entry, entryUrl) {
+        const slug = entry.slug; // <-- Added this to fix "slug is not defined"
 
         // 1. Handle Images/Videos in content
         entry.__content = this.makeImgVid(entry.__content, entryUrl);
 
         // 2. Handle Entry-Specific CSS/JS (like /Where/)
-        // These are passed as arrays to Handlebars {{#each}}
         if (entry.css && !Array.isArray(entry.css)) entry.css = [entry.css];
         if (entry.js && !Array.isArray(entry.js)) entry.js = [entry.js];
 
@@ -182,7 +189,7 @@ class SiteGenerator {
         if (path.basename(file) !== 'index.md') return;
 
         // REMOVED .toLowerCase() - We preserve the case of the folder exactly
-        const slug = path.dirname(file).split(path.sep).pop(); 
+        const slug = path.dirname(file).split(path.sep).pop();
         const mtime = stat.mtime;
         let changed = true;
 
@@ -331,6 +338,10 @@ class SiteGenerator {
     }
 
     renderEntry(entry) {
+        // Defensive check if entry is undefined
+        if (!entry) {
+            return `<html><body><h1>404 Not Found</h1><p>The requested entry does not exist or failed to build.</p></body></html>`;
+        }
         try {
             const viewTmpl = this.templates.views[entry.template] || this.templates.views['entry'];
             const layoutTmpl = this.templates.layouts[entry.layout] || this.templates.layouts['main'];
@@ -338,7 +349,7 @@ class SiteGenerator {
             return layoutTmpl({ ...entry, content: viewHtml });
         } 
         catch (e) {
-            return `<html><body><h1>Render Error</h1><p>${entry.slug}: ${e.message}</p></body></html>`;
+            return `<html><body><h1>Render Error</h1><p>${entry.slug || 'Unknown'}: ${e.message}</p></body></html>`;
         }
     }
 
@@ -399,6 +410,24 @@ class SiteGenerator {
 }
 
 const args = process.argv.slice(2);
-const mode = args.includes('--serve') ? 'development' : 'production';
+
+// 1. Determine the mode (defaulting to development)
+let mode = 'development';
+
+// Check if production is explicitly mentioned (e.g., 'production', '--production', or '-p')
+const hasProductionFlag = args.some(arg => 
+    arg.toLowerCase().includes('production') || arg === '-p'
+);
+
+if (hasProductionFlag) {
+    mode = 'production';
+}
+
+// 2. Instantiate and run
 const generator = new SiteGenerator(mode);
-mode === 'development' ? generator.serve() : generator.build();
+
+if (mode === 'development') {
+    generator.serve();
+} else {
+    generator.build();
+}

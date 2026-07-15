@@ -1,12 +1,12 @@
 ---
 title      : Citizen vs. Science
 description: 
-modified   : 2016-03-13 11:54:00
+modified   : 2026-07-15 11:54:00
 created    : 2016-03-13 11:54:00
 viewcount  : 0
 id         : 
 gmap       : 
-tags        :
+tags       :
     - citizen science
     - informal academies
 stars      : 
@@ -171,7 +171,7 @@ steal science away from citizens<br>
 — <a href="/Citizen-vs-Science-(song)">parody</a>, with due respect to the original <a href="#Goose">The Goose and the Common</a> song
 </div>
 
-So, what are the way in which citizens can engage in science? I propose the metaphors of Layers, Zones and Agency to understand the scope of [Citizen Engagement in Science]().
+So, what are the way in which citizens can engage in science? I propose the metaphors of Layers, Zones and Agency to understand the scope of <a href="/Citizen-Engagement-in-Science">Citizen Engagement in Science</a>.
 
 [^1]: Since 2006 I worked primarily from the pulpit of Creative Commons where I was first, a volunteer, then a Science Fellow, and finally a full-time employee as the global Manager of Science and Data Policy.
 
