@@ -173,6 +173,6 @@ steal science away from citizens<br>
 
 So, what are the way in which citizens can engage in science? I propose the metaphors of Layers, Zones and Agency to understand the scope of <a href="/Citizen-Engagement-in-Science">Citizen Engagement in Science</a>.
 
-[^1]: Since 2006 I worked primarily from the pulpit of Creative Commons where I was first, a volunteer, then a Science Fellow, and finally a full-time employee as the global Manager of Science and Data Policy.
+[^1]: From 2006 to 2015, I worked primarily from the pulpit of Creative Commons where I was first, a volunteer (2006-2008), then a Science Fellow (2008-2011), and finally a full-time employee as the global Manager of Science and Data Policy (2011-2015).
 
 [^2]: Steve Kolowich. 2006. <a href="http://www.chronicle.com/article/The-Water-Next-Time-Professor/235136" target="_blank">The Water Next Time: Professor Who Helped Expose Crisis in Flint Says Public Science Is Broken</a>.
