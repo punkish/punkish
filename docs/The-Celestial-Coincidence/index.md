@@ -12,7 +12,7 @@ tags       :
 stars      : 
 ---
 
-<i>To the young astronomer who wonders how we know the names of all the stars</i>
+<i>To the young astronomer who wondered how we knew the names of all the stars</i>
 
 Things that are far appear smaller than they are. As they get closer, they appear bigger and bigger. To these two assertions, there should be no opposition, and no further explanation is required.
 
