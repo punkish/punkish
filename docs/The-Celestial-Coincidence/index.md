@@ -27,6 +27,8 @@ It is clear from the diagram below that for the moon to hide the sun exactly fro
     <figcaption>sun, moon, and me</figcaption>
 </figure>
 
-Well, it just so happens that the d<sub>sun</sub> = 149.6x10<sup>^</sup>6 kms, D<sub>sun</sub> = 1.39x10<sup>^</sup>6 kms so its angle in radians is 0.00929, and d<sub>moon</sub> = 384400 kms and D<sub>moon</sub> = 3475 kms so its angle in radians is 0.00904. How is that for a coincidence? The sun's diameter is 400 times that of the moon, and you mean to tell me that the sun is also about 400 times farther away from us than the moon? Yup.
+Well, it just so happens that the d<sub>sun</sub> = 149.6x10<sup>^</sup>6 kms, D<sub>sun</sub> = 1.39x10<sup>^</sup>6 kms so its angle in radians is 0.00929, and d<sub>moon</sub> = 384400 kms and D<sub>moon</sub> = 3475 kms so its angle in radians is 0.00904. How is that for a coincidence? 
+
+A bit of rearranging, and we see that D<sub>sun</sub>/D<sub>moon</sub> = d<sub>sun</sub>/d<sub>moon</sub>. The sun’s diameter is 400 times that of the moon, and you mean to tell me that the sun also happens to be 400 times farther away from us than the moon? Yup.
 
 To paraphrase Arthur C. Clark, any sufficiently advanced science is indistinguishable from magic. Yesterday, I saw magic that I will likely never see again in my life.
