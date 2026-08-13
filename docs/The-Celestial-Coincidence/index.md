@@ -12,6 +12,8 @@ tags       :
 stars      : 
 ---
 
+<i>To the young astronomer who wondered how we knew the names of all the stars</i>
+
 Things that are far appear smaller than they are. As they get closer, they appear bigger and bigger. To these two assertions, there should be no opposition, and no further explanation is required.
 
 This leads us to believe that a small thing closer to us can completely obscure a large thing farther away. All I have to do is to raise my roughly 21 cms wide hand to completely the hide the sun that is waaaay larger.
