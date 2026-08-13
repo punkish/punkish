@@ -324,16 +324,44 @@ class SiteGenerator {
 
     async writeProductionFiles() {
         const entries = Object.values(this.data.entries.byName).filter(e => e.changed);
+        
+        // 1. Write individual updated entries
         for (const entry of entries) {
             const html = this.renderEntry(entry);
             const outPath = path.join(settings.dir.docs, entry.slug, 'index.html');
+            
+            // Ensure directory exists
+            const dirPath = path.dirname(outPath);
+            if (!existsSync(dirPath)) {
+                await fs.mkdir(dirPath, { recursive: true });
+            }
+
             await fs.writeFile(outPath, html);
             this.data.published.entries[entry.slug] = entry.mtime;
         }
-        // Write latest as root index
+
+        // 2. Handle root index.html via redirect to the latest post
         const latest = this.data.entries.byDate[0];
-        if (latest) await fs.writeFile(path.join(settings.dir.docs, 'index.html'), this.renderEntry(latest));
+        if (latest) {
+            const targetUrl = `${settings.baseUrl}/${latest.slug}`;
+            const redirectHtml = `<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redirecting...</title>
+        <link rel="canonical" href="${targetUrl}">
+        <meta http-equiv="refresh" content="0; url=${targetUrl}">
+        <script>window.location.replace("${targetUrl}");</script>
+    </head>
+    <body>
+        <p>Redirecting to <a href="${targetUrl}">${latest.title || latest.slug}</a>...</p>
+    </body>
+    </html>`;
+
+            await fs.writeFile(path.join(settings.dir.docs, 'index.html'), redirectHtml);
+        }
         
+        // 3. Save published cache
         await fs.writeFile(settings.publishedFile, JSON.stringify(this.data.published, null, 2));
     }
 
@@ -372,10 +400,13 @@ class SiteGenerator {
                         return next();
                     }
 
-                    // 2. Handle Root
+                    // 2. Handle Root (Redirect to the latest post's URL)
                     if (url === '/' || url === '/index.html') {
                         const entry = this.data.entries.byDate[0];
-                        return res.end(this.renderEntry(entry));
+                        if (entry) {
+                            res.writeHead(302, { 'Location': `/${entry.slug}` });
+                            return res.end();
+                        }
                     }
 
                     // 3. Handle Slugs (preserve case)

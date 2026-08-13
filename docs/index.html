@@ -1,126 +1,13 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="version" content="4.0">
-<meta name="date" content="">
-<meta name="author" content="Puneet Kishor">
-<meta name="copyright" content="CC0 Public Domain Dedication">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta http-equiv="Cache-Control" content="max-age=604800, public">
-
-<title>punkish: The Celestial Coincidence</title>
-<!-- <link rel="stylesheet" href="/_lib/fonts/et-book/et-book.css"> -->
-<link rel="stylesheet" href="/_lib/fonts/hack/hack-subset.css">
-<!-- <link rel="stylesheet" href="/_lib/fonts/Atkinson/atkinson.css"> -->
-<link rel="stylesheet" href="/_lib/css/uglyduck.css">
-<link rel="stylesheet" href="/_lib/css/punkish.css">
-<!-- <link rel="stylesheet" href="/_lib/JavaScript-autoComplete/auto-complete.css"> -->
-<link rel="stylesheet" href="/_lib/css/expanding-search.css">
-
-
-
-
-
-
-</head>
-<body>
-    <header class="row"><div>
-    <a href="/" class="home">
-
-        <img src="/_lib/img/PunkishEidesisOrg.gif">
-    </a> 
-
-    <form name="search" method="GET" action="">
-        <input id="q" type="text" placeholder="there are none so blind as those who don’t see">
-    </form>
-    <ul id="searchResults"></ul>
-</div>
-<nav>
-    <a href="/cv-latest/">cv</a>
-    <a href="/Where/">where</a>
-    <a href="/_dates/">dates</a>
-    <a href="/_tags/">tags</a>
-</nav></header>
-    
-    <main id="content"><section>
-    <h1 class="title">The Celestial Coincidence</h1>
-    <div class="description"></div>
-    <div class="created">Thu Aug 13 2026 15:17:00 GMT+0200 (Central European Summer Time)</div>
-    
-    <div class="content"><p><i>To the young astronomer who wondered how we knew the names of all the stars</i></p>
-<p>Things that are far appear smaller than they are. As they get closer, they appear bigger and bigger. To these two assertions, there should be no opposition, and no further explanation is required.</p>
-<p>This leads us to believe that a small thing closer to us can completely obscure a large thing farther away. All I have to do is to raise my roughly 21 cms wide hand to completely the hide the sun that is waaaay larger.</p>
-<p>So, at what distance from us would a thing of one sizecompletely hide another thing of a different size? Turns out, there is really easy math behind it.</p>
-<p>A circle is 360º. It is also 2π radians. Just like a degree is 1/360 of a circle, a radian is ½π. Very precisely, the length of an arc of a circle divided by the radius of the circle gives us the angle in radians subtended at the center of the circle. </p>
-<p>It is clear from the diagram below that for the moon to hide the sun exactly from our view, the angle subtended at our eye should be exactly the same for both the moon and the sun. Since the sun and the moon are very far away from us, we can assume that the angle in radians created by them is roughly equal to their diameter divided by their distance from us. Or D<sub>moon</sub>/d<sub>moon</sub> = D<sub>sun</sub>/d<sub>sun</sub>.</p>
-<figure>
-    <img src="/The-Celestial-Coincidence/img/sun-moon-and-me.svg" >
-    <figcaption>sun, moon, and me</figcaption>
-</figure>
-<p>Well, it just so happens that the d<sub>sun</sub> = 149.6x10<sup>^</sup>6 kms, D<sub>sun</sub> = 1.39x10<sup>^</sup>6 kms so its angle in radians is 0.00929, and d<sub>moon</sub> = 384400 kms and D<sub>moon</sub> = 3475 kms so its angle in radians is 0.00904. How is that for a coincidence? </p>
-<p>A bit of rearranging, and we see that D<sub>sun</sub>/D<sub>moon</sub> = d<sub>sun</sub>/d<sub>moon</sub>. The sun’s diameter is 400 times that of the moon, and you mean to tell me that the sun also happens to be 400 times farther away from us than the moon? Yup.</p>
-<p>To paraphrase Arthur C. Clark, any sufficiently advanced science is indistinguishable from magic. Yesterday, I saw magic that I will likely never see again in my life.</p></div>
-
-
-    <ul class="tags">
-        <li><a href="/_tags/wonder.html">wonder</a></li>
-        <li><a href="/_tags/science.html">science</a></li>
-    </ul>
-    <ul class="bottomNav">
-        <li class="prev"><a href="/AI-and-Copyright"></a></li>
-        <li class="next"><a href="/"></a></li>
-    </ul>
-</section>
-</main>
-
-    <footer><p>Dedicated to the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank">CC0 Public Domain Dedication</a></p></footer>
-
-    <script src="/_lib/js/lazysizes.min.js"></script>
-    
-    <!-- minisearch -->
-    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
-    <script src="/_lib/js/search-mini.js"></script>
-    
-    <!-- <script src="/_lib/JavaScript-autoComplete/auto-complete.min.js"></script> -->
-    <script src="/_lib/js/polyfill.js"></script>
-    <script src="/_lib/js/punkish.js"></script>
-    
-    <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
-    <script src="/_lib/js/hilitor.js"></script>
-    
-    
-    
-    
-    
-    
-    
-    <script>
-    window.addEventListener('load', (e) => {
-        //PK.autocomplete();
-        PK.initializeDictionary();
-    
-        const searchInPage = document.getElementById('searchInPage');
-    
-        if (searchInPage) {
-            const inp = document.getElementsByName('tag');
-            // console.log(inp)
-            inp[0].addEventListener('keyup', PK.searchInPage);
-        }
-    
-        const loc = window.location;
-    
-        if (loc.hash) {
-            const term = loc.hash.substring(1);
-    
-            // id of the element to parse
-            const myHilitor = new Hilitor("content");
-            myHilitor.apply(term);
-        }
-    })
-    </script></body>
-</html>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redirecting...</title>
+        <link rel="canonical" href="/The-Celestial-Coincidence">
+        <meta http-equiv="refresh" content="0; url=/The-Celestial-Coincidence">
+        <script>window.location.replace("/The-Celestial-Coincidence");</script>
+    </head>
+    <body>
+        <p>Redirecting to <a href="/The-Celestial-Coincidence">The-Celestial-Coincidence</a>...</p>
+    </body>
+    </html>
