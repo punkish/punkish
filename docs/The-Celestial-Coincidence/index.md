@@ -18,7 +18,7 @@ Things that are far appear smaller than they are. As they get closer, they appea
 
 This leads us to believe that a small thing closer to us can completely obscure a large thing farther away. All I have to do is to raise my roughly 21 cms wide hand to completely the hide the sun that is waaaay larger.
 
-So, at what distance from us would a thing of size s1 completely hide another thing of size s2? Turns out, there is really easy math behind it.
+So, at what distance from us would a thing of one sizecompletely hide another thing of a different size? Turns out, there is really easy math behind it.
 
 A circle is 360º. It is also 2π radians. Just like a degree is 1/360 of a circle, a radian is ½π. Very precisely, the length of an arc of a circle divided by the radius of the circle gives us the angle in radians subtended at the center of the circle. 
 
