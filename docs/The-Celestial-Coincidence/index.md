@@ -15,7 +15,7 @@ tags       :
 stars      : 
 ---
 
-<i>To the young astronomer who wondered how we knew the names of all the stars</i>
+*To the young astronomer who wondered how we knew the names of all the stars[^1]*
 
 Things that are far appear smaller than they are. As they get closer, they appear bigger and bigger. To these two assertions, there should be no opposition, and no further explanation is required.
 
@@ -37,3 +37,5 @@ Well, it just so happens that the d<sub>sun</sub> = 149.6x10<sup>6</sup> kms, D<
 A bit of rearranging, and we see that D<sub>sun</sub>/D<sub>moon</sub> = d<sub>sun</sub>/d<sub>moon</sub>. The sun’s diameter is 400 times that of the moon, and you mean to tell me that the sun also happens to be 400 times farther away from us than the moon? Yup.
 
 To paraphrase Arthur C. Clark, any sufficiently advanced science is indistinguishable from magic. Yesterday, I saw magic that I will likely never see again in my life.
+
+[^1]: I remember reading this <i>faux</i> dedication on the back of a book, but I can't, for the life me, remember which book it was. But, it does seem apt for the thoughts that follow.
