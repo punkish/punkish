@@ -1,4 +1,12 @@
 <ul class="bottomNav">
-    <li class="prev"><a href="{{baseUrl}}/{{prev.name}}">{{prev.title}}</a></li>
-    <li class="next"><a href="{{baseUrl}}/{{next.name}}">{{next.title}}</a></li>
+    {{#if prev}}
+        <li class="prev">
+            <a href="{{baseUrl}}/{{prev.name}}">&laquo; {{#if prev.title}}{{prev.title}}{{else}}{{prev.name}}{{/if}}</a>
+        </li>
+    {{/if}}
+    {{#if next}}
+        <li class="next">
+            <a href="{{baseUrl}}/{{next.name}}">{{#if next.title}}{{next.title}}{{else}}{{next.name}}{{/if}} &raquo;</a>
+        </li>
+    {{/if}}
 </ul>

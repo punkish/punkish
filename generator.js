@@ -259,8 +259,18 @@ class SiteGenerator {
             .sort((a, b) => new Date(b.mtime) - new Date(a.mtime));
 
         this.data.entries.byDate.forEach((e, i, arr) => {
-            e.prev = arr[i + 1] ? { name: arr[i + 1].slug, title: arr[i + 1].title } : null;
-            e.next = arr[i - 1] ? { name: arr[i - 1].slug, title: arr[i - 1].title } : null;
+            const prevEntry = arr[i + 1];
+            const nextEntry = arr[i - 1];
+
+            e.prev = prevEntry ? { 
+                name: prevEntry.slug, 
+                title: prevEntry.title || prevEntry.slug 
+            } : null;
+
+            e.next = nextEntry ? { 
+                name: nextEntry.slug, 
+                title: nextEntry.title || nextEntry.slug 
+            } : null;
         });
 
         if (this.mode === 'production') await this.writeProductionFiles();
