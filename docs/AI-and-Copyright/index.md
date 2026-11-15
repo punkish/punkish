@@ -1,6 +1,6 @@
 ## The Human Authorship Rule and the "Black Box" Problem
 
-The absolute foundation of modern U.S. copyright law is that copyright requires human authorship. This principle was legally cemented when the D.C. Circuit Court of Appeals affirmed in Thaler v. Perlmutter that copyright cannot protect works created by non-humans (a ruling the Supreme Court declined to review in 2026).
+The absolute foundation of modern U.S. copyright law is that copyright requires human authorship. This principle was legally cemented when the D.C. Circuit Court of Appeals affirmed in *Thaler v. Perlmutter* that copyright cannot protect works created by non-humans (a ruling the Supreme Court declined to review in 2026).
 
 The Copyright Office report explains that copyright is designed to incentivize human creativity, meaning purely AI-generated outputs automatically enter the public domain. This is due to the "black box" problem: when a user inputs a text prompt, the AI’s neural networks autonomously and unpredictably execute the final expressive details (the exact words, colors, or pixels). Because the user lacks direct "expressive control" over this execution, typing a prompt—no matter how complex or iterative—is legally treated as an exercise in conception rather than execution. "Re-rolling" prompts until a desirable output appears is legally viewed as rolling dice, not authoring a work.
 
@@ -48,6 +48,12 @@ If you use an AI tool to generate a beautiful digital painting from a prompt, yo
 ## The unresolved edge
 
 The line between "assisted" and "purely AI-generated" is still blurry in practice. Legal analysts at Mayer Brown note that neither the Copyright Office nor the courts have set a bright-line threshold for how much human input is enough, and a pending case, *Allen v. Perlmutter*, tests whether over 600 rounds of prompt refinement can amount to authorship. Until that's resolved, the safest practice for creators is the one the Copyright Office itself recommends: disclose AI involvement honestly when registering a work, and keep a paper trail — drafts, edit histories, logs — showing exactly where your own hand took over from the machine.
+
+## Why prompting isn't "authorship"
+
+The report's logic hinges on what's sometimes called the black-box problem: when you type a prompt, the model's internals — not you — decide the exact words, pixels, or notes in the output. Legally, that makes prompting an act of *conception*, not *execution*. Even relentlessly re-rolling a prompt to get something you like is treated less like authorship and more like rolling dice.
+
+It's also worth separating copyright from contract. When an AI platform's terms of service say "you own your outputs," that's a private agreement about usage rights — it has no bearing on federal copyright, and it won't help you if a competitor copies your AI-generated image and profits from it.
 
 ## References
 
