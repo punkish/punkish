@@ -37,6 +37,9 @@ Thumbs.db
 ################
 node_modules/
 
+# bak
+bak/
+
 # movies and images #
 #####################
 # *.jpg
