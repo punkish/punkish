@@ -61,10 +61,7 @@ const createTables = () => {
 A basic, rectangular poly looks like so (note that longitude is `x` and latitude is `y`)
 
 <figure>
-    <picture>
-        <source srcset="img/poly.png" media="(min-width:400px)">
-        <img src="img/poly.png">
-    </picture>
+    <img src="img/poly.png">
     <figcaption>Poly</figcaption>
 </figure>
 
@@ -182,10 +179,7 @@ const jsonExt = (pos, longitude, latitude, R, N) => {
 ```
 
 <figure>
-    <picture>
-        <source srcset="img/points-in-poly.png" media="(min-width:400px)">
-        <img src="img/points-in-poly.png">
-    </picture>
+    <img src="img/points-in-poly.png">
     <figcaption>Points in Poly</figcaption>
 </figure>
 

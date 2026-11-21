@@ -6,7 +6,7 @@
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="version" content="4.0">
-<meta name="date" content="">
+<meta name="date" content="Sat Nov 21 2026 21:02:17 GMT+0100 (Central European Standard Time)">
 <meta name="author" content="Puneet Kishor">
 <meta name="copyright" content="CC0 Public Domain Dedication">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/_lib/css/expanding-search.css">
 
 
+<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
 
 
 
@@ -50,7 +51,7 @@
     <main id="content"><section>
     <h1 class="title">Geodata with SQLite</h1>
     <div class="description"></div>
-    <div class="created">Fri Apr 14 2023 12:35:00 GMT+0200 (Central European Summer Time)</div>
+    <div class="created">Friday, April 14, 2023</div>
     
     <div class="content"><p>SQLite offers the <a href="https://www.sqlite.org/rtree.html" rel="noopener noreferrer" target="_blank"><strong>R*Tree</strong> module</a> for working with range queries useful when dealing with geodata. An additional <a href="https://www.sqlite.org/geopoly.html" rel="noopener noreferrer" target="_blank"><strong>Geopoly</strong> interface</a>, built on top of <strong>R*Tree</strong> further facilitates geospatial analysis. While the common usecase for <strong>R*Tree</strong> and <strong>Geopoly</strong> is with poly data, I needed to maintain and analyze point-data. Here is what I learned.</p>
 <p><strong><em>Note:</em></strong> <em>I am using <code>nodejs</code> for scripting all this, but the SQL can be used directly or within any programming language. All formulas are approximate (the meters-to-latitude conversion approximates the radius of a spherical earth, and the lng/lat checks in the SQL below are increasingly meaningless above 85-87 degrees of latitude; but the concept still remains the same, so change the values as appropriate).</em></p>
@@ -94,10 +95,7 @@ const createTables = () =&gt; {
 }</code></pre>
 <p>A basic, rectangular poly looks like so (note that longitude is <code>x</code> and latitude is <code>y</code>)</p>
 <figure>
-    <picture>
-        <source srcset="img/poly.png" media="(min-width:400px)">
-        <img src="/Geodata-with-SQLite/img/poly.png" >
-    </picture>
+    <img src="/Geodata-with-SQLite/img/poly.png" >
     <figcaption>Poly</figcaption>
 </figure>
 <p>It is possible to store points in an <strong>R*Tree</strong> virtual table by making the bottom-left and top-right corners of a box the same, that is, a square of side = 0. However, while I was able to store the same in a <strong>Geopoly</strong> table as well, the <code>geopoly_within()</code> function didn't return any result. So I decided to make a tiny box of 5 meters around every point and store those polys in the virtual tables. The only problem is that the length of each degree of latitude in meters varies with the latitude (it gets smaller as one moves away from the equator toward the poles). The formula <code>abs(1/(40075017*cos(latitude)/360))</code> returns meters for any given latitude (40075017 is the radius in meters of a perfectly spherical earth). Note that the "square" of 5m side is increasingly distorted trapezoidally as one moves away from the equator.</p>
@@ -204,10 +202,7 @@ const jsonExt = (pos, longitude, latitude, R, N) =&gt; {
     )`;
 };</code></pre>
 <figure>
-    <picture>
-        <source srcset="img/points-in-poly.png" media="(min-width:400px)">
-        <img src="/Geodata-with-SQLite/img/points-in-poly.png" >
-    </picture>
+    <img src="/Geodata-with-SQLite/img/points-in-poly.png" >
     <figcaption>Points in Poly</figcaption>
 </figure>
 <p>Since <code>minX/minY</code> are the same as <code>maxX/maxY</code> in our data, we need to do the <code>WHERE … BETWEEN</code> comparison only for one of those pairs.</p>
@@ -316,8 +311,12 @@ geopoly
         <li><a href="/_tags/nodejs.html">nodejs</a></li>
     </ul>
     <ul class="bottomNav">
-        <li class="prev"><a href="/Tree-Allometry-Data-Chain">Tree Allometry Data Chain</a></li>
-        <li class="next"><a href="/Inevitable-Futility-of-Eventually">The Inevitable Futility of Eventually</a></li>
+            <li class="prev">
+                <a href="/Igbo-Story">&laquo; Igbo Story</a>
+            </li>
+            <li class="next">
+                <a href="/Biodiversity-Literature-Repository">The Biodiversity Literature Repository &raquo;</a>
+            </li>
     </ul>
 </section>
 </main>
@@ -337,6 +336,11 @@ geopoly
     <!-- see https://www.the-art-of-web.com/javascript/search-highlight/ -->
     <script src="/_lib/js/hilitor.js"></script>
     
+    <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.6/highlightjs-highlight-lines.min.js"></script>
+    <script>
+    window.addEventListener('load', (e) => hljs.highlightAll())
+    </script>
     
     
     

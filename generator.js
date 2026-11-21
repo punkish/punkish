@@ -5,7 +5,9 @@
 // node generator.js production (or --production / -p)
 // 👉 Production mode (runs a single build and writes static files to disk)
 
-import { promises as fs, readdirSync, readFileSync, existsSync, lstatSync } from 'fs';
+import { 
+    promises as fs, readdirSync, readFileSync, existsSync, lstatSync 
+} from 'fs';
 import path from 'path';
 import Walker from 'walker';
 import yamlFront from 'yaml-front-matter';
@@ -16,29 +18,59 @@ import lunr from 'lunr';
 import browserSync from 'browser-sync';
 import Handlebars from 'handlebars';
 import { footnotes } from './lib/showdown-footnotes.js';
-import { makeAlbum } from './lib/index.js';
+
+const makeAlbum = function(entry, url) {
+    url = url ? `${url}/img` : 'img';
+    
+    entry.images = readdirSync(`${entry.dir}/img`)
+        .filter(img => {
+            const imgExt = img.slice(-4)
+            return imgExt == '.png' || imgExt == '.jpg' || imgExt == '.gif'
+        })
+        .map(img => `${url}/${img}`);
+}
 
 // Same settings module that go.js uses, so the search index is built with
 // exactly the same minisearchOpts (incl. stop words) the browser uses to query.
-import { 
-    dir, 
-    dateOptions, 
-    baseUrl, 
-    minisearchOpts, 
-    untaggedLabel,
-    publishedFile,
-    me
-} from './lib/settings.js';
-
 const settings = { 
-    dir, 
-    dateOptions, 
-    baseUrl, 
-    minisearchOpts, 
-    untaggedLabel, 
-    publishedFile, 
-    me 
+    dir: {
+        entries: './entries',
+        templates: './templates',
+        docs: './docs',
+        hanozDir: './docs/Hanoz'
+    }, 
+    dateOptions: { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    }, 
+    baseUrl: '', 
+    minisearchOpts: {
+
+        // fields to index for full-text search
+        fields: ['title', 'name', 'text'],
+
+        processTerm: (term, _fieldName) => stopWords.has(term) 
+            ? null 
+            : term.toLowerCase(),
+
+        searchOptions: {
+            boost: { title: 2 },
+            fuzzy: 0.2
+        },
+
+        // fields to return with search results
+        storeFields: ['title', 'name']
+    }, 
+    untaggedLabel: 'untagged', 
+    publishedFile: './published.json', 
+    me: 'Puneet Kishor'
 };
+
+const stopWords = new Set([
+    'and', 'or', 'to', 'in', 'a', 'the', /* ...and more */ 
+]);
 
 // ---------------------------------------------------------------------------
 // small pure helpers
